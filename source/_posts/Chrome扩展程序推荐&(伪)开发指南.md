@@ -1,0 +1,255 @@
+---
+title: Chrome扩展程序推荐&(伪)开发指南
+urlname: chrome-extension-recommendation-and-pseudo-development-guide
+tags:
+  - Chrome
+  - 指南
+  - 推荐
+id: 895
+categories:
+  - 总结
+date: 2017-06-28 17:25:28
+---
+
+写在前面
+====
+
+chrome作为Google公司研发的一款网页浏览器，其诞生之初就备受关注，从一开始的全年占有率上升幅度最大到如今的全球使用人数最多，chrome成为了Google最值得骄傲的产品之一；而作为前端工程师，和浏览器打交道是最多的，所以如何用好浏览器就成为了一项潜在的技能。chrome本身就基于其他开源软件所撰写（WebKit、Blink），所以其丰富的扩展程序成为了另一大杀器，下面就分享一下我用的一些扩展程序（排名不分先后，如果你也有用着很爽的插件，欢迎在评论中分享哦～），同时简单的介绍一下自己如果想开发一个Chrome扩展程序，应该从何下手。
+
+扩展程序推荐
+======
+
+[React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
+-------------------------------------------------------------------------------------------------------------------------
+
+之所以将这款插件排在第一位，那是因为react实在是太火了，颇有一统前端框架之势（想多了，怎么可能），所以就首先推荐这款插件了。这款插件是facebook官方推荐的（[Github地址](https://github.com/facebook/react-devtools)），目前已经有64W用户下载使用，所以其性能方面是不容置疑的，不过由于我目前还没有更深入的接触react，所以这款插件自从下载之后就没有实际用过，具体怎样就没办法描述了。。
+
+[JSONView](https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc)
+-----------------------------------------------------------------------------------------------
+
+这款插件其实功能很简单，就是能够让你在浏览器中更方便地看JSON类型的数据，我们前端工程师常会有这样的困扰：后台提供了一个接口，返回的是JSON数据，但是我们通过URL直接在浏览器中打开的话，中文会显示乱码，而且如果其中有类似URL这种格式的数据，也没有办法点击跳转；此时，这款插件就派上了用场，虽然其提供的功能很简单，但是105W+的用户量已经说明了一切，截图神马的最有说服力了：
+
+### JSONView之前
+
+![](https://merrier.wang/wp-content/uploads/2017/06/WX20170628-171703.png)
+
+### JSONView之后
+
+![](https://merrier.wang/wp-content/uploads/2017/06/WX20170628-171630.png)
+
+[Set Character Encoding](https://chrome.google.com/webstore/detail/set-character-encoding/bpojelgakakmcfmjfilgdlmhefphglae)
+---------------------------------------------------------------------------------------------------------------------------
+
+这款插件的功能也很简单，就像它的名字一样，是用来改变网页编码格式的，相信用最新版本Chrome的童鞋会发现，右键改编码格式的日子一去不复返了，甚至连高级设置中都没有办法改编码格式了，那么如何修改万恶的编码格式呢？这款插件就派上了用场，使用很简单：安装之后在你想要改变编码格式的网页右键，就会出现下面这个东东： ![](https://merrier.wang/wp-content/uploads/2017/06/WX20170628-172441.png) 使用起来就是如此的简单，还在担心乱码吗？赶紧安装一下试试吧！
+
+[印象笔记·剪藏](https://chrome.google.com/webstore/detail/evernote-web-clipper/pioclpoplcdbaefihamjohnefbikjilc?hl=zh-CN)
+-------------------------------------------------------------------------------------------------------------------
+
+印象笔记作为一款最受欢迎的笔记类应用之一，其本身提供的功能已经足够惊艳了，但是它的这款chrome插件更是好用到爆，安装之后在浏览网页时点击它的大象logo就会在你的网页右上角弹出如下弹框： ![](https://merrier.wang/wp-content/uploads/2017/06/WX20170629-144308.png) 该弹框基本上涵盖了你所需要的所有功能，包括命名、内容选择、存储位置、标签、注释等等，可以让你很方便的保存你所浏览的任何内容（可以[点击这里](https://www.yinxiang.com/webclipper/guide/#1)查看这款插件的玩法介绍），如果你是印象笔记的用户或潜在用户，一定要安装试一下，童叟无欺哦～
+
+[YSlow](https://chrome.google.com/webstore/detail/yslow/ninejjcohidippngpapiilnmkgllmakh)
+-----------------------------------------------------------------------------------------
+
+YSlow（why slow）是雅虎基于网站优化规则推出的工具，帮助你分析并优化网站性能。说到雅虎，就不得不提一下[雅虎军规](http://developer.yahoo.com/performance/rules.html)了，雅虎军规在十几个方面给你的网站提出优化建议，YSlow会根据这些规则分析你的网站，并给出评级。雅虎作为一家对前端性能追求卓越的公司，虽然已光辉不再，但是YSlow这款插件（[Firefox也有相应插件](https://addons.mozilla.org/en-US/firefox/addon/5369)）对于前端开发者来说还是能提供很多思路的 官方网站：[http://developer.yahoo.com/yslow/](http://developer.yahoo.com/yslow/) 我的个人博客用YSlow的评分结果。。： ![](https://merrier.wang/wp-content/uploads/2017/06/QQ20170702-214501@2x.png)
+
+[花瓣网页收藏工具](https://chrome.google.com/webstore/detail/%E8%8A%B1%E7%93%A3%E7%BD%91%E9%A1%B5%E6%94%B6%E8%97%8F%E5%B7%A5%E5%85%B7/imamemhokkdleoelohnmkimbmpfglcil)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+这是[花瓣网](http://www.huaban.com)官方提供的扩展，这个扩展程序可以让你方便地从任意网站上采集喜欢的图片、视频或者网页截图，并且可以全部保存下来，甚至可以追溯到这张图片的源网页继续查看。从某种角度而言，是一款不仅仅适合设计师的插件 ![](https://merrier.wang/wp-content/uploads/2017/06/QQ20170702-214901@2x.png)
+
+[Check my links](https://chrome.google.com/webstore/detail/check-my-links/ojkcdipcgfaekbeaelaapakgnjflfglf)
+-----------------------------------------------------------------------------------------------------------
+
+该插件会检查当前页面中链接的有效性，会告诉你哪些地方的链接已经是死链等等，对SEO很有帮助，下图是这个插件的主界面： ![](https://merrier.wang/wp-content/uploads/2017/06/WX20170906-160459@2x.png)
+
+[Host Switch Plus](https://chrome.google.com/webstore/detail/host-switch-plus/bopepoejgapmihklfepohbilpkcdoaeo?hl=zh-CN)
+------------------------------------------------------------------------------------------------------------------------
+
+快速切换 Domain-IP 配置而不需要编辑 Hosts 文件，并方便的添加、修改、分组（批量开关）。对于程序员来说也是一大神器啊！其实有一个软件也是用来切换hosts的，叫做 **SwitchHosts** ，感兴趣的话可以试用一下，同样很简洁。
+
+[Fatkun图片批量下载](https://chrome.google.com/webstore/detail/fatkun-batch-download-ima/nnjjahlikiabnchcpehcpkdeckfgnohf)
+--------------------------------------------------------------------------------------------------------------------
+
+就像名字一样，它的功能是找出当前页面的所有图片并下载，提供按分辨率、链接等筛选图片，是一款十分简洁但又功能强大的扩展程序。可能更适合设计师吧？！
+
+[Extension Source Locator](https://chrome.google.com/webstore/detail/extension-source-locator/cmhbfegjgncgaikpopenldnaidbhdopp)
+-------------------------------------------------------------------------------------------------------------------------------
+
+这是一款神奇的扩展程序，翻译成中文就是“**扩展程序源码定位器**”，它是干什么的呢，根据被翻译过来的不太准确的大中华语可以大概知道这玩意儿可以定位到一个你已经在谷歌浏览器上安装了的扩展程序的源码，或者说源文件 ，在你电脑磁盘的哪个地方。更重要的是它让我们可以修改一些自己喜欢的扩展程序，让其更加适合自己的使用。具体参见[这篇介绍文章](http://www.cnblogs.com/Wayou/p/how_to_adapt_chrome_extension_for_your_own_willing.html)
+
+[Vimium](https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb)
+-------------------------------------------------------------------------------------------
+
+首先，不知道为什么叫这个名字。。用惯vim的人可能习惯用键盘操控一切了，那么这款插件一定能够满足你，它让你能够通过键盘控制浏览器，包括跳转，点击某个按钮，翻页以及所有你能想到的浏览器功能，实在是佩服这款插件的开发者，可以先看一下它的[宣传视频](https://youtu.be/t67Sn0RGK54)（来自油管，需要翻墙~）压压惊
+
+[一键管理所有扩展](https://chrome.google.com/webstore/detail/%E4%B8%80%E9%94%AE%E7%AE%A1%E7%90%86%E6%89%80%E6%9C%89%E6%89%A9%E5%B1%95/niemebbfnfbjfojajlmnbiikmcpjkkja)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+名字已经说明了一切，当我们安装了很多扩展程序的时候，一键管理就派上用场了，快速激活、禁用插件。可以安装多个插件，切换使用，缓解 Chrome 的吃内存问题
+
+[Adblock Plus](https://chrome.google.com/webstore/detail/adblock-plus/cfhdojbkjhnklbpkdaibdccddilifddb)
+-------------------------------------------------------------------------------------------------------
+
+去除广告的插件，满天飞的弹窗广告相当烦人啊。具体效果还没有试验，但是看到“去除广告”这四个字的时候，我就决定要安装一下了
+
+[WEB前端助手(FeHelper)](https://chrome.google.com/webstore/detail/web%E5%89%8D%E7%AB%AF%E5%8A%A9%E6%89%8Bfehelper/pkgccpejnmalmdinmhkkfafefagiiiad)
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+提供了很多前端开发者经常用到的功能，包括字符串编解码、图片base64编码、代码压缩、时间戳转换、二维码生成、页面性能检测等等功能，具体看下图吧： ![](https://merrier.wang/wp-content/uploads/2017/06/FE助手.png)
+
+[新浪微博图床](https://chrome.google.com/webstore/detail/%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9A%E5%9B%BE%E5%BA%8A/fdfdnfpdplfbbnemmmoklbfjbhecpnhf)
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+简单好用的图片上传工具，支持选择、拖拽、粘贴、上传图片，并且生成图片地址、HTML、UBB和Markdown等格式，同时还支持批量上传等功能，很适合那些需要把图片放网上供其他人浏览的场景
+
+[惠惠购物助手](https://chrome.google.com/webstore/detail/%E6%83%A0%E6%83%A0%E8%B4%AD%E7%89%A9%E5%8A%A9%E6%89%8B/ohjkicjidmohhfcjjlahfppkdblibkkb)
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+剁手党的神器！虽然名字起得像一个垃圾广告，但是功能还是蛮实用的。。可以自动显示淘宝、京东、当当等各大网上商城的报价（安装它之后，必须要进入扩展选项设置，不然这货会弹出广告！） 更新自2017-9-10：突然发现，这个插件会在后来运行，然后在有优惠信息时，会在右上角弹出推送消息（和web worker类似），如下图： ![](https://merrier.wang/wp-content/uploads/2017/06/WX20170908-125150@2x.png)
+
+[Octotree](https://chrome.google.com/webstore/detail/octotree/bkhaagjahfmjljalopjnoealnfndnagc)
+-----------------------------------------------------------------------------------------------
+
+这是一款非常方便的github扩展，安装了这款插件之后，你可以在Github项目页面的左侧看到相应项目树状结构图，对于项目管理以及具体的文件跳转来说非常方便（同时还可以一键下载某文件，这个功能我最喜欢了！）： ![](https://merrier.wang/wp-content/uploads/2017/06/octotree.png)
+
+[BuiltWith Technology Profiler](https://chrome.google.com/webstore/detail/builtwith-technology-prof/dapjbgnjinbpoindlpdmhochffioedbn)
+-------------------------------------------------------------------------------------------------------------------------------------
+
+这款插件很适合充满好奇心的“极客”，它可以帮你**探测出当前网站所用的技术栈并按类型分类**，从此再也不用去看代码推测技术栈了！
+
+[User-Agent Switcher for Chrome](https://chrome.google.com/webstore/detail/user-agent-switcher-for-c/djflhoibgkdhkhhcedjiklpkjnoahfmg)
+--------------------------------------------------------------------------------------------------------------------------------------
+
+有时候我们需要同时在不同设备上测试网页的自适应情况，而有了这款插件，你可以随时更换UA，节省了“检查元素”窗口的空间，同时还显得自己是一个很厉害的“前端工程师”~ 更新自2017-9-11：偶然间发现一篇文章：[大家注意了 Chrome 的插件 User-Agent Switcher 是个木马](https://www.v2ex.com/t/389340)，但是这篇文章里面说的插件是User-Agent Switcher for Google Chrome，所以大家安装插件的时候一定要擦亮眼睛啊~
+
+[Always Clear Downloads](https://chrome.google.com/webstore/detail/always-clear-downloads/cpbmgiffkljiglnpdbljhlenaikojapc)
+---------------------------------------------------------------------------------------------------------------------------
+
+自动清理下载记录和关闭令人厌烦的必须手动关闭的下载栏；但是我安装之后发现没有什么变化，是我的姿势不对吗？
+
+[Imagus](https://chrome.google.com/webstore/detail/imagus/immpkjjlgappgfkkfieppnmlhakdmaab)
+-------------------------------------------------------------------------------------------
+
+鼠标停在小图片上即可显示出原图大小的图片，从此刷微博不必点击展开图片，刷淘宝、京东不必点击到商品页面细看，但是我安装之后还是看不了，难道我的姿势又不对了吗？ **更新于2017-9-7**：我发现有的图片它不会放大，可能没有压缩过的图片它不会显示原图吧，不过用过之后感觉还是蛮好用的。
+
+[主题创建者](https://chrome.google.com/webstore/detail/theme-creator-create-cust/ognfcdaekjfmdjhcjaacfapijblalleg?utm_source=chrome-app-launcher-info-dialog)
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+为谷歌浏览器创建自定义主题。可以为每个区域选择颜色和背景。追求个性化浏览器的童鞋可以尝试一下。
+
+[Proxy SwitchyOmega](https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif)
+-------------------------------------------------------------------------------------------------------------------
+
+轻松快捷地管理和切换多个代理设置。很适合程序猿的一款扩展，不仅可以全局代理，还可以通过正则或其他规则进行局部代理，除此之外还可以加载PAC脚本，翻墙神器，你不可错过。
+
+[Video DownloadHelper](https://chrome.google.com/webstore/detail/video-downloadhelper/lmjnegcaeklhafolokijcfjliaokphfk)
+-----------------------------------------------------------------------------------------------------------------------
+
+通过名字就可以看出来，这是一款用来下载视频的扩展，可以下载多种格式的视频，同时其提供了多种额外的功能，有兴趣的童鞋可以自行了解。
+
+[Smart TOC](https://chrome.google.com/webstore/detail/smart-toc/lifgeihcfpkmmlfjbailfpfhbahhibba)
+-------------------------------------------------------------------------------------------------
+
+Add a table of contents for web article or documentation。这个插件的作用很难用语言来描述。。大致的作用就是给当前网页生成一个“目录”，同时支持锚链接，当我们再看那种“老太太裹脚布”的文章的时候，这个扩展就可以大展身手了，类似下图： ![](https://merrier.wang/wp-content/uploads/2017/06/unnamed.png)
+
+[斗鱼HTML5播放器](https://chrome.google.com/webstore/detail/%E6%96%97%E9%B1%BChtml5%E6%92%AD%E6%94%BE%E5%99%A8/hbocinidadgpnbcamhjgfbgiebhpnmfj)
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+替换斗鱼TV的 Flash 播放器, 并支持弹幕, 送礼等功能. 目前是测试版本, 可能无法播放部分直播间. 基于 flv.js(https://github.com/Bilibili/flv.js)(感谢谦谦)
+
+[**Tampermonkey**](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
+-----------------------------------------------------------------------------------------------------------
+
+这个插件属于必装的插件之一，大家通常称其为“油猴脚本”，有了这个，你会发现**新世界大门**向你打开，里面有各种**秀出天**际的脚本：百度网盘直接下载助手、VIP视频破解、解决百度云大文件下载限制等等，安装脚本很简单，第一次安装该插件时会有一个简单的教程，还可以去[greasyfork.org](http://greasyfork.org)下载更多更厉害的脚本，从此上网之路会变得异常酷爽！
+
+[Onetab](https://chrome.google.com/webstore/detail/onetab/chphlpgkkbolifaimnlloiipkdnihall)
+-------------------------------------------------------------------------------------------
+
+用电脑经常用着用着就**不知觉地打开了很多页面**，用了多年的扎扎电脑很容易就出现浏览器**崩溃的状况**。装上这个onetab插件后，点击一下就可以把当前浏览器**打开的所有标签页集中到一个页面**，又可以开始愉快地浏览了，然后可以单独或全部恢复这些标签页。 或者可以打开一组**相关的页面**，点击后作为**一个合集分享出去**，工作上分享资料可以用到。 最重要的是能够**节省高达95％的内存：** ![](https://merrier.wang/wp-content/uploads/2017/06/unnamed.jpg)
+
+[Infinity新标签页(Pro)](https://chrome.google.com/webstore/detail/infinity-new-tab-pro/nnnkddnnlpamobajfibfdgfnbcnkgngh)
+--------------------------------------------------------------------------------------------------------------------
+
+这个**自定义的标签页**颜值颇高，同时还提供了**谷歌邮件自动提醒**功能，还有精美天气，待办事项，印象笔记一样的记事应用，高清壁纸，必应，百度，谷歌搜索，让你的使用更加简单方便快捷。还有高清壁纸库，从3万多张超清壁纸中一张一张搭配图标，精心挑选出365张，形成每日一图，当然你也可以从你自己电脑上选择图片作为壁纸。这是它的[官网](https://www.infinitynewtab.com)，可以说是居家必备良品了。
+
+[Copyfish](https://chrome.google.com/webstore/detail/copyfish-%F0%9F%90%9F-free-ocr-soft/eenjdnjldapjajjofmldgmkjaienebbj)
+--------------------------------------------------------------------------------------------------------------------------
+
+一款免费的**OCR文字识别插件**，可以帮助我们快速地从网页中进行区域选定识别文字。Copyfish可以从图像，PDF甚至是视频中识别提取文本，使用方法也很简便。非常适合用于那些不能复制文字的网页，选定后则会自动进行识别，弹出识别结果。还可以在设置中进行翻译语言设置等，识别后一键翻译。
+
+[掘金](https://chrome.google.com/webstore/detail/%E6%8E%98%E9%87%91/lecdifefmmfjnjjinhaennhdlmcaeeeb)
+---------------------------------------------------------------------------------------------------
+
+可以让你的新标签页变成掘金文章列表，包含Android、前端、产品、设计、iOS、后端六大频道，每个频道内都有一到多个为你精心准备的优质内容源。同时还可以添加Github、Dribbble的内容，为设计师、程序员、产品经理每日发现优质内容。当然，如果你不想作为新标签页使用的话，还可以使用其[网页版](https://e.xitu.io/)，其功能和新标签页是一模一样的，可以说是十分贴心了。
+
+[Momentum](https://chrome.google.com/webstore/detail/momentum/laookkfknpbbblfpciffpaejjkokdgca)
+-----------------------------------------------------------------------------------------------
+
+这也是一款改造新标签页的扩展程序，从下面的截图中可以看到，改造之后非常的炫酷，关键是每一天的壁纸都不一样，而且还可以添加 todoList 等更多功能，如果感兴趣的话可以自行探索。 ![](https://merrier.wang/wp-content/uploads/2017/06/WX20181027-153440@2x.jpg)
+
+[New Tab Dribbble](https://link.juejin.im/?target=https%3A%2F%2Fchrome.google.com%2Fwebstore%2Fdetail%2Fnew-tab-dribbble%2Fomhhjicbfncielplfgggjedgnkjoicjj)
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+这个就更厉害了，可以说是设计师的必备，你每次打开新的标签页都会第一时间把每日精品设计作品展示出来，你每天都能看到来自大神的作品，简直是灵感的源泉，作品都来自 Dribbble。
+
+[Isometric Contributions](https://link.juejin.im/?target=https%3A%2F%2Fchrome.google.com%2Fwebstore%2Fdetail%2Fisometric-contributions%2Fmjoedlfflcchnleknnceiplgaeoegien)
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+这个应该是程序员专属，它可以让我们 Github 的贡献图变成 3D 效果，非常适合用来装逼有没有，是不是很高大上： ![](https://merrier.wang/wp-content/uploads/2017/06/WX20181027-155628@2x.png)
+
+[GitHub Repository Size](https://chrome.google.com/webstore/detail/github-repository-size/apnjnioapinblneaedefcnopcjepgkci/related)
+-----------------------------------------------------------------------------------------------------------------------------------
+
+这款插件也是Github相关的一款辅助工具，它可以直接将仓库的大小以及仓库中各个文件的大小显示出来： ![](https://merrier.wang/wp-content/uploads/2017/06/unnamed-1.jpg)
+
+[Darkness](https://chrome.google.com/webstore/detail/darkness-beautiful-dark-t/imilbobhamcfahccagbncamhpnbkaenm)
+----------------------------------------------------------------------------------------------------------------
+
+Darkness为热门网站提供精美的深色主题，可以显著减轻由明亮的电脑屏幕引起的眼睛负担和疲劳： ![](https://merrier.wang/wp-content/uploads/2017/06/unnamed-1-1.jpg)
+
+[云盘万能钥匙](https://chrome.google.com/webstore/detail/%E4%BA%91%E7%9B%98%E4%B8%87%E8%83%BD%E9%92%A5%E5%8C%99/anlllmnpjodopgbkbpnghnjlelnogfjc)
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+官网地址：[https://ypsuperkey.meek.com.cn/](https://ypsuperkey.meek.com.cn/)，这款插件可以自动识别百度网盘提取密码，标识已失效的网盘链接，网盘分享从此更加简单。不过这款插件之所以会有如此能力，是因为它会在你提交百度网盘分享链接提取密码时收集提取密码信息，可能会涉及到隐私问题。除了Chrome浏览器，它还支持其他大部分浏览器，包括火狐、360、QQ、搜狗、UC等等。
+
+[沙拉查词](https://chrome.google.com/webstore/detail/沙拉查词-多词典专业划词翻译/cdonnmffkdaoajfknoeeecmchibpmkmg)
+-------------------------------------------------------------------------------------------------
+
+涵盖所有主流词典，多重划词模式，极致交互体验，灵活导出生词本，高度可配置，支持 PDF，兼容 Vimium 全键盘操作。对于想学英语的童鞋来说是一个很好的工具。
+
+[GayHub](https://chrome.google.com/webstore/detail/gayhub/mdcffelghikdiafnfodjlgllenhlnejl)
+-------------------------------------------------------------------------------------------
+
+首先，请忽略这个扩展的名字。。它的主要功能是优化 Github 的阅读体验：
+
+*   **文件目录树：**把 `Vscode` 的精美的侧边栏完美移植到 `github` 上
+*   **TOC导航：**能完美解析当前内容的所有嵌套标题，性能优越，滑动起来如丝滑般流畅。
+*   **夜间暗色主题**
+*   **图片全屏预览**
+*   **一键复制代码**
+
+其他人推荐的扩展程序
+==========
+
+以上是我自己使用过或在使用的一些扩展程序，还有一些扩展程序可能我自己并没有使用但是其他人推荐了，我也列举在下方，方便大家查看和选择：
+
+*   [优秀程序员都在用哪些Chrome拓展工具？](https://juejin.im/post/5b470d8de51d4519105d3bbd)
+
+如果因为某些显而易见的问题，无法从应用商店安装插件的话，可以尝试到[扩展迷官网](https://extfans.com/)下载。
+
+开发指南
+====
+
+其实Chrome扩展程序的开发并不是很难，只要你有前端的一些基础知识（HTML、CSS、JavaScript）就足够了，剩下的一些就是按照官方的文档或其他教程一步一步的编写+理解就可以了，下面是一些推荐的教程，相信看过之后你一定可以开发出一个类似天气、股票、PM2.5这样的扩展程序：
+
+*   [Chrome 扩展及应用开发](http://www.ituring.com.cn/book/1421)->来自图灵社区的免费电子书，适合入门。
+*   [Chrome扩展开发文档](https://link.zhihu.com/?target=http%3A//open.chrome.360.cn/extension_dev/overview.html)->来自360极速浏览器翻译的官方文档（比较老了，不是很推荐）。
+*   [Chrome 插件开发官方文档(英文)](https://developer.chrome.com/extensions)->前两个适合入门，实际开发的时候还是推荐官方的，查API啥的都很方便，况且这篇文档写的很赞，也简单易懂，强烈推荐。
+*   [ChokCoco-手把手教你开发扩展程序](http://www.cnblogs.com/coco1s/p/8004510.html)->ChokCoco老师的扩展程序开发教程，讲的挺好的，五星推荐！
+*   [Publish in the Chrome Web Store](https://developer.chrome.com/webstore/publish)->chrome官方出的发布自己的扩展程序的教程
+    
+*   [Chrome插件开发全攻略](https://github.com/sxei/chrome-plugin-demo)->作者花了将近一个多月的时间断断续续写下这篇博文，并精心写下了这个完整demo，里面包含的内容很多，包括了大部分的配置项，同时还附有源码，是一篇很不错的入门文章。
+*   [一篇文章教你顺利入门和开发chrome扩展程序（插件）](https://juejin.im/post/5c135a275188257284143418)->前面部分大多数是一些基础介绍，和别人的资料大同小异，但是用的是通俗的语言或者作者自己理解来描述的，不是拷贝官方的描述，更方便读者理解；后面部分多为一些作者在项目中总结的方法。
+    
+
+本人也有自己开发Chrome扩展程序的计划，等把手头工作忙完了就着手搞了，具体做什么的就先卖个关子了（万一被抄袭了呢😁）
