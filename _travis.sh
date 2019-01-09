@@ -31,6 +31,9 @@ function default(){
   cd ./public
 
 cat <<EOF >> README.md
+# Merrier说
+使用Hexo进行搭建，利用Travis CI实现持续集成
+## 自动部署集成日志
 部署状态 | 集成结果 | 参考值
 ---|---|---
 完成时间 | $time | yyyy-mm-dd hh:mm:ss
