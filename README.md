@@ -1,11 +1,14 @@
+# Merrier说
+使用Hexo进行搭建，利用Travis CI实现持续集成
+## 自动部署集成日志
 部署状态 | 集成结果 | 参考值
 ---|---|---
-完成时间 | 2019-01-09 02:53:17 | yyyy-mm-dd hh:mm:ss
+完成时间 | 2019-01-09 02:59:50 | yyyy-mm-dd hh:mm:ss
 部署环境 | linux + stable | window \| linux + stable
 部署类型 | push | push \| pull_request \| api \| cron
 启用Sudo | true | false \| true
 仓库地址 | merrier/merrier.github.io | owner_name/repo_name
-提交分支 | 334c249b9308e4bd58b0ed34b55f6a646331b316 | hash 16位
-提交信息 | add:.travis.yml |
-Job ID   | 477148661 |
-Job NUM  | 1.1 |
+提交分支 | b041a08e9fc21d662b59349f79cc0ed682cab493 | hash 16位
+提交信息 | update:readme |
+Job ID   | 477149975 |
+Job NUM  | 2.1 |
