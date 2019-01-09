@@ -29,8 +29,8 @@ rss: /atom.xml
 
 ## Carousel
 carousel:
-  img: './img/head-img.jpg'
-  url: 'javascript:'
+  img: '/images/压缩mobile-games.png'
+  url: '//github.com/merrier/mobile-games'
 
 # 各个小工具的设置
 

@@ -14,3 +14,9 @@ img:
 github: https://github.com/CodeFalling/hexo-asset-image
 
 用于解决Markdown中插入图片问题
+
+# hexo-generator-json-content
+
+github: https://github.com/alexbruno/hexo-generator-json-content
+
+很方便的添加站内搜索功能
