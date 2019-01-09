@@ -8,6 +8,7 @@ id: 2099
 categories:
   - 其他
 date: 2019-01-02 15:59:12
+img: /images/-e1510042162700.jpg
 ---
 
 npm技巧

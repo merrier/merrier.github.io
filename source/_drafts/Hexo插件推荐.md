@@ -1,4 +1,15 @@
-## hexo-asset-image
+---
+title: Hexo插件推荐
+categories:
+  - 分类
+tags:
+  - 标签
+comments: true
+date: 2019-01-08 18:35:04
+img:
+---
+
+# hexo-asset-image
 
 github: https://github.com/CodeFalling/hexo-asset-image
 
