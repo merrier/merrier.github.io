@@ -1,0 +1,410 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Merrier说">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://merrier.wang">
+    <!--SEO-->
+
+<meta name="description" content="Merrier的个人博客">
+
+
+
+<meta name="keywords" content="merrier 博客 前端 北邮人">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>CSS深入理解之z-index | Merrier说</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Merrier说" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1264342320 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1264342320%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Merrier">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 叩首问路，码梦为生 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://merrier.wang">Merrier说</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/frontend/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/algorithm/"><i class="fa "></i>算法</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/series/"><i class="fa "></i>系列专栏</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>文章归档</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="CSS深入理解之z-index">
+            
+	            CSS深入理解之z-index
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/CSS">
+            CSS
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/CSS" title="CSS">
+                        CSS
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/04/20</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="1-z-index基础"><a href="#1-z-index基础" class="headerlink" title="1.z-index基础"></a>1.z-index基础</h1><h2 id="z-index含义"><a href="#z-index含义" class="headerlink" title="z-index含义"></a>z-index含义</h2><p>z-index属性指定了元素及其子元素的[z顺序],而[z顺序]可以决定当元素发生覆盖的时候,哪个元素在上面.通常一个较大z-index值的元素会覆盖较低的那一个</p>
+<h2 id="属性值"><a href="#属性值" class="headerlink" title="属性值"></a>属性值</h2><p>auto–&gt;默认值</p>
+<p><integer>–&gt;整数值</integer></p>
+<p>inherit–&gt;继承</p>
+<h2 id="基本特性"><a href="#基本特性" class="headerlink" title="基本特性"></a>基本特性</h2><ul>
+<li>支持负值</li>
+<li>支持CSS3 animation动画</li>
+</ul>
+<p>@keyframes zIndex{<br>  0%{z-index:-1;}<br>  100%{z-index:51;}<br>}</p>
+<ul>
+<li>在CSS2.1时代，需要和定位元素配合使用</li>
+</ul>
+<p>如果不考虑CSS3,只有定位元素(position:relative/absolute/fixed/sticky,没有static)的z-index才有作用!在CSS3中有例外……</p>
+<h1 id="2-z-index与定位元素"><a href="#2-z-index与定位元素" class="headerlink" title="2.z-index与定位元素"></a>2.z-index与定位元素</h1><h2 id="如果定位元素z-index没有发生嵌套"><a href="#如果定位元素z-index没有发生嵌套" class="headerlink" title="如果定位元素z-index没有发生嵌套"></a>如果定位元素z-index没有发生嵌套</h2><ul>
+<li>后来居上</li>
+<li>哪个大，哪个在上面</li>
+</ul>
+<h2 id="如果定位元素发生嵌套"><a href="#如果定位元素发生嵌套" class="headerlink" title="如果定位元素发生嵌套"></a>如果定位元素发生嵌套</h2><p>祖先优先原则（前提：z-index为数值，不是auto）： <img src="https://merrier.wang/wp-content/uploads/2017/04/祖先优先.png" alt=""></p>
+<h1 id="3-层叠上下文"><a href="#3-层叠上下文" class="headerlink" title="3.层叠上下文"></a>3.层叠上下文</h1><p>层叠上下文(stacking context)是HTML元素中的一个三维概念,表示元素在z轴上有了”可以高人一等”的能力 含义:</p>
+<ul>
+<li>皇帝(你)</li>
+<li>当官(层叠上下文元素)</li>
+<li>家族(嵌套)</li>
+</ul>
+<p>层叠上下文是表示普通老百姓HTML元素当官了,离皇帝更近了</p>
+<h2 id="产生层叠上下文："><a href="#产生层叠上下文：" class="headerlink" title="产生层叠上下文："></a>产生层叠上下文：</h2><ol>
+<li>页面根元素天生具有层叠上下文,称之为”根层叠上下文”–&gt;皇亲国戚</li>
+<li>z-index值为数值的定位元素也具有层叠上下文–&gt;科考入选</li>
+<li>其他属性–&gt;其他当官途径</li>
+</ol>
+<h2 id="层叠上下文特性"><a href="#层叠上下文特性" class="headerlink" title="层叠上下文特性"></a>层叠上下文特性</h2><ul>
+<li>层叠上下文可以嵌套,组合成一个分层次的层叠上下文</li>
+</ul>
+<p>一个家里，爸爸可以当官，孩子也是可以同时当官的。这个家族的官就当得比较有层次</p>
+<ul>
+<li>每个层叠上下文和兄弟元素独立:当进行层叠变化或渲染的时候,只需要考虑后代元素</li>
+</ul>
+<p>自己当官，兄弟不沾光。有什么福利或者变故只会影响自己的孩子们</p>
+<ul>
+<li>每个层叠上下文是自成体系的:当元素的内容被层叠后,整个元素被认为是在父层的层叠顺序中</li>
+</ul>
+<p>每个当官的都有属于自己的小团体。当子孙或属下发生的排辈摩擦什么的，都是自己宅院的事情，不会影响官员自己和皇帝之间的距离</p>
+<h1 id="4-层叠水平"><a href="#4-层叠水平" class="headerlink" title="4.层叠水平"></a>4.层叠水平</h1><p>层叠上下文中的每个元素都有一个层叠水平(stacking level)，决定了同一个层叠上下文中元素在z轴上的显示顺序，<strong>遵循”后来居上”和”谁大谁上”的层叠准则</strong> 层<strong>叠水平和z-index不是一个东西</strong>.普通元素也有层叠水平 每一个当官的家里儿孙啊,仆人什么的,都有一个论资排辈(即层叠水平),决定了在一起的时候,谁排在前面,离官员更近</p>
+<h1 id="5-层叠顺序"><a href="#5-层叠顺序" class="headerlink" title="5.层叠顺序"></a>5.层叠顺序</h1><p>元素发生层叠时候有着特定的垂直显示顺序，即内容&gt;布局&gt;装饰 <img src="https://merrier.wang/wp-content/uploads/2017/04/7层层叠水平.png" alt=""></p>
+<h1 id="6-z-index与层叠上下文"><a href="#6-z-index与层叠上下文" class="headerlink" title="6.z-index与层叠上下文"></a>6.z-index与层叠上下文</h1><ol>
+<li>定位元素默认z-index:auto,同时可以看成是z-index:0;</li>
+<li>z-index不为auto的定位元素会创建层叠上下文;</li>
+<li>z-index层叠顺序的比较止步于父级层叠上下文;</li>
+</ol>
+<p><img src="https://merrier.wang/wp-content/uploads/2017/04/z-index与层叠上下文.png" alt=""></p>
+<h1 id="7-其他CSS属性与层叠上下文"><a href="#7-其他CSS属性与层叠上下文" class="headerlink" title="7.其他CSS属性与层叠上下文"></a>7.其他CSS属性与层叠上下文</h1><p>其他参与层叠上下文的属性们</p>
+<ol>
+<li>z-index值不为auto的flex项（父元素display：flex|inline-flex）</li>
+<li>元素的opacity值不是1</li>
+<li>元素的transform值不是none</li>
+<li>元素mix-blend-mode值不是normal</li>
+<li>元素的filter值不是none</li>
+<li>元素的isolation值是isolate</li>
+<li>position：fixed声明</li>
+<li>will-change指定的属性值为上面任意一个</li>
+<li>元素的-webkit-overflow-scrolling设为touch</li>
+</ol>
+<h1 id="8-z-index与其他CSS属性层叠上下文"><a href="#8-z-index与其他CSS属性层叠上下文" class="headerlink" title="8.z-index与其他CSS属性层叠上下文"></a>8.z-index与其他CSS属性层叠上下文</h1><h2 id="不支持z-index的层叠上下文元素的层叠顺序均是z-index：auto级别"><a href="#不支持z-index的层叠上下文元素的层叠顺序均是z-index：auto级别" class="headerlink" title="不支持z-index的层叠上下文元素的层叠顺序均是z-index：auto级别"></a>不支持z-index的层叠上下文元素的层叠顺序均是z-index：auto级别</h2><p><img src="https://merrier.wang/wp-content/uploads/2017/04/更完整的7阶层叠水平.png" alt=""></p>
+<h2 id="依赖z-index值创建层叠上下文的情况"><a href="#依赖z-index值创建层叠上下文的情况" class="headerlink" title="依赖z-index值创建层叠上下文的情况"></a>依赖z-index值创建层叠上下文的情况</h2><ol>
+<li>position值为relative/absolute或fixed(部分浏览器)</li>
+<li>display:flex|inline-flex容器的子flex项</li>
+</ol>
+<h1 id="9-z-index相关实践"><a href="#9-z-index相关实践" class="headerlink" title="9.z-index相关实践"></a>9.z-index相关实践</h1><h2 id="最小化影响原则"><a href="#最小化影响原则" class="headerlink" title="最小化影响原则"></a>最小化影响原则</h2><ul>
+<li>避免使用定位属性;</li>
+<li>定位属性从大容器平级分离为私有小容器</li>
+</ul>
+<h2 id="不犯二原则"><a href="#不犯二原则" class="headerlink" title="不犯二原则"></a>不犯二原则</h2><p>对于非浮层元素(浮层元素为弹框,蒙版之类),避免设置z-index值,z-index值没有任何道理需要超过2—-不犯二准则;</p>
+<h2 id="组件层级计数器"><a href="#组件层级计数器" class="headerlink" title="组件层级计数器"></a>组件层级计数器</h2><p>通过js获得body下子元素的最大z-index值</p>
+<h2 id="可访问性隐藏"><a href="#可访问性隐藏" class="headerlink" title="可访问性隐藏"></a>可访问性隐藏</h2><p>z-index负值元素在层叠上下文的背景之上,其他元素之下 <img src="https://merrier.wang/wp-content/uploads/2017/04/可访问性隐藏.png" alt=""></p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="//merrier.wang" target="_blank">Merrier说</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/20170421/relative-of-css-in-depth-understanding.html" class="pre-post btn btn-default" title="CSS深入理解之relative">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">CSS深入理解之relative</span>
+        </a>
+    
+    
+        <a href="/20170420/margin-of-css-in-depth-understanding.html" class="next-post btn btn-default" title="CSS深入理解之margin">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">CSS深入理解之margin</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+  <script id="dsq-count-scr" src="https://merrier.disqus.com/count.js" async></script>
+
+
+<script type="text/javascript">
+  var disqus_config = function () {
+    this.page.url = 'http://merrier.wang/20170420/z-index-of-css-in-depth-understanding.html';
+    this.page.identifier = '20170420/z-index-of-css-in-depth-understanding.html';
+    this.page.title = 'CSS深入理解之z-index';
+  };
+  var d = document, s = d.createElement('script');
+  s.src = 'https://merrier.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', '' + +new Date());
+  (d.head || d.body).appendChild(s);
+</script>
+
+
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-z-index基础"><span class="toc-text">1.z-index基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#z-index含义"><span class="toc-text">z-index含义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#属性值"><span class="toc-text">属性值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基本特性"><span class="toc-text">基本特性</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-z-index与定位元素"><span class="toc-text">2.z-index与定位元素</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#如果定位元素z-index没有发生嵌套"><span class="toc-text">如果定位元素z-index没有发生嵌套</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如果定位元素发生嵌套"><span class="toc-text">如果定位元素发生嵌套</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-层叠上下文"><span class="toc-text">3.层叠上下文</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#产生层叠上下文："><span class="toc-text">产生层叠上下文：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#层叠上下文特性"><span class="toc-text">层叠上下文特性</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-层叠水平"><span class="toc-text">4.层叠水平</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-层叠顺序"><span class="toc-text">5.层叠顺序</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-z-index与层叠上下文"><span class="toc-text">6.z-index与层叠上下文</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-其他CSS属性与层叠上下文"><span class="toc-text">7.其他CSS属性与层叠上下文</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-z-index与其他CSS属性层叠上下文"><span class="toc-text">8.z-index与其他CSS属性层叠上下文</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#不支持z-index的层叠上下文元素的层叠顺序均是z-index：auto级别"><span class="toc-text">不支持z-index的层叠上下文元素的层叠顺序均是z-index：auto级别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#依赖z-index值创建层叠上下文的情况"><span class="toc-text">依赖z-index值创建层叠上下文的情况</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9-z-index相关实践"><span class="toc-text">9.z-index相关实践</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#最小化影响原则"><span class="toc-text">最小化影响原则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#不犯二原则"><span class="toc-text">不犯二原则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#组件层级计数器"><span class="toc-text">组件层级计数器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#可访问性隐藏"><span class="toc-text">可访问性隐藏</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        访问量:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        访客数:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2018
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

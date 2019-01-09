@@ -1,0 +1,432 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Merrier说">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://merrier.wang">
+    <!--SEO-->
+
+<meta name="description" content="Merrier的个人博客">
+
+
+
+<meta name="keywords" content="merrier 博客 前端 北邮人">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>前端面试系列（9）——JS实现继承 | Merrier说</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Merrier说" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1264342320 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1264342320%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Merrier">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 叩首问路，码梦为生 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://merrier.wang">Merrier说</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/frontend/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/algorithm/"><i class="fa "></i>算法</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/series/"><i class="fa "></i>系列专栏</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>文章归档</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="前端面试系列（9）——JS实现继承">
+            
+	            前端面试系列（9）——JS实现继承
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/面试">
+            面试
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/JS" title="JS">
+                        JS
+                    </a>
+                
+                    <a href="/tags/前端面试" title="前端面试">
+                        前端面试
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/04/05</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>JS虽然声称面向对象，但是其很多特性与真正的“面向对象”仍有一定差距；面向对象的一大特性就是可以继承，所以如何在JS这种弱类型语言中实现继承就成为了前端面试中的常见问题，下面我就总结一下在JS中实现继承的几种方式：</p>
+<h1 id="定义父类"><a href="#定义父类" class="headerlink" title="定义父类"></a>定义父类</h1><p>既然要实现继承，首先得有一个父类：</p>
+<p>// 定义一个动物类<br>function Animal (name) {<br>  // 属性<br>  this.name = name || ‘Animal’;<br>  // 实例方法<br>  this.sleep = function(){<br>    console.log(this.name + ‘正在睡觉！’);<br>  }<br>}<br>// 原型方法<br>Animal.prototype.eat = function(food) {<br>  console.log(this.name + ‘正在吃：’ + food);<br>};</p>
+<h1 id="1、原型链继承"><a href="#1、原型链继承" class="headerlink" title="1、原型链继承"></a>1、原型链继承</h1><p><strong>核心</strong>：将父类的实例作为子类的原型</p>
+<p>function Cat(){<br>}<br>Cat.prototype = new Animal();<br>Cat.prototype.name = ‘cat’;</p>
+<p>//　Test Code<br>var cat = new Cat();<br>console.log(cat.name);<br>console.log(cat.eat(‘fish’));<br>console.log(cat.sleep());<br>console.log(cat instanceof Animal); //true<br>console.log(cat instanceof Cat); //true</p>
+<p><strong>特点</strong>：</p>
+<ol>
+<li>非常纯粹的继承关系，实例是子类的实例，也是父类的实例</li>
+<li>父类新增原型方法/原型属性，子类都能访问到</li>
+<li>简单，易于实现</li>
+</ol>
+<p><strong>缺点</strong>：</p>
+<ol>
+<li>要想为子类新增属性和方法，必须要在<code>new Animal()</code>这样的语句之后执行，不能放到构造器中</li>
+<li>无法实现多继承</li>
+<li>来自原型对象的引用属性是所有实例共享的</li>
+<li>创建子类实例时，无法向父类构造函数传参</li>
+</ol>
+<p><strong>推荐指数</strong>：★★（3、4两大致命缺陷）</p>
+<h1 id="2、构造继承"><a href="#2、构造继承" class="headerlink" title="2、构造继承"></a>2、构造继承</h1><p><strong>核心：</strong>使用父类的构造函数来增强子类实例，等于是复制父类的实例属性给子类（没用到原型） 除了call方法，也可以用apply()，由于篇幅原因，就不再详细介绍这两种方法</p>
+<p>function Cat(name){<br>  Animal.call(this);<br>  this.name = name || ‘Tom’;<br>}</p>
+<p>// Test Code<br>var cat = new Cat();<br>console.log(cat.name);<br>console.log(cat.sleep());<br>console.log(cat instanceof Animal); // false<br>console.log(cat instanceof Cat); // true</p>
+<p><strong>特点</strong>：</p>
+<ol>
+<li>解决了1中，子类实例共享父类引用属性的问题</li>
+<li>创建子类实例时，可以向父类传递参数</li>
+<li>可以实现多继承（call多个父类对象）</li>
+</ol>
+<p><strong>缺点</strong>：</p>
+<ol>
+<li>实例并不是父类的实例，只是子类的实例</li>
+<li>只能继承父类的实例属性和方法，不能继承原型属性/方法</li>
+<li>无法实现函数复用，每个子类都有父类实例函数的副本，影响性能</li>
+</ol>
+<p><strong>推荐指数</strong>：★★（缺点3）</p>
+<h1 id="3、实例继承"><a href="#3、实例继承" class="headerlink" title="3、实例继承"></a>3、实例继承</h1><p><strong>核心：</strong>为父类实例添加新特性，作为子类实例返回</p>
+<p>function Cat(name){<br>  var instance = new Animal();<br>  instance.name = name || ‘Tom’;<br>  return instance;<br>}</p>
+<p>// Test Code<br>var cat = new Cat();<br>console.log(cat.name);<br>console.log(cat.sleep());<br>console.log(cat instanceof Animal); // true<br>console.log(cat instanceof Cat); // false</p>
+<p><strong>特点</strong>：</p>
+<ol>
+<li>不限制调用方式，不管是<code>new 子类()</code>还是<code>子类()</code>,返回的对象具有相同的效果</li>
+</ol>
+<p><strong>缺点</strong>：</p>
+<ol>
+<li>实例是父类的实例，不是子类的实例</li>
+<li>不支持多继承</li>
+</ol>
+<p><strong>推荐指数</strong>：★★</p>
+<h1 id="4、拷贝继承"><a href="#4、拷贝继承" class="headerlink" title="4、拷贝继承"></a>4、拷贝继承</h1><p><strong>特点</strong>：使用for in将父类实例中的方法赋给子类实例</p>
+<p>function Cat(name){<br>  var animal = new Animal();<br>  for(var p in animal){<br>    Cat.prototype[p] = animal[p];<br>  }<br>  Cat.prototype.name = name || ‘Tom’;<br>}</p>
+<p>// Test Code<br>var cat = new Cat();<br>console.log(cat.name);<br>console.log(cat.sleep());<br>console.log(cat instanceof Animal); // false<br>console.log(cat instanceof Cat); // true</p>
+<p><strong>特点</strong>：</p>
+<ol>
+<li>支持多继承</li>
+</ol>
+<p><strong>缺点</strong>：</p>
+<ol>
+<li>效率较低，内存占用高（因为要拷贝父类的属性）</li>
+<li>无法获取父类不可枚举的方法（不可枚举方法，不能使用for in 访问到）</li>
+</ol>
+<p><strong>推荐指数</strong>：★（缺点1）</p>
+<h1 id="5-组合继承"><a href="#5-组合继承" class="headerlink" title="5.组合继承"></a>5.组合继承</h1><p><strong>核心：</strong>通过调用父类构造，继承父类的属性并保留传参的优点，然后通过将父类实例作为子类原型，实现函数复用</p>
+<p>function Cat(name){<br>  Animal.call(this);<br>  this.name = name || ‘Tom’;<br>}<br>Cat.prototype = new Animal();</p>
+<p>// Test Code<br>var cat = new Cat();<br>console.log(cat.name);<br>console.log(cat.sleep());<br>console.log(cat instanceof Animal); // true<br>console.log(cat instanceof Cat); // true</p>
+<p><strong>特点</strong>：</p>
+<ol>
+<li>弥补了方式2的缺陷，可以继承实例属性/方法，也可以继承原型属性/方法</li>
+<li>既是子类的实例，也是父类的实例</li>
+<li>不存在引用属性共享问题</li>
+<li>可传参</li>
+<li>函数可复用</li>
+</ol>
+<p><strong>缺点</strong>：</p>
+<ol>
+<li>调用了两次父类构造函数，生成了两份实例（子类实例将子类原型上的那份屏蔽了）</li>
+</ol>
+<p><strong>推荐指数</strong>：★★★★（仅仅多消耗了一点内存，也是最常用的一种继承方式）</p>
+<h1 id="6、寄生组合继承"><a href="#6、寄生组合继承" class="headerlink" title="6、寄生组合继承"></a>6、寄生组合继承</h1><p><strong>核心：</strong>通过寄生方式，砍掉父类的实例属性，这样，在调用两次父类的构造的时候，就不会初始化两次实例方法/属性，避免的组合继承的缺点</p>
+<p>function Cat(name){<br>  Animal.call(this);<br>  this.name = name || ‘Tom’;<br>}<br>(function(){<br>  // 创建一个没有实例方法的类<br>  var Super = function(){};<br>  Super.prototype = Animal.prototype;<br>  //将实例作为子类的原型<br>  Cat.prototype = new Super();<br>})();</p>
+<p>// Test Code<br>var cat = new Cat();<br>console.log(cat.name);<br>console.log(cat.sleep());<br>console.log(cat instanceof Animal); // true<br>console.log(cat instanceof Cat); //true</p>
+<p><strong>特点</strong>：</p>
+<ol>
+<li>堪称完美</li>
+</ol>
+<p><strong>缺点</strong>：</p>
+<ol>
+<li>实现较为复杂</li>
+</ol>
+<p><strong>推荐指数</strong>：★★★★（实现复杂，扣掉一颗星）</p>
+<h1 id="7、六种继承方式的联系"><a href="#7、六种继承方式的联系" class="headerlink" title="7、六种继承方式的联系"></a>7、六种继承方式的联系</h1><p><img src="https://merrier.wang/wp-content/uploads/2017/04/继承-300x272.jpg" alt=""> PS：虚线表示辅助作用，实现表示决定性作用</p>
+<h5 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h5><p>cnblogs：<a href="http://www.cnblogs.com/humin/p/4556820.html" target="_blank" rel="noopener">http://www.cnblogs.com/humin/p/4556820.html</a> cnblogs：<a href="http://www.cnblogs.com/ayqy/p/4471638.html" target="_blank" rel="noopener">http://www.cnblogs.com/ayqy/p/4471638.html</a></p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="//merrier.wang" target="_blank">Merrier说</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/20170405/closure-in-js.html" class="pre-post btn btn-default" title="前端面试系列（10）——JS中的闭包">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">前端面试系列（10）——JS中的闭包</span>
+        </a>
+    
+    
+        <a href="/20170405/tce-three-handshakes-and-four-breakups.html" class="next-post btn btn-default" title="前端面试系列（8）——TCP的三次握手与四次分手">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">前端面试系列（8）——TCP的三次握手与四次分手</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+  <script id="dsq-count-scr" src="https://merrier.disqus.com/count.js" async></script>
+
+
+<script type="text/javascript">
+  var disqus_config = function () {
+    this.page.url = 'http://merrier.wang/20170405/js-implements-inheritance.html';
+    this.page.identifier = '20170405/js-implements-inheritance.html';
+    this.page.title = '前端面试系列（9）——JS实现继承';
+  };
+  var d = document, s = d.createElement('script');
+  s.src = 'https://merrier.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', '' + +new Date());
+  (d.head || d.body).appendChild(s);
+</script>
+
+
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#写在前面"><span class="toc-text">写在前面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#定义父类"><span class="toc-text">定义父类</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1、原型链继承"><span class="toc-text">1、原型链继承</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2、构造继承"><span class="toc-text">2、构造继承</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3、实例继承"><span class="toc-text">3、实例继承</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4、拷贝继承"><span class="toc-text">4、拷贝继承</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-组合继承"><span class="toc-text">5.组合继承</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6、寄生组合继承"><span class="toc-text">6、寄生组合继承</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7、六种继承方式的联系"><span class="toc-text">7、六种继承方式的联系</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#参考链接"><span class="toc-text">参考链接</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        访问量:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        访客数:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2018
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

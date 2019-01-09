@@ -1,0 +1,396 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Merrier说">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://merrier.wang">
+    <!--SEO-->
+
+<meta name="description" content="Merrier的个人博客">
+
+
+
+<meta name="keywords" content="merrier 博客 前端 北邮人">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>写给刚接触前端的你 | Merrier说</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Merrier说" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1264342320 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1264342320%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Merrier">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 叩首问路，码梦为生 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://merrier.wang">Merrier说</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/frontend/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/algorithm/"><i class="fa "></i>算法</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/series/"><i class="fa "></i>系列专栏</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>文章归档</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="写给刚接触前端的你">
+            
+	            写给刚接触前端的你
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/杂谈">
+            杂谈
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/指南" title="指南">
+                        指南
+                    </a>
+                
+                    <a href="/tags/心得" title="心得">
+                        心得
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/04/03</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>转眼间，我做前端也有两年左右了，从一开始本科毕设用HDwiki搭了一个小网站，到现在用wordpress搭个人博客；从一开始改html的bug都得百度一下午，到现在可以试着写一些小插件；从一开始不知道为什么变量不用双引号，到现在将近二十万行的代码量；我承认这两年我进步了很多，但是回想起来还是有很多遗憾和不足，所以在这里想对刚接触前端的你说一些话，以免走弯路。这篇文章只对刚接触前端不到两个月，或者刚从所谓的“速成班”学成归来，对于前端之路比较迷茫的同学有用</p>
+<h1 id="前端进阶路线"><a href="#前端进阶路线" class="headerlink" title="前端进阶路线"></a>前端进阶路线</h1><p>前端学习路线是典型的先易后难，上手很简单，但是一旦深入就会发现比其他任何语言都要难，内容都要多得多，因为前端需要学的东西实在是太多太多，下面是我总结的进阶路线（我当然仍处于初级阶段）：</p>
+<ol>
+<li>CSS（CSS3）</li>
+<li>HTML（HTML5）</li>
+<li>JavaScript（ES6）</li>
+<li>HTTP协议</li>
+<li>代码优化</li>
+<li>性能优化</li>
+<li>框架了解和学习</li>
+<li>自己封装框架并进行模块化组件开发</li>
+<li>全栈Node.js</li>
+</ol>
+<p>接下来我会从以上的方面分别进行总结（有些坑希望你别爬，有些捷径希望你知道），前5个阶段我用两年的时间渡过了（代码优化是永久话题，并没有终点），后面的几个阶段我会摘抄一些其他人的总结；如果你没有耐心看下去那么多文字，可以直接看最后的总结O(∩_∩)O</p>
+<h1 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h1><p>如果你学习了一段时间前端，可能会觉得CSS好简单，但是CSS也有瓶颈期，而且运用得当的话会帮我们省去很多JavaScript代码，针对于css如何学习，我有以下建议： 1.只要是前端入门学习，<a href="http://www.w3school.com.cn/" target="_blank" rel="noopener">w3c</a>是再好不过的网站，这个网站有大量的实例教程，希望你有时间的话能够过一遍，就算记不住也没关系，有印象即可 2.MDN上有很多基础知识的文章，<a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Getting_started" target="_blank" rel="noopener">CSS入门教程</a>也是CSS学习的好材料 3.CSS3是一个突破点，因为之前CSS2的那些属性大家都已经用烂了，而CSS3尚处于开发研究阶段，如果能够熟练使用将会使自己升值不少 4.在了解了CSS的选择器、属性和值之后，再下一步就是CSS布局了，这里有一个专门用来学习<a href="http://zh.learnlayout.com/" target="_blank" rel="noopener">CSS布局</a>的网站，里面的教程很全面，相信你可以学到很多新的知识点 5.至少会一种CSS预处理工具（Sass、Less、Stylus），这些工具会让你的CSS书写更加快捷和舒服</p>
+<h1 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h1><p>作为前端界的“领头人”，html是我们和用户离得最近的代码语言，而html也是最容易提升的前端语言了，因为其核心就是语义化和加载速度，而对于前端初学者，我有话要说： 1.html基础学习依然推荐<a href="http://www.w3school.com.cn/" target="_blank" rel="noopener">w3c</a>和<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML" target="_blank" rel="noopener">MDN</a>，这两个网站的风格不同，w3c更书本化一些，可能需要一些耐心才能看下去，而MDN从网站的配色到文字描述风格都更“高大上”一些 2.HTML5方案已经实施很久了，各大浏览器基本上都已经实现了兼容（IE我就不吐槽了），所以对于h5的学习也是重点内容，尤其是canvas、audio&amp;video以及和性能优化相关的各种标签 3.一定要从刚写html开始就养成“语义化”和减少嵌套的习惯，文本多用p标签，代码块多用pre标签，表单提交多用submit……</p>
+<h1 id="Javascript"><a href="#Javascript" class="headerlink" title="Javascript"></a>Javascript</h1><p>如果说html是前端界的“领头人”，那JS就是前端界的“大高个”，也是最容易拉开差距的一门语言，所以JS的学习对于前端初学者来说就显得尤为重要了： 1.依然推荐<a href="http://www.w3school.com.cn/" target="_blank" rel="noopener">w3c</a>，和html与css不同的是，w3c上关于JS的教程实在是太多，如果真的时间不充足的话可以看的粗一些，知道概念就可以了 2.在对JS有一些概念之后，如果有比较急得项目需求，我推荐你看一下jQuery的相关教程（当然还是w3c），因为jQuery在JS框架里属于非常简单的，入门很快，但是能解决大部分项目需求，是一个性价比很高的js库 3.如果你的项目需要用到Node.js以及Vue.js等框架，可能需要看一下ES6的相关知识，推荐阮一峰的<a href="http://es6.ruanyifeng.com/" target="_blank" rel="noopener">ECMAScript 6 入门</a>，但是如果只用jQuery就解决了大部分项目需求，ES6可能就没有太多的机会应用到实际业务中了</p>
+<h1 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h1><p>可能你会比较纳闷，为什么还需要知道HTTP？但是请记住，前端是和客户端打交道的（至少目前来看是这样的），所以各种和客户端以及服务器相关的协议一定要了解一些，这对于你的前端水平提升尤为重要，可以让你更容易找到bug出在哪里（两年的前端经验使我更加明确这一点） 1.知道URL是怎么回事以及其组成规则 2.可以上网查一下HTTP各种状态码的含义，在调试代码和找bug的过程中会经常用到 3.cookie&amp;session的知识在某些类型的网站会经常用到（支付、博客）</p>
+<h1 id="代码优化"><a href="#代码优化" class="headerlink" title="代码优化"></a>代码优化</h1><p>对于程序猿来说，代码就像自己的门面，如果代码一团糟，就会让同行笑话甚至会因此丢掉工作，所以代码优化对于程序猿来说就属于必经阶段了：</p>
+<h2 id="1-css"><a href="#1-css" class="headerlink" title="1.css"></a>1.css</h2><ul>
+<li>减少选择器的叠加层数</li>
+<li>少用!important</li>
+<li>注意CSS书写顺序（在我的另一篇文章有写）</li>
+<li>命名规则尽量语义化</li>
+<li>少用内联样式</li>
+<li>注释、注释、注释！</li>
+</ul>
+<h2 id="2-html"><a href="#2-html" class="headerlink" title="2.html"></a>2.html</h2><ul>
+<li>减少div的嵌套层数</li>
+<li>多用语义化标签（h5标签居多）</li>
+<li>少用id</li>
+<li>注释、注释、注释！</li>
+</ul>
+<h2 id="3-JavaScript"><a href="#3-JavaScript" class="headerlink" title="3.JavaScript"></a>3.JavaScript</h2><ul>
+<li>按照功能进行命名</li>
+<li>尽可能面向对象编程</li>
+<li>注释、注释、注释！</li>
+</ul>
+<h1 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h1><p>前端是直接和用户打交道的，而浏览器的响应速度更会直接影响到用户体验，如果一个网站打开需要两秒钟，可能会有百分之30的用户直接关掉页面；如果一个网站打开需要五秒钟，可能以后就没有这家网站了，所以性能优化是一个优秀的前端工程师必备技能，同时也是终极目标；关于性能优化，首先你必须看过雅虎军规，没看过可以看看这篇文章-<a href="http://www.cnblogs.com/developersupport/p/3248695.html" target="_blank" rel="noopener">毫秒必争，前端网页性能最佳实践</a>。除此之外，你需要知道，性能优化包括以下几个方面：</p>
+<ol>
+<li>针对浏览器渲染页面原理的 CSS、JavaScript 语法层面优化</li>
+<li>针对 HTTP 协议特性网络性能优化（合并资源、压缩、多个域名等）</li>
+<li>用户体验层面性能优化（懒加载之类）</li>
+</ol>
+<p>在现在计算机运行速度下，只要代码写的不是特别过分，第一点对性能优化能做的很少，我们使用了更好的语法也不会对网页提速很多。第二点是必须要做的，而第三点现在主要成了性能优化的主要发力点</p>
+<h1 id="框架了解和学习"><a href="#框架了解和学习" class="headerlink" title="框架了解和学习"></a>框架了解和学习</h1><p>前端和所有计算机工作一样，终极目标都是解决问题，所以千万不要沉迷于框架或者语言的无谓之争上。对于前端来说，各种框架层出不穷，各种知识学都学不完，所以将html、css和js的基础掌握牢固才能以不变应万变 当然，框架也是为了方便书写代码和优化才产生的，其存在必有其合理之处，如果你已经开始从事前端工作，请听从领导的安排，一句话就是之前用什么框架现在就用什么框架吧。。除非决定要更换框架，否则不要轻易换框架，因为可能代价会比较高 如果你只是在校学生，还有很久的时间用来学习，我希望你能够把更多的精力放在基础学习上，不会因为各种各样的框架而不知道学什么；只要将基础知识掌握牢固，就什么框架都不在话下了，学习起来会很快</p>
+<h1 id="自己封装插件并进行模块化组件开发"><a href="#自己封装插件并进行模块化组件开发" class="headerlink" title="自己封装插件并进行模块化组件开发"></a>自己封装插件并进行模块化组件开发</h1><p>暂无</p>
+<h1 id="全栈Node-js"><a href="#全栈Node-js" class="headerlink" title="全栈Node.js"></a>全栈Node.js</h1><p>不得不说，Node.js在前端领域已经火的不要不要的了，因为其具备其他框架没有的特性——用js写后台；试想一下，一家公司只需要雇一个前端工程师就能完成前后端的所有工作，这将节省多少成本（有时候，前后端沟通联调也需要很长的时间成本），同时在Node.js基础上开发的插件也越来越多，使Node.js的功能愈加强大，似有一统前端之势。 所以，如果前端基础学习遇到瓶颈或者想去用Node.js的公司，可以尝试一下，不仅可以学到ES6的各种新知识还可以了解到异步编程、按需加载等比较新的技术</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>1.在线学习网站+教程：<a href="https://merrier.wang/?page_id=100#6">https://merrier.wang/?page_id=100#6</a> 2.推荐书籍：<a href="https://www.amazon.cn/%E7%BC%96%E5%86%99%E9%AB%98%E8%B4%A8%E9%87%8F%E4%BB%A3%E7%A0%81-Web%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E4%BF%AE%E7%82%BC%E4%B9%8B%E9%81%93-%E6%9B%B9%E5%88%98%E9%98%B3/dp/B003U8XUKQ/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1491232879&amp;sr=1-1&amp;keywords=%E7%BC%96%E5%86%99%E9%AB%98%E8%B4%A8%E9%87%8F%E4%BB%A3%E7%A0%81-Web%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E4%BF%AE%E7%82%BC%E4%B9%8B%E9%81%93" target="_blank" rel="noopener">《编写高质量代码–Web前端开发修炼之道》</a>、<a href="https://www.amazon.cn/JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1-%E6%B3%BD%E5%8D%A1%E6%96%AF/dp/B007OQQVMY/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1491232933&amp;sr=1-1&amp;keywords=JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1" target="_blank" rel="noopener">《JavaScript高级程序设计》</a>、<a href="https://www.amazon.cn/O-Reilly%E7%B2%BE%E5%93%81%E5%9B%BE%E4%B9%A6%E7%B3%BB%E5%88%97-JavaScript%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97-%E5%BC%97%E5%85%B0%E7%BA%B3%E6%A0%B9/dp/B007VISQ1Y/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1491232959&amp;sr=1-1&amp;keywords=JavaScript%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97" target="_blank" rel="noopener">《JavaScript权威指南》</a>、<a href="https://www.amazon.cn/%E9%94%8B%E5%88%A9%E7%9A%84jQuery-%E5%8D%95%E4%B8%9C%E6%9E%97/dp/B0089TDFNS/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1491232981&amp;sr=1-1&amp;keywords=%E9%94%8B%E5%88%A9%E7%9A%84jQuery" target="_blank" rel="noopener">《锋利的jQuery》</a>、<a href="http://www.amazon.cn/%E5%9B%BE%E7%81%B5%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E4%B8%9B%E4%B9%A6-%E5%9B%BE%E8%A7%A3HTTP-%E4%B8%8A%E9%87%8E%E5%AE%A3/dp/B00JTQK1L4/ref=sr_1_1?ie=UTF8&amp;qid=1454568244&amp;sr=8-1&amp;keywords=%E5%9B%BE%E8%A7%A3http" target="_blank" rel="noopener">《图解HTTP》</a>、<a href="https://www.amazon.cn/HTTP%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97-%E5%90%89%E5%B0%94%E5%88%A9/dp/B008XFDQ14/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1491233005&amp;sr=1-1&amp;keywords=HTTP%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97" target="_blank" rel="noopener">《HTTP权威指南》</a>、<a href="https://www.amazon.cn/%E7%B2%BE%E5%BD%A9%E7%BB%9D%E4%BC%A6%E7%9A%84CSS-%E8%BF%88%E8%80%B6/dp/B008F4VJ94/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1491233037&amp;sr=1-1&amp;keywords=%E7%B2%BE%E5%BD%A9%E7%BB%9D%E4%BC%A6%E7%9A%84CSS" target="_blank" rel="noopener">《精彩绝伦的CSS》</a>、<a href="https://www.amazon.cn/%E5%93%8D%E5%BA%94%E5%BC%8FWeb%E8%AE%BE%E8%AE%A1-HTML5%E5%92%8CCSS3%E5%AE%9E%E6%88%98-%E7%AC%AC2%E7%89%88-%E8%8B%B1-%E6%9C%AC-%E5%BC%97%E8%8E%B1%E6%81%A9/dp/B01MYA9MC1/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1491233055&amp;sr=1-1&amp;keywords=%E5%93%8D%E5%BA%94%E5%BC%8FWeb%E8%AE%BE%E8%AE%A1%EF%BC%9AHTML5%E5%92%8CCSS3%E5%AE%9E%E6%88%98" target="_blank" rel="noopener">《响应式Web设计：HTML5和CSS3实战》</a>、<a href="https://www.amazon.cn/%E5%9B%BE%E4%B9%A6/dp/B00FF3P8FY/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1491233075&amp;sr=1-1&amp;keywords=Head+First+HTML%E4%B8%8ECSS" target="_blank" rel="noopener">《Head First HTML与CSS》</a>、<a href="https://www.amazon.cn/%E5%9B%BE%E4%B9%A6/dp/B016IB30L0/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1491233101&amp;sr=1-1&amp;keywords=HTML5%E4%B8%8ECSS3%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97" target="_blank" rel="noopener">《HTML5与CSS3权威指南》</a> 3.除了上面介绍到的基础知识之外，还需要对以下技术点有所了解和掌握：</p>
+<ul>
+<li><strong>git</strong>：代码托管工具，大有取代SVN之势</li>
+<li><strong>Markdown</strong>：github御用格式，语法简单实用，养成多写文档的习惯大有裨益</li>
+<li><strong>vi命令</strong>：界面简单但是功能强大的编辑器-Vim，知道一些常用命令可以事半功倍</li>
+<li><strong>Linux</strong>：Linux即使在今天依然发挥着强大的优势</li>
+</ul>
+<p>4.作为前端初学者，一定要<strong>多看、多想、多做</strong>： 多看：经常浏览一些做得比较好的网站，看他们的html结构、页面布局、class命名以及各种动画设计和实现，会不时地发现新的创意和灵感 多想：碰到bug一定要多想，多尝试；从我自身而言，我觉得找bug是提升最快的一种方式，而很多初学者都很怕找bug，以至于上次遇到的bug这次遇到了还是不会解决，这会严重阻碍你的进步！ 多做：和所有语言一样，只看不做是不会记得久的，所以在看文字教程和视频教程的同时，一定要多在编辑器里敲一敲代码，同时也要尝试着做一下笔记，对于个人的成长也会很有帮助 5.<strong>忌浮躁</strong>，不要为框架而烦恼，只要学好了基础，框架就不是难题；但如果基础学不好，用框架的时候也会碰到各种麻烦，所以作为前端工程师（这样形容会不会显得高大上？），一定要戒骄戒躁，遇到不会的问题先自己思考，实在想不出来了再去询问前辈或者上网找答案，这样才能提升自己的水平 6.最好<strong>了解一门后台语言</strong>，最起码读得懂后台写的什么，这样会省去很多前后台沟通的时间</p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="//merrier.wang" target="_blank">Merrier说</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/20170404/css-writing-specification.html" class="pre-post btn btn-default" title="CSS书写规范">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">CSS书写规范</span>
+        </a>
+    
+    
+        <a href="/20170403/the-css-box-model.html" class="next-post btn btn-default" title="前端面试系列（5）——CSS盒子模型">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">前端面试系列（5）——CSS盒子模型</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+  <script id="dsq-count-scr" src="https://merrier.disqus.com/count.js" async></script>
+
+
+<script type="text/javascript">
+  var disqus_config = function () {
+    this.page.url = 'http://merrier.wang/20170403/to-you-who-just-touched-the-front-end.html';
+    this.page.identifier = '20170403/to-you-who-just-touched-the-front-end.html';
+    this.page.title = '写给刚接触前端的你';
+  };
+  var d = document, s = d.createElement('script');
+  s.src = 'https://merrier.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', '' + +new Date());
+  (d.head || d.body).appendChild(s);
+</script>
+
+
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#写在前面"><span class="toc-text">写在前面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#前端进阶路线"><span class="toc-text">前端进阶路线</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CSS"><span class="toc-text">CSS</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HTML"><span class="toc-text">HTML</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Javascript"><span class="toc-text">Javascript</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HTTP"><span class="toc-text">HTTP</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#代码优化"><span class="toc-text">代码优化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-css"><span class="toc-text">1.css</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-html"><span class="toc-text">2.html</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-JavaScript"><span class="toc-text">3.JavaScript</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#性能优化"><span class="toc-text">性能优化</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#框架了解和学习"><span class="toc-text">框架了解和学习</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#自己封装插件并进行模块化组件开发"><span class="toc-text">自己封装插件并进行模块化组件开发</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#全栈Node-js"><span class="toc-text">全栈Node.js</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        访问量:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        访客数:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2018
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

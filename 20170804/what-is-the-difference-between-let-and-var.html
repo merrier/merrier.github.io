@@ -1,0 +1,364 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Merrier说">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://merrier.wang">
+    <!--SEO-->
+
+<meta name="description" content="Merrier的个人博客">
+
+
+
+<meta name="keywords" content="merrier 博客 前端 北邮人">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>let和var到底有什么区别？ | Merrier说</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Merrier说" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1264342320 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1264342320%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Merrier">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 叩首问路，码梦为生 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://merrier.wang">Merrier说</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/frontend/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/algorithm/"><i class="fa "></i>算法</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/series/"><i class="fa "></i>系列专栏</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>文章归档</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="let和var到底有什么区别？">
+            
+	            let和var到底有什么区别？
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/stackoverflow">
+            stackoverflow
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/ES6" title="ES6">
+                        ES6
+                    </a>
+                
+                    <a href="/tags/JS" title="JS">
+                        JS
+                    </a>
+                
+                    <a href="/tags/stackoverflow" title="stackoverflow">
+                        stackoverflow
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/08/04</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <p>问题来自于stackoverflow：<a href="https://stackoverflow.com/questions/762011/whats-the-difference-between-using-let-and-var-to-declare-a-variable" target="_blank" rel="noopener">What’s the difference between using “let” and “var” to declare a variable?</a> 我们都知道ES 6中引入了let声明，而let也一直被认为是声明“局部变量”，那么let和var到底有什么区别呢？</p>
+<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>首先，从其定义本身，其区别之一是起作用的范围： var起作用的范围是其最近的方法体，而let起作用的范围是其最近的包围块，所谓的“包围块”是有可能比方法体小的。但是<strong>如果都是全局作用域上声明的话，var和let起作用的范围其实是一样的</strong> 除此之外，用let声明的变量在它们被声明之前是无法访问到的（有点类似于严格模式），举个栗子：</p>
+<p>console.log(‘globalVar: ‘ + globalVar);<br>console.log(‘globalLet: ‘ + globalLet);<br>var globalVar = ‘globalVar’;  //globalVar: undefined<br>let globalLet = ‘globalLet’;  //Uncaught ReferenceError: globalLet is not defined</p>
+<h1 id="作为全局变量"><a href="#作为全局变量" class="headerlink" title="作为全局变量"></a>作为全局变量</h1><p>和var不同，用let声明的“全局变量”将不会作为属性赋给window，简单的栗子：</p>
+<p>let me = ‘go’;<br>var i = ‘able’;<br>console.log(window.me); // undefined<br>console.log(window.i); // ‘able’</p>
+<h1 id="在函数中声明"><a href="#在函数中声明" class="headerlink" title="在函数中声明"></a>在函数中声明</h1><p>当它们在函数体中声明时是一样的：</p>
+<p>function ingWithinEstablishedParameters() {<br>    let funclet = ‘funclet’; //作用域为函数体内部<br>    var funcvar = ‘funcvar’; //作用域为函数体内部<br>}</p>
+<h1 id="在循环体中声明"><a href="#在循环体中声明" class="headerlink" title="在循环体中声明"></a>在循环体中声明</h1><p>当我们在循环体中声明变量（例如for）时，var和let是有显著区别的：let只在循环体内部可访问，而var在整个方法体中都可访问。还是个栗子：</p>
+<p>function allyIlliterate() {<br>    //tuce在这里不可访问<br>    for( let tuce = 0; tuce &lt; 5; tuce++ ) {<br>        //tuce只能在这里访问得到<br>        //所以每次循环之后tuce的值都会变<br>    }<br>    //tuce在这里也不可访问<br>}</p>
+<p>function byE40() {<br>    //nish在这里可以访问</p>
+<pre><code>for( var nish = 0; nish &lt; 5; nish++ ) {
+    //nish在整个方法体中都可以访问得到
+}
+
+//nish在这里也可以访问
+</code></pre><p>}</p>
+<h1 id="声明覆盖"><a href="#声明覆盖" class="headerlink" title="声明覆盖"></a>声明覆盖</h1><p>在严格模式下，var允许你重新给一个变量赋值，但是let不允许：</p>
+<p>‘use strict’;<br>let me = ‘foo’;<br>let me = ‘bar’; // SyntaxError: Identifier ‘me’ has already been declared</p>
+<p>‘use strict’;<br>var me = ‘foo’;<br>var me = ‘bar’; // 没毛病，现在me就是bar了</p>
+<p>虽然let和var在某些情况下是一样的行为表现，但还是推荐大家多使用“let”，逐渐放弃“var”的使用。</p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="//merrier.wang" target="_blank">Merrier说</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/20170804/you-probably-dont-know-html.html" class="pre-post btn btn-default" title="你可能不会HTML">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">你可能不会HTML</span>
+        </a>
+    
+    
+        <a href="/20170804/how-to-clear-an-array-in-js.html" class="next-post btn btn-default" title="在JS中如何清空一个数组？">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">在JS中如何清空一个数组？</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+  <script id="dsq-count-scr" src="https://merrier.disqus.com/count.js" async></script>
+
+
+<script type="text/javascript">
+  var disqus_config = function () {
+    this.page.url = 'http://merrier.wang/20170804/what-is-the-difference-between-let-and-var.html';
+    this.page.identifier = '20170804/what-is-the-difference-between-let-and-var.html';
+    this.page.title = 'let和var到底有什么区别？';
+  };
+  var d = document, s = d.createElement('script');
+  s.src = 'https://merrier.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', '' + +new Date());
+  (d.head || d.body).appendChild(s);
+</script>
+
+
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#定义"><span class="toc-text">定义</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#作为全局变量"><span class="toc-text">作为全局变量</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#在函数中声明"><span class="toc-text">在函数中声明</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#在循环体中声明"><span class="toc-text">在循环体中声明</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#声明覆盖"><span class="toc-text">声明覆盖</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        访问量:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        访客数:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2018
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

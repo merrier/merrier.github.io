@@ -1,0 +1,416 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Merrier说">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://merrier.wang">
+    <!--SEO-->
+
+<meta name="description" content="Merrier的个人博客">
+
+
+
+<meta name="keywords" content="merrier 博客 前端 北邮人">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>Promise入门 | Merrier说</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Merrier说" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1264342320 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1264342320%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Merrier">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 叩首问路，码梦为生 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://merrier.wang">Merrier说</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/frontend/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/algorithm/"><i class="fa "></i>算法</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/series/"><i class="fa "></i>系列专栏</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>文章归档</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Promise入门">
+            
+	            Promise入门
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/慕课网">
+            慕课网
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/ES6" title="ES6">
+                        ES6
+                    </a>
+                
+                    <a href="/tags/JS" title="JS">
+                        JS
+                    </a>
+                
+                    <a href="/tags/笔记" title="笔记">
+                        笔记
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/02/26</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <p>幕课网上的视频——<a href="https://www.imooc.com/learn/949" target="_blank" rel="noopener">Promise入门</a>笔记，Promise作为ES6中最重要的特性之一，对其进行了解和学习是非常有必要的，课程的源码已经上传至<a href="https://github.com/merrier/imooc-promise-sample" target="_blank" rel="noopener">我的github</a>。</p>
+<h1 id="Promise是什么"><a href="#Promise是什么" class="headerlink" title="Promise是什么"></a>Promise是什么</h1><h2 id="MDN"><a href="#MDN" class="headerlink" title="MDN"></a>MDN</h2><blockquote>
+<ul>
+<li>The Promise object is used for asynchronous computations.</li>
+<li>A Promise represents a value which may be available now, or in the future, or never.</li>
+</ul>
+</blockquote>
+<h2 id="MDN中文"><a href="#MDN中文" class="headerlink" title="MDN中文"></a>MDN中文</h2><blockquote>
+<ul>
+<li>Promise对象用于异步计算。</li>
+<li>一个Promise表示一个现在、将来或永不可能可用的值。</li>
+</ul>
+</blockquote>
+<h2 id="按照用途来解释"><a href="#按照用途来解释" class="headerlink" title="按照用途来解释"></a>按照用途来解释</h2><ul>
+<li>主要用于异步计算</li>
+<li>可以将异步操作队列化，按照期望的顺序执行，返回符合预期的结果。</li>
+<li>可以在对象之间传递和操作Promise，帮助我们处理队列。</li>
+</ul>
+<h1 id="回调存在的问题"><a href="#回调存在的问题" class="headerlink" title="回调存在的问题"></a>回调存在的问题</h1><ol>
+<li>嵌套层次很深，难以维护</li>
+<li>无法正常使用return和throw</li>
+<li>无法正常检索堆栈信息</li>
+<li>多个回调之间难以建立联系</li>
+</ol>
+<h1 id="Promise详解"><a href="#Promise详解" class="headerlink" title="Promise详解"></a>Promise详解</h1><ul>
+<li>Promise是一个代理对象，它和原先要进行的操作并无关系</li>
+<li>它通过引入一个回调，避免更多的回调</li>
+</ul>
+<h2 id="Promise有3个状态"><a href="#Promise有3个状态" class="headerlink" title="Promise有3个状态"></a>Promise有3个状态</h2><ol>
+<li>pending[待定]——初始状态</li>
+<li>fulfilled[实现]操作成功</li>
+<li>rejected[被否决]操作失败</li>
+</ol>
+<p>当Promise的状态发生改变，就会触发.then()里的响应函数处理后续步骤 Promise状态一经改变，不会再变 只有在连续多个回调顺序执行的时候，Promise才会显示出其威力</p>
+<h1 id="then"><a href="#then" class="headerlink" title=".then()"></a>.then()</h1><ul>
+<li>.then()接受两个函数作为参数，分别代表fulfilled和rejected</li>
+<li>.then()返回一个新的Promise实例，所以它可以链式调用</li>
+<li>当前面的Promise状态改变时，.then()根据其最终状态，选择特定的状态响应函数执行</li>
+<li>状态响应函数可以返回新的Promise，或其它值</li>
+<li>如果返回新的Promise，那么下一级.then()会在新的Promise状态改变之后执行</li>
+<li>如果返回其它任何值，则会立刻执行下一级.then()</li>
+</ul>
+<h1 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h1><p>Promise会自动捕获内部异常，并交给rejected响应函数处理 最好是在语句的最后通过catch捕获错误，因为catch可以捕获resolve回调中发生的错误，而reject回调无法捕获 catch也会返回一个Promise实例，并且它返回的Promise实例如果没有错误的话也是fulfilled状态，所以catch()后面的.then()也都会触发，但是catch()后面的.catch()不会触发（<strong>如果在第一个catch()中没有抛出错误</strong>）</p>
+<h3 id="强烈建议在所有队列最后都加上-catch-，以避免漏掉错误处理造成意想不到的问题："><a href="#强烈建议在所有队列最后都加上-catch-，以避免漏掉错误处理造成意想不到的问题：" class="headerlink" title="强烈建议在所有队列最后都加上.catch()，以避免漏掉错误处理造成意想不到的问题："></a>强烈建议在所有队列最后都加上.catch()，以避免漏掉错误处理造成意想不到的问题：</h3><p>doSomething()<br>  .doAnotherThing()<br>  .doMoreThing()<br>  .catch( err =&gt; {<br>    console.log(err);<br>  });</p>
+<h1 id="实现队列"><a href="#实现队列" class="headerlink" title="实现队列"></a>实现队列</h1><p>有时候我们不希望所有动作一起发生，而是按照一定顺序，逐个进行：</p>
+<p>let promise = doSomething();<br>promise = promise.then(doSomethingElse);<br>promise = promise.then(doSomethingElse2);<br>promise = promise.then(doSomethingElse3);<br>…</p>
+<h2 id="使用-forEach"><a href="#使用-forEach" class="headerlink" title="使用.forEach()"></a>使用.forEach()</h2><p>function queue(things) {<br>  let promise = Promise.resolve();<br>  things.forEach( thing =&gt; {<br>    promise = promise.then( () =&gt; {<br>      return new Promise( resolve =&gt; {<br>        doThing(thing, () =&gt; {<br>          resolve();<br>        })<br>      })<br>    })<br>  });<br>  return promise;<br>}<br>queue([‘lots’, ‘of’, ‘things’, ….]);</p>
+<h2 id="使用-reduce"><a href="#使用-reduce" class="headerlink" title="使用.reduce()"></a>使用.reduce()</h2><p>function queue(things) {<br>  return things.reduce( (promise, thing) =&gt; {<br>    promise = promise.then( () =&gt; {<br>      return new Promise( resolve =&gt; {<br>        doThing(thing, () =&gt; {<br>          resolve();<br>        })<br>      })<br>    })<br>  }, Promise.resolve());<br>}<br>queue([‘lots’, ‘of’, ‘things’, ….]);</p>
+<h1 id="Promise常用函数"><a href="#Promise常用函数" class="headerlink" title="Promise常用函数"></a>Promise常用函数</h1><h2 id="Promise-resolve"><a href="#Promise-resolve" class="headerlink" title="Promise.resolve()"></a>Promise.resolve()</h2><p>返回一个fulfilled的Promise实例，或原始Promise实例</p>
+<ul>
+<li>参数为空，返回一个状态为fulfilled的Promise实例</li>
+<li>参数是一个跟Promise无关的值，同上，不过fulfilled响应函数会得到这个参数</li>
+<li>参数为Promise实例，则返回该实例，不做任何修改</li>
+<li>参数为thenable（有then方法），立刻执行它的.then()</li>
+</ul>
+<h2 id="Promise-reject"><a href="#Promise-reject" class="headerlink" title="Promise.reject()"></a>Promise.reject()</h2><p>返回一个rejected的Promise实例</p>
+<ul>
+<li><strong>Promise.reject()不认thenable</strong></li>
+<li>其他和Promise.resolve()类似</li>
+</ul>
+<h2 id="Promise-all"><a href="#Promise-all" class="headerlink" title="Promise.all()"></a>Promise.all()</h2><p>Promise.all([p1, p2, p3, …])用于将多个Promise实例包装成一个新的Promise实例 当所有子Promise都完成，该Promise完成，返回值是<strong>全部值的数组</strong> 有任何一个失败，该Promise失败，返回值是<strong>第一个失败的子Promise的结果</strong> 最常见的是和.map()连用</p>
+<h2 id="Promise-race"><a href="#Promise-race" class="headerlink" title="Promise.race()"></a>Promise.race()</h2><p>类似Promise.all()，区别在于它有任意一个完成就算完成。</p>
+<h3 id="常见用法："><a href="#常见用法：" class="headerlink" title="常见用法："></a>常见用法：</h3><ul>
+<li>把异步操作和定时器放在一起</li>
+<li>如果定时器先触发，就认为超时，告知用户</li>
+</ul>
+<h1 id="async-await"><a href="#async-await" class="headerlink" title="async/await"></a>async/await</h1><p>ES2017新增运算符，新的语言元素</p>
+<ul>
+<li>赋予JavaScript以顺序手法编写异步脚本的能力！</li>
+<li>既保留异步运算的无阻赛特性，还继续使用同步写法。</li>
+<li>还能正常使用return/try/catch</li>
+</ul>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="//merrier.wang" target="_blank">Merrier说</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/20180416/website-configuration-https.html" class="pre-post btn btn-default" title="网站配置HTTPS踩坑记">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">网站配置HTTPS踩坑记</span>
+        </a>
+    
+    
+        <a href="/20180219/video-scoring-and-recommendation-on-muke.html" class="next-post btn btn-default" title="慕课网视频评分&推荐">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">慕课网视频评分&推荐</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+  <script id="dsq-count-scr" src="https://merrier.disqus.com/count.js" async></script>
+
+
+<script type="text/javascript">
+  var disqus_config = function () {
+    this.page.url = 'http://merrier.wang/20180226/introduction-to-promise.html';
+    this.page.identifier = '20180226/introduction-to-promise.html';
+    this.page.title = 'Promise入门';
+  };
+  var d = document, s = d.createElement('script');
+  s.src = 'https://merrier.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', '' + +new Date());
+  (d.head || d.body).appendChild(s);
+</script>
+
+
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Promise是什么"><span class="toc-text">Promise是什么</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#MDN"><span class="toc-text">MDN</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MDN中文"><span class="toc-text">MDN中文</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#按照用途来解释"><span class="toc-text">按照用途来解释</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#回调存在的问题"><span class="toc-text">回调存在的问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Promise详解"><span class="toc-text">Promise详解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Promise有3个状态"><span class="toc-text">Promise有3个状态</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#then"><span class="toc-text">.then()</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#错误处理"><span class="toc-text">错误处理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#强烈建议在所有队列最后都加上-catch-，以避免漏掉错误处理造成意想不到的问题："><span class="toc-text">强烈建议在所有队列最后都加上.catch()，以避免漏掉错误处理造成意想不到的问题：</span></a></li></ol></li></ol><li class="toc-item toc-level-1"><a class="toc-link" href="#实现队列"><span class="toc-text">实现队列</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#使用-forEach"><span class="toc-text">使用.forEach()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用-reduce"><span class="toc-text">使用.reduce()</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Promise常用函数"><span class="toc-text">Promise常用函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Promise-resolve"><span class="toc-text">Promise.resolve()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Promise-reject"><span class="toc-text">Promise.reject()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Promise-all"><span class="toc-text">Promise.all()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Promise-race"><span class="toc-text">Promise.race()</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#常见用法："><span class="toc-text">常见用法：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#async-await"><span class="toc-text">async/await</span></a></li>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        访问量:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        访客数:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2018
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

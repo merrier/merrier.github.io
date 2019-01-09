@@ -1,0 +1,369 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Merrier说">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://merrier.wang">
+    <!--SEO-->
+
+<meta name="description" content="Merrier的个人博客">
+
+
+
+<meta name="keywords" content="merrier 博客 前端 北邮人">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>JS中的浅拷贝和深拷贝 | Merrier说</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Merrier说" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1264342320 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1264342320%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Merrier">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 叩首问路，码梦为生 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://merrier.wang">Merrier说</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/frontend/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/algorithm/"><i class="fa "></i>算法</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/series/"><i class="fa "></i>系列专栏</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>文章归档</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="JS中的浅拷贝和深拷贝">
+            
+	            JS中的浅拷贝和深拷贝
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/计算机基础">
+            计算机基础
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/JS" title="JS">
+                        JS
+                    </a>
+                
+                    <a href="/tags/计算机基础" title="计算机基础">
+                        计算机基础
+                    </a>
+                
+                    <a href="/tags/数据结构" title="数据结构">
+                        数据结构
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/07/30</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="浅拷贝VS深拷贝"><a href="#浅拷贝VS深拷贝" class="headerlink" title="浅拷贝VS深拷贝"></a>浅拷贝VS深拷贝</h1><p>浅拷贝和深拷贝也成为<strong>浅复制</strong>和<strong>深复制</strong>，是在很多编程语言中经常用到的方法。另外，本文只会涉及到js中<strong>复杂数据类型</strong>的拷贝问题（Object,Array等），不讨论基本数据类型（null,undefined,string,number和boolean），因为基本数据类型不存在引用值的情况。浅拷贝和深拷贝都可以实现在已有对象的基础上再生一份的作用，但是对象的实例是存储在堆内存中然后通过一个<strong>引用值</strong>去操作对象，由此拷贝的时候就存在两种情况了：<strong>拷贝引用和拷贝实例</strong>，这也是浅拷贝和深拷贝的区别所在： 浅拷贝：只会将对象的各个属性进行依次复制，<strong>并不会进行递归复制</strong>，而JS中存储对象都是存地址的，所以浅拷贝会导致obj.arr和shallowObj.arr指向同一块内存地址 深拷贝：不仅将原对象的各个属性逐个复制出去，而且将原对象各个属性所包含的对象也依次采用深复制的方法<strong>递归复制</strong>到新对象上。这就不会存在上面 obj 和 shallowObj 的 arr 属性指向同一个对象的问题。 NOTE：如果对象比较大，层级也比较多，<strong>深拷贝会带来性能上的问题</strong>。在遇到需要采用深拷贝的场景时，可以考虑有没有其他替代的方案。在实际的应用场景中，也是浅拷贝更为常用。</p>
+<h1 id="浅拷贝的实现方式"><a href="#浅拷贝的实现方式" class="headerlink" title="浅拷贝的实现方式"></a>浅拷贝的实现方式</h1><p>从以上的对比可以总结出：浅拷贝就是简单的<strong>引用复制</strong>，有以下几种实现方式：</p>
+<h2 id="jQuery-extend-false-…"><a href="#jQuery-extend-false-…" class="headerlink" title="jQuery.extend(false,…)"></a>jQuery.extend(false,…)</h2><p>jQuery.extend的第一个参数可以是布尔值，用来设置是否深度拷贝，设置为false或设置为空时就可以实现浅拷贝</p>
+<h2 id="Object-assign"><a href="#Object-assign" class="headerlink" title="Object.assign()"></a>Object.assign()</h2><p>ES6中的Object.assign(…)方法可用来实现浅拷贝–它会遍历一个或多个源对象的所有可枚举的自有键并把它们复制到目标对象，最后返回目标对象。 NOTE：这里<a href="https://stackoverflow.com/questions/38345937/object-assign-vs-extend" target="_blank" rel="noopener">有一篇stackoverflow的文章</a>，是关于jQuery.extend()和Object.assign()区别的，当然你也可以直接点击<a href="https://jsfiddle.net/on9x55ow/2/" target="_blank" rel="noopener">这里</a>通过实例比较两者区别</p>
+<h2 id="Underscore的-clone"><a href="#Underscore的-clone" class="headerlink" title="Underscore的_.clone()"></a>Underscore的_.clone()</h2><p>在 Underscore 中有这样一个方法：<code>_.clone()</code>，这个方法实际上是一种浅拷贝，所有嵌套的对象和数组都是直接复制引用，但是它比直接赋值来得“深”一些，因为它创建了一个新的对象，可以看下面例子：</p>
+<p>var x = {<br>    a: 1,<br>    b: { z: 0 }<br>};<br>var y = _.clone(x);</p>
+<p>y === x       // false<br>y.b === x.b   // true</p>
+<p>x.b.z = 100;<br>y.b.z         // 100</p>
+<h2 id="Array的slice和concat"><a href="#Array的slice和concat" class="headerlink" title="Array的slice和concat"></a>Array的slice和concat</h2><p>Array的slice和concat方法都会<strong>返回一个新的数组实例</strong>，但是这两个方法对于数组中的对象元素却没有执行深拷贝，而只是复制了引用。（和上面的_.clone()类似）</p>
+<h2 id="for…in…"><a href="#for…in…" class="headerlink" title="for…in…"></a>for…in…</h2><p>利用for…in…遍历对象就可以实现浅拷贝，代码如下：</p>
+<p>function shallowCopy(p,c){<br>    var i;<br>    c = c||{};<br>    for(i in p){<br>        if(p.hasOwnProperty(i)){<br>            c[i] = p[i];<br>        }<br>    }<br>    return c;<br>}</p>
+<h1 id="深拷贝的实现方式"><a href="#深拷贝的实现方式" class="headerlink" title="深拷贝的实现方式"></a>深拷贝的实现方式</h1><p>浅拷贝的实现方式如上所述，浅拷贝适合用在开发jQuery插件或者redux中返回new state，而我们有时需要的是深拷贝，就是<strong>保证拷贝的对象与源对象完全隔离</strong>：</p>
+<h2 id="jQuery-extend-true-…"><a href="#jQuery-extend-true-…" class="headerlink" title="jQuery.extend(true,…)"></a>jQuery.extend(true,…)</h2><p>将jQuery.extend的第一个参数设置为true即可实现深度拷贝。但是缺点是<strong>无法深拷贝JSON对象以外的对象</strong> NOTE：jQuery中有一个叫做$.clone()的方法，可是它并不是用于一般的 JS 对象的拷贝，而是用于 DOM 对象的克隆，所以不要被它的名字骗到~</p>
+<h2 id="借助JSON全局对象"><a href="#借助JSON全局对象" class="headerlink" title="借助JSON全局对象"></a>借助JSON全局对象</h2><p>相比于使用插件，使用 JSON 全局对象的 <code>parse</code> 和 <code>stringify</code> 方法来实现深复制也算是一个简单讨巧的方法：</p>
+<p>function jsonClone(obj) {<br>    return JSON.parse(JSON.stringify(obj));<br>}<br>var clone = jsonClone({ a:1 });</p>
+<p>然而这种方法<strong>有一些隐藏的坑</strong>：</p>
+<ul>
+<li>只能处理能够被json直接表示的数据结构：Number, String, Boolean, Array, 扁平对象；而对于正则表达式、Date和Function这种特殊的Object就无能为力了</li>
+<li>如果对象中存在循环引用的情况，这个方法也无法正确处理</li>
+</ul>
+<h2 id="lodash的-clone-cloneDeep"><a href="#lodash的-clone-cloneDeep" class="headerlink" title="lodash的.clone()/.cloneDeep()"></a>lodash的<em>.clone()/</em>.cloneDeep()</h2><p>在lodash中关于复制的方法有两个，分别是<code>_.clone()</code>和<code>_.cloneDeep()</code>。其中<code>_.clone(obj, true)</code>等价于<code>_.cloneDeep(obj)</code>。看了源码会发现，lodash中与深拷贝相关的代码有上百行，而jQuery却只有60多行，这是为什么呢？原因是lodash花了大量的代码来实现ES6引入的大量新的标准对象。更厉害的是，lodash针对<strong>存在环的对象</strong>的处理也是非常出色的。 所以，loadsh在深拷贝上下了很多功夫，是一个很完美同时更拥抱未来的一个第三方库</p>
+<h1 id="各个深拷贝方法的比较"><a href="#各个深拷贝方法的比较" class="headerlink" title="各个深拷贝方法的比较"></a>各个深拷贝方法的比较</h1><p><a href="https://stackoverflow.com/questions/122102/what-is-the-most-efficient-way-to-deep-clone-an-object-in-javascript/5344074#5344074" target="_blank" rel="noopener">stackoverflow上有一个提问</a>，讨论了JS中各个深拷贝方法的效率问题，然后有位大牛借助jsben对各个深拷贝方法进行了<a href="http://jsben.ch/bWfk9" target="_blank" rel="noopener">实例测试</a>，强烈推荐大家看一下这个提问下的讨论以及实例测试的结果，相信看完后你对JS中的深拷贝会有更深刻的理解~</p>
+<h5 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h5><p><a href="http://www.cnblogs.com/tracylin/p/5346314.html" target="_blank" rel="noopener">也来谈一谈js的浅复制和深复制</a></p>
+<p><a href="https://www.zhihu.com/question/23031215" target="_blank" rel="noopener">javascript中的深拷贝和浅拷贝？</a></p>
+<p><a href="http://jerryzou.com/posts/dive-into-deep-clone-in-javascript/" target="_blank" rel="noopener">深入剖析 JavaScript 的深复制</a></p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="//merrier.wang" target="_blank">Merrier说</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/20170730/things-about-css-reset.html" class="pre-post btn btn-default" title="关于CSS Reset那些事">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">关于CSS Reset那些事</span>
+        </a>
+    
+    
+        <a href="/20170726/updating-wallpaper-with-cron-timing-task-under-mac.html" class="next-post btn btn-default" title="Mac下用Cron定时任务更新壁纸">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">Mac下用Cron定时任务更新壁纸</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+  <script id="dsq-count-scr" src="https://merrier.disqus.com/count.js" async></script>
+
+
+<script type="text/javascript">
+  var disqus_config = function () {
+    this.page.url = 'http://merrier.wang/20170730/shallow-and-deep-copies-in-js.html';
+    this.page.identifier = '20170730/shallow-and-deep-copies-in-js.html';
+    this.page.title = 'JS中的浅拷贝和深拷贝';
+  };
+  var d = document, s = d.createElement('script');
+  s.src = 'https://merrier.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', '' + +new Date());
+  (d.head || d.body).appendChild(s);
+</script>
+
+
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#浅拷贝VS深拷贝"><span class="toc-text">浅拷贝VS深拷贝</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#浅拷贝的实现方式"><span class="toc-text">浅拷贝的实现方式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#jQuery-extend-false-…"><span class="toc-text">jQuery.extend(false,…)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Object-assign"><span class="toc-text">Object.assign()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Underscore的-clone"><span class="toc-text">Underscore的_.clone()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Array的slice和concat"><span class="toc-text">Array的slice和concat</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#for…in…"><span class="toc-text">for…in…</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#深拷贝的实现方式"><span class="toc-text">深拷贝的实现方式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#jQuery-extend-true-…"><span class="toc-text">jQuery.extend(true,…)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#借助JSON全局对象"><span class="toc-text">借助JSON全局对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#lodash的-clone-cloneDeep"><span class="toc-text">lodash的.clone()/.cloneDeep()</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#各个深拷贝方法的比较"><span class="toc-text">各个深拷贝方法的比较</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#参考链接"><span class="toc-text">参考链接</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        访问量:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        访客数:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2018
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

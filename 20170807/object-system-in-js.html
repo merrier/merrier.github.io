@@ -1,0 +1,393 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Merrier说">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://merrier.wang">
+    <!--SEO-->
+
+<meta name="description" content="Merrier的个人博客">
+
+
+
+<meta name="keywords" content="merrier 博客 前端 北邮人">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>JS中的对象系统 | Merrier说</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Merrier说" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1264342320 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1264342320%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Merrier">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 叩首问路，码梦为生 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://merrier.wang">Merrier说</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/frontend/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/algorithm/"><i class="fa "></i>算法</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/series/"><i class="fa "></i>系列专栏</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>文章归档</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="JS中的对象系统">
+            
+	            JS中的对象系统
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/JS">
+            JS
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/JS" title="JS">
+                        JS
+                    </a>
+                
+                    <a href="/tags/对象" title="对象">
+                        对象
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/08/07</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <p>转载自<a href="http://www.jianshu.com/p/d0930dc0f95d" target="_blank" rel="noopener">简书-浅析JavaScript的对象系统</a> 首先，你肯定在不少地方看到过这句话：</p>
+<blockquote>
+<p>JavaScript中一切皆对象</p>
+</blockquote>
+<p>这句话是很有道理的（废话，要不然能在不少地方都看到吗。。），你可能没有意识到，在JavaScript（以下简称“JS”）中，你声明一个变量let a = 3，此时的a其实是一个对象，因为你可以将它当做对象一样去调用toString()方法，这其中的答案都在JS对象系统中，请看下面这张图： <img src="https://merrier.wang/wp-content/uploads/2017/08/JS对象系统.png" alt=""> 下面我们就结合这张图来分析一下JS对象系统的结构</p>
+<h1 id="本地对象"><a href="#本地对象" class="headerlink" title="本地对象"></a>本地对象</h1><p>“本地对象”的说法可能比较陌生，也可以叫做“原生对象”、“内置对象”、“内建对象”，但其实指的都是native object。ECMA-262对于native object的定义为：</p>
+<blockquote>
+<p>独立于宿主环境的ECMAScript实现提供的对象</p>
+</blockquote>
+<p>我们知道，“宿主”一般指浏览器，而“独立于宿主环境”，也就是说与浏览器环境不相关，这就是说：native object与浏览器不相关，只要这个浏览器按照 ECMAScript 规范实现了JS，那就必然实现了规范中的所有native object。换句话说就是：<strong>本地对象（native object）是语言本身实现和提供的对象，和语言运行在哪个环境无关</strong>。也就是说，不管你的JS代码在哪里跑，你都可以<code>new</code>出 native object 并使用它。照此理解，我觉得其实把 native object 翻译成“原生对象”最合意。</p>
+<h2 id="object"><a href="#object" class="headerlink" title="object"></a>object</h2><blockquote>
+<p>到目前为止，我们看到的大多数引用类型值都是 Object 类型的实例；而且，Object 也是 ECMAScript 中使用最多的一个类型。虽然 Object 的实例不具备多少功能，但对于在应用程序中存储和传输数据而言，它们确实是非常理想的选择。——《JavaScript高级程序设计（第3版）》</p>
+</blockquote>
+<p>“万物从无到有”，JS中的大多数引用类型值都是Object类型的实例，而Object的原型就是null了（可以在chrome控制台中打印Object.prototype.__proto__），Object是所有其他对象类型的基础类型，提供了toString()等基础方法</p>
+<h2 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h2><p>数组类型</p>
+<h2 id="Date"><a href="#Date" class="headerlink" title="Date"></a>Date</h2><p>日期类型</p>
+<h2 id="RegExp"><a href="#RegExp" class="headerlink" title="RegExp"></a>RegExp</h2><p>正则类型</p>
+<h2 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h2><blockquote>
+<p>说起来 ECMAScript 中什么最有意思，我想那莫过于函数了——而有意思的根源，则在于函数实际上是对象。每个函数都是 Function 类型的实例，而且都与其他引用类型一样具有属性和方法。——《J3》</p>
+</blockquote>
+<p>没错，请注意大小写，Function是一种对象类型，而function则是一个对象实例，见如下代码：</p>
+<p>console.log(Function() instanceof Function);    //true(构造函数Function()是Function类型的实例)<br>console.log(Function() instanceof Object);    //true(构造函数Function()当然也是Object类型的实例)</p>
+<p>事实上，任何一个函数都是函数对象的实例，而函数类型本身就是一种对象类型，所以：函数也是对象。</p>
+<h2 id="Error等各种错误类对象"><a href="#Error等各种错误类对象" class="headerlink" title="Error等各种错误类对象"></a>Error等各种错误类对象</h2><p>Error、EvalError、RangeError、ReferenceError、SyntaxError、TypeError、URIError 等错误类型的对象。</p>
+<h2 id="String、Number、Boolean"><a href="#String、Number、Boolean" class="headerlink" title="String、Number、Boolean"></a>String、Number、Boolean</h2><p>之所以将这三类放到一起，是因为它们属于JS中的基本数据类型，但其实它们也是一种对象类型，这样你才能像使用对象一般操作字符串、数值、布尔值，见下面代码：</p>
+<p>var str = ‘Hello World’;<br>str = str.substr(0,5);    //调用substr()方法截取字符串，我是字符串，但实际上是一个对象<br>console.log(str);    //‘Hello’</p>
+<p>所以，当我们通过变量声明的方式去声明一个字符串、数字、布尔值的时候，其实后台帮我们创建了一个对象：</p>
+<blockquote>
+<p>实际上，每当读取一个基本类型值的时候，后台就会创建一个对应的基本包装类型的对象，从而让我们能够调用一些方法来操作这些数据 ——《J3》</p>
+</blockquote>
+<p>书上一语道明。注意一下这句话中的“读取”和“对应”两个词。“读取”是指进入读取模式，即从内存中去读取这个字符串值的时候；“对应”指的是基本类型值是哪种类型，后台自动给你创建的基本包装类型就是哪种对应的类型，比如这里的基本类型值是<code>String</code>类型，那后台创建的基本包装类型也就是<code>String</code>包装类型。 因为这一机制，上面代码的实际执行情况其实是这样的：</p>
+<p>var str = ‘Hello World’;<br>//str = str.substr(0,5);    //(str进入读取模式，准备创建基本包装类型对象)</p>
+<p>var _str = new String(‘Hello World’);<br>str = _str.substr(0, 5);<br>_str = null;    //使用完后台会立即将该包装对象销毁</p>
+<p>console.log(str);    //‘Hello’</p>
+<p>这里只展示了String包装类型，其实Number和Boolean也是完全一样的原理</p>
+<h2 id="内置对象（单体内置对象）（built-in-object）"><a href="#内置对象（单体内置对象）（built-in-object）" class="headerlink" title="内置对象（单体内置对象）（built-in object）"></a>内置对象（单体内置对象）（built-in object）</h2><p>这个叫built-in object，上面那个叫native object，那么它们有什么区别呢，还是看一下《J3》这本书中的解释吧：</p>
+<blockquote>
+<p>ECMA-262对内置对象的定义是：“由ECMAScript实现提供的、不依赖于宿主环境的对象，这些对象在ECMAScript程序执行之前就已经存在了。”意思就是说，开发人员不必显式地实例化内置对象，因为它们已经实例化了。——《J3》</p>
+</blockquote>
+<p>这是ECMA-262对于 built-in object 的定义。对比 native object 的定义：“独立于宿主环境的 ECMAScript 实现提供的对象”，可以看出，built-in object 是更加特殊的 native object，built-in object 属于 native object。 ECMA-262定义了两种 built-in object：Global对象、Math对象。</p>
+<h3 id="Global对象"><a href="#Global对象" class="headerlink" title="Global对象"></a>Global对象</h3><p>事实上，js中并不存在所谓的全局变量以及完全独立的函数。没错，你定义的所有全局变量其实都是Global对象的属性，<strong>你在全局作用域下定义的所有函数其实都是Global对象的方法</strong>。</p>
+<blockquote>
+<p>ECMAScript中的 Global 对象在某种意义上是作为一个终极的“兜底儿对象” 来定义的。换句话说，不属于任何其他对象的属性和方法，终都是它的属性和方法。事实上，没有全局变量或全局函数；所有在全局作用域中定义的属性和函数，都是 Global 对象的属性。——《J3》</p>
+</blockquote>
+<p>parseInt()、eval()、encodeURIComponent()这些函数实际上都是Global对象的方法，在使用这些方法的时候无需通过对象去调用，直接就可以使用。引文说过：“这些对象在ECMAScript程序执行之前就已经存在了。”这也算 build-in object 的一个特别之处，《J3》将 build-in object 定义为“单体内置对象”，这个“单体”是否就是指无需手动实例化这一点？ Global对象的所有属性如下表： <img src="https://merrier.wang/wp-content/uploads/2017/08/Global对象的属性.png" alt=""> 好吧，特殊值undefined居然是Global对象的一个属性值 - -。乍看之下可能会有点诧异，不过仔细想想，我们之所以说JavaScript中一切皆对象是有原因的，你看，就连undefined都是对象的属性值。从表中还可以看到，所有原生引用类型的构造函数也都是Global对象的属性。这怎么理解？其实也很好理解，比如说当你想要创建一个日期类型的变量时，直接上构造函数var date = new Date();就可以了，可是你想过没有，Date()构造函数本身是一个函数，而前面我们说过，JS并不存在完全独立的函数，任何函数其实都是挂在某个对象下的方法，哪怕它是一个构造函数。而这些原生构造函数，其“挂载”的对象正是Global对象。 介绍了这么多关于Global对象的内容，是不是还是不清楚它是个什么玩意儿？这是因为我们在浏览器中并不能直接访问这个对象。好在浏览器为我们实现了一个包含了Global对象的window对象。</p>
+<blockquote>
+<p>ECMAScript 虽然没有指出如何直接访问 Global 对象，但 Web 浏览器都是将这个全局对象作为 window 对象的一部分加以实现的。因此，在全局作用域中声明的所有变量和函数，就都成为了 window 对象的属性。——《J3》</p>
+</blockquote>
+<p>window对象包含了Global对象的所有内容，同时扩展了大量自身需要的属性和方法（比如常用的alert()）。因此，在浏览器中我们可以通过window对象随意访问上述的属性和方法。请看下面代码并加以理解：</p>
+<p>var date = new window.Date();    //window是对Global对象的扩展实现，构造函数Date()确实是挂在window上面的<br>console.log(date);    //Mon Aug 07 2017 10:07:28 GMT+0800 (CST)</p>
+<p>其实你也可以在控制台中打印一下window，你就可以发现它确实包含了上述属性和构造函数</p>
+<h3 id="Math对象"><a href="#Math对象" class="headerlink" title="Math对象"></a>Math对象</h3><p>Math对象是一个保存着必要的数学操作的 build-in object。里面保存着常量e、圆周率π等的值作为属性，同时提供了取整Math.floor()、取随机数Math.random()、求平方根等等数学方法。和Global对象一样，这些属性和方法都可以在任何时候任何地方直接访问和调用，只不过其形式统一为：Math.***。</p>
+<h1 id="宿主对象"><a href="#宿主对象" class="headerlink" title="宿主对象"></a>宿主对象</h1><p>宿主对象是指宿主环境所实现和提供的对象。所有非本地对象（native object）都是宿主对象。我之所以在结构图中把自定义对象挂到了宿主对象下正是基于此，不过这并非定死的，你若将自定义对象拎出来和本地对象、宿主对象并列放也并非不可。 <strong>所谓宿主，就是指JS代码所在的运行环境</strong>。对于浏览器环境而言，我们显示一个页面需要HTML，所以浏览器实现了DOM对象 —— window.document；我们还需要浏览器本身给我们提供一些必要的东西，比如URL地址相关的location、设备屏幕相关的screen等，所以浏览器又为我们提供了BOM对象 —— window。这些对象，就是host object。 等等，怎么window对象又出场了？上面不是说过了，window对象是浏览器对Global对象的扩展实现，是Global对象的超集，那这玩意儿究竟该挂到build-in object上，还是宿主对象下的BOM上？答案当然是后者。可以明确的是，window对象本就是浏览器所实现的，那它当然属于浏览器对象模型（BOM）了！只不过，window把ECMAScript规定的Global对象也给一并实现了而已。还有，DOM对象即是window.document，而window.document就是DOM的根节点，从这点来讲，我们可以理解为BOM包含了DOM。 如此，我们终于找到最终对象了 - -，它正是 BOM —— window。你几乎可以在这个对象中找到一切。全局变量、自定义对象、JSON对象（ECMA262-5引入为规范）、Math对象、原生构造函数、Global的东西。。。 万物合一，世界清静了。 最后，可以把最开始给的图修正更新一下了： <img src="https://merrier.wang/wp-content/uploads/2017/08/JS中的对象系统最终版.png" alt=""> 从图上可以看到多了一个JSON对象，原因是ECMA262-5已经将JSON对象纳入native object了。</p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="//merrier.wang" target="_blank">Merrier说</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/20170807/good-article-recommendation.html" class="pre-post btn btn-default" title="他山之石，可以攻玉，好文章推荐">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">他山之石，可以攻玉，好文章推荐</span>
+        </a>
+    
+    
+        <a href="/20170804/you-probably-dont-know-html.html" class="next-post btn btn-default" title="你可能不会HTML">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">你可能不会HTML</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+  <script id="dsq-count-scr" src="https://merrier.disqus.com/count.js" async></script>
+
+
+<script type="text/javascript">
+  var disqus_config = function () {
+    this.page.url = 'http://merrier.wang/20170807/object-system-in-js.html';
+    this.page.identifier = '20170807/object-system-in-js.html';
+    this.page.title = 'JS中的对象系统';
+  };
+  var d = document, s = d.createElement('script');
+  s.src = 'https://merrier.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', '' + +new Date());
+  (d.head || d.body).appendChild(s);
+</script>
+
+
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#本地对象"><span class="toc-text">本地对象</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#object"><span class="toc-text">object</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Array"><span class="toc-text">Array</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Date"><span class="toc-text">Date</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RegExp"><span class="toc-text">RegExp</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Function"><span class="toc-text">Function</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Error等各种错误类对象"><span class="toc-text">Error等各种错误类对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String、Number、Boolean"><span class="toc-text">String、Number、Boolean</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内置对象（单体内置对象）（built-in-object）"><span class="toc-text">内置对象（单体内置对象）（built-in object）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Global对象"><span class="toc-text">Global对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Math对象"><span class="toc-text">Math对象</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#宿主对象"><span class="toc-text">宿主对象</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        访问量:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        访客数:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2018
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

@@ -1,0 +1,357 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Merrier说">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://merrier.wang">
+    <!--SEO-->
+
+<meta name="description" content="Merrier的个人博客">
+
+
+
+<meta name="keywords" content="merrier 博客 前端 北邮人">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>前端面试系列（11）——window.onload和document.ready的区别 | Merrier说</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Merrier说" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1264342320 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1264342320%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Merrier">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 叩首问路，码梦为生 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://merrier.wang">Merrier说</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/frontend/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/algorithm/"><i class="fa "></i>算法</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/series/"><i class="fa "></i>系列专栏</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>文章归档</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="前端面试系列（11）——window.onload和document.ready的区别">
+            
+	            前端面试系列（11）——window.onload和document.ready的区别
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/面试">
+            面试
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/JS" title="JS">
+                        JS
+                    </a>
+                
+                    <a href="/tags/前端面试" title="前端面试">
+                        前端面试
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/04/12</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>这个问题虽然比较简单，但是依然是前端面试中经常会问到的一道题，所以为了让自己“与众不同”，必须全面了解这两者的区别，才能从众多候选人中脱颖而出</p>
+<h1 id="一张表格"><a href="#一张表格" class="headerlink" title="一张表格"></a>一张表格</h1><p>下面这张表格简单的介绍了两者的区别： [table id=14 /]</p>
+<h1 id="jQ的document-ready-实现"><a href="#jQ的document-ready-实现" class="headerlink" title="jQ的document.ready()实现"></a>jQ的document.ready()实现</h1><p>在jQuery脚本加载的时候，会监听DOMContentLoaded事件。当事件触发时候，会执行ready事件的回调；（document.readyState===”complete”时相当于dom加载完毕） 由于用的是原生的DOMContentLoaded事件，所以<strong>目前的ready函数仅能用于当前document，无需选择器</strong></p>
+<h1 id="谁更快"><a href="#谁更快" class="headerlink" title="谁更快"></a>谁更快</h1><p>jQuery的document.ready就一定比window.onload快吗？下面是一个例子：</p>
+<p>&lt;!DOCTYPE HTML&gt;</p>
+<html lang="en-US"><br><head><meta name="generator" content="Hexo 3.8.0"><br><meta charset="UTF-8"><br><title>加载时机</title><br><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js" onload="console.log('jquery.js loaded')"></script><br><script><br>     console.log(‘define functions’);<br>     function load(type, info){<br>          console.log(type + ‘ onload ‘ + (info || “”), new Date().getTime());<br>     }<br>     $(document).ready(function () {<br>          load(‘document ready’);<br>     });<br>     document.onload = function () {<br>          load(‘document’);<br>     };<br>     window.onload = function () {<br>          load(‘window’);<br>     };<br>     window.addEventListener(“load”,function(){<br>          load(‘window addEventListener’);<br>     });<br>     document.addEventListener( “DOMContentLoaded”, function () {<br>          load(‘DOMContentLoaded’);<br>     });<br></script><br></head><br>     <body onload="load('body')"><br>          <div onload="load('text')">test</div><br>          <img onload="load('img',1)" src="http://www.deskcar.com/desktop/else/2013714232149/17.jpg"><br>          <img onload="load('img',2)" src="http://www.deskcar.com/desktop/else/2013714232149/16.jpg"><br>          <script onload="load('js')" src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.0/react.min.js"></script><br>     </body><br></html>
+
+<h2 id="执行之后有两种结果："><a href="#执行之后有两种结果：" class="headerlink" title="执行之后有两种结果："></a>执行之后有两种结果：</h2><h3 id="首次加载："><a href="#首次加载：" class="headerlink" title="首次加载："></a>首次加载：</h3><p><img src="https://merrier.wang/wp-content/uploads/2017/04/555379-20160704214626655-1750100800.png" alt=""></p>
+<h3 id="二次加载："><a href="#二次加载：" class="headerlink" title="二次加载："></a>二次加载：</h3><p><img src="https://merrier.wang/wp-content/uploads/2017/04/555379-20160704214634530-617977668.png" alt=""> 第一种情况非常符合我们的想法，ready比onload快，顺序也比较合理。 而第二种情况就有些怪异，应该依照上面jquery ready事件的实现，那ready应该要DOMContentLoaded后面啊。我思来想去，我觉得这是个误会，由于二次加载时利用到缓存，导致文件资源都很快加载，各个事件触发的时间非常相近，顺序也不定，就给人一种ready顺序不对之感，大家应该发现这几个事件都是在几十毫秒之内触发。 PS：js执行需要时间，几十毫秒不同的顺序我觉得很正常。另外尝试几次，二次加载顺序确实会有变化，但时间都很相近。 所以，jQuery的document ready不一定比window.onload快执行。</p>
+<h1 id="为什么外部script文件放页面内容后面好？"><a href="#为什么外部script文件放页面内容后面好？" class="headerlink" title="为什么外部script文件放页面内容后面好？"></a><strong>为什么外部script文件放页面内容后面好？</strong></h1><h3 id="script执行顺序"><a href="#script执行顺序" class="headerlink" title="script执行顺序"></a>script执行顺序</h3><p>《JavaScript高级程序设计》说过——无论如何包含代码，只要不存在defer和async属性，浏览器都会按照<script>元素在页面中出现的先后顺序对它们依次进行解析。换句话说，在第一个<script>元素包含的代码解析完成后，第二个<script>包含代码才会被解析，然后才是第三个….. 在head元素里包含所有JavaScript文件，就必须等到全部JavaScript代码都被下载、解析和执行完成以后，才能呈现页面的内容（浏览器在遇到<body>标签时才开始呈现内容）。在需要很多JavaScript文件时候，浏览器呈现页面会出现明显的延迟，延时期间浏览器是一片空白。 所以，外部script文件放页面内容后面。这样，在解析JavaScript代码之前，页面内容将完全呈现出来。</p>
+<h3 id="一定是放页面内容后面吗？"><a href="#一定是放页面内容后面吗？" class="headerlink" title="一定是放页面内容后面吗？"></a>一定是放页面内容后面吗？</h3><p>有种情况是JavaScript放哪里都一样的，那就是内容是依赖JavaScript的执行渲染时候，放哪都一样。</p>
+<h1 id="Load-方法"><a href="#Load-方法" class="headerlink" title="Load()方法"></a>Load()方法</h1><p>由于在 $(document).ready() 方法内注册的事件，只要 DOM 就绪就会被执行，因此可能此时元素的关联文件未下载完。例如与图片有关的 html 下载完毕，并且已经解析为 DOM 树了，但很有可能图片还没有加载完毕，所以例如图片的高度和宽度这样的属性此时不一定有效。 要解决这个问题，可以使用 Jquery 中另一个关于页面加载的方法 —load() 方法。 Load() 方法会在元素的 onload 事件中绑定一个处理函数。如果处理函数绑定给 window 对象，则会在所有内容 ( 包括窗口、框架、对象和图像等 ) 加载完毕后触发，如果处理函数绑定在元素上，则会在元素的内容加载完毕后触发。</p>
+<h1 id="其他方法"><a href="#其他方法" class="headerlink" title="其他方法"></a>其他方法</h1><p>$(window).load()：等价于window.onload() $(window).unload()：页面关闭时触发</p>
+<h1 id="坑爹的IE-or-jQ？"><a href="#坑爹的IE-or-jQ？" class="headerlink" title="坑爹的IE or jQ？"></a>坑爹的IE or jQ？</h1><p>最近在改一个嵌入在frame中的页面的时候，使用了jquery做效果，而页面本身也绑定了onload事件。改完后，Firefox下测试正常流畅，IE下就要等个十几秒jquery的效果才出现，黄花菜都凉了。 起初以为是和本身onload加载的方法冲突。网上普遍的说法是$(document).ready()是在页面DOM解析完成后执行，而onload事件是在所有资源都准备完成之后才执行，也就是说$(document).ready()是要在onload之前执行的，尤其当页面图片较大较多的时候，这个时间差可能更大。可是我这页面分明是图片都显示出来十几秒了，还不见jquery的效果出来。 删了onload加载的方法试试，结果还是一样，看来没有必要把原本的onload事件绑定也改用$(document).ready()来写。那是什么原因使得Firefox正常而IE就能呢？接着调试，发现IE下原来绑定的onload方法竟然先于$(document).ready()的内容执行，而Firefox则是先执行$(document).ready()的内容，再执行原来的onload方法。这个和网上的说法似乎不完全一致啊，走投无路的时候就看看源码，翻翻jQuery的源码看看$(document).ready()是如何实现的吧：</p>
+<p>if ( jQuery.browser.msie &amp;&amp; window == top ) (function(){<br>if (jQuery.isReady) return;<br>try {<br>document.documentElement.doScroll(“left”);<br>} catch( error ) {<br>　　　　　　setTimeout( arguments.callee, 0 );<br>　　　　　　 return;<br>　　　　}<br>　　 // and execute any waiting functions<br>　　　jQuery.ready();<br>})();<br>jQuery.event.add( window, “load”, jQuery.ready );</p>
+<p>结果很明了了，IE只有在页面不是嵌入frame中的情况下才和Firefox等一样，先执行$(document).ready()的内容，再执行原来的onload方法。对于嵌入frame中的页面，也只是绑定在load事件上执行，所以自然是在原来的onload绑定的方法执行之后才轮到。而这个页面中正好在测试环境下有一个访问不到的资源，那十几秒的延迟正是它放大出的时间差。</p>
+<h5 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h5><p>脚本之家：<a href="http://www.jb51.net/article/50185.htm">http://www.jb51.net/article/50185.htm</a> cnblogs：<a href="http://www.cnblogs.com/lovesong/p/5641834.html">http://www.cnblogs.com/lovesong/p/5641834.html</a></p>
+</script></p>
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="//merrier.wang" target="_blank">Merrier说</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/20170412/front-end-can-play-like-this.html" class="pre-post btn btn-default" title='前端可以这样玩儿！'>
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">前端可以这样玩儿！</span>
+        </a>
+    
+    
+        <a href="/20170409/some-algorithms-that-need-to-be-implemented-with-js.html" class="next-post btn btn-default" title='需要用js实现的一些算法'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">需要用js实现的一些算法</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+  <script id="dsq-count-scr" src="https://merrier.disqus.com/count.js" async></script>
+
+
+<script type="text/javascript">
+  var disqus_config = function () {
+    this.page.url = 'http://merrier.wang/20170412/the-difference-between-window.onload-and-document.read.html';
+    this.page.identifier = '20170412/the-difference-between-window.onload-and-document.read.html';
+    this.page.title = '前端面试系列（11）——window.onload和document.ready的区别';
+  };
+  var d = document, s = d.createElement('script');
+  s.src = 'https://merrier.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', '' + +new Date());
+  (d.head || d.body).appendChild(s);
+</script>
+
+
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#写在前面"><span class="toc-text">写在前面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一张表格"><span class="toc-text">一张表格</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#jQ的document-ready-实现"><span class="toc-text">jQ的document.ready()实现</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#谁更快"><span class="toc-text">谁更快</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#执行之后有两种结果："><span class="toc-text">执行之后有两种结果：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#首次加载："><span class="toc-text">首次加载：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二次加载："><span class="toc-text">二次加载：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#为什么外部script文件放页面内容后面好？"><span class="toc-text">为什么外部script文件放页面内容后面好？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#script执行顺序"><span class="toc-text">script执行顺序</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        访问量:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        访客数:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2018
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

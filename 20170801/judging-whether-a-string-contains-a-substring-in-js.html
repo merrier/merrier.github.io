@@ -1,0 +1,354 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Merrier说">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://merrier.wang">
+    <!--SEO-->
+
+<meta name="description" content="Merrier的个人博客">
+
+
+
+<meta name="keywords" content="merrier 博客 前端 北邮人">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>JS中判断字符串中是否含有一个子串 | Merrier说</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Merrier说" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1264342320 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1264342320%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Merrier">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 叩首问路，码梦为生 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://merrier.wang">Merrier说</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/frontend/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/algorithm/"><i class="fa "></i>算法</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/series/"><i class="fa "></i>系列专栏</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>文章归档</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="JS中判断字符串中是否含有一个子串">
+            
+	            JS中判断字符串中是否含有一个子串
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/stackoverflow">
+            stackoverflow
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/JS" title="JS">
+                        JS
+                    </a>
+                
+                    <a href="/tags/stackoverflow" title="stackoverflow">
+                        stackoverflow
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/08/01</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>题目我就不过多解释了，这篇文章是对<a href="https://stackoverflow.com/questions/1789945/how-to-check-whether-a-string-contains-a-substring-in-javascript" target="_blank" rel="noopener">stackoverflow上一个问题</a>的总结，如果英文不是特别差的话，推荐大家点击上面链接看大家对这个问题的详细讨论</p>
+<h1 id="实现方案"><a href="#实现方案" class="headerlink" title="实现方案"></a>实现方案</h1><h2 id="indexOf"><a href="#indexOf" class="headerlink" title="indexOf"></a>indexOf</h2><p>var string = “foo”,<br>    substring = “oo”;<br>string.indexOf(substring) !== -1;</p>
+<p>String的原型方法，返回一个字符串在另一个字符串中的位置，如果没有找到的话就返回-1；也是大家经常用的方案</p>
+<h2 id="ES6的includes"><a href="#ES6的includes" class="headerlink" title="ES6的includes"></a>ES6的includes</h2><p>var string = “foo”,<br>    substring = “oo”;<br>string.includes(substring);</p>
+<p>ES6中新增的String原型方法（其实Array原型也有includes方法），可以<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes" target="_blank" rel="noopener">点击这里</a>查看文档</p>
+<h2 id="search"><a href="#search" class="headerlink" title="search"></a>search</h2><p>var string = “foo”,<br>    expr = /oo/;<br>string.search(expr);</p>
+<p>String.prototype.search()执行正则表达式和String对象之间的一个搜索匹配，所以参数需要是正则表达式，<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/search" target="_blank" rel="noopener">点击这里</a>查看中文文档</p>
+<h2 id="lodash的includes"><a href="#lodash的includes" class="headerlink" title="lodash的includes"></a>lodash的includes</h2><p>var string = “foo”,<br>    substring = “oo”;<br>_.includes(string, substring);</p>
+<p>lodash是一个前端库，其提供了一些更加拥抱未来的方法，其中就有_.includes(str,substr)</p>
+<h2 id="RegExp和test"><a href="#RegExp和test" class="headerlink" title="RegExp和test"></a>RegExp和test</h2><p>var string = “foo”,<br>    expr = /oo/;  // no quotes here<br>expr.test(string);</p>
+<p>“正则表达式是万能的”，RegExp.prototype.test(str)</p>
+<h2 id="match"><a href="#match" class="headerlink" title="match"></a>match</h2><p>var string = “foo”,<br>    expr = /oo/;<br>string.match(expr);</p>
+<p>和上面的test正好相反，match方式是String的原型方法，String.prototype.match(expr)</p>
+<h1 id="性能比较"><a href="#性能比较" class="headerlink" title="性能比较"></a>性能比较</h1><p>既然有这么多方法都可以实现，那么哪一种才是“性能最优”的方法呢？早就有前辈替我们做了测试，可以<a href="http://jsben.ch/#/RVYk7" target="_blank" rel="noopener">点击这里</a>查看测试结果，或者直接看下面这张图片： <img src="https://merrier.wang/wp-content/uploads/2017/08/WX20170801-153343.png" alt=""> 不出所料，果然原生方法indexOf()是最快的，所以我们以后就还尽量用indexOf()吧！</p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="//merrier.wang" target="_blank">Merrier说</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/20170801/why-is-the-random-string-chucknorris-recognized-as-red.html" class="pre-post btn btn-default" title="为什么随机字符串“chucknorris”会被识别为红色？">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">为什么随机字符串“chucknorris”会被识别为红色？</span>
+        </a>
+    
+    
+        <a href="/20170801/there-is-always-a-sentence.html" class="next-post btn btn-default" title="总有那么一句话……">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">总有那么一句话……</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+  <script id="dsq-count-scr" src="https://merrier.disqus.com/count.js" async></script>
+
+
+<script type="text/javascript">
+  var disqus_config = function () {
+    this.page.url = 'http://merrier.wang/20170801/judging-whether-a-string-contains-a-substring-in-js.html';
+    this.page.identifier = '20170801/judging-whether-a-string-contains-a-substring-in-js.html';
+    this.page.title = 'JS中判断字符串中是否含有一个子串';
+  };
+  var d = document, s = d.createElement('script');
+  s.src = 'https://merrier.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', '' + +new Date());
+  (d.head || d.body).appendChild(s);
+</script>
+
+
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#写在前面"><span class="toc-text">写在前面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#实现方案"><span class="toc-text">实现方案</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#indexOf"><span class="toc-text">indexOf</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ES6的includes"><span class="toc-text">ES6的includes</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#search"><span class="toc-text">search</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#lodash的includes"><span class="toc-text">lodash的includes</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RegExp和test"><span class="toc-text">RegExp和test</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#match"><span class="toc-text">match</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#性能比较"><span class="toc-text">性能比较</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        访问量:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        访客数:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2018
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

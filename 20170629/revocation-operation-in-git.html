@@ -1,0 +1,392 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Merrier说">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://merrier.wang">
+    <!--SEO-->
+
+<meta name="description" content="Merrier的个人博客">
+
+
+
+<meta name="keywords" content="merrier 博客 前端 北邮人">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>Git撤销操作 | Merrier说</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Merrier说" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1264342320 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1264342320%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Merrier">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 叩首问路，码梦为生 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://merrier.wang">Merrier说</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/frontend/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/algorithm/"><i class="fa "></i>算法</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/series/"><i class="fa "></i>系列专栏</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>文章归档</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Git撤销操作">
+            
+	            Git撤销操作
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/Git">
+            Git
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/git" title="git">
+                        git
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/06/29</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Git中提供了几个相关的撤销操作的命令，如clean、checkout、reset和revert；在看这篇文章之前，我希望你能够浏览一下我的另一篇文章：<a href="https://merrier.wang/?p=908">Git工作区、暂存区和历史记录区</a>，看完之后理解这篇文章会更简单一些</p>
+<h1 id="git-clean"><a href="#git-clean" class="headerlink" title="git clean"></a>git clean</h1><p>git clean 命令用来从你的工作目录中删除所有没有tracked过的文件</p>
+<h2 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h2><p>git clean -n</p>
+<p>是一次clean的演习, 告诉你哪些文件会被删除. 记住他不会真正的删除文件, 只是一个提醒.</p>
+<p>git clean -f</p>
+<p>删除当前目录下所有没有track过的文件. 他不会删除.gitignore文件里面指定的文件夹和文件, 不管这些文件有没有被track过.</p>
+<p>“ &gt;git clean -f <path></path></p>
+<p>删除指定路径下的没有被track过的文件.</p>
+<p>git clean -df</p>
+<p>删除当前目录下没有被track过的文件和文件夹.</p>
+<p>git clean -xf</p>
+<p>删除当前目录下所有没有track过的文件. 不管他是否是.gitignore文件里面指定的文件夹和文件.</p>
+<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><h3 id="假如你要删除所有工作目录下面的修改，包括新添加的文件："><a href="#假如你要删除所有工作目录下面的修改，包括新添加的文件：" class="headerlink" title="假如你要删除所有工作目录下面的修改，包括新添加的文件："></a>假如你要删除所有工作目录下面的修改，包括新添加的文件：</h3><p>git reset –hard<br>git clean -df</p>
+<p>运行后, 工作目录和缓存区回到最近一次commit时候一摸一样的状态, git status会告诉你这是一个干净的工作目录, 又是一个新的开始了.</p>
+<h1 id="git-checkout"><a href="#git-checkout" class="headerlink" title="git checkout"></a>git checkout</h1><p>git checkout 命令用来丢弃本地修改</p>
+<h2 id="参数说明-1"><a href="#参数说明-1" class="headerlink" title="参数说明"></a>参数说明</h2><p>git checkout – files</p>
+<p>把文件从暂存区域复制到工作目录，用来丢弃本地修改</p>
+<p>git checkout .</p>
+<p>会用暂存区全部的文件替换工作区的文件。这个操作很危险，会清除工作区中未添加到暂存区的改动</p>
+<p>git checkout HEAD .</p>
+<p>会用 HEAD 指向的 master 分支中的全部文件替换暂存区以及工作区中的文件。<strong>这个命令也是极具危险性的，因为不但会清除工作区中未提交的改动，也会清除暂存区中未提交的改动</strong></p>
+<h2 id="应用场景-1"><a href="#应用场景-1" class="headerlink" title="应用场景"></a>应用场景</h2><p>有时候我们的工作区会增加一些不想要的文件（多数为隐藏文件），比如.idea/、.DS_Store文件，此时我们不想将这些无关紧要的文件添加到暂存区，所以就像将它们从工作区丢弃，此时就可以利用下面的命令将该文件夹丢弃：</p>
+<p>git checkout .idea/</p>
+<p>当然，这种总是会自动生成的文件最好写到.gitignore里，否则每次都要checkout会很烦的</p>
+<h1 id="git-reset"><a href="#git-reset" class="headerlink" title="git reset"></a>git reset</h1><p>git reset 命令撤销对于暂存区/历史记录区的修改，也就是撤销你本地的add，commit操作</p>
+<h2 id="参数说明-2"><a href="#参数说明-2" class="headerlink" title="参数说明"></a>参数说明</h2><p>git reset</p>
+<p>撤销所有暂存区域文件</p>
+<p>git reset – files</p>
+<p>用来撤销最后一次的git add files（因为每git add file一次，暂存区的文件都会被更改一次）</p>
+<p>“ &gt;git reset –mixed <commit id=""></commit></p>
+<p>会保留源码,只是将git commit和index信息回退到了某个版本.（相当于撤销了add和commit操作，提交的修改都回到了工作区）</p>
+<p>“ &gt;git reset –soft <commit id=""></commit></p>
+<p>保留源码,只回退到commit 信息到某个版本.不涉及index的回退,如果还需要提交,直接commit即可.（也就是只撤销了commit，并没有撤销add）</p>
+<p>git reset –hard <commit id=""></commit></p>
+<p><strong>源码也会回退到某个版本</strong>,commit和index 都回回退到某个版本.(注意,这种方式是改变本地代码仓库源码) 当然有人在push代码以后,也可以使用 reset –hard <commit id=""> 回退本地的代码到某个版本之前,但是这样会有一个问题,你线上的代码没有变,线上commit,index都没有变,当你把本地代码修改完提交的时候你会发现全是冲突…..（此时就需要用到下面要介绍的git revert 了）</commit></p>
+<h2 id="应用场景-2"><a href="#应用场景-2" class="headerlink" title="应用场景"></a>应用场景</h2><h3 id="当我们在使用pull的时候，可能会出现冲突，就需要merge，而在冲突状态下，需要解决冲突的文件会从index暂存区打回到工作区，如果我们想放弃index和工作区的改动，就可以执行下面这条命令："><a href="#当我们在使用pull的时候，可能会出现冲突，就需要merge，而在冲突状态下，需要解决冲突的文件会从index暂存区打回到工作区，如果我们想放弃index和工作区的改动，就可以执行下面这条命令：" class="headerlink" title="当我们在使用pull的时候，可能会出现冲突，就需要merge，而在冲突状态下，需要解决冲突的文件会从index暂存区打回到工作区，如果我们想放弃index和工作区的改动，就可以执行下面这条命令："></a>当我们在使用pull的时候，可能会出现冲突，就需要merge，而在冲突状态下，需要解决冲突的文件会从index暂存区打回到工作区，如果我们想放弃index和工作区的改动，就可以执行下面这条命令：</h3><p>git reset –hard HEAD</p>
+<p>上面这条命令用来撤销还没commit 的merge，就放弃了index暂存区和工作区的改动</p>
+<h3 id="当我们在本地进行了add和commit操作之后，发现本地的修改都是错误的，想要回到前一版本，就可以执行下面这条命令："><a href="#当我们在本地进行了add和commit操作之后，发现本地的修改都是错误的，想要回到前一版本，就可以执行下面这条命令：" class="headerlink" title="当我们在本地进行了add和commit操作之后，发现本地的修改都是错误的，想要回到前一版本，就可以执行下面这条命令："></a>当我们在本地进行了add和commit操作之后，发现本地的修改都是错误的，想要回到前一版本，就可以执行下面这条命令：</h3><p>git reset –hard HEAD^</p>
+<p>上面这条命令用来撤销已经commit 的内容（等价于git reset –hard HEAD~1）。原理就是放弃工作区和index的改动，同时HEAD指针指向前一个commit对象</p>
+<h3 id="如果我们已经用add命令将某个文件加入暂存区了，此时想撤销对这个文件的add操作，就可以用下面的命令："><a href="#如果我们已经用add命令将某个文件加入暂存区了，此时想撤销对这个文件的add操作，就可以用下面的命令：" class="headerlink" title="如果我们已经用add命令将某个文件加入暂存区了，此时想撤销对这个文件的add操作，就可以用下面的命令："></a>如果我们已经用add命令将某个文件加入暂存区了，此时想撤销对这个文件的add操作，就可以用下面的命令：</h3><p>“ &gt;git reset HEAD <file></file></p>
+<p>上面这条命令用来撤销对单个文件的git add，执行之后该文件会从暂存区回到工作区中</p>
+<h1 id="git-revert"><a href="#git-revert" class="headerlink" title="git revert"></a>git revert</h1><p>git revert用于反转提交,执行revert命令时要求工作树必须是干净的.git revert用一个新提交来消除一个历史提交所做的任何修改.</p>
+<h2 id="参数说明-3"><a href="#参数说明-3" class="headerlink" title="参数说明"></a>参数说明</h2><p>“ &gt;git revert <commit id=""></commit></p>
+<p>revert 使用,需要先找到你想回滚版本唯一的commit标识代码,可以用 git log进行查看，commit id是一串40位的字符串，通常用前几位即可（6位就差不多保证唯一了）；执行完之后，revert的那一次commit被撤销，原理是git revert用一次逆向的commit“中和”之前的提交，所以此时HEAD继续前进，只是新的commit的内容和要revert的内容正好相反，能够抵消要被revert的内容；这样在日后合并老的branch时，导致这部分改变不会再次出现，就不会出现类似git reset带来的冲突问题</p>
+<h2 id="应用场景-3"><a href="#应用场景-3" class="headerlink" title="应用场景"></a>应用场景</h2><h3 id="对于已经把代码push到线上仓库，但是此时发现push的代码有问题，你想回退本地代码的同时也回退线上代码，回滚到某个指定的版本，使得线上和线下代码保持一致："><a href="#对于已经把代码push到线上仓库，但是此时发现push的代码有问题，你想回退本地代码的同时也回退线上代码，回滚到某个指定的版本，使得线上和线下代码保持一致：" class="headerlink" title="对于已经把代码push到线上仓库，但是此时发现push的代码有问题，你想回退本地代码的同时也回退线上代码，回滚到某个指定的版本，使得线上和线下代码保持一致："></a>对于已经把代码push到线上仓库，但是此时发现push的代码有问题，你想回退本地代码的同时也回退线上代码，回滚到某个指定的版本，使得线上和线下代码保持一致：</h3><p>“ &gt;git revert <commit id=""></commit></p>
+<p>执行完此命令之后，再执行git push就可以将线上代码回滚到某个指定版本，同时不会像git reset一样可能会导致一大堆冲突</p>
+<h1 id="git的其它删除命令"><a href="#git的其它删除命令" class="headerlink" title="git的其它删除命令"></a>git的其它删除命令</h1><p>这些命令类似于Linux的命令，是一种物理层面的删除，也会经常遇到：</p>
+<p>git rm –cached readme.txt</p>
+<p>只从缓存区中删除readme.txt，保留物理文件</p>
+<p>git rm readme.txt</p>
+<p>不但从缓存区中删除，同时删除物理文件</p>
+<p>git mv a.txt b.txt</p>
+<p>把a.txt改名为b.txt</p>
+<h5 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h5><p><a href="http://www.cnblogs.com/pingfan1990/p/5454757.html" target="_blank" rel="noopener">git clean(转载)</a></p>
+<p><a href="http://yijiebuyi.com/blog/8f985d539566d0bf3b804df6be4e0c90.html" target="_blank" rel="noopener">git reset revert 回退回滚取消提交返回上一版本</a></p>
+<p><a href="http://josh-persistence.iteye.com/blog/2215214" target="_blank" rel="noopener">详解Git工作区、暂存区、历史记录区以及git reset、git revert、git checkout等撤销命令的区别</a></p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="//merrier.wang" target="_blank">Merrier说</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/20170704/build-your-own-personal-blog-with-github-pages.html" class="pre-post btn btn-default" title="利用Github Pages搭建自己的个人博客">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">利用Github Pages搭建自己的个人博客</span>
+        </a>
+    
+    
+        <a href="/20170628/workspace-temporary-zone-and-history-zone-in-git.html" class="next-post btn btn-default" title="Git工作区、暂存区和历史记录区">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">Git工作区、暂存区和历史记录区</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+  <script id="dsq-count-scr" src="https://merrier.disqus.com/count.js" async></script>
+
+
+<script type="text/javascript">
+  var disqus_config = function () {
+    this.page.url = 'http://merrier.wang/20170629/revocation-operation-in-git.html';
+    this.page.identifier = '20170629/revocation-operation-in-git.html';
+    this.page.title = 'Git撤销操作';
+  };
+  var d = document, s = d.createElement('script');
+  s.src = 'https://merrier.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', '' + +new Date());
+  (d.head || d.body).appendChild(s);
+</script>
+
+
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#git-clean"><span class="toc-text">git clean</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#参数说明"><span class="toc-text">参数说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#应用场景"><span class="toc-text">应用场景</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#假如你要删除所有工作目录下面的修改，包括新添加的文件："><span class="toc-text">假如你要删除所有工作目录下面的修改，包括新添加的文件：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#git-checkout"><span class="toc-text">git checkout</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#参数说明-1"><span class="toc-text">参数说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#应用场景-1"><span class="toc-text">应用场景</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#git-reset"><span class="toc-text">git reset</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#参数说明-2"><span class="toc-text">参数说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#应用场景-2"><span class="toc-text">应用场景</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#当我们在使用pull的时候，可能会出现冲突，就需要merge，而在冲突状态下，需要解决冲突的文件会从index暂存区打回到工作区，如果我们想放弃index和工作区的改动，就可以执行下面这条命令："><span class="toc-text">当我们在使用pull的时候，可能会出现冲突，就需要merge，而在冲突状态下，需要解决冲突的文件会从index暂存区打回到工作区，如果我们想放弃index和工作区的改动，就可以执行下面这条命令：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#当我们在本地进行了add和commit操作之后，发现本地的修改都是错误的，想要回到前一版本，就可以执行下面这条命令："><span class="toc-text">当我们在本地进行了add和commit操作之后，发现本地的修改都是错误的，想要回到前一版本，就可以执行下面这条命令：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如果我们已经用add命令将某个文件加入暂存区了，此时想撤销对这个文件的add操作，就可以用下面的命令："><span class="toc-text">如果我们已经用add命令将某个文件加入暂存区了，此时想撤销对这个文件的add操作，就可以用下面的命令：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#git-revert"><span class="toc-text">git revert</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#参数说明-3"><span class="toc-text">参数说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#应用场景-3"><span class="toc-text">应用场景</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#对于已经把代码push到线上仓库，但是此时发现push的代码有问题，你想回退本地代码的同时也回退线上代码，回滚到某个指定的版本，使得线上和线下代码保持一致："><span class="toc-text">对于已经把代码push到线上仓库，但是此时发现push的代码有问题，你想回退本地代码的同时也回退线上代码，回滚到某个指定的版本，使得线上和线下代码保持一致：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#git的其它删除命令"><span class="toc-text">git的其它删除命令</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#参考链接"><span class="toc-text">参考链接</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        访问量:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        访客数:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2018
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

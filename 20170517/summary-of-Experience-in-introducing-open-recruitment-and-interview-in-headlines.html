@@ -1,0 +1,411 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Merrier说">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://merrier.wang">
+    <!--SEO-->
+
+<meta name="description" content="Merrier的个人博客">
+
+
+
+<meta name="keywords" content="merrier 博客 前端 北邮人">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>今日头条前端散招内推面试经验总结 | Merrier说</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Merrier说" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1264342320 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1264342320%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Merrier">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 叩首问路，码梦为生 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://merrier.wang">Merrier说</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/frontend/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/algorithm/"><i class="fa "></i>算法</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/series/"><i class="fa "></i>系列专栏</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>文章归档</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="今日头条前端散招内推面试经验总结">
+            
+	            今日头条前端散招内推面试经验总结
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/面试">
+            面试
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/面试" title="面试">
+                        面试
+                    </a>
+                
+                    <a href="/tags/前端" title="前端">
+                        前端
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/05/17</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="笔试题"><a href="#笔试题" class="headerlink" title="笔试题"></a>笔试题</h1><p>可能是内推的缘故，在面试之前前台工作人员给了一套前端的笔试题，然后就分配了一个小房间开始做题，虽然没有指明不可以手机搜索，但是为了保证最起码的诚信，我全程都没有看手机，完全凭自己的水平答题，虽然最后面试官把原题拿走了，但是我还是能靠记忆回想起一些题目，总结如下：</p>
+<h2 id="1-替换元素和非替换元素有哪些，它们的差异是什么？"><a href="#1-替换元素和非替换元素有哪些，它们的差异是什么？" class="headerlink" title="1.替换元素和非替换元素有哪些，它们的差异是什么？"></a>1.替换元素和非替换元素有哪些，它们的差异是什么？</h2><h3 id="替换元素"><a href="#替换元素" class="headerlink" title="替换元素"></a>替换元素</h3><p>替换元素是浏览器根据其标签的元素与属性来判断显示具体的内容。 比如：<input type="text"> ，这是一个文本输入框，换一个其他type的时候，浏览器显示就不一样 (X)HTML中的<img>、<input>、<textarea>、</textarea><select>、<object>都是替换元素，这些元素都没有实际的内容。</object></select></p>
+<h3 id="非替换元素"><a href="#非替换元素" class="headerlink" title="非替换元素"></a>非替换元素</h3><p>(X)HTML 的大多数元素是不可替换元素，他们将内容直接告诉浏览器，将其显示出来。 比如</p><p>merrier.wang</p>、<label>Merrier</label> 浏览器将把这段内容直接显示出来。<p></p>
+<h2 id="2-offsetWidth、clientWidth、scrollWidth如何计算？"><a href="#2-offsetWidth、clientWidth、scrollWidth如何计算？" class="headerlink" title="2.offsetWidth、clientWidth、scrollWidth如何计算？"></a>2.offsetWidth、clientWidth、scrollWidth如何计算？</h2><h3 id="offsetWidth"><a href="#offsetWidth" class="headerlink" title="offsetWidth"></a>offsetWidth</h3><ul>
+<li>无<code>padding</code>无滚动无<code>border</code><ul>
+<li>offsetWidth = clientWidth = 盒子的宽度</li>
+</ul>
+</li>
+<li>有<code>padding</code>无滚动有<code>border</code><ul>
+<li>offsetWidth = 盒子的宽度 + 盒子padding<em>_2 + 盒子边框</em>_2 = clientWidth + 边框宽度*2</li>
+</ul>
+</li>
+<li>有<code>padding</code>有滚动，且滚动是显示的，有<code>border</code><ul>
+<li>offsetWidth = 盒子宽度 + 盒子padding<em>_2 + 盒子边框</em>_2 = clientWidth + 滚动轴宽度 + 边框宽度*2</li>
+</ul>
+</li>
+</ul>
+<h3 id="clientWidth"><a href="#clientWidth" class="headerlink" title="clientWidth"></a>clientWidth</h3><ul>
+<li>无<code>padding</code>无滚动 ： <code>clientWidth</code> = 盒子的<code>width</code></li>
+<li>有<code>padding</code>无滚动 ： <code>clientWidth</code> = 盒子的<code>width</code> + 盒子的<code>padding * 2</code></li>
+<li>有<code>padding</code>有滚动 ： <code>clientWidth</code> = 盒子和<code>width</code> + 盒子的<code>padding * 2</code>- 滚动轴宽度</li>
+</ul>
+<h3 id="scrollWidth"><a href="#scrollWidth" class="headerlink" title="scrollWidth"></a>scrollWidth</h3><p>无滚动轴时：</p>
+<ul>
+<li>scrollWidth = clientWidth = 盒子宽度 + 盒子padding*2</li>
+</ul>
+<p>有滚动轴时：</p>
+<ul>
+<li>scrollWidth = 实际内容的宽度 + padding*2</li>
+<li>scrollHeight = 实际内容的高度 + padding*2</li>
+</ul>
+<p>更多关于JS中的宽高可以狠狠的点击这里：<a href="https://merrier.wang/?p=793">js宽高的理解和应用</a></p>
+<h2 id="3-JS中的标准事件模型是什么？是所有的事件都会冒泡吗？不是的话请举例"><a href="#3-JS中的标准事件模型是什么？是所有的事件都会冒泡吗？不是的话请举例" class="headerlink" title="3.JS中的标准事件模型是什么？是所有的事件都会冒泡吗？不是的话请举例"></a>3.JS中的标准事件模型是什么？是所有的事件都会冒泡吗？不是的话请举例</h2><p>DOM2标准事件模型：每一个DOM元素所触发的事件都要经历三个阶段：一、捕获阶段；二、目标对象本身的事件处理程序调用阶段；三、冒泡阶段。 在IE8以上的版本以及其他的浏览器中通过e.stopPropagation()方式阻止事件的冒泡 在IE8以及IE以下的浏览器中通过e.cancleBubble=true阻止事件冒泡 jQ中的mouseenter和mouseleave也是默认不冒泡</p>
+<h2 id="4-CSS选择器的优先级是什么？"><a href="#4-CSS选择器的优先级是什么？" class="headerlink" title="4.CSS选择器的优先级是什么？"></a>4.CSS选择器的优先级是什么？</h2><p>!important&gt;内联&gt;id&gt;class&gt;标签(p、a、div)&gt;通配符(*)&gt;浏览器自定义 更多关于CSS选择器的的内容：<a href="https://merrier.wang/?p=381">前端面试系列（4）——CSS选择器</a></p>
+<h2 id="5-IFC是什么？它的作用是什么？"><a href="#5-IFC是什么？它的作用是什么？" class="headerlink" title="5.IFC是什么？它的作用是什么？"></a>5.IFC是什么？它的作用是什么？</h2><h3 id="What’s-FC？"><a href="#What’s-FC？" class="headerlink" title="What’s FC？"></a>What’s FC？</h3><p>FC的全称是：Formatting Contexts，是W3C CSS2.1规范中的一个概念。它是页面中的一块渲染区域，并且有一套渲染规则，它决定了其子元素将如何定位，以及和其他元素的关系和相互作用。</p>
+<h3 id="IFC"><a href="#IFC" class="headerlink" title="IFC"></a>IFC</h3><p>IFC(Inline Formatting Contexts)直译为”内联格式化上下文”，IFC的line box（线框）高度由其包含行内元素中最高的实际高度计算而来（不受到竖直方向的padding/margin影响) IFC中的line box一般左右都贴紧整个IFC，但是会因为float元素而扰乱。float元素会位于IFC与与line box之间，使得line box宽度缩短。 同个ifc下的多个line box高度会不同。 IFC中时不可能有块级元素的，当插入块级元素时（如p中插入div）会产生两个匿名块与div分隔开，即产生两个IFC，每个IFC对外表现为块级元素，与div垂直排列。 <strong>那么IFC一般有什么用呢？</strong> <strong>水平居中</strong>：当一个块要在环境中水平居中时，设置其为inline-block则会在外层产生IFC，通过text-align则可以使其水平居中。 <strong>垂直居中</strong>：创建一个IFC，用其中一个元素撑开父元素的高度，然后设置其vertical-align:middle，其他行内元素则可以在此父元素下垂直居中。</p>
+<h3 id="BFC"><a href="#BFC" class="headerlink" title="BFC"></a>BFC</h3><p>BFC(Block Formatting Contexts)直译为”块级格式化上下文”。Block Formatting Contexts就是页面上的一个隔离的渲染区域，容器里面的子元素不会在布局上影响到外面的元素，反之也是如此。 <strong>如何产生BFC？</strong></p>
+<ol>
+<li>float的值不为none。</li>
+<li>overflow的值不为visible。</li>
+<li>position的值不为relative和static。</li>
+<li>display的值为table-cell, table-caption, inline-block中的任何一个。</li>
+</ol>
+<p><strong>那BFC一般有什么用呢？</strong> 比如常见的多栏布局，结合块级别元素浮动，里面的元素则是在一个相对隔离的环境里运行。 CSS2.1中只有BFC和IFC，CSS3中才有GFC和FFC，更多关于这些FC的内容可以查看：<a href="http://www.jshacker.com/note/3608" target="_blank" rel="noopener">小科普：到底什么是BFC、IFC、GFC和FFC，次奥？</a></p>
+<h2 id="6-如何实现一个自适应正方形"><a href="#6-如何实现一个自适应正方形" class="headerlink" title="6.如何实现一个自适应正方形"></a>6.如何实现一个自适应正方形</h2><p>这个问题在我前不久的一篇文章里有总结过，可以<a href="https://merrier.wang/?p=849">点击这里</a>查看</p>
+<h2 id="7-http-mp-toutiao-com向http-toutiao-com发送请求的话，跨域了吗，能收到请求吗，是什么样的请求？"><a href="#7-http-mp-toutiao-com向http-toutiao-com发送请求的话，跨域了吗，能收到请求吗，是什么样的请求？" class="headerlink" title="7.http://mp.toutiao.com向http://toutiao.com发送请求的话，跨域了吗，能收到请求吗，是什么样的请求？"></a>7.<a href="http://mp.toutiao.com向http://toutiao.com发送请求的话，跨域了吗，能收到请求吗，是什么样的请求？" target="_blank" rel="noopener">http://mp.toutiao.com向http://toutiao.com发送请求的话，跨域了吗，能收到请求吗，是什么样的请求？</a></h2><p>判断跨域的指标：域名、协议、端口，只要有其中一项不一致就会发生跨域</p>
+<h2 id="8-请介绍一下XSS和CSRF的区别，如何防御？"><a href="#8-请介绍一下XSS和CSRF的区别，如何防御？" class="headerlink" title="8.请介绍一下XSS和CSRF的区别，如何防御？"></a>8.请介绍一下XSS和CSRF的区别，如何防御？</h2><h3 id="XSS"><a href="#XSS" class="headerlink" title="XSS"></a>XSS</h3><p>XSS 全称“跨站脚本”（Cross-site scripting），是注入攻击的一种。其特点是不对服务器端造成任何伤害，而是通过一些正常的站内交互途径，例如发布评论，提交含有 JavaScript 的内容文本。这时服务器端如果没有过滤或转义掉这些脚本，作为内容发布到了页面上，其他用户访问这个页面的时候就会运行这些脚本。</p>
+<h3 id="CSRF"><a href="#CSRF" class="headerlink" title="CSRF"></a>CSRF</h3><p>CSRF 的全称是“跨站请求伪造”（Cross-site request forgery），而 XSS 的全称是“跨站脚本”。看起来有点相似，它们都是属于跨站攻击——不攻击服务器端而攻击正常访问网站的用户，但前面说了，它们的攻击类型是不同维度上的分 类。CSRF 顾名思义，是伪造请求，冒充用户在站内的正常操作。我们知道，绝大多数网站是通过 cookie 等方式辨识用户身份（包括使用服务器端 Session 的网站，因为 Session ID 也是大多保存在 cookie 里面的），再予以授权的。所以要伪造用户的正常操作，最好的方法是通过 XSS 或链接欺骗等途径，让用户在本机（即拥有身份 cookie 的浏览器端）发起用户所不知道的请求。 严格意义上来说，CSRF 不能分类为注入攻击，因为 CSRF 的实现途径远远不止 XSS 注入这一条。通过 XSS 来实现 CSRF 易如反掌，但对于设计不佳的网站，一条正常的链接都能造成 CSRF。</p>
+<h3 id="防御XSS攻击可以通过以下两方面操作："><a href="#防御XSS攻击可以通过以下两方面操作：" class="headerlink" title="防御XSS攻击可以通过以下两方面操作："></a>防御XSS攻击可以通过以下两方面操作：</h3><ol>
+<li>对用户表单输入的数据进行过滤，对javascript代码进行转义，然后再存入数据库；</li>
+<li>在信息的展示页面，也要进行转义，防止javascript在页面上执行。</li>
+</ol>
+<h3 id="CSRF攻击的防御可以通过以下两方面操作："><a href="#CSRF攻击的防御可以通过以下两方面操作：" class="headerlink" title="CSRF攻击的防御可以通过以下两方面操作："></a>CSRF攻击的防御可以通过以下两方面操作：</h3><ol>
+<li>所有需要用户登录之后才能执行的操作属于重要操作，这些操作传递参数应该使用post方式，更加安全；</li>
+<li>为防止跨站请求伪造，我们在某次请求的时候都要带上一个csrf_token参数，用于标识请求来源是否合法，csrf_token参数由系统生成，存储在SESSION中。</li>
+</ol>
+<h3 id="更多关于XSS和CSRF的解释："><a href="#更多关于XSS和CSRF的解释：" class="headerlink" title="更多关于XSS和CSRF的解释："></a>更多关于XSS和CSRF的解释：</h3><p><a href="http://blog.csdn.net/koastal/article/details/52905358" target="_blank" rel="noopener">浅析XSS和CSRF攻击及防御</a> <a href="https://www.zhihu.com/question/34445731?sort=created" target="_blank" rel="noopener">如何用简洁生动的语言理清XSS和CSRF的区别？</a></p>
+<h2 id="9-JSBridge是什么，它的作用是什么？"><a href="#9-JSBridge是什么，它的作用是什么？" class="headerlink" title="9.JSBridge是什么，它的作用是什么？"></a>9.JSBridge是什么，它的作用是什么？</h2><p>在开发中我们经常需要web和native进行交互，也就是要用到经常听到的“JSBridge”。由于我对这个东西也是停留在概念层面，所以推荐其他人的一篇文章吧：<a href="http://blog.csdn.net/jjx0224/article/details/52788922" target="_blank" rel="noopener">理解JSBridge</a></p>
+<h2 id="10-TCP和UDP的区别，以及如何进行拥塞控制？"><a href="#10-TCP和UDP的区别，以及如何进行拥塞控制？" class="headerlink" title="10.TCP和UDP的区别，以及如何进行拥塞控制？"></a>10.TCP和UDP的区别，以及如何进行拥塞控制？</h2><ol>
+<li>TCP面向连接（如打电话要先拨号建立连接）；UDP是无连接的，即发送数据之前不需要建立连接</li>
+<li>TCP提供可靠的服务。也就是说，通过TCP连接传送的数据，无差错，不丢失，不重复，且按序到达；UDP尽最大努力交付，即不保证可靠交付</li>
+<li>TCP面向字节流，实际上是TCP把数据看成一连串无结构的字节流；UDP是面向报文的，UDP没有拥塞控制，因此网络出现拥塞不会使源主机的发送速率降低（对实时应用很有用，如IP电话，实时视频会议等）</li>
+<li>每一条TCP连接只能是点到点的；UDP支持一对一，一对多，多对一和多对多的交互通信</li>
+<li>TCP首部开销20字节；UDP的首部开销小，只有8个字节</li>
+<li>TCP的逻辑通信信道是全双工的可靠信道，UDP则是不可靠信道</li>
+</ol>
+<p>更多关于TCP和UDP的区别：<a href="http://blog.csdn.net/li_ning_/article/details/52117463" target="_blank" rel="noopener">TCP和UDP的最完整的区别</a></p>
+<h3 id="拥塞控制"><a href="#拥塞控制" class="headerlink" title="拥塞控制"></a>拥塞控制</h3><p>防止过多的数据注入到网络中，这样可以使网络中的路由器或链路不致过载。拥塞控制所要做的都有一个前提：网络能够承受现有的网络负荷。拥塞控制是一个全局性的过程，涉及到所有的主机、路由器，以及与降低网络传输性能有关的所有因素。 <strong>几种拥塞控制方法</strong>：慢开始( slow-start )、拥塞避免( congestion avoidance )、快重传( fast retransmit )和快恢复( fast recovery )。 更多关于拥塞控制：<a href="http://blog.csdn.net/kinger0/article/details/48206999" target="_blank" rel="noopener">TCP/IP详解–拥塞控制 &amp; 慢启动 快恢复 拥塞避免</a></p>
+<h2 id="11-有一无序数组，数组个数为m，如何从这m个数里面找到N个数，使这N个数的和为M；并阐述时间复杂度和空间复杂度"><a href="#11-有一无序数组，数组个数为m，如何从这m个数里面找到N个数，使这N个数的和为M；并阐述时间复杂度和空间复杂度" class="headerlink" title="11.有一无序数组，数组个数为m，如何从这m个数里面找到N个数，使这N个数的和为M；并阐述时间复杂度和空间复杂度"></a>11.有一无序数组，数组个数为m，如何从这m个数里面找到N个数，使这N个数的和为M；并阐述时间复杂度和空间复杂度</h2><p>这个属于比较经典的<a href="http://baike.baidu.com/item/01%E8%83%8C%E5%8C%85" target="_blank" rel="noopener">01背包问题</a>，网上有很多关于这种问题的求解方式，基本上包括递归、动态规划、无脑循环等方法，推荐以下比较靠谱的解法：<a href="http://www.cnblogs.com/iyangyuan/p/3908498.html" target="_blank" rel="noopener">动态规划（JS）</a>、<a href="http://blog.csdn.net/min_jie/article/details/3966867" target="_blank" rel="noopener">无脑循环</a></p>
+<h1 id="一面"><a href="#一面" class="headerlink" title="一面"></a>一面</h1><p>一面的时间很长，大概有将近一个小时的感觉，所以问的问题涉及的领域和方面也比较多，所以我就想到什么写下什么了，另外也不赋答案了，实在有点多。。 1.__proto__是什么意思 2.JS实现继承的方式 3.object.defineproprety()方法的参数和含义 4.setTimeout(func,0)中设置延时为“0”的目的 5.jQuery中对Promise()的when()方法的实现原理 6.HTTP和TCP的关系 7.TCP三次握手 8.HTTP如何达到在下一次连接时不用再TCP三次握手的 9.如何实现一个自适应正方形 10.浏览器渲染的过程 11.重排和重绘的触发时机和区别 12.层叠上下文起作用的前提 13.前端路由和后端路由的区别 14.首屏加载完毕之后<script></script>代码的加载顺序 15.vue.js的设计思想 16.如果用jQuery实现双向数据绑定，应该如何实现 17.当content-length过长时，应该如何传输数据 18.JS文件中的代码执行顺序 19.详细讲解一下JS中宏任务和微任务的判断机制 20.如果有别的库中也用到了”$”，如何解决和jQuery的冲突</p>
+<h1 id="二面"><a href="#二面" class="headerlink" title="二面"></a>二面</h1><p>二面相对于一面来说，就简单随意了很多，问了一些项目的事情，还问了技术选型方面的问题，最后出了一道算法题让我做，我思考了大概15分钟，感觉真心写不出代码，就和面试官简单的讲了一下思路（而且好像也是不太对的思路），面试官思考了一段时间之后就告诉我二面结束了，可以hr面了；至此，技术面就全部结束了。</p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="//merrier.wang" target="_blank">Merrier说</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/20170519/summary-of-the-front-end-interview-questions-of-sohu-research-institute.html" class="pre-post btn btn-default" title="搜狐研究院前端散招面试题总结">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">搜狐研究院前端散招面试题总结</span>
+        </a>
+    
+    
+        <a href="/20170516/realization-of-adaptive-square-in-pure-css.html" class="next-post btn btn-default" title="纯CSS实现自适应正方形">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">纯CSS实现自适应正方形</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+  <script id="dsq-count-scr" src="https://merrier.disqus.com/count.js" async></script>
+
+
+<script type="text/javascript">
+  var disqus_config = function () {
+    this.page.url = 'http://merrier.wang/20170517/summary-of-Experience-in-introducing-open-recruitment-and-interview-in-headlines.html';
+    this.page.identifier = '20170517/summary-of-Experience-in-introducing-open-recruitment-and-interview-in-headlines.html';
+    this.page.title = '今日头条前端散招内推面试经验总结';
+  };
+  var d = document, s = d.createElement('script');
+  s.src = 'https://merrier.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', '' + +new Date());
+  (d.head || d.body).appendChild(s);
+</script>
+
+
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#笔试题"><span class="toc-text">笔试题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-替换元素和非替换元素有哪些，它们的差异是什么？"><span class="toc-text">1.替换元素和非替换元素有哪些，它们的差异是什么？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#替换元素"><span class="toc-text">替换元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#非替换元素"><span class="toc-text">非替换元素</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-offsetWidth、clientWidth、scrollWidth如何计算？"><span class="toc-text">2.offsetWidth、clientWidth、scrollWidth如何计算？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#offsetWidth"><span class="toc-text">offsetWidth</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#clientWidth"><span class="toc-text">clientWidth</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#scrollWidth"><span class="toc-text">scrollWidth</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-JS中的标准事件模型是什么？是所有的事件都会冒泡吗？不是的话请举例"><span class="toc-text">3.JS中的标准事件模型是什么？是所有的事件都会冒泡吗？不是的话请举例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-CSS选择器的优先级是什么？"><span class="toc-text">4.CSS选择器的优先级是什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-IFC是什么？它的作用是什么？"><span class="toc-text">5.IFC是什么？它的作用是什么？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#What’s-FC？"><span class="toc-text">What’s FC？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IFC"><span class="toc-text">IFC</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BFC"><span class="toc-text">BFC</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-如何实现一个自适应正方形"><span class="toc-text">6.如何实现一个自适应正方形</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-http-mp-toutiao-com向http-toutiao-com发送请求的话，跨域了吗，能收到请求吗，是什么样的请求？"><span class="toc-text">7.http://mp.toutiao.com向http://toutiao.com发送请求的话，跨域了吗，能收到请求吗，是什么样的请求？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-请介绍一下XSS和CSRF的区别，如何防御？"><span class="toc-text">8.请介绍一下XSS和CSRF的区别，如何防御？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#XSS"><span class="toc-text">XSS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSRF"><span class="toc-text">CSRF</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#防御XSS攻击可以通过以下两方面操作："><span class="toc-text">防御XSS攻击可以通过以下两方面操作：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSRF攻击的防御可以通过以下两方面操作："><span class="toc-text">CSRF攻击的防御可以通过以下两方面操作：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#更多关于XSS和CSRF的解释："><span class="toc-text">更多关于XSS和CSRF的解释：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-JSBridge是什么，它的作用是什么？"><span class="toc-text">9.JSBridge是什么，它的作用是什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-TCP和UDP的区别，以及如何进行拥塞控制？"><span class="toc-text">10.TCP和UDP的区别，以及如何进行拥塞控制？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#拥塞控制"><span class="toc-text">拥塞控制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-有一无序数组，数组个数为m，如何从这m个数里面找到N个数，使这N个数的和为M；并阐述时间复杂度和空间复杂度"><span class="toc-text">11.有一无序数组，数组个数为m，如何从这m个数里面找到N个数，使这N个数的和为M；并阐述时间复杂度和空间复杂度</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一面"><span class="toc-text">一面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二面"><span class="toc-text">二面</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        访问量:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        访客数:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2018
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

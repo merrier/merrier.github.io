@@ -1,0 +1,353 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Merrier说">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://merrier.wang">
+    <!--SEO-->
+
+<meta name="description" content="Merrier的个人博客">
+
+
+
+<meta name="keywords" content="merrier 博客 前端 北邮人">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>你可能不会HTML | Merrier说</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Merrier说" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1264342320 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1264342320%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Merrier">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 叩首问路，码梦为生 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://merrier.wang">Merrier说</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/frontend/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/algorithm/"><i class="fa "></i>算法</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/series/"><i class="fa "></i>系列专栏</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>文章归档</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="你可能不会HTML">
+            
+	            你可能不会HTML
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/stackoverflow">
+            stackoverflow
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/HTML" title="HTML">
+                        HTML
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/08/04</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>这是一篇总结类的文章，因为大部分人都觉得HTML代码是“史上最简单的语言”，但是其实有很多特性你并没有用过，或者说都没有听说过，所以这一篇文章可以让你领略到HTML的独特魅力。</p>
+<h1 id="autocomplete"><a href="#autocomplete" class="headerlink" title="autocomplete"></a>autocomplete</h1><p>这个属性是我在逛<a href="https://stackoverflow.com/questions/2530/how-do-you-disable-browser-autocomplete-on-web-form-field-input-tag" target="_blank" rel="noopener">stackoverflow</a>时看到的，这是HTML5中关于input的新特性，具体可见<a href="http://www.w3school.com.cn/tags/att_input_autocomplete.asp" target="_blank" rel="noopener">w3c文档</a>，从这个属性的英文名我们可以看出来这是一个“自动完成”相关的属性，那么什么是自动完成呢？我们来看一下w3c中的解释：</p>
+<blockquote>
+<p>自动完成允许浏览器预测对字段的输入。当用户在字段开始键入时，浏览器基于之前键入过的值，应该显示出在字段中填写的选项。</p>
+</blockquote>
+<p>所以这个属性其实我们经常碰到，比如淘宝搜索的时候、填用户名的时候……而且autocomplete默认是开启的，但是我们可以通过autocomplete = ‘off’ 关闭自动完成功能，这一点有时候用于防止攻击，具体可见上面的stackoverflow链接</p>
+<h2 id="shadow-dom"><a href="#shadow-dom" class="headerlink" title="shadow dom"></a>shadow dom</h2><p><a href="https://aotu.io/notes/2016/06/24/Shadow-DOM/index.html" target="_blank" rel="noopener">https://aotu.io/notes/2016/06/24/Shadow-DOM/index.html</a></p>
+<p>你听说过原生 HTML 组件吗？：<a href="https://juejin.im/post/5bc7ead7f265da0afc2c2c6b" target="_blank" rel="noopener">https://juejin.im/post/5bc7ead7f265da0afc2c2c6b</a></p>
+<h2 id="Map标签"><a href="#Map标签" class="headerlink" title="Map标签"></a>Map标签</h2><p><a href="http://www.w3school.com.cn/tags/tag_map.asp" target="_blank" rel="noopener">http://www.w3school.com.cn/tags/tag_map.asp</a></p>
+<h1 id="FileReader-API"><a href="#FileReader-API" class="headerlink" title="FileReader API"></a>FileReader API</h1><h1 id="调出纯数字键盘"><a href="#调出纯数字键盘" class="headerlink" title="调出纯数字键盘"></a>调出纯数字键盘</h1><p><a href="https://www.zhihu.com/question/55881888" target="_blank" rel="noopener">https://www.zhihu.com/question/55881888</a></p>
+<h1 id="十行HTML实现增强现实"><a href="#十行HTML实现增强现实" class="headerlink" title="十行HTML实现增强现实"></a>十行HTML实现增强现实</h1><p><a href="http://web.jobbole.com/91186/" target="_blank" rel="noopener">http://web.jobbole.com/91186/</a></p>
+<h1 id="x-webkit-speech-语音输入功能"><a href="#x-webkit-speech-语音输入功能" class="headerlink" title="x-webkit-speech 语音输入功能"></a>x-webkit-speech 语音输入功能</h1><p><a href="http://caibaojian.com/x-webkit-speech.html" target="_blank" rel="noopener">http://caibaojian.com/x-webkit-speech.html</a> <a href="http://www.cnblogs.com/moqiutao/p/6366942.html" target="_blank" rel="noopener">http://www.cnblogs.com/moqiutao/p/6366942.html</a> <a href="https://www.cnblogs.com/qzsonline/archive/2012/02/10/2344832.html" target="_blank" rel="noopener">https://www.cnblogs.com/qzsonline/archive/2012/02/10/2344832.html</a> <a href="http://hongqiang.iteye.com/blog/1636577" target="_blank" rel="noopener">http://hongqiang.iteye.com/blog/1636577</a> <a href="https://blog.csdn.net/gladtomeetyou/article/details/7892066" target="_blank" rel="noopener">https://blog.csdn.net/gladtomeetyou/article/details/7892066</a></p>
+<h1 id="危险的-target-”-blank”-与-“opener”"><a href="#危险的-target-”-blank”-与-“opener”" class="headerlink" title="危险的 target=”_blank” 与 “opener”"></a>危险的 target=”_blank” 与 “opener”</h1><p><a href="https://juejin.im/post/5a9f8425f265da239a5f57f8" target="_blank" rel="noopener">https://juejin.im/post/5a9f8425f265da239a5f57f8</a></p>
+<h1 id="DOMNodeRemoved、DOMNodeRemovedFromDocument和DOMSubtreeModified事件"><a href="#DOMNodeRemoved、DOMNodeRemovedFromDocument和DOMSubtreeModified事件" class="headerlink" title="DOMNodeRemoved、DOMNodeRemovedFromDocument和DOMSubtreeModified事件"></a>DOMNodeRemoved、DOMNodeRemovedFromDocument和DOMSubtreeModified事件</h1><p><a href="https://www.cnblogs.com/xiaohuochai/p/5873289.html，这三个事件可以用来防篡改，DEMO页面：https://loadchange.github.io/gwm/index.html" target="_blank" rel="noopener">https://www.cnblogs.com/xiaohuochai/p/5873289.html，这三个事件可以用来防篡改，DEMO页面：https://loadchange.github.io/gwm/index.html</a></p>
+<h1 id="你（可能）不知道的web-api"><a href="#你（可能）不知道的web-api" class="headerlink" title="你（可能）不知道的web api"></a>你（可能）不知道的web api</h1><p><a href="https://juejin.im/post/5c1606d9f265da613d7bf7a4" target="_blank" rel="noopener">https://juejin.im/post/5c1606d9f265da613d7bf7a4</a></p>
+<p>Page Lifecycle API 教程：<a href="http://www.ruanyifeng.com/blog/2018/11/page\_lifecycle\_api.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2018/11/page\_lifecycle\_api.html</a></p>
+<h1 id="转-你不知道的标签"><a href="#转-你不知道的标签" class="headerlink" title="[转]你不知道的标签"></a>[转]你不知道的<img>标签</h1><p><a href="https://www.jianshu.com/p/9f47ae6b3b5b" target="_blank" rel="noopener">https://www.jianshu.com/p/9f47ae6b3b5b</a></p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="//merrier.wang" target="_blank">Merrier说</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/20170807/object-system-in-js.html" class="pre-post btn btn-default" title="JS中的对象系统">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">JS中的对象系统</span>
+        </a>
+    
+    
+        <a href="/20170804/what-is-the-difference-between-let-and-var.html" class="next-post btn btn-default" title="let和var到底有什么区别？">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">let和var到底有什么区别？</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+  <script id="dsq-count-scr" src="https://merrier.disqus.com/count.js" async></script>
+
+
+<script type="text/javascript">
+  var disqus_config = function () {
+    this.page.url = 'http://merrier.wang/20170804/you-probably-dont-know-html.html';
+    this.page.identifier = '20170804/you-probably-dont-know-html.html';
+    this.page.title = '你可能不会HTML';
+  };
+  var d = document, s = d.createElement('script');
+  s.src = 'https://merrier.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', '' + +new Date());
+  (d.head || d.body).appendChild(s);
+</script>
+
+
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#写在前面"><span class="toc-text">写在前面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#autocomplete"><span class="toc-text">autocomplete</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#shadow-dom"><span class="toc-text">shadow dom</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Map标签"><span class="toc-text">Map标签</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#FileReader-API"><span class="toc-text">FileReader API</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#调出纯数字键盘"><span class="toc-text">调出纯数字键盘</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十行HTML实现增强现实"><span class="toc-text">十行HTML实现增强现实</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#x-webkit-speech-语音输入功能"><span class="toc-text">x-webkit-speech 语音输入功能</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#危险的-target-”-blank”-与-“opener”"><span class="toc-text">危险的 target=”_blank” 与 “opener”</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#DOMNodeRemoved、DOMNodeRemovedFromDocument和DOMSubtreeModified事件"><span class="toc-text">DOMNodeRemoved、DOMNodeRemovedFromDocument和DOMSubtreeModified事件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#你（可能）不知道的web-api"><span class="toc-text">你（可能）不知道的web api</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#转-你不知道的标签"><span class="toc-text">[转]你不知道的标签</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        访问量:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        访客数:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2018
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

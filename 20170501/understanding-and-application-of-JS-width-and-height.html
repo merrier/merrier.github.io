@@ -1,0 +1,506 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Merrier说">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://merrier.wang">
+    <!--SEO-->
+
+<meta name="description" content="Merrier的个人博客">
+
+
+
+<meta name="keywords" content="merrier 博客 前端 北邮人">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>JS宽高的理解和应用 | Merrier说</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Merrier说" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1264342320 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1264342320%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Merrier">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 叩首问路，码梦为生 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://merrier.wang">Merrier说</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/frontend/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/algorithm/"><i class="fa "></i>算法</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/series/"><i class="fa "></i>系列专栏</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>文章归档</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="JS宽高的理解和应用">
+            
+	            JS宽高的理解和应用
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/JS">
+            JS
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/JS" title="JS">
+                        JS
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/05/01</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="window和document"><a href="#window和document" class="headerlink" title="window和document"></a>window和document</h1><p><strong>document是window对象的一部分</strong>：document.body -&gt;window.document.body 浏览器的HTML文档称为document对象 <strong>window.location === document.location</strong>：window对象的location属性引用的是location对象，表示该窗口中当前显示文档的URL，document对象的location属性也是引用了location对象</p>
+<h1 id="window-screen"><a href="#window-screen" class="headerlink" title="window.screen"></a>window.screen</h1><p>window.screen包含有关用户屏幕的信息，它包括：</p>
+<ul>
+<li><code>window.screen.width</code></li>
+<li><code>window.screen.height</code></li>
+<li><code>window.screen.availHeight</code></li>
+<li><code>window.screen.availWidth</code></li>
+<li><code>window.screenTop</code></li>
+<li><code>window.screenLeft</code></li>
+</ul>
+<p><img src="https://merrier.wang/wp-content/uploads/2017/05/1480597-d7979b36ca991d9c.png" alt=""></p>
+<h1 id="与window相关的宽高"><a href="#与window相关的宽高" class="headerlink" title="与window相关的宽高"></a>与window相关的宽高</h1><ul>
+<li><code>window.innerWidth</code> 内部的宽度</li>
+<li><code>window.innerHeight</code> 内部的高度</li>
+<li><code>window.outWidth</code> 外部的宽度</li>
+<li><code>window.outHeight</code> 外部的高度</li>
+</ul>
+<p><img src="https://merrier.wang/wp-content/uploads/2017/05/1480597-7c90cc88a3355d8e.png" alt=""></p>
+<h1 id="与document相关的宽高"><a href="#与document相关的宽高" class="headerlink" title="与document相关的宽高"></a>与document相关的宽高</h1><h2 id="与client相关的宽高"><a href="#与client相关的宽高" class="headerlink" title="与client相关的宽高"></a>与client相关的宽高</h2><ul>
+<li><code>document.body.clientWidth</code> 元素宽度（可视内容区+内边距）</li>
+<li><code>document.body.clientHeight</code>元素高度（可视内容区+内边距）</li>
+</ul>
+<p>该属性指的是元素的可视部分宽度和高度，即<code>padding+content</code></p>
+<ul>
+<li>如果没有滚动条，即为元素设定的宽度和高度</li>
+</ul>
+<p>body{<br>  border: 20px solid #000;<br>  margin: 10px;<br>  padding: 40px;<br>  background: #eee;<br>  height: 350px;<br>  width: 500px;<br>  overflow: scroll;<br>}<br>console.log(document.body.clientWidth);  // 350+padding(80) = 430<br>console.log(document.body.clientHeight);  // 500 + padding(80) = 580</p>
+<ul>
+<li>如果出现滚动条，滚动条会遮盖元素的宽高，那么该属性就是其本来宽高减去滚动条的宽高</li>
+</ul>
+<p>#exp2 {<br>  width:200px;<br>  height:200px;<br>  background:red;<br>  border:1px solid #000;<br>  overflow:auto;<br>}<br>var test = document.getElementById(“exp2”);<br>console.log(test.clientHeight); // 200<br>console.log(test.clientWidth); //</p>
+<ul>
+<li><code>document.body.clientLeft</code></li>
+<li><code>document.body.clientTop</code></li>
+</ul>
+<p>这两个返回的是元素周围边框的厚度，如果不指定一个边框或者不定位该元素，它的值就是0</p>
+<p>body{<br>  border: 20px solid #000;<br>  margin: 10px;<br>  padding: 40px;<br>  background: #eee;<br>  height: 350px;<br>  width: 500px;<br>  overflow: scroll;<br>}<br>console.log(document.body.clientLeft);  // 20<br>console.log(document.body.clientTop);  // 20</p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><ul>
+<li>无<code>padding</code>无滚动 ： <code>clientWidth</code> = 盒子的<code>width</code></li>
+<li>有<code>padding</code>无滚动 ： <code>clientWidth</code> = 盒子的<code>width</code> + 盒子的<code>padding * 2</code></li>
+<li>有<code>padding</code>有滚动 ： <code>clientWidth</code> = 盒子和<code>width</code> + 盒子的<code>padding * 2</code>- 滚动轴宽度</li>
+<li><code>clientTop = border-top</code></li>
+<li><code>clientLeft = border-left</code></li>
+</ul>
+<h2 id="与offset相关的宽高"><a href="#与offset相关的宽高" class="headerlink" title="与offset相关的宽高"></a>与offset相关的宽高</h2><ul>
+<li><strong>document.body.offsetWidth（元素的border+padding+content的宽度）</strong></li>
+<li><strong>document.body.offsetHeight（元素的border+padding+content的高度）</strong></li>
+</ul>
+<p>该属性和其内部的内容是否超出元素大小无关，只和本来设定的border以及width和height有关</p>
+<p>body{<br>  border: 20px solid #000;<br>  margin: 10px;<br>  padding: 40px;<br>  background: #eee;<br>  height: 350px;<br>  width: 500px;<br>  overflow: scroll;<br>}<br>console.log(document.body.offsetWidth);  // 470 = padding*2 + 350 + border*2<br>console.log(document.body.offsetHeight);  // 620 = padding*2 + 500 + border*2</p>
+<ul>
+<li><strong>document.offsetLeft</strong></li>
+<li><strong>document.offsetTop</strong></li>
+</ul>
+<p>了解这两个属性我们必须先了解它，什么是<code>offsetParent</code></p>
+<ul>
+<li>如果当前元素的父级元素没有进行<code>CSS</code>定位（<code>position</code>为<code>absolute</code>或<code>relative</code>）,<code>offsetParent</code>为<code>body.</code></li>
+<li>假如当前元素的父级元素中有<code>CSS</code>定位，<code>offsetParent</code>取最近的那个父级元素</li>
+</ul>
+<h3 id="offsetLeft的兼容性问题"><a href="#offsetLeft的兼容性问题" class="headerlink" title="offsetLeft的兼容性问题"></a>offsetLeft的兼容性问题</h3><ul>
+<li>在<code>IE6/7</code>中<ul>
+<li><code>offsetLeft</code> = offsetParent的padding-left + 当前元素的margin-left</li>
+</ul>
+</li>
+<li>在<code>IE8/9/10</code>以及<code>chrome</code>中<ul>
+<li><code>offsetLeft</code> = offsetParent的margin-left + offsetParent的border宽度 + offsetParent的padding-left + 当前元素的margin-left</li>
+</ul>
+</li>
+<li>在<code>FireFox</code>中<ul>
+<li><code>offsetLeft</code> = offsetParent的margin-left + 当前元素的margin-left + offsetParent的padding-left</li>
+</ul>
+</li>
+</ul>
+<p>body{<br>  border: 20px solid #000;<br>  margin: 10px;<br>  padding: 40px;<br>  background: #eee;<br>  height: 350px;<br>  width: 500px;<br>  overflow: scroll;<br>} </p>
+<p>#exp {<br>  width:400px;<br>  height:200px;<br>  padding:20px;<br>  margin:10px;<br>  background:red;<br>  border:20px solid #000;<br>  overflow:auto;<br>}<br>var div = document.getElementById(“exp”);</p>
+<ul>
+<li>在IE8/9/10以及chrome中：<ul>
+<li>div.offsetLeft = 本身的margin10 + 父级元素的padding40 + margin10 + border20 = 80</li>
+<li>div.offsetTop = 本身的margin10 + 父级元素的padding40 + margin10 + border20 = 80</li>
+</ul>
+</li>
+<li>在FireFox：（相比chrome中少了border）<ul>
+<li>div.offsetLeft = 本身的margin10 + 父级元素的padding40 + margin10 = 60</li>
+<li>div.offsetTop = 本身的margin10 + 父级元素的padding40 + margin10 = 60</li>
+</ul>
+</li>
+<li>在IE6/7中：（相比在FireFox，不但少了border还少了父级元素的margin）<ul>
+<li><code>div.offsetLeft</code> = 本身的<code>margin10</code> + 父级元素的<code>padding40</code> = 50</li>
+<li><code>div.offsetTop</code> = 本身的<code>margin10</code> + 父级元素的<code>padding40</code> = 50</li>
+</ul>
+</li>
+</ul>
+<h3 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结</h3><ul>
+<li>无<code>padding</code>无滚动无<code>border</code><ul>
+<li>offsetWidth = clientWidth = 盒子的宽度</li>
+</ul>
+</li>
+<li>有<code>padding</code>无滚动有<code>border</code><ul>
+<li>offsetWidth = 盒子的宽度 + 盒子padding<em>_2 + 盒子边框</em>_2 = clientWidth + 边框宽度*2</li>
+</ul>
+</li>
+<li>有<code>padding</code>有滚动，且滚动是显示的，有<code>border</code><ul>
+<li>offsetWidth = 盒子宽度 + 盒子padding<em>_2 + 盒子边框</em>_2 = clientWidth + 滚动轴宽度 + 边框宽度*2</li>
+</ul>
+</li>
+</ul>
+<h2 id="与scroll相关的宽高"><a href="#与scroll相关的宽高" class="headerlink" title="与scroll相关的宽高"></a>与scroll相关的宽高</h2><ul>
+<li><strong>document.body.scrollWidth</strong></li>
+<li><strong>document.body.scrollHeight</strong></li>
+</ul>
+<p>document.body的scrollWidth和scrollHeight与div的scrollWidth和scrollHeight是有区别的</p>
+<p>body{<br>  border: 20px solid #000;<br>  margin: 10px;<br>  padding: 40px;<br>  background: #eee;<br>  height: 350px;<br>  width: 500px;<br>  overflow: scroll;<br>}<br>document.body.scrollHeight; //<br>document.body.scrollWidth; //</p>
+<ul>
+<li>当给定宽高小于浏览器窗口的宽高<ul>
+<li>scrollWidth = 通常是浏览器窗口的宽度</li>
+<li>scrollHeight = 通常是浏览器窗口的高度</li>
+</ul>
+</li>
+<li>当给定宽高大于浏览器窗口的宽高，且内容小于给定宽高的时候<ul>
+<li>scrollWidth = 给定宽度 + 其所有的padding + margin + border</li>
+<li>scrollHeight = 给定高度 + 其所有的padding + margin + border</li>
+</ul>
+</li>
+<li>当给定宽高大于浏览器窗口宽高，且内容大于给定宽高<ul>
+<li>scrollWidth = 内容宽度 + 其所有的padding + margin + border</li>
+<li>scrollHeight = 内容高度 + 其所有的padding + margin + border</li>
+</ul>
+</li>
+</ul>
+<h3 id="在某div中的scrollWidth和scrollHeight"><a href="#在某div中的scrollWidth和scrollHeight" class="headerlink" title="在某div中的scrollWidth和scrollHeight"></a><strong>在某div中的scrollWidth和scrollHeight</strong></h3><p>无滚动轴时：</p>
+<ul>
+<li>scrollWidth = clientWidth = 盒子宽度 + 盒子padding*2</li>
+</ul>
+<p><img src="https://merrier.wang/wp-content/uploads/2017/05/1480597-1370209704289653.png" alt="">有滚动轴时：</p>
+<ul>
+<li>scrollWidth = 实际内容的宽度 + padding*2</li>
+<li>scrollHeight = 实际内容的高度 + padding*2</li>
+</ul>
+<p><img src="https://merrier.wang/wp-content/uploads/2017/05/1480597-f2e4e49734f8ea46.png" alt=""></p>
+<ul>
+<li><strong>document.body.scrollLeft</strong></li>
+<li><strong>document.body.scrollTop</strong></li>
+</ul>
+<p>与前面不同的是，这对属性是<strong>可读写</strong>的，指的是当元素其中的超出其宽高的时候，元素被卷起来的高度和宽度</p>
+<p>#exp {<br>  width:400px;<br>  height:200px;<br>  padding:20px;<br>  margin:10px;<br>  background:red;<br>  border:20px solid #000;<br>  overflow-y:scroll;<br>}<br>var mydiv = document.getElementById(“exp”);<br>mydiv.scrollTop ;  //默认情况下是0<br>mydiv.scrollLeft ; //默认情况下是0<br>//可以改写它<br>mydiv.scrollTop = 20;<br>console.log(mydiv.scrollTop)</p>
+<p><img src="https://merrier.wang/wp-content/uploads/2017/05/1480597-8a31ecd4fd0a59a9.png" alt=""></p>
+<h3 id="obj-style-width和obj-style-height"><a href="#obj-style-width和obj-style-height" class="headerlink" title="obj.style.width和obj.style.height"></a><strong>obj.style.width和obj.style.height</strong></h3><p>对于一个<code>DOM</code>元素，它的<code>style</code>属性返回的是一个对象，这个对象的任意一个属性是可读写的，<code>style.width</code>等于<code>css</code>属性中的宽度。<code>style.height</code>等于<code>css</code>属性中的高度</p>
+<h1 id="documentElement和body的关系"><a href="#documentElement和body的关系" class="headerlink" title="documentElement和body的关系"></a>documentElement和body的关系</h1><p>是父子级的关系</p>
+<p>console.log(document); //document<br>console.log(document.documentElement); //html<br>console.log(document.body); //body</p>
+<p><img src="https://merrier.wang/wp-content/uploads/2017/05/1480597-a0840d36969a6ca9.png" alt=""></p>
+<ul>
+<li>兼容问题推荐使用 获取浏览器窗口可视区域大小</li>
+</ul>
+<p>document.body.clientWidth || document.documentElement.clientWidth;<br>document.body.clientHeight || document.documentElement.clientHeight;</p>
+<h1 id="Event对象的5种坐标"><a href="#Event对象的5种坐标" class="headerlink" title="Event对象的5种坐标"></a>Event对象的5种坐标</h1><ul>
+<li>clientX和clientY：相对于浏览器（可视区左上角0,0）的坐标</li>
+<li>screenX和screenY：相对于设备屏幕左上角（0,0）的坐标</li>
+<li>offsetX和offsetY：相对于事件源左上角（0,0）的坐标</li>
+<li>pageX和pageY：相对于整个网页左上角（0,0）的坐标</li>
+<li>X和Y：本来是IE属性，相对于用CSS动态定位的最内层包容元素</li>
+</ul>
+<p><img src="https://merrier.wang/wp-content/uploads/2017/05/1480597-8596ee9ee7d11e15.png" alt=""></p>
+<h1 id="js各种宽高的应用"><a href="#js各种宽高的应用" class="headerlink" title="js各种宽高的应用"></a>js各种宽高的应用</h1><ul>
+<li><a href="http://codepen.io/poetries/pen/RoeJgG" target="_blank" rel="noopener">可视区域加载</a></li>
+<li><a href="http://codepen.io/poetries/pen/WoayJy" target="_blank" rel="noopener">判断网页滚动到顶部或者底部</a></li>
+<li><a href="http://codepen.io/poetries/pen/vyVrvm" target="_blank" rel="noopener">DIV滚动到底部时加载剩余内容</a></li>
+<li><a href="http://codepen.io/poetries/pen/RoeBbL" target="_blank" rel="noopener">计算滚动轴的宽高</a></li>
+</ul>
+<h1 id="js中的宽高属性总结"><a href="#js中的宽高属性总结" class="headerlink" title="js中的宽高属性总结"></a>js中的宽高属性总结</h1><p><img src="https://merrier.wang/wp-content/uploads/2017/05/1480597-41da370c1bd5e927.png" alt=""> <img src="https://merrier.wang/wp-content/uploads/2017/05/1480597-3f7c4f7f4e7f132a.png" alt=""> <img src="https://merrier.wang/wp-content/uploads/2017/05/1480597-b2343bbf8a94bf8e.png" alt=""></p>
+<h5 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h5><p><a href="http://blog.poetries.top/2016/12/13/js-props/" target="_blank" rel="noopener">JavaScript及jQuery中的各种宽高属性图解</a></p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="//merrier.wang" target="_blank">Merrier说</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/20170509/zero-distance-contact-with-mysql.html" class="pre-post btn btn-default" title="与MySQL的零距离接触">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">与MySQL的零距离接触</span>
+        </a>
+    
+    
+        <a href="/20170425/javaScript-semi-knowledgeable-and-semi-knowledgeable.html" class="next-post btn btn-default" title="读书笔记系列（7）——JavaScript半知半解">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">读书笔记系列（7）——JavaScript半知半解</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+  <script id="dsq-count-scr" src="https://merrier.disqus.com/count.js" async></script>
+
+
+<script type="text/javascript">
+  var disqus_config = function () {
+    this.page.url = 'http://merrier.wang/20170501/understanding-and-application-of-JS-width-and-height.html';
+    this.page.identifier = '20170501/understanding-and-application-of-JS-width-and-height.html';
+    this.page.title = 'JS宽高的理解和应用';
+  };
+  var d = document, s = d.createElement('script');
+  s.src = 'https://merrier.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', '' + +new Date());
+  (d.head || d.body).appendChild(s);
+</script>
+
+
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#window和document"><span class="toc-text">window和document</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#window-screen"><span class="toc-text">window.screen</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#与window相关的宽高"><span class="toc-text">与window相关的宽高</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#与document相关的宽高"><span class="toc-text">与document相关的宽高</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#与client相关的宽高"><span class="toc-text">与client相关的宽高</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#小结"><span class="toc-text">小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#与offset相关的宽高"><span class="toc-text">与offset相关的宽高</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#offsetLeft的兼容性问题"><span class="toc-text">offsetLeft的兼容性问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#小结-1"><span class="toc-text">小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#与scroll相关的宽高"><span class="toc-text">与scroll相关的宽高</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#在某div中的scrollWidth和scrollHeight"><span class="toc-text">在某div中的scrollWidth和scrollHeight</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#obj-style-width和obj-style-height"><span class="toc-text">obj.style.width和obj.style.height</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#documentElement和body的关系"><span class="toc-text">documentElement和body的关系</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Event对象的5种坐标"><span class="toc-text">Event对象的5种坐标</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#js各种宽高的应用"><span class="toc-text">js各种宽高的应用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#js中的宽高属性总结"><span class="toc-text">js中的宽高属性总结</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#参考链接"><span class="toc-text">参考链接</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        访问量:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        访客数:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2018
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

@@ -1,0 +1,443 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Merrier说">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://merrier.wang">
+    <!--SEO-->
+
+<meta name="description" content="Merrier的个人博客">
+
+
+
+<meta name="keywords" content="merrier 博客 前端 北邮人">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>慕课网视频评分&amp;推荐 | Merrier说</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Merrier说" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1264342320 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1264342320%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Merrier">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 叩首问路，码梦为生 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://merrier.wang">Merrier说</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/frontend/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/algorithm/"><i class="fa "></i>算法</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/series/"><i class="fa "></i>系列专栏</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>文章归档</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="慕课网视频评分&amp;推荐">
+            
+	            慕课网视频评分&amp;推荐
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/慕课网">
+            慕课网
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/慕课网" title="慕课网">
+                        慕课网
+                    </a>
+                
+                    <a href="/tags/推荐" title="推荐">
+                        推荐
+                    </a>
+                
+                    <a href="/tags/前端" title="前端">
+                        前端
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/02/19</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <p>总有童鞋问我<a href="https://www.imooc.com/" target="_blank" rel="noopener">慕课网</a>上面有哪些视频比较好，我就索性写一篇文章总结一下我看过的慕课网上面的优秀的视频，绝大部分都是前端相关的，希望能够提升你的效率，节省时间。下面我会对这些视频从以下几个方面进行评分（单纯个人评分，不喜勿喷- -）：</p>
+<ul>
+<li><strong>难度系数</strong>：视频所讲内容的难度</li>
+<li><strong>实战系数</strong>：视频所讲内容的实际应用系数</li>
+<li><strong>版本系数</strong>：视频所讲内容中涉及到的框架/插件的版本是否是最新的</li>
+<li><strong>综合评分</strong>：综合评价</li>
+</ul>
+<p>推荐大家用1.75倍速播放，这样可以节省很多时间，同时也能听清- -</p>
+<h1 id="前端工具"><a href="#前端工具" class="headerlink" title="前端工具"></a>前端工具</h1><h2 id="前端内容的自动化构建"><a href="#前端内容的自动化构建" class="headerlink" title="前端内容的自动化构建"></a><a href="https://www.imooc.com/learn/922" target="_blank" rel="noopener">前端内容的自动化构建</a></h2><ul>
+<li>难度系数：★☆☆☆☆</li>
+<li>实战系数：★★★★☆</li>
+<li>版本系数：★★☆☆☆</li>
+<li>综合评分：★★★☆☆</li>
+</ul>
+<p>该课程分为三个部分，第一部分讲解什么是构建，为什么需要自动化构建，后面两部分分别讲解如何使用Gulp进行JavaScript和CSS的构建。所讲内容比较简单，而且自动化构建在实际项目中经常会用到，不过webpack版本比较低，需要结合评论进行学习。。</p>
+<h2 id="webpack深入与实战"><a href="#webpack深入与实战" class="headerlink" title="webpack深入与实战"></a><a href="https://www.imooc.com/learn/802" target="_blank" rel="noopener">webpack深入与实战</a></h2><ul>
+<li>难度系数：★★★★☆</li>
+<li>实战系数：★★★★☆</li>
+<li>版本系数：★★☆☆☆</li>
+<li>综合评分：★★★★☆</li>
+</ul>
+<p>该课程介绍了如何在项目中使用 webpack 打包文件，处理各种资源，以及配置开发环境，上线环境等，通过实际的例子来讲解 webpack 的使用方法，带你探索 webpack 强大的功能。可以说是很全面了，作者讲解的也比较详细，想初步了解webpack如何使用的童鞋可以选择看一下该视频。</p>
+<h2 id="前端实时可视化开发工具体验"><a href="#前端实时可视化开发工具体验" class="headerlink" title="前端实时可视化开发工具体验"></a><a href="https://www.imooc.com/learn/718" target="_blank" rel="noopener">前端实时可视化开发工具体验</a></h2><ul>
+<li>难度系数：★★☆☆☆</li>
+<li>实战系数：★★★★☆</li>
+<li>版本系数：★★★☆☆</li>
+<li>综合评分：★★★☆☆</li>
+</ul>
+<p>前端开发中，我们常常平凡的修改 html，css，js，然后刷新页面，看效果，在调整，再刷新。该课程使用liveStyle，liveReload，browserSync工具实现帮你实现修改代码后，立即体现效果，使用可见即可得的开发模式，极大的提高前端开发效率。实时可视化在开发环境应用的比较多，会很大程度地提高工作效率，感兴趣的童鞋可以再自行搜索hotreload，这样结合本视频观看食用效果更佳</p>
+<h2 id="前端性能优化-基础知识认知"><a href="#前端性能优化-基础知识认知" class="headerlink" title="前端性能优化-基础知识认知"></a><a href="https://www.imooc.com/learn/580" target="_blank" rel="noopener">前端性能优化-基础知识认知</a></h2><ul>
+<li>难度系数：★★★☆☆</li>
+<li>实战系数：★★★★☆</li>
+<li>版本系数：★★★★☆</li>
+<li>综合评分：★★★★☆</li>
+</ul>
+<p>该课程从前端优化目的，简单方法、分类开始，到如何优化，优化过程中的常见错误，业内公认的但是不适应所有方案。我们还可从这个课程中学习到当我们访问一个站点的时候，我们究竟做了什么以及怎么样才叫优化成功。性能优化是一个老生常谈的问题，如果你对该问题有一定的基础认知，想再深入了解相关知识的话，该课程你不容错过</p>
+<h1 id="WebApp"><a href="#WebApp" class="headerlink" title="WebApp"></a>WebApp</h1><h2 id="Hello，移动WEB"><a href="#Hello，移动WEB" class="headerlink" title="Hello，移动WEB"></a><a href="https://www.imooc.com/learn/494" target="_blank" rel="noopener">Hello，移动WEB</a></h2><ul>
+<li>难度系数：★★★☆☆</li>
+<li>实战系数：★★★★★</li>
+<li>版本系数：★★★★☆</li>
+<li>综合评分：★★★★☆</li>
+</ul>
+<p>该课程介绍移动web的开发基础，高效的排版布局，常见的移动web问题，终端触摸交互，各种bug坑如何解决等多方面。虽然视频比较短，但是干货多多，对于移动端的适配布局这类问题进行了很详细的讲解。</p>
+<h1 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h1><h2 id="Promise入门"><a href="#Promise入门" class="headerlink" title="Promise入门"></a><a href="https://www.imooc.com/learn/949" target="_blank" rel="noopener">Promise入门</a></h2><ul>
+<li>难度系数：★★★★☆</li>
+<li>实战系数：★★★★★</li>
+<li>版本系数：★★★★☆</li>
+<li>综合评分：★★★★★</li>
+</ul>
+<p>Promise是ES6中最重要的特性之一，该课程为我们讲解了为什么会有Promise，以及Promise的常见用法和注意事项，通过实际代码进行讲解清晰易懂，适合前端中级水平开发者，我对该课程进行了总结，笔记<a href="https://merrier.wang/?p=1643">在这里</a>可以查看得到。</p>
+<h2 id="ajax跨域完全讲解"><a href="#ajax跨域完全讲解" class="headerlink" title="ajax跨域完全讲解"></a><a href="https://www.imooc.com/learn/947" target="_blank" rel="noopener">ajax跨域完全讲解</a></h2><ul>
+<li>难度系数：★★★☆☆</li>
+<li>实战系数：★★★★★</li>
+<li>版本系数：★★★★☆</li>
+<li>综合评分：★★★★★</li>
+</ul>
+<p>跨域是前端领域中经常遇到的问题，尤其是各种CDN服务兴起之后，而究竟什么情况下跨域，如何解决跨域问题更是笔试或面试时经常被问到的问题，该视频教程详细讲解了jsonp的工作机制，http协议如何支持跨域，以及http服务器nginx和apache的2种不同解决思路，让大家知其然并知其所以然，是非常不错的跨域入门讲解课程</p>
+<h1 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h1><h2 id="CSS深入理解系列"><a href="#CSS深入理解系列" class="headerlink" title="CSS深入理解系列"></a><a href="https://www.imooc.com/search/course?words=css%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%20%E5%BC%A0%E9%91%AB%E6%97%AD" target="_blank" rel="noopener">CSS深入理解系列</a></h2><ul>
+<li>难度系数：★★★☆☆</li>
+<li>实战系数：★★★★★</li>
+<li>版本系数：★★★★☆</li>
+<li>综合评分：★★★★★</li>
+</ul>
+<p>该系列视频为张鑫旭老师对CSS相关属性的讲解，包括margin、padding、position、z-index等等基础属性，适合具备一定CSS基础知识的童鞋，张鑫旭老师的讲课风格很独特，也不知道是否符合你的口味，不过我是很喜欢啦~而且张鑫旭老师对于这些属性的讲解很深入，在实际项目中应用的很多，毕竟前端工程师一年写的CSS代码可以绕地球三圈啊（我对该系列视频的讲解进行了总结，在系列专栏中的<a href="https://merrier.wang/?p=754">CSS深入理解系列</a>中可以看到）</p>
+<h2 id="如何用CSS进行网页布局"><a href="#如何用CSS进行网页布局" class="headerlink" title="如何用CSS进行网页布局"></a><a href="https://www.imooc.com/learn/57" target="_blank" rel="noopener">如何用CSS进行网页布局</a></h2><ul>
+<li>难度系数：★☆☆☆☆</li>
+<li>实战系数：★★★★☆</li>
+<li>版本系数：★★★☆☆</li>
+<li>综合评分：★★★☆☆</li>
+</ul>
+<p>该课程教你怎么制作一列布局、二列布局、三列布局当然还有最通用的混合布局，而且你还可以选择让它固定还是自适应。用CSS重新规划你的网页，让你的网页从此更美观、更友好。难度系数很低，而布局在实际项目中是很基本也是很重要的知识点</p>
+<h2 id="分页页码制作"><a href="#分页页码制作" class="headerlink" title="分页页码制作"></a><a href="https://www.imooc.com/learn/15" target="_blank" rel="noopener">分页页码制作</a></h2><ul>
+<li>难度系数：★☆☆☆☆</li>
+<li>实战系数：★★☆☆☆</li>
+<li>版本系数：★★★★☆</li>
+<li>综合评分：★★★☆☆</li>
+</ul>
+<p>通过本课程的学习，我们可以学习到利用HTML、CSS样式技术制作出分页页码的效果。包括最简单的直角分页页码效果，修复行内元素之间的间隔bug问题分析，代码整理，为分页页码插入小图标。虽然一般不需要我们自己制作分页页码，但是如果你想自己写框架或者对这类知识比较好奇的话，该视频能够充分解答你的疑惑，最为关键的是<strong>提供源码</strong>啊~</p>
+<h1 id="JavaScript-1"><a href="#JavaScript-1" class="headerlink" title="JavaScript"></a>JavaScript</h1><h2 id="Hybrid设计"><a href="#Hybrid设计" class="headerlink" title="Hybrid设计"></a><a href="https://www.imooc.com/learn/850" target="_blank" rel="noopener">Hybrid设计</a></h2><ul>
+<li>难度系数：★★☆☆☆</li>
+<li>实战系数：★★★★☆</li>
+<li>版本系数：★★★★☆</li>
+<li>综合评分：★★★★☆</li>
+</ul>
+<p>该课程首先会告诉大家什么是Hybrid，Hybrid有什么特点，也会告诉大家业内有哪些常见的Hybrid应用以及Hybrid合理的应用场景。 然后，课程会简单介绍在做一个Hybrid架构的方方面面，包括Hybrid的发展，比如超级Hybrid方案React Native以及Weex 学习该课程，大家会知道Hybrid中H5与Native如何交互，并且对Hybrid体验增强和Hybrid离线包有一些认识，是大家做混合APP的必备良药。</p>
+<h2 id="zepto设计和源码分析"><a href="#zepto设计和源码分析" class="headerlink" title="zepto设计和源码分析"></a><a href="https://www.imooc.com/learn/745" target="_blank" rel="noopener">zepto设计和源码分析</a></h2><ul>
+<li>难度系数：★★★☆☆</li>
+<li>实战系数：★★★☆☆</li>
+<li>版本系数：★★★☆☆</li>
+<li>综合评分：★★★☆☆</li>
+</ul>
+<p>当熟练使用zepto的API之后，也应该解读一下zepto的源码，了解一下zepto的设计原理。该教程深入浅出的介绍了zepto最核心的设计原理，看完之后即能轻松解读zepto所有源码。就像TJ大神一样，有时候看别人写的代码会有不同寻常的收获</p>
+<h2 id="Web安全-XSS"><a href="#Web安全-XSS" class="headerlink" title="Web安全-XSS"></a><a href="https://www.imooc.com/learn/812" target="_blank" rel="noopener">Web安全-XSS</a></h2><ul>
+<li>难度系数：★★☆☆☆</li>
+<li>实战系数：★★★★☆</li>
+<li>版本系数：★★★☆☆</li>
+<li>综合评分：★★★☆☆</li>
+</ul>
+<p>该课程从Web安全XSS的定义开始讲起，到深入剖析XSS攻击的原理和流程，了解常见XSS攻击的危害。同时通过项目实战针对性的分析如何应对XSS攻击做到安全的XSS防御措施。XSS是最常见的一种web攻击，了解一些相关知识百利无一害= =</p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="//merrier.wang" target="_blank">Merrier说</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/20180226/introduction-to-promise.html" class="pre-post btn btn-default" title="Promise入门">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">Promise入门</span>
+        </a>
+    
+    
+        <a href="/20180211/those-amazing-mobile-h5-cases.html" class="next-post btn btn-default" title="那些惊艳的移动端H5案例">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">那些惊艳的移动端H5案例</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+  <script id="dsq-count-scr" src="https://merrier.disqus.com/count.js" async></script>
+
+
+<script type="text/javascript">
+  var disqus_config = function () {
+    this.page.url = 'http://merrier.wang/20180219/video-scoring-and-recommendation-on-muke.html';
+    this.page.identifier = '20180219/video-scoring-and-recommendation-on-muke.html';
+    this.page.title = '慕课网视频评分&amp;推荐';
+  };
+  var d = document, s = d.createElement('script');
+  s.src = 'https://merrier.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', '' + +new Date());
+  (d.head || d.body).appendChild(s);
+</script>
+
+
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前端工具"><span class="toc-text">前端工具</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#前端内容的自动化构建"><span class="toc-text">前端内容的自动化构建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#webpack深入与实战"><span class="toc-text">webpack深入与实战</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#前端实时可视化开发工具体验"><span class="toc-text">前端实时可视化开发工具体验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#前端性能优化-基础知识认知"><span class="toc-text">前端性能优化-基础知识认知</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#WebApp"><span class="toc-text">WebApp</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hello，移动WEB"><span class="toc-text">Hello，移动WEB</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#JavaScript"><span class="toc-text">JavaScript</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Promise入门"><span class="toc-text">Promise入门</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ajax跨域完全讲解"><span class="toc-text">ajax跨域完全讲解</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CSS"><span class="toc-text">CSS</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS深入理解系列"><span class="toc-text">CSS深入理解系列</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何用CSS进行网页布局"><span class="toc-text">如何用CSS进行网页布局</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分页页码制作"><span class="toc-text">分页页码制作</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#JavaScript-1"><span class="toc-text">JavaScript</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hybrid设计"><span class="toc-text">Hybrid设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#zepto设计和源码分析"><span class="toc-text">zepto设计和源码分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Web安全-XSS"><span class="toc-text">Web安全-XSS</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        访问量:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        访客数:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2018
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

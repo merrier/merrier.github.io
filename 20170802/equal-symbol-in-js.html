@@ -1,0 +1,441 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Merrier说">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://merrier.wang">
+    <!--SEO-->
+
+<meta name="description" content="Merrier的个人博客">
+
+
+
+<meta name="keywords" content="merrier 博客 前端 北邮人">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>JS中的==、===和Object.is | Merrier说</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Merrier说" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1264342320 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1264342320%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Merrier">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 叩首问路，码梦为生 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://merrier.wang">Merrier说</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/frontend/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/algorithm/"><i class="fa "></i>算法</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/series/"><i class="fa "></i>系列专栏</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>文章归档</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="JS中的==、===和Object.is">
+            
+	            JS中的==、===和Object.is
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/面试">
+            面试
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/JS" title="JS">
+                        JS
+                    </a>
+                
+                    <a href="/tags/前端面试" title="前端面试">
+                        前端面试
+                    </a>
+                
+                    <a href="/tags/计算机基础" title="计算机基础">
+                        计算机基础
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/08/02</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="TL-DR"><a href="#TL-DR" class="headerlink" title="TL;DR"></a>TL;DR</h1><p>在查阅了很多资料之后，我将在这篇文章对于JS中的==、===、Object.is进行详细的讲解，所以这很有可能是一篇很长很长的“唠叨文”，但是我相信你一定可以从这篇文章中收货很多，所以抖擞精神，往下看吧！</p>
+<h1 id="比较操作"><a href="#比较操作" class="headerlink" title="比较操作"></a>比较操作</h1><p>首先，你需要知道JavaScript提供了三种不同的值比较操作：</p>
+<ul>
+<li>严格相等（’triple equals’或’identity’），即“===”</li>
+<li>宽松相等（’double equals’），即“==”</li>
+<li>Object.js（ECMAScript 2015/ES6新特性）</li>
+</ul>
+<p>现在考虑表达式x==y，当x和y的类型相同时，x==y可以转化为x===y，而对于后者是很简单的，因为不涉及到类型转换，只需要注意：</p>
+<ul>
+<li>+0 ==(=) -0  //true</li>
+<li>NaN ==(=) NaN  //false</li>
+</ul>
+<p>对于上面这两种，你可以理解为JavaScript设计的问题（其实还是那句老话，王八的屁股——规定！），所以只需要死记硬背就可以了，当然还有两个长得像的Object也不相等，表现在：</p>
+<ul>
+<li>[] ==(=) []  //false</li>
+<li>{} ==(=) {}  //false</li>
+</ul>
+<p>之所以两个长得像的对象和数组都不相等，是因为在JS中，数组和对象是复杂数据类型，所以其实比较的是引用值，所以任意两个长得像的对象都不相等，具体参见：<a href="https://merrier.wang/?p=1071">理解JS中的内存分配</a> ES6中新增了Object.is()方法，它和“===”是基本相同的，除了下面这两种情况：</p>
+<ul>
+<li>Object.is(+0, -0)  //false</li>
+<li>Object.is(NaN, NaN)  //true</li>
+</ul>
+<p>所以你可以理解为Object.is()其实是对“===”的修正。“===”和Object.is()介绍完了，下面就着重介绍一下“==”（因为JS中的“==”会将等号两边进行类型转换，所以情况比较复杂）</p>
+<h1 id=""><a href="#" class="headerlink" title="=="></a>==</h1><p>“==”在比较前会将比较的值转换为相同类型，在转换后（等式的一边或两边都可能被转换），最终的比较方式就等同于全等操作符“===”。同时请注意，“===”满足交换律，但是“==”不满足交换律（比如![]和{}） 先来看一张吊炸天的图： <img src="https://merrier.wang/wp-content/uploads/2017/08/20160723214407896651.png" alt=""> <strong>我们接下来的讲解都建立在这张图上面：</strong></p>
+<h2 id="有和无"><a href="#有和无" class="headerlink" title="有和无"></a>有和无</h2><p>从这张图我们可以明显的看出，它们被分成了两个阵营：</p>
+<ul>
+<li>String、Number、Boolean和Object（对应左侧）</li>
+<li>undefined和null（对应右侧）</li>
+</ul>
+<p>分组的依据是什么呢？就是左侧是一个存在的世界，右侧是一个空的世界。所以就有如下规则：</p>
+<ul>
+<li>左侧任意 == 右侧任意  //false</li>
+</ul>
+<p>也就是左右两个世界中的任意值做“==”比较的结果都是false</p>
+<h2 id="空和空"><a href="#空和空" class="headerlink" title="空和空"></a>空和空</h2><p>JavaScript中的undefined和null是另一个经常让我们崩溃的地方。通常它被认为是一个设计缺陷，这一点我们不去深究。不过我曾听说，JavaScript的作者最初是这样想的：</p>
+<blockquote>
+<p>假如你打算把一个变量赋予对象类型的值，但是现在还没有赋值，那么你可以用null表示此时的状态(证据之一就是typeof null 的结果是’object’)；相反，假如你打算把一个变量赋予原始类型的值，但是现在还没有赋值，那么你可以用undefined表示此时的状态。</p>
+</blockquote>
+<p>不管这个传闻是否可信，它们两者做==比较的结果是true是很合理的。(见上图中右侧垂直线上标的true，也就是undefined == null)</p>
+<h2 id="P和N"><a href="#P和N" class="headerlink" title="P和N"></a>P和N</h2><p>依然是上面那张图，从图中可以看到两个符号：大写字母N和P： N表示ToNumber操作，即将操作数转为数字。它是规范中的抽象操作，但我们可以用JS中的Number()函数来等价替代 P表示ToPrimitive操作，即将操作数转为原始类型的值。它也是规范中的抽象操作，同样也可以翻译成等价的JS代码，但是会比ToNumber复杂一些，所以我们后面会详细解释。  </p>
+<h2 id="ToPrimitive"><a href="#ToPrimitive" class="headerlink" title="ToPrimitive"></a>ToPrimitive</h2><p>我们先讲ToPrimitive，因为ToNumber中会用到ToPrimitive，下面是关于ToPrimitive的规范：</p>
+<blockquote>
+<p>ToPrimitive运算符接受一个值和一个可选的<em>期望类型</em>作参数。ToPrimitive运算符把其值参数转换为非对象类型。如果对象有能力被转换为不止一种原始类型，可以使用可选的<em>期望类型</em>来暗示那个类型。根据下表完成转换：</p>
+</blockquote>
+<p>[table id=32 /] 对于Object这种输入类型，上面的表格中的描述不够清楚，我查了一些资料，概括如下： MDN上对于ToPrimitive的语法规范定位为：</p>
+<blockquote>
+<p>ToPrimitive(obj, preferredType)</p>
+</blockquote>
+<p>ToPrimitive是JS引擎内部函数，其返回值为一个原始值（后面会讲原始值是什么鬼），这个函数接受两个参数，第一个obj为被转换的对象，第二个preferredType为希望转换成的类型（默认为空，只接受Number或String） 在执行ToPrimitive(obj,preferredType)时如果第二个参数为空并且obj为Date的事例时，此时preferredType会 被设置为String，其他情况下preferredType都会被设置为Number如果preferredType为Number，ToPrimitive执 行过程如 下： 1. 如果obj为原始值，直接返回； 2. 否则调用 obj.valueOf()，如果执行结果是原始值，返回之； 3. 否则调用 obj.toString()，如果执行结果是原始值，返回之； 4. 否则抛异常。 如果preferredType为String，将上面的第2步和第3步调换，即： 1. 如果obj为原始值，直接返回； 2. 否则调用 obj.toString()，如果执行结果是原始值，返回之； 3. 否则调用 obj.valueOf()，如果执行结果是原始值，返回之； 4. 否则抛异常。 <strong>在执行ToPrimitive(obj, preferredType)时如果第二个参数为空并且obj为Date的事例时，此时preferredType会被设置为String，其他情况下preferredType都会被设置为Number</strong> 如果preferredType为Number，ToPrimitive执行过程如下：</p>
+<ol>
+<li>如果obj为原始值，直接返回；</li>
+<li>否则调用 obj.valueOf()，如果执行结果是原始值，返回之；</li>
+<li>否则调用 obj.toString()，如果执行结果是原始值，返回之；</li>
+<li>否则抛异常。</li>
+</ol>
+<p>如果preferredType为String，将上面的第2步和第3步调换，即：</p>
+<ol>
+<li>如果obj为原始值，直接返回；</li>
+<li>否则调用 obj.toString()，如果执行结果是原始值，返回之；</li>
+<li>否则调用 obj.valueOf()，如果执行结果是原始值，返回之；</li>
+<li>否则抛异常。</li>
+</ol>
+<p>接下来我们就开始介绍valueOf()和toString()以及原始值了：</p>
+<h2 id="valueOf-NaN"><a href="#valueOf-NaN" class="headerlink" title="valueOf()"></a>valueOf()</h2><p>valueOf方法返回对象的原始值，可能是字符串、数值或bool值等，看具体的对象。还是看具体的例子吧：</p>
+<p>var obj = {<br>  name: “obj”<br>};<br>console.log(obj.valueOf());//Object {name: “obj”}</p>
+<p>var arr1 = [1];<br>console.log(arr1.valueOf());//[1]</p>
+<p>var date = new Date();<br>console.log(date.valueOf());//1456638436303<br>//如代码所示，三个不同的对象实例调用valueOf返回不同的数据</p>
+<h2 id="toString-NaN"><a href="#toString-NaN" class="headerlink" title="toString()"></a>toString()</h2><p>toString方法用来返回对象的字符串表示</p>
+<p>var obj = {};<br>console.log(obj.toString());//[object Object]</p>
+<p>var arr2 = [];<br>console.log(arr2.toString());//“”，即空字符串</p>
+<p>var date = new Date();<br>console.log(date.toString());//Sun Feb 28 2016 13:40:36 GMT+0800 (中国标准时间)</p>
+<p>这个方法具体的运行机制是个比较复杂的过程，我之后会专门写一篇文章讲解这两个方法，可以尝试搜索一下。（当然，也可以自己在控制台敲一下，加深印象）</p>
+<h2 id="原始值（Primitive）"><a href="#原始值（Primitive）" class="headerlink" title="原始值（Primitive）"></a>原始值（Primitive）</h2><p>“原始值”这三个字虽然听上去很高大上，其实很容易理解，就是指null、undefined、String、Boolean、Number这五种基本数据类型之一。 花了这么大力气终于把ToPrimitive介绍完了，下面我们介绍一下ToNumber：</p>
+<h2 id="ToNumber"><a href="#ToNumber" class="headerlink" title="ToNumber"></a>ToNumber</h2><p>ToNumber运算符根据下表将其参数转换为数值类型的值： [table id=33 /] 上面表格已经很清楚了，但是还有个ToNumber(String类型)没有介绍：</p>
+<h3 id="字符转数字"><a href="#字符转数字" class="headerlink" title="字符转数字"></a>字符转数字</h3><p>字符转数字的规则是这样的：把字符串两边的空白字符去掉，然后把两边的引号去掉，看它能否组成一个合法的数字。如果能，转化结果就是这个数字，否则结果就是NaN。举个栗子：</p>
+<p>Number(‘123’) //结果123<br>Number(‘1.2e3’) //结果1200<br>Number(‘123abc’) //结果NaN<br>Number(‘\r\n\t123\v\f’) //结果123</p>
+<p>当然也有例外，比如空白字符串转换为数字的结果是0。即：</p>
+<p>Number(‘’) // 结果+0<br>Number(‘\r\n\t \v\f’) // 结果+0</p>
+<p>到目前为止，我们介绍完了ToPrimitive和ToNumber，所以上面那张图的内容基本上就介绍完了。但是还有个运算符没有讲，就是“!”取非操作，下面就介绍一下这个看似简单的取非操作：</p>
+<h2 id="ToBoolean"><a href="#ToBoolean" class="headerlink" title="ToBoolean"></a>ToBoolean</h2><p>取非其实是执行了ToBoolean运算符之后再取反，ToBoolean运算符根据下表将其参数转换为布尔值类型的值： [table id=34 /]</p>
+<h2 id="没图你说个"><a href="#没图你说个" class="headerlink" title="没图你说个**"></a>没图你说个**</h2><p>相等操作符(==)对于不同类型的值，进行的比较如下图所示 <img src="https://merrier.wang/wp-content/uploads/2017/08/WX20170803-094847.png" alt=""></p>
+<h1 id="万物皆数"><a href="#万物皆数" class="headerlink" title="万物皆数"></a>万物皆数</h1><p>我们再来看上面那张图，里面标有N或P的那几条连线是没有方向的。假如我们在这些线上表上箭头，使得连线从标有N或P的那一端指向另一端，那么就会得到： <img src="https://merrier.wang/wp-content/uploads/2017/08/20160723214407019223.png" alt=""> 聪明的你肯定发现了，在==运算过程中，所有类型的值都有一种向数字类型转化的趋势。毕竟有这样一句名言：</p>
+<blockquote>
+<p>万物皆数</p>
+</blockquote>
+<h1 id="举个栗子"><a href="#举个栗子" class="headerlink" title="举个栗子"></a>举个栗子</h1><p>前面废话一堆，还不如举个实例来的痛快：   [] == ![]   首先你需要明确的是上面这段代码执行的顺序，这就涉及到运算符的优先级了：!&gt;==。所以!取反运算符的优先级会高于==，那让我们先来看等号右边的“![]”，根据上面的ToBoolean，<strong>[]是一个对象</strong>，那么ToBoolean([])就是true，![]就是false了 然后，我们根据上面那张图，等号左边的[]是Object，等号右边的![]是一个Boolean值，所以最终就成为了ToPrimitive([]) == ToNumber(false)了 而ToPrimitive默认调用toString方法，于是ToPrimitive([])就是空字符串，而ToNumber(false)就是0 那么最后就成为了”” == 0，这种形态，此时是String和Number之间的比较，很明显就是toNumber(“”) == 0的比较了，根据ToNumber的转换规则，toNumber(“”)=0，于是[] == ![] 最后成了0 == 0的问题，答案显而易见为true。</p>
+<h1 id="总结一下"><a href="#总结一下" class="headerlink" title="总结一下"></a>总结一下</h1><p>前面说的有点乱，我们总结一下==运算的规则：</p>
+<ul>
+<li>undefined == null，结果是true。且它俩与所有其他值比较的结果都是false。</li>
+<li>String == Boolean，需要两个操作数同时转为Number。</li>
+<li>String/Boolean == Number，需要String/Boolean转为Number。</li>
+<li>Object == Primitive，需要Object转为Primitive(具体通过valueOf和toString方法)。</li>
+</ul>
+<p>所以，其实只有4条规则！只要我们完全理解了这四条规则，以后再遇到==就不会头疼了！</p>
+<h1 id="一些经典题目"><a href="#一些经典题目" class="headerlink" title="一些经典题目"></a>一些经典题目</h1><p>[]==[]  //false<br>{}=={}  //false<br>[]==![]  //true<br>{}==!{}  //false<br>{}==![]  //VM1896:1 Uncaught SyntaxError: Unexpected token ==<br>![]=={}  //false<br>[]==!{}  //true<br>undefined==null  //true<br>+0 === -0  //true<br>NaN == NaN  //false<br>NaN !== false  //true</p>
+<p>更新自2017-8-4： 根据<a href="https://stackoverflow.com/questions/18082/validate-decimal-numbers-in-javascript-isnumeric" target="_blank" rel="noopener">stackoverflow上的一个讨论</a>，我发现还有如下规则： 2e308 === Infinity 原因是<strong>2e308 &gt; Number.MAX_VALUE</strong>，所以其相当于是无穷大，负无穷大同理。</p>
+<h5 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h5><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Equality_comparisons_and_sameness" target="_blank" rel="noopener">JavaScript 中的相等性判断</a> <a href="http://dorey.github.io/JavaScript-Equality-Table/" target="_blank" rel="noopener">JS比较表</a> <a href="https://segmentfault.com/a/1190000008432611" target="_blank" rel="noopener">从[]==![]为true来剖析JavaScript各种蛋疼的类型转换</a> <a href="http://www.admin10000.com/document/9242.html" target="_blank" rel="noopener">通过一张简单的图，让你彻底地、永久地搞懂JS的==运算</a> <a href="https://www.zhihu.com/question/31442029" target="_blank" rel="noopener">Javascript 中 == 和 === 区别是什么？</a></p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="//merrier.wang" target="_blank">Merrier说</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/20170803/understanding-memory-allocation-in-js.html" class="pre-post btn btn-default" title="理解JS中的内存分配">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">理解JS中的内存分配</span>
+        </a>
+    
+    
+        <a href="/20170802/function-declaration-vs-function-expression.html" class="next-post btn btn-default" title="函数声明VS函数表达式">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">函数声明VS函数表达式</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+  <script id="dsq-count-scr" src="https://merrier.disqus.com/count.js" async></script>
+
+
+<script type="text/javascript">
+  var disqus_config = function () {
+    this.page.url = 'http://merrier.wang/20170802/equal-symbol-in-js.html';
+    this.page.identifier = '20170802/equal-symbol-in-js.html';
+    this.page.title = 'JS中的==、===和Object.is';
+  };
+  var d = document, s = d.createElement('script');
+  s.src = 'https://merrier.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', '' + +new Date());
+  (d.head || d.body).appendChild(s);
+</script>
+
+
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#TL-DR"><span class="toc-text">TL;DR</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#比较操作"><span class="toc-text">比较操作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#"><span class="toc-text">==</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#有和无"><span class="toc-text">有和无</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#空和空"><span class="toc-text">空和空</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#P和N"><span class="toc-text">P和N</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ToPrimitive"><span class="toc-text">ToPrimitive</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#valueOf-NaN"><span class="toc-text">valueOf()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#toString-NaN"><span class="toc-text">toString()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#原始值（Primitive）"><span class="toc-text">原始值（Primitive）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ToNumber"><span class="toc-text">ToNumber</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#字符转数字"><span class="toc-text">字符转数字</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ToBoolean"><span class="toc-text">ToBoolean</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#没图你说个"><span class="toc-text">没图你说个**</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#万物皆数"><span class="toc-text">万物皆数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#举个栗子"><span class="toc-text">举个栗子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#总结一下"><span class="toc-text">总结一下</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一些经典题目"><span class="toc-text">一些经典题目</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#参考文章"><span class="toc-text">参考文章</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        访问量:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        访客数:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2018
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

@@ -1,0 +1,408 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Merrier说">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://merrier.wang">
+    <!--SEO-->
+
+<meta name="description" content="Merrier的个人博客">
+
+
+
+<meta name="keywords" content="merrier 博客 前端 北邮人">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>一篇绝对能看懂的Git入门教程 | Merrier说</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Merrier说" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1264342320 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1264342320%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Merrier">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 叩首问路，码梦为生 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://merrier.wang">Merrier说</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/frontend/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/algorithm/"><i class="fa "></i>算法</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/series/"><i class="fa "></i>系列专栏</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>文章归档</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="一篇绝对能看懂的Git入门教程">
+            
+	            一篇绝对能看懂的Git入门教程
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/Git">
+            Git
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/git" title="git">
+                        git
+                    </a>
+                
+                    <a href="/tags/教程" title="教程">
+                        教程
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/04/17</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>不管你是从事什么方面的程序猿，只要你属于这个神秘组织，就必须要对SVN或Git这种版本控制系统有所了解；和大部分人一样，当初项目负责人告诉我需要学Git的时候，只说了这样一句话：“网上很多教程，自己看着学吧”，当然，这句话直到今天我也无力反驳，因为对于一个新鲜的程序猿来说，只需要懂一些Git的基本指令就可以了，一些高端指令可能永远都用不到，所以，我就查阅了一些Git的教程和手册，整理出这篇对于新手很友好的Git入门教程</p>
+<h1 id="工作区与暂存区"><a href="#工作区与暂存区" class="headerlink" title="工作区与暂存区"></a>工作区与暂存区</h1><p>很多git教程都把这一部分的讲解放到很靠后的位置，所以我当初学习的时候并没有把这一部分放在心上；但是现在我觉得，这一部分才是最需要明白的，因为这一部分是非常“真实”的，对于一个之前从来没接触过命令行或一直在windows上打游戏、看直播的程序猿来说，这一部分也是最容易理解的 <strong>工作区</strong>：通俗易懂的来说就是你电脑里面的能看到的目录，比如learngit的目录。 <strong>版本库</strong>：工作区有一个隐藏的目录.git，这是git的版本库。版本库中存了很多东西，其中最重要的就是stage(index)的<strong>暂存区</strong>。 下面这张图非常清晰的表明了这三者的关系，我就不多说了： <img src="https://merrier.wang/wp-content/uploads/2017/04/wps929F.tmp_.png" alt=""> <strong>请牢牢记住这三个概念，因为下面会经常用到</strong></p>
+<h1 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h1><h2 id="生成ssh"><a href="#生成ssh" class="headerlink" title="生成ssh"></a>生成ssh</h2><p>通过下面的指令可以生成id_rsa和id_rsa.pub两个文件，不同操作系统这两个文件所在位置不同，id_rsa.pub里面的所有内容就是你的公钥，直接复制到GitHub的Add SSH key页面就可以愉快的进行玩耍了</p>
+<p>$ ssh-keygen -t ras -C “email@xxx”</p>
+<p>ssh是一种协议，而git目前支持<a href="http://www.cnblogs.com/lzxianren/p/git2.html" target="_blank" rel="noopener">4种协议</a>——ssh协议，http/s协议，git协议，本地协议，ssh协议配置简单，权限管理也比较全面，更重要的是无需密码和linux内置（git是linus写的软件，linus是linux的作者，所以你懂得），至于ssh究竟怎么做的就不在本文介绍了，可以去阮一峰的博客中查找相关资料</p>
+<h2 id="设置用户名"><a href="#设置用户名" class="headerlink" title="设置用户名"></a>设置用户名</h2><p>和现实世界类似，你想和别人进行数据通信，首先得让别人知道你是谁，你的联系方式吧，而和现实世界不同的是，这里的联系方式只能填写邮箱，填写微信或者QQ号是木有用的</p>
+<p>$ git config –global user.name “cc”<br>$ git config –global user.email “cc@xx”</p>
+<h2 id="初始化当前目录的项目"><a href="#初始化当前目录的项目" class="headerlink" title="初始化当前目录的项目"></a>初始化当前目录的项目</h2><p>git init</p>
+<p>还记得上面我们提到的三个概念吗，这里的初始化就是为了在本地目录中添加本地版本库，然后才可以后续的git操作。比如初始化之前你的目录是这样的（当前目录为空是因为我是在一个空文件夹的基础上进行初始化的，而实际情况可能这里面会有你的项目文件）： <img src="https://merrier.wang/wp-content/uploads/2017/04/QQ20170417-151746@2x.png" alt=""> 而执行初始化操作之后： <img src="https://merrier.wang/wp-content/uploads/2017/04/QQ20170417-152133@2x.png" alt=""> 从上图可以看到，当前目录中多了.git文件夹，这个文件夹就是你的本地的版本库了，里面存储着很多东西，其中包括暂存区；通过短短的一行命令，初始化操作就已经完成了，同时git也为我们创建了第一个分支master，和一个指向master的指针HEAD，接下来就是一些常用的命令</p>
+<h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><h2 id="查看工作区状态"><a href="#查看工作区状态" class="headerlink" title="查看工作区状态"></a>查看工作区状态</h2><p>git status</p>
+<p>这是一条需要经常使用的命令，因为有时候工作区的改变可能会是“隐性”的，比如你的编辑器自己添加的文件或者其他类型的隐藏文件，而经常查看状态也是检验某些git命令是否执行的方法。通过执行这一命令，我们在终端中可能会看到： <img src="https://merrier.wang/wp-content/uploads/2017/04/QQ20170417-153116@2x.png" alt=""> 从终端的第四行我们可以看到，当我们查看状态时，git告诉我们当前分支为master；第八行的意思是我们没有什么可以commit的，说明我们在当前目录下并没有进行修改，所以我们需要进行修改之后再进行后续操作： <img src="https://merrier.wang/wp-content/uploads/2017/04/QQ20170417-153652@2x.png" alt=""> 从上图我们可以看到，我在当前目录中新添加了一个文件octocat.txt，然后我们再通过git status查看一下当前工作区的状态： <img src="https://merrier.wang/wp-content/uploads/2017/04/QQ20170417-153844@2x.png" alt=""> 这次好像和上次不一样了，git告诉我们有一个文件untracked files叫做octocat.txt，同时还提醒你通过“git add <file>…”进行提交，那这里就稍微提一下git status时可能看到的当前工作区的文件的状态</file></p>
+<ul>
+<li>staged：已经添加到暂存区，等待提交的文件</li>
+<li>unstaged：已经发生了改变，但是还没有提交</li>
+<li>untracked：git都不知道还有这个文件，所以说明这是一个新添加的文件（就像上面的octocat.txt）</li>
+<li>deleted：已经从本地删除的文件</li>
+</ul>
+<h2 id="提交工作区修改到暂存区"><a href="#提交工作区修改到暂存区" class="headerlink" title="提交工作区修改到暂存区"></a>提交工作区修改到暂存区</h2><p>git add *  //将工作区所有修改添加到暂存区<br>git add .  //将工作区所有修改添加到暂存区<br>git add filename //将指定文件添加到暂存区</p>
+<p>还是一开始我们提到的那三个概念，我们在本地进行了修改（新建、修改、删除），但是此时还只是我们自己知道发生了哪些改变，git根本都不知道（本地的git都不知道，更别提远程），所以需要进行提交；那么你可能有疑问了，为什么提交到暂存区？直接提交给远程不就完了吗？这里就是git设计的巧妙之处，通过暂存区可以防止你的错误提交（事实证明，这一点很重要）。经过git add后，我们再通过git status查看一下状态： <img src="https://merrier.wang/wp-content/uploads/2017/04/QQ20170417-164855@2x.png" alt=""> git告诉我们它看到了一个新的文件octocat.txt，并且to be committed，那么你可能会问了，假如我当前的目录里有好多文件都需要add怎么办，难道一次次执行命令吗？当然不需要，从上面的代码块中可以看到，我们可以通过git add <em>提交所有修改，但是不推荐这种操作，因为有可能会将一些不想提交的隐藏文件也提交到暂存区了 假如我们当前目录下有很多.txt文件等待提交： <img src="https://merrier.wang/wp-content/uploads/2017/04/QQ20170417-165719@2x.png" alt=""> 我们可以使用“</em>.txt”匹配到所有的txt文件，然后就可以将它们全部提交了：</p>
+<p>git add ‘*.txt’</p>
+<h2 id="将暂存区修改添加到本地仓库"><a href="#将暂存区修改添加到本地仓库" class="headerlink" title="将暂存区修改添加到本地仓库"></a>将暂存区修改添加到本地仓库</h2><p>git commit -m ‘备注信息’</p>
+<p>经过多次的git add，此时的暂存区有好多本地的修改，通过上面的commit可以将所有的暂存区的修改添加到本地仓库，所以你可以简单理解为：需要提交的文件修改通通放到暂存区，然后，一次性提交暂存区的所有修改。</p>
+<h2 id="push到远程"><a href="#push到远程" class="headerlink" title="push到远程"></a>push到远程</h2><p>经过上面的一顿折腾，仍然只有本地的“git”知道了我们都做了些什么，如果想让远程仓库也知道，我们需要先和远程仓库建立联系：</p>
+<p>$ git remote add origin <a href="https://github.com/try-git/try_git.git" target="_blank" rel="noopener">https://github.com/try-git/try_git.git</a></p>
+<p>在这里遇到一个问题：每次push都要输入用户名和密码，原因是https方式push，解决方法如下：</p>
+<p>git remote rm origin   //移除<br>git remote add origin <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:try-git/test.git       //添加</p>
+<p>此后就不用再输入用户名和密码了,同时我们和远程建立联系以后就不用再git remote add了，这就好比你去别人家串门，第一次可能需要你需要查一下地图，第二次的话就直接去找他就行了。接下来就是push到远程了：</p>
+<p>git push -u origin master</p>
+<p>第一次push是需要加-u参数的，这个参数是告诉远程我是谁（<a href="https://www.zhihu.com/question/20019419" target="_blank" rel="noopener">git push的-u参数具体含义</a>），还是刚才串门的例子，第一次去别人家串门肯定需要表明身份的，第二次就不再需要了，因为已经知道你是谁了：</p>
+<p>git push origin master</p>
+<h2 id="从远程pull"><a href="#从远程pull" class="headerlink" title="从远程pull"></a>从远程pull</h2><p>git pull origin master</p>
+<p>如果别人提交了他们的修改到远程仓库，我们需要从远程pull修改到我们的本地，从而保证大家的进度保持同步，比如别人提交了一个yellow_octocat.txt文件到远程，我们git pull之后： <img src="https://merrier.wang/wp-content/uploads/2017/04/QQ20170417-171517@2x.png" alt=""> git告诉我们，你pull成功了，新增加了一个文件叫做yellow_octocat.txt，此时我们的当前目录就多了一个yellow_octocat.txt（.git也就是本地版本库也知道了这个文件） <img src="https://merrier.wang/wp-content/uploads/2017/04/QQ20170417-171808@2x.png" alt=""></p>
+<h2 id="查看修改的内容"><a href="#查看修改的内容" class="headerlink" title="查看修改的内容"></a>查看修改的内容</h2><p>git diff</p>
+<p>有可能别人和我对同一文件进行了修改，所以在pull之后需要查看一下都发生了哪些修改: <img src="https://merrier.wang/wp-content/uploads/2017/04/QQ20170417-172321@2x.png" alt=""> 其实，git diff的用法不仅只有这一种，还可以查看暂存区的修改都有哪些：</p>
+<p>git diff –staged</p>
+<h2 id="撤销修改"><a href="#撤销修改" class="headerlink" title="撤销修改"></a>撤销修改</h2><h3 id="丢弃工作区的修改"><a href="#丢弃工作区的修改" class="headerlink" title="丢弃工作区的修改"></a>丢弃工作区的修改</h3><p>假如我们对之前的一个文件readme.txt进行了修改，但是现在我发现对这个文件进行的修改都是错的（经常会发生），此时我不想要我对这个文件的修改了，就可以执行下面的命令，然后readme.txt就可以回退到我修改之前的样子</p>
+<p>git checkout – readme.txt</p>
+<h3 id="丢弃暂存区的修改"><a href="#丢弃暂存区的修改" class="headerlink" title="丢弃暂存区的修改"></a>丢弃暂存区的修改</h3><p>和刚才不一样的是，我已经将我的修改提交到暂存区了（也就是说已经执行了git add readme.txt命令），此时我想把这个文件的修改从暂存区放回到工作区，就需要执行下面的命令，然后此时的暂存区就不再有readme.txt的修改，就像没git add过</p>
+<p>git reset HEAD readme.txt</p>
+<h1 id="分支相关"><a href="#分支相关" class="headerlink" title="分支相关"></a>分支相关</h1><p>除了git，其他版本控制系统如SVN中也有分支管理，但是Git的分支是与众不同的，无论创建、切换和删除分支，Git在1秒钟之内就能完成！无论你的版本库是1个文件还是1万个文件。 每次提交，Git都把它们串成一条时间线，这条时间线就是一个分支。但是截止到目前，只有一条时间线，在Git里，这个分支叫主分支，即<code>master</code>分支。<code>HEAD</code>严格来说不是指向提交，而是指向<code>master</code>，<code>master</code>才是指向提交的，所以，<strong><code>HEAD</code>指向的就是当前分支</strong>。每次提交，<code>master</code>分支都会向前移动一步，这样，随着你不断提交，<code>master</code>分支的线也越来越长。 <img src="https://merrier.wang/wp-content/uploads/2017/04/0.png" alt=""></p>
+<h2 id="新建分支"><a href="#新建分支" class="headerlink" title="新建分支"></a>新建分支</h2><p>git branch clean_up</p>
+<p>此时我们在本地创建了一个分支叫做clean_up，对于git来说，相当于新建了一个指针叫clean_up，指向master相同的提交，但是此时的HEAD仍然指向master，因为此时我们只是新建了一个分支，并没有切换到clean_up分支</p>
+<h2 id="切换分支"><a href="#切换分支" class="headerlink" title="切换分支"></a>切换分支</h2><p>it checkout clean_up</p>
+<p>我们新创建了clean_up分支后，可以通过上面的命令将本地的分支切换到clean_up，此时的HEAD就会指向clean_up</p>
+<h2 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h2><p>为了后面的分支命令展示，我们通过下面的命令将.txt文件（注意此时所在的分支仍然是clean_up）</p>
+<p>git rm ‘*.txt’</p>
+<p>然后，我们将删除这些文件的修改进行提交（add+commit），此时本地的clean_up分支就没有这些.txt文件了： <img src="https://merrier.wang/wp-content/uploads/2017/04/QQ20170417-203656@2x.png" alt=""> 此时我们再切换到master分支（git checkout master）： <img src="https://merrier.wang/wp-content/uploads/2017/04/QQ20170417-205459@2x.png" alt=""> 通过上面两张图片，我们可以清晰的看到分支的作用，其实相当于两个平行世界（branch），而你所扮演的就是上帝的角色，想让哪个世界继续进行，就checkout哪个分支就可以了。此时如果我们想让clean_up分支上做出的改变合并到master分支该怎么办呢？</p>
+<h2 id="合并分支"><a href="#合并分支" class="headerlink" title="合并分支"></a>合并分支</h2><p>git merge clean_up</p>
+<p>上面这段命令执行的前提是你当前的分支是master，而通过git merge 某分支可以将某分支的改变合并到当前分支： <img src="https://merrier.wang/wp-content/uploads/2017/04/QQ20170417-210245@2x.png" alt=""> 我们通过上面的结果可以看到此时的master分支已经没有了.txt文件</p>
+<h2 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h2><p>git branch -d clean_up</p>
+<p>既然我们已经把clean_up分支的改变合并到了master分支，所以此时我们就不再需要clean_up分支了，通过上面的命令可以将该分支删除</p>
+<h1 id="版本相关"><a href="#版本相关" class="headerlink" title="版本相关"></a>版本相关</h1><p>较为复杂的分支命令的介绍就告一段落了，下面介绍一下和版本相关的一些常用命令</p>
+<h2 id="查看提交的历史记录"><a href="#查看提交的历史记录" class="headerlink" title="查看提交的历史记录"></a>查看提交的历史记录</h2><p>git log</p>
+<p>我们可以通过git log查看提交的历史记录（每一次commit都是一次记录）： <img src="https://merrier.wang/wp-content/uploads/2017/04/QQ20170417-170217@2x.png" alt=""> 从上面的图片可以看到，我们有两次commit记录，他们的id是很长的黄色字符串，这个id和每次提交是一一对应的，同时也对应着相应的版本，而除了commit id，我们还可以看到提交的作者、日期以及备注信息（这里就体现出了备注信息是多么的重要）</p>
+<h2 id="回退版本"><a href="#回退版本" class="headerlink" title="回退版本"></a>回退版本</h2><p>git reset –hard HEAD^</p>
+<p>通过上面的命令，我们可以回退到上个版本，HEAD为为当前版本，HEAD^上一个版本，HEAD^^上上个版本，如果有100个版本HEAD~100。当然，我们也可以通过上面提到的commit id来回到过去的某个版本</p>
+<p>git reset –hard commit_id</p>
+<p>是不是更感觉自己像是一个上帝了，在git中，你可以随意控制平行世界的发展，需要做的只是输出一行命令而已</p>
+<h1 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h1><p>上面就是一些我们最常用的git命令，但是git的强大之处远不止这些，下面就简单介绍几种我们可能会用到的命令：</p>
+<h2 id="建立本地分支与远程分支的追踪关系"><a href="#建立本地分支与远程分支的追踪关系" class="headerlink" title="建立本地分支与远程分支的追踪关系"></a>建立本地分支与远程分支的追踪关系</h2><p>当在本地新建分支的时候，可能远程并没有这个分支，所以你需要建立追踪关系，这样你push的时候才不会push到别的分支上去</p>
+<p>git branch –set-upstream-to=<remote>/branchName  //建立本地分支与远程分支的追踪关系<br>git branch –track branchName  [remote branch]   //新建一个分支，并与远程建立追踪关系</remote></p>
+<h2 id="cherry-pick"><a href="#cherry-pick" class="headerlink" title="cherry-pick"></a>cherry-pick</h2><p>这是git的又一神奇命令，它可以让你将任何一次commit的修改合并到当前分支</p>
+<p>git cherry-pick commitId  //将与commitId对应的提交合进当前分支</p>
+<h2 id="bug分支"><a href="#bug分支" class="headerlink" title="bug分支"></a>bug分支</h2><p>当我们修复bug时，我们会通过创建新的bug分支进行修复，然后合并，最后删除分支；但是如果我们的手头工作没有完成呢，就需要暂时放弃当前没有提交的修改，然后去修复bug，修复完之后再回来恢复原样继续做刚才的工作</p>
+<p>git stash     //暂时放弃未提交的修改<br>git stash pop  //恢复</p>
+<h1 id="实践步骤"><a href="#实践步骤" class="headerlink" title="实践步骤"></a>实践步骤</h1><p>[table id=23 /]</p>
+<h1 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h1><p><a href="http://marklodato.github.io/visual-git-guide/index-zh-cn.html" target="_blank" rel="noopener">图解Git</a> <a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener">廖雪峰-Git教程</a> <a href="https://try.github.io/levels/1/challenges/1" target="_blank" rel="noopener">在线练习git命令</a> <a href="https://git-scm.com/book/en/v2" target="_blank" rel="noopener">Pro Git</a> <a href="http://www.jianshu.com/p/50892fac6cbc" target="_blank" rel="noopener">实用Git Workflow</a> <a href="http://gitbook.liuhui998.com/index.html" target="_blank" rel="noopener">Git Community Book 中文版</a></p>
+<h1 id="另外一些关于Git-Github入门的文章"><a href="#另外一些关于Git-Github入门的文章" class="headerlink" title="另外一些关于Git/Github入门的文章"></a>另外一些关于Git/Github入门的文章</h1><p><a href="http://blog.jobbole.com/111187/" target="_blank" rel="noopener">大白话解释 Git 和 GitHub</a> <a href="http://rogerdudler.github.io/git-guide/" target="_blank" rel="noopener">git - the simple guide</a> <a href="https://www.pluralsight.com/blog/software-development/github-tutorial" target="_blank" rel="noopener">GitHub: the beginner’s guide</a></p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="//merrier.wang" target="_blank">Merrier说</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/20170420/imap-smtp-pop3-addresses-for-some-common-mailboxes.html" class="pre-post btn btn-default" title="一些常用邮箱的IMAP&SMTP&POP3地址">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">一些常用邮箱的IMAP&SMTP&POP3地址</span>
+        </a>
+    
+    
+        <a href="/20170416/front-end-performance-optimization.html" class="next-post btn btn-default" title="前端面试系列（12）——前端性能优化">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">前端面试系列（12）——前端性能优化</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+  <script id="dsq-count-scr" src="https://merrier.disqus.com/count.js" async></script>
+
+
+<script type="text/javascript">
+  var disqus_config = function () {
+    this.page.url = 'http://merrier.wang/20170417/an-absolutely-understandable-introduction-to-Git.html';
+    this.page.identifier = '20170417/an-absolutely-understandable-introduction-to-Git.html';
+    this.page.title = '一篇绝对能看懂的Git入门教程';
+  };
+  var d = document, s = d.createElement('script');
+  s.src = 'https://merrier.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', '' + +new Date());
+  (d.head || d.body).appendChild(s);
+</script>
+
+
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#写在前面"><span class="toc-text">写在前面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#工作区与暂存区"><span class="toc-text">工作区与暂存区</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#初始化"><span class="toc-text">初始化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#生成ssh"><span class="toc-text">生成ssh</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设置用户名"><span class="toc-text">设置用户名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#初始化当前目录的项目"><span class="toc-text">初始化当前目录的项目</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#常用命令"><span class="toc-text">常用命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#查看工作区状态"><span class="toc-text">查看工作区状态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#提交工作区修改到暂存区"><span class="toc-text">提交工作区修改到暂存区</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#将暂存区修改添加到本地仓库"><span class="toc-text">将暂存区修改添加到本地仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#push到远程"><span class="toc-text">push到远程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#从远程pull"><span class="toc-text">从远程pull</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查看修改的内容"><span class="toc-text">查看修改的内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#撤销修改"><span class="toc-text">撤销修改</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#丢弃工作区的修改"><span class="toc-text">丢弃工作区的修改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#丢弃暂存区的修改"><span class="toc-text">丢弃暂存区的修改</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#分支相关"><span class="toc-text">分支相关</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#新建分支"><span class="toc-text">新建分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#切换分支"><span class="toc-text">切换分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#删除文件"><span class="toc-text">删除文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#合并分支"><span class="toc-text">合并分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#删除分支"><span class="toc-text">删除分支</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#版本相关"><span class="toc-text">版本相关</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#查看提交的历史记录"><span class="toc-text">查看提交的历史记录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#回退版本"><span class="toc-text">回退版本</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#其他命令"><span class="toc-text">其他命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#建立本地分支与远程分支的追踪关系"><span class="toc-text">建立本地分支与远程分支的追踪关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cherry-pick"><span class="toc-text">cherry-pick</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bug分支"><span class="toc-text">bug分支</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#实践步骤"><span class="toc-text">实践步骤</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#扩展阅读"><span class="toc-text">扩展阅读</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#另外一些关于Git-Github入门的文章"><span class="toc-text">另外一些关于Git/Github入门的文章</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        访问量:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        访客数:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2018
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

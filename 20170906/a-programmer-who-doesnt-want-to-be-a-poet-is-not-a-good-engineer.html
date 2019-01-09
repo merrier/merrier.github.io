@@ -1,0 +1,398 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Merrier说">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://merrier.wang">
+    <!--SEO-->
+
+<meta name="description" content="Merrier的个人博客">
+
+
+
+<meta name="keywords" content="merrier 博客 前端 北邮人">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>不想当诗人的程序员不是好工程师 | Merrier说</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Merrier说" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1264342320 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1264342320%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Merrier">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 叩首问路，码梦为生 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://merrier.wang">Merrier说</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/frontend/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/algorithm/"><i class="fa "></i>算法</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/series/"><i class="fa "></i>系列专栏</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>文章归档</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="不想当诗人的程序员不是好工程师">
+            
+	            不想当诗人的程序员不是好工程师
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/杂谈">
+            杂谈
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/生活" title="生活">
+                        生活
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/09/06</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <p>RT，作为一名程序员，如果会几首诗，那你就不是一名普通的程序员，而是一名</p>
+<h3 id="会几首诗的程序员"><a href="#会几首诗的程序员" class="headerlink" title="会几首诗的程序员"></a>会几首诗的程序员</h3><h1 id="1-一封情书（中文更惊艳）"><a href="#1-一封情书（中文更惊艳）" class="headerlink" title="1. 一封情书（中文更惊艳）"></a>1. 一封情书（中文更惊艳）</h1><blockquote>
+<p>I love three things in this world. Sun, Moon and You. Sun for morning, Moon for night, and You forever.   浮世三千，吾爱有三。 日、月与卿。 日为朝，月为暮， 卿为朝朝暮暮。   浮世三千，挚爱有三。 喷薄朝阳，皓婉皎月； 不及汝尔，沧海桑田。</p>
+</blockquote>
+<h1 id="2-如果有来生"><a href="#2-如果有来生" class="headerlink" title="2. 如果有来生"></a>2. 如果有来生</h1><blockquote>
+<p>如果有来生， 要做一棵树， 站成永恒，没有悲欢的姿势。 一半在土里安详，一半在风里飞扬， 一半洒落阴凉，一半沐浴阳光， 非常沉默非常骄傲， 从不依靠从不寻找。</p>
+</blockquote>
+<h1 id="3-毛不易《消愁》"><a href="#3-毛不易《消愁》" class="headerlink" title="3. 毛不易《消愁》"></a>3. 毛不易《消愁》</h1><blockquote>
+<p>一杯敬朝阳，一杯敬月光； 一杯敬故乡，一杯敬远方； 一杯敬明天，一杯敬过往； 一杯敬自由，一杯敬死亡。</p>
+</blockquote>
+<h1 id="4-木心《从前慢》"><a href="#4-木心《从前慢》" class="headerlink" title="4.木心《从前慢》"></a>4.木心《从前慢》</h1><blockquote>
+<p>从前车马很慢， 书信很远， 一生只够爱一个人。</p>
+</blockquote>
+<h1 id="5-黑别人可不是好孩子"><a href="#5-黑别人可不是好孩子" class="headerlink" title="5.黑别人可不是好孩子"></a><a href="http://mp.weixin.qq.com/s/Qz17OFqQ_bcrqhG82d-q9A" target="_blank" rel="noopener">5.黑别人可不是好孩子</a></h1><blockquote>
+<p>从一而终薛之谦 百年贤妻翟欣欣 下周回国贾跃亭 真爱无敌邓文迪 遵纪守法郎咸平 西门官人王宝强</p>
+</blockquote>
+<h1 id="6-来自网易云音乐《起风了（Cover-高橋優）》评论"><a href="#6-来自网易云音乐《起风了（Cover-高橋優）》评论" class="headerlink" title="6.来自网易云音乐《起风了（Cover 高橋優）》评论"></a>6.来自<a href="http://music.163.com/#/song?id=461525011" target="_blank" rel="noopener">网易云音乐《起风了（Cover 高橋優）》</a>评论</h1><blockquote>
+<p>我是个俗气至顶的人，见山是山，见海是海，见花便是花。唯独见了你，云海开始翻涌，江潮开始澎湃，昆虫的小触须挠着全世界的痒。你无需开口，我和天地万物便通通奔向你。   曾经我自诩半个诗人，见山是深情伟岸，见海是热情澎湃，见花见草信他们皆有故事，云海江潮，虫鸣鸟啼都暗藏情愫。唯独见了你，山川沉默，海面静谧，云海不再翻涌，江潮不再澎湃，花鸟鱼虫被光与尘凝固，世界万籁俱寂，只剩下你。</p>
+</blockquote>
+<h1 id="7-梁启超《少年中国说》"><a href="#7-梁启超《少年中国说》" class="headerlink" title="7.梁启超《少年中国说》"></a>7.梁启超《少年中国说》</h1><blockquote>
+<p>故今日之责任，不在他人，而全在我少年。</p>
+<p>少年智则国智，少年富则国富；</p>
+<p>少年强则国强，少年独立则国独立；</p>
+<p>少年自由则国自由；少年进步则国进步；</p>
+<p>少年胜于欧洲，则国胜于欧洲；</p>
+<p>少年雄于地球，则国雄于地球。</p>
+<p>红日初升，其道大光。</p>
+<p>河出伏流，一泻汪洋。</p>
+<p>潜龙腾渊，鳞爪飞扬。</p>
+<p>乳虎啸谷，百兽震惶。</p>
+<p>鹰隼试翼，风尘翕张。</p>
+<p>奇花初胎，矞矞皇皇。</p>
+<p>干将发硎，有作其芒。</p>
+<p>天戴其苍，地履其黄。</p>
+<p>纵有千古，横有八荒。</p>
+<p>前途似海，来日方长。</p>
+<p>美哉我少年中国，与天不老！</p>
+<p>壮哉我中国少年，与国无疆！</p>
+</blockquote>
+<h1 id="8-《侠客行》"><a href="#8-《侠客行》" class="headerlink" title="8.《侠客行》"></a>8.《侠客行》</h1><blockquote>
+<p>十步杀一人，</p>
+<p>千里不留行。</p>
+<p>事了拂衣去，</p>
+<p>深藏身与名。</p>
+</blockquote>
+<h1 id="9"><a href="#9" class="headerlink" title="9."></a>9.</h1><blockquote>
+<p>为天地立心， 为生民立命， 为往圣继绝学， 为万世开太平</p>
+</blockquote>
+<h1 id="10-《寻李白》"><a href="#10-《寻李白》" class="headerlink" title="10.《寻李白》"></a>10.《寻李白》</h1><blockquote>
+<p>酒入豪肠，七分酿成了月光</p>
+<p>余下的三分啸成剑气</p>
+<p>绣口一吐，就半个盛唐</p>
+</blockquote>
+<h1 id="11-龙应台"><a href="#11-龙应台" class="headerlink" title="11.龙应台"></a>11.龙应台</h1><blockquote>
+<p>很多时候不是我们去看父母的背影</p>
+<p>而是承受他们追逐的目光，</p>
+<p>承受他们不舍的，</p>
+<p>不放心的，满眼的目送。</p>
+<p>最后才渐渐明白，</p>
+<p>这个世界上，再也没有任何人，</p>
+<p>可以像父母一样，爱我如生命。</p>
+</blockquote>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="//merrier.wang" target="_blank">Merrier说</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/20170923/how-to-play-in-this-blog.html" class="pre-post btn btn-default" title="Merrier说还可以这样玩儿？！">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">Merrier说还可以这样玩儿？！</span>
+        </a>
+    
+    
+        <a href="/20170906/publish-a-package-to-npm.html" class="next-post btn btn-default" title="发布一个package到npm">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">发布一个package到npm</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+  <script id="dsq-count-scr" src="https://merrier.disqus.com/count.js" async></script>
+
+
+<script type="text/javascript">
+  var disqus_config = function () {
+    this.page.url = 'http://merrier.wang/20170906/a-programmer-who-doesnt-want-to-be-a-poet-is-not-a-good-engineer.html';
+    this.page.identifier = '20170906/a-programmer-who-doesnt-want-to-be-a-poet-is-not-a-good-engineer.html';
+    this.page.title = '不想当诗人的程序员不是好工程师';
+  };
+  var d = document, s = d.createElement('script');
+  s.src = 'https://merrier.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', '' + +new Date());
+  (d.head || d.body).appendChild(s);
+</script>
+
+
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#会几首诗的程序员"><span class="toc-text">会几首诗的程序员</span></a></li></ol><li class="toc-item toc-level-1"><a class="toc-link" href="#1-一封情书（中文更惊艳）"><span class="toc-text">1. 一封情书（中文更惊艳）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-如果有来生"><span class="toc-text">2. 如果有来生</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-毛不易《消愁》"><span class="toc-text">3. 毛不易《消愁》</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-木心《从前慢》"><span class="toc-text">4.木心《从前慢》</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-黑别人可不是好孩子"><span class="toc-text">5.黑别人可不是好孩子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-来自网易云音乐《起风了（Cover-高橋優）》评论"><span class="toc-text">6.来自网易云音乐《起风了（Cover 高橋優）》评论</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-梁启超《少年中国说》"><span class="toc-text">7.梁启超《少年中国说》</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-《侠客行》"><span class="toc-text">8.《侠客行》</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9"><span class="toc-text">9.</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#10-《寻李白》"><span class="toc-text">10.《寻李白》</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#11-龙应台"><span class="toc-text">11.龙应台</span></a>
+        
+    </li></div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        访问量:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        访客数:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2018
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

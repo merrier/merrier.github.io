@@ -1,0 +1,378 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Merrier说">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://merrier.wang">
+    <!--SEO-->
+
+<meta name="description" content="Merrier的个人博客">
+
+
+
+<meta name="keywords" content="merrier 博客 前端 北邮人">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>Git commit 中的Change-Id是什么 | Merrier说</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Merrier说" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1264342320 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1264342320%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Merrier">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 叩首问路，码梦为生 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://merrier.wang">Merrier说</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/frontend/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/algorithm/"><i class="fa "></i>算法</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/series/"><i class="fa "></i>系列专栏</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>文章归档</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Git commit 中的Change-Id是什么">
+            
+	            Git commit 中的Change-Id是什么
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/Git">
+            Git
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/change-id" title="change-id">
+                        change-id
+                    </a>
+                
+                    <a href="/tags/git" title="git">
+                        git
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/08/20</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <p>之前在创业公司实习的时候很不规范，技术部负责人把每个人的ssh key添加到公司github中之后就可以执行git相关操作了，根本没有权限的概念；后来进入头条之后，才知道还有Gerrit这种东西，而第一次push代码的时候就遇到了”ERROR: missing Change-Id in commit message”的错误，后来才得知是因为没有Change-Id的缘故，下面就介绍一下Change-Id是什么东东：</p>
+<h1 id="什么是Change-Id"><a href="#什么是Change-Id" class="headerlink" title="什么是Change-Id"></a>什么是Change-Id</h1><p>Change-Id其实就是一段形如”I7cbfa01f5136b8815e5e2c6dc5dcda28ce49d13a”的字符串，它的作用是：<strong>保证已经提交审核的修订通过审核入库后，被别的分支 cherry-pick 后再推送至服务器时不会产生新的重复的评审任务</strong>。Gerrit 设计了一套方法，即要求每个提交包含唯一的 Change-Id，这个 Change-Id 因为出现在日志中，当执行 cherry-pick 时也会保持，Gerrit 一旦发现新的提交包含了已经处理过的 Change-Id ，就不再为该修订创建新的评审任务和 task-id，而直接将提交入库。 总之，Change-Id就是Gerrit为了确保cherry-pick（有关“cherry-pick”请自行谷歌）已提交审核的分支时不会在产生新的提交记录。</p>
+<h1 id="解决“ERROR：missing-Change-Id-in-commit-message”"><a href="#解决“ERROR：missing-Change-Id-in-commit-message”" class="headerlink" title="解决“ERROR：missing Change-Id in commit message”"></a>解决“ERROR：missing Change-Id in commit message”</h1><p>在一开始我们提到过，在执行git<code>push origin Head:refs/for/xxxx</code>时有时会报出这样的错误，也就是在commit Message仅仅包含如“feature：xxxx”等title这样的信息而缺少Change-Id。那么怎样解决呢？</p>
+<h2 id="临时解决"><a href="#临时解决" class="headerlink" title="临时解决"></a>临时解决</h2><p>commit有一个神奇的参数，叫做–amend，如果我们遇到了上面的错误，可以执行下面指令：</p>
+<p>git commit –amend</p>
+<p>然后我们可以看到最近一次commit的相关信息，在title下面空出一行后（注意，一定要空出一行，否则git会把其作为title的一部分处理），将 Change-Id: XXXX 复制到Message中。然后就可以push了。你可能会问了，我哪知道Change-Id是什么呢？可以先查看一下之前的commit信息：</p>
+<p>git log</p>
+<p>然后你可能会看到这样一条信息： <img src="https://merrier.wang/wp-content/uploads/2017/08/change-id.png" alt=""> 现在你懂了吧，其实可以看到之前人提交commit信息的Change-Id，我们只需要复制一下（注意“Change-Id:”后面有个空格）然后改一下其中某个字母就可以了（因为Change-Id不允许重复，如果重复了，可以再改一个字母，一般只需要改一个字母就可以了），这时我们就有了一个人工生成的“Change-Id”了。 注意，这种办法只是一种临时解决方案，下次如果你再想commit就需要再复制一个Change-Id，然后–amend修改commit信息，是不是感觉每次这样修改很麻烦？没事，我们有一个永久解决方案：</p>
+<h2 id="自动生成Change-Id"><a href="#自动生成Change-Id" class="headerlink" title="自动生成Change-Id"></a>自动生成Change-Id</h2><p>其实我们可以利用commit-msg这个hook文件自动生成Change-Id，具体做法如下：</p>
+<ul>
+<li>将文章下面的commit-msg hook脚本复制到git项目中.git/hooks下，并命名为“commit-msg”（一般情况下.git/hooks下会包含一个叫“commit-msg.sample”的文件，可以把它删除）</li>
+<li>添加完之后，执行 chmod u+x .git/hooks/commit-msg 激活hook，以后提交的时候就会自动携带Change-Id了</li>
+</ul>
+<p>#!/bin/sh<br># From Gerrit Code Review 2.6<br>#<br># Part of Gerrit Code Review (<a href="http://code.google.com/p/gerrit/" target="_blank" rel="noopener">http://code.google.com/p/gerrit/</a>)<br>#<br># Copyright (C) 2009 The Android Open Source Project<br>#<br># Licensed under the Apache License, Version 2.0 (the “License”);<br># you may not use this file except in compliance with the License.<br># You may obtain a copy of the License at<br>#<br># <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank" rel="noopener">http://www.apache.org/licenses/LICENSE-2.0</a><br>#<br># Unless required by applicable law or agreed to in writing, software<br># distributed under the License is distributed on an “AS IS” BASIS,<br># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.<br># See the License for the specific language governing permissions and<br># limitations under the License.<br>#</p>
+<p>unset GREP_OPTIONS</p>
+<p>CHANGE_ID_AFTER=”Bug|Issue”<br>MSG=”$1”</p>
+<p># Check for, and add if missing, a unique Change-Id<br>#<br>add_ChangeId() {<br>clean_message=<code>sed -e &#39;
+/^diff --git a\\/.*/{
+s///
+q
+}
+/^Signed-off-by:/d
+/^#/d
+&#39; &quot;$MSG&quot; | git stripspace</code><br>if test -z “$clean_message”<br>then<br>return<br>fi</p>
+<p># Does Change-Id: already exist? if so, exit (no change).<br>if grep -i ‘^Change-Id:’ “$MSG” &gt;/dev/null<br>then<br>return<br>fi</p>
+<p>id=<code>\_gen\_ChangeId</code><br>T=”$MSG.tmp.$$”<br>AWK=awk<br>if [ -x /usr/xpg4/bin/awk ]; then<br># Solaris AWK is just too broken<br>AWK=/usr/xpg4/bin/awk<br>fi</p>
+<p># How this works:<br># - parse the commit message as (textLine+ blankLine<em>)</em><br># - assume textLine+ to be a footer until proven otherwise<br># - exception: the first block is not footer (as it is the title)<br># - read textLine+ into a variable<br># - then count blankLines<br># - once the next textLine appears, print textLine+ blankLine* as these<br># aren’t footer<br># - in END, the last textLine+ block is available for footer parsing<br>$AWK ‘<br>BEGIN {<br># while we start with the assumption that textLine+<br># is a footer, the first block is not.<br>isFooter = 0<br>footerComment = 0<br>blankLines = 0<br>}</p>
+<p># Skip lines starting with “#” without any spaces before it.<br>/^#/ { next }</p>
+<p># Skip the line starting with the diff command and everything after it,<br># up to the end of the file, assuming it is only patch data.<br># If more than one line before the diff was empty, strip all but one.<br>/^diff –git a/ {<br>blankLines = 0<br>while (getline) { }<br>next<br>}</p>
+<p># Count blank lines outside footer comments<br>/^$/ &amp;&amp; (footerComment == 0) {<br>blankLines++<br>next<br>}</p>
+<p># Catch footer comment<br>/^\[[a-zA-Z0-9-]+:/ &amp;&amp; (isFooter == 1) {<br>footerComment = 1<br>}</p>
+<p>/]$/ &amp;&amp; (footerComment == 1) {<br>footerComment = 2<br>}</p>
+<p># We have a non-blank line after blank lines. Handle this.<br>(blankLines &gt; 0) {<br>print lines<br>for (i = 0; i &lt; blankLines; i++) {<br>print “”<br>}</p>
+<p>lines = “”<br>blankLines = 0<br>isFooter = 1<br>footerComment = 0<br>}</p>
+<p># Detect that the current block is not the footer<br>(footerComment == 0) &amp;&amp; (!/^\[?[a-zA-Z0-9-]+:/ || /^[a-zA-Z0-9-]+:\/\//) {<br>isFooter = 0<br>}</p>
+<p>{<br># We need this information about the current last comment line<br>if (footerComment == 2) {<br>footerComment = 0<br>}<br>if (lines != “”) {<br>lines = lines “\n”;<br>}<br>lines = lines $0<br>}</p>
+<p># Footer handling:<br># If the last block is considered a footer, splice in the Change-Id at the<br># right place.<br># Look for the right place to inject Change-Id by considering<br># CHANGE_ID_AFTER. Keys listed in it (case insensitive) come first,<br># then Change-Id, then everything else (eg. Signed-off-by:).<br>#<br># Otherwise just print the last block, a new line and the Change-Id as a<br># block of its own.<br>END {<br>unprinted = 1<br>if (isFooter == 0) {<br>print lines “\n”<br>lines = “”<br>}<br>changeIdAfter = “^(“ tolower(“‘“$CHANGE_ID_AFTER”‘“) “):”<br>numlines = split(lines, footer, “\n”)<br>for (line = 1; line &lt;= numlines; line++) {<br>if (unprinted &amp;&amp; match(tolower(footer[line]), changeIdAfter) != 1) {<br>unprinted = 0<br>print “Change-Id: I’”$id”‘“<br>}<br>print footer[line]<br>}<br>if (unprinted) {<br>print “Change-Id: I’”$id”‘“<br>}<br>}’ “$MSG” &gt; “$T” &amp;&amp; mv “$T” “$MSG” || rm -f “$T”<br>}<br>_gen_ChangeIdInput() {<br>echo “tree `git write-tree`“<br>if parent=`git rev-parse “HEAD^0” 2&gt;/dev/null`<br>then<br>echo “parent $parent”<br>fi<br>echo “author `git var GIT_AUTHOR_IDENT`“<br>echo “committer `git var GIT_COMMITTER_IDENT`“<br>echo<br>printf ‘%s’ “$clean_message”<br>}<br>_gen_ChangeId() {<br>_gen_ChangeIdInput |<br>git hash-object -t commit –stdin<br>}</p>
+<p>add_ChangeId</p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="//merrier.wang" target="_blank">Merrier说</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/20170820/it-nouns.html" class="pre-post btn btn-default" title="身在IT界，不能不知道这些名词">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">身在IT界，不能不知道这些名词</span>
+        </a>
+    
+    
+        <a href="/20170820/summary-of-online-interface-addresses.html" class="next-post btn btn-default" title="在线接口地址总结">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">在线接口地址总结</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+  <script id="dsq-count-scr" src="https://merrier.disqus.com/count.js" async></script>
+
+
+<script type="text/javascript">
+  var disqus_config = function () {
+    this.page.url = 'http://merrier.wang/20170820/what-is-change-id-in-git-commit.html';
+    this.page.identifier = '20170820/what-is-change-id-in-git-commit.html';
+    this.page.title = 'Git commit 中的Change-Id是什么';
+  };
+  var d = document, s = d.createElement('script');
+  s.src = 'https://merrier.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', '' + +new Date());
+  (d.head || d.body).appendChild(s);
+</script>
+
+
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#什么是Change-Id"><span class="toc-text">什么是Change-Id</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#解决“ERROR：missing-Change-Id-in-commit-message”"><span class="toc-text">解决“ERROR：missing Change-Id in commit message”</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#临时解决"><span class="toc-text">临时解决</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自动生成Change-Id"><span class="toc-text">自动生成Change-Id</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        访问量:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        访客数:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2018
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

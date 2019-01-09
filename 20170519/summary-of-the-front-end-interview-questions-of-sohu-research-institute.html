@@ -1,0 +1,412 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Merrier说">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://merrier.wang">
+    <!--SEO-->
+
+<meta name="description" content="Merrier的个人博客">
+
+
+
+<meta name="keywords" content="merrier 博客 前端 北邮人">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>搜狐研究院前端散招面试题总结 | Merrier说</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Merrier说" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1264342320 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1264342320%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Merrier">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 叩首问路，码梦为生 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://merrier.wang">Merrier说</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/frontend/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/algorithm/"><i class="fa "></i>算法</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/series/"><i class="fa "></i>系列专栏</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>文章归档</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="搜狐研究院前端散招面试题总结">
+            
+	            搜狐研究院前端散招面试题总结
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/面试">
+            面试
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/面试" title="面试">
+                        面试
+                    </a>
+                
+                    <a href="/tags/前端" title="前端">
+                        前端
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/05/19</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>首先，搜狐媒体大厦还是蛮阔气的，但是门口的保安让我在沙发区稍等一会儿的时候，我看到那里有5个类似员工的人在打王者荣耀。。果然“大公司”的员工氛围就是不一样啊。。 后来等了大概10分钟左右，一个挂有实习工作牌的女士把我带到了9楼，这里应该是搜狐员工办公的地方，两边都有比较大的办公区，然后中间有一块稍微小一点的地方用来面试和聊天，hr姐姐首先让我做了一下搜狐的笔试题，然后说大概一个小时，如果做完了就给她打电话，然后就自己走开了（连杯水都没有倒，实习生就是这样的吗。。）， 做完了之后就有一位男士拿着我的简历过来了，整个面试的过程堪称尴尬，因为我的简历上写有“关注ES6”，所以这位年轻的面试官就开始各种问ES6相关的东西，还问我和react相关的东西，比如让我讲一下react的设计思想啊什么的。。难道这就是“关注ES6”想要表达的意思吗？后来他可能感觉也比较尴尬了，就问了一些JS相关的东西，比如self和this的区别啊什么的，但是我的水平实在有限，这位面试官的前端水平实在是在我之上太多，所以我也是基本上全程蒙蔽，更别提让我用jQuery实现一个promise对象了（对了，这位面试官连jQ的when()方法都不知道。。），就这样结束了一面，当然由于我的水平实在太低，所以就直接让我走人了（不过我也比较饿了，想回学校吃点东西了。。）</p>
+<h1 id="笔试题"><a href="#笔试题" class="headerlink" title="笔试题"></a>笔试题</h1><h2 id="一、不定项选择题"><a href="#一、不定项选择题" class="headerlink" title="一、不定项选择题"></a>一、不定项选择题</h2><p>我不知道笔试题能不能拍照，但是我还是冒着被批评和留下不好印象的风险拍了一下，总体来说难度还是适中的，其中有些题还是蛮经典的，大家可以自行消化</p>
+<h3 id="1-以下元素为块级元素的有："><a href="#1-以下元素为块级元素的有：" class="headerlink" title="1.以下元素为块级元素的有："></a>1.以下元素为块级元素的有：</h3><ul>
+<li>p</li>
+<li>strong</li>
+<li>span</li>
+<li>section</li>
+</ul>
+<h3 id="2-以下可以使元素不可见的有："><a href="#2-以下可以使元素不可见的有：" class="headerlink" title="2.以下可以使元素不可见的有："></a>2.以下可以使元素不可见的有：</h3><ul>
+<li>display:none</li>
+<li>width:0;height:0;overflow:hidden</li>
+<li>visibility:hidden</li>
+<li>display:inline</li>
+</ul>
+<h3 id="3-以下正确的有："><a href="#3-以下正确的有：" class="headerlink" title="3.以下正确的有："></a>3.以下正确的有：</h3><ul>
+<li>Number.MIN_VALUE&gt;0</li>
+<li>Number(1) == new Number(1)</li>
+<li>null == undefined</li>
+<li>NaN == NaN</li>
+</ul>
+<h3 id="4-以下会有错误发生的有："><a href="#4-以下会有错误发生的有：" class="headerlink" title="4.以下会有错误发生的有："></a>4.以下会有错误发生的有：</h3><ul>
+<li>9..toString()  //“9”</li>
+<li>alert(a)  //a is not defined</li>
+<li>eval(‘a’)  //a is not defined</li>
+<li>console.log(Number)</li>
+</ul>
+<h3 id="5-以下哪些情况会促发BFC？"><a href="#5-以下哪些情况会促发BFC？" class="headerlink" title="5.以下哪些情况会促发BFC？"></a>5.以下哪些情况会促发BFC？</h3><ul>
+<li>float不为none</li>
+<li>position为fixed</li>
+<li>display为static</li>
+<li>overflow为scroll</li>
+</ul>
+<h4 id="哪些元素会生成BFC："><a href="#哪些元素会生成BFC：" class="headerlink" title="哪些元素会生成BFC："></a>哪些元素会生成BFC：</h4><ol>
+<li>根元素</li>
+<li>float属性不为none</li>
+<li>position为absolute或fixed</li>
+<li>display为inline-block, table-cell, table-caption, flex, inline-flex</li>
+<li>overflow不为visible</li>
+</ol>
+<h2 id="二、填空题"><a href="#二、填空题" class="headerlink" title="二、填空题"></a>二、填空题</h2><h3 id="1-一个div垂直居中与整个body的css代码："><a href="#1-一个div垂直居中与整个body的css代码：" class="headerlink" title="1.一个div垂直居中与整个body的css代码："></a>1.一个div垂直居中与整个body的css代码：</h3><p>.center{<br>  position: absolute;<br>  height: 400px;<br>  width: 400px;<br>  margin-top: -200px;<br>  margin-left: -200px;<br>  left: 50%;<br>  top: 50%;<br>}</p>
+<h3 id="2-以下代码的打印结果为：10-10-10-10-10-10-10-10-10-10"><a href="#2-以下代码的打印结果为：10-10-10-10-10-10-10-10-10-10" class="headerlink" title="2.以下代码的打印结果为：10 10 10 10 10 10 10 10 10 10"></a>2.以下代码的打印结果为：10 10 10 10 10 10 10 10 10 10</h3><p>for(var i=1;i&lt;10;i++){<br>  setTimeout(function(){<br>    console.log(i);<br>  },0);<br>};</p>
+<h3 id="3-匹配邮箱的正则表达式："><a href="#3-匹配邮箱的正则表达式：" class="headerlink" title="3.匹配邮箱的正则表达式："></a>3.匹配邮箱的正则表达式：</h3><p>^[a-z0-9]+([._\-]<em>[a-z0-9])</em>@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$ 对于该正则表达式的解释：<a href="http://www.jb51.net/article/31182.htm" target="_blank" rel="noopener">比较正宗的验证邮箱的正则表达式js代码详解</a></p>
+<h3 id="4-对纯数字数组中每个元素进行乘以2后再取数组中的最小值"><a href="#4-对纯数字数组中每个元素进行乘以2后再取数组中的最小值" class="headerlink" title="4.对纯数字数组中每个元素进行乘以2后再取数组中的最小值"></a>4.对纯数字数组中每个元素进行乘以2后再取数组中的最小值</h3><p>function doubleMin(arr){<br>  return Math.min.apply(null,arr.map(function(item){<br>    return item*2;<br>  }))<br>}</p>
+<p>关于数组map()方法的讲解：<a href="http://www.cnblogs.com/xuan52rock/p/4460949.html" target="_blank" rel="noopener">js 数组 map方法</a></p>
+<h3 id="5-对以下数组按照拼音首字母排序arr-‘研发中心’-’视频中心’-’焦点部门’-’新闻部门’"><a href="#5-对以下数组按照拼音首字母排序arr-‘研发中心’-’视频中心’-’焦点部门’-’新闻部门’" class="headerlink" title="5.对以下数组按照拼音首字母排序arr:[‘研发中心’,’视频中心’,’焦点部门’,’新闻部门’]"></a>5.对以下数组按照拼音首字母排序arr:[‘研发中心’,’视频中心’,’焦点部门’,’新闻部门’]</h3><p>arr.sort(function(a,b){<br>  var af = a.charAt(0);<br>  var bf = b.charAt(0);<br>  if(af.localeCompare(bf) &gt; 0){<br>    return 1;<br>  }else if(af.localeCompare(bf) &lt; 0){<br>    return -1;<br>  }else{<br>    return 0;<br>  }<br>})</p>
+<h2 id="三、简答题"><a href="#三、简答题" class="headerlink" title="三、简答题"></a>三、简答题</h2><h3 id="1-实现：var-a-add-10-3-2-a打印结果为15"><a href="#1-实现：var-a-add-10-3-2-a打印结果为15" class="headerlink" title="1.实现：var a = add(10)(3)(2)  //a打印结果为15"></a>1.实现：var a = add(10)(3)(2)  //a打印结果为15</h3><p>这是一道关于类型转换的问题：<a href="http://web.jobbole.com/90654/" target="_blank" rel="noopener">一道面试题引发的对 javascript 类型转换的思考</a></p>
+<h3 id="2-实现一个加载的动画-该动画有至少三个小圆，分别变大变小富有层次感-（只能使用css）"><a href="#2-实现一个加载的动画-该动画有至少三个小圆，分别变大变小富有层次感-（只能使用css）" class="headerlink" title="2.实现一个加载的动画(该动画有至少三个小圆，分别变大变小富有层次感)（只能使用css）"></a>2.实现一个加载的动画(该动画有至少三个小圆，分别变大变小富有层次感)（只能使用css）</h3><p>利用关键帧动画@keyframes就可以达到，网上有好多关于加载动画实现的文章，推荐一下类似这道题想要的效果的文章：<a href="http://www.cnblogs.com/zourong/p/4022729.html" target="_blank" rel="noopener">CSS 实现加载动画之八-圆点旋转</a>、<a href="http://www.jq22.com/yanshi12864" target="_blank" rel="noopener">6种CSS3加载动画</a></p>
+<h3 id="3-HTTP是一个无状态的协议，那网站是如何记住用户信息的呢？请写出详细过程；同时谈谈localStorage和sessionStorage的区别，对离线缓存，甚至是indexDB的理解"><a href="#3-HTTP是一个无状态的协议，那网站是如何记住用户信息的呢？请写出详细过程；同时谈谈localStorage和sessionStorage的区别，对离线缓存，甚至是indexDB的理解" class="headerlink" title="3.HTTP是一个无状态的协议，那网站是如何记住用户信息的呢？请写出详细过程；同时谈谈localStorage和sessionStorage的区别，对离线缓存，甚至是indexDB的理解"></a>3.HTTP是一个无状态的协议，那网站是如何记住用户信息的呢？请写出详细过程；同时谈谈localStorage和sessionStorage的区别，对离线缓存，甚至是indexDB的理解</h3><p>网站是如何记住用户信息的：<a href="http://xdxd.love/2016/01/07/%E6%97%A0%E7%8A%B6%E6%80%81%E5%8D%8F%E8%AE%AE%E4%B8%AD%E8%AE%A4%E8%AF%81%E7%8A%B6%E6%80%81%E4%BF%9D%E6%8C%81%E6%96%B9%E6%A1%88%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/" target="_blank" rel="noopener">无状态协议中认证状态保持方案的一些思考</a></p>
+<h3 id="4-请用JS实现一个简单的列表-List-类，使得其具有show-展示该list的所有元素-，add-向list添加一个元素，无返回-，delete-删除指定位置的元素，并返回删除成功否-，clear-清空list-；"><a href="#4-请用JS实现一个简单的列表-List-类，使得其具有show-展示该list的所有元素-，add-向list添加一个元素，无返回-，delete-删除指定位置的元素，并返回删除成功否-，clear-清空list-；" class="headerlink" title="4.请用JS实现一个简单的列表(List)类，使得其具有show(展示该list的所有元素)，add(向list添加一个元素，无返回)，delete(删除指定位置的元素，并返回删除成功否)，clear(清空list)；"></a>4.请用JS实现一个简单的列表(List)类，使得其具有show(展示该list的所有元素)，add(向list添加一个元素，无返回)，delete(删除指定位置的元素，并返回删除成功否)，clear(清空list)；</h3><p>在JS中是没有类的，所以其实是用function来间接实现，这类实现在我的另一篇文章里大量提到：<a href="https://merrier.wang/?p=319">JS实现复杂数据结构</a></p>
+<h3 id="5-请分别实现一个菱形，一个倒三角，一个椭圆形的答案（只能使用css和html，不考虑兼容性）"><a href="#5-请分别实现一个菱形，一个倒三角，一个椭圆形的答案（只能使用css和html，不考虑兼容性）" class="headerlink" title="5.请分别实现一个菱形，一个倒三角，一个椭圆形的答案（只能使用css和html，不考虑兼容性）"></a>5.请分别实现一个菱形，一个倒三角，一个椭圆形的答案（只能使用css和html，不考虑兼容性）</h3><p>在css中，通过border和旋转可以实现很多种图形，我在这个方面也是比较白痴的，所以推荐以下文章：<a href="http://www.2cto.com/kf/201604/500811.html" target="_blank" rel="noopener">CSS3实现32种基本图形</a>、<a href="http://www.cnblogs.com/pigtail/archive/2013/02/17/2914119.html" target="_blank" rel="noopener">利用css样式画各种图形–初步、进阶、高级（一）</a>（感觉这两篇文章的排版和图片都不是很好，找时间我会自己再总结一下的）</p>
+<h3 id="6-简要回答你对跨域的理解，为什么要跨域，如何跨域"><a href="#6-简要回答你对跨域的理解，为什么要跨域，如何跨域" class="headerlink" title="6.简要回答你对跨域的理解，为什么要跨域，如何跨域"></a>6.简要回答你对跨域的理解，为什么要跨域，如何跨域</h3><p>跨域这种问题应该是老生常谈了，其实就是浏览器的一种“同源策略”，为了保证安全而采取的措施，具体大家自行搜索吧，关于跨域的文章实在是太多了</p>
+<h1 id="一面"><a href="#一面" class="headerlink" title="一面"></a>一面</h1><h2 id="1-localStorage和sessionStorage的区别"><a href="#1-localStorage和sessionStorage的区别" class="headerlink" title="1.localStorage和sessionStorage的区别"></a>1.localStorage和sessionStorage的区别</h2><ul>
+<li>localStorage和sessionStorage一样都是用来存储客户端临时信息的对象。</li>
+<li>他们均只能存储字符串类型的对象（虽然规范中可以存储其他原生类型的对象，但是目前为止没有浏览器对其进行实现）。</li>
+<li>localStorage生命周期是永久，这意味着除非用户显示在浏览器提供的UI上清除localStorage信息，否则这些信息将永远存在。</li>
+<li>sessionStorage生命周期为当前窗口或标签页，一旦窗口或标签页被永久关闭了，那么所有通过sessionStorage存储的数据也就被清空了。</li>
+<li>不同浏览器无法共享localStorage或sessionStorage中的信息。相同浏览器的不同页面间可以共享相同的 localStorage（页面属于相同域名和端口），但是不同页面或标签页间无法共享sessionStorage的信息。这里需要注意的是，页面及标 签页仅指顶级窗口，如果一个标签页包含多个iframe标签且他们属于同源页面，那么他们之间是可以共享sessionStorage的。</li>
+</ul>
+<h2 id="2-JS中self和this的区别"><a href="#2-JS中self和this的区别" class="headerlink" title="2.JS中self和this的区别"></a>2.JS中self和this的区别</h2><p>不知道为什么面试官会问这个问题，因为self好像在react才会经常用到吧？。。但是我还是查了一下，网上对这两个的区别的解释很少，大致就是：self指向本窗口，this指向就比较广泛了</p>
+<h2 id="3-如何实现JS中的防抖动和节流阀"><a href="#3-如何实现JS中的防抖动和节流阀" class="headerlink" title="3.如何实现JS中的防抖动和节流阀"></a>3.如何实现JS中的防抖动和节流阀</h2><p>这个功能其实经常用到，但是面试官给我的答案是underscore.js源码中有，然后说jQuery的第三方库应该也有。。估计是这位面试官经常用underscord.js解决重复点击的问题，然后至于怎么实现的自己也不知道。。（我就没好意思再问了，以免造成尴尬的局面），推荐一下解释的很清楚的文章（这是一篇中文译文，英文原文可以点击下面这篇文章中的原文链接）：<a href="http://www.tuicool.com/articles/VfyMBrI" target="_blank" rel="noopener">实例解析防抖动（Debouncing）和节流阀（Throttling）</a></p>
+<h2 id="4-HTML5使任何元素变为可编辑的属性"><a href="#4-HTML5使任何元素变为可编辑的属性" class="headerlink" title="4.HTML5使任何元素变为可编辑的属性"></a>4.HTML5使任何元素变为可编辑的属性</h2><p>contenteditable=”true”</p>
+<h2 id="5-当给line-height设置为5rem、5em、5px、5pt、500-、5时的计算公式"><a href="#5-当给line-height设置为5rem、5em、5px、5pt、500-、5时的计算公式" class="headerlink" title="5.当给line-height设置为5rem、5em、5px、5pt、500%、5时的计算公式"></a>5.当给line-height设置为5rem、5em、5px、5pt、500%、5时的计算公式</h2><p>在张鑫旭的慕课网讲解视频（深入理解CSS系列）中曾经讲到过这些单位的含义和作用，具体可以点击下面链接查看我对他的讲解的总结：<a href="https://merrier.wang/?p=736">CSS深入理解之line-height</a>，具体计算公式和作用如下：</p>
+<ul>
+<li>5rem：按照html的font-size进行计算</li>
+<li>5em：按照自身的font-size进行计算</li>
+<li>5px：相对长度单位，像素</li>
+<li>5pt：绝对长度单位，点Points (1点 = 1/72英寸)</li>
+<li>500%：按照自身的font-size进行计算</li>
+<li>5：同样按照自身的font-size进行计算</li>
+</ul>
+<p>可以看出，line-height的值如果不是具体数值，都是按照font-size进行计算的，同时500%/5em/5有什么区别呢？在张鑫旭的讲解中也提到了，500%/5em会根据自身的font-size进行计算，得到具体数值后将行高继承给后代元素，而5只会将比例继承给后代元素，后代元素会根据自己的font-size重新计算行高 <strong>更新自2017-10-11</strong>：突然发现小程序中有一个很有趣的长度单位rpx，具体参见这篇文章：<a href="http://huang-jerryc.com/2017/05/21/talk-about-pixel-and-rpx/" target="_blank" rel="noopener">谈谈像素以及微信小程序的 rpx</a></p>
+<h2 id="6-oninput事件和onchange事件的区别"><a href="#6-oninput事件和onchange事件的区别" class="headerlink" title="6.oninput事件和onchange事件的区别"></a>6.oninput事件和onchange事件的区别</h2><p>onchange事件经常用到（图片、文件上传），但是oninput事件却没有用过了，推荐：<a href="http://blog.csdn.net/freshlover/article/details/39050609" target="_blank" rel="noopener">总结oninput、onchange与onpropertychange事件的用法和区别</a></p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="//merrier.wang" target="_blank">Merrier说</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/20170522/zepto-design-and-source-code-analysis.html" class="pre-post btn btn-default" title="Zepto设计和源码分析">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">Zepto设计和源码分析</span>
+        </a>
+    
+    
+        <a href="/20170517/summary-of-Experience-in-introducing-open-recruitment-and-interview-in-headlines.html" class="next-post btn btn-default" title="今日头条前端散招内推面试经验总结">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">今日头条前端散招内推面试经验总结</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+  <script id="dsq-count-scr" src="https://merrier.disqus.com/count.js" async></script>
+
+
+<script type="text/javascript">
+  var disqus_config = function () {
+    this.page.url = 'http://merrier.wang/20170519/summary-of-the-front-end-interview-questions-of-sohu-research-institute.html';
+    this.page.identifier = '20170519/summary-of-the-front-end-interview-questions-of-sohu-research-institute.html';
+    this.page.title = '搜狐研究院前端散招面试题总结';
+  };
+  var d = document, s = d.createElement('script');
+  s.src = 'https://merrier.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', '' + +new Date());
+  (d.head || d.body).appendChild(s);
+</script>
+
+
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#写在前面"><span class="toc-text">写在前面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#笔试题"><span class="toc-text">笔试题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、不定项选择题"><span class="toc-text">一、不定项选择题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-以下元素为块级元素的有："><span class="toc-text">1.以下元素为块级元素的有：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-以下可以使元素不可见的有："><span class="toc-text">2.以下可以使元素不可见的有：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-以下正确的有："><span class="toc-text">3.以下正确的有：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-以下会有错误发生的有："><span class="toc-text">4.以下会有错误发生的有：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-以下哪些情况会促发BFC？"><span class="toc-text">5.以下哪些情况会促发BFC？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#哪些元素会生成BFC："><span class="toc-text">哪些元素会生成BFC：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、填空题"><span class="toc-text">二、填空题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-一个div垂直居中与整个body的css代码："><span class="toc-text">1.一个div垂直居中与整个body的css代码：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-以下代码的打印结果为：10-10-10-10-10-10-10-10-10-10"><span class="toc-text">2.以下代码的打印结果为：10 10 10 10 10 10 10 10 10 10</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-匹配邮箱的正则表达式："><span class="toc-text">3.匹配邮箱的正则表达式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-对纯数字数组中每个元素进行乘以2后再取数组中的最小值"><span class="toc-text">4.对纯数字数组中每个元素进行乘以2后再取数组中的最小值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-对以下数组按照拼音首字母排序arr-‘研发中心’-’视频中心’-’焦点部门’-’新闻部门’"><span class="toc-text">5.对以下数组按照拼音首字母排序arr:[‘研发中心’,’视频中心’,’焦点部门’,’新闻部门’]</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、简答题"><span class="toc-text">三、简答题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-实现：var-a-add-10-3-2-a打印结果为15"><span class="toc-text">1.实现：var a = add(10)(3)(2)  //a打印结果为15</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-实现一个加载的动画-该动画有至少三个小圆，分别变大变小富有层次感-（只能使用css）"><span class="toc-text">2.实现一个加载的动画(该动画有至少三个小圆，分别变大变小富有层次感)（只能使用css）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-HTTP是一个无状态的协议，那网站是如何记住用户信息的呢？请写出详细过程；同时谈谈localStorage和sessionStorage的区别，对离线缓存，甚至是indexDB的理解"><span class="toc-text">3.HTTP是一个无状态的协议，那网站是如何记住用户信息的呢？请写出详细过程；同时谈谈localStorage和sessionStorage的区别，对离线缓存，甚至是indexDB的理解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-请用JS实现一个简单的列表-List-类，使得其具有show-展示该list的所有元素-，add-向list添加一个元素，无返回-，delete-删除指定位置的元素，并返回删除成功否-，clear-清空list-；"><span class="toc-text">4.请用JS实现一个简单的列表(List)类，使得其具有show(展示该list的所有元素)，add(向list添加一个元素，无返回)，delete(删除指定位置的元素，并返回删除成功否)，clear(清空list)；</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-请分别实现一个菱形，一个倒三角，一个椭圆形的答案（只能使用css和html，不考虑兼容性）"><span class="toc-text">5.请分别实现一个菱形，一个倒三角，一个椭圆形的答案（只能使用css和html，不考虑兼容性）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-简要回答你对跨域的理解，为什么要跨域，如何跨域"><span class="toc-text">6.简要回答你对跨域的理解，为什么要跨域，如何跨域</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一面"><span class="toc-text">一面</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-localStorage和sessionStorage的区别"><span class="toc-text">1.localStorage和sessionStorage的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-JS中self和this的区别"><span class="toc-text">2.JS中self和this的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-如何实现JS中的防抖动和节流阀"><span class="toc-text">3.如何实现JS中的防抖动和节流阀</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-HTML5使任何元素变为可编辑的属性"><span class="toc-text">4.HTML5使任何元素变为可编辑的属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-当给line-height设置为5rem、5em、5px、5pt、500-、5时的计算公式"><span class="toc-text">5.当给line-height设置为5rem、5em、5px、5pt、500%、5时的计算公式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-oninput事件和onchange事件的区别"><span class="toc-text">6.oninput事件和onchange事件的区别</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        访问量:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        访客数:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2018
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

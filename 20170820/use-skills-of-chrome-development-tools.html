@@ -1,0 +1,351 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Merrier说">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://merrier.wang">
+    <!--SEO-->
+
+<meta name="description" content="Merrier的个人博客">
+
+
+
+<meta name="keywords" content="merrier 博客 前端 北邮人">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>Chrome开发工具使用技巧 | Merrier说</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Merrier说" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1264342320 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1264342320%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Merrier">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 叩首问路，码梦为生 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://merrier.wang">Merrier说</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/frontend/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/algorithm/"><i class="fa "></i>算法</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/series/"><i class="fa "></i>系列专栏</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>文章归档</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Chrome开发工具使用技巧">
+            
+	            Chrome开发工具使用技巧
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/总结">
+            总结
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/Chrome" title="Chrome">
+                        Chrome
+                    </a>
+                
+                    <a href="/tags/技巧" title="技巧">
+                        技巧
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/08/20</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <p>disable cache throttling <a href="http://web.jobbole.com/90300/" target="_blank" rel="noopener">http://web.jobbole.com/90300/</a></p>
+<h2 id="Chrome-DevTools-性能监控"><a href="#Chrome-DevTools-性能监控" class="headerlink" title="Chrome DevTools - 性能监控"></a>Chrome DevTools - 性能监控</h2><p><a href="https://mp.weixin.qq.com/s?\_\_biz=MjM5MTA1MjAxMQ==&amp;mid=2651227541&amp;idx=1&amp;sn=9f3849e83ba2a3e9626983c3d2390a11&amp;chksm=bd495c118a3ed5074de88e34b7ce63515640f4522fb82e08c597fce181369fa8717c2dbc6a84&amp;mpshare=1&amp;scene=1&amp;srcid=0102tG3IYmctynF9yX41hGlu&amp;key=c8df9ea7f12e223811a4cf8ae43f33ee0112a1f561ab5a0c64902e02d16cf14acd7b85b9e53ff269d8944e28910863139be4bf1bf6df1365402ab04d3adfdbf0a2dbcf448c64ebb9019999cc8564d179&amp;ascene=0&amp;uin=MTMzNTc2NjIyMA%3D%3D&amp;devicetype=iMac+MacBookPro12%2C1+OSX+OSX+10.13.2+build(17C88)&amp;version=12020710&amp;nettype=WIFI&amp;lang=zh\_CN&amp;fontScale=100&amp;pass_ticket=l0UsBpASywvC83tRkNCFcXohxiiAWaeAwNErJ39lVT%2Br2MnNzTewpNPZbKzn5PtD" target="_blank" rel="noopener">https://mp.weixin.qq.com/s?\_\_biz=MjM5MTA1MjAxMQ==&amp;mid=2651227541&amp;idx=1&amp;sn=9f3849e83ba2a3e9626983c3d2390a11&amp;chksm=bd495c118a3ed5074de88e34b7ce63515640f4522fb82e08c597fce181369fa8717c2dbc6a84&amp;mpshare=1&amp;scene=1&amp;srcid=0102tG3IYmctynF9yX41hGlu&amp;key=c8df9ea7f12e223811a4cf8ae43f33ee0112a1f561ab5a0c64902e02d16cf14acd7b85b9e53ff269d8944e28910863139be4bf1bf6df1365402ab04d3adfdbf0a2dbcf448c64ebb9019999cc8564d179&amp;ascene=0&amp;uin=MTMzNTc2NjIyMA%3D%3D&amp;devicetype=iMac+MacBookPro12%2C1+OSX+OSX+10.13.2+build(17C88)&amp;version=12020710&amp;nettype=WIFI&amp;lang=zh\_CN&amp;fontScale=100&amp;pass_ticket=l0UsBpASywvC83tRkNCFcXohxiiAWaeAwNErJ39lVT%2Br2MnNzTewpNPZbKzn5PtD</a></p>
+<h1 id="前端console调试小技巧"><a href="#前端console调试小技巧" class="headerlink" title="前端console调试小技巧"></a>前端console调试小技巧</h1><p><a href="https://github.com/xitu/gold-miner/blob/master/TODO/how-to-debug-front-end-console.md" target="_blank" rel="noopener">https://github.com/xitu/gold-miner/blob/master/TODO/how-to-debug-front-end-console.md</a></p>
+<h2 id="14-个你可能不知道的-JavaScript-调试技巧"><a href="#14-个你可能不知道的-JavaScript-调试技巧" class="headerlink" title="14 个你可能不知道的 JavaScript 调试技巧"></a>14 个你可能不知道的 JavaScript 调试技巧</h2><p><a href="https://www.oschina.net/translate/javascript-debugging-tips" target="_blank" rel="noopener">https://www.oschina.net/translate/javascript-debugging-tips</a></p>
+<h1 id="高性能移动端开发"><a href="#高性能移动端开发" class="headerlink" title="高性能移动端开发"></a>高性能移动端开发</h1><p><a href="http://web.jobbole.com/90427/" target="_blank" rel="noopener">http://web.jobbole.com/90427/</a></p>
+<h1 id="简单聊聊网页的资源加载优化"><a href="#简单聊聊网页的资源加载优化" class="headerlink" title="简单聊聊网页的资源加载优化"></a>简单聊聊网页的资源加载优化</h1><p><a href="https://segmentfault.com/a/1190000005015030" target="_blank" rel="noopener">https://segmentfault.com/a/1190000005015030</a></p>
+<h1 id="移动端开发emulation"><a href="#移动端开发emulation" class="headerlink" title="移动端开发emulation"></a>移动端开发emulation</h1><p>可以更改设备类型、分辨率、UA以及三维坐标 <img src="https://merrier.wang/wp-content/uploads/2017/08/1523498970551.jpg" alt=""></p>
+<h1 id="如何停止使用-console-log-并开始使用浏览器调试代码"><a href="#如何停止使用-console-log-并开始使用浏览器调试代码" class="headerlink" title="如何停止使用 console.log() 并开始使用浏览器调试代码"></a>如何停止使用 console.log() 并开始使用浏览器调试代码</h1><p><a href="https://juejin.im/post/5bd7cde4f265da0a96251de3" target="_blank" rel="noopener">https://juejin.im/post/5bd7cde4f265da0a96251de3</a></p>
+<h1 id="preformance工具"><a href="#preformance工具" class="headerlink" title="preformance工具"></a>preformance工具</h1><p><a href="https://juejin.im/post/5bf12a0b6fb9a049a81ee8f7" target="_blank" rel="noopener">https://juejin.im/post/5bf12a0b6fb9a049a81ee8f7</a></p>
+<h1 id="一些基础用法"><a href="#一些基础用法" class="headerlink" title="一些基础用法"></a>一些基础用法</h1><p><a href="https://mp.weixin.qq.com/s/ZNywTfrTbi1alAMXBAksmA" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/ZNywTfrTbi1alAMXBAksmA</a></p>
+<h1 id="其他人总结的使用技巧"><a href="#其他人总结的使用技巧" class="headerlink" title="其他人总结的使用技巧"></a>其他人总结的使用技巧</h1><p><a href="https://juejin.im/post/5c18b375f265da614e2c02e1" target="_blank" rel="noopener">https://juejin.im/post/5c18b375f265da614e2c02e1</a></p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="//merrier.wang" target="_blank">Merrier说</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/20170820/ssh-connect-to-gitHub-fail-solution.html" class="pre-post btn btn-default" title="SSH connect to github fail解决方案">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">SSH connect to github fail解决方案</span>
+        </a>
+    
+    
+        <a href="/20170820/several-http-headers-affecting-cache.html" class="next-post btn btn-default" title="影响Cache的几个HTTP头信息">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">影响Cache的几个HTTP头信息</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+  <script id="dsq-count-scr" src="https://merrier.disqus.com/count.js" async></script>
+
+
+<script type="text/javascript">
+  var disqus_config = function () {
+    this.page.url = 'http://merrier.wang/20170820/use-skills-of-chrome-development-tools.html';
+    this.page.identifier = '20170820/use-skills-of-chrome-development-tools.html';
+    this.page.title = 'Chrome开发工具使用技巧';
+  };
+  var d = document, s = d.createElement('script');
+  s.src = 'https://merrier.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', '' + +new Date());
+  (d.head || d.body).appendChild(s);
+</script>
+
+
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Chrome-DevTools-性能监控"><span class="toc-text">Chrome DevTools - 性能监控</span></a></li></ol><li class="toc-item toc-level-1"><a class="toc-link" href="#前端console调试小技巧"><span class="toc-text">前端console调试小技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#14-个你可能不知道的-JavaScript-调试技巧"><span class="toc-text">14 个你可能不知道的 JavaScript 调试技巧</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#高性能移动端开发"><span class="toc-text">高性能移动端开发</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#简单聊聊网页的资源加载优化"><span class="toc-text">简单聊聊网页的资源加载优化</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#移动端开发emulation"><span class="toc-text">移动端开发emulation</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#如何停止使用-console-log-并开始使用浏览器调试代码"><span class="toc-text">如何停止使用 console.log() 并开始使用浏览器调试代码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#preformance工具"><span class="toc-text">preformance工具</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一些基础用法"><span class="toc-text">一些基础用法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#其他人总结的使用技巧"><span class="toc-text">其他人总结的使用技巧</span></a>
+        
+    </li></div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        访问量:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        访客数:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2018
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

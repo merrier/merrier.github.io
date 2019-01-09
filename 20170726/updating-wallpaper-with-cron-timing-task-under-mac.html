@@ -1,0 +1,360 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Merrier说">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://merrier.wang">
+    <!--SEO-->
+
+<meta name="description" content="Merrier的个人博客">
+
+
+
+<meta name="keywords" content="merrier 博客 前端 北邮人">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>Mac下用Cron定时任务更新壁纸 | Merrier说</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Merrier说" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1264342320 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1264342320%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Merrier">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 叩首问路，码梦为生 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://merrier.wang">Merrier说</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/frontend/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/algorithm/"><i class="fa "></i>算法</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/series/"><i class="fa "></i>系列专栏</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>文章归档</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Mac下用Cron定时任务更新壁纸">
+            
+	            Mac下用Cron定时任务更新壁纸
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/其他">
+            其他
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/07/26</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>这个技巧的原文来自<a href="https://www.macosxautomation.com/automator/apod/index.html" target="_blank" rel="noopener">Set Desktop to NASA Astronomy Picture of the Day</a>，作者通过Automator脚本可以每天自动去NASA（美国宇航局）下载“每日一图”，同时将其设置为桌面。是不是听起来很酷！当然了，我第一次看到的并不是上面那篇文章，而是另一位大神（harttle）的<a href="http://harttle.com/2015/11/20/crontab-desktop.html" target="_blank" rel="noopener">用Cron定时任务更新壁纸</a>，harttle并没有用Automator方式，而是通过Cron定时任务实现了这个功能。美中不足的是，harttle是Linux系统，然后我就在自己的Mac上试了一下，下面就跟着我一起来耍酷吧！</p>
+<h1 id="下载壁纸的脚本"><a href="#下载壁纸的脚本" class="headerlink" title="下载壁纸的脚本"></a>下载壁纸的脚本</h1><p>首先，我们需要完成一个下载壁纸的脚本，在Mac下就是shell脚本了：</p>
+<p>#!/usr/local/bin/bash</p>
+<p># 下载HTML到/tmp<br>base=’<a href="http://apod.nasa.gov/apod/&#39;" target="_blank" rel="noopener">http://apod.nasa.gov/apod/&#39;</a><br>wget -O /tmp/nasa ${base}astropix.html</p>
+<p># 找到其中的<img>标签的src参数<br>href=${base}`cat /tmp/nasa | grep -i ‘&lt;img’ | awk -F ‘“‘ ‘{print $2}’`</p>
+<p># 计算src的文件后缀<br>ext=${href##*.}</p>
+<p># 计算保存到的文件地址<br>file=/Users/YourMacName/Pictures/nasa/`date +”%Y-%m-%d”`.$ext</p>
+<p># 下载img<br>wget -O $file $href</p>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ul>
+<li>不能完全复制粘贴上面的代码，需要注意将YourMacName换成你的真实文件夹名</li>
+<li>需要提前安装wget，可以通过brew install wget安装</li>
+<li>需要将脚本保存到/usr/local/bin这个目录下，命名就随便了，可以取名为nasa-pic-of-day.sh，运行一下，如果在/Users/YourMacName/Pictures/nasa/下有一张图片那说明这一步已经成功了！</li>
+</ul>
+<h1 id="Cron定时任务"><a href="#Cron定时任务" class="headerlink" title="Cron定时任务"></a>Cron定时任务</h1><p>Cron是Unix系统中用于周期执行任务的守护进程，被定时的任务由crontab文件提供。我们来写一个自己的crontab文件，保存为~/bin/daily.cron：</p>
+<p>SHELL=/usr/local/bin/bash<br>30 8 <em> </em> * /usr/local/bin/nasa-pic-of-day.sh &gt;&gt; /usr/local/var/frontend/cron 2&gt;&amp;1</p>
+<p>其中30表示分钟，6表示小时，后面的依次是日、月、星期。同时将输出重定向到/var/harttle/cron（当然你需要确保这个目录存在）。 2&gt;&amp;1是奖错误输出重定向至标准输出，这样我们的日志中将会同时包含标准输出和错误输出。 然后crontab命令载入我们的这个文件：</p>
+<p>crontab /usr/local/bin/daily.cron</p>
+<p>此后呢，我们的脚本就会在每天早上8:30执行。如果有问题我们可以查看日志文件/usr/local/var/YourMacName/cron，这里有脚本的一切输出。</p>
+<h1 id="编辑crontab"><a href="#编辑crontab" class="headerlink" title="编辑crontab"></a>编辑crontab</h1><p>crontab会把刚才载入的文件保存起来，以后我们可以通过<code>crontab -e</code>直接更改它（注意更改原文件是不起作用的）。 在Mac上保存更改时会有错误：</p>
+<p>crontab: temp file must be edited in place</p>
+<p>并且编辑确实未保存，可以在~/.vimrc后面加一行：</p>
+<p>autocmd filetype crontab setlocal nobackup nowritebackup</p>
+<h1 id="Cron运行环境"><a href="#Cron运行环境" class="headerlink" title="Cron运行环境"></a>Cron运行环境</h1><p>Cron运行脚本的环境和交互式Shell是不一样的，这一点需要注意。你的脚本可以在交互式Shell中正常运行，但Cron中可能会有错误。</p>
+<blockquote>
+<p>Cron always runs with a mostly empty environment. HOME, LOGNAME, and SHELL are set; and a very limited PATH.</p>
+</blockquote>
+<p>推荐的做法是在Cron运行的脚本中显式地声明那些环境变量、source ~/.bashrc，来手动设置需要的环境。 比如在Mac上，你可能会需要这一项设置：</p>
+<p>PATH=/usr/local/bin:$PATH</p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="//merrier.wang" target="_blank">Merrier说</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/20170730/shallow-and-deep-copies-in-js.html" class="pre-post btn btn-default" title="JS中的浅拷贝和深拷贝">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">JS中的浅拷贝和深拷贝</span>
+        </a>
+    
+    
+        <a href="/20170706/css-secrets.html" class="next-post btn btn-default" title="读书笔记系列（8）——CSS Secrets">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">读书笔记系列（8）——CSS Secrets</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+  <script id="dsq-count-scr" src="https://merrier.disqus.com/count.js" async></script>
+
+
+<script type="text/javascript">
+  var disqus_config = function () {
+    this.page.url = 'http://merrier.wang/20170726/updating-wallpaper-with-cron-timing-task-under-mac.html';
+    this.page.identifier = '20170726/updating-wallpaper-with-cron-timing-task-under-mac.html';
+    this.page.title = 'Mac下用Cron定时任务更新壁纸';
+  };
+  var d = document, s = d.createElement('script');
+  s.src = 'https://merrier.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', '' + +new Date());
+  (d.head || d.body).appendChild(s);
+</script>
+
+
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#写在前面"><span class="toc-text">写在前面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#下载壁纸的脚本"><span class="toc-text">下载壁纸的脚本</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#注意事项"><span class="toc-text">注意事项</span></a></li></ol></li></ol><li class="toc-item toc-level-1"><a class="toc-link" href="#Cron定时任务"><span class="toc-text">Cron定时任务</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#编辑crontab"><span class="toc-text">编辑crontab</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Cron运行环境"><span class="toc-text">Cron运行环境</span></a></li>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        访问量:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        访客数:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2018
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

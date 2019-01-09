@@ -1,0 +1,384 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Merrier说">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://merrier.wang">
+    <!--SEO-->
+
+<meta name="description" content="Merrier的个人博客">
+
+
+
+<meta name="keywords" content="merrier 博客 前端 北邮人">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>前端面试系列（12）——前端性能优化 | Merrier说</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Merrier说" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1264342320 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1264342320%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Merrier">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 叩首问路，码梦为生 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://merrier.wang">Merrier说</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/frontend/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/algorithm/"><i class="fa "></i>算法</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/series/"><i class="fa "></i>系列专栏</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>文章归档</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="前端面试系列（12）——前端性能优化">
+            
+	            前端面试系列（12）——前端性能优化
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/面试">
+            面试
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/前端面试" title="前端面试">
+                        前端面试
+                    </a>
+                
+                    <a href="/tags/性能优化" title="性能优化">
+                        性能优化
+                    </a>
+                
+                    <a href="/tags/前端" title="前端">
+                        前端
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/04/16</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>近几年的前端发展异常火爆，各种框架各种技术层出不穷，而所有的前端框架面临着同一个问题：怎样才能缩短首屏时间，让用户以最快的速度看到页面最想展现的内容，所以，前端性能优化这一问题成为所有前端开发人员需要考虑的需求。下面我将从html、css、js等方面介绍前端性能优化的一些方式，考虑到篇幅原因，只会以列表的形式进行简单概括，具体做法可以自行查阅，在这里强烈推荐<a href="https://developer.yahoo.com/performance/rules.html" target="_blank" rel="noopener">雅虎军规</a>，Yahoo Rules是对于前端性能优化的全面总结，有时间一定要看一看</p>
+<h1 id="HTML的优化"><a href="#HTML的优化" class="headerlink" title="HTML的优化"></a>HTML的优化</h1><h2 id="使用相对URL"><a href="#使用相对URL" class="headerlink" title="使用相对URL"></a>使用相对URL</h2><p>某些href、src属性如果与当前页面处于同一域名下，则使用相对URL能够节省至少一个域名的长度。</p>
+<h2 id="删除HTTP或者HTTPS"><a href="#删除HTTP或者HTTPS" class="headerlink" title="删除HTTP或者HTTPS"></a>删除HTTP或者HTTPS</h2><p>绝对URL都以HTTP或HTTPS等协议头开始，如果能确定URL的协议与当前页面URL的协议是一致的，或者说该URL在多种协议下均是可用的，则可以考虑删除这个协议头。</p>
+<h2 id="删除注释"><a href="#删除注释" class="headerlink" title="删除注释"></a>删除注释</h2><p>考虑不必要的IE条件注释和CDATA注释及自定义注释。</p>
+<h2 id="压缩空白符"><a href="#压缩空白符" class="headerlink" title="压缩空白符"></a>压缩空白符</h2><p>对于多数标签，可以通过删除多余的空白符来减少HTML体积，但是对于pre等是例外。</p>
+<h2 id="压缩inline-css-amp-Javascript"><a href="#压缩inline-css-amp-Javascript" class="headerlink" title="压缩inline css &amp; Javascript"></a>压缩inline css &amp; Javascript</h2><p>不管inline还是external，都需要压缩，这是减小体积的最直接的方式。</p>
+<h2 id="CSS-amp-Javascript尽量外链"><a href="#CSS-amp-Javascript尽量外链" class="headerlink" title="CSS&amp;Javascript尽量外链"></a>CSS&amp;Javascript尽量外链</h2><p>不仅可以减少体积，还能够充分利用浏览器的缓存机制。</p>
+<h2 id="删除元素默认属性"><a href="#删除元素默认属性" class="headerlink" title="删除元素默认属性"></a>删除元素默认属性</h2><p>在HTML规范中，很多HTML元素的属性是有默认值的，对于这些默认值可以抹去不写。</p>
+<h2 id="避免使用Iframe"><a href="#避免使用Iframe" class="headerlink" title="避免使用Iframe"></a>避免使用Iframe</h2><p>创建iframe元素的开销要比创建其他类型的DOM元素高1~2个数量级</p>
+<h2 id="避免空链接属性"><a href="#避免空链接属性" class="headerlink" title="避免空链接属性"></a>避免空链接属性</h2><p>可以看做是上面“删除元素默认属性”的特例，即使图片的地址为空，浏览器依旧会以默认的规则去请求空地址</p>
+<h2 id="避免节点深层级嵌套"><a href="#避免节点深层级嵌套" class="headerlink" title="避免节点深层级嵌套"></a>避免节点深层级嵌套</h2><p>由于浏览器构建DOM文档的机制，深层级嵌套的节点在初始化构建时往往需要更多的内存占用，并且在遍历节点时也会更慢些</p>
+<h2 id="避免Table布局"><a href="#避免Table布局" class="headerlink" title="避免Table布局"></a>避免Table布局</h2><p>构建table的开销也很大</p>
+<h2 id="显示指定文档字符集"><a href="#显示指定文档字符集" class="headerlink" title="显示指定文档字符集"></a>显示指定文档字符集</h2><p>如果浏览器不能获知页面的编码字符集，一般都会在执行脚本和渲染页面前，把字节流缓存，然后再搜索可进行解析的字符集，或以默认的字符集来解析页面代码，这会导致消耗不必要的时间。为了避免浏览器把时间花费在搜寻合适的字符集来进行解码，所以最好在文档中总是显式的指定页面字符集。</p>
+<h1 id="CSS的优化"><a href="#CSS的优化" class="headerlink" title="CSS的优化"></a>CSS的优化</h1><h2 id="把-CSS-放到代码页上端"><a href="#把-CSS-放到代码页上端" class="headerlink" title="把 CSS 放到代码页上端"></a>把 CSS 放到代码页上端</h2><p>加快渲染</p>
+<h2 id="避免-CSS-表达式"><a href="#避免-CSS-表达式" class="headerlink" title="避免 CSS 表达式"></a>避免 CSS 表达式</h2><p>表达式的问题就在于它的计算频率要比我们想象的多。不仅仅是在页面显示和缩放时，就是在页面滚动、乃至移动鼠标时都会要重新计算一次。给CSS表达式增加一个计数器可以跟踪表达式的计算频率。在页面中随便移动鼠标都可以轻松达到10000次以上的计算量。</p>
+<h2 id="使用-而不是-import"><a href="#使用-而不是-import" class="headerlink" title="使用  而不是@import"></a>使用 <link> 而不是@import</h2><p>在外部的CSS文件中使用@import会使得页面在加载时增加额外的延迟。虽然规则允许在样式中调用@import来导入其它的CSS，但浏览器不能并行下载样式，就会导致页面增添了额外的往返耗时。比如，第一个CSS文件first.css包含了以下内容：@import url(“second.css”)。那么浏览器就必须先把first.css下载、解析和执行后，才发现及处理第二个文件second.css。</p>
+<h2 id="避免通配选择器"><a href="#避免通配选择器" class="headerlink" title="避免通配选择器"></a>避免通配选择器</h2><p>CSS选择器对性能的影响源于浏览器匹配选择器和文档元素时所消耗的时间，所以优化选择器的原则是应尽量避免需要消耗更多匹配时间的选择器。比如这种反例：</p>
+<p>.selected * {color: red;}</p>
+<p>由于<strong>CSS选择器从右到左匹配的机制</strong>，浏览器匹配文档中所有的元素后分别向上逐级匹配class为selected的元素，直到文档的根节点，因此其匹配开销是非常大的，通常比开销最小的ID选择器高出1~3个数量级，所以应避免使用关键选择器是通配选择器的规则。</p>
+<h2 id="避免单规则的属性选择器"><a href="#避免单规则的属性选择器" class="headerlink" title="避免单规则的属性选择器"></a>避免单规则的属性选择器</h2><p>属性选择器根据元素的属性是否存在或其属性值进行匹配，如下例规则会把herf属性值等于”#index”的链接元素设置为红色：</p>
+<p>.selected [href=”#index”] {color: red;}</p>
+<p>但其匹配开销是非常大的，浏览器先匹配所有的元素，检查其是否有href属性并且herf属性值等于”#index”， 然后分别向上逐级匹配class为selected的元素，直到文档的根节点。所以应避免使用关键选择器是单规则属性选择器的规则。</p>
+<h2 id="避免类正则的属性选择器"><a href="#避免类正则的属性选择器" class="headerlink" title="避免类正则的属性选择器"></a>避免类正则的属性选择器</h2><p>CSS3添加了复杂的属性选择器，可以通过类正则表达式的方式对元素的属性值进行匹配。当然这些类型的选择器定是会影响性能的，正则表达式匹配会比基于类别的匹配会慢很多。大部分情况下我们应尽量避免使用 *=， |=， ^=， $=， 和 ~=语法的属性选择器。</p>
+<h1 id="JavaScript的优化"><a href="#JavaScript的优化" class="headerlink" title="JavaScript的优化"></a>JavaScript的优化</h1><h2 id="脚本放到-HTML-代码页底部"><a href="#脚本放到-HTML-代码页底部" class="headerlink" title="脚本放到 HTML 代码页底部"></a>脚本放到 HTML 代码页底部</h2><p>加快渲染，当然如果你的js会影响dom建立，那放在哪都是一样的了</p>
+<h2 id="移除重复脚本"><a href="#移除重复脚本" class="headerlink" title="移除重复脚本"></a>移除重复脚本</h2><p>封装方法是一个前端开发人员最基本的技能</p>
+<h2 id="减少-DOM-访问"><a href="#减少-DOM-访问" class="headerlink" title="减少 DOM 访问"></a>减少 DOM 访问</h2><p>使用JavaScript访问DOM元素是比较慢的，因此为了提升性能，应该做到：</p>
+<ul>
+<li>缓存已经查询过的元素；</li>
+<li>线下更新完节点之后再将它们添加到文档树中；</li>
+<li>避免使用JavaScript来修改页面布局；</li>
+</ul>
+<h2 id="使用事件代理"><a href="#使用事件代理" class="headerlink" title="使用事件代理"></a>使用事件代理</h2><p>有时候我们会感觉到页面反应迟钝，这是因为DOM树元素中附加了过多的事件句柄并且些事件句病被频繁地触发。这就是为什么说使用事件代理是一种好方法了。如果你在一个div中有10个按钮，你只需要在div上附加一次事件句柄就可以了，而不用去为每一个按钮增加一个句柄。事件冒泡时你可以捕捉到事件并判断出是哪个事件发出的。</p>
+<h2 id="缓存选择器查询结果"><a href="#缓存选择器查询结果" class="headerlink" title="缓存选择器查询结果"></a>缓存选择器查询结果</h2><p>选择器查询是开销很大的方法。所以，使用选择器的次数应该越少越好，并且尽可能缓存选中的结果，便于以后反复使用。 不要使用：</p>
+<p>jQuery(‘#top’).find(‘p.classA’);<br>jQuery(‘#top’).find(‘p.classB’);</p>
+<p>而是使用：</p>
+<p>var cached = jQuery(‘#top’);<br>cached.find(‘p.classA’);<br>cached.find(‘p.classB’);</p>
+<h2 id="使用微类库"><a href="#使用微类库" class="headerlink" title="使用微类库"></a>使用微类库</h2><p>通常开发者都会使用JavaScript类库，如jQuery、Mootools、YUI、Dojo等，但是开发者往往只是使用JavaScript类库中的部分功能。为了更大的提升性能，应尽量避免使用这类大而全的类库，而是按需使用微类库来辅助开发。</p>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="Absolute-HTML-Compressor"><a href="#Absolute-HTML-Compressor" class="headerlink" title="Absolute HTML Compressor"></a><a href="http://www.alentum.com/ahc/" title="Absolute HTML Compressor" target="_blank" rel="noopener">Absolute HTML Compressor</a></h2><p>HTML的优化工具，压缩效果比较理想</p>
+<h2 id="Even-Faster-Web-Sites"><a href="#Even-Faster-Web-Sites" class="headerlink" title="Even Faster Web Sites"></a><a href="https://book.douban.com/subject/3686503/" target="_blank" rel="noopener">Even Faster Web Sites</a></h2><p>关于前端优化的书，本人没看过，但是豆瓣评分8.6的它应该还不错吧</p>
+<h5 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h5><p>infoQ：<a href="http://www.infoq.com/cn/news/2010/05/baidu-html-optimize" target="_blank" rel="noopener">不应忽视的HTML优化</a> Yahoo Rules：<a href="https://developer.yahoo.com/performance/rules.html" target="_blank" rel="noopener">https://developer.yahoo.com/performance/rules.html</a> segmentfault：<a href="https://segmentfault.com/a/1190000007677580" target="_blank" rel="noopener">前端性能优化黄金法则</a> segmentfault：<a href="https://segmentfault.com/a/1190000002418920" target="_blank" rel="noopener">网站性能优化工具大全</a> segmentfault：<a href="https://segmentfault.com/a/1190000008829958" target="_blank" rel="noopener">WEB前端性能优化常见方法</a></p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="//merrier.wang" target="_blank">Merrier说</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/20170417/an-absolutely-understandable-introduction-to-Git.html" class="pre-post btn btn-default" title="一篇绝对能看懂的Git入门教程">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">一篇绝对能看懂的Git入门教程</span>
+        </a>
+    
+    
+        <a href="/20170413/some-tips-in-js.html" class="next-post btn btn-default" title="JS中的一些小技巧，精妙且实用">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">JS中的一些小技巧，精妙且实用</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+  <script id="dsq-count-scr" src="https://merrier.disqus.com/count.js" async></script>
+
+
+<script type="text/javascript">
+  var disqus_config = function () {
+    this.page.url = 'http://merrier.wang/20170416/front-end-performance-optimization.html';
+    this.page.identifier = '20170416/front-end-performance-optimization.html';
+    this.page.title = '前端面试系列（12）——前端性能优化';
+  };
+  var d = document, s = d.createElement('script');
+  s.src = 'https://merrier.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', '' + +new Date());
+  (d.head || d.body).appendChild(s);
+</script>
+
+
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#写在前面"><span class="toc-text">写在前面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HTML的优化"><span class="toc-text">HTML的优化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#使用相对URL"><span class="toc-text">使用相对URL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#删除HTTP或者HTTPS"><span class="toc-text">删除HTTP或者HTTPS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#删除注释"><span class="toc-text">删除注释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#压缩空白符"><span class="toc-text">压缩空白符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#压缩inline-css-amp-Javascript"><span class="toc-text">压缩inline css &amp; Javascript</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS-amp-Javascript尽量外链"><span class="toc-text">CSS&amp;Javascript尽量外链</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#删除元素默认属性"><span class="toc-text">删除元素默认属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#避免使用Iframe"><span class="toc-text">避免使用Iframe</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#避免空链接属性"><span class="toc-text">避免空链接属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#避免节点深层级嵌套"><span class="toc-text">避免节点深层级嵌套</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#避免Table布局"><span class="toc-text">避免Table布局</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#显示指定文档字符集"><span class="toc-text">显示指定文档字符集</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CSS的优化"><span class="toc-text">CSS的优化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#把-CSS-放到代码页上端"><span class="toc-text">把 CSS 放到代码页上端</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#避免-CSS-表达式"><span class="toc-text">避免 CSS 表达式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用-而不是-import"><span class="toc-text">使用  而不是@import</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#避免通配选择器"><span class="toc-text">避免通配选择器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#避免单规则的属性选择器"><span class="toc-text">避免单规则的属性选择器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#避免类正则的属性选择器"><span class="toc-text">避免类正则的属性选择器</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#JavaScript的优化"><span class="toc-text">JavaScript的优化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#脚本放到-HTML-代码页底部"><span class="toc-text">脚本放到 HTML 代码页底部</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#移除重复脚本"><span class="toc-text">移除重复脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#减少-DOM-访问"><span class="toc-text">减少 DOM 访问</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用事件代理"><span class="toc-text">使用事件代理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#缓存选择器查询结果"><span class="toc-text">缓存选择器查询结果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用微类库"><span class="toc-text">使用微类库</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#其他"><span class="toc-text">其他</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Absolute-HTML-Compressor"><span class="toc-text">Absolute HTML Compressor</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Even-Faster-Web-Sites"><span class="toc-text">Even Faster Web Sites</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#参考链接"><span class="toc-text">参考链接</span></a></li></ol></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        访问量:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        访客数:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2018
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

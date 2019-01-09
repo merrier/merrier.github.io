@@ -1,0 +1,414 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Merrier说">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://merrier.wang">
+    <!--SEO-->
+
+<meta name="description" content="Merrier的个人博客">
+
+
+
+<meta name="keywords" content="merrier 博客 前端 北邮人">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>浅谈搜索引擎（SEO） | Merrier说</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Merrier说" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1264342320 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1264342320%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Merrier">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 叩首问路，码梦为生 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://merrier.wang">Merrier说</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/frontend/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/algorithm/"><i class="fa "></i>算法</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/series/"><i class="fa "></i>系列专栏</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>文章归档</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="浅谈搜索引擎（SEO）">
+            
+	            浅谈搜索引擎（SEO）
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/慕课网">
+            慕课网
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/慕课网" title="慕课网">
+                        慕课网
+                    </a>
+                
+                    <a href="/tags/SEO" title="SEO">
+                        SEO
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/11/30</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <p>这是一篇视频笔记，最近看了幕课网上的视频——<a href="https://www.imooc.com/learn/855" target="_blank" rel="noopener">浅谈搜索引擎_SEO</a>，同时结合了之前有位头条的同事分享的关于SEO的一些内容，可以说是基本上包含了SEO的全部内容了~</p>
+<h1 id="SEO与SEM的区别"><a href="#SEO与SEM的区别" class="headerlink" title="SEO与SEM的区别"></a>SEO与SEM的区别</h1><p>SEO：Search Engine Optimization，搜索引擎优化 SEM：Search Engine Marketing，搜索引擎营销，因为价钱越高排名越靠前，所以也可以成为搜索引擎竞价</p>
+<ul>
+<li>SEO免费，SEM付费</li>
+<li>SEM短，效益快、SEO长期投入，增长慢</li>
+<li>新广告法颁布之后SEM广告位减少、竞争压力大</li>
+</ul>
+<h1 id="IP、PV、UV"><a href="#IP、PV、UV" class="headerlink" title="IP、PV、UV"></a>IP、PV、UV</h1><p><strong>IP</strong>：独立IP访问的用户 <strong>PV</strong>：页面浏览量或点击量 <strong>UV</strong>：独立访客数 搜索引擎占有率工具：statcounter</p>
+<h1 id="SEO的三个大方向"><a href="#SEO的三个大方向" class="headerlink" title="SEO的三个大方向"></a>SEO的三个大方向</h1><ol>
+<li>优化网站的内容</li>
+<li>提升用户体验，吸引更多流量</li>
+<li>优化网站结构，帮助搜索引擎抓取</li>
+</ol>
+<p>虽然搜索引擎的算法，网站的技术不断更新，但是SEO的三个大的方向从未变过</p>
+<h1 id="SEO优化最重要的三要素"><a href="#SEO优化最重要的三要素" class="headerlink" title="SEO优化最重要的三要素"></a>SEO优化最重要的三要素</h1><ul>
+<li>标题（title，一般格式为内容-关键词-品牌词）</li>
+<li>关键词（keywords，一般不超过100个字符）</li>
+<li>描述（description，50-170个字）</li>
+</ul>
+<p>title一般会作为搜索结果的标题中，description可能会被引用为搜索结果，也可能不会，keyowrds:由于很多网站无法准确提取关键词，一些网站恶意堆砌关键词，关键词的重要性已经在降低。</p>
+<h1 id="外链"><a href="#外链" class="headerlink" title="外链"></a>外链</h1><p>外链是指网站与网站之间的链接向导 外链是提升权重的方式 互联网是链接与链接实现的一条网络</p>
+<h1 id="友情链接交换注意事项"><a href="#友情链接交换注意事项" class="headerlink" title="友情链接交换注意事项"></a>友情链接交换注意事项</h1><p>和内容相近的网站交换 链接交换形式多样</p>
+<ul>
+<li>单向链接：别人指向我或者我指向别人，而对方不指过来</li>
+<li>双向链接：网站与网站之间互相交换链接</li>
+</ul>
+<p>灌水式外链会让人头疼</p>
+<h1 id="内链"><a href="#内链" class="headerlink" title="内链"></a>内链</h1><ul>
+<li>提升网站内部页面抓取率</li>
+<li>优化本站、提高流量</li>
+</ul>
+<p>经典的内链网站为百度百科</p>
+<h1 id="SEO建议"><a href="#SEO建议" class="headerlink" title="SEO建议"></a>SEO建议</h1><ul>
+<li>经常更新</li>
+<li>质量</li>
+<li>原创</li>
+<li>关键词密度（2%~8%）</li>
+<li>图文并茂</li>
+</ul>
+<h1 id="和SEO相关的HTML标签"><a href="#和SEO相关的HTML标签" class="headerlink" title="和SEO相关的HTML标签"></a>和SEO相关的HTML标签</h1><h2 id="a标签中的nofollow"><a href="#a标签中的nofollow" class="headerlink" title="a标签中的nofollow"></a><strong>a标签中的nofollow</strong></h2><p><a rel="nofollow">链接</a></p>
+<p>作用：使链接指向的页面不影响本页权重，但不能保证搜索引擎不抓取 使用时机：</p>
+<ul>
+<li>搜索引擎不需要抓取的页面，如登录、注册、付费等；</li>
+<li>对页面没有正向权重的页面，如了解更多；</li>
+<li>页面中的重复链接。</li>
+</ul>
+<h2 id="meta中robots设置"><a href="#meta中robots设置" class="headerlink" title="meta中robots设置"></a><strong>meta中robots设置</strong></h2><meta name="robots" content="index,follow">
+
+<ul>
+<li>noindex：不要索引此页面</li>
+<li>nofollow：不要关注此页面的链接</li>
+<li>noatchive：不要保存网页快照</li>
+<li>nosnippet：不要此页面的描述</li>
+</ul>
+<p>目前不是所有的搜索引擎都支持robots，即使支持，也不是所有的字段都会遵守。</p>
+<h1 id="避免过度SEO"><a href="#避免过度SEO" class="headerlink" title="避免过度SEO"></a>避免过度SEO</h1><h2 id="不要尝试欺骗搜索引擎"><a href="#不要尝试欺骗搜索引擎" class="headerlink" title="不要尝试欺骗搜索引擎"></a>不要尝试欺骗搜索引擎</h2><ul>
+<li>采用图片遮盖、透明度等方式隐藏文字</li>
+<li>关键词、标题、描述和内容不符</li>
+</ul>
+<h2 id="避免抄袭"><a href="#避免抄袭" class="headerlink" title="避免抄袭"></a>避免抄袭</h2><ul>
+<li>避免机器采集</li>
+<li>有技巧的借鉴</li>
+</ul>
+<h2 id="购买外链，恶意交换友情链接"><a href="#购买外链，恶意交换友情链接" class="headerlink" title="购买外链，恶意交换友情链接"></a>购买外链，恶意交换友情链接</h2><ul>
+<li>保证适量的外链和友情链接</li>
+<li>不购买被百度惩罚了的网站的外链</li>
+</ul>
+<h2 id="移动端强引导下载"><a href="#移动端强引导下载" class="headerlink" title="移动端强引导下载"></a>移动端强引导下载</h2><p>冰心算法是专门用来打击移动端的强引导下载。不下载app就无法阅读网页全部内容被百度认为是最严重影响用户体验的行为</p>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><ul>
+<li>《SEO实战密码》——堪称SEO必读书籍</li>
+<li>seoWhy——关于seo的一个论坛</li>
+<li>cnzz、百度统计、谷歌统计——流量统计网站</li>
+</ul>
+<p>本博客用的就是cnzz，因为流量比较小，所以看不出来和百度统计、谷歌统计比有哪些好处，而且这三家统计网站好像统计的标准都不相同，所以最好的方案就是放三套统计代码。。</p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="//merrier.wang" target="_blank">Merrier说</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/20171201/hybrid-design-and-analysis.html" class="pre-post btn btn-default" title="Hybrid设计与浅析">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">Hybrid设计与浅析</span>
+        </a>
+    
+    
+        <a href="/20171107/comments-on-netease-cloud-music.html" class="next-post btn btn-default" title="是时候为网易云音乐的评论打call了">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">是时候为网易云音乐的评论打call了</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+  <script id="dsq-count-scr" src="https://merrier.disqus.com/count.js" async></script>
+
+
+<script type="text/javascript">
+  var disqus_config = function () {
+    this.page.url = 'http://merrier.wang/20171130/talking-about-seo.html';
+    this.page.identifier = '20171130/talking-about-seo.html';
+    this.page.title = '浅谈搜索引擎（SEO）';
+  };
+  var d = document, s = d.createElement('script');
+  s.src = 'https://merrier.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', '' + +new Date());
+  (d.head || d.body).appendChild(s);
+</script>
+
+
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#SEO与SEM的区别"><span class="toc-text">SEO与SEM的区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#IP、PV、UV"><span class="toc-text">IP、PV、UV</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SEO的三个大方向"><span class="toc-text">SEO的三个大方向</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SEO优化最重要的三要素"><span class="toc-text">SEO优化最重要的三要素</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#外链"><span class="toc-text">外链</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#友情链接交换注意事项"><span class="toc-text">友情链接交换注意事项</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#内链"><span class="toc-text">内链</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SEO建议"><span class="toc-text">SEO建议</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#和SEO相关的HTML标签"><span class="toc-text">和SEO相关的HTML标签</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#a标签中的nofollow"><span class="toc-text">a标签中的nofollow</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#meta中robots设置"><span class="toc-text">meta中robots设置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#避免过度SEO"><span class="toc-text">避免过度SEO</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#不要尝试欺骗搜索引擎"><span class="toc-text">不要尝试欺骗搜索引擎</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#避免抄袭"><span class="toc-text">避免抄袭</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#购买外链，恶意交换友情链接"><span class="toc-text">购买外链，恶意交换友情链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#移动端强引导下载"><span class="toc-text">移动端强引导下载</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#其他"><span class="toc-text">其他</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        访问量:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        访客数:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2018
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>
