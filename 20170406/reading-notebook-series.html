@@ -216,6 +216,26 @@
 
     </div>
     
+        <div class="reward">
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+                <span class="reward-type">
+                    <img class="alipay" src="/images/alipay_simple.png"><b>支付宝打赏</b>
+                </span>
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="/images/wepay_simple.png"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">赞赏是不耍流氓的鼓励</p>
+</div>
+
+
+    
     <div class="post-footer">
         <div>
             
@@ -250,16 +270,26 @@
   <script id="dsq-count-scr" src="https://merrier.disqus.com/count.js" async></script>
 
 
+<div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
 <script type="text/javascript">
-  var disqus_config = function () {
-    this.page.url = 'http://merrier.wang/20170406/reading-notebook-series.html';
-    this.page.identifier = '20170406/reading-notebook-series.html';
-    this.page.title = '读书笔记系列';
-  };
-  var d = document, s = d.createElement('script');
-  s.src = 'https://merrier.disqus.com/embed.js';
-  s.setAttribute('data-timestamp', '' + +new Date());
-  (d.head || d.body).appendChild(s);
+  if (document.getElementById('disqus_thread')) {
+    var disqus_config = function () {
+      this.page.url = 'http://merrier.wang/20170406/reading-notebook-series.html';
+      this.page.identifier = '20170406/reading-notebook-series.html';
+      this.page.title = '读书笔记系列';
+    };
+    (function(){
+      var d = document,
+          s = d.createElement('script');
+      s.async = true;
+      s.src = 'https://merrier.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
 </script>
 
 
