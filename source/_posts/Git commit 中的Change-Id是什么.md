@@ -33,7 +33,7 @@ git commit --amend
 
 git log
 
-然后你可能会看到这样一条信息： ![](https://merrier.wang/wp-content/uploads/2017/08/change-id.png) 现在你懂了吧，其实可以看到之前人提交commit信息的Change-Id，我们只需要复制一下（注意“Change-Id:”后面有个空格）然后改一下其中某个字母就可以了（因为Change-Id不允许重复，如果重复了，可以再改一个字母，一般只需要改一个字母就可以了），这时我们就有了一个人工生成的“Change-Id”了。 注意，这种办法只是一种临时解决方案，下次如果你再想commit就需要再复制一个Change-Id，然后--amend修改commit信息，是不是感觉每次这样修改很麻烦？没事，我们有一个永久解决方案：
+然后你可能会看到这样一条信息： ![](/images/hexo_post_91.png) 现在你懂了吧，其实可以看到之前人提交commit信息的Change-Id，我们只需要复制一下（注意“Change-Id:”后面有个空格）然后改一下其中某个字母就可以了（因为Change-Id不允许重复，如果重复了，可以再改一个字母，一般只需要改一个字母就可以了），这时我们就有了一个人工生成的“Change-Id”了。 注意，这种办法只是一种临时解决方案，下次如果你再想commit就需要再复制一个Change-Id，然后--amend修改commit信息，是不是感觉每次这样修改很麻烦？没事，我们有一个永久解决方案：
 
 自动生成Change-Id
 -------------

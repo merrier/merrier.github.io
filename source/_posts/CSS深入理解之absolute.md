@@ -54,9 +54,9 @@ css：
   margin-left: -26px; 
 }
 
-![](https://merrier.wang/wp-content/uploads/2017/04/居中定位.png)
+![](/images/hexo_post_64.png)
 
-边缘定位
+hexo_post_53
 ----
 
 采用『text-align:right』使div中的空格居右(fixed是直接相对于窗口定位，而直接用absolute和right，bottom是会受到父级relative限制的。所以为了避免受到父级影响，使用fixed) html：
@@ -82,7 +82,7 @@ css：
   bottom: 100px; 
 }
 
-![](https://merrier.wang/wp-content/uploads/2017/04/边缘定位.png)
+![](/images/hexo_post_53.png)
 
 5.处理对齐、溢出技巧
 ===========

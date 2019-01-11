@@ -36,7 +36,7 @@ gradient属性可以非常方便的实现渐变色，同时可以设置渐变的
 文本效果
 ====
 
-text-shadow（文本阴影）、word-break（规定非中日韩文本的换行规则）、word-wrap（允许对长的不可分割的单词进行分割并换行到下一行）,CSS3的文本属性比较多，还是用一张图片代替吧（来自w3c）： ![](https://merrier.wang/wp-content/uploads/2017/03/QQ20170318-194357@2x-300x164.png)
+text-shadow（文本阴影）、word-break（规定非中日韩文本的换行规则）、word-wrap（允许对长的不可分割的单词进行分割并换行到下一行）,CSS3的文本属性比较多，还是用一张图片代替吧（来自w3c）： ![](/images/hexo_post_138-300x164.png)
 
 @font-face
 ==========

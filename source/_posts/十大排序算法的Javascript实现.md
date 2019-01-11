@@ -27,7 +27,7 @@ date: 2017-03-18 23:13:55
 （2）排序算法图片总结
 -----------
 
-![](https://merrier.wang/wp-content/uploads/2017/03/sort_complexity_summary-300x183.png)
+![](/images/hexo_post_220.png)
 
 ### 图片名词解释：
 
@@ -36,7 +36,7 @@ n：数据规模 k：“桶”的个数 In-place：占用常熟内存，不占�
 （3）排序分类
 -------
 
-![](https://merrier.wang/wp-content/uploads/2017/03/QQ20170318-223548@2x-300x209.png)
+![](/images/hexo_post_139.png)
 
 1.冒泡排序（bubble Sort）
 ===================
@@ -57,7 +57,7 @@ n：数据规模 k：“桶”的个数 In-place：占用常熟内存，不占�
 （3）动画演示
 -------
 
-![](https://merrier.wang/wp-content/uploads/2017/03/bubble_sort.gif)
+![](/images/hexo_post_90.gif)
 
 （4）Javascript源代码
 ----------------
@@ -153,7 +153,7 @@ console.log(bubbleSort3(arr3));//\[2, 3, 4, 5, 15, 19, 26, 27, 36, 38, 44, 46, 4
 （3）动画演示
 -------
 
-![](https://merrier.wang/wp-content/uploads/2017/03/selection_sort.gif)
+![](/images/hexo_post_219.gif)
 
 （4）Javascript源代码
 ----------------
@@ -210,7 +210,7 @@ console.log(selectionSort(arr));//\[2, 3, 4, 5, 15, 19, 26, 27, 36, 38, 44, 46, 
 （3）动画演示
 -------
 
-![](https://merrier.wang/wp-content/uploads/2017/03/insertion_sort.gif)
+![](/images/hexo_post_110.gif)
 
 （4）Javascript源代码
 ----------------
@@ -294,7 +294,7 @@ console.log(binaryInsertionSort(arr2));//\[2, 3, 4, 5, 15, 19, 26, 27, 36, 38, 4
 （3）图示
 -----
 
-![](https://merrier.wang/wp-content/uploads/2017/03/timg-2-300x232.jpeg)
+![](/images/hexo_post_225.jpeg)
 
 （4）Javascript源代码
 ----------------
@@ -350,7 +350,7 @@ console.log(shellSort(arr));//\[2, 3, 4, 5, 15, 19, 26, 27, 36, 38, 44, 46, 47, 
 （3）动画演示
 -------
 
-![](https://merrier.wang/wp-content/uploads/2017/03/merge_sort.gif)
+![](/images/hexo_post_119.gif)
 
 （4）Javascript源代码
 ----------------
@@ -414,7 +414,7 @@ console.log(mergeSort(arr));
 （3）动画演示
 -------
 
-![](https://merrier.wang/wp-content/uploads/2017/03/quick_sort.gif)
+![](/images/hexo_post_217.gif)
 
 （4）Javascript源代码
 ----------------
@@ -498,7 +498,7 @@ console.log(quickSort2(arr));//\[2, 3, 4, 5, 15, 19, 26, 27, 36, 38, 44, 46, 47,
 （3）动画演示
 -------
 
-![](https://merrier.wang/wp-content/uploads/2017/03/heap_sort.gif)
+![](/images/hexo_post_106.gif)
 
 （4）Javascript源代码
 ----------------
@@ -584,7 +584,7 @@ console.log(heapSort(arr));//\[2, 3, 4, 5, 15, 19, 26, 27, 36, 38, 44, 46, 47, 4
 （3）动画演示
 -------
 
-![](https://merrier.wang/wp-content/uploads/2017/03/counting_sort.gif)
+![](/images/hexo_post_95.gif)
 
 （4）Javascript源代码
 ----------------
@@ -645,7 +645,7 @@ console.log(countingSort(arr));//\[1,1,2,2,2,2,2,2,2,2,3,3,4,4,6,7,7,8,8,9,9\]
 （3）图示
 -----
 
-![](https://merrier.wang/wp-content/uploads/2017/03/timg-1-1-300x176.jpeg)
+![](/images/timg-1-1-300x176.jpeg)
 
 （4）Javascript源代码
 ----------------
@@ -724,7 +724,7 @@ console.log(bucketSort(arr));//\[2, 3, 4, 5, 15, 19, 26, 27, 36, 38, 44, 46, 47,
 （3）动画演示
 -------
 
-![](https://merrier.wang/wp-content/uploads/2017/03/radix_sort.gif)
+![](/images/hexo_post_218.gif)
 
 （4）Javascript源代码
 ----------------

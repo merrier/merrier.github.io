@@ -32,7 +32,7 @@ MySQL退出
 修改MySQL提示符
 ----------
 
-连接客户端时通过参数指定：shell>mysql -uroot -proot --prompt 提示符 连接上客户端后，通过prompt命令修改：mysql>prompt 提示符 MySQL提示符修改时可以用到的一些参数： \[table id=25 /\] ![](https://merrier.wang/wp-content/uploads/2017/05/QQ20170508-163725.png)      
+连接客户端时通过参数指定：shell>mysql -uroot -proot --prompt 提示符 连接上客户端后，通过prompt命令修改：mysql>prompt 提示符 MySQL提示符修改时可以用到的一些参数： \[table id=25 /\] ![](/images/hexo_post_207.png)      
 
 修改数据表的默认存储引擎
 ------------
@@ -136,7 +136,7 @@ expr：表达式
 *   NULL：字段值可以为空（默认值）
 *   NOT NULL：字段值禁止为空
 
-CREATE TABLE tbl_name(username VARCHAR(20) NOT NULL,age TINYINT UNSIGNED NULL); ![](https://merrier.wang/wp-content/uploads/2017/05/QQ20170509-100117.png)
+CREATE TABLE tbl_name(username VARCHAR(20) NOT NULL,age TINYINT UNSIGNED NULL); ![](/images/hexo_post_208.png)
 
 表级约束与列级约束
 ---------
@@ -280,7 +280,7 @@ fk_symbol：约束的名字，需要提前查看=>SHOW CREATE tbl_name
 总结
 --
 
-![](https://merrier.wang/wp-content/uploads/2017/05/QQ20170509-113906.png)
+![](/images/hexo_post_209.png)
 
 记录操作
 ====
@@ -401,7 +401,7 @@ SELECT * FROM users LIMIT 3,2;=>从索引值为3（第四条记录）的记录�
 2.  operand comparison_operator SOME (subquery)
 3.  operand comparison_operator ALL (subquery)
 
-运算符和关键字相结合之后的结果类型： ![](https://merrier.wang/wp-content/uploads/2017/05/QQ20170509-150306.png)
+运算符和关键字相结合之后的结果类型： ![](/images/hexo_post_210.png)
 
 使用\[NOT\] IN的子查询
 ----------------
@@ -573,7 +573,7 @@ CREATE FUNCTION f1() RETURNS VARCHAR(30) RETURN DATE_FORMAT(NOW(),'%Y年%m月%d�
 MySQL命令执行过程
 ===========
 
-![](https://merrier.wang/wp-content/uploads/2017/05/QQ20170509-213918.png)
+![](/images/hexo_post_211.png)
 
 存储过程
 ====

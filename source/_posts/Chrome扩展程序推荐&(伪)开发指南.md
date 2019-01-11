@@ -31,36 +31,36 @@ chrome作为Google公司研发的一款网页浏览器，其诞生之初就备�
 
 ### JSONView之前
 
-![](https://merrier.wang/wp-content/uploads/2017/06/WX20170628-171703.png)
+![](/images/hexo_post_239.png)
 
 ### JSONView之后
 
-![](https://merrier.wang/wp-content/uploads/2017/06/WX20170628-171630.png)
+![](/images/hexo_post_238.png)
 
 [Set Character Encoding](https://chrome.google.com/webstore/detail/set-character-encoding/bpojelgakakmcfmjfilgdlmhefphglae)
 ---------------------------------------------------------------------------------------------------------------------------
 
-这款插件的功能也很简单，就像它的名字一样，是用来改变网页编码格式的，相信用最新版本Chrome的童鞋会发现，右键改编码格式的日子一去不复返了，甚至连高级设置中都没有办法改编码格式了，那么如何修改万恶的编码格式呢？这款插件就派上了用场，使用很简单：安装之后在你想要改变编码格式的网页右键，就会出现下面这个东东： ![](https://merrier.wang/wp-content/uploads/2017/06/WX20170628-172441.png) 使用起来就是如此的简单，还在担心乱码吗？赶紧安装一下试试吧！
+这款插件的功能也很简单，就像它的名字一样，是用来改变网页编码格式的，相信用最新版本Chrome的童鞋会发现，右键改编码格式的日子一去不复返了，甚至连高级设置中都没有办法改编码格式了，那么如何修改万恶的编码格式呢？这款插件就派上了用场，使用很简单：安装之后在你想要改变编码格式的网页右键，就会出现下面这个东东： ![](/images/hexo_post_240.png) 使用起来就是如此的简单，还在担心乱码吗？赶紧安装一下试试吧！
 
 [印象笔记·剪藏](https://chrome.google.com/webstore/detail/evernote-web-clipper/pioclpoplcdbaefihamjohnefbikjilc?hl=zh-CN)
 -------------------------------------------------------------------------------------------------------------------
 
-印象笔记作为一款最受欢迎的笔记类应用之一，其本身提供的功能已经足够惊艳了，但是它的这款chrome插件更是好用到爆，安装之后在浏览网页时点击它的大象logo就会在你的网页右上角弹出如下弹框： ![](https://merrier.wang/wp-content/uploads/2017/06/WX20170629-144308.png) 该弹框基本上涵盖了你所需要的所有功能，包括命名、内容选择、存储位置、标签、注释等等，可以让你很方便的保存你所浏览的任何内容（可以[点击这里](https://www.yinxiang.com/webclipper/guide/#1)查看这款插件的玩法介绍），如果你是印象笔记的用户或潜在用户，一定要安装试一下，童叟无欺哦～
+印象笔记作为一款最受欢迎的笔记类应用之一，其本身提供的功能已经足够惊艳了，但是它的这款chrome插件更是好用到爆，安装之后在浏览网页时点击它的大象logo就会在你的网页右上角弹出如下弹框： ![](/images/hexo_post_241.png) 该弹框基本上涵盖了你所需要的所有功能，包括命名、内容选择、存储位置、标签、注释等等，可以让你很方便的保存你所浏览的任何内容（可以[点击这里](https://www.yinxiang.com/webclipper/guide/#1)查看这款插件的玩法介绍），如果你是印象笔记的用户或潜在用户，一定要安装试一下，童叟无欺哦～
 
 [YSlow](https://chrome.google.com/webstore/detail/yslow/ninejjcohidippngpapiilnmkgllmakh)
 -----------------------------------------------------------------------------------------
 
-YSlow（why slow）是雅虎基于网站优化规则推出的工具，帮助你分析并优化网站性能。说到雅虎，就不得不提一下[雅虎军规](http://developer.yahoo.com/performance/rules.html)了，雅虎军规在十几个方面给你的网站提出优化建议，YSlow会根据这些规则分析你的网站，并给出评级。雅虎作为一家对前端性能追求卓越的公司，虽然已光辉不再，但是YSlow这款插件（[Firefox也有相应插件](https://addons.mozilla.org/en-US/firefox/addon/5369)）对于前端开发者来说还是能提供很多思路的 官方网站：[http://developer.yahoo.com/yslow/](http://developer.yahoo.com/yslow/) 我的个人博客用YSlow的评分结果。。： ![](https://merrier.wang/wp-content/uploads/2017/06/QQ20170702-214501@2x.png)
+YSlow（why slow）是雅虎基于网站优化规则推出的工具，帮助你分析并优化网站性能。说到雅虎，就不得不提一下[雅虎军规](http://developer.yahoo.com/performance/rules.html)了，雅虎军规在十几个方面给你的网站提出优化建议，YSlow会根据这些规则分析你的网站，并给出评级。雅虎作为一家对前端性能追求卓越的公司，虽然已光辉不再，但是YSlow这款插件（[Firefox也有相应插件](https://addons.mozilla.org/en-US/firefox/addon/5369)）对于前端开发者来说还是能提供很多思路的 官方网站：[http://developer.yahoo.com/yslow/](http://developer.yahoo.com/yslow/) 我的个人博客用YSlow的评分结果。。： ![](/images/hexo_post_212.png)
 
 [花瓣网页收藏工具](https://chrome.google.com/webstore/detail/%E8%8A%B1%E7%93%A3%E7%BD%91%E9%A1%B5%E6%94%B6%E8%97%8F%E5%B7%A5%E5%85%B7/imamemhokkdleoelohnmkimbmpfglcil)
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-这是[花瓣网](http://www.huaban.com)官方提供的扩展，这个扩展程序可以让你方便地从任意网站上采集喜欢的图片、视频或者网页截图，并且可以全部保存下来，甚至可以追溯到这张图片的源网页继续查看。从某种角度而言，是一款不仅仅适合设计师的插件 ![](https://merrier.wang/wp-content/uploads/2017/06/QQ20170702-214901@2x.png)
+这是[花瓣网](http://www.huaban.com)官方提供的扩展，这个扩展程序可以让你方便地从任意网站上采集喜欢的图片、视频或者网页截图，并且可以全部保存下来，甚至可以追溯到这张图片的源网页继续查看。从某种角度而言，是一款不仅仅适合设计师的插件 ![](/images/hexo_post_213.png)
 
 [Check my links](https://chrome.google.com/webstore/detail/check-my-links/ojkcdipcgfaekbeaelaapakgnjflfglf)
 -----------------------------------------------------------------------------------------------------------
 
-该插件会检查当前页面中链接的有效性，会告诉你哪些地方的链接已经是死链等等，对SEO很有帮助，下图是这个插件的主界面： ![](https://merrier.wang/wp-content/uploads/2017/06/WX20170906-160459@2x.png)
+该插件会检查当前页面中链接的有效性，会告诉你哪些地方的链接已经是死链等等，对SEO很有帮助，下图是这个插件的主界面： ![](/images/hexo_post_283.png)
 
 [Host Switch Plus](https://chrome.google.com/webstore/detail/host-switch-plus/bopepoejgapmihklfepohbilpkcdoaeo?hl=zh-CN)
 ------------------------------------------------------------------------------------------------------------------------
@@ -95,7 +95,7 @@ YSlow（why slow）是雅虎基于网站优化规则推出的工具，帮助你�
 [WEB前端助手(FeHelper)](https://chrome.google.com/webstore/detail/web%E5%89%8D%E7%AB%AF%E5%8A%A9%E6%89%8Bfehelper/pkgccpejnmalmdinmhkkfafefagiiiad)
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
-提供了很多前端开发者经常用到的功能，包括字符串编解码、图片base64编码、代码压缩、时间戳转换、二维码生成、页面性能检测等等功能，具体看下图吧： ![](https://merrier.wang/wp-content/uploads/2017/06/FE助手.png)
+提供了很多前端开发者经常用到的功能，包括字符串编解码、图片base64编码、代码压缩、时间戳转换、二维码生成、页面性能检测等等功能，具体看下图吧： ![](/images/hexo_post_101.png)
 
 [新浪微博图床](https://chrome.google.com/webstore/detail/%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9A%E5%9B%BE%E5%BA%8A/fdfdnfpdplfbbnemmmoklbfjbhecpnhf)
 -------------------------------------------------------------------------------------------------------------------------------------------
@@ -105,12 +105,12 @@ YSlow（why slow）是雅虎基于网站优化规则推出的工具，帮助你�
 [惠惠购物助手](https://chrome.google.com/webstore/detail/%E6%83%A0%E6%83%A0%E8%B4%AD%E7%89%A9%E5%8A%A9%E6%89%8B/ohjkicjidmohhfcjjlahfppkdblibkkb)
 -------------------------------------------------------------------------------------------------------------------------------------------
 
-剁手党的神器！虽然名字起得像一个垃圾广告，但是功能还是蛮实用的。。可以自动显示淘宝、京东、当当等各大网上商城的报价（安装它之后，必须要进入扩展选项设置，不然这货会弹出广告！） 更新自2017-9-10：突然发现，这个插件会在后来运行，然后在有优惠信息时，会在右上角弹出推送消息（和web worker类似），如下图： ![](https://merrier.wang/wp-content/uploads/2017/06/WX20170908-125150@2x.png)
+剁手党的神器！虽然名字起得像一个垃圾广告，但是功能还是蛮实用的。。可以自动显示淘宝、京东、当当等各大网上商城的报价（安装它之后，必须要进入扩展选项设置，不然这货会弹出广告！） 更新自2017-9-10：突然发现，这个插件会在后来运行，然后在有优惠信息时，会在右上角弹出推送消息（和web worker类似），如下图： ![](/images/hexo_post_284.png)
 
 [Octotree](https://chrome.google.com/webstore/detail/octotree/bkhaagjahfmjljalopjnoealnfndnagc)
 -----------------------------------------------------------------------------------------------
 
-这是一款非常方便的github扩展，安装了这款插件之后，你可以在Github项目页面的左侧看到相应项目树状结构图，对于项目管理以及具体的文件跳转来说非常方便（同时还可以一键下载某文件，这个功能我最喜欢了！）： ![](https://merrier.wang/wp-content/uploads/2017/06/octotree.png)
+这是一款非常方便的github扩展，安装了这款插件之后，你可以在Github项目页面的左侧看到相应项目树状结构图，对于项目管理以及具体的文件跳转来说非常方便（同时还可以一键下载某文件，这个功能我最喜欢了！）： ![](/images/hexo_post_122.png)
 
 [BuiltWith Technology Profiler](https://chrome.google.com/webstore/detail/builtwith-technology-prof/dapjbgnjinbpoindlpdmhochffioedbn)
 -------------------------------------------------------------------------------------------------------------------------------------
@@ -150,7 +150,7 @@ YSlow（why slow）是雅虎基于网站优化规则推出的工具，帮助你�
 [Smart TOC](https://chrome.google.com/webstore/detail/smart-toc/lifgeihcfpkmmlfjbailfpfhbahhibba)
 -------------------------------------------------------------------------------------------------
 
-Add a table of contents for web article or documentation。这个插件的作用很难用语言来描述。。大致的作用就是给当前网页生成一个“目录”，同时支持锚链接，当我们再看那种“老太太裹脚布”的文章的时候，这个扩展就可以大展身手了，类似下图： ![](https://merrier.wang/wp-content/uploads/2017/06/unnamed.png)
+Add a table of contents for web article or documentation。这个插件的作用很难用语言来描述。。大致的作用就是给当前网页生成一个“目录”，同时支持锚链接，当我们再看那种“老太太裹脚布”的文章的时候，这个扩展就可以大展身手了，类似下图： ![](/images/hexo_post_230.png)
 
 [斗鱼HTML5播放器](https://chrome.google.com/webstore/detail/%E6%96%97%E9%B1%BChtml5%E6%92%AD%E6%94%BE%E5%99%A8/hbocinidadgpnbcamhjgfbgiebhpnmfj)
 -------------------------------------------------------------------------------------------------------------------------------------------
@@ -165,7 +165,7 @@ Add a table of contents for web article or documentation。这个插件的作用
 [Onetab](https://chrome.google.com/webstore/detail/onetab/chphlpgkkbolifaimnlloiipkdnihall)
 -------------------------------------------------------------------------------------------
 
-用电脑经常用着用着就**不知觉地打开了很多页面**，用了多年的扎扎电脑很容易就出现浏览器**崩溃的状况**。装上这个onetab插件后，点击一下就可以把当前浏览器**打开的所有标签页集中到一个页面**，又可以开始愉快地浏览了，然后可以单独或全部恢复这些标签页。 或者可以打开一组**相关的页面**，点击后作为**一个合集分享出去**，工作上分享资料可以用到。 最重要的是能够**节省高达95％的内存：** ![](https://merrier.wang/wp-content/uploads/2017/06/unnamed.jpg)
+用电脑经常用着用着就**不知觉地打开了很多页面**，用了多年的扎扎电脑很容易就出现浏览器**崩溃的状况**。装上这个onetab插件后，点击一下就可以把当前浏览器**打开的所有标签页集中到一个页面**，又可以开始愉快地浏览了，然后可以单独或全部恢复这些标签页。 或者可以打开一组**相关的页面**，点击后作为**一个合集分享出去**，工作上分享资料可以用到。 最重要的是能够**节省高达95％的内存：** ![](/images/hexo_post_229.jpg)
 
 [Infinity新标签页(Pro)](https://chrome.google.com/webstore/detail/infinity-new-tab-pro/nnnkddnnlpamobajfibfdgfnbcnkgngh)
 --------------------------------------------------------------------------------------------------------------------
@@ -185,7 +185,7 @@ Add a table of contents for web article or documentation。这个插件的作用
 [Momentum](https://chrome.google.com/webstore/detail/momentum/laookkfknpbbblfpciffpaejjkokdgca)
 -----------------------------------------------------------------------------------------------
 
-这也是一款改造新标签页的扩展程序，从下面的截图中可以看到，改造之后非常的炫酷，关键是每一天的壁纸都不一样，而且还可以添加 todoList 等更多功能，如果感兴趣的话可以自行探索。 ![](https://merrier.wang/wp-content/uploads/2017/06/WX20181027-153440@2x.jpg)
+这也是一款改造新标签页的扩展程序，从下面的截图中可以看到，改造之后非常的炫酷，关键是每一天的壁纸都不一样，而且还可以添加 todoList 等更多功能，如果感兴趣的话可以自行探索。 ![](/images/hexo_post_292.jpg)
 
 [New Tab Dribbble](https://link.juejin.im/?target=https%3A%2F%2Fchrome.google.com%2Fwebstore%2Fdetail%2Fnew-tab-dribbble%2Fomhhjicbfncielplfgggjedgnkjoicjj)
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -195,17 +195,17 @@ Add a table of contents for web article or documentation。这个插件的作用
 [Isometric Contributions](https://link.juejin.im/?target=https%3A%2F%2Fchrome.google.com%2Fwebstore%2Fdetail%2Fisometric-contributions%2Fmjoedlfflcchnleknnceiplgaeoegien)
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-这个应该是程序员专属，它可以让我们 Github 的贡献图变成 3D 效果，非常适合用来装逼有没有，是不是很高大上： ![](https://merrier.wang/wp-content/uploads/2017/06/WX20181027-155628@2x.png)
+这个应该是程序员专属，它可以让我们 Github 的贡献图变成 3D 效果，非常适合用来装逼有没有，是不是很高大上： ![](/images/hexo_post_293.png)
 
 [GitHub Repository Size](https://chrome.google.com/webstore/detail/github-repository-size/apnjnioapinblneaedefcnopcjepgkci/related)
 -----------------------------------------------------------------------------------------------------------------------------------
 
-这款插件也是Github相关的一款辅助工具，它可以直接将仓库的大小以及仓库中各个文件的大小显示出来： ![](https://merrier.wang/wp-content/uploads/2017/06/unnamed-1.jpg)
+这款插件也是Github相关的一款辅助工具，它可以直接将仓库的大小以及仓库中各个文件的大小显示出来： ![](/images/hexo_post_228.jpg)
 
 [Darkness](https://chrome.google.com/webstore/detail/darkness-beautiful-dark-t/imilbobhamcfahccagbncamhpnbkaenm)
 ----------------------------------------------------------------------------------------------------------------
 
-Darkness为热门网站提供精美的深色主题，可以显著减轻由明亮的电脑屏幕引起的眼睛负担和疲劳： ![](https://merrier.wang/wp-content/uploads/2017/06/unnamed-1-1.jpg)
+Darkness为热门网站提供精美的深色主题，可以显著减轻由明亮的电脑屏幕引起的眼睛负担和疲劳： ![](/images/hexo_post_227.jpg)
 
 [云盘万能钥匙](https://chrome.google.com/webstore/detail/%E4%BA%91%E7%9B%98%E4%B8%87%E8%83%BD%E9%92%A5%E5%8C%99/anlllmnpjodopgbkbpnghnjlelnogfjc)
 -------------------------------------------------------------------------------------------------------------------------------------------

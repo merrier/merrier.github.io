@@ -42,7 +42,7 @@ https://segmentfault.com/a/1190000005015030
 移动端开发emulation
 ==============
 
-可以更改设备类型、分辨率、UA以及三维坐标 ![](https://merrier.wang/wp-content/uploads/2017/08/1523498970551.jpg)
+可以更改设备类型、分辨率、UA以及三维坐标 ![](/images/hexo_post_39.jpg)
 
 如何停止使用 console.log() 并开始使用浏览器调试代码
 =================================

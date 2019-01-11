@@ -53,7 +53,7 @@ inherit-->继承
 如果定位元素发生嵌套
 ----------
 
-祖先优先原则（前提：z-index为数值，不是auto）： ![](https://merrier.wang/wp-content/uploads/2017/04/祖先优先.png)
+祖先优先原则（前提：z-index为数值，不是auto）： ![](/images/hexo_post_85.png)
 
 3.层叠上下文
 =======
@@ -96,7 +96,7 @@ inherit-->继承
 5.层叠顺序
 ======
 
-元素发生层叠时候有着特定的垂直显示顺序，即内容>布局>装饰 ![](https://merrier.wang/wp-content/uploads/2017/04/7层层叠水平.png)
+元素发生层叠时候有着特定的垂直显示顺序，即内容>布局>装饰 ![](/images/hexo_post_3.png)
 
 6.z-index与层叠上下文
 ===============
@@ -105,7 +105,7 @@ inherit-->继承
 2.  z-index不为auto的定位元素会创建层叠上下文;
 3.  z-index层叠顺序的比较止步于父级层叠上下文;
 
-![](https://merrier.wang/wp-content/uploads/2017/04/z-index与层叠上下文.png)
+![](/images/hexo_post_294.png)
 
 7.其他CSS属性与层叠上下文
 ===============
@@ -128,7 +128,7 @@ inherit-->继承
 不支持z-index的层叠上下文元素的层叠顺序均是z-index：auto级别
 ---------------------------------------
 
-![](https://merrier.wang/wp-content/uploads/2017/04/更完整的7阶层叠水平.png)
+![](/images/hexo_post_57.png)
 
 依赖z-index值创建层叠上下文的情况
 --------------------
@@ -158,4 +158,4 @@ inherit-->继承
 可访问性隐藏
 ------
 
-z-index负值元素在层叠上下文的背景之上,其他元素之下 ![](https://merrier.wang/wp-content/uploads/2017/04/可访问性隐藏.png)
+z-index负值元素在层叠上下文的背景之上,其他元素之下 ![](/images/hexo_post_65.png)

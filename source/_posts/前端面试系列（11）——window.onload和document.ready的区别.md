@@ -73,11 +73,11 @@ onload="console.log('jquery.js loaded')"></script>
 
 ### 首次加载：
 
-![](https://merrier.wang/wp-content/uploads/2017/04/555379-20160704214626655-1750100800.png)
+![](/images/hexo_post_11.png)
 
 ### 二次加载：
 
-![](https://merrier.wang/wp-content/uploads/2017/04/555379-20160704214634530-617977668.png) 第一种情况非常符合我们的想法，ready比onload快，顺序也比较合理。 而第二种情况就有些怪异，应该依照上面jquery ready事件的实现，那ready应该要DOMContentLoaded后面啊。我思来想去，我觉得这是个误会，由于二次加载时利用到缓存，导致文件资源都很快加载，各个事件触发的时间非常相近，顺序也不定，就给人一种ready顺序不对之感，大家应该发现这几个事件都是在几十毫秒之内触发。 PS：js执行需要时间，几十毫秒不同的顺序我觉得很正常。另外尝试几次，二次加载顺序确实会有变化，但时间都很相近。 所以，jQuery的document ready不一定比window.onload快执行。
+![](/images/hexo_post_12.png) 第一种情况非常符合我们的想法，ready比onload快，顺序也比较合理。 而第二种情况就有些怪异，应该依照上面jquery ready事件的实现，那ready应该要DOMContentLoaded后面啊。我思来想去，我觉得这是个误会，由于二次加载时利用到缓存，导致文件资源都很快加载，各个事件触发的时间非常相近，顺序也不定，就给人一种ready顺序不对之感，大家应该发现这几个事件都是在几十毫秒之内触发。 PS：js执行需要时间，几十毫秒不同的顺序我觉得很正常。另外尝试几次，二次加载顺序确实会有变化，但时间都很相近。 所以，jQuery的document ready不一定比window.onload快执行。
 
 **为什么外部script文件放页面内容后面好？**
 ==========================

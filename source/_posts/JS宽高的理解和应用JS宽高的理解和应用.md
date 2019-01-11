@@ -26,7 +26,7 @@ window.screen包含有关用户屏幕的信息，它包括：
 *   `window.screenTop`
 *   `window.screenLeft`
 
-![](https://merrier.wang/wp-content/uploads/2017/05/1480597-d7979b36ca991d9c.png)
+![](/images/hexo_post_31.png)
 
 与window相关的宽高
 ============
@@ -36,7 +36,7 @@ window.screen包含有关用户屏幕的信息，它包括：
 *   `window.outWidth` 外部的宽度
 *   `window.outHeight` 外部的高度
 
-![](https://merrier.wang/wp-content/uploads/2017/05/1480597-7c90cc88a3355d8e.png)
+![](/images/hexo_post_24.png)
 
 与document相关的宽高
 ==============
@@ -213,12 +213,12 @@ document.body.scrollWidth; //
 
 *   scrollWidth = clientWidth = 盒子宽度 + 盒子padding*2
 
-![](https://merrier.wang/wp-content/uploads/2017/05/1480597-1370209704289653.png)有滚动轴时：
+![](/images/hexo_post_28.png)有滚动轴时：
 
 *   scrollWidth = 实际内容的宽度 + padding*2
 *   scrollHeight = 实际内容的高度 + padding*2
 
-![](https://merrier.wang/wp-content/uploads/2017/05/1480597-f2e4e49734f8ea46.png)
+![](/images/hexo_post_32.png)
 
 *   **document.body.scrollLeft**
 *   **document.body.scrollTop**
@@ -241,7 +241,7 @@ mydiv.scrollLeft ; //默认情况下是0
 mydiv.scrollTop = 20;
 console.log(mydiv.scrollTop)
 
-![](https://merrier.wang/wp-content/uploads/2017/05/1480597-8a31ecd4fd0a59a9.png)
+![](/images/hexo_post_25.png)
 
 ### **obj.style.width和obj.style.height**
 
@@ -256,7 +256,7 @@ console.log(document); //document
 console.log(document.documentElement); //html
 console.log(document.body); //body
 
-![](https://merrier.wang/wp-content/uploads/2017/05/1480597-a0840d36969a6ca9.png)
+![](/images/hexo_post_29.png)
 
 *   兼容问题推荐使用 获取浏览器窗口可视区域大小
 
@@ -272,7 +272,7 @@ Event对象的5种坐标
 *   pageX和pageY：相对于整个网页左上角（0,0）的坐标
 *   X和Y：本来是IE属性，相对于用CSS动态定位的最内层包容元素
 
-![](https://merrier.wang/wp-content/uploads/2017/05/1480597-8596ee9ee7d11e15.png)
+![](/images/hexo_post_27.png)
 
 js各种宽高的应用
 =========
@@ -285,7 +285,7 @@ js各种宽高的应用
 js中的宽高属性总结
 ==========
 
-![](https://merrier.wang/wp-content/uploads/2017/05/1480597-41da370c1bd5e927.png) ![](https://merrier.wang/wp-content/uploads/2017/05/1480597-3f7c4f7f4e7f132a.png) ![](https://merrier.wang/wp-content/uploads/2017/05/1480597-b2343bbf8a94bf8e.png)
+![](/images/hexo_post_26.png) ![](/images/hexo_post_23.png) ![](/images/hexo_post_30.png)
 
 ##### 参考链接
 

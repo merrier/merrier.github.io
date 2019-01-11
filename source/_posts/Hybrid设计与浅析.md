@@ -42,7 +42,7 @@ Hybrid和普通前端代码没差别，只不过宿主不一样，Hybrid就是�
 Hybrid相比Native和纯Html5的优缺点
 =========================
 
-![](https://merrier.wang/wp-content/uploads/2017/12/WX20171201-204056.png)
+![](/images/hexo_post_288.png)
 
 Native与H5的职责
 ============
@@ -57,15 +57,15 @@ H5与Native通信
 JavascriptCore
 --------------
 
-和JS Bridge类似 ![](https://merrier.wang/wp-content/uploads/2017/12/H5与Native通信.png)
+和JS Bridge类似 ![](/images/hexo_post_104.png)
 
 通过URL Schema通信
 --------------
 
 ### App主动与H5通信
 
-![](https://merrier.wang/wp-content/uploads/2017/12/App主动与Native通信.png) 将一组API绑定在webview的window对象上，App通过iOS/Android原生方法调用window对象中的js方法
+![](/images/hexo_post_88.png) 将一组API绑定在webview的window对象上，App通过iOS/Android原生方法调用window对象中的js方法
 
 ### H5主动与App通信
 
-![](https://merrier.wang/wp-content/uploads/2017/12/H5主动与App通信.png) App实现对WebView URL的观察者模式，H5通过改变URL的哈希值，App会通过解析哈希值的变化执行对应的操作
+![](/images/hexo_post_105.png) App实现对WebView URL的观察者模式，H5通过改变URL的哈希值，App会通过解析哈希值的变化执行对应的操作

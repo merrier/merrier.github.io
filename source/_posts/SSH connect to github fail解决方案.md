@@ -29,14 +29,14 @@ ssh: Could not resolve hostname github.com: nodename nor servname provided, or n
 首先，系统偏好设置-网络
 ------------
 
-![](https://merrier.wang/wp-content/uploads/2017/08/WX20170901-171139.png)
+![](/images/hexo_post_280.png)
 
 点击高级选项
 ------
 
-![](https://merrier.wang/wp-content/uploads/2017/08/WX20170901-171318.png)
+![](/images/hexo_post_281.png)
 
 DNS-添加按钮
 --------
 
-![](https://merrier.wang/wp-content/uploads/2017/08/WX20170901-171403.png) 设置为上面我们提到的OpenDNS或GoogleDNS地址中的一个就可以啦~
+![](/images/hexo_post_282.png) 设置为上面我们提到的OpenDNS或GoogleDNS地址中的一个就可以啦~

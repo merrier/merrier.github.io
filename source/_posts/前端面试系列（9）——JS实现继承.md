@@ -228,7 +228,7 @@ console.log(cat instanceof Cat); //true
 7、六种继承方式的联系
 ===========
 
-![](https://merrier.wang/wp-content/uploads/2017/04/继承-300x272.jpg) PS：虚线表示辅助作用，实现表示决定性作用
+![](/images/继承-300x272.jpg) PS：虚线表示辅助作用，实现表示决定性作用
 
 ##### 参考链接
 

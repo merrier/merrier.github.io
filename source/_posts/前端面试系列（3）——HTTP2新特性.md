@@ -108,7 +108,7 @@ Frame 是 HTTP/2 二进制格式的基础，基本可以把它理解为它 TCP �
 *   **R**: 保留位。
 *   **Stream Identifier**: 流 ID，当客户端和服务端建立 TCP 链接时，就会先发送一个 Stream ID = 0 的流，用来做些初始化工作。之后客户端和服务端从 1 开始发送请求/响应。
 
-Frame 由 Frame Header 和 Frame Payload 两部分组成。不论是原来的 HTTP Header 还是 HTTP Body，在 HTTP/2 中，都将这些数据存储到 Frame Payload，组成一个个 Frame，再发送响应/请求。通过 Frame Header 中的 Type 区分这个 Frame 的类型。由此可见语义并没有太大变化，而是数据的格式变成二进制的 Frame。二者的转换和关系如下图: ![](https://merrier.wang/wp-content/uploads/2017/03/782013352-56fe8890d60ba_articlex-300x158.png)
+Frame 由 Frame Header 和 Frame Payload 两部分组成。不论是原来的 HTTP Header 还是 HTTP Body，在 HTTP/2 中，都将这些数据存储到 Frame Payload，组成一个个 Frame，再发送响应/请求。通过 Frame Header 中的 Type 区分这个 Frame 的类型。由此可见语义并没有太大变化，而是数据的格式变成二进制的 Frame。二者的转换和关系如下图: ![](/images/hexo_post_37-300x158.png)
 
 9.HTTP/2对web开发的影响
 -----------------

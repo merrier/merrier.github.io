@@ -24,7 +24,7 @@ date: 2017-04-20 20:30:24
 
 水平padding影响尺寸,垂直padding不影响尺寸,**但是会影响背景色(占据空间)**
 
-![](https://merrier.wang/wp-content/uploads/2017/04/截图.png)
+![](/images/hexo_post_60.png)
 
 ### inline元素padding特性应用>>高度可控的分割线
 
@@ -58,7 +58,7 @@ padding百分比均是相对于宽度计算的，所以可以用来实现一个�
 
 因为文字的换行导致表现诡异,当padding变小以至于文字不会换行时就会正常表现
 
-![](https://merrier.wang/wp-content/uploads/2017/04/截图1.png)
+![](/images/hexo_post_61.png)
 
 空inline元素+padding高度也不等(高度大于宽度),此时如果设置font-size:0就可以正常表现了
 
@@ -133,14 +133,14 @@ label{
 三道杠
 ---
 
-第一道杠用border-top,第二道杠用background-color,第三道杠用border-bottom,中间空白用padding ![](https://merrier.wang/wp-content/uploads/2017/04/三道杠.png)
+第一道杠用border-top,第二道杠用background-color,第三道杠用border-bottom,中间空白用padding ![](/images/hexo_post_72.png)
 
-白眼效果
+hexo_post_52
 ----
 
 中间大的圆用background-color,最外面的环用border,中间空白用padding
 
-![](https://merrier.wang/wp-content/uploads/2017/04/白眼效果.png)
+![](/images/hexo_post_52.png)
 
 6.padding与布局
 ============
@@ -150,20 +150,20 @@ label{
 
 移动端1：1头图布局
 
-![](https://merrier.wang/wp-content/uploads/2017/04/头图布局.png)
+![](/images/hexo_post_75.png)
 
 配合margin等高布局
 ------------
 
-![](https://merrier.wang/wp-content/uploads/2017/04/配合margin等高布局.png)
+![](/images/hexo_post_71.png)
 
 两栏自适应布局
 -------
 
 ### padding在容器上
 
-![](https://merrier.wang/wp-content/uploads/2017/04/padding在容器上.png)
+![](/images/hexo_post_125.png)
 
 ### padding在子元素上
 
-![](https://merrier.wang/wp-content/uploads/2017/04/padding在子元素上.png)
+![](/images/hexo_post_126.png)

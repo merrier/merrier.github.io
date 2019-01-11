@@ -49,7 +49,7 @@ date: 2017-05-14 20:44:19
 Emmet
 -----
 
-HTML/CSS代码快速编写神器 Emmet的前身是大名鼎鼎的Zen coding，如果你从事Web前端开发的话，对该插件一定不会陌生。它使用仿CSS选择器的语法来生成代码，大大提高了HTML/CSS代码编写的速度，比如下面的演示： ![](https://merrier.wang/wp-content/uploads/2017/05/301ff5c9-3604-3dd3-a206-6d3516861ec4.gif) 关于这一插件的牛逼之处就不再多言，这里有一篇讲解Emmet的文章讲的很详细：[Emmet：HTML/CSS代码快速编写神器](http://www.iteye.com/news/27580)
+HTML/CSS代码快速编写神器 Emmet的前身是大名鼎鼎的Zen coding，如果你从事Web前端开发的话，对该插件一定不会陌生。它使用仿CSS选择器的语法来生成代码，大大提高了HTML/CSS代码编写的速度，比如下面的演示： ![](/images/hexo_post_7.gif) 关于这一插件的牛逼之处就不再多言，这里有一篇讲解Emmet的文章讲的很详细：[Emmet：HTML/CSS代码快速编写神器](http://www.iteye.com/news/27580)
 
 Git
 ---

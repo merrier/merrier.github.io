@@ -12,7 +12,7 @@ date: 2017-04-21 16:56:36
 1.baseline与line-height
 ======================
 
-两条baseline之间的距离即为行高(不同的字体所在位置不同,可能偏离基线) ![](https://merrier.wang/wp-content/uploads/2017/04/baseline与line-height.png)
+两条baseline之间的距离即为行高(不同的字体所在位置不同,可能偏离基线) ![](/images/hexo_post_89.png)
 
 2.行内框盒子模型
 =========
@@ -67,7 +67,7 @@ inherit
 5.line-height设置为1.5/150%/1.5em有何区别
 ==================================
 
-计算上无差别，但是**150%/1.5em是根据父元素的font-size计算的，1.5是根据自身的font-size计算；也就是150%/1.5em是会将行高继承给后代元素的，而1.5只会将比例继承给后代元素，后代元素会根据自己的font-size重新计算行高** ![](https://merrier.wang/wp-content/uploads/2017/04/应用元素的差别.png)
+计算上无差别，但是**150%/1.5em是根据父元素的font-size计算的，1.5是根据自身的font-size计算；也就是150%/1.5em是会将行高继承给后代元素的，而1.5只会将比例继承给后代元素，后代元素会根据自己的font-size重新计算行高** ![](/images/hexo_post_83.png)
 
 6.body全局数值行高使用经验
 ================
@@ -85,7 +85,7 @@ body{
 **行高不会影响图片实际占据的高度**
 -------------------
 
-图片外面有隐藏的“幽灵”文本节点，所以text-align:center会使图片在p标签中居中 ![](https://merrier.wang/wp-content/uploads/2017/04/隐匿文本节点.png) 内联元素的vertical-align默认为baseline,所以文字的基线与图片的最下方对齐,但由于文字有行高,所以图片下方会有空隙： ![](https://merrier.wang/wp-content/uploads/2017/04/文字基线与图片最下方对齐.png)
+图片外面有隐藏的“幽灵”文本节点，所以text-align:center会使图片在p标签中居中 ![](/images/hexo_post_82.png) 内联元素的vertical-align默认为baseline,所以文字的基线与图片的最下方对齐,但由于文字有行高,所以图片下方会有空隙： ![](/images/hexo_post_76.png)
 
 如何消除图片底部间隙
 ----------

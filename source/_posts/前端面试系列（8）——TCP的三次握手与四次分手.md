@@ -17,17 +17,17 @@ date: 2017-04-05 16:07:21
 OSI七层模型
 -------
 
-[开放系统互连参考模型](http://baike.baidu.com/link?url=eNyUOgDeOV5z-03dVd8M1Y2jazNBA9n_eeqpsGs6DROKf_Eezztf31POgn2yMVtzxhX1BIcma9hIT2lzwaeswKAUZHNBSzFasHHI6SsZKnGJJVu2fKrPkMh3byyFTt1j4VqBV4re8SYTBTMDXY_L7clee5XEglKSOAWJqr5E_QRD6INjs03VMQNOUstxguVR-oOfOPGi4cah5m0VFukOkpT6STLUEGHWUIUUYFv0aAgMRFovp5EWN7V3iMdEZQ0a6ikGU90BRIYMLLIKsVNjP8Szj4c6SexwpfRM6D5CjjG) (Open System Interconnect 简称OSI）是国际标准化组织(ISO)和国际电报电话咨询委员会(CCITT)联合制定的开放系统互连参考模型，为开放式互连信息系统提供了一种功能结构的框架。它从低到高分别是：物理层、数据链路层、网络层、传输层、会话层、表示层和应用层。每一层的功能是独立的。它利用其下一层提供的服务并为其上一层提供服务，而与其他层的具体实现无关。这里所谓的“服务”就是下一层向上一层提供的通信功能和层之间的会话规定，一般用通信原语实现。两个开放系统中的同等层之间的通信规则和约定称之为协议。通常把1～4层协议称为下层协议，5～7层协议称为上层协议。 ![](https://merrier.wang/wp-content/uploads/2017/04/OSI.jpg)
+[开放系统互连参考模型](http://baike.baidu.com/link?url=eNyUOgDeOV5z-03dVd8M1Y2jazNBA9n_eeqpsGs6DROKf_Eezztf31POgn2yMVtzxhX1BIcma9hIT2lzwaeswKAUZHNBSzFasHHI6SsZKnGJJVu2fKrPkMh3byyFTt1j4VqBV4re8SYTBTMDXY_L7clee5XEglKSOAWJqr5E_QRD6INjs03VMQNOUstxguVR-oOfOPGi4cah5m0VFukOkpT6STLUEGHWUIUUYFv0aAgMRFovp5EWN7V3iMdEZQ0a6ikGU90BRIYMLLIKsVNjP8Szj4c6SexwpfRM6D5CjjG) (Open System Interconnect 简称OSI）是国际标准化组织(ISO)和国际电报电话咨询委员会(CCITT)联合制定的开放系统互连参考模型，为开放式互连信息系统提供了一种功能结构的框架。它从低到高分别是：物理层、数据链路层、网络层、传输层、会话层、表示层和应用层。每一层的功能是独立的。它利用其下一层提供的服务并为其上一层提供服务，而与其他层的具体实现无关。这里所谓的“服务”就是下一层向上一层提供的通信功能和层之间的会话规定，一般用通信原语实现。两个开放系统中的同等层之间的通信规则和约定称之为协议。通常把1～4层协议称为下层协议，5～7层协议称为上层协议。 ![](/images/hexo_post_123.jpg)
 
 TCP/IP
 ------
 
-TCP工作在网络OSI的七层模型中的第四层——Transport层，IP在第三层——Network层，ARP在第二层——Data Link层；在第二层上的数据，我们把它叫Frame，在第三层上的数据叫Packet，第四层的数据叫Segment。 同时，我们需要简单的知道，数据从应用层发下来，会在每一层都会加上头部信息，进行封装，然后再发送到数据接收端。这个基本的流程你需要知道，就是每个数据都会经过数据的封装和解封装的过程。 在OSI七层模型中，每一层的作用和对应的协议如下： ![](https://merrier.wang/wp-content/uploads/2017/04/功能.jpeg)
+TCP工作在网络OSI的七层模型中的第四层——Transport层，IP在第三层——Network层，ARP在第二层——Data Link层；在第二层上的数据，我们把它叫Frame，在第三层上的数据叫Packet，第四层的数据叫Segment。 同时，我们需要简单的知道，数据从应用层发下来，会在每一层都会加上头部信息，进行封装，然后再发送到数据接收端。这个基本的流程你需要知道，就是每个数据都会经过数据的封装和解封装的过程。 在OSI七层模型中，每一层的作用和对应的协议如下： ![](/images/hexo_post_58.jpeg)
 
 数据格式
 ----
 
-TCP是一个协议，那这个协议是如何定义的，它的数据格式是什么样子的呢？要进行更深层次的剖析，就需要了解，甚至是熟记TCP协议中每个字段的含义。 ![](https://merrier.wang/wp-content/uploads/2017/04/TCP数据格式.jpg) 上面就是TCP协议头部的格式，下面就将每个字段的信息都详细的说明一下。
+TCP是一个协议，那这个协议是如何定义的，它的数据格式是什么样子的呢？要进行更深层次的剖析，就需要了解，甚至是熟记TCP协议中每个字段的含义。 ![](/images/hexo_post_223.jpg) 上面就是TCP协议头部的格式，下面就将每个字段的信息都详细的说明一下。
 
 *   **Source Port**和**Destination Port**:分别占用16位，表示源端口号和目的端口号；用于区别主机中的不同进程，而IP地址是用来区分不同的主机的，源端口号和目的端口号配合上IP首部中的源IP地址和目的IP地址就能唯一的确定一个TCP连接；
 
@@ -46,7 +46,7 @@ TCP是一个协议，那这个协议是如何定义的，它的数据格式是�
 三次握手
 ====
 
-TCP是面向连接的，无论哪一方向另一方发送数据之前，都必须先在双方之间建立一条连接。在TCP/IP协议中，TCP协议提供可靠的连接服务，连接是通过三次握手进行初始化的。三次握手的目的是同步连接双方的序列号和确认号并交换 TCP窗口大小信息。这就是面试中经常会被问到的**TCP三次握手**。下图很形象的展示了三次握手和四次分手的数据交换 ![](https://merrier.wang/wp-content/uploads/2017/04/数据交换.jpg)
+TCP是面向连接的，无论哪一方向另一方发送数据之前，都必须先在双方之间建立一条连接。在TCP/IP协议中，TCP协议提供可靠的连接服务，连接是通过三次握手进行初始化的。三次握手的目的是同步连接双方的序列号和确认号并交换 TCP窗口大小信息。这就是面试中经常会被问到的**TCP三次握手**。下图很形象的展示了三次握手和四次分手的数据交换 ![](/images/hexo_post_74.jpg)
 
 1.  第一次握手：建立连接。客户端发送连接请求报文段，将`SYN`位置为1，`Sequence Number`为x；然后，客户端进入`SYN_SEND`状态，等待服务器的确认；
 2.  第二次握手：服务器收到`SYN`报文段。服务器收到客户端的`SYN`报文段，需要对这个`SYN`报文段进行确认，设置`Acknowledgment Number`为x+1(`Sequence Number`+1)；同时，自己自己还要发送`SYN`请求信息，将`SYN`位置为1，`Sequence Number`为y；服务器端将上述所有信息放到一个报文段（即`SYN+ACK`报文段）中，一并发送给客户端，此时服务器进入`SYN_RECV`状态；

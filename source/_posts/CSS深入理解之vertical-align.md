@@ -62,7 +62,7 @@ css：
 **任何内联元素都会受到vertical-align与line-height的影响**
 -------------------------------------------
 
-![](https://merrier.wang/wp-content/uploads/2017/04/内联元素.png) 图片没有居中显示,因为**受到了vertical-align与line-height的影响**,此时的默认属性为vertical-align:baseline;line-height:1.5;font-size:24px
+![](/images/hexo_post_70.png) 图片没有居中显示,因为**受到了vertical-align与line-height的影响**,此时的默认属性为vertical-align:baseline;line-height:1.5;font-size:24px
 
 如何消除这种影响
 --------
@@ -74,7 +74,7 @@ css：
 inline-block的基线
 ---------------
 
-inline-block的基线是正常流中最后一个line box的基线,除非,这个line box里面既没有line boxes或者本身'overflow'属性的计算值不是'visible',这种情况下基线是margin底边缘 ![](https://merrier.wang/wp-content/uploads/2017/04/inline-block的基线.png) 左边的元素基线为边框下边缘，右边的元素基线为X文字下边缘
+inline-block的基线是正常流中最后一个line box的基线,除非,这个line box里面既没有line boxes或者本身'overflow'属性的计算值不是'visible',这种情况下基线是margin底边缘 ![](/images/hexo_post_108.png) 左边的元素基线为边框下边缘，右边的元素基线为X文字下边缘
 
 5.vertical-align线性类属性值表现
 ========================
@@ -96,7 +96,7 @@ vertical-align:middle
 
 *   inline/inline-block元素:元素垂直中心点和父元素基线上1/2x-height处对齐
 
-![](https://merrier.wang/wp-content/uploads/2017/04/近似垂直居中.png) 文字具有下沉的特性,而父容器的高度是由文字撑开的,所以父容器的中心点与元素垂直中心点是不重合的,可以设置**font-size:0**解决这个问题
+![](/images/hexo_post_63.png) 文字具有下沉的特性,而父容器的高度是由文字撑开的,所以父容器的中心点与元素垂直中心点是不重合的,可以设置**font-size:0**解决这个问题
 
 *   table-cell元素:单元格填充盒子相对于外面的表格行居中对齐
 
@@ -111,7 +111,7 @@ vertical-align:text-top
 vertical-align:text-bottom
 --------------------------
 
-盒子的底部和父级content area的底部对齐 ![](https://merrier.wang/wp-content/uploads/2017/04/text-bottom.png)
+盒子的底部和父级content area的底部对齐 ![](/images/hexo_post_224.png)
 
 *   vertical-align垂直对齐的位置与前后的元素都没有关系;
 *   元素vertical-align垂直对齐的位置与行高line-height没有关系,只与字体大小font-size有关
@@ -119,7 +119,7 @@ vertical-align:text-bottom
 7.vertical-align前后不一致的行为表现
 ==========================
 
-关注当前元素和父级，因为前后并没有直接影响 ![](https://merrier.wang/wp-content/uploads/2017/04/近似垂直居中-1.png) 在img后面加一个内联元素,并且设置vertical-align:middle就可以实现图片的垂直居中
+关注当前元素和父级，因为前后并没有直接影响 ![](/images/hexo_post_62.png) 在img后面加一个内联元素,并且设置vertical-align:middle就可以实现图片的垂直居中
 
 8.vertical-align的实际应用
 =====================
@@ -127,9 +127,9 @@ vertical-align:text-bottom
 小图片和文字对齐
 --------
 
-vertical-align设置为负值 ![](https://merrier.wang/wp-content/uploads/2017/04/小图片和文字对齐.png)
+vertical-align设置为负值 ![](/images/hexo_post_79.png)
 
-不定尺寸图片和多行文字的垂直居中
+hexo_post_54
 ----------------
 
 三个步骤：
@@ -138,4 +138,4 @@ vertical-align设置为负值 ![](https://merrier.wang/wp-content/uploads/2017/0
 2.  0宽度100%高度辅助元素;
 3.  vertical-align:middle;
 
-如果已经是inline-block（img）水平元素，就不需要额外设置display属性 ![](https://merrier.wang/wp-content/uploads/2017/04/不定尺寸图片和多行文字的垂直居中.png)
+如果已经是inline-block（img）水平元素，就不需要额外设置display属性 ![](/images/hexo_post_54.png)

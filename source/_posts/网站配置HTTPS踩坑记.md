@@ -26,7 +26,7 @@ SSL证书选择
 申请证书
 ====
 
-Certbot 是一个简单易用的 SSL 证书部署工具，由 EFF 开发，前身即 Let’s Encrypt 官方（Python）客户端。简单来说，certbot 就是一个简化 Let’s Encrypt 部署，和管理 Let’s Encrypt 证书的工具。所以我们可以通过Certbot非常方便的生成证书并借助脚本实现自动续费。 首先来到[Certbot官网](https://certbot.eff.org/)，在下面的蓝色箭头处选择操作系统和服务器型号： ![](https://merrier.wang/wp-content/uploads/2018/04/WX20180416-124925@2x.png) 以我的阿里云ECS举例，操作系统是CentOS 6，服务器是Apache，选择完之后页面下方会出现指引；按照其指引，我们首先需要安装certbot-auto，在你想要安装的目录（这个目录最好是一个简单好找的目录，比如/etc/httpd/conf，因为后面还要用到）下执行以下命令：
+Certbot 是一个简单易用的 SSL 证书部署工具，由 EFF 开发，前身即 Let’s Encrypt 官方（Python）客户端。简单来说，certbot 就是一个简化 Let’s Encrypt 部署，和管理 Let’s Encrypt 证书的工具。所以我们可以通过Certbot非常方便的生成证书并借助脚本实现自动续费。 首先来到[Certbot官网](https://certbot.eff.org/)，在下面的蓝色箭头处选择操作系统和服务器型号： ![](/images/hexo_post_290.png) 以我的阿里云ECS举例，操作系统是CentOS 6，服务器是Apache，选择完之后页面下方会出现指引；按照其指引，我们首先需要安装certbot-auto，在你想要安装的目录（这个目录最好是一个简单好找的目录，比如/etc/httpd/conf，因为后面还要用到）下执行以下命令：
 
 wget https://dl.eff.org/certbot-auto
 chmod a+x certbot-auto
@@ -96,7 +96,7 @@ Wordpress配置https
 1\. 修改wordpress后台配置中的地址改为https版本
 --------------------------------
 
-![](https://merrier.wang/wp-content/uploads/2018/04/WX20180416-142544@2x.png) **注意：一定要保证https和http两种方式都能正常访问网站，才能改这个配置，否则可能导致网站无法访问。** 通过上面的设置，绝大部分导航中的链接就由wordpress系统会自动改为HTTPS版本。
+![](/images/hexo_post_291.png) **注意：一定要保证https和http两种方式都能正常访问网站，才能改这个配置，否则可能导致网站无法访问。** 通过上面的设置，绝大部分导航中的链接就由wordpress系统会自动改为HTTPS版本。
 
 2\. 替换正文的内部链接和其他静态资源
 --------------------
@@ -155,7 +155,7 @@ yum install mod_ssl
 
 grep ssl_module -rI /etc/httpd/*
 
-此时会出现： ![](https://merrier.wang/wp-content/uploads/2018/04/WX20180416-103833@2x.png) 其中httpd.bk.conf是我自己建的备份，所以有两种解决方法：
+此时会出现： ![](/images/hexo_post_289.png) 其中httpd.bk.conf是我自己建的备份，所以有两种解决方法：
 
 1.  httpd.conf中去掉LoadModule ssl\_module modules/mod\_ssl.so、去掉Listen 443
 2.  直接删除/etc/httpd/conf.d/ssl.conf，推荐直接删除ssl.conf

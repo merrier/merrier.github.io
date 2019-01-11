@@ -65,4 +65,4 @@ while(A.length > 0) {
 性能比较
 ====
 
-可以[点击这里](http://jsben.ch/hyj65)查看这四种方法的性能测试结果，或者直接看下图： ![](https://merrier.wang/wp-content/uploads/2017/08/WX20170804-152635@2x.png) 从图中可以很明显的看出来，A.length = 0;这种方法是效率最高的，效率最低的是pop和shift（不出所料啊。。）
+可以[点击这里](http://jsben.ch/hyj65)查看这四种方法的性能测试结果，或者直接看下图： ![](/images/hexo_post_277.png) 从图中可以很明显的看出来，A.length = 0;这种方法是效率最高的，效率最低的是pop和shift（不出所料啊。。）

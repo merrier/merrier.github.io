@@ -86,7 +86,7 @@ css：
   border-color:red green blue orange;
 }
 
-效果展示： ![](https://merrier.wang/wp-content/uploads/2017/04/QQ20170423-232010.png)
+效果展示： ![](/images/hexo_post_205.png)
 
 9.border的应用
 ===========
@@ -129,7 +129,7 @@ css：
   float:left;
 }
 
-实现效果： ![](https://merrier.wang/wp-content/uploads/2017/04/QQ20170424-094328.png)
+实现效果： ![](/images/hexo_post_206.png)
 
 绘制三角形
 -----

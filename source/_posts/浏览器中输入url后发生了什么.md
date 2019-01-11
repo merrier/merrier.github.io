@@ -14,7 +14,7 @@ date: 2017-04-24 21:18:56
 写在前面
 ====
 
-本文转载自[简书-浏览器中输入url后发生了什么](http://www.jianshu.com/p/c1dfc6caa520)，其实这个问题在前端面试中经常遇到，所以网上有很多关于这个问题的文章，但是我感觉这篇文章是表达的最清晰的，感兴趣的童鞋可以点击上面的链接查看原文，不过在本文中，我又补充了一些其他文章中的相关内容，同时加入了一些我自己的理解，争取让初学者更容易看懂 先上一张思维导图： ![](https://merrier.wang/wp-content/uploads/2017/04/2075673-3afda32a13a68c6b.png) 上面这张图用非常简练的语言总结了浏览器中输入url后发生的事情以及顺序，下面按照执行顺序分为六步进行描述：
+本文转载自[简书-浏览器中输入url后发生了什么](http://www.jianshu.com/p/c1dfc6caa520)，其实这个问题在前端面试中经常遇到，所以网上有很多关于这个问题的文章，但是我感觉这篇文章是表达的最清晰的，感兴趣的童鞋可以点击上面的链接查看原文，不过在本文中，我又补充了一些其他文章中的相关内容，同时加入了一些我自己的理解，争取让初学者更容易看懂 先上一张思维导图： ![](/images/hexo_post_34.png) 上面这张图用非常简练的语言总结了浏览器中输入url后发生的事情以及顺序，下面按照执行顺序分为六步进行描述：
 
 1.DNS域名解析
 =========
@@ -44,7 +44,7 @@ HTTP的请求方法（method）有以下几种：
 *   OPTIONS:询问支持的方法
 *   TRACE:追踪路径
 
-其中最常用的就是GET和POST了，请求报文格式如下所示（HTTP/1.1）： ![](https://merrier.wang/wp-content/uploads/2017/04/2075673-1f2c0829b7a86c6d.png)
+其中最常用的就是GET和POST了，请求报文格式如下所示（HTTP/1.1）： ![](/images/hexo_post_33.png)
 
 4.接受响应结果
 ========
@@ -57,7 +57,7 @@ HTTP的请求方法（method）有以下几种：
 *   4**：客户端错误状态码
 *   5**：服务器错误状态码
 
-响应报文： ![](https://merrier.wang/wp-content/uploads/2017/04/2075673-a7d5616fac0adec7.png)
+响应报文： ![](/images/hexo_post_35.png)
 
 5.浏览器解析html
 ===========
@@ -77,7 +77,7 @@ HTTP的请求方法（method）有以下几种：
 *   布局（Layout）：通过计算得到每个渲染对象在可视区域中的具体位置信息（大小和位置），这是一个递归的过程。
 *   绘制（Paint）：将计算好的每个像素点信息绘制在屏幕上
 
-在页面显示的过程中会多次进行Reflow和Repaint操作，而Reflow的成本比Repaint的成本高得多的多。因为Repaint只是将某个部分进行重新绘制而不用改变页面的布局，如：改变了某个元素的背景颜色。而如果将元素的display属性由block改为none则需要Reflow。 如何减少rpaint和reflow也是[前端优化](https://merrier.wang/?p=633)需要考虑的问题： ![](https://merrier.wang/wp-content/uploads/2017/04/2075673-e6b92f5c6c8c50d4.png)
+在页面显示的过程中会多次进行Reflow和Repaint操作，而Reflow的成本比Repaint的成本高得多的多。因为Repaint只是将某个部分进行重新绘制而不用改变页面的布局，如：改变了某个元素的背景颜色。而如果将元素的display属性由block改为none则需要Reflow。 如何减少rpaint和reflow也是[前端优化](https://merrier.wang/?p=633)需要考虑的问题： ![](/images/hexo_post_36.png)
 
 ##### 参考链接
 

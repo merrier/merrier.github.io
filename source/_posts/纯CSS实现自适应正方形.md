@@ -17,7 +17,7 @@ date: 2017-05-16 17:00:27
 方案一：CSS3 vw 单位
 ==============
 
-CSS3 中新增了一组相对于可视区域百分比的长度单位 vw, vh, vmin, vmax。其中vw是相对于视口宽度百分比的单位，1vw = 1% viewport width，vh是相对于视口高度百分比的单位，1vh = 1% viewport height；vmin是相对当前视口宽高中较小的一个的百分比单位，同理vmax是相对当前视口宽高中 较大 的一个的百分比单位。[该单位浏览器兼容性](http://caniuse.com/#search=vw)如下： ![](https://merrier.wang/wp-content/uploads/2017/05/vw.png)
+CSS3 中新增了一组相对于可视区域百分比的长度单位 vw, vh, vmin, vmax。其中vw是相对于视口宽度百分比的单位，1vw = 1% viewport width，vh是相对于视口高度百分比的单位，1vh = 1% viewport height；vmin是相对当前视口宽高中较小的一个的百分比单位，同理vmax是相对当前视口宽高中 较大 的一个的百分比单位。[该单位浏览器兼容性](http://caniuse.com/#search=vw)如下： ![](/images/hexo_post_231.png)
 
 代码实现
 ----

@@ -15,7 +15,7 @@ date: 2018-02-11 11:24:39
 Pixel 移动开发像素知识
 ==============
 
-来自幕课网 ![](https://merrier.wang/wp-content/uploads/2018/02/移动开发像素知识.png)
+来自幕课网 ![](/images/hexo_post_81.png)
 
 弹性图片
 ====

@@ -53,7 +53,7 @@ date: 2017-04-25 20:36:04
 var a=1,b=a,a=2;
 console.log("a="+a+",b="+b);
 
-![](https://merrier.wang/wp-content/uploads/2017/04/01120452-df0b722c4f224ebd85a31ccb879e1d4a.jpg) //a先是被赋值为1，接着把a的值赋给b, 这时会进行值的拷贝,因此b=1；然后又把a赋值为2. //在没有执行a=2之前，我们试试下列代码：
+![](/images/hexo_post_21.jpg) //a先是被赋值为1，接着把a的值赋给b, 这时会进行值的拷贝,因此b=1；然后又把a赋值为2. //在没有执行a=2之前，我们试试下列代码：
 
 console.log(a===b);  //输出为true. 可见它们在内存中是指向同一个位置的。
 

@@ -36,7 +36,7 @@ date: 2017-04-03 11:43:13
 *   每个ID描述符贡献0，1，0，0
 *   行内样式或内联样式贡献1，0，0，0
 
-可能看到这里你还比较糊涂，那请看下面这张图片： ![](https://merrier.wang/wp-content/uploads/2017/04/clipboard-300x84.png) ![](https://merrier.wang/wp-content/uploads/2017/04/clipboard-1-300x34.png) 其实就是简单的加法，数字越大优先级越高（为何如此计算尚不得知，仅作为额外知识），!important会覆盖任何没有!ip
+可能看到这里你还比较糊涂，那请看下面这张图片： ![](/images/hexo_post_92.png) ![](/images/hexo_post_93.png) 其实就是简单的加法，数字越大优先级越高（为何如此计算尚不得知，仅作为额外知识），!important会覆盖任何没有!ip
 
 ### 同一级别
 

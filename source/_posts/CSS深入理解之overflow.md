@@ -74,7 +74,7 @@ IE9+/Firefox √ Chrome/Safari(win)/Opera √ 动态渲染异常:Chrome包含块
 overflow失效妙用
 ------------
 
-右侧图片会紧挨左侧内容,并实现自适应跟随,&nbsp可以辅助将图片设置在右方;将&nbsp的高度设置为0以及overflow:hidden可以让&nbsp不影响布局,但图片是绝对定位,不会受overflow:hidden影响. ![](https://merrier.wang/wp-content/uploads/2017/04/overflow失效妙用.png)
+右侧图片会紧挨左侧内容,并实现自适应跟随,&nbsp可以辅助将图片设置在右方;将&nbsp的高度设置为0以及overflow:hidden可以让&nbsp不影响布局,但图片是绝对定位,不会受overflow:hidden影响. ![](/images/hexo_post_124.png)
 
 7.依赖overflow的样式表现
 =================
@@ -122,4 +122,4 @@ text-overflow:ellipsis
 *   快速定位
 *   选项卡技术(有严重的不足)
 
-![](https://merrier.wang/wp-content/uploads/2017/04/锚点定位实现选项卡技术.png)
+![](/images/hexo_post_68.png)
