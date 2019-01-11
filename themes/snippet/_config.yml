@@ -93,7 +93,7 @@ arch_config:
 
 ## 标签云设置
 tagcloud:
-  tag3d: false
+  tag3d: true
   textColour: '#444'
   outlineMethod: 'block'
   outlineColour: '#FFDAB9'
@@ -101,7 +101,7 @@ tagcloud:
   freezeActive: true
   frontSelect: true
   reverse: true
-  wheelZoom: false
+  wheelZoom: true
 
 ## 友链设置
 links:
