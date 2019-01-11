@@ -85,6 +85,7 @@ theme: snippet
 deploy:
   type:
 
+# rss
 feed:
   type: atom
   path: atom.xml
@@ -93,3 +94,7 @@ feed:
   content:
   content_limit:
   content_limit_delim: ' '
+
+# sitemap
+sitemap:
+  path: sitemap.xml
