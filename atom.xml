@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Merrier说</title>
+  
+  <subtitle>叩首问路，码梦为生</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://merrier.wang/"/>
+  <updated>2019-01-11T03:38:03.519Z</updated>
+  <id>http://merrier.wang/</id>
+  
+  <author>
+    <name>Merrier</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>你可能不会npm</title>
+    <link href="http://merrier.wang/20190102/you-probably-dont-know-npm.html"/>
+    <id>http://merrier.wang/20190102/you-probably-dont-know-npm.html</id>
+    <published>2019-01-02T15:59:12.000Z</published>
+    <updated>2019-01-11T03:38:03.519Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="其他" scheme="http://merrier.wang/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+      <category term="技巧" scheme="http://merrier.wang/tags/%E6%8A%80%E5%B7%A7/"/>
+    
+      <category term="npm" scheme="http://merrier.wang/tags/npm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo相关文章</title>
+    <link href="http://merrier.wang/20190102/hexo-related-articles.html"/>
+    <id>http://merrier.wang/20190102/hexo-related-articles.html</id>
+    <published>2019-01-02T15:52:43.000Z</published>
+    <updated>2019-01-11T03:38:03.515Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="其他" scheme="http://merrier.wang/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>再见，2018</title>
+    <link href="http://merrier.wang/20190101/goodbye-2018.html"/>
+    <id>http://merrier.wang/20190101/goodbye-2018.html</id>
+    <published>2019-01-01T16:46:28.000Z</published>
+    <updated>2019-01-11T03:38:03.519Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="杂谈" scheme="http://merrier.wang/categories/%E6%9D%82%E8%B0%88/"/>
+    
+    
+      <category term="生活" scheme="http://merrier.wang/tags/life/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一些冷门但实用的库</title>
+    <link href="http://merrier.wang/20181220/some-cold-but-useful-libraries.html"/>
+    <id>http://merrier.wang/20181220/some-cold-but-useful-libraries.html</id>
+    <published>2018-12-20T10:38:58.000Z</published>
+    <updated>2019-01-11T03:38:03.519Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="其他" scheme="http://merrier.wang/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>如何清除inline-block元素之间的空格</title>
+    <link href="http://merrier.wang/20181124/how-to-clear-the-spaces-between-inline-block-elements.html"/>
+    <id>http://merrier.wang/20181124/how-to-clear-the-spaces-between-inline-block-elements.html</id>
+    <published>2018-11-24T11:31:10.000Z</published>
+    <updated>2019-01-11T03:38:03.519Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="CSS" scheme="http://merrier.wang/categories/CSS/"/>
+    
+    
+      <category term="CSS" scheme="http://merrier.wang/tags/CSS/"/>
+    
+      <category term="技巧" scheme="http://merrier.wang/tags/%E6%8A%80%E5%B7%A7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JS中的事件循环</title>
+    <link href="http://merrier.wang/20181103/event-loop-in-js.html"/>
+    <id>http://merrier.wang/20181103/event-loop-in-js.html</id>
+    <published>2018-11-03T15:17:35.000Z</published>
+    <updated>2019-01-11T03:38:03.515Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="JS" scheme="http://merrier.wang/categories/JS/"/>
+    
+    
+      <category term="JS" scheme="http://merrier.wang/tags/JS/"/>
+    
+      <category term="事件循环" scheme="http://merrier.wang/tags/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/"/>
+    
+      <category term="前端面试" scheme="http://merrier.wang/tags/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>教你玩转VSCode</title>
+    <link href="http://merrier.wang/20181021/teach-you-how-to-play-vscode.html"/>
+    <id>http://merrier.wang/20181021/teach-you-how-to-play-vscode.html</id>
+    <published>2018-10-21T21:40:19.000Z</published>
+    <updated>2019-01-11T03:38:03.523Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="工具" scheme="http://merrier.wang/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="推荐" scheme="http://merrier.wang/tags/%E6%8E%A8%E8%8D%90/"/>
+    
+      <category term="vscode" scheme="http://merrier.wang/tags/vscode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>推荐一些软件（Win、Mac）</title>
+    <link href="http://merrier.wang/20180930/recommend-some-software.html"/>
+    <id>http://merrier.wang/20180930/recommend-some-software.html</id>
+    <published>2018-09-30T18:24:04.000Z</published>
+    <updated>2019-01-11T03:38:03.523Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="工具" scheme="http://merrier.wang/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="总结" scheme="http://merrier.wang/categories/%E5%B7%A5%E5%85%B7/%E6%80%BB%E7%BB%93/"/>
+    
+    
+      <category term="推荐" scheme="http://merrier.wang/tags/%E6%8E%A8%E8%8D%90/"/>
+    
+      <category term="软件" scheme="http://merrier.wang/tags/%E8%BD%AF%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>铲屎官，这里有一份属于你的空投</title>
+    <link href="http://merrier.wang/20180922/cat-strategy.html"/>
+    <id>http://merrier.wang/20180922/cat-strategy.html</id>
+    <published>2018-09-22T12:30:47.000Z</published>
+    <updated>2019-01-11T03:38:03.523Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="杂谈" scheme="http://merrier.wang/categories/%E6%9D%82%E8%B0%88/"/>
+    
+    
+      <category term="指南" scheme="http://merrier.wang/tags/%E6%8C%87%E5%8D%97/"/>
+    
+      <category term="生活" scheme="http://merrier.wang/tags/life/"/>
+    
+      <category term="心得" scheme="http://merrier.wang/tags/%E5%BF%83%E5%BE%97/"/>
+    
+      <category term="猫" scheme="http://merrier.wang/tags/%E7%8C%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何将用户体验做到极致？</title>
+    <link href="http://merrier.wang/20180920/how-to-maximize-the-user-experience.html"/>
+    <id>http://merrier.wang/20180920/how-to-maximize-the-user-experience.html</id>
+    <published>2018-09-20T23:27:19.000Z</published>
+    <updated>2019-01-11T03:38:03.519Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="http://merrier.wang/categories/frontend/"/>
+    
+      <category term="总结" scheme="http://merrier.wang/categories/frontend/%E6%80%BB%E7%BB%93/"/>
+    
+    
+      <category term="技巧" scheme="http://merrier.wang/tags/%E6%8A%80%E5%B7%A7/"/>
+    
+      <category term="性能优化" scheme="http://merrier.wang/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+    
+      <category term="用户体验" scheme="http://merrier.wang/tags/%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>简单聊一下服务端渲染</title>
+    <link href="http://merrier.wang/20180918/server-side-render.html"/>
+    <id>http://merrier.wang/20180918/server-side-render.html</id>
+    <published>2018-09-18T16:07:53.000Z</published>
+    <updated>2019-01-11T03:38:03.523Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="http://merrier.wang/categories/frontend/"/>
+    
+    
+      <category term="笔记" scheme="http://merrier.wang/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="渲染" scheme="http://merrier.wang/tags/%E6%B8%B2%E6%9F%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JS中的模块规范（CommonJS，AMD，CMD）</title>
+    <link href="http://merrier.wang/20180705/module-specification-in-js.html"/>
+    <id>http://merrier.wang/20180705/module-specification-in-js.html</id>
+    <published>2018-07-05T11:19:16.000Z</published>
+    <updated>2019-01-11T03:38:03.515Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="JS" scheme="http://merrier.wang/categories/JS/"/>
+    
+    
+      <category term="JS" scheme="http://merrier.wang/tags/JS/"/>
+    
+      <category term="模块" scheme="http://merrier.wang/tags/%E6%A8%A1%E5%9D%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>科学上网的正确姿势</title>
+    <link href="http://merrier.wang/20180625/correct-posture-of-scientific-internet-access.html"/>
+    <id>http://merrier.wang/20180625/correct-posture-of-scientific-internet-access.html</id>
+    <published>2018-06-25T13:27:08.000Z</published>
+    <updated>2019-01-11T03:38:03.523Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="其他" scheme="http://merrier.wang/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>如何发布一个Chrome插件</title>
+    <link href="http://merrier.wang/20180625/how-to-publish-a-chrome-plugin.html"/>
+    <id>http://merrier.wang/20180625/how-to-publish-a-chrome-plugin.html</id>
+    <published>2018-06-25T13:24:07.000Z</published>
+    <updated>2019-01-11T03:38:03.519Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="工具" scheme="http://merrier.wang/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="Chrome" scheme="http://merrier.wang/tags/Chrome/"/>
+    
+      <category term="指南" scheme="http://merrier.wang/tags/%E6%8C%87%E5%8D%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>教你玩转Github</title>
+    <link href="http://merrier.wang/20180622/teach-you-how-to-play-on-github.html"/>
+    <id>http://merrier.wang/20180622/teach-you-how-to-play-on-github.html</id>
+    <published>2018-06-22T10:24:50.000Z</published>
+    <updated>2019-01-11T03:38:03.523Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="Git" scheme="http://merrier.wang/categories/Git/"/>
+    
+    
+      <category term="git" scheme="http://merrier.wang/tags/git/"/>
+    
+      <category term="指南" scheme="http://merrier.wang/tags/%E6%8C%87%E5%8D%97/"/>
+    
+      <category term="心得" scheme="http://merrier.wang/tags/%E5%BF%83%E5%BE%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>获取小程序源码的最佳姿势</title>
+    <link href="http://merrier.wang/20180622/get-wxapp-source-code.html"/>
+    <id>http://merrier.wang/20180622/get-wxapp-source-code.html</id>
+    <published>2018-06-22T10:22:21.000Z</published>
+    <updated>2019-01-11T03:38:03.523Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="小程序" scheme="http://merrier.wang/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+    
+      <category term="小程序" scheme="http://merrier.wang/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>部落冲突COC游戏攻略</title>
+    <link href="http://merrier.wang/20180530/coc-walkthrough.html"/>
+    <id>http://merrier.wang/20180530/coc-walkthrough.html</id>
+    <published>2018-05-30T17:30:57.000Z</published>
+    <updated>2019-01-11T03:38:03.523Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="游戏" scheme="http://merrier.wang/categories/%E6%B8%B8%E6%88%8F/"/>
+    
+    
+      <category term="游戏" scheme="http://merrier.wang/tags/%E6%B8%B8%E6%88%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>移动端开发之适配终极解决方案</title>
+    <link href="http://merrier.wang/20180425/the-ultimate-solution-of-adaptation-for-mobile-development.html"/>
+    <id>http://merrier.wang/20180425/the-ultimate-solution-of-adaptation-for-mobile-development.html</id>
+    <published>2018-04-25T12:43:18.000Z</published>
+    <updated>2019-01-11T03:38:03.523Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="移动端" scheme="http://merrier.wang/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+    
+    
+      <category term="移动端" scheme="http://merrier.wang/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+    
+      <category term="适配" scheme="http://merrier.wang/tags/%E9%80%82%E9%85%8D/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Apache配置二级域名及SSL证书</title>
+    <link href="http://merrier.wang/20180424/apache-configuration-of-secondary-domain-name-and-ssl-certificate.html"/>
+    <id>http://merrier.wang/20180424/apache-configuration-of-secondary-domain-name-and-ssl-certificate.html</id>
+    <published>2018-04-24T18:13:56.000Z</published>
+    <updated>2019-01-11T03:38:03.515Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="服务器" scheme="http://merrier.wang/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    
+      <category term="apache" scheme="http://merrier.wang/tags/apache/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>网站配置HTTPS踩坑记</title>
+    <link href="http://merrier.wang/20180416/website-configuration-https.html"/>
+    <id>http://merrier.wang/20180416/website-configuration-https.html</id>
+    <published>2018-04-16T14:36:36.000Z</published>
+    <updated>2019-01-11T03:38:03.523Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="HTTP" scheme="http://merrier.wang/categories/HTTP/"/>
+    
+      <category term="wordpress" scheme="http://merrier.wang/categories/HTTP/wordpress/"/>
+    
+      <category term="笔记" scheme="http://merrier.wang/categories/HTTP/wordpress/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="HTTP" scheme="http://merrier.wang/tags/HTTP/"/>
+    
+      <category term="指南" scheme="http://merrier.wang/tags/%E6%8C%87%E5%8D%97/"/>
+    
+      <category term="wordpress" scheme="http://merrier.wang/tags/wordpress/"/>
+    
+  </entry>
+  
+</feed>
