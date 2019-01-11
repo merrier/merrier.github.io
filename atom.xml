@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://merrier.wang/"/>
-  <updated>2019-01-11T03:55:02.969Z</updated>
+  <updated>2019-01-11T03:57:40.443Z</updated>
   <id>http://merrier.wang/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://merrier.wang/20190102/you-probably-dont-know-npm.html"/>
     <id>http://merrier.wang/20190102/you-probably-dont-know-npm.html</id>
     <published>2019-01-02T15:59:12.000Z</published>
-    <updated>2019-01-11T03:55:02.969Z</updated>
+    <updated>2019-01-11T03:57:40.443Z</updated>
     
     <summary type="html">
     
@@ -49,7 +49,7 @@
     <link href="http://merrier.wang/20190101/goodbye-2018.html"/>
     <id>http://merrier.wang/20190101/goodbye-2018.html</id>
     <published>2019-01-01T16:46:28.000Z</published>
-    <updated>2019-01-11T03:55:02.969Z</updated>
+    <updated>2019-01-11T03:57:40.443Z</updated>
     
     <summary type="html">
     
@@ -75,7 +75,7 @@
     <link href="http://merrier.wang/20181220/some-cold-but-useful-libraries.html"/>
     <id>http://merrier.wang/20181220/some-cold-but-useful-libraries.html</id>
     <published>2018-12-20T10:38:58.000Z</published>
-    <updated>2019-01-11T03:55:02.969Z</updated>
+    <updated>2019-01-11T03:57:40.443Z</updated>
     
     <summary type="html">
     
@@ -99,7 +99,7 @@
     <link href="http://merrier.wang/20181124/how-to-clear-the-spaces-between-inline-block-elements.html"/>
     <id>http://merrier.wang/20181124/how-to-clear-the-spaces-between-inline-block-elements.html</id>
     <published>2018-11-24T11:31:10.000Z</published>
-    <updated>2019-01-11T03:55:02.969Z</updated>
+    <updated>2019-01-11T03:57:40.447Z</updated>
     
     <summary type="html">
     
@@ -127,7 +127,7 @@
     <link href="http://merrier.wang/20181103/event-loop-in-js.html"/>
     <id>http://merrier.wang/20181103/event-loop-in-js.html</id>
     <published>2018-11-03T15:17:35.000Z</published>
-    <updated>2019-01-11T03:55:02.965Z</updated>
+    <updated>2019-01-11T03:57:40.439Z</updated>
     
     <summary type="html">
     
@@ -157,7 +157,7 @@
     <link href="http://merrier.wang/20181021/teach-you-how-to-play-vscode.html"/>
     <id>http://merrier.wang/20181021/teach-you-how-to-play-vscode.html</id>
     <published>2018-10-21T21:40:19.000Z</published>
-    <updated>2019-01-11T03:55:02.973Z</updated>
+    <updated>2019-01-11T03:57:40.447Z</updated>
     
     <summary type="html">
     
@@ -185,7 +185,7 @@
     <link href="http://merrier.wang/20180930/recommend-some-software.html"/>
     <id>http://merrier.wang/20180930/recommend-some-software.html</id>
     <published>2018-09-30T18:24:04.000Z</published>
-    <updated>2019-01-11T03:55:02.973Z</updated>
+    <updated>2019-01-11T03:57:40.447Z</updated>
     
     <summary type="html">
     
@@ -215,7 +215,7 @@
     <link href="http://merrier.wang/20180922/cat-strategy.html"/>
     <id>http://merrier.wang/20180922/cat-strategy.html</id>
     <published>2018-09-22T12:30:47.000Z</published>
-    <updated>2019-01-11T03:55:02.977Z</updated>
+    <updated>2019-01-11T03:57:40.451Z</updated>
     
     <summary type="html">
     
@@ -247,7 +247,7 @@
     <link href="http://merrier.wang/20180920/how-to-maximize-the-user-experience.html"/>
     <id>http://merrier.wang/20180920/how-to-maximize-the-user-experience.html</id>
     <published>2018-09-20T23:27:19.000Z</published>
-    <updated>2019-01-11T03:55:02.969Z</updated>
+    <updated>2019-01-11T03:57:40.447Z</updated>
     
     <summary type="html">
     
@@ -279,7 +279,7 @@
     <link href="http://merrier.wang/20180918/server-side-render.html"/>
     <id>http://merrier.wang/20180918/server-side-render.html</id>
     <published>2018-09-18T16:07:53.000Z</published>
-    <updated>2019-01-11T03:55:02.973Z</updated>
+    <updated>2019-01-11T03:57:40.447Z</updated>
     
     <summary type="html">
     
@@ -307,7 +307,7 @@
     <link href="http://merrier.wang/20180705/module-specification-in-js.html"/>
     <id>http://merrier.wang/20180705/module-specification-in-js.html</id>
     <published>2018-07-05T11:19:16.000Z</published>
-    <updated>2019-01-11T03:55:02.965Z</updated>
+    <updated>2019-01-11T03:57:40.439Z</updated>
     
     <summary type="html">
     
@@ -335,7 +335,7 @@
     <link href="http://merrier.wang/20180625/correct-posture-of-scientific-internet-access.html"/>
     <id>http://merrier.wang/20180625/correct-posture-of-scientific-internet-access.html</id>
     <published>2018-06-25T13:27:08.000Z</published>
-    <updated>2019-01-11T03:55:02.973Z</updated>
+    <updated>2019-01-11T03:57:40.447Z</updated>
     
     <summary type="html">
     
@@ -359,7 +359,7 @@
     <link href="http://merrier.wang/20180625/how-to-publish-a-chrome-plugin.html"/>
     <id>http://merrier.wang/20180625/how-to-publish-a-chrome-plugin.html</id>
     <published>2018-06-25T13:24:07.000Z</published>
-    <updated>2019-01-11T03:55:02.969Z</updated>
+    <updated>2019-01-11T03:57:40.447Z</updated>
     
     <summary type="html">
     
@@ -387,7 +387,7 @@
     <link href="http://merrier.wang/20180622/teach-you-how-to-play-on-github.html"/>
     <id>http://merrier.wang/20180622/teach-you-how-to-play-on-github.html</id>
     <published>2018-06-22T10:24:50.000Z</published>
-    <updated>2019-01-11T03:55:02.973Z</updated>
+    <updated>2019-01-11T03:57:40.447Z</updated>
     
     <summary type="html">
     
@@ -417,7 +417,7 @@
     <link href="http://merrier.wang/20180622/get-wxapp-source-code.html"/>
     <id>http://merrier.wang/20180622/get-wxapp-source-code.html</id>
     <published>2018-06-22T10:22:21.000Z</published>
-    <updated>2019-01-11T03:55:02.973Z</updated>
+    <updated>2019-01-11T03:57:40.447Z</updated>
     
     <summary type="html">
     
@@ -443,7 +443,7 @@
     <link href="http://merrier.wang/20180530/coc-walkthrough.html"/>
     <id>http://merrier.wang/20180530/coc-walkthrough.html</id>
     <published>2018-05-30T17:30:57.000Z</published>
-    <updated>2019-01-11T03:55:02.977Z</updated>
+    <updated>2019-01-11T03:57:40.451Z</updated>
     
     <summary type="html">
     
@@ -469,7 +469,7 @@
     <link href="http://merrier.wang/20180425/the-ultimate-solution-of-adaptation-for-mobile-development.html"/>
     <id>http://merrier.wang/20180425/the-ultimate-solution-of-adaptation-for-mobile-development.html</id>
     <published>2018-04-25T12:43:18.000Z</published>
-    <updated>2019-01-11T03:55:02.973Z</updated>
+    <updated>2019-01-11T03:57:40.447Z</updated>
     
     <summary type="html">
     
@@ -497,7 +497,7 @@
     <link href="http://merrier.wang/20180424/apache-configuration-of-secondary-domain-name-and-ssl-certificate.html"/>
     <id>http://merrier.wang/20180424/apache-configuration-of-secondary-domain-name-and-ssl-certificate.html</id>
     <published>2018-04-24T18:13:56.000Z</published>
-    <updated>2019-01-11T03:55:02.965Z</updated>
+    <updated>2019-01-11T03:57:40.439Z</updated>
     
     <summary type="html">
     
@@ -523,7 +523,7 @@
     <link href="http://merrier.wang/20180416/website-configuration-https.html"/>
     <id>http://merrier.wang/20180416/website-configuration-https.html</id>
     <published>2018-04-16T14:36:36.000Z</published>
-    <updated>2019-01-11T03:55:02.973Z</updated>
+    <updated>2019-01-11T03:57:40.447Z</updated>
     
     <summary type="html">
     
@@ -557,7 +557,7 @@
     <link href="http://merrier.wang/20180226/introduction-to-promise.html"/>
     <id>http://merrier.wang/20180226/introduction-to-promise.html</id>
     <published>2018-02-26T22:14:10.000Z</published>
-    <updated>2019-01-11T03:55:02.965Z</updated>
+    <updated>2019-01-11T03:57:40.443Z</updated>
     
     <summary type="html">
     
