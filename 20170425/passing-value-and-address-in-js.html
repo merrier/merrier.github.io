@@ -226,7 +226,7 @@
 </ul>
 <p>数字和布尔类型是基础类型，它们是由很小的，固定数目字节组成，所以可以通过传值来操作；而数组和函数，是对象的特殊类型，也是引用类型。由于对象没有固定大小，所以无法通过传值进行操作。</p>
 <h1 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h1><h2 id="传值（赋值操作）"><a href="#传值（赋值操作）" class="headerlink" title="传值（赋值操作）"></a>传值（赋值操作）</h2><p>var a=1,b=a,a=2;<br>console.log(“a=”+a+”,b=”+b);</p>
-<p><img src="https://merrier.wang/wp-content/uploads/2017/04/01120452-df0b722c4f224ebd85a31ccb879e1d4a.jpg" alt=""> //a先是被赋值为1，接着把a的值赋给b, 这时会进行值的拷贝,因此b=1；然后又把a赋值为2. //在没有执行a=2之前，我们试试下列代码：</p>
+<p><img src="/images/hexo_post_21.jpg" alt=""> //a先是被赋值为1，接着把a的值赋给b, 这时会进行值的拷贝,因此b=1；然后又把a赋值为2. //在没有执行a=2之前，我们试试下列代码：</p>
 <p>console.log(a===b);  //输出为true. 可见它们在内存中是指向同一个位置的。</p>
 <h2 id="传值（基础类型）"><a href="#传值（基础类型）" class="headerlink" title="传值（基础类型）"></a>传值（基础类型）</h2><p>var a = 1;<br>var b = a;            //将a复制给b<br>function add1(x,y) {     //函数修改参数的值<br>  x = x + y;              //虽然这个里面将值进行相加，但是仅仅是值的独立拷贝，进行相加，在函数外面没有影响<br>}<br>add1(a,b);                //数字类型为传值</p>
 <p>alert(“a:” + a + “\n” + “b:” + b);      //a为1，b为1<br>(a == b) ? c = “true” : c = “false”;<br>alert(c);         //c=”true”</p>

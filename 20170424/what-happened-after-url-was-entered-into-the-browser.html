@@ -206,7 +206,7 @@
     </div>
     
     <div class="post-body post-content">
-        <h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>本文转载自<a href="http://www.jianshu.com/p/c1dfc6caa520" target="_blank" rel="noopener">简书-浏览器中输入url后发生了什么</a>，其实这个问题在前端面试中经常遇到，所以网上有很多关于这个问题的文章，但是我感觉这篇文章是表达的最清晰的，感兴趣的童鞋可以点击上面的链接查看原文，不过在本文中，我又补充了一些其他文章中的相关内容，同时加入了一些我自己的理解，争取让初学者更容易看懂 先上一张思维导图： <img src="https://merrier.wang/wp-content/uploads/2017/04/2075673-3afda32a13a68c6b.png" alt=""> 上面这张图用非常简练的语言总结了浏览器中输入url后发生的事情以及顺序，下面按照执行顺序分为六步进行描述：</p>
+        <h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>本文转载自<a href="http://www.jianshu.com/p/c1dfc6caa520" target="_blank" rel="noopener">简书-浏览器中输入url后发生了什么</a>，其实这个问题在前端面试中经常遇到，所以网上有很多关于这个问题的文章，但是我感觉这篇文章是表达的最清晰的，感兴趣的童鞋可以点击上面的链接查看原文，不过在本文中，我又补充了一些其他文章中的相关内容，同时加入了一些我自己的理解，争取让初学者更容易看懂 先上一张思维导图： <img src="/images/hexo_post_34.png" alt=""> 上面这张图用非常简练的语言总结了浏览器中输入url后发生的事情以及顺序，下面按照执行顺序分为六步进行描述：</p>
 <h1 id="1-DNS域名解析"><a href="#1-DNS域名解析" class="headerlink" title="1.DNS域名解析"></a>1.DNS域名解析</h1><ul>
 <li>在浏览器DNS缓存中搜索</li>
 <li>在操作系统DNS缓存中搜索</li>
@@ -225,7 +225,7 @@
 <li>OPTIONS:询问支持的方法</li>
 <li>TRACE:追踪路径</li>
 </ul>
-<p>其中最常用的就是GET和POST了，请求报文格式如下所示（HTTP/1.1）： <img src="https://merrier.wang/wp-content/uploads/2017/04/2075673-1f2c0829b7a86c6d.png" alt=""></p>
+<p>其中最常用的就是GET和POST了，请求报文格式如下所示（HTTP/1.1）： <img src="/images/hexo_post_33.png" alt=""></p>
 <h1 id="4-接受响应结果"><a href="#4-接受响应结果" class="headerlink" title="4.接受响应结果"></a>4.接受响应结果</h1><p>客户端在发出请求之后，服务器会在接收到请求之后返回客户端响应结果，该结果就是服务器告知客户端的当前状态，下面是状态码的分类，更多关于状态码的详细内容请移步<a href="https://merrier.wang/?p=428">前端面试系列（6）——HTTP请求的状态码</a>：</p>
 <ul>
 <li>1**：信息性状态码</li>
@@ -234,7 +234,7 @@
 <li>4**：客户端错误状态码</li>
 <li>5**：服务器错误状态码</li>
 </ul>
-<p>响应报文： <img src="https://merrier.wang/wp-content/uploads/2017/04/2075673-a7d5616fac0adec7.png" alt=""></p>
+<p>响应报文： <img src="/images/hexo_post_35.png" alt=""></p>
 <h1 id="5-浏览器解析html"><a href="#5-浏览器解析html" class="headerlink" title="5.浏览器解析html"></a>5.浏览器解析html</h1><p>浏览器按顺序解析html文件，构建DOM树，在解析到外部的css和js文件时，向服务器发起请求下载资源，若是下载css文件，则解析器会在下载的同时继续解析后面的html来构建DOM树，但是在下载js文件和执行它时，解析器会停止对html的解析。这便出现了js阻塞问题。</p>
 <h2 id="预加载器："><a href="#预加载器：" class="headerlink" title="预加载器："></a>预加载器：</h2><p>当浏览器被脚本文件阻塞时，预加载器（一个轻量级的解析器）会继续解析后面的html，寻找需要下载的资源。如果发现有需要下载的资源，预加载器在开始接收这些资源。预加载器只能检索HTML标签中的URL，无法检测到使用脚本添加的URL，这些资源要等脚本代码执行时才会获取。（注: 预解析并不改变Dom树，它将这个工作留给主解析过程） 浏览器解析css，形成CSSOM树，当DOM树构建完成后，浏览器引擎通过DOM树和CSSOM树构造出渲染树（Render树）。渲染树中包含可视节点的样式信息（不可见节点将不会被添加到渲染树中，如：head元素和display值为none的元素）</p>
 <blockquote>
@@ -244,7 +244,7 @@
 <li>布局（Layout）：通过计算得到每个渲染对象在可视区域中的具体位置信息（大小和位置），这是一个递归的过程。</li>
 <li>绘制（Paint）：将计算好的每个像素点信息绘制在屏幕上</li>
 </ul>
-<p>在页面显示的过程中会多次进行Reflow和Repaint操作，而Reflow的成本比Repaint的成本高得多的多。因为Repaint只是将某个部分进行重新绘制而不用改变页面的布局，如：改变了某个元素的背景颜色。而如果将元素的display属性由block改为none则需要Reflow。 如何减少rpaint和reflow也是<a href="https://merrier.wang/?p=633">前端优化</a>需要考虑的问题： <img src="https://merrier.wang/wp-content/uploads/2017/04/2075673-e6b92f5c6c8c50d4.png" alt=""></p>
+<p>在页面显示的过程中会多次进行Reflow和Repaint操作，而Reflow的成本比Repaint的成本高得多的多。因为Repaint只是将某个部分进行重新绘制而不用改变页面的布局，如：改变了某个元素的背景颜色。而如果将元素的display属性由block改为none则需要Reflow。 如何减少rpaint和reflow也是<a href="https://merrier.wang/?p=633">前端优化</a>需要考虑的问题： <img src="/images/hexo_post_36.png" alt=""></p>
 <h5 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h5><p><a href="http://www.jianshu.com/p/c1dfc6caa520" target="_blank" rel="noopener">浏览器中输入url后发生了什么</a> <a href="http://coolshell.cn/articles/9666.html" target="_blank" rel="noopener">浏览器的渲染原理简介</a> <a href="http://www.cnblogs.com/yuezk/archive/2013/01/11/2855698.html" target="_blank" rel="noopener">了解html页面的渲染过程</a> <a href="https://xianyulaodi.github.io/2017/03/22/%E8%80%81%E7%94%9F%E5%B8%B8%E8%B0%88-%E4%BB%8E%E8%BE%93%E5%85%A5url%E5%88%B0%E9%A1%B5%E9%9D%A2%E5%B1%95%E7%A4%BA%E5%88%B0%E5%BA%95%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88/" target="_blank" rel="noopener">老生常谈-从输入url到页面展示到底发生了什么</a> <a href="http://harttle.com/2016/05/18/async-javascript-loading.html" target="_blank" rel="noopener">异步脚本载入提高页面性能</a></p>
 <h2 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h2><p><a href="http://blog.codingplayboy.com/2017/03/29/webpage_render/" target="_blank" rel="noopener">浅谈前端页面渲染机制</a></p>
 

@@ -219,7 +219,7 @@
 <p>“正则表达式是万能的”，RegExp.prototype.test(str)</p>
 <h2 id="match"><a href="#match" class="headerlink" title="match"></a>match</h2><p>var string = “foo”,<br>    expr = /oo/;<br>string.match(expr);</p>
 <p>和上面的test正好相反，match方式是String的原型方法，String.prototype.match(expr)</p>
-<h1 id="性能比较"><a href="#性能比较" class="headerlink" title="性能比较"></a>性能比较</h1><p>既然有这么多方法都可以实现，那么哪一种才是“性能最优”的方法呢？早就有前辈替我们做了测试，可以<a href="http://jsben.ch/#/RVYk7" target="_blank" rel="noopener">点击这里</a>查看测试结果，或者直接看下面这张图片： <img src="https://merrier.wang/wp-content/uploads/2017/08/WX20170801-153343.png" alt=""> 不出所料，果然原生方法indexOf()是最快的，所以我们以后就还尽量用indexOf()吧！</p>
+<h1 id="性能比较"><a href="#性能比较" class="headerlink" title="性能比较"></a>性能比较</h1><p>既然有这么多方法都可以实现，那么哪一种才是“性能最优”的方法呢？早就有前辈替我们做了测试，可以<a href="http://jsben.ch/#/RVYk7" target="_blank" rel="noopener">点击这里</a>查看测试结果，或者直接看下面这张图片： <img src="/images/hexo_post_273.png" alt=""> 不出所料，果然原生方法indexOf()是最快的，所以我们以后就还尽量用indexOf()吧！</p>
 
     </div>
     

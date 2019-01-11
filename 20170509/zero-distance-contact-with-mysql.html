@@ -213,7 +213,7 @@
 <li>mysql &gt; quit;</li>
 <li>mysql &gt; \q;</li>
 </ul>
-<h2 id="修改MySQL提示符"><a href="#修改MySQL提示符" class="headerlink" title="修改MySQL提示符"></a>修改MySQL提示符</h2><p>连接客户端时通过参数指定：shell&gt;mysql -uroot -proot –prompt 提示符 连接上客户端后，通过prompt命令修改：mysql&gt;prompt 提示符 MySQL提示符修改时可以用到的一些参数： [table id=25 /] <img src="https://merrier.wang/wp-content/uploads/2017/05/QQ20170508-163725.png" alt="">      </p>
+<h2 id="修改MySQL提示符"><a href="#修改MySQL提示符" class="headerlink" title="修改MySQL提示符"></a>修改MySQL提示符</h2><p>连接客户端时通过参数指定：shell&gt;mysql -uroot -proot –prompt 提示符 连接上客户端后，通过prompt命令修改：mysql&gt;prompt 提示符 MySQL提示符修改时可以用到的一些参数： [table id=25 /] <img src="/images/hexo_post_207.png" alt="">      </p>
 <h2 id="修改数据表的默认存储引擎"><a href="#修改数据表的默认存储引擎" class="headerlink" title="修改数据表的默认存储引擎"></a>修改数据表的默认存储引擎</h2><p>找到MySQL配置文件：default-storage-engine=INNODB 修改完之后需要重启MySQL</p>
 <h1 id="MySQL语句的规范"><a href="#MySQL语句的规范" class="headerlink" title="MySQL语句的规范"></a>MySQL语句的规范</h1><ul>
 <li>关键字与函数名称全部大写</li>
@@ -276,7 +276,7 @@
 <li>NULL：字段值可以为空（默认值）</li>
 <li>NOT NULL：字段值禁止为空</li>
 </ul>
-<p>CREATE TABLE tbl_name(username VARCHAR(20) NOT NULL,age TINYINT UNSIGNED NULL); <img src="https://merrier.wang/wp-content/uploads/2017/05/QQ20170509-100117.png" alt=""></p>
+<p>CREATE TABLE tbl_name(username VARCHAR(20) NOT NULL,age TINYINT UNSIGNED NULL); <img src="/images/hexo_post_208.png" alt=""></p>
 <h2 id="表级约束与列级约束"><a href="#表级约束与列级约束" class="headerlink" title="表级约束与列级约束"></a>表级约束与列级约束</h2><p>对一个数据列建立的约束，称为列级约束 对多个数据列建立的约束，称为表级约束 列级约束既可以在列定义时声明，也可以在列定义后声明 表级约束只能在列定义后声明</p>
 <h2 id="主键约束"><a href="#主键约束" class="headerlink" title="主键约束"></a>主键约束</h2><p>PRIMARY KEY：每张数据表只能存在一个主键，主键保证记录的唯一性，主键自动为NOT NULL 主键不一定和下面的自动编号一起使用，但是不能赋相同的值</p>
 <h2 id="自动编号"><a href="#自动编号" class="headerlink" title="自动编号"></a>自动编号</h2><p>AUTO_INCREMENT：必须与主键组合使用，默认情况下，起始值为1，每次的增量为1 该字段的数据类型必须为数字，如果是浮点数必须小数位数为0</p>
@@ -348,7 +348,7 @@
 <h3 id="方法2"><a href="#方法2" class="headerlink" title="方法2"></a>方法2</h3><blockquote>
 <p>RENAME TABLE tbl_name TO new_tbl_name [,tbl_name2 TO new_tbl_name2] …</p>
 </blockquote>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><img src="https://merrier.wang/wp-content/uploads/2017/05/QQ20170509-113906.png" alt=""></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><img src="/images/hexo_post_209.png" alt=""></p>
 <h1 id="记录操作"><a href="#记录操作" class="headerlink" title="记录操作"></a>记录操作</h1><h2 id="插入记录-1"><a href="#插入记录-1" class="headerlink" title="插入记录"></a>插入记录</h2><h3 id="第一种"><a href="#第一种" class="headerlink" title="第一种"></a>第一种</h3><blockquote>
 <p>INSERT [INTO] tbl_name [(col_name,…)] {VALUES | VALUE} ({expr | DEFAULT},…},(…),…</p>
 </blockquote>
@@ -419,7 +419,7 @@
 <li>operand comparison_operator SOME (subquery)</li>
 <li>operand comparison_operator ALL (subquery)</li>
 </ol>
-<p>运算符和关键字相结合之后的结果类型： <img src="https://merrier.wang/wp-content/uploads/2017/05/QQ20170509-150306.png" alt=""></p>
+<p>运算符和关键字相结合之后的结果类型： <img src="/images/hexo_post_210.png" alt=""></p>
 <h2 id="使用-NOT-IN的子查询"><a href="#使用-NOT-IN的子查询" class="headerlink" title="使用[NOT] IN的子查询"></a>使用[NOT] IN的子查询</h2><h3 id="语法结构-1"><a href="#语法结构-1" class="headerlink" title="语法结构"></a>语法结构</h3><blockquote>
 <p>operand comparison_operator [NOT] IN (subquery)</p>
 </blockquote>
@@ -486,7 +486,7 @@
 <h2 id="删除函数"><a href="#删除函数" class="headerlink" title="删除函数"></a>删除函数</h2><blockquote>
 <p>DROP FUNCTION [IF EXISTS] function_name</p>
 </blockquote>
-<h1 id="MySQL命令执行过程"><a href="#MySQL命令执行过程" class="headerlink" title="MySQL命令执行过程"></a>MySQL命令执行过程</h1><p><img src="https://merrier.wang/wp-content/uploads/2017/05/QQ20170509-213918.png" alt=""></p>
+<h1 id="MySQL命令执行过程"><a href="#MySQL命令执行过程" class="headerlink" title="MySQL命令执行过程"></a>MySQL命令执行过程</h1><p><img src="/images/hexo_post_211.png" alt=""></p>
 <h1 id="存储过程"><a href="#存储过程" class="headerlink" title="存储过程"></a>存储过程</h1><p>存储过程是SQL语句和控制语句的预编译集合，以一个名称存储并作为一个单元处理</p>
 <h2 id="存储过程的优点"><a href="#存储过程的优点" class="headerlink" title="存储过程的优点"></a>存储过程的优点</h2><ol>
 <li>增强SQL语句的功能和灵活性</li>

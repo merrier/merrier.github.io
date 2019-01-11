@@ -207,7 +207,7 @@
     
     <div class="post-body post-content">
         <h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>盒子模型是html+css最核心的基础知识，理解了这个重要的概念才能更好的排版，进行页面布局；同时在前端面试或笔试中也经常遇到，所以深入理解盒子模型对自身前端水平的提升有很大帮助。</p>
-<h1 id="概念介绍"><a href="#概念介绍" class="headerlink" title="概念介绍"></a>概念介绍</h1><p>css盒子模型又称为框模型（Box Model），包含了元素内容（content）、内边距（padding）、边框（border）、外边距（margin）几个要素，如图： <img src="https://merrier.wang/wp-content/uploads/2017/04/993105-20160722121801872-494280136-300x300.gif" alt=""> 图中最内部的框是元素的实际内容，也就是元素框，紧挨着元素框外部的是内边距padding，其次是边框（border），然后最外层是外边距（margin），整个构成了框模型。通常我们设置的背景显示区域，就是内容、内边距、边框这一块范围。下面是对这四个部分的说明：</p>
+<h1 id="概念介绍"><a href="#概念介绍" class="headerlink" title="概念介绍"></a>概念介绍</h1><p>css盒子模型又称为框模型（Box Model），包含了元素内容（content）、内边距（padding）、边框（border）、外边距（margin）几个要素，如图： <img src="/images/hexo_post_16-300x300.gif" alt=""> 图中最内部的框是元素的实际内容，也就是元素框，紧挨着元素框外部的是内边距padding，其次是边框（border），然后最外层是外边距（margin），整个构成了框模型。通常我们设置的背景显示区域，就是内容、内边距、边框这一块范围。下面是对这四个部分的说明：</p>
 <ul>
 <li><strong>Margin（外边距）</strong> - 边框外围区域。Margin没有背景颜色，它是完全透明</li>
 <li><strong>Border（边框）</strong> - 边框周围的填充和内容。边框是受到盒子的背景颜色影响</li>
@@ -215,18 +215,18 @@
 <li><strong>Content（内容）</strong> - 盒子的内容，显示文本和图像</li>
 </ul>
 <p>那么，元素框的总宽度 = 元素（element）的width + padding的左边距和右边距的值 + margin的左边距和右边距的值 + border的左右宽度； 元素框的总高度 = 元素（element）的height + padding的上下边距的值 + margin的上下边距的值 ＋ border的上下宽度。 所以，在box-sizing为content-box也就是上面所述盒子模型时，当我们指定了一个CSS元素的高度和宽度属性时，只是设置了内容区域的高度和宽度</p>
-<h1 id="盒子模型表现"><a href="#盒子模型表现" class="headerlink" title="盒子模型表现"></a>盒子模型表现</h1><h2 id="1-外边距合并（叠加）"><a href="#1-外边距合并（叠加）" class="headerlink" title="1.外边距合并（叠加）"></a>1.外边距合并（叠加）</h2><p>两个上下方向相邻的元素框垂直相遇时，外边距会合并，合并后的外边距的高度等于两个发生合并的外边距中较高的那个边距值，如图： <img src="https://merrier.wang/wp-content/uploads/2017/04/993105-20160722171008560-1813889758-300x193.png" alt=""> <img src="https://merrier.wang/wp-content/uploads/2017/04/993105-20160722171015419-1530764673-300x127.png" alt=""> 比较容易理解，所以在页面中有时候遇到实际情况是需要考虑这个因素的。当然外边距合并其实也有存在的意义，如下图： <img src="https://merrier.wang/wp-content/uploads/2017/04/993105-20160722171428919-1743116155-300x205.png" alt=""> 关于margin合并，其实还有很多不为人知的知识和问题，稍晚一些我会再专门针对margin合并写一篇文章（其实应该不算是“写”，因为是对张鑫旭的讲解的总结），感兴趣的童鞋可以直接搜索“margin合并”查看</p>
+<h1 id="盒子模型表现"><a href="#盒子模型表现" class="headerlink" title="盒子模型表现"></a>盒子模型表现</h1><h2 id="1-外边距合并（叠加）"><a href="#1-外边距合并（叠加）" class="headerlink" title="1.外边距合并（叠加）"></a>1.外边距合并（叠加）</h2><p>两个上下方向相邻的元素框垂直相遇时，外边距会合并，合并后的外边距的高度等于两个发生合并的外边距中较高的那个边距值，如图： <img src="/images/hexo_post_17-300x193.png" alt=""> <img src="/images/hexo_post_18-300x127.png" alt=""> 比较容易理解，所以在页面中有时候遇到实际情况是需要考虑这个因素的。当然外边距合并其实也有存在的意义，如下图： <img src="/images/hexo_post_19-300x205.png" alt=""> 关于margin合并，其实还有很多不为人知的知识和问题，稍晚一些我会再专门针对margin合并写一篇文章（其实应该不算是“写”，因为是对张鑫旭的讲解的总结），感兴趣的童鞋可以直接搜索“margin合并”查看</p>
 <h1 id="box-sizing"><a href="#box-sizing" class="headerlink" title="box-sizing"></a>box-sizing</h1><p>box-sizing属性是用户界面属性里的一种（CSS3），之所以介绍它，是因为这个属性跟盒子模型有关，而且在css reset中有可能会用到它。 <code>box-sizing : content-box|border-box|inherit;</code> (1) <strong>content-box</strong> ,默认值，可以使设置的宽度和高度值应用到元素的内容框。盒子的width只包含内容。</p>
 <p>即总宽度=margin+border+padding+width</p>
 <p>(2) <strong>border-box</strong> , 设置的width值其实是除margin外的border+padding+element的总宽度。盒子的width包含border+padding+内容</p>
 <p>即总宽度=margin+width</p>
-<p>(3) <strong>inherit</strong> , 规定应从父元素继承 box-sizing 属性的值 下面两张图形象的展示了box-sizing为content-box和border-box时的区别： （1）标准的盒子模型（content-box）： <img src="https://merrier.wang/wp-content/uploads/2017/04/621103-20160102222328385-1602314537-278x300.png" alt=""> （2）IE盒子模型（border-box）： <img src="https://merrier.wang/wp-content/uploads/2017/04/621103-20160102222330010-698024305-300x290.png" alt=""></p>
+<p>(3) <strong>inherit</strong> , 规定应从父元素继承 box-sizing 属性的值 下面两张图形象的展示了box-sizing为content-box和border-box时的区别： （1）标准的盒子模型（content-box）： <img src="/images/hexo_post_14.png" alt=""> （2）IE盒子模型（border-box）： <img src="/images/hexo_post_15-300x290.png" alt=""></p>
 <h3 id="关于border-box的使用："><a href="#关于border-box的使用：" class="headerlink" title="关于border-box的使用："></a>关于border-box的使用：</h3><p>1 一个box宽度为100%，又想要两边有内间距，这时候用就比较好 2 全局设置 border-box 很好，首先它符合直觉，其次它可以省去一次又一次的加加减减，它还有一个关键作用——让有边框的盒子正常使用百分比宽度。</p>
 <h1 id="盒子模型应用"><a href="#盒子模型应用" class="headerlink" title="盒子模型应用"></a>盒子模型应用</h1><h2 id="1-用盒子模型画三角形"><a href="#1-用盒子模型画三角形" class="headerlink" title="1.用盒子模型画三角形"></a>1.用盒子模型画三角形</h2><p>html代码：</p>
 <p>&lt;!DOCTYPE html&gt;</p>
 <html><br>  <head><meta name="generator" content="Hexo 3.8.0"><br>    <style><br>        .triangle {<br>            width : 0;<br>            height: 0;<br>            border : 100px solid transparent;<br>            border-top : 100px solid blue; /<em>这里可以设置border的top、bottom、left、right四个方向的三角</em>/<br>        }<br>    </style><br>  </head><br>  <body><br>    <div class="triangle"></div><br>  </body><br></html>
 
-<p>页面显示结果为： <img src="https://merrier.wang/wp-content/uploads/2017/04/993105-20160722183120076-268805707.png" alt=""></p>
+<p>页面显示结果为： <img src="/images/hexo_post_20.png" alt=""></p>
 <h1 id="盒子模型产生的问题"><a href="#盒子模型产生的问题" class="headerlink" title="盒子模型产生的问题"></a>盒子模型产生的问题</h1><h2 id="1-margin越界"><a href="#1-margin越界" class="headerlink" title="1.margin越界"></a>1.margin越界</h2><p>即第一个子元素的margin-top和最后一个子元素的margin-bottom的越界问题，以第一个子元素的margin-top 为例： 当父元素没有边框border时，设置第一个子元素的margin-top值的时候，会出现margin-top值加在父元素上的现象，解决方法有四个：</p>
 <ol>
 <li>给父元素加边框border （副作用）</li>

@@ -202,7 +202,7 @@
     </div>
     
     <div class="post-body post-content">
-        <h1 id="1-baseline与line-height"><a href="#1-baseline与line-height" class="headerlink" title="1.baseline与line-height"></a>1.baseline与line-height</h1><p>两条baseline之间的距离即为行高(不同的字体所在位置不同,可能偏离基线) <img src="https://merrier.wang/wp-content/uploads/2017/04/baseline与line-height.png" alt=""></p>
+        <h1 id="1-baseline与line-height"><a href="#1-baseline与line-height" class="headerlink" title="1.baseline与line-height"></a>1.baseline与line-height</h1><p>两条baseline之间的距离即为行高(不同的字体所在位置不同,可能偏离基线) <img src="/images/hexo_post_89.png" alt=""></p>
 <h1 id="2-行内框盒子模型"><a href="#2-行内框盒子模型" class="headerlink" title="2.行内框盒子模型"></a>2.行内框盒子模型</h1><p>一共有4种模型：</p>
 <ol>
 <li><strong>内容区域</strong>(content area),是一种围绕文字看不见的盒子.”内容区域”(content area)的大小与font-size的大小相关;</li>
@@ -225,10 +225,10 @@
 <h2 id="-1"><a href="#-1" class="headerlink" title=""></a><length></length></h2><p>使用具体长度值作为行高值,如1.5em;1.5rem;20px;20pt</p>
 <h2 id="-2"><a href="#-2" class="headerlink" title=""></a><percent></percent></h2><p>相对于设置了该line-height属性的元素的font-size大小计算</p>
 <h2 id="inherit"><a href="#inherit" class="headerlink" title="inherit"></a>inherit</h2><p>继承,input框等元素默认行高是normal,使用inherit可以让文本框样式可控性更强</p>
-<h1 id="5-line-height设置为1-5-150-1-5em有何区别"><a href="#5-line-height设置为1-5-150-1-5em有何区别" class="headerlink" title="5.line-height设置为1.5/150%/1.5em有何区别"></a>5.line-height设置为1.5/150%/1.5em有何区别</h1><p>计算上无差别，但是<strong>150%/1.5em是根据父元素的font-size计算的，1.5是根据自身的font-size计算；也就是150%/1.5em是会将行高继承给后代元素的，而1.5只会将比例继承给后代元素，后代元素会根据自己的font-size重新计算行高</strong> <img src="https://merrier.wang/wp-content/uploads/2017/04/应用元素的差别.png" alt=""></p>
+<h1 id="5-line-height设置为1-5-150-1-5em有何区别"><a href="#5-line-height设置为1-5-150-1-5em有何区别" class="headerlink" title="5.line-height设置为1.5/150%/1.5em有何区别"></a>5.line-height设置为1.5/150%/1.5em有何区别</h1><p>计算上无差别，但是<strong>150%/1.5em是根据父元素的font-size计算的，1.5是根据自身的font-size计算；也就是150%/1.5em是会将行高继承给后代元素的，而1.5只会将比例继承给后代元素，后代元素会根据自己的font-size重新计算行高</strong> <img src="/images/hexo_post_83.png" alt=""></p>
 <h1 id="6-body全局数值行高使用经验"><a href="#6-body全局数值行高使用经验" class="headerlink" title="6.body全局数值行高使用经验"></a>6.body全局数值行高使用经验</h1><p>body{<br>  font-size:14px;<br>  line-height:?<br>}</p>
 <p>为了方便心算，所以我们<strong>将行高设置为20px</strong>，此时的line-height为： line-height=20px/14px≈1.4287-&gt;<strong>line-height:1.4286</strong></p>
-<h1 id="7-line-height与图片的表现"><a href="#7-line-height与图片的表现" class="headerlink" title="7.line-height与图片的表现"></a>7.line-height与图片的表现</h1><h2 id="行高不会影响图片实际占据的高度"><a href="#行高不会影响图片实际占据的高度" class="headerlink" title="行高不会影响图片实际占据的高度"></a><strong>行高不会影响图片实际占据的高度</strong></h2><p>图片外面有隐藏的“幽灵”文本节点，所以text-align:center会使图片在p标签中居中 <img src="https://merrier.wang/wp-content/uploads/2017/04/隐匿文本节点.png" alt=""> 内联元素的vertical-align默认为baseline,所以文字的基线与图片的最下方对齐,但由于文字有行高,所以图片下方会有空隙： <img src="https://merrier.wang/wp-content/uploads/2017/04/文字基线与图片最下方对齐.png" alt=""></p>
+<h1 id="7-line-height与图片的表现"><a href="#7-line-height与图片的表现" class="headerlink" title="7.line-height与图片的表现"></a>7.line-height与图片的表现</h1><h2 id="行高不会影响图片实际占据的高度"><a href="#行高不会影响图片实际占据的高度" class="headerlink" title="行高不会影响图片实际占据的高度"></a><strong>行高不会影响图片实际占据的高度</strong></h2><p>图片外面有隐藏的“幽灵”文本节点，所以text-align:center会使图片在p标签中居中 <img src="/images/hexo_post_82.png" alt=""> 内联元素的vertical-align默认为baseline,所以文字的基线与图片的最下方对齐,但由于文字有行高,所以图片下方会有空隙： <img src="/images/hexo_post_76.png" alt=""></p>
 <h2 id="如何消除图片底部间隙"><a href="#如何消除图片底部间隙" class="headerlink" title="如何消除图片底部间隙"></a>如何消除图片底部间隙</h2><h3 id="图片块状化-无基线对齐"><a href="#图片块状化-无基线对齐" class="headerlink" title="图片块状化-无基线对齐"></a><strong>图片块状化-无基线对齐</strong></h3><p>img{display:block;}</p>
 <p>块状化的元素没有vertical-align属性</p>
 <h3 id="图片底线对齐"><a href="#图片底线对齐" class="headerlink" title="图片底线对齐"></a><strong>图片底线对齐</strong></h3><p>img{vertical-align:bottom}</p>

@@ -212,14 +212,14 @@
 <li><code>window.screenTop</code></li>
 <li><code>window.screenLeft</code></li>
 </ul>
-<p><img src="https://merrier.wang/wp-content/uploads/2017/05/1480597-d7979b36ca991d9c.png" alt=""></p>
+<p><img src="/images/hexo_post_31.png" alt=""></p>
 <h1 id="与window相关的宽高"><a href="#与window相关的宽高" class="headerlink" title="与window相关的宽高"></a>与window相关的宽高</h1><ul>
 <li><code>window.innerWidth</code> 内部的宽度</li>
 <li><code>window.innerHeight</code> 内部的高度</li>
 <li><code>window.outWidth</code> 外部的宽度</li>
 <li><code>window.outHeight</code> 外部的高度</li>
 </ul>
-<p><img src="https://merrier.wang/wp-content/uploads/2017/05/1480597-7c90cc88a3355d8e.png" alt=""></p>
+<p><img src="/images/hexo_post_24.png" alt=""></p>
 <h1 id="与document相关的宽高"><a href="#与document相关的宽高" class="headerlink" title="与document相关的宽高"></a>与document相关的宽高</h1><h2 id="与client相关的宽高"><a href="#与client相关的宽高" class="headerlink" title="与client相关的宽高"></a>与client相关的宽高</h2><ul>
 <li><code>document.body.clientWidth</code> 元素宽度（可视内容区+内边距）</li>
 <li><code>document.body.clientHeight</code>元素高度（可视内容区+内边距）</li>
@@ -335,23 +335,23 @@
 <ul>
 <li>scrollWidth = clientWidth = 盒子宽度 + 盒子padding*2</li>
 </ul>
-<p><img src="https://merrier.wang/wp-content/uploads/2017/05/1480597-1370209704289653.png" alt="">有滚动轴时：</p>
+<p><img src="/images/hexo_post_28.png" alt="">有滚动轴时：</p>
 <ul>
 <li>scrollWidth = 实际内容的宽度 + padding*2</li>
 <li>scrollHeight = 实际内容的高度 + padding*2</li>
 </ul>
-<p><img src="https://merrier.wang/wp-content/uploads/2017/05/1480597-f2e4e49734f8ea46.png" alt=""></p>
+<p><img src="/images/hexo_post_32.png" alt=""></p>
 <ul>
 <li><strong>document.body.scrollLeft</strong></li>
 <li><strong>document.body.scrollTop</strong></li>
 </ul>
 <p>与前面不同的是，这对属性是<strong>可读写</strong>的，指的是当元素其中的超出其宽高的时候，元素被卷起来的高度和宽度</p>
 <p>#exp {<br>  width:400px;<br>  height:200px;<br>  padding:20px;<br>  margin:10px;<br>  background:red;<br>  border:20px solid #000;<br>  overflow-y:scroll;<br>}<br>var mydiv = document.getElementById(“exp”);<br>mydiv.scrollTop ;  //默认情况下是0<br>mydiv.scrollLeft ; //默认情况下是0<br>//可以改写它<br>mydiv.scrollTop = 20;<br>console.log(mydiv.scrollTop)</p>
-<p><img src="https://merrier.wang/wp-content/uploads/2017/05/1480597-8a31ecd4fd0a59a9.png" alt=""></p>
+<p><img src="/images/hexo_post_25.png" alt=""></p>
 <h3 id="obj-style-width和obj-style-height"><a href="#obj-style-width和obj-style-height" class="headerlink" title="obj.style.width和obj.style.height"></a><strong>obj.style.width和obj.style.height</strong></h3><p>对于一个<code>DOM</code>元素，它的<code>style</code>属性返回的是一个对象，这个对象的任意一个属性是可读写的，<code>style.width</code>等于<code>css</code>属性中的宽度。<code>style.height</code>等于<code>css</code>属性中的高度</p>
 <h1 id="documentElement和body的关系"><a href="#documentElement和body的关系" class="headerlink" title="documentElement和body的关系"></a>documentElement和body的关系</h1><p>是父子级的关系</p>
 <p>console.log(document); //document<br>console.log(document.documentElement); //html<br>console.log(document.body); //body</p>
-<p><img src="https://merrier.wang/wp-content/uploads/2017/05/1480597-a0840d36969a6ca9.png" alt=""></p>
+<p><img src="/images/hexo_post_29.png" alt=""></p>
 <ul>
 <li>兼容问题推荐使用 获取浏览器窗口可视区域大小</li>
 </ul>
@@ -363,14 +363,14 @@
 <li>pageX和pageY：相对于整个网页左上角（0,0）的坐标</li>
 <li>X和Y：本来是IE属性，相对于用CSS动态定位的最内层包容元素</li>
 </ul>
-<p><img src="https://merrier.wang/wp-content/uploads/2017/05/1480597-8596ee9ee7d11e15.png" alt=""></p>
+<p><img src="/images/hexo_post_27.png" alt=""></p>
 <h1 id="js各种宽高的应用"><a href="#js各种宽高的应用" class="headerlink" title="js各种宽高的应用"></a>js各种宽高的应用</h1><ul>
 <li><a href="http://codepen.io/poetries/pen/RoeJgG" target="_blank" rel="noopener">可视区域加载</a></li>
 <li><a href="http://codepen.io/poetries/pen/WoayJy" target="_blank" rel="noopener">判断网页滚动到顶部或者底部</a></li>
 <li><a href="http://codepen.io/poetries/pen/vyVrvm" target="_blank" rel="noopener">DIV滚动到底部时加载剩余内容</a></li>
 <li><a href="http://codepen.io/poetries/pen/RoeBbL" target="_blank" rel="noopener">计算滚动轴的宽高</a></li>
 </ul>
-<h1 id="js中的宽高属性总结"><a href="#js中的宽高属性总结" class="headerlink" title="js中的宽高属性总结"></a>js中的宽高属性总结</h1><p><img src="https://merrier.wang/wp-content/uploads/2017/05/1480597-41da370c1bd5e927.png" alt=""> <img src="https://merrier.wang/wp-content/uploads/2017/05/1480597-3f7c4f7f4e7f132a.png" alt=""> <img src="https://merrier.wang/wp-content/uploads/2017/05/1480597-b2343bbf8a94bf8e.png" alt=""></p>
+<h1 id="js中的宽高属性总结"><a href="#js中的宽高属性总结" class="headerlink" title="js中的宽高属性总结"></a>js中的宽高属性总结</h1><p><img src="/images/hexo_post_26.png" alt=""> <img src="/images/hexo_post_23.png" alt=""> <img src="/images/hexo_post_30.png" alt=""></p>
 <h5 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h5><p><a href="http://blog.poetries.top/2016/12/13/js-props/" target="_blank" rel="noopener">JavaScript及jQuery中的各种宽高属性图解</a></p>
 
     </div>

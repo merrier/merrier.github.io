@@ -245,7 +245,7 @@
 <li><strong>R</strong>: 保留位。</li>
 <li><strong>Stream Identifier</strong>: 流 ID，当客户端和服务端建立 TCP 链接时，就会先发送一个 Stream ID = 0 的流，用来做些初始化工作。之后客户端和服务端从 1 开始发送请求/响应。</li>
 </ul>
-<p>Frame 由 Frame Header 和 Frame Payload 两部分组成。不论是原来的 HTTP Header 还是 HTTP Body，在 HTTP/2 中，都将这些数据存储到 Frame Payload，组成一个个 Frame，再发送响应/请求。通过 Frame Header 中的 Type 区分这个 Frame 的类型。由此可见语义并没有太大变化，而是数据的格式变成二进制的 Frame。二者的转换和关系如下图: <img src="https://merrier.wang/wp-content/uploads/2017/03/782013352-56fe8890d60ba_articlex-300x158.png" alt=""></p>
+<p>Frame 由 Frame Header 和 Frame Payload 两部分组成。不论是原来的 HTTP Header 还是 HTTP Body，在 HTTP/2 中，都将这些数据存储到 Frame Payload，组成一个个 Frame，再发送响应/请求。通过 Frame Header 中的 Type 区分这个 Frame 的类型。由此可见语义并没有太大变化，而是数据的格式变成二进制的 Frame。二者的转换和关系如下图: <img src="/images/hexo_post_37-300x158.png" alt=""></p>
 <h2 id="9-HTTP-2对web开发的影响"><a href="#9-HTTP-2对web开发的影响" class="headerlink" title="9.HTTP/2对web开发的影响"></a>9.HTTP/2对web开发的影响</h2><p>到目前为止，http2还没被大范围部署使用，我们也无法确定到底会发生什么变化。</p>
 <p>http2减少了网络往返传输的数量，并且用多路复用和快速丢弃不需要的流的办法来完全避免了head of line blocking(线头阻塞)的困扰。它也支持大量并行流，所以即使网站的数据分发在各处也不是问题。合理利用流的优先级，可以让客户端尽可能优先收到更重要的数据。</p>
 <p>所有这些加起来，页面载入时间和站点的响应速度都会更快。简而言之，它们都代表着更好的web体验。</p>

@@ -233,7 +233,7 @@
 <li>Object.is(NaN, NaN)  //true</li>
 </ul>
 <p>所以你可以理解为Object.is()其实是对“===”的修正。“===”和Object.is()介绍完了，下面就着重介绍一下“==”（因为JS中的“==”会将等号两边进行类型转换，所以情况比较复杂）</p>
-<h1 id=""><a href="#" class="headerlink" title="=="></a>==</h1><p>“==”在比较前会将比较的值转换为相同类型，在转换后（等式的一边或两边都可能被转换），最终的比较方式就等同于全等操作符“===”。同时请注意，“===”满足交换律，但是“==”不满足交换律（比如![]和{}） 先来看一张吊炸天的图： <img src="https://merrier.wang/wp-content/uploads/2017/08/20160723214407896651.png" alt=""> <strong>我们接下来的讲解都建立在这张图上面：</strong></p>
+<h1 id=""><a href="#" class="headerlink" title="=="></a>==</h1><p>“==”在比较前会将比较的值转换为相同类型，在转换后（等式的一边或两边都可能被转换），最终的比较方式就等同于全等操作符“===”。同时请注意，“===”满足交换律，但是“==”不满足交换律（比如![]和{}） 先来看一张吊炸天的图： <img src="/images/hexo_post_51.png" alt=""> <strong>我们接下来的讲解都建立在这张图上面：</strong></p>
 <h2 id="有和无"><a href="#有和无" class="headerlink" title="有和无"></a>有和无</h2><p>从这张图我们可以明显的看出，它们被分成了两个阵营：</p>
 <ul>
 <li>String、Number、Boolean和Object（对应左侧）</li>
@@ -290,8 +290,8 @@
 <p>Number(‘’) // 结果+0<br>Number(‘\r\n\t \v\f’) // 结果+0</p>
 <p>到目前为止，我们介绍完了ToPrimitive和ToNumber，所以上面那张图的内容基本上就介绍完了。但是还有个运算符没有讲，就是“!”取非操作，下面就介绍一下这个看似简单的取非操作：</p>
 <h2 id="ToBoolean"><a href="#ToBoolean" class="headerlink" title="ToBoolean"></a>ToBoolean</h2><p>取非其实是执行了ToBoolean运算符之后再取反，ToBoolean运算符根据下表将其参数转换为布尔值类型的值： [table id=34 /]</p>
-<h2 id="没图你说个"><a href="#没图你说个" class="headerlink" title="没图你说个**"></a>没图你说个**</h2><p>相等操作符(==)对于不同类型的值，进行的比较如下图所示 <img src="https://merrier.wang/wp-content/uploads/2017/08/WX20170803-094847.png" alt=""></p>
-<h1 id="万物皆数"><a href="#万物皆数" class="headerlink" title="万物皆数"></a>万物皆数</h1><p>我们再来看上面那张图，里面标有N或P的那几条连线是没有方向的。假如我们在这些线上表上箭头，使得连线从标有N或P的那一端指向另一端，那么就会得到： <img src="https://merrier.wang/wp-content/uploads/2017/08/20160723214407019223.png" alt=""> 聪明的你肯定发现了，在==运算过程中，所有类型的值都有一种向数字类型转化的趋势。毕竟有这样一句名言：</p>
+<h2 id="没图你说个"><a href="#没图你说个" class="headerlink" title="没图你说个**"></a>没图你说个**</h2><p>相等操作符(==)对于不同类型的值，进行的比较如下图所示 <img src="/images/hexo_post_276.png" alt=""></p>
+<h1 id="万物皆数"><a href="#万物皆数" class="headerlink" title="万物皆数"></a>万物皆数</h1><p>我们再来看上面那张图，里面标有N或P的那几条连线是没有方向的。假如我们在这些线上表上箭头，使得连线从标有N或P的那一端指向另一端，那么就会得到： <img src="/images/hexo_post_50.png" alt=""> 聪明的你肯定发现了，在==运算过程中，所有类型的值都有一种向数字类型转化的趋势。毕竟有这样一句名言：</p>
 <blockquote>
 <p>万物皆数</p>
 </blockquote>

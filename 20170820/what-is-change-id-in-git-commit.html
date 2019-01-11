@@ -213,7 +213,7 @@
 <p>git commit –amend</p>
 <p>然后我们可以看到最近一次commit的相关信息，在title下面空出一行后（注意，一定要空出一行，否则git会把其作为title的一部分处理），将 Change-Id: XXXX 复制到Message中。然后就可以push了。你可能会问了，我哪知道Change-Id是什么呢？可以先查看一下之前的commit信息：</p>
 <p>git log</p>
-<p>然后你可能会看到这样一条信息： <img src="https://merrier.wang/wp-content/uploads/2017/08/change-id.png" alt=""> 现在你懂了吧，其实可以看到之前人提交commit信息的Change-Id，我们只需要复制一下（注意“Change-Id:”后面有个空格）然后改一下其中某个字母就可以了（因为Change-Id不允许重复，如果重复了，可以再改一个字母，一般只需要改一个字母就可以了），这时我们就有了一个人工生成的“Change-Id”了。 注意，这种办法只是一种临时解决方案，下次如果你再想commit就需要再复制一个Change-Id，然后–amend修改commit信息，是不是感觉每次这样修改很麻烦？没事，我们有一个永久解决方案：</p>
+<p>然后你可能会看到这样一条信息： <img src="/images/hexo_post_91.png" alt=""> 现在你懂了吧，其实可以看到之前人提交commit信息的Change-Id，我们只需要复制一下（注意“Change-Id:”后面有个空格）然后改一下其中某个字母就可以了（因为Change-Id不允许重复，如果重复了，可以再改一个字母，一般只需要改一个字母就可以了），这时我们就有了一个人工生成的“Change-Id”了。 注意，这种办法只是一种临时解决方案，下次如果你再想commit就需要再复制一个Change-Id，然后–amend修改commit信息，是不是感觉每次这样修改很麻烦？没事，我们有一个永久解决方案：</p>
 <h2 id="自动生成Change-Id"><a href="#自动生成Change-Id" class="headerlink" title="自动生成Change-Id"></a>自动生成Change-Id</h2><p>其实我们可以利用commit-msg这个hook文件自动生成Change-Id，具体做法如下：</p>
 <ul>
 <li>将文章下面的commit-msg hook脚本复制到git项目中.git/hooks下，并命名为“commit-msg”（一般情况下.git/hooks下会包含一个叫“commit-msg.sample”的文件，可以把它删除）</li>
