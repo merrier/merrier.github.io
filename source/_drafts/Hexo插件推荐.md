@@ -22,6 +22,12 @@ github: https://github.com/hexojs/hexo-generator-sitemap
 
 官方出的生成 sitemap 文件的包，生成之后就可以提交给搜索引擎进行检索了，对于 SEO 很有帮助
 
+# hexo-generator-baidu-sitemap
+
+github: https://github.com/coneycode/hexo-generator-baidu-sitemap
+
+生成提交给百度用的 sitemap 文件
+
 # hexo-asset-image
 
 github: https://github.com/CodeFalling/hexo-asset-image
