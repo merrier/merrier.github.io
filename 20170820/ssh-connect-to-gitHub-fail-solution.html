@@ -96,7 +96,7 @@
     <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
     <div class="main-header-box">
         <a class="header-avatar" href="/" title="Merrier">
-            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+            <img src="/images/hexo_others_8.jpeg" alt="logo头像" class="img-responsive center-block">
         </a>
         <div class="branding">
         	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
@@ -212,17 +212,22 @@
     
     <div class="post-body post-content">
         <p>来自于<a href="https://stackoverflow.com/questions/21488137/ssh-connect-to-github-fail" target="_blank" rel="noopener">stackoverflow上的一个问题</a>，有位仁兄在命令行中输入了如下命令：</p>
-<p>ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
 <p>然而报错了：</p>
-<p>ssh: Could not resolve hostname github.com: nodename nor servname provided, or not known</p>
-<p>其实，之前就有人碰到过ssh fail的问题，报错的原因是<strong>DNS服务器设置</strong>的问题，将DNS地址设置为OpenDNS或者Google DNS就可以了：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh: Could not resolve hostname github.com: nodename nor servname provided, or not known</span><br></pre></td></tr></table></figure>
+<p>其实，之前就有人碰到过 ssh fail 的问题，报错的原因是 <strong>DNS 服务器设置</strong>的问题，将 DNS 地址设置为 OpenDNS 或者 Google DNS 就可以了：</p>
 <blockquote>
 <p>OpenDNS 208.67.222.222 208.67.220.220 GoogleDNS 8.8.8.8 8.8.4.4</p>
 </blockquote>
-<p>下面就介绍一下在mac中如何设置DNS（来自文章<a href="http://www.howtogeek.com/howto/38793/how-to-switch-mac-os-x-to-use-opendns-or-google-dns/" target="_blank" rel="noopener">How to Switch Mac OS X to Use OpenDNS or Google DNS</a>）：</p>
-<h2 id="首先，系统偏好设置-网络"><a href="#首先，系统偏好设置-网络" class="headerlink" title="首先，系统偏好设置-网络"></a>首先，系统偏好设置-网络</h2><p><img src="/images/hexo_post_280.png" alt=""></p>
-<h2 id="点击高级选项"><a href="#点击高级选项" class="headerlink" title="点击高级选项"></a>点击高级选项</h2><p><img src="/images/hexo_post_281.png" alt=""></p>
-<h2 id="DNS-添加按钮"><a href="#DNS-添加按钮" class="headerlink" title="DNS-添加按钮"></a>DNS-添加按钮</h2><p><img src="/images/hexo_post_282.png" alt=""> 设置为上面我们提到的OpenDNS或GoogleDNS地址中的一个就可以啦~</p>
+<p>下面就介绍一下在 Mac 中如何设置 DNS（来自文章<a href="http://www.howtogeek.com/howto/38793/how-to-switch-mac-os-x-to-use-opendns-or-google-dns/" target="_blank" rel="noopener">How to Switch Mac OS X to Use OpenDNS or Google DNS</a>）：</p>
+<h2 id="首先，系统偏好设置-网络"><a href="#首先，系统偏好设置-网络" class="headerlink" title="首先，系统偏好设置-网络"></a>首先，系统偏好设置-网络</h2><div align="center"><img src="/images/hexo_post_280.png" alt="" width="400"></div>
+
+<h2 id="点击高级选项"><a href="#点击高级选项" class="headerlink" title="点击高级选项"></a>点击高级选项</h2><div align="center"><img src="/images/hexo_post_281.png" alt="" width="400"></div>
+
+
+<h2 id="DNS-添加按钮"><a href="#DNS-添加按钮" class="headerlink" title="DNS-添加按钮"></a>DNS-添加按钮</h2><div align="center"><img src="/images/hexo_post_282.png" alt="" width="400"></div>
+
+<p>设置为上面我们提到的 OpenDNS 或 GoogleDNS 地址中的一个就可以啦~</p>
 
     </div>
     
@@ -266,7 +271,7 @@
         </a>
     
     
-        <a href="/20170820/several-http-headers-affecting-cache.html" class="next-post btn btn-default" title="影响Cache的几个HTTP头信息">
+        <a href="/20170820/several-HTTP-headers-affecting-cache.html" class="next-post btn btn-default" title="影响Cache的几个HTTP头信息">
             <span class="hidden-lg">下一篇</span>
             <span class="hidden-xs">影响Cache的几个HTTP头信息</span><i class="fa fa-angle-right fa-fw"></i>
         </a>

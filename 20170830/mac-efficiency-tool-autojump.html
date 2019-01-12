@@ -96,7 +96,7 @@
     <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
     <div class="main-header-box">
         <a class="header-avatar" href="/" title="Merrier">
-            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+            <img src="/images/hexo_others_8.jpeg" alt="logo头像" class="img-responsive center-block">
         </a>
         <div class="branding">
         	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
@@ -207,32 +207,40 @@
     </div>
     
     <div class="post-body post-content">
-        <p>首先，这篇文章的封面图是我随便找的，好像是一个游戏的名字。。但是就连<a href="https://github.com/wting/autojump" target="_blank" rel="noopener">autojump的github</a>上面都没有一张图片，所以我也很无奈啊~</p>
-<h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>autojump是干什么的呢？从它的名字能看出来，它的功能类似“<strong>自动跳转</strong>”，比如我们之前曾经访问过一个目录：/Users/frontend/repos/mineProject，现在我们通过简单的一条指令：autojump mine就可以跳转到这个目录（注意：我们在任意位置都可以跳），autojump它自己是这么描述的：</p>
+        <p>首先，这篇文章的封面图是我随便找的，好像是一个游戏的名字。。但是就连 <a href="https://github.com/wting/autojump" target="_blank" rel="noopener">autojump的github</a> 上面都没有一张图片，所以我也很无奈啊~</p>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>autojump 是干什么的呢？从它的名字能看出来，它的功能类似“<strong>自动跳转</strong>”，比如我们之前曾经访问过一个目录：<code>/Users/frontend/repos/mineProject</code>，现在我们通过简单的一条指令：autojump mine 就可以跳转到这个目录（注意：我们在任意位置都可以跳），autojump 它自己是这么描述的：</p>
 <blockquote>
 <p>autojump is a faster way to navigate your filesystem. It works by maintaining a database of the directories you use the most from the command line.</p>
 </blockquote>
-<p>autojump 就是通过记录你在 history 中的行为把你访问过的文件夹路径都 cache 下来，然后当你输入指令时再读取cache文件(<strong>/Users/frontend/Library/autojump/autojump.txt</strong>)，它还有一个快捷方式：j mine，总而言之，这个小工具可以让你游荡于文件夹之间不费吹灰之力！</p>
-<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h3 id="首先，安装homebrew"><a href="#首先，安装homebrew" class="headerlink" title="首先，安装homebrew"></a>首先，安装homebrew</h3><p>homebrew是一个mac上的一个软件包管理器，可以通过如下方式进行安装（粘贴至终端即可）：</p>
-<p>/usr/bin/ruby -e “$(curl -fsSL <a href="https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;" target="_blank" rel="noopener">https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</a></p>
-<p>更多关于homebrew可以查看<a href="https://brew.sh/index_zh-cn.html" target="_blank" rel="noopener">它的官网</a></p>
-<h3 id="然后，安装zsh"><a href="#然后，安装zsh" class="headerlink" title="然后，安装zsh"></a>然后，安装zsh</h3><p>给大家讲个笑话：</p>
+<p>autojump 就是通过记录你在 history 中的行为把你访问过的文件夹路径都 cache 下来，然后当你输入指令时再读取 cache 文件(<strong>/Users/frontend/Library/autojump/autojump.txt</strong>)，它还有一个快捷方式：<code>j mine</code>，总而言之，这个小工具可以让你游荡于文件夹之间不费吹灰之力！</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="首先，安装-homebrew"><a href="#首先，安装-homebrew" class="headerlink" title="首先，安装 homebrew"></a>首先，安装 homebrew</h3><p>homebrew 是 mac 上的一个软件包管理器，可以通过如下方式进行安装（粘贴至终端即可）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></span><br></pre></td></tr></table></figure>
+<p>更多关于 homebrew 的介绍可以查看<a href="https://brew.sh/index_zh-cn.html" target="_blank" rel="noopener">它的官网</a></p>
+<h3 id="然后，安装-zsh"><a href="#然后，安装-zsh" class="headerlink" title="然后，安装 zsh"></a>然后，安装 zsh</h3><p>给大家讲个笑话：</p>
 <blockquote>
-<p>Zsh全称为Z Shell，因为Z是最后一个字母，因此大家称之为——终极Shell。</p>
+<p>Zsh 全称为 Z Shell，因为 Z 是最后一个字母，因此大家称之为——终极 Shell。</p>
 </blockquote>
-<p>我们可以通过brew安装zsh：</p>
-<p>brew install zsh</p>
-<h3 id="安装autojump"><a href="#安装autojump" class="headerlink" title="安装autojump"></a>安装autojump</h3><p>brew install autojump</p>
-<h3 id="配置zshrc"><a href="#配置zshrc" class="headerlink" title="配置zshrc"></a>配置zshrc</h3><p>在~/.zshrc中编辑以下内容：plugins=(autojump)，当然，如果你有其他zsh插件比如git，直接在后面添加即可：plugins=(git autojump)。然后继续在zshrc文件中添加如下内容：</p>
-<p>[[ -s $(brew –prefix)/etc/profile.d/autojump.sh ]] &amp;&amp; . $(brew –prefix)/etc/profile.d/autojump.sh</p>
+<p>我们可以通过 brew 安装 zsh：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install zsh</span><br></pre></td></tr></table></figure>
+<h3 id="安装-autojump"><a href="#安装-autojump" class="headerlink" title="安装 autojump"></a>安装 autojump</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install autojump</span><br></pre></td></tr></table></figure>
+<h3 id="配置-zshrc"><a href="#配置-zshrc" class="headerlink" title="配置 .zshrc"></a>配置 .zshrc</h3><p>在 <code>~/.zshrc</code> 中编辑以下内容：<code>plugins=(autojump)</code>，当然，如果你有其他 zsh 插件比如 git，直接在后面添加即可：<code>plugins=(git autojump)</code>。然后继续在 .zshrc 文件中添加如下内容：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\[\[ -s $(brew --prefix)/etc/profile.d/autojump.sh \]\] &amp;&amp; . $(brew --prefix)/etc/profile.d/autojump.sh</span><br></pre></td></tr></table></figure>
 <p>还剩最后一步，使刚才的更改生效：</p>
-<p>source ~/.zshrc</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.zshrc</span><br></pre></td></tr></table></figure>
 <p>Enjoy coding:)</p>
-<h1 id="其他可能错误"><a href="#其他可能错误" class="headerlink" title="其他可能错误"></a>其他可能错误</h1><h2 id="zshrc-3-command-not-found-M"><a href="#zshrc-3-command-not-found-M" class="headerlink" title=".zshrc:3: command not found: ^M"></a>.zshrc:3: command not found: ^M</h2><p>The temporary solution to that is changing your core.autocrlf git config setting to use input, given that you are on OSX. See <a href="https://github.com/robbyrussell/oh-my-zsh/issues/4402#issuecomment-143976458" target="_blank" rel="noopener">#4402 (comment)</a>.</p>
-<p>cd $ZSH<br>git config core.autocrlf input<br>git rm –cached -r .<br>git reset –hard</p>
-<h2 id="PATH-set-to-RVM-ruby-but-GEM-HOME-and-or-GEM-PATH-not-set"><a href="#PATH-set-to-RVM-ruby-but-GEM-HOME-and-or-GEM-PATH-not-set" class="headerlink" title="PATH set to RVM ruby but GEM_HOME and/or GEM_PATH not set"></a>PATH set to RVM ruby but GEM_HOME and/or GEM_PATH not set</h2><p><a href="https://github.com/rvm/rvm/issues/3212" target="_blank" rel="noopener">PATH set to RVM ruby but GEM_HOME and/or GEM_PATH not set</a> Add RVM set at <code>~/.zshrc</code></p>
-<p>export PATH=”$PATH:$HOME/.rvm/bin” # Add RVM to PATH for scripting</p>
-<h5 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h5><p><a href="http://www.barretlee.com/blog/2015/03/30/autojump-in-mac/" target="_blank" rel="noopener">Mac下的效率工具autojump</a> <a href="http://www.jianshu.com/p/5ced5876cba4" target="_blank" rel="noopener">mac终端快速启动Sublime/WebStrom/VS Code/Atom等编辑器</a> <a href="http://www.jianshu.com/p/0d265d9f914b" target="_blank" rel="noopener">MacOS X 安装 oh-my-zsh autojump</a></p>
+<h2 id="其他可能错误"><a href="#其他可能错误" class="headerlink" title="其他可能错误"></a>其他可能错误</h2><h3 id="zshrc-3-command-not-found-M"><a href="#zshrc-3-command-not-found-M" class="headerlink" title=".zshrc:3: command not found: ^M"></a>.zshrc:3: command not found: ^M</h3><blockquote>
+<p>The temporary solution to that is changing your core.autocrlf git config setting to use input, given that you are on OSX. See <a href="https://github.com/robbyrussell/oh-my-zsh/issues/4402#issuecomment-143976458" target="_blank" rel="noopener">#4402 (comment)</a>.</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="variable">$ZSH</span> </span><br><span class="line">git config core.autocrlf input </span><br><span class="line">git rm --cached -r . </span><br><span class="line">git reset --hard</span><br></pre></td></tr></table></figure>
+<h3 id="PATH-set-to-RVM-ruby-but-GEM-HOME-and-or-GEM-PATH-not-set"><a href="#PATH-set-to-RVM-ruby-but-GEM-HOME-and-or-GEM-PATH-not-set" class="headerlink" title="PATH set to RVM ruby but GEM_HOME and/or GEM_PATH not set"></a>PATH set to RVM ruby but GEM_HOME and/or GEM_PATH not set</h3><blockquote>
+<p><a href="https://github.com/rvm/rvm/issues/3212" target="_blank" rel="noopener">PATH set to RVM ruby but GEM_HOME and/or GEM_PATH not set</a> Add RVM set at <code>~/.zshrc</code>:</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=<span class="string">"<span class="variable">$PATH</span>:<span class="variable">$HOME</span>/.rvm/bin"</span> <span class="comment"># Add RVM to PATH for scripting</span></span><br></pre></td></tr></table></figure>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul>
+<li><a href="http://www.barretlee.com/blog/2015/03/30/autojump-in-mac/" target="_blank" rel="noopener">Mac下的效率工具autojump</a></li>
+<li><a href="http://www.jianshu.com/p/5ced5876cba4" target="_blank" rel="noopener">mac终端快速启动Sublime/WebStrom/VS Code/Atom等编辑器</a></li>
+<li><a href="http://www.jianshu.com/p/0d265d9f914b" target="_blank" rel="noopener">MacOS X 安装 oh-my-zsh autojump</a></li>
+</ul>
 
     </div>
     
@@ -327,7 +335,7 @@
     <div class="widget">
         <h3 class="title">文章目录</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#介绍"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#首先，安装homebrew"><span class="toc-text">首先，安装homebrew</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#然后，安装zsh"><span class="toc-text">然后，安装zsh</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装autojump"><span class="toc-text">安装autojump</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置zshrc"><span class="toc-text">配置zshrc</span></a></li></ol></li></ol><li class="toc-item toc-level-1"><a class="toc-link" href="#其他可能错误"><span class="toc-text">其他可能错误</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#zshrc-3-command-not-found-M"><span class="toc-text">.zshrc:3: command not found: ^M</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PATH-set-to-RVM-ruby-but-GEM-HOME-and-or-GEM-PATH-not-set"><span class="toc-text">PATH set to RVM ruby but GEM_HOME and/or GEM_PATH not set</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#参考链接"><span class="toc-text">参考链接</span></a></li></ol></li></ol></li>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#介绍"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#首先，安装-homebrew"><span class="toc-text">首先，安装 homebrew</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#然后，安装-zsh"><span class="toc-text">然后，安装 zsh</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装-autojump"><span class="toc-text">安装 autojump</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置-zshrc"><span class="toc-text">配置 .zshrc</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他可能错误"><span class="toc-text">其他可能错误</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#zshrc-3-command-not-found-M"><span class="toc-text">.zshrc:3: command not found: ^M</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PATH-set-to-RVM-ruby-but-GEM-HOME-and-or-GEM-PATH-not-set"><span class="toc-text">PATH set to RVM ruby but GEM_HOME and/or GEM_PATH not set</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考文章"><span class="toc-text">参考文章</span></a></li></ol>
         
     </div>
 </aside>
