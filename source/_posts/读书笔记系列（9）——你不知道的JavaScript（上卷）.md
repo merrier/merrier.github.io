@@ -8,7 +8,7 @@ tags:
   - JS
   - 笔记
 date: 2017-10-10 19:42:12
-img: hexo_thumbnail_35.jpg
+img: /images/hexo_thumbnail_35.jpg
 ---
 
 这本书在 github 上很火，而中文译本迟迟没有发行，最近出了中卷，我很早之前就听说了该大作，然而一直没有时间拜读，现在实习告一段落了，终于可以静下心来品味经典了。
@@ -1095,6 +1095,7 @@ a1; // Object {}。
 
 在 ES6 中，你可以使用对象的字面形式(这样就可以使用简洁方法定义)来改写之前繁琐的属性赋值语法(比如 AuthController 的定义)，然后用 Object.setPrototypeOf(..) 来修改它的 \[\[Prototype\]\]:
 
+```javascript
 // 使用更好的对象字面形式语法和简洁方法 
 var AuthController = {
     errors: \[\],
@@ -1109,23 +1110,26 @@ var AuthController = {
 
 // 现在把 AuthController 关联到 LoginController
 Object.setPrototypeOf( AuthController, LoginController );
+```
 
-内省
---
+### 内省
 
 自省就是检查实例的类型。类实例的自省主要目的是通过创建方式来判断对象的结构和功能。
 
-在js中，instanceof 语法会产生语义困惑而且非常不直观。如果你想检查对象 a1 和某个对象的关系，那必须使用另一个引用该对象的函数才行——你不能直接判断两个对象是否关联。
+在 js 中，instanceof 语法会产生语义困惑而且非常不直观。如果你想检查对象 a1 和某个对象的关系，那必须使用另一个引用该对象的函数才行——你不能直接判断两个对象是否关联。
 
+```javascript
 function Foo() { /* .. */ }
 function Bar() { /* .. */ }
 Bar.prototype = Object.create( Foo.prototype ); // 让Foo和Bar互相关联
 
 Bar.prototype instanceof Foo; // true
 Bar instanceof Foo; // false
+```
 
 然而，又回到上面的那个问题，**如果通过对象关联的方式构造对象，内省的方法将更加简洁并且清晰**：
 
+```javascript
 var Foo = { /* .. */ };
 var Bar = Object.create( Foo ); // 让Foo和Bar互相关联
 var b1 = Object.create( Bar ); // 让b1关联到Foo和Bar
@@ -1136,28 +1140,26 @@ Object.getPrototypeOf( Bar ) === Foo; // true
 Foo.isPrototypeOf( b1 ); // true 
 Bar.isPrototypeOf( b1 ); // true 
 Object.getPrototypeOf( b1 ) === Bar; // true
+```
 
-附录
-==
+## 附录
 
-ES6中的Class
-----------
+### ES6中的Class
 
-除了语法更好看之外，ES6还解决了什么问题？
+除了语法更好看之外，ES6 还解决了什么问题？
 
-1.  （基本上）不再引用杂乱的.prototype了；
-2.  不再需要通过Object.create(..)来替换 .prototype 对象，也不需要设置 .\_\_proto\_\_ 或者 Object.setPrototypeOf(..)；
-3.  可以通过super(..)来实现相对多态，这样任何方法都可以引用原型链上层的同名方法；
-4.  class字面语法不能声明属性(只能声明方法)。看起来这是一种限制，但是它会排除掉许多不好的情况，可以帮助你避免犯错；
-5.  可以通过extends很自然地扩展对象(子)类型，甚至是内置的对象(子)类型，比如 Array 或 RegExp。
-    
+1. （基本上）不再引用杂乱的 .prototype 了；
+2. 不再需要通过 Object.create(..) 来替换 .prototype 对象，也不需要设置 .\_\_proto\_\_ 或者 Object.setPrototypeOf(..)；
+3. 可以通过 super(..) 来实现相对多态，这样任何方法都可以引用原型链上层的同名方法；
+4. class 字面语法不能声明属性(只能声明方法)。看起来这是一种限制，但是它会排除掉许多不好的情况，可以帮助你避免犯错；
+5. 可以通过 extends 很自然地扩展对象(子)类型，甚至是内置的对象(子)类型，比如 Array 或 RegExp。
 
-然而，class 语法并没有解决所有的问题，你可能会认为 ES6 的 class 语法是向 JavaScript 中引入了一种新的“类”机制，其实不是这样。class 基本上只是现有 \[\[Prototype\]\](委托!)机制的一种语法糖。 也就是说，class 并不会像传统面向类的语言一样在声明时静态复制所有行为。如果你 (有意或无意)修改或者替换了父“类”中的一个方法，那子“类”和所有实例都会受到影响，因为**它们在定义时并没有进行复制，只是使用基于 \[\[Prototype\]\] 的实时委托。** 除此之外，class还有以下问题：
+然而，class 语法并没有解决所有的问题，你可能会认为 ES6 的 class 语法是向 JavaScript 中引入了一种新的“类”机制，其实不是这样。class 基本上只是现有 \[\[Prototype\]\](委托!)机制的一种语法糖。 也就是说，class 并不会像传统面向类的语言一样在声明时静态复制所有行为。如果你 (有意或无意)修改或者替换了父“类”中的一个方法，那子“类”和所有实例都会受到影响，因为**它们在定义时并没有进行复制，只是使用基于 \[\[Prototype\]\] 的实时委托。** 除此之外，class 还有以下问题：
 
-1.  **class语法无法定义类成员属性（只能定义方法）；**
-2.  class语法仍然面临**意外屏蔽**的问题；
-3.  super并不是动态绑定this的，它会在声明时“静态”绑定。（可以通过toMethod(...)手动修改super绑定）
+1. **class 语法无法定义类成员属性（只能定义方法）；**
+2. class 语法仍然面临**意外屏蔽**的问题；
+3. super 并不是动态绑定this的，它会在声明时“静态”绑定。（可以通过 toMethod(...) 手动修改 super 绑定）
 
-综上，class最大的问题在于，像传统的类一样)它的语法有时会让你认为，定义了一个 class 后，它就变成了一个(未来会被实例化的)东西的静态定义。**你会彻底忽略 C 是一个对象，是一个具体的可以直接交互的东西。**
+综上，class 最大的问题在于，像传统的类一样)它的语法有时会让你认为，定义了一个 class 后，它就变成了一个(未来会被实例化的)东西的静态定义。**你会彻底忽略 C 是一个对象，是一个具体的可以直接交互的东西。**
 
 ES6 的 class 想伪装成一种很好的语法问题的解决方案，但是实际上却让问题更难解决而且让 JavaScript 更加难以理解。
