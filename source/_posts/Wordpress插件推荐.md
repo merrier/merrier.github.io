@@ -1,13 +1,12 @@
 ---
 title: Wordpress插件推荐
 urlname: wordpress-plugin-recommendation
-tags:
-  - wordpress
-  - 推荐
 id: 35
 categories:
   - wordpress
-  - 总结
+tags:
+  - wordpress
+  - 推荐
 date: 2017-03-14 20:54:24
 ---
 

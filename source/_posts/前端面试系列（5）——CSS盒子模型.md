@@ -1,13 +1,12 @@
 ---
 title: 前端面试系列（5）——CSS盒子模型
 urlname: the-css-box-model
-tags:
-  - CSS
-  - 前端面试
 id: 398
 categories:
   - CSS
-  - 面试
+tags:
+  - CSS
+  - 前端面试
 date: 2017-04-03 20:20:11
 ---
 

@@ -1,11 +1,11 @@
 ---
 title: Git撤销操作
 urlname: revocation-operation-in-git
-tags:
-  - git
 id: 912
 categories:
   - Git
+tags:
+  - git
 date: 2017-06-29 10:46:13
 ---
 

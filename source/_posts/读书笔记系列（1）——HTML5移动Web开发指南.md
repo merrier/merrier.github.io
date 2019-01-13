@@ -1,11 +1,10 @@
 ---
 title: 读书笔记系列（1）——HTML5移动Web开发指南
 urlname: html5-mobile-web-development-guide
-tags:
-  - HTML
-  - 笔记
 id: 497
 categories:
+  - HTML
+tags:
   - HTML
   - 笔记
 date: 2017-04-06 15:41:14

@@ -1,11 +1,10 @@
 ---
 title: Zepto设计和源码分析
 urlname: zepto-design-and-source-code-analysis
-tags:
-  - JS
-  - 慕课网
 id: 868
 categories:
+  - 慕课网
+tags:
   - JS
   - 慕课网
 date: 2017-05-22 09:50:23

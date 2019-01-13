@@ -1,11 +1,10 @@
 ---
 title: 读书笔记系列（3）——精彩绝伦的CSS
 urlname: excellent-css
-tags:
-  - CSS
-  - 笔记
 id: 503
 categories:
+  - CSS
+tags:
   - CSS
   - 笔记
 date: 2017-04-06 16:13:16

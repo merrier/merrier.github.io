@@ -1,14 +1,13 @@
 ---
 title: 函数声明VS函数表达式
 urlname: function-declaration-vs-function-expression
+id: 1049
+categories:
+  - JS
 tags:
   - JS
   - 函数
   - 前端面试
-id: 1049
-categories:
-  - JS
-  - 面试
 date: 2017-08-02 15:16:07
 ---
 

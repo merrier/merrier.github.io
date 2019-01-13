@@ -1,13 +1,12 @@
 ---
 title: 关于CSS Reset那些事
 urlname: things-about-css-reset
+id: 1025
+categories:
+  - 总结
 tags:
   - CSS
   - 性能优化
-id: 1025
-categories:
-  - CSS
-  - 总结
 date: 2017-07-30 20:47:49
 ---
 

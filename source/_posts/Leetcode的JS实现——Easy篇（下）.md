@@ -1,13 +1,12 @@
 ---
 title: Leetcode的JS实现——Easy篇（下）
 urlname: js-implementation-of-leetcode-easy-part2
+id: 317
+categories:
+  - 算法
 tags:
   - JS
   - leetcode
-  - 算法
-id: 317
-categories:
-  - 总结
   - 算法
 date: 2017-03-26 12:40:52
 ---

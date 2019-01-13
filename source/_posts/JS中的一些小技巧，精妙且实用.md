@@ -1,12 +1,12 @@
 ---
 title: JS中的一些小技巧，精妙且实用
 urlname: some-tips-in-js
-tags:
-  - JS
-  - 技巧
 id: 623
 categories:
   - JS
+tags:
+  - JS
+  - 技巧
 date: 2017-04-13 09:33:29
 ---
 

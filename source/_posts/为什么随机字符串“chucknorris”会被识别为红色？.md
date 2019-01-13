@@ -1,15 +1,13 @@
 ---
 title: 为什么随机字符串“chucknorris”会被识别为红色？
 urlname: why-is-the-random-string-chucknorris-recognized-as-red
+id: 1039
+categories:
+  - stackoverflow
 tags:
   - CSS
   - stackoverflow
   - 计算机基础
-id: 1039
-categories:
-  - CSS
-  - HTML
-  - stackoverflow
 date: 2017-08-01 18:35:30
 ---
 

@@ -1,13 +1,12 @@
 ---
 title: JS实现复杂数据结构
 urlname: complex-data-structure-implemented-by-js
-tags:
-  - JS
-  - 数据结构
-  - 计算机基础
 id: 319
 categories:
   - JS
+tags:
+  - JS
+  - 数据结构
   - 计算机基础
 date: 2017-03-26 12:51:34
 ---

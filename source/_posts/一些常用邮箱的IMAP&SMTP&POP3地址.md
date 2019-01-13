@@ -1,12 +1,12 @@
 ---
 title: 一些常用邮箱的IMAP&SMTP&POP3地址
 urlname: imap-smtp-pop3-addresses-for-some-common-mailboxes
-tags:
-  - SMTP
-  - 邮箱地址
 id: 662
 categories:
   - 总结
+tags:
+  - SMTP
+  - 邮箱地址
 date: 2017-04-20 10:05:49
 ---
 

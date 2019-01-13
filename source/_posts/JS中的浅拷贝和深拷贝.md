@@ -1,12 +1,10 @@
 ---
 title: JS中的浅拷贝和深拷贝
 urlname: shallow-and-deep-copies-in-js
-tags:
-  - JS
-  - 数据结构
-  - 计算机基础
 id: 1023
 categories:
+  - JS
+tags:
   - JS
   - 数据结构
   - 计算机基础

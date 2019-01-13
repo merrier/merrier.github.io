@@ -1,12 +1,10 @@
 ---
 title: JS中的传值与传址
 urlname: passing-value-and-address-in-js
-tags:
-  - JS
-  - 计算机基础
-  - 面试
 id: 774
 categories:
+  - JS
+tags:
   - JS
   - 计算机基础
   - 面试

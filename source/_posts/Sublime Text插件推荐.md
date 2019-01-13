@@ -1,12 +1,12 @@
 ---
 title: Sublime Text插件推荐
 urlname: sublime-text-plugin-recommendation
+id: 844
+categories:
+  - 工具
 tags:
   - sublime
   - 推荐
-id: 844
-categories:
-  - 总结
 date: 2017-05-14 20:44:19
 ---
 

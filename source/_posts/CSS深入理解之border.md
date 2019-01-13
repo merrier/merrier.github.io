@@ -1,10 +1,10 @@
 ---
 title: CSS深入理解之border
 urlname: border-of-css-in-depth-understanding
-tags:
-  - CSS
 id: 758
 categories:
+  - CSS
+tags:
   - CSS
 date: 2017-04-23 22:39:19
 ---

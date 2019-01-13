@@ -1,11 +1,10 @@
 ---
 title: 浏览器中输入url后发生了什么
 urlname: what-happened-after-url-was-entered-into-the-browser
-tags:
-  - HTTP
-  - 前端
 id: 767
 categories:
+  - 前端
+tags:
   - HTTP
   - 前端
 date: 2017-04-24 21:18:56

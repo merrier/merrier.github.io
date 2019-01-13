@@ -1,10 +1,10 @@
 ---
 title: CSS书写规范
 urlname: css-writing-specification
-tags:
-  - CSS
 id: 414
 categories:
+  - CSS
+tags:
   - CSS
 date: 2017-04-04 21:12:45
 ---

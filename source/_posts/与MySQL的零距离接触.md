@@ -1,14 +1,12 @@
 ---
 title: 与MySQL的零距离接触
 urlname: zero-distance-contact-with-mysql
+id: 810
+categories:
+  - 慕课网
 tags:
   - mysql
   - 数据库
-id: 810
-categories:
-  - MySQL
-  - 慕课网
-  - 数据结构
 date: 2017-05-09 10:02:40
 ---
 

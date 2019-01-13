@@ -1,12 +1,10 @@
 ---
 title: 读书笔记系列（7）——JavaScript半知半解
 urlname: javaScript-semi-knowledgeable-and-semi-knowledgeable
-tags:
-  - JS
-  - 笔记
-url: 782.html
 id: 782
 categories:
+  - JS
+tags:
   - JS
   - 笔记
 date: 2017-04-25 23:33:09

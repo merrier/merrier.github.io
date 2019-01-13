@@ -1,14 +1,12 @@
 ---
 title: 前端面试系列（3）——HTTP2新特性
 urlname: new-features-of-http2
-tags:
-  - HTTP
-  - 前端面试
-  - 面试
 id: 277
 categories:
   - HTTP
-  - 前端
+tags:
+  - HTTP
+  - 前端面试
   - 面试
 date: 2017-03-19 21:18:57
 ---

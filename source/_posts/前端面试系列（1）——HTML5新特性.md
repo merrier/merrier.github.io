@@ -1,14 +1,13 @@
 ---
 title: 前端面试系列（1）——HTML5新特性
 urlname: new-features-of-html5
+id: 228
+categories:
+  - HTML
 tags:
   - HTML
   - 前端面试
   - 面试
-id: 228
-categories:
-  - HTML
-  - 前端
 date: 2017-03-18 18:32:25
 ---
 

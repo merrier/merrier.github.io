@@ -1,10 +1,10 @@
 ---
 title: CSS深入理解之padding
 urlname: padding-of-css-in-depth-understanding
-tags:
-  - CSS
 id: 688
 categories:
+  - CSS
+tags:
   - CSS
 date: 2017-04-20 20:30:24
 ---

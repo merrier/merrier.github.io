@@ -1,12 +1,11 @@
 ---
 title: PS常用颜色及代码
 urlname: ps-common-colors
-tags:
-  - PS
 id: 21
 categories:
   - PS
-  - 总结
+tags:
+  - PS
 date: 2017-03-14 16:25:38
 ---
 

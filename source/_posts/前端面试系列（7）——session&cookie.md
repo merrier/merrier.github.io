@@ -1,12 +1,11 @@
 ---
 title: 前端面试系列（7）——session&cookie
 urlname: session-and-cookie
-tags:
-  - 前端面试
 id: 434
 categories:
-  - 前端
-  - 面试
+  - HTTP
+tags:
+  - 前端面试
 date: 2017-04-04 22:05:42
 ---
 

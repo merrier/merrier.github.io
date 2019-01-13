@@ -1,13 +1,12 @@
 ---
 title: 前端面试系列（6）——HTTP请求的状态码
 urlname: status-code-of-http-request
-tags:
-  - HTTP
-  - 前端面试
 id: 428
 categories:
   - HTTP
-  - 面试
+tags:
+  - HTTP
+  - 前端面试
 date: 2017-04-04 21:38:16
 ---
 

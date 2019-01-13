@@ -1,13 +1,12 @@
 ---
 title: 前端面试系列（2）——CSS3新特性
 urlname: new-features-of-css3
-tags:
-  - CSS
-  - 前端面试
 id: 233
 categories:
   - CSS
-  - 前端
+tags:
+  - CSS
+  - 前端面试
 date: 2017-03-18 18:37:57
 ---
 

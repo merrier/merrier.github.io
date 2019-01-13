@@ -1,14 +1,12 @@
 ---
 title: JS中数组方法总结
 urlname: summary-of-array-method-in-js
-tags:
-  - JS
-  - 数组
 id: 296
 categories:
   - JS
-  - 前端
-  - 总结
+tags:
+  - JS
+  - 数组
 date: 2017-03-22 22:12:57
 ---
 

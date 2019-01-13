@@ -1,13 +1,12 @@
 ---
 title: 前端面试系列（9）——JS实现继承
 urlname: js-implements-inheritance
-tags:
-  - JS
-  - 前端面试
 id: 486
 categories:
   - JS
-  - 面试
+tags:
+  - JS
+  - 前端面试
 date: 2017-04-05 21:11:07
 ---
 

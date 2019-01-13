@@ -1,15 +1,13 @@
 ---
 title: JS几种数组遍历方式
 urlname: several-array-traversal-modes-of-js
+id: 224
+categories:
+  - JS
 tags:
   - JS
   - 数组
   - 数组遍历
-id: 224
-categories:
-  - JS
-  - 前端
-  - 面试
 date: 2017-03-18 16:50:29
 ---
 

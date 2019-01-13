@@ -1,10 +1,10 @@
 ---
 title: 纯CSS实现自适应正方形
 urlname: realization-of-adaptive-square-in-pure-css
-tags:
-  - CSS
 id: 849
 categories:
+  - CSS
+tags:
   - CSS
 date: 2017-05-16 17:00:27
 ---

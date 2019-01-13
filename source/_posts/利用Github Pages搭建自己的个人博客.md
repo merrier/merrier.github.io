@@ -1,11 +1,11 @@
 ---
 title: 利用Github Pages搭建自己的个人博客
 urlname: build-your-own-personal-blog-with-github-pages
-tags:
-  - Github
 id: 930
 categories:
   - Git
+tags:
+  - Github
 date: 2017-07-04 12:03:49
 ---
 

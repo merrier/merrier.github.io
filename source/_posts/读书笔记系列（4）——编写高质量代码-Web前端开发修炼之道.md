@@ -1,11 +1,10 @@
 ---
 title: 读书笔记系列（4）——编写高质量代码-Web前端开发修炼之道
 urlname: the-way-to-practice-web-front-end-development
-tags:
-  - 笔记
 id: 509
 categories:
   - 前端
+tags:
   - 笔记
 date: 2017-04-06 16:42:13
 ---

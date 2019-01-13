@@ -1,11 +1,11 @@
 ---
 title: Git工作区、暂存区和历史记录区
 urlname: workspace-temporary-zone-and-history-zone-in-git
-tags:
-  - git
 id: 908
 categories:
   - Git
+tags:
+  - git
 date: 2017-06-28 20:13:42
 ---
 

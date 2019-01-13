@@ -1,10 +1,10 @@
 ---
 title: JS中的apply、call和bind
 urlname: apply-call-bind-in-js
-tags:
-  - JS
 id: 1077
 categories:
+  - JS
+tags:
   - JS
 date: 2017-08-03 16:30:08
 ---

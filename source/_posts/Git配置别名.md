@@ -1,11 +1,11 @@
 ---
 title: Git配置别名
 urlname: git-configuration-alias
-tags:
-  - git
 id: 891
 categories:
   - Git
+tags:
+  - git
 date: 2017-06-28 11:04:28
 ---
 

@@ -1,13 +1,12 @@
 ---
 title: 前端面试系列（4）——CSS选择器
 urlname: css-selector
-tags:
-  - CSS
-  - 前端面试
 id: 381
 categories:
   - CSS
-  - 面试
+tags:
+  - CSS
+  - 前端面试
 date: 2017-04-03 11:43:13
 ---
 

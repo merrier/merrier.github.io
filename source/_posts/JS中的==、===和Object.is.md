@@ -1,16 +1,14 @@
 ---
 title: JS中的==、===和Object.is
 urlname: equal-symbol-in-js
+id: 1053
+categories:
+  - JS
 tags:
   - JS
   - 前端面试
   - 计算机基础
   - 运算符
-id: 1053
-categories:
-  - JS
-  - 计算机基础
-  - 面试
 date: 2017-08-02 20:07:47
 ---
 

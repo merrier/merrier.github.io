@@ -1,11 +1,10 @@
 ---
 title: 读书笔记系列（8）——CSS Secrets
 urlname: css-secrets
-tags:
-  - CSS
-  - 笔记
 id: 955
 categories:
+  - CSS
+tags:
   - CSS
   - 笔记
 date: 2017-07-06 18:21:45

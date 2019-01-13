@@ -1,13 +1,12 @@
 ---
 title: 前端面试系列（8）——TCP的三次握手与四次分手
 urlname: tce-three-handshakes-and-four-breakups
-tags:
-  - 前端面试
-  - 计算机基础
 id: 471
 categories:
   - 计算机基础
-  - 面试
+tags:
+  - 前端面试
+  - 计算机基础
 date: 2017-04-05 16:07:21
 ---
 

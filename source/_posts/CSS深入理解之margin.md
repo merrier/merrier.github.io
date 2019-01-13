@@ -1,10 +1,10 @@
 ---
 title: CSS深入理解之margin
 urlname: margin-of-css-in-depth-understanding
-tags:
-  - CSS
 id: 700
 categories:
+  - CSS
+tags:
   - CSS
 date: 2017-04-20 22:58:44
 ---

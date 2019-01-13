@@ -1,13 +1,12 @@
 ---
 title: 前端面试系列（11）——window.onload和document.ready的区别
 urlname: the-difference-between-window.onload-and-document.read
+id: 600
+categories:
+  - JS
 tags:
   - JS
   - 前端面试
-id: 600
-categories:
-  - 前端
-  - 面试
 date: 2017-04-12 17:14:30
 ---
 

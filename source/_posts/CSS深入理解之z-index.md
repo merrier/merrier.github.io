@@ -1,10 +1,10 @@
 ---
 title: CSS深入理解之z-index
 urlname: z-index-of-css-in-depth-understanding
-tags:
-  - CSS
 id: 715
 categories:
+  - CSS
+tags:
   - CSS
 date: 2017-04-20 23:38:25
 ---

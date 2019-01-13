@@ -1,12 +1,11 @@
 ---
 title: 记录下我的Leetcode坑爹之路——Easy篇
 urlname: my-leetcode-easy
-tags:
-  - leetcode
-  - 算法
 id: 190
 categories:
-  - 总结
+  - 算法
+tags:
+  - leetcode
   - 算法
 date: 2017-03-17 15:33:45
 ---

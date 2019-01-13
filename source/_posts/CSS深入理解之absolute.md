@@ -1,10 +1,11 @@
 ---
 title: CSS深入理解之absolute
 urlname: abslute-of-css-in-depth-understanding
-tags:
-  - CSS
+
 id: 744
 categories:
+  - CSS
+tags:
   - CSS
 date: 2017-04-21 21:11:24
 ---

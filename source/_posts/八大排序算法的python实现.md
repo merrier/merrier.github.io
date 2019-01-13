@@ -1,13 +1,12 @@
 ---
 title: 八大排序算法的python实现
 urlname: python-implementation-of-eight-sorting-algorithms
+id: 239
+categories:
+  - 算法
 tags:
   - python
   - 排序
-  - 算法
-id: 239
-categories:
-  - python
   - 算法
 date: 2017-03-18 22:17:57
 ---

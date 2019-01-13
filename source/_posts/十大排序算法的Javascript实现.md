@@ -1,15 +1,12 @@
 ---
 title: 十大排序算法的Javascript实现
 urlname: javascript-implementation-of-ten-sorting-algorithms
+id: 244
+categories:
+  - 算法
 tags:
   - JS
   - 排序
-  - 算法
-id: 244
-categories:
-  - JS
-  - 前端
-  - 总结
   - 算法
 date: 2017-03-18 23:13:55
 ---

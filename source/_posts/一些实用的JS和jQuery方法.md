@@ -1,15 +1,12 @@
 ---
 title: 一些实用的JS和jQuery方法
 urlname: some-practical-js-and-jquery-methods
+id: 114
+categories:
+  - JS
 tags:
   - jQuery
   - JS
-id: 114
-categories:
-  - jQuery
-  - JS
-  - 前端
-  - 总结
 date: 2017-03-15 15:56:27
 ---
 

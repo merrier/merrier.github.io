@@ -1,13 +1,12 @@
 ---
 title: 理解JS中的内存分配
 urlname: understanding-memory-allocation-in-js
-tags:
-  - JS
-  - 内存
-  - 数据结构
 id: 1071
 categories:
   - JS
+tags:
+  - JS
+  - 内存
   - 数据结构
 date: 2017-08-03 10:06:42
 ---

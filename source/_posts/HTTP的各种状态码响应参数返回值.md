@@ -1,13 +1,11 @@
 ---
 title: HTTP的各种状态码响应参数返回值
 urlname: various-status-codes-of-http
-tags:
-  - HTTP
 id: 112
 categories:
   - HTTP
-  - 前端
-  - 总结
+tags:
+  - HTTP
 date: 2017-03-15 15:31:54
 ---
 

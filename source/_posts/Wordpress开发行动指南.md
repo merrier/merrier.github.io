@@ -1,13 +1,12 @@
 ---
 title: Wordpress开发行动指南
 urlname: wordpress-development-action-guide
-tags:
-  - wordpress
-  - 指南
 id: 180
 categories:
   - wordpress
-  - 总结
+tags:
+  - wordpress
+  - 指南
 date: 2017-03-15 23:26:18
 ---
 

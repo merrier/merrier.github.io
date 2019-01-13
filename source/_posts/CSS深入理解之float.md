@@ -1,10 +1,10 @@
 ---
 title: CSS深入理解之float
 urlname: float-of-css-in-depth-understanding
-tags:
-  - CSS
 id: 752
 categories:
+  - CSS
+tags:
   - CSS
 date: 2017-04-21 21:41:31
 ---

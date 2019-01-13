@@ -1,12 +1,12 @@
 ---
 title: 一篇绝对能看懂的Git入门教程
 urlname: an-absolutely-understandable-introduction-to-Git
-tags:
-  - git
-  - 教程
 id: 637
 categories:
   - Git
+tags:
+  - git
+  - 教程
 date: 2017-04-17 21:35:16
 ---
 
