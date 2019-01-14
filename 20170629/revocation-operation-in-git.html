@@ -203,62 +203,65 @@
     </div>
     
     <div class="post-body post-content">
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Git中提供了几个相关的撤销操作的命令，如clean、checkout、reset和revert；在看这篇文章之前，我希望你能够浏览一下我的另一篇文章：<a href="https://merrier.wang/?p=908">Git工作区、暂存区和历史记录区</a>，看完之后理解这篇文章会更简单一些</p>
-<h1 id="git-clean"><a href="#git-clean" class="headerlink" title="git clean"></a>git clean</h1><p>git clean 命令用来从你的工作目录中删除所有没有tracked过的文件</p>
-<h2 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h2><p>git clean -n</p>
-<p>是一次clean的演习, 告诉你哪些文件会被删除. 记住他不会真正的删除文件, 只是一个提醒.</p>
-<p>git clean -f</p>
-<p>删除当前目录下所有没有track过的文件. 他不会删除.gitignore文件里面指定的文件夹和文件, 不管这些文件有没有被track过.</p>
-<p>“ &gt;git clean -f <path></path></p>
-<p>删除指定路径下的没有被track过的文件.</p>
-<p>git clean -df</p>
-<p>删除当前目录下没有被track过的文件和文件夹.</p>
-<p>git clean -xf</p>
-<p>删除当前目录下所有没有track过的文件. 不管他是否是.gitignore文件里面指定的文件夹和文件.</p>
-<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><h3 id="假如你要删除所有工作目录下面的修改，包括新添加的文件："><a href="#假如你要删除所有工作目录下面的修改，包括新添加的文件：" class="headerlink" title="假如你要删除所有工作目录下面的修改，包括新添加的文件："></a>假如你要删除所有工作目录下面的修改，包括新添加的文件：</h3><p>git reset –hard<br>git clean -df</p>
-<p>运行后, 工作目录和缓存区回到最近一次commit时候一摸一样的状态, git status会告诉你这是一个干净的工作目录, 又是一个新的开始了.</p>
-<h1 id="git-checkout"><a href="#git-checkout" class="headerlink" title="git checkout"></a>git checkout</h1><p>git checkout 命令用来丢弃本地修改</p>
-<h2 id="参数说明-1"><a href="#参数说明-1" class="headerlink" title="参数说明"></a>参数说明</h2><p>git checkout – files</p>
+        <p>Git中提供了几个相关的撤销操作的命令，如 clean、checkout、reset和revert；在看这篇文章之前，我希望你能够浏览一下我的另一篇文章：<a href="/daizhengli/123.html">Git工作区、暂存区和历史记录区</a>，看完之后理解这篇文章会更简单一些</p>
+<h2 id="git-clean"><a href="#git-clean" class="headerlink" title="git clean"></a>git clean</h2><p>git clean 命令用来从你的工作目录中删除所有没有 tracked 过的文件</p>
+<h3 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clean -n</span><br></pre></td></tr></table></figure>
+<p>是一次 clean 的演习， 告诉你哪些文件会被删除。 记住他不会真正的删除文件， 只是一个提醒。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clean -f</span><br></pre></td></tr></table></figure>
+<p>删除当前目录下所有没有 track 过的文件。 他不会删除 .gitignore 文件里面指定的文件夹和文件， 不管这些文件有没有被 track 过。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clean -f &lt;path&gt;</span><br></pre></td></tr></table></figure>
+<p>删除指定路径下的没有被 track 过的文件。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clean -df</span><br></pre></td></tr></table></figure>
+<p>删除当前目录下没有被 track 过的文件和文件夹。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clean -xf</span><br></pre></td></tr></table></figure>
+<p>删除当前目录下所有没有 track 过的文件。 不管他是否是 .gitignore 文件里面指定的文件夹和文件。</p>
+<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><h4 id="假如你要删除所有工作目录下面的修改，包括新添加的文件："><a href="#假如你要删除所有工作目录下面的修改，包括新添加的文件：" class="headerlink" title="假如你要删除所有工作目录下面的修改，包括新添加的文件："></a>假如你要删除所有工作目录下面的修改，包括新添加的文件：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard</span><br><span class="line">git clean -df</span><br></pre></td></tr></table></figure>
+<p>运行后，工作目录和缓存区回到最近一次 commit 时候一摸一样的状态， git status 会告诉你这是一个干净的工作目录，又是一个新的开始了。</p>
+<h2 id="git-checkout"><a href="#git-checkout" class="headerlink" title="git checkout"></a>git checkout</h2><p>git checkout 命令用来丢弃本地修改</p>
+<h3 id="参数说明-1"><a href="#参数说明-1" class="headerlink" title="参数说明"></a>参数说明</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -- files</span><br></pre></td></tr></table></figure>
 <p>把文件从暂存区域复制到工作目录，用来丢弃本地修改</p>
-<p>git checkout .</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout .</span><br></pre></td></tr></table></figure>
 <p>会用暂存区全部的文件替换工作区的文件。这个操作很危险，会清除工作区中未添加到暂存区的改动</p>
-<p>git checkout HEAD .</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout HEAD .</span><br></pre></td></tr></table></figure>
 <p>会用 HEAD 指向的 master 分支中的全部文件替换暂存区以及工作区中的文件。<strong>这个命令也是极具危险性的，因为不但会清除工作区中未提交的改动，也会清除暂存区中未提交的改动</strong></p>
-<h2 id="应用场景-1"><a href="#应用场景-1" class="headerlink" title="应用场景"></a>应用场景</h2><p>有时候我们的工作区会增加一些不想要的文件（多数为隐藏文件），比如.idea/、.DS_Store文件，此时我们不想将这些无关紧要的文件添加到暂存区，所以就像将它们从工作区丢弃，此时就可以利用下面的命令将该文件夹丢弃：</p>
-<p>git checkout .idea/</p>
-<p>当然，这种总是会自动生成的文件最好写到.gitignore里，否则每次都要checkout会很烦的</p>
-<h1 id="git-reset"><a href="#git-reset" class="headerlink" title="git reset"></a>git reset</h1><p>git reset 命令撤销对于暂存区/历史记录区的修改，也就是撤销你本地的add，commit操作</p>
-<h2 id="参数说明-2"><a href="#参数说明-2" class="headerlink" title="参数说明"></a>参数说明</h2><p>git reset</p>
+<h3 id="应用场景-1"><a href="#应用场景-1" class="headerlink" title="应用场景"></a>应用场景</h3><p>有时候我们的工作区会增加一些不想要的文件（多数为隐藏文件），比如 .idea/、.DS_Store 文件，此时我们不想将这些无关紧要的文件添加到暂存区，所以就像将它们从工作区丢弃，此时就可以利用下面的命令将该文件夹丢弃：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout .idea/</span><br></pre></td></tr></table></figure>
+<p>当然，这种总是会自动生成的文件最好写到 .gitignore 里，否则每次都要 checkout 会很烦的</p>
+<h2 id="git-reset"><a href="#git-reset" class="headerlink" title="git reset"></a>git reset</h2><p>git reset 命令撤销对于暂存区 / 历史记录区的修改，也就是撤销你本地的 add，commit 操作</p>
+<h3 id="参数说明-2"><a href="#参数说明-2" class="headerlink" title="参数说明"></a>参数说明</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset</span><br></pre></td></tr></table></figure>
 <p>撤销所有暂存区域文件</p>
-<p>git reset – files</p>
-<p>用来撤销最后一次的git add files（因为每git add file一次，暂存区的文件都会被更改一次）</p>
-<p>“ &gt;git reset –mixed <commit id=""></commit></p>
-<p>会保留源码,只是将git commit和index信息回退到了某个版本.（相当于撤销了add和commit操作，提交的修改都回到了工作区）</p>
-<p>“ &gt;git reset –soft <commit id=""></commit></p>
-<p>保留源码,只回退到commit 信息到某个版本.不涉及index的回退,如果还需要提交,直接commit即可.（也就是只撤销了commit，并没有撤销add）</p>
-<p>git reset –hard <commit id=""></commit></p>
-<p><strong>源码也会回退到某个版本</strong>,commit和index 都回回退到某个版本.(注意,这种方式是改变本地代码仓库源码) 当然有人在push代码以后,也可以使用 reset –hard <commit id=""> 回退本地的代码到某个版本之前,但是这样会有一个问题,你线上的代码没有变,线上commit,index都没有变,当你把本地代码修改完提交的时候你会发现全是冲突…..（此时就需要用到下面要介绍的git revert 了）</commit></p>
-<h2 id="应用场景-2"><a href="#应用场景-2" class="headerlink" title="应用场景"></a>应用场景</h2><h3 id="当我们在使用pull的时候，可能会出现冲突，就需要merge，而在冲突状态下，需要解决冲突的文件会从index暂存区打回到工作区，如果我们想放弃index和工作区的改动，就可以执行下面这条命令："><a href="#当我们在使用pull的时候，可能会出现冲突，就需要merge，而在冲突状态下，需要解决冲突的文件会从index暂存区打回到工作区，如果我们想放弃index和工作区的改动，就可以执行下面这条命令：" class="headerlink" title="当我们在使用pull的时候，可能会出现冲突，就需要merge，而在冲突状态下，需要解决冲突的文件会从index暂存区打回到工作区，如果我们想放弃index和工作区的改动，就可以执行下面这条命令："></a>当我们在使用pull的时候，可能会出现冲突，就需要merge，而在冲突状态下，需要解决冲突的文件会从index暂存区打回到工作区，如果我们想放弃index和工作区的改动，就可以执行下面这条命令：</h3><p>git reset –hard HEAD</p>
-<p>上面这条命令用来撤销还没commit 的merge，就放弃了index暂存区和工作区的改动</p>
-<h3 id="当我们在本地进行了add和commit操作之后，发现本地的修改都是错误的，想要回到前一版本，就可以执行下面这条命令："><a href="#当我们在本地进行了add和commit操作之后，发现本地的修改都是错误的，想要回到前一版本，就可以执行下面这条命令：" class="headerlink" title="当我们在本地进行了add和commit操作之后，发现本地的修改都是错误的，想要回到前一版本，就可以执行下面这条命令："></a>当我们在本地进行了add和commit操作之后，发现本地的修改都是错误的，想要回到前一版本，就可以执行下面这条命令：</h3><p>git reset –hard HEAD^</p>
-<p>上面这条命令用来撤销已经commit 的内容（等价于git reset –hard HEAD~1）。原理就是放弃工作区和index的改动，同时HEAD指针指向前一个commit对象</p>
-<h3 id="如果我们已经用add命令将某个文件加入暂存区了，此时想撤销对这个文件的add操作，就可以用下面的命令："><a href="#如果我们已经用add命令将某个文件加入暂存区了，此时想撤销对这个文件的add操作，就可以用下面的命令：" class="headerlink" title="如果我们已经用add命令将某个文件加入暂存区了，此时想撤销对这个文件的add操作，就可以用下面的命令："></a>如果我们已经用add命令将某个文件加入暂存区了，此时想撤销对这个文件的add操作，就可以用下面的命令：</h3><p>“ &gt;git reset HEAD <file></file></p>
-<p>上面这条命令用来撤销对单个文件的git add，执行之后该文件会从暂存区回到工作区中</p>
-<h1 id="git-revert"><a href="#git-revert" class="headerlink" title="git revert"></a>git revert</h1><p>git revert用于反转提交,执行revert命令时要求工作树必须是干净的.git revert用一个新提交来消除一个历史提交所做的任何修改.</p>
-<h2 id="参数说明-3"><a href="#参数说明-3" class="headerlink" title="参数说明"></a>参数说明</h2><p>“ &gt;git revert <commit id=""></commit></p>
-<p>revert 使用,需要先找到你想回滚版本唯一的commit标识代码,可以用 git log进行查看，commit id是一串40位的字符串，通常用前几位即可（6位就差不多保证唯一了）；执行完之后，revert的那一次commit被撤销，原理是git revert用一次逆向的commit“中和”之前的提交，所以此时HEAD继续前进，只是新的commit的内容和要revert的内容正好相反，能够抵消要被revert的内容；这样在日后合并老的branch时，导致这部分改变不会再次出现，就不会出现类似git reset带来的冲突问题</p>
-<h2 id="应用场景-3"><a href="#应用场景-3" class="headerlink" title="应用场景"></a>应用场景</h2><h3 id="对于已经把代码push到线上仓库，但是此时发现push的代码有问题，你想回退本地代码的同时也回退线上代码，回滚到某个指定的版本，使得线上和线下代码保持一致："><a href="#对于已经把代码push到线上仓库，但是此时发现push的代码有问题，你想回退本地代码的同时也回退线上代码，回滚到某个指定的版本，使得线上和线下代码保持一致：" class="headerlink" title="对于已经把代码push到线上仓库，但是此时发现push的代码有问题，你想回退本地代码的同时也回退线上代码，回滚到某个指定的版本，使得线上和线下代码保持一致："></a>对于已经把代码push到线上仓库，但是此时发现push的代码有问题，你想回退本地代码的同时也回退线上代码，回滚到某个指定的版本，使得线上和线下代码保持一致：</h3><p>“ &gt;git revert <commit id=""></commit></p>
-<p>执行完此命令之后，再执行git push就可以将线上代码回滚到某个指定版本，同时不会像git reset一样可能会导致一大堆冲突</p>
-<h1 id="git的其它删除命令"><a href="#git的其它删除命令" class="headerlink" title="git的其它删除命令"></a>git的其它删除命令</h1><p>这些命令类似于Linux的命令，是一种物理层面的删除，也会经常遇到：</p>
-<p>git rm –cached readme.txt</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset -- files</span><br></pre></td></tr></table></figure>
+<p>用来撤销最后一次的 git add files（因为每 git add file 一次，暂存区的文件都会被更改一次）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --mixed &lt;commit id&gt;</span><br></pre></td></tr></table></figure>
+<p>会保留源码，只是将 git commit 和 index 信息回退到了某个版本。（相当于撤销了 add 和 commit 操作，提交的修改都回到了工作区）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --soft &lt;commit id&gt;</span><br></pre></td></tr></table></figure>
+<p>保留源码，只回退 commit 信息到某个版本，不涉及index的回退，如果还需要提交，直接commit即可。（也就是只撤销了commit，并没有撤销add）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard &lt;commit id&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>源码也会回退到某个版本</strong>，commit 和 index 都回回退到某个版本。(注意，这种方式是改变本地代码仓库源码)，当然有人在 push 代码以后，也可以使用 <code>reset --hard &lt;commit id&gt;</code> 回退本地的代码到某个版本之前，但是这样会有一个问题，你线上的代码没有变，线上 commit，index 都没有变，当你把本地代码修改完提交的时候你会发现全是冲突。。（此时就需要用到下面要介绍的 git revert 了）</p>
+<h3 id="应用场景-2"><a href="#应用场景-2" class="headerlink" title="应用场景"></a>应用场景</h3><h4 id="当我们在使用-pull-的时候，可能会出现冲突，就需要-merge，而在冲突状态下，需要解决冲突的文件会从-index-暂存区打回到工作区，如果我们想放弃-index-和工作区的改动，就可以执行下面这条命令："><a href="#当我们在使用-pull-的时候，可能会出现冲突，就需要-merge，而在冲突状态下，需要解决冲突的文件会从-index-暂存区打回到工作区，如果我们想放弃-index-和工作区的改动，就可以执行下面这条命令：" class="headerlink" title="当我们在使用 pull 的时候，可能会出现冲突，就需要 merge，而在冲突状态下，需要解决冲突的文件会从 index 暂存区打回到工作区，如果我们想放弃 index 和工作区的改动，就可以执行下面这条命令："></a>当我们在使用 pull 的时候，可能会出现冲突，就需要 merge，而在冲突状态下，需要解决冲突的文件会从 index 暂存区打回到工作区，如果我们想放弃 index 和工作区的改动，就可以执行下面这条命令：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard HEAD</span><br></pre></td></tr></table></figure>
+<p>上面这条命令用来撤销还没 commit 的 merge，就放弃了 index 暂存区和工作区的改动</p>
+<h4 id="当我们在本地进行了-add-和-commit-操作之后，发现本地的修改都是错误的，想要回到前一版本，就可以执行下面这条命令："><a href="#当我们在本地进行了-add-和-commit-操作之后，发现本地的修改都是错误的，想要回到前一版本，就可以执行下面这条命令：" class="headerlink" title="当我们在本地进行了 add 和 commit 操作之后，发现本地的修改都是错误的，想要回到前一版本，就可以执行下面这条命令："></a>当我们在本地进行了 add 和 commit 操作之后，发现本地的修改都是错误的，想要回到前一版本，就可以执行下面这条命令：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard HEAD^</span><br></pre></td></tr></table></figure>
+<p>上面这条命令用来撤销已经 commit 的内容（等价于 <code>git reset --hard HEAD~1</code>）。原理就是放弃工作区和 index 的改动，同时 HEAD 指针指向前一个 commit 对象</p>
+<h4 id="如果我们已经用-add-命令将某个文件加入暂存区了，此时想撤销对这个文件的-add-操作，就可以用下面的命令："><a href="#如果我们已经用-add-命令将某个文件加入暂存区了，此时想撤销对这个文件的-add-操作，就可以用下面的命令：" class="headerlink" title="如果我们已经用 add 命令将某个文件加入暂存区了，此时想撤销对这个文件的 add 操作，就可以用下面的命令："></a>如果我们已经用 add 命令将某个文件加入暂存区了，此时想撤销对这个文件的 add 操作，就可以用下面的命令：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD &lt;file&gt;</span><br></pre></td></tr></table></figure>
+<p>上面这条命令用来撤销对单个文件的 git add，执行之后该文件会从暂存区回到工作区中</p>
+<h2 id="git-revert"><a href="#git-revert" class="headerlink" title="git revert"></a>git revert</h2><p>git revert 用于反转提交，执行 revert 命令时要求工作树必须是干净的。git revert 用一个新提交来消除一个历史提交所做的任何修改。</p>
+<p>###参数说明</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git revert &lt;commit id&gt;</span><br></pre></td></tr></table></figure>
+<p>revert 使用，需要先找到你想回滚版本唯一的 commit 标识代码，可以用 <code>git log</code> 进行查看，commit id 是一串 40 位的字符串，通常用前几位即可（6 位就差不多保证唯一了）；执行完之后，revert 的那一次 commit 被撤销，原理是 git revert 用一次逆向的 commit “中和”之前的提交，所以此时 HEAD 继续前进，只是新的 commit 的内容和要 revert 的内容正好相反，能够抵消要被 revert 的内容；这样在日后合并老的 branch 时，导致这部分改变不会再次出现，就不会出现类似 git reset 带来的冲突问题</p>
+<h3 id="应用场景-3"><a href="#应用场景-3" class="headerlink" title="应用场景"></a>应用场景</h3><h4 id="对于已经把代码-push-到线上仓库，但是此时发现-push-的代码有问题，你想回退本地代码的同时也回退线上代码，回滚到某个指定的版本，使得线上和线下代码保持一致："><a href="#对于已经把代码-push-到线上仓库，但是此时发现-push-的代码有问题，你想回退本地代码的同时也回退线上代码，回滚到某个指定的版本，使得线上和线下代码保持一致：" class="headerlink" title="对于已经把代码 push 到线上仓库，但是此时发现 push 的代码有问题，你想回退本地代码的同时也回退线上代码，回滚到某个指定的版本，使得线上和线下代码保持一致："></a>对于已经把代码 push 到线上仓库，但是此时发现 push 的代码有问题，你想回退本地代码的同时也回退线上代码，回滚到某个指定的版本，使得线上和线下代码保持一致：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git revert &lt;commit id&gt;</span><br></pre></td></tr></table></figure>
+<p>执行完此命令之后，再执行 git push 就可以将线上代码回滚到某个指定版本，同时不会像 git reset 一样可能会导致一大堆冲突</p>
+<h2 id="git-的其它删除命令"><a href="#git-的其它删除命令" class="headerlink" title="git 的其它删除命令"></a>git 的其它删除命令</h2><p>这些命令类似于 Linux 的命令，是一种物理层面的删除，也会经常遇到：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm --cached readme.txt</span><br></pre></td></tr></table></figure>
 <p>只从缓存区中删除readme.txt，保留物理文件</p>
-<p>git rm readme.txt</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm readme.txt</span><br></pre></td></tr></table></figure>
 <p>不但从缓存区中删除，同时删除物理文件</p>
-<p>git mv a.txt b.txt</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git mv a.txt b.txt</span><br></pre></td></tr></table></figure>
 <p>把a.txt改名为b.txt</p>
-<h5 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h5><p><a href="http://www.cnblogs.com/pingfan1990/p/5454757.html" target="_blank" rel="noopener">git clean(转载)</a></p>
-<p><a href="http://yijiebuyi.com/blog/8f985d539566d0bf3b804df6be4e0c90.html" target="_blank" rel="noopener">git reset revert 回退回滚取消提交返回上一版本</a></p>
-<p><a href="http://josh-persistence.iteye.com/blog/2215214" target="_blank" rel="noopener">详解Git工作区、暂存区、历史记录区以及git reset、git revert、git checkout等撤销命令的区别</a></p>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul>
+<li><a href="http://www.cnblogs.com/pingfan1990/p/5454757.html" target="_blank" rel="noopener">git clean(转载)</a></li>
+<li><a href="http://yijiebuyi.com/blog/8f985d539566d0bf3b804df6be4e0c90.html" target="_blank" rel="noopener">git reset revert 回退回滚取消提交返回上一版本</a></li>
+<li><a href="http://josh-persistence.iteye.com/blog/2215214" target="_blank" rel="noopener">详解Git工作区、暂存区、历史记录区以及git reset、git revert、git checkout等撤销命令的区别</a></li>
+</ul>
 
     </div>
     
@@ -353,7 +356,7 @@
     <div class="widget">
         <h3 class="title">文章目录</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#git-clean"><span class="toc-text">git clean</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#参数说明"><span class="toc-text">参数说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#应用场景"><span class="toc-text">应用场景</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#假如你要删除所有工作目录下面的修改，包括新添加的文件："><span class="toc-text">假如你要删除所有工作目录下面的修改，包括新添加的文件：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#git-checkout"><span class="toc-text">git checkout</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#参数说明-1"><span class="toc-text">参数说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#应用场景-1"><span class="toc-text">应用场景</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#git-reset"><span class="toc-text">git reset</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#参数说明-2"><span class="toc-text">参数说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#应用场景-2"><span class="toc-text">应用场景</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#当我们在使用pull的时候，可能会出现冲突，就需要merge，而在冲突状态下，需要解决冲突的文件会从index暂存区打回到工作区，如果我们想放弃index和工作区的改动，就可以执行下面这条命令："><span class="toc-text">当我们在使用pull的时候，可能会出现冲突，就需要merge，而在冲突状态下，需要解决冲突的文件会从index暂存区打回到工作区，如果我们想放弃index和工作区的改动，就可以执行下面这条命令：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#当我们在本地进行了add和commit操作之后，发现本地的修改都是错误的，想要回到前一版本，就可以执行下面这条命令："><span class="toc-text">当我们在本地进行了add和commit操作之后，发现本地的修改都是错误的，想要回到前一版本，就可以执行下面这条命令：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如果我们已经用add命令将某个文件加入暂存区了，此时想撤销对这个文件的add操作，就可以用下面的命令："><span class="toc-text">如果我们已经用add命令将某个文件加入暂存区了，此时想撤销对这个文件的add操作，就可以用下面的命令：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#git-revert"><span class="toc-text">git revert</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#参数说明-3"><span class="toc-text">参数说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#应用场景-3"><span class="toc-text">应用场景</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#对于已经把代码push到线上仓库，但是此时发现push的代码有问题，你想回退本地代码的同时也回退线上代码，回滚到某个指定的版本，使得线上和线下代码保持一致："><span class="toc-text">对于已经把代码push到线上仓库，但是此时发现push的代码有问题，你想回退本地代码的同时也回退线上代码，回滚到某个指定的版本，使得线上和线下代码保持一致：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#git的其它删除命令"><span class="toc-text">git的其它删除命令</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#参考链接"><span class="toc-text">参考链接</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#git-clean"><span class="toc-text">git clean</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#参数说明"><span class="toc-text">参数说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#应用场景"><span class="toc-text">应用场景</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#假如你要删除所有工作目录下面的修改，包括新添加的文件："><span class="toc-text">假如你要删除所有工作目录下面的修改，包括新添加的文件：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-checkout"><span class="toc-text">git checkout</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#参数说明-1"><span class="toc-text">参数说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#应用场景-1"><span class="toc-text">应用场景</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-reset"><span class="toc-text">git reset</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#参数说明-2"><span class="toc-text">参数说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#应用场景-2"><span class="toc-text">应用场景</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#当我们在使用-pull-的时候，可能会出现冲突，就需要-merge，而在冲突状态下，需要解决冲突的文件会从-index-暂存区打回到工作区，如果我们想放弃-index-和工作区的改动，就可以执行下面这条命令："><span class="toc-text">当我们在使用 pull 的时候，可能会出现冲突，就需要 merge，而在冲突状态下，需要解决冲突的文件会从 index 暂存区打回到工作区，如果我们想放弃 index 和工作区的改动，就可以执行下面这条命令：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#当我们在本地进行了-add-和-commit-操作之后，发现本地的修改都是错误的，想要回到前一版本，就可以执行下面这条命令："><span class="toc-text">当我们在本地进行了 add 和 commit 操作之后，发现本地的修改都是错误的，想要回到前一版本，就可以执行下面这条命令：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#如果我们已经用-add-命令将某个文件加入暂存区了，此时想撤销对这个文件的-add-操作，就可以用下面的命令："><span class="toc-text">如果我们已经用 add 命令将某个文件加入暂存区了，此时想撤销对这个文件的 add 操作，就可以用下面的命令：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-revert"><span class="toc-text">git revert</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#应用场景-3"><span class="toc-text">应用场景</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#对于已经把代码-push-到线上仓库，但是此时发现-push-的代码有问题，你想回退本地代码的同时也回退线上代码，回滚到某个指定的版本，使得线上和线下代码保持一致："><span class="toc-text">对于已经把代码 push 到线上仓库，但是此时发现 push 的代码有问题，你想回退本地代码的同时也回退线上代码，回滚到某个指定的版本，使得线上和线下代码保持一致：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-的其它删除命令"><span class="toc-text">git 的其它删除命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考文章"><span class="toc-text">参考文章</span></a></li></ol>
         
     </div>
 </aside>

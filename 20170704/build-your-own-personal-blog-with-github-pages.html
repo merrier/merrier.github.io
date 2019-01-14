@@ -203,24 +203,31 @@
     </div>
     
     <div class="post-body post-content">
-        <h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>这篇文章以我的亲身实验为基础，为大家讲解如何利用Github Pages搭建一个自己的个人博客，由于<a href="http://www.merrier.wang" target="_blank" rel="noopener">我的个人博客</a>已经拿wordpress搭建完成好久了，所以我就拿我<a href="https://github.com/merrier/" target="_blank" rel="noopener">github</a>中的另外一个项目作为试验，一步一步的截图引导大家将自己的github中的项目放到网上供其他人浏览，请注意，这都是免费的哦！不需要你购买域名和服务器，因为github帮你搞定了一切，最终实现的效果是下面这样的（可以看到，域名是merrier.github.io，这是github为你提供的域名，该页面可以<a href="https://merrier.github.io/Magical-CSS/" target="_blank" rel="noopener">点击这里</a>查看）： <img src="/images/hexo_post_242.png" alt=""></p>
-<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><ul>
-<li>你需要有一个github账号</li>
-<li>如果想看到效果的话，你需要一个有README.md的项目</li>
+        <p>这篇文章以我的亲身实验为基础，为大家讲解如何利用 Github Pages 搭建一个自己的个人博客，由于<a href="http://merrier.wang">我的个人博客</a>已经拿 wordpress 搭建完成好久了，所以我就拿我 [github] (<a href="https://github.com/merrier/)中的另外一个项目作为试验，一步一步的截图引导大家将自己的" target="_blank" rel="noopener">https://github.com/merrier/)中的另外一个项目作为试验，一步一步的截图引导大家将自己的</a> github 中的项目放到网上供其他人浏览，请注意，这都是免费的哦！不需要你购买域名和服务器，因为 github 帮你搞定了一切，最终实现的效果是下面这样的（可以看到，域名是 merrier.github.io，这是 github 为你提供的域名，该页面可以<a href="https://merrier.github.io/Magical-CSS/" target="_blank" rel="noopener">点击这里</a>查看）：</p>
+<div align="center"><img src="/images/hexo_post_242.png" alt="" width="400"></div>
+
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li>你需要有一个 github 账号</li>
+<li>如果想看到效果的话，你需要一个有 README.md / index.html 的项目</li>
 </ul>
-<h1 id="好戏开场"><a href="#好戏开场" class="headerlink" title="好戏开场"></a>好戏开场</h1><h2 id="gh-pages分支"><a href="#gh-pages分支" class="headerlink" title="gh-pages分支"></a>gh-pages分支</h2><p>基于上面的准备工作，我认为你现在应该在自己的github中有了一个用来向他人展示的项目，然后进入自己的项目，切换到gh-pages分支，没有的话创建一个就可以了： <img src="/images/hexo_post_243.png" alt=""></p>
-<h2 id="Theme选择"><a href="#Theme选择" class="headerlink" title="Theme选择"></a>Theme选择</h2><p>然后点击上面的Settings按钮，向下找到Github Pages模块： <img src="/images/hexo_post_244.png" alt=""> 然后在这里你可以选择一个主题（点击Change theme按钮，然后你就可以跳转到选择主题的页面），这些主题都是github给你免费提供的，我选择的是下面这款蓝色的主题，效果就是文章开头截图那样的： <img src="/images/hexo_post_245.png" alt=""></p>
-<h2 id="Done"><a href="#Done" class="headerlink" title="Done"></a>Done</h2><p>选择完主题之后再回到刚才有Github Pages的页面，github会提示你现在可以通过某个URL访问你的页面了，此时你通过github提示的URL进行访问的话，显示的就是你项目根目录的README.md文件中的内容，这样就完成了！是不是很easy！： <img src="/images/hexo_post_246.png" alt=""></p>
-<h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><ul>
-<li><strong>现在已经不需要新建gh-pages分支了，直接master分支就可以</strong></li>
-<li>在你选择完主题之后，github会自动在你的项目根目录下创建一个_config.yml文件，内容大概是下面这个样子，合并代码时需要注意一下：</li>
+<h2 id="好戏开场"><a href="#好戏开场" class="headerlink" title="好戏开场"></a>好戏开场</h2><h3 id="gh-pages-分支"><a href="#gh-pages-分支" class="headerlink" title="gh-pages 分支"></a>gh-pages 分支</h3><p>基于上面的准备工作，我认为你现在应该在自己的 github 中有了一个用来向他人展示的项目，然后进入自己的项目，切换到 gh-pages 分支，没有的话创建一个就可以了：</p>
+<div align="center"><img src="/images/hexo_post_243.png" alt="" width="400"></div>
+
+<h3 id="Theme选择"><a href="#Theme选择" class="headerlink" title="Theme选择"></a>Theme选择</h3><p>然后点击上面的 Settings 按钮，向下找到 Github Pages 模块：</p>
+<div align="center"><img src="images/hexo_post_244.png" alt="" width="400"></div>
+
+<p>然后在这里你可以选择一个主题（点击 Change theme 按钮，然后你就可以跳转到选择主题的页面），这些主题都是 github 给你免费提供的，我选择的是下面这款蓝色的主题，效果就是文章开头截图那样的：</p>
+<div align="center"><img src="/images/hexo_post_245.png" alt="" width="400"></div>
+
+<h3 id="Done"><a href="#Done" class="headerlink" title="Done"></a>Done</h3><p>选择完主题之后再回到刚才有 Github Pages 的页面，github 会提示你现在可以通过某个URL访问你的页面了，此时你通过 github 提示的 URL 进行访问的话，显示的就是你项目根目录的 README.md / index.html 文件中的内容，这样就完成了！是不是很 easy！：</p>
+<div align="center"><img src="/images/hexo_post_246.png" alt="" width="400"></div>
+
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><h3 id="现在已经不需要新建gh-pages分支了，任意分支都可以"><a href="#现在已经不需要新建gh-pages分支了，任意分支都可以" class="headerlink" title="现在已经不需要新建gh-pages分支了，任意分支都可以"></a>现在已经不需要新建gh-pages分支了，任意分支都可以</h3><ul>
+<li>在你选择完主题之后，github 会自动在你的项目根目录下创建一个 _config.yml 文件，内容大概是下面这个样子，合并代码时需要注意一下：</li>
 </ul>
-<p>theme: jekyll-theme-architect</p>
-<ul>
-<li><strong>在Github Pages模块，你可以设置你自己的custom domain</strong></li>
-</ul>
-<p>比如设置成<a href="http://www.example.com，此时别人就可以通过访问www.example.com访问到你刚刚用Github" target="_blank" rel="noopener">www.example.com，此时别人就可以通过访问www.example.com访问到你刚刚用Github</a> Pages搭建的个人博客了</p>
-<h1 id="推荐阅读"><a href="#推荐阅读" class="headerlink" title="推荐阅读"></a>推荐阅读</h1><p><a href="http://www.pchou.info/ssgithubPage/2013-01-03-build-github-blog-page-01.html" target="_blank" rel="noopener">一步步在GitHub上创建博客主页</a></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">jekyll-theme-architect</span></span><br></pre></td></tr></table></figure>
+<h3 id="在-Github-Pages-模块，你可以设置你自己的-custom-domain"><a href="#在-Github-Pages-模块，你可以设置你自己的-custom-domain" class="headerlink" title="在 Github Pages 模块，你可以设置你自己的 custom domain"></a>在 Github Pages 模块，你可以设置你自己的 custom domain</h3><p>比如设置成 <a href="http://www.example.com，此时别人就可以通过访问" target="_blank" rel="noopener">www.example.com，此时别人就可以通过访问</a> <a href="http://www.example.com" target="_blank" rel="noopener">www.example.com</a> 访问到你刚刚用 Github Pages 搭建的个人博客了</p>
+<h2 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h2><p><a href="http://www.pchou.info/ssgithubPage/2013-01-03-build-github-blog-page-01.html" target="_blank" rel="noopener">一步步在GitHub上创建博客主页</a></p>
 
     </div>
     
@@ -315,7 +322,7 @@
     <div class="widget">
         <h3 class="title">文章目录</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#写在前面"><span class="toc-text">写在前面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#准备工作"><span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#好戏开场"><span class="toc-text">好戏开场</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#gh-pages分支"><span class="toc-text">gh-pages分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Theme选择"><span class="toc-text">Theme选择</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Done"><span class="toc-text">Done</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#注意事项"><span class="toc-text">注意事项</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#推荐阅读"><span class="toc-text">推荐阅读</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#准备工作"><span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#好戏开场"><span class="toc-text">好戏开场</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#gh-pages-分支"><span class="toc-text">gh-pages 分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Theme选择"><span class="toc-text">Theme选择</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Done"><span class="toc-text">Done</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注意事项"><span class="toc-text">注意事项</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#现在已经不需要新建gh-pages分支了，任意分支都可以"><span class="toc-text">现在已经不需要新建gh-pages分支了，任意分支都可以</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在-Github-Pages-模块，你可以设置你自己的-custom-domain"><span class="toc-text">在 Github Pages 模块，你可以设置你自己的 custom domain</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#扩展阅读"><span class="toc-text">扩展阅读</span></a></li></ol>
         
     </div>
 </aside>
