@@ -203,8 +203,8 @@
     </div>
     
     <div class="post-body post-content">
-        <h1 id="window和document"><a href="#window和document" class="headerlink" title="window和document"></a>window和document</h1><p><strong>document是window对象的一部分</strong>：document.body -&gt;window.document.body 浏览器的HTML文档称为document对象 <strong>window.location === document.location</strong>：window对象的location属性引用的是location对象，表示该窗口中当前显示文档的URL，document对象的location属性也是引用了location对象</p>
-<h1 id="window-screen"><a href="#window-screen" class="headerlink" title="window.screen"></a>window.screen</h1><p>window.screen包含有关用户屏幕的信息，它包括：</p>
+        <h2 id="window-和-document"><a href="#window-和-document" class="headerlink" title="window 和 document"></a>window 和 document</h2><p><strong>document 是 window 对象的一部分</strong>：document.body -&gt; window.document.body，浏览器的 HTML 文档称为 document 对象<br><strong>window.location === document.location</strong>：window 对象的 location 属性引用的是 location 对象，表示该窗口中当前显示文档的 URL，document 对象的 location 属性也是引用了 location 对象</p>
+<h2 id="window-screen"><a href="#window-screen" class="headerlink" title="window.screen"></a>window.screen</h2><p>window.screen 包含有关用户屏幕的信息，它包括：</p>
 <ul>
 <li><code>window.screen.width</code></li>
 <li><code>window.screen.height</code></li>
@@ -213,108 +213,114 @@
 <li><code>window.screenTop</code></li>
 <li><code>window.screenLeft</code></li>
 </ul>
-<p><img src="/images/hexo_post_31.png" alt=""></p>
-<h1 id="与window相关的宽高"><a href="#与window相关的宽高" class="headerlink" title="与window相关的宽高"></a>与window相关的宽高</h1><ul>
+<div align="center"><img src="/images/hexo_post_31.png" alt="" width="700"></div>
+
+<h2 id="与-window-相关的宽高"><a href="#与-window-相关的宽高" class="headerlink" title="与 window 相关的宽高"></a>与 window 相关的宽高</h2><ul>
 <li><code>window.innerWidth</code> 内部的宽度</li>
 <li><code>window.innerHeight</code> 内部的高度</li>
 <li><code>window.outWidth</code> 外部的宽度</li>
 <li><code>window.outHeight</code> 外部的高度</li>
 </ul>
-<p><img src="/images/hexo_post_24.png" alt=""></p>
-<h1 id="与document相关的宽高"><a href="#与document相关的宽高" class="headerlink" title="与document相关的宽高"></a>与document相关的宽高</h1><h2 id="与client相关的宽高"><a href="#与client相关的宽高" class="headerlink" title="与client相关的宽高"></a>与client相关的宽高</h2><ul>
+<div align="center"><img src="/images/hexo_post_24.png" alt="" width="700"></div>
+
+<h2 id="与-document-相关的宽高"><a href="#与-document-相关的宽高" class="headerlink" title="与 document 相关的宽高"></a>与 document 相关的宽高</h2><h3 id="与-client-相关的宽高"><a href="#与-client-相关的宽高" class="headerlink" title="与 client 相关的宽高"></a>与 client 相关的宽高</h3><ul>
 <li><code>document.body.clientWidth</code> 元素宽度（可视内容区+内边距）</li>
-<li><code>document.body.clientHeight</code>元素高度（可视内容区+内边距）</li>
+<li><code>document.body.clientHeight</code> 元素高度（可视内容区+内边距）</li>
 </ul>
-<p>该属性指的是元素的可视部分宽度和高度，即<code>padding+content</code></p>
+<p>该属性指的是元素的可视部分宽度和高度，即 <code>padding+content</code></p>
 <ul>
 <li>如果没有滚动条，即为元素设定的宽度和高度</li>
 </ul>
-<p>body{<br>  border: 20px solid #000;<br>  margin: 10px;<br>  padding: 40px;<br>  background: #eee;<br>  height: 350px;<br>  width: 500px;<br>  overflow: scroll;<br>}<br>console.log(document.body.clientWidth);  // 350+padding(80) = 430<br>console.log(document.body.clientHeight);  // 500 + padding(80) = 580</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span>&#123; </span><br><span class="line">  <span class="attribute">border</span>: <span class="number">20px</span> solid <span class="number">#000</span>; </span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">10px</span>; </span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">40px</span>; </span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#eee</span>; </span><br><span class="line">  <span class="attribute">height</span>: <span class="number">350px</span>; </span><br><span class="line">  <span class="attribute">width</span>: <span class="number">500px</span>; </span><br><span class="line">  <span class="attribute">overflow</span>: scroll; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">document</span>.body.clientWidth);  <span class="comment">// 350+padding(80) = 430</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">document</span>.body.clientHeight);  <span class="comment">// 500 + padding(80) = 580</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>如果出现滚动条，滚动条会遮盖元素的宽高，那么该属性就是其本来宽高减去滚动条的宽高</li>
 </ul>
-<p>#exp2 {<br>  width:200px;<br>  height:200px;<br>  background:red;<br>  border:1px solid #000;<br>  overflow:auto;<br>}<br>var test = document.getElementById(“exp2”);<br>console.log(test.clientHeight); // 200<br>console.log(test.clientWidth); //</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#exp2</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>:<span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">height</span>:<span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">background</span>:red;</span><br><span class="line">  <span class="attribute">border</span>:<span class="number">1px</span> solid <span class="number">#000</span>;</span><br><span class="line">  <span class="attribute">overflow</span>:auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> test = <span class="built_in">document</span>.getElementById(<span class="string">"exp2"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(test.clientHeight); <span class="comment">// 200</span></span><br><span class="line"><span class="built_in">console</span>.log(test.clientWidth); <span class="comment">//</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li><code>document.body.clientLeft</code></li>
 <li><code>document.body.clientTop</code></li>
 </ul>
-<p>这两个返回的是元素周围边框的厚度，如果不指定一个边框或者不定位该元素，它的值就是0</p>
-<p>body{<br>  border: 20px solid #000;<br>  margin: 10px;<br>  padding: 40px;<br>  background: #eee;<br>  height: 350px;<br>  width: 500px;<br>  overflow: scroll;<br>}<br>console.log(document.body.clientLeft);  // 20<br>console.log(document.body.clientTop);  // 20</p>
+<p>这两个返回的是元素周围边框的厚度，如果不指定一个边框或者不定位该元素，它的值就是 0</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span>&#123; </span><br><span class="line">  <span class="attribute">border</span>: <span class="number">20px</span> solid <span class="number">#000</span>; </span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">10px</span>; </span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">40px</span>; </span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#eee</span>; </span><br><span class="line">  <span class="attribute">height</span>: <span class="number">350px</span>; </span><br><span class="line">  <span class="attribute">width</span>: <span class="number">500px</span>; </span><br><span class="line">  <span class="attribute">overflow</span>: scroll; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">document</span>.body.clientLeft);  <span class="comment">// 20</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">document</span>.body.clientTop);  <span class="comment">// 20</span></span><br></pre></td></tr></table></figure>
 <h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><ul>
-<li>无<code>padding</code>无滚动 ： <code>clientWidth</code> = 盒子的<code>width</code></li>
-<li>有<code>padding</code>无滚动 ： <code>clientWidth</code> = 盒子的<code>width</code> + 盒子的<code>padding * 2</code></li>
-<li>有<code>padding</code>有滚动 ： <code>clientWidth</code> = 盒子和<code>width</code> + 盒子的<code>padding * 2</code>- 滚动轴宽度</li>
+<li>无 <code>padding</code> 无滚动 ：<code>clientWidth</code> = 盒子的 <code>width</code></li>
+<li>有 <code>padding</code> 无滚动 ：<code>clientWidth</code> = 盒子的 <code>width</code> + 盒子的 <code>padding * 2</code></li>
+<li>有 <code>padding</code> 有滚动 ：<code>clientWidth</code> = 盒子和 <code>width</code> + 盒子的 <code>padding * 2</code> - 滚动轴宽度</li>
 <li><code>clientTop = border-top</code></li>
 <li><code>clientLeft = border-left</code></li>
 </ul>
-<h2 id="与offset相关的宽高"><a href="#与offset相关的宽高" class="headerlink" title="与offset相关的宽高"></a>与offset相关的宽高</h2><ul>
-<li><strong>document.body.offsetWidth（元素的border+padding+content的宽度）</strong></li>
-<li><strong>document.body.offsetHeight（元素的border+padding+content的高度）</strong></li>
+<h3 id="与-offset-相关的宽高"><a href="#与-offset-相关的宽高" class="headerlink" title="与 offset 相关的宽高"></a>与 offset 相关的宽高</h3><ul>
+<li><strong>document.body.offsetWidth（元素的border + padding + content的宽度）</strong></li>
+<li><strong>document.body.offsetHeight（元素的border + padding + content的高度）</strong></li>
 </ul>
-<p>该属性和其内部的内容是否超出元素大小无关，只和本来设定的border以及width和height有关</p>
-<p>body{<br>  border: 20px solid #000;<br>  margin: 10px;<br>  padding: 40px;<br>  background: #eee;<br>  height: 350px;<br>  width: 500px;<br>  overflow: scroll;<br>}<br>console.log(document.body.offsetWidth);  // 470 = padding*2 + 350 + border*2<br>console.log(document.body.offsetHeight);  // 620 = padding*2 + 500 + border*2</p>
+<p>该属性和其内部的内容是否超出元素大小无关，只和本来设定的 border 以及 width 和 height 有关</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span>&#123; </span><br><span class="line">  <span class="attribute">border</span>: <span class="number">20px</span> solid <span class="number">#000</span>; </span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">10px</span>; </span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">40px</span>; </span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#eee</span>; </span><br><span class="line">  <span class="attribute">height</span>: <span class="number">350px</span>; </span><br><span class="line">  <span class="attribute">width</span>: <span class="number">500px</span>; </span><br><span class="line">  <span class="attribute">overflow</span>: scroll; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">document</span>.body.offsetWidth);  <span class="comment">// 470 = padding\*2 + 350 + border\*2</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">document</span>.body.offsetHeight);  <span class="comment">// 620 = padding\*2 + 500 + border\*2</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li><strong>document.offsetLeft</strong></li>
 <li><strong>document.offsetTop</strong></li>
 </ul>
-<p>了解这两个属性我们必须先了解它，什么是<code>offsetParent</code></p>
+<p>了解这两个属性我们必须先了解它，什么是 <code>offsetParent</code></p>
 <ul>
-<li>如果当前元素的父级元素没有进行<code>CSS</code>定位（<code>position</code>为<code>absolute</code>或<code>relative</code>）,<code>offsetParent</code>为<code>body.</code></li>
-<li>假如当前元素的父级元素中有<code>CSS</code>定位，<code>offsetParent</code>取最近的那个父级元素</li>
+<li>如果当前元素的父级元素没有进行 <code>CSS</code> 定位（<code>position</code> 为 <code>absolute</code> 或 <code>relative</code>）,<code>offsetParent</code> 为 <code>body.</code></li>
+<li>假如当前元素的父级元素中有 <code>CSS</code> 定位，<code>offsetParent</code> 取最近的那个父级元素</li>
 </ul>
-<h3 id="offsetLeft的兼容性问题"><a href="#offsetLeft的兼容性问题" class="headerlink" title="offsetLeft的兼容性问题"></a>offsetLeft的兼容性问题</h3><ul>
-<li>在<code>IE6/7</code>中<ul>
-<li><code>offsetLeft</code> = offsetParent的padding-left + 当前元素的margin-left</li>
-</ul>
-</li>
-<li>在<code>IE8/9/10</code>以及<code>chrome</code>中<ul>
-<li><code>offsetLeft</code> = offsetParent的margin-left + offsetParent的border宽度 + offsetParent的padding-left + 当前元素的margin-left</li>
+<h3 id="offsetLeft-的兼容性问题"><a href="#offsetLeft-的兼容性问题" class="headerlink" title="offsetLeft 的兼容性问题"></a>offsetLeft 的兼容性问题</h3><ul>
+<li>在 <code>IE6/7</code> 中<ul>
+<li><code>offsetLeft</code> = offsetParent 的 padding-left + 当前元素的 margin-left</li>
 </ul>
 </li>
-<li>在<code>FireFox</code>中<ul>
-<li><code>offsetLeft</code> = offsetParent的margin-left + 当前元素的margin-left + offsetParent的padding-left</li>
+<li>在 <code>IE8/9/10</code> 以及 <code>chrome</code> 中<ul>
+<li><code>offsetLeft</code> = offsetParent 的 margin-left + offsetParent 的 border 宽度 + offsetParent 的 padding-left + 当前元素的 margin-left</li>
+</ul>
+</li>
+<li>在 <code>FireFox</code> 中<ul>
+<li><code>offsetLeft</code> = offsetParent 的 margin-left + 当前元素的 margin-left + offsetParent 的padding-left</li>
 </ul>
 </li>
 </ul>
-<p>body{<br>  border: 20px solid #000;<br>  margin: 10px;<br>  padding: 40px;<br>  background: #eee;<br>  height: 350px;<br>  width: 500px;<br>  overflow: scroll;<br>} </p>
-<p>#exp {<br>  width:400px;<br>  height:200px;<br>  padding:20px;<br>  margin:10px;<br>  background:red;<br>  border:20px solid #000;<br>  overflow:auto;<br>}<br>var div = document.getElementById(“exp”);</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span>&#123; </span><br><span class="line">  <span class="attribute">border</span>: <span class="number">20px</span> solid <span class="number">#000</span>; </span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">10px</span>; </span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">40px</span>; </span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#eee</span>; </span><br><span class="line">  <span class="attribute">height</span>: <span class="number">350px</span>; </span><br><span class="line">  <span class="attribute">width</span>: <span class="number">500px</span>; </span><br><span class="line">  <span class="attribute">overflow</span>: scroll; </span><br><span class="line">&#125; </span><br><span class="line"><span class="selector-id">#exp</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>:<span class="number">400px</span>;</span><br><span class="line">  <span class="attribute">height</span>:<span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">padding</span>:<span class="number">20px</span>;</span><br><span class="line">  <span class="attribute">margin</span>:<span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">background</span>:red;</span><br><span class="line">  <span class="attribute">border</span>:<span class="number">20px</span> solid <span class="number">#000</span>;</span><br><span class="line">  <span class="attribute">overflow</span>:auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
-<li>在IE8/9/10以及chrome中：<ul>
-<li>div.offsetLeft = 本身的margin10 + 父级元素的padding40 + margin10 + border20 = 80</li>
-<li>div.offsetTop = 本身的margin10 + 父级元素的padding40 + margin10 + border20 = 80</li>
+<li>在 IE8 / 9 / 10 以及 chrome 中：<ul>
+<li>div.offsetLeft = 本身的 margin10 + 父级元素的 padding40 + margin10 + border20 = 80</li>
+<li>div.offsetTop = 本身的 margin10 + 父级元素的 padding40 + margin10 + border20 = 80</li>
 </ul>
 </li>
-<li>在FireFox：（相比chrome中少了border）<ul>
-<li>div.offsetLeft = 本身的margin10 + 父级元素的padding40 + margin10 = 60</li>
-<li>div.offsetTop = 本身的margin10 + 父级元素的padding40 + margin10 = 60</li>
+<li>在 FireFox：（相比 chrome 中少了 border）<ul>
+<li>div.offsetLeft = 本身的 margin10 + 父级元素的 padding40 + margin10 = 60</li>
+<li>div.offsetTop = 本身的 margin10 + 父级元素的 padding40 + margin10 = 60</li>
 </ul>
 </li>
-<li>在IE6/7中：（相比在FireFox，不但少了border还少了父级元素的margin）<ul>
-<li><code>div.offsetLeft</code> = 本身的<code>margin10</code> + 父级元素的<code>padding40</code> = 50</li>
-<li><code>div.offsetTop</code> = 本身的<code>margin10</code> + 父级元素的<code>padding40</code> = 50</li>
+<li>在 IE6/7 中：（相比在 FireFox，不但少了 border 还少了父级元素的 margin）<ul>
+<li><code>div.offsetLeft</code> = 本身的 <code>margin10</code> + 父级元素的 <code>padding40</code> = 50</li>
+<li><code>div.offsetTop</code> = 本身的 <code>margin10</code> + 父级元素的 <code>padding40</code> = 50</li>
 </ul>
 </li>
 </ul>
 <h3 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结</h3><ul>
-<li>无<code>padding</code>无滚动无<code>border</code><ul>
+<li>无 <code>padding</code> 无滚动无 <code>border</code><ul>
 <li>offsetWidth = clientWidth = 盒子的宽度</li>
 </ul>
 </li>
-<li>有<code>padding</code>无滚动有<code>border</code><ul>
-<li>offsetWidth = 盒子的宽度 + 盒子padding<em>_2 + 盒子边框</em>_2 = clientWidth + 边框宽度*2</li>
+<li>有 <code>padding</code> 无滚动有 <code>border</code><ul>
+<li>offsetWidth = 盒子的宽度 + 盒子 padding <em> 2 + 盒子边框 </em> 2 = clientWidth + 边框宽度 * 2</li>
 </ul>
 </li>
-<li>有<code>padding</code>有滚动，且滚动是显示的，有<code>border</code><ul>
-<li>offsetWidth = 盒子宽度 + 盒子padding<em>_2 + 盒子边框</em>_2 = clientWidth + 滚动轴宽度 + 边框宽度*2</li>
+<li>有 <code>padding</code> 有滚动，且滚动是显示的，有 <code>border</code><ul>
+<li>offsetWidth = 盒子宽度 + 盒子 padding <em> 2 + 盒子边框 </em> 2 = clientWidth + 滚动轴宽度 + 边框宽度 * 2</li>
 </ul>
 </li>
 </ul>
-<h2 id="与scroll相关的宽高"><a href="#与scroll相关的宽高" class="headerlink" title="与scroll相关的宽高"></a>与scroll相关的宽高</h2><ul>
+<h2 id="与-scroll-相关的宽高"><a href="#与-scroll-相关的宽高" class="headerlink" title="与 scroll 相关的宽高"></a>与 scroll 相关的宽高</h2><ul>
 <li><strong>document.body.scrollWidth</strong></li>
 <li><strong>document.body.scrollHeight</strong></li>
 </ul>
-<p>document.body的scrollWidth和scrollHeight与div的scrollWidth和scrollHeight是有区别的</p>
-<p>body{<br>  border: 20px solid #000;<br>  margin: 10px;<br>  padding: 40px;<br>  background: #eee;<br>  height: 350px;<br>  width: 500px;<br>  overflow: scroll;<br>}<br>document.body.scrollHeight; //<br>document.body.scrollWidth; //</p>
+<p>document.body 的 scrollWidth 和 scrollHeight 与 div 的 scrollWidth 和 scrollHeight 是有区别的</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span>&#123; </span><br><span class="line">  <span class="attribute">border</span>: <span class="number">20px</span> solid <span class="number">#000</span>; </span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">10px</span>; </span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">40px</span>; </span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#eee</span>; </span><br><span class="line">  <span class="attribute">height</span>: <span class="number">350px</span>; </span><br><span class="line">  <span class="attribute">width</span>: <span class="number">500px</span>; </span><br><span class="line">  <span class="attribute">overflow</span>: scroll; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.body.scrollHeight; <span class="comment">// </span></span><br><span class="line"><span class="built_in">document</span>.body.scrollWidth; <span class="comment">//</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>当给定宽高小于浏览器窗口的宽高<ul>
 <li>scrollWidth = 通常是浏览器窗口的宽度</li>
@@ -322,57 +328,71 @@
 </ul>
 </li>
 <li>当给定宽高大于浏览器窗口的宽高，且内容小于给定宽高的时候<ul>
-<li>scrollWidth = 给定宽度 + 其所有的padding + margin + border</li>
-<li>scrollHeight = 给定高度 + 其所有的padding + margin + border</li>
+<li>scrollWidth = 给定宽度 + 其所有的 padding + margin + border</li>
+<li>scrollHeight = 给定高度 + 其所有的 padding + margin + border</li>
 </ul>
 </li>
 <li>当给定宽高大于浏览器窗口宽高，且内容大于给定宽高<ul>
-<li>scrollWidth = 内容宽度 + 其所有的padding + margin + border</li>
-<li>scrollHeight = 内容高度 + 其所有的padding + margin + border</li>
+<li>scrollWidth = 内容宽度 + 其所有的 padding + margin + border</li>
+<li>scrollHeight = 内容高度 + 其所有的 padding + margin + border</li>
 </ul>
 </li>
 </ul>
-<h3 id="在某div中的scrollWidth和scrollHeight"><a href="#在某div中的scrollWidth和scrollHeight" class="headerlink" title="在某div中的scrollWidth和scrollHeight"></a><strong>在某div中的scrollWidth和scrollHeight</strong></h3><p>无滚动轴时：</p>
+<h3 id="在某-div-中的-scrollWidth-和-scrollHeight"><a href="#在某-div-中的-scrollWidth-和-scrollHeight" class="headerlink" title="在某 div 中的 scrollWidth 和 scrollHeight"></a><strong>在某 div 中的 scrollWidth 和 scrollHeight</strong></h3><p>无滚动轴时：</p>
 <ul>
-<li>scrollWidth = clientWidth = 盒子宽度 + 盒子padding*2</li>
+<li>scrollWidth = clientWidth = 盒子宽度 + 盒子 padding * 2</li>
 </ul>
-<p><img src="/images/hexo_post_28.png" alt="">有滚动轴时：</p>
+<div align="center"><img src="/images/hexo_post_28.png" alt="" width="450"></div>
+
+<p>有滚动轴时：</p>
 <ul>
-<li>scrollWidth = 实际内容的宽度 + padding*2</li>
-<li>scrollHeight = 实际内容的高度 + padding*2</li>
+<li>scrollWidth = 实际内容的宽度 + padding * 2</li>
+<li>scrollHeight = 实际内容的高度 + padding * 2</li>
 </ul>
-<p><img src="/images/hexo_post_32.png" alt=""></p>
+<div align="center"><img src="/images/hexo_post_32.png" alt="" width="450"></div>
+
 <ul>
 <li><strong>document.body.scrollLeft</strong></li>
 <li><strong>document.body.scrollTop</strong></li>
 </ul>
 <p>与前面不同的是，这对属性是<strong>可读写</strong>的，指的是当元素其中的超出其宽高的时候，元素被卷起来的高度和宽度</p>
-<p>#exp {<br>  width:400px;<br>  height:200px;<br>  padding:20px;<br>  margin:10px;<br>  background:red;<br>  border:20px solid #000;<br>  overflow-y:scroll;<br>}<br>var mydiv = document.getElementById(“exp”);<br>mydiv.scrollTop ;  //默认情况下是0<br>mydiv.scrollLeft ; //默认情况下是0<br>//可以改写它<br>mydiv.scrollTop = 20;<br>console.log(mydiv.scrollTop)</p>
-<p><img src="/images/hexo_post_25.png" alt=""></p>
-<h3 id="obj-style-width和obj-style-height"><a href="#obj-style-width和obj-style-height" class="headerlink" title="obj.style.width和obj.style.height"></a><strong>obj.style.width和obj.style.height</strong></h3><p>对于一个<code>DOM</code>元素，它的<code>style</code>属性返回的是一个对象，这个对象的任意一个属性是可读写的，<code>style.width</code>等于<code>css</code>属性中的宽度。<code>style.height</code>等于<code>css</code>属性中的高度</p>
-<h1 id="documentElement和body的关系"><a href="#documentElement和body的关系" class="headerlink" title="documentElement和body的关系"></a>documentElement和body的关系</h1><p>是父子级的关系</p>
-<p>console.log(document); //document<br>console.log(document.documentElement); //html<br>console.log(document.body); //body</p>
-<p><img src="/images/hexo_post_29.png" alt=""></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#exp</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>:<span class="number">400px</span>;</span><br><span class="line">  <span class="attribute">height</span>:<span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">padding</span>:<span class="number">20px</span>;</span><br><span class="line">  <span class="attribute">margin</span>:<span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">background</span>:red;</span><br><span class="line">  <span class="attribute">border</span>:<span class="number">20px</span> solid <span class="number">#000</span>;</span><br><span class="line">  <span class="attribute">overflow-y</span>:scroll;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> mydiv = <span class="built_in">document</span>.getElementById(<span class="string">"exp"</span>);</span><br><span class="line">mydiv.scrollTop ;  <span class="comment">// 默认情况下是0 </span></span><br><span class="line">mydiv.scrollLeft ; <span class="comment">// 默认情况下是0 </span></span><br><span class="line"><span class="comment">// 可以改写它</span></span><br><span class="line">mydiv.scrollTop = <span class="number">20</span>;</span><br><span class="line"><span class="built_in">console</span>.log(mydiv.scrollTop)</span><br></pre></td></tr></table></figure>
+<div align="center"><img src="/images/hexo_post_25.png" alt="" width="400"></div>
+
+<h3 id="obj-style-width-和-obj-style-height"><a href="#obj-style-width-和-obj-style-height" class="headerlink" title="obj.style.width 和 obj.style.height"></a><strong>obj.style.width 和 obj.style.height</strong></h3><p>对于一个 <code>DOM</code> 元素，它的 <code>style</code> 属性返回的是一个对象，这个对象的任意一个属性是可读写的，<code>style.width</code> 等于 <code>css</code> 属性中的宽度。<code>style.height</code> 等于 <code>css</code> 属性中的高度</p>
+<h2 id="documentElement-和-body-的关系"><a href="#documentElement-和-body-的关系" class="headerlink" title="documentElement 和 body 的关系"></a>documentElement 和 body 的关系</h2><p>是父子级的关系</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">document</span>); <span class="comment">//document</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">document</span>.documentElement); <span class="comment">//html</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">document</span>.body); <span class="comment">//body</span></span><br></pre></td></tr></table></figure>
+<div align="center"><img src="/images/hexo_post_29.png" alt="" width="600"></div>
+
 <ul>
-<li>兼容问题推荐使用 获取浏览器窗口可视区域大小</li>
+<li>兼容问题推荐使用，获取浏览器窗口可视区域大小：</li>
 </ul>
-<p>document.body.clientWidth || document.documentElement.clientWidth;<br>document.body.clientHeight || document.documentElement.clientHeight;</p>
-<h1 id="Event对象的5种坐标"><a href="#Event对象的5种坐标" class="headerlink" title="Event对象的5种坐标"></a>Event对象的5种坐标</h1><ul>
-<li>clientX和clientY：相对于浏览器（可视区左上角0,0）的坐标</li>
-<li>screenX和screenY：相对于设备屏幕左上角（0,0）的坐标</li>
-<li>offsetX和offsetY：相对于事件源左上角（0,0）的坐标</li>
-<li>pageX和pageY：相对于整个网页左上角（0,0）的坐标</li>
-<li>X和Y：本来是IE属性，相对于用CSS动态定位的最内层包容元素</li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.body.clientWidth || <span class="built_in">document</span>.documentElement.clientWidth;</span><br><span class="line"><span class="built_in">document</span>.body.clientHeight || <span class="built_in">document</span>.documentElement.clientHeight;</span><br></pre></td></tr></table></figure>
+<h2 id="Event-对象的-5-种坐标"><a href="#Event-对象的-5-种坐标" class="headerlink" title="Event 对象的 5 种坐标"></a>Event 对象的 5 种坐标</h2><ul>
+<li>clientX 和 clientY：相对于浏览器（可视区左上角0,0）的坐标</li>
+<li>screenX 和 screenY：相对于设备屏幕左上角（0,0）的坐标</li>
+<li>offsetX 和 offsetY：相对于事件源左上角（0,0）的坐标</li>
+<li>pageX 和 pageY：相对于整个网页左上角（0,0）的坐标</li>
+<li>X 和 Y：本来是 IE 属性，相对于用CSS动态定位的最内层包容元素</li>
 </ul>
-<p><img src="/images/hexo_post_27.png" alt=""></p>
-<h1 id="js各种宽高的应用"><a href="#js各种宽高的应用" class="headerlink" title="js各种宽高的应用"></a>js各种宽高的应用</h1><ul>
+<div align="center"><img src="/images/hexo_post_27.png" alt="" width="700"></div>
+
+<h2 id="JS各种宽高的应用"><a href="#JS各种宽高的应用" class="headerlink" title="JS各种宽高的应用"></a>JS各种宽高的应用</h2><ul>
 <li><a href="http://codepen.io/poetries/pen/RoeJgG" target="_blank" rel="noopener">可视区域加载</a></li>
 <li><a href="http://codepen.io/poetries/pen/WoayJy" target="_blank" rel="noopener">判断网页滚动到顶部或者底部</a></li>
 <li><a href="http://codepen.io/poetries/pen/vyVrvm" target="_blank" rel="noopener">DIV滚动到底部时加载剩余内容</a></li>
 <li><a href="http://codepen.io/poetries/pen/RoeBbL" target="_blank" rel="noopener">计算滚动轴的宽高</a></li>
 </ul>
-<h1 id="js中的宽高属性总结"><a href="#js中的宽高属性总结" class="headerlink" title="js中的宽高属性总结"></a>js中的宽高属性总结</h1><p><img src="/images/hexo_post_26.png" alt=""> <img src="/images/hexo_post_23.png" alt=""> <img src="/images/hexo_post_30.png" alt=""></p>
-<h5 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h5><p><a href="http://blog.poetries.top/2016/12/13/js-props/" target="_blank" rel="noopener">JavaScript及jQuery中的各种宽高属性图解</a></p>
+<h2 id="JS中的宽高属性总结"><a href="#JS中的宽高属性总结" class="headerlink" title="JS中的宽高属性总结"></a>JS中的宽高属性总结</h2><div align="center"><img src="/images/hexo_post_26.png" alt="" width="700"></div>
+
+<div align="center"><img src="/images/hexo_post_23.png" alt="" width="700"></div>
+
+<div align="center"><img src="/images/hexo_post_30.png" alt="" width="600"></div>
+
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul>
+<li><a href="http://blog.poetries.top/2016/12/13/js-props/" target="_blank" rel="noopener">JavaScript及jQuery中的各种宽高属性图解</a></li>
+</ul>
 
     </div>
     
@@ -467,7 +487,7 @@
     <div class="widget">
         <h3 class="title">文章目录</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#window和document"><span class="toc-text">window和document</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#window-screen"><span class="toc-text">window.screen</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#与window相关的宽高"><span class="toc-text">与window相关的宽高</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#与document相关的宽高"><span class="toc-text">与document相关的宽高</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#与client相关的宽高"><span class="toc-text">与client相关的宽高</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#小结"><span class="toc-text">小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#与offset相关的宽高"><span class="toc-text">与offset相关的宽高</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#offsetLeft的兼容性问题"><span class="toc-text">offsetLeft的兼容性问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#小结-1"><span class="toc-text">小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#与scroll相关的宽高"><span class="toc-text">与scroll相关的宽高</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#在某div中的scrollWidth和scrollHeight"><span class="toc-text">在某div中的scrollWidth和scrollHeight</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#obj-style-width和obj-style-height"><span class="toc-text">obj.style.width和obj.style.height</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#documentElement和body的关系"><span class="toc-text">documentElement和body的关系</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Event对象的5种坐标"><span class="toc-text">Event对象的5种坐标</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#js各种宽高的应用"><span class="toc-text">js各种宽高的应用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#js中的宽高属性总结"><span class="toc-text">js中的宽高属性总结</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#参考链接"><span class="toc-text">参考链接</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#window-和-document"><span class="toc-text">window 和 document</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#window-screen"><span class="toc-text">window.screen</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#与-window-相关的宽高"><span class="toc-text">与 window 相关的宽高</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#与-document-相关的宽高"><span class="toc-text">与 document 相关的宽高</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#与-client-相关的宽高"><span class="toc-text">与 client 相关的宽高</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#小结"><span class="toc-text">小结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#与-offset-相关的宽高"><span class="toc-text">与 offset 相关的宽高</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#offsetLeft-的兼容性问题"><span class="toc-text">offsetLeft 的兼容性问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#小结-1"><span class="toc-text">小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#与-scroll-相关的宽高"><span class="toc-text">与 scroll 相关的宽高</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#在某-div-中的-scrollWidth-和-scrollHeight"><span class="toc-text">在某 div 中的 scrollWidth 和 scrollHeight</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#obj-style-width-和-obj-style-height"><span class="toc-text">obj.style.width 和 obj.style.height</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#documentElement-和-body-的关系"><span class="toc-text">documentElement 和 body 的关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Event-对象的-5-种坐标"><span class="toc-text">Event 对象的 5 种坐标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JS各种宽高的应用"><span class="toc-text">JS各种宽高的应用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JS中的宽高属性总结"><span class="toc-text">JS中的宽高属性总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考文章"><span class="toc-text">参考文章</span></a></li></ol>
         
     </div>
 </aside>

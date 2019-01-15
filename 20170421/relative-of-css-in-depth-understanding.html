@@ -203,30 +203,24 @@
     </div>
     
     <div class="post-body post-content">
-        <h1 id="1-relative和absolute的相煎关系"><a href="#1-relative和absolute的相煎关系" class="headerlink" title="1.relative和absolute的相煎关系"></a>1.relative和absolute的相煎关系</h1><ol>
-<li>限制left/top/right/bottom定位;</li>
-<li>限制z-index层级：relative中的absolute层级不起作用,只看relative层级;</li>
-<li>限制在overflow下的嚣张气焰：消除absolute不受overflow限制的能力</li>
+        <h2 id="1-relative-和-absolute-的相煎关系"><a href="#1-relative-和-absolute-的相煎关系" class="headerlink" title="1. relative 和 absolute 的相煎关系"></a>1. relative 和 absolute 的相煎关系</h2><ol>
+<li>限制 left / top / right / bottom 定位；</li>
+<li>限制 z-index 层级：relative 中的 absolute 层级不起作用，只看 relative 层级；</li>
+<li>限制在 overflow 下的嚣张气焰：消除 absolute 不受 overflow 限制的能力</li>
 </ol>
-<h1 id="2-relative和定位"><a href="#2-relative和定位" class="headerlink" title="2.relative和定位"></a>2.relative和定位</h1><ol>
-<li>相对自身：top:100px;left:100px为相对于自身原位置移动</li>
+<h2 id="2-relative-和定位"><a href="#2-relative-和定位" class="headerlink" title="2. relative 和定位"></a>2. relative 和定位</h2><ol>
+<li>相对自身：top: 100px; left: 100px 为相对于自身原位置移动</li>
 <li>无侵入：不会影响到其他元素，可应用于自定义拖拽</li>
-<li>同时设置top/bottom/left/right的行为表现：绝对定位是拉伸，相对定位是斗争–top&gt;bottom,left&gt;right</li>
+<li>同时设置 top / bottom / left / right 的行为表现：绝对定位是拉伸，相对定位是斗争–top &gt; bottom，left &gt; right</li>
 </ol>
-<h1 id="3-relative与z-index"><a href="#3-relative与z-index" class="headerlink" title="3.relative与z-index"></a>3.relative与z-index</h1><ol>
+<h2 id="3-relative-与-z-index"><a href="#3-relative-与-z-index" class="headerlink" title="3. relative 与 z-index"></a>3. relative 与 z-index</h2><ol>
 <li>提高层叠上下文</li>
 <li>新建层叠上下文与层级</li>
 </ol>
-<p>z-index：auto是不会产生层叠上下文的</p>
-<h1 id="4-relative的最小化影响原则"><a href="#4-relative的最小化影响原则" class="headerlink" title="4.relative的最小化影响原则"></a>4.relative的最小化影响原则</h1><ul>
-<li>尽量避免使用relative</li>
-</ul>
-<p>absolute定位不依赖使用relative，不要为了使用absolute而设置relative</p>
-<ul>
-<li>最小化原则</li>
-</ul>
-<p>如果必须要使用relative,就把absolute定位的元素放进一个空div里，使relative的div只有定位为absolute的子元素</p>
-<div style="position:relative"><br>  <img src="pig_head.png" style="position:absolute;top:0;right:0;"><br></div><br><div><br>  <div></div><br>  <div></div><br>  <div></div><br>  ……<br></div>
+<p>z-index：auto 是不会产生层叠上下文的</p>
+<h2 id="4-relative-的最小化影响原则"><a href="#4-relative-的最小化影响原则" class="headerlink" title="4. relative 的最小化影响原则"></a>4. relative 的最小化影响原则</h2><h3 id="尽量避免使用relative"><a href="#尽量避免使用relative" class="headerlink" title="尽量避免使用relative"></a>尽量避免使用relative</h3><p>absolute 定位不依赖使用 relative，不要为了使用 absolute 而设置 relative</p>
+<h3 id="最小化原则"><a href="#最小化原则" class="headerlink" title="最小化原则"></a>最小化原则</h3><p>如果必须要使用 relative，就把 absolute 定位的元素放进一个空 div 里，使 relative 的 div 只有定位为 absolute 的子元素</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"position:relative"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"pig_head.png"</span> <span class="attr">style</span>=<span class="string">"position:absolute;top:0;right:0;"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  ......</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
     </div>
     
         <div class="reward">
@@ -320,7 +314,7 @@
     <div class="widget">
         <h3 class="title">文章目录</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-relative和absolute的相煎关系"><span class="toc-text">1.relative和absolute的相煎关系</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-relative和定位"><span class="toc-text">2.relative和定位</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-relative与z-index"><span class="toc-text">3.relative与z-index</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-relative的最小化影响原则"><span class="toc-text">4.relative的最小化影响原则</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-relative-和-absolute-的相煎关系"><span class="toc-text">1. relative 和 absolute 的相煎关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-relative-和定位"><span class="toc-text">2. relative 和定位</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-relative-与-z-index"><span class="toc-text">3. relative 与 z-index</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-relative-的最小化影响原则"><span class="toc-text">4. relative 的最小化影响原则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#尽量避免使用relative"><span class="toc-text">尽量避免使用relative</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#最小化原则"><span class="toc-text">最小化原则</span></a></li></ol></li></ol>
         
     </div>
 </aside>

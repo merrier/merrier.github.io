@@ -203,44 +203,52 @@
     </div>
     
     <div class="post-body post-content">
-        <h1 id="1-baseline与line-height"><a href="#1-baseline与line-height" class="headerlink" title="1.baseline与line-height"></a>1.baseline与line-height</h1><p>两条baseline之间的距离即为行高(不同的字体所在位置不同,可能偏离基线) <img src="/images/hexo_post_89.png" alt=""></p>
-<h1 id="2-行内框盒子模型"><a href="#2-行内框盒子模型" class="headerlink" title="2.行内框盒子模型"></a>2.行内框盒子模型</h1><p>一共有4种模型：</p>
-<ol>
-<li><strong>内容区域</strong>(content area),是一种围绕文字看不见的盒子.”内容区域”(content area)的大小与font-size的大小相关;</li>
-<li><strong>内联盒子</strong>(inline boxes),内联盒子不会让内容成块显示,而是排成一行.如果外部含inline水平的标签(span,a,em等),则属于内联盒子.如果是个光秃秃的文字,则属于匿名内联盒子;</li>
-<li><strong>行框盒子</strong>(line boxes),每一行就是一个行框盒子,每个行框盒子又是由一个一个内联盒子组成;</li>
-<li><p>标签所在的<strong>包含盒子</strong>(containing box),此盒子由一行一行的行框盒子组成;</p></li>
-</ol>
-<h1 id="3-line-height与内联元素的高度机制"><a href="#3-line-height与内联元素的高度机制" class="headerlink" title="3.line-height与内联元素的高度机制"></a>3.line-height与内联元素的高度机制</h1><ul>
-<li><strong>内联元素的高度是由line-height决定的;</strong></li>
-<li>行高由于其继承性,影响无处不在,即使单行文本也不例外;</li>
-<li>行高只是幕后黑手,高度的表现不是行高,而是内容区域和行间距;</li>
-<li><strong>内容区域高度(content area)+行间距(vertical spacing)=行高(line-height);</strong></li>
-<li>内容区域高度只与字号以及字体有关,与line-height没有任何关系;在simsun字体下,内容区域高度等于文字大小值;</li>
-<li>行间距上下拆分,就有了”半行间距”;</li>
-<li><strong>行高决定内联盒子高度;行间距墙头草,可大可小(甚至负值),保证高度正好等同于行高;</strong></li>
-<li>含多个行框盒子的包含容器—-多行文本的高度就是单行文本高度累加.</li>
-</ul>
-<h1 id="4-line-height各类属性值"><a href="#4-line-height各类属性值" class="headerlink" title="4.line-height各类属性值"></a>4.line-height各类属性值</h1><h2 id="normal"><a href="#normal" class="headerlink" title="normal"></a>normal</h2><p>默认属性值.跟着用户的浏览器走,且与元素字体关联</p>
-<h2 id=""><a href="#" class="headerlink" title=""></a><number></number></h2><p>使用数值作为行高值,根据当前元素的font-size大小计算</p>
-<h2 id="-1"><a href="#-1" class="headerlink" title=""></a><length></length></h2><p>使用具体长度值作为行高值,如1.5em;1.5rem;20px;20pt</p>
-<h2 id="-2"><a href="#-2" class="headerlink" title=""></a><percent></percent></h2><p>相对于设置了该line-height属性的元素的font-size大小计算</p>
-<h2 id="inherit"><a href="#inherit" class="headerlink" title="inherit"></a>inherit</h2><p>继承,input框等元素默认行高是normal,使用inherit可以让文本框样式可控性更强</p>
-<h1 id="5-line-height设置为1-5-150-1-5em有何区别"><a href="#5-line-height设置为1-5-150-1-5em有何区别" class="headerlink" title="5.line-height设置为1.5/150%/1.5em有何区别"></a>5.line-height设置为1.5/150%/1.5em有何区别</h1><p>计算上无差别，但是<strong>150%/1.5em是根据父元素的font-size计算的，1.5是根据自身的font-size计算；也就是150%/1.5em是会将行高继承给后代元素的，而1.5只会将比例继承给后代元素，后代元素会根据自己的font-size重新计算行高</strong> <img src="/images/hexo_post_83.png" alt=""></p>
-<h1 id="6-body全局数值行高使用经验"><a href="#6-body全局数值行高使用经验" class="headerlink" title="6.body全局数值行高使用经验"></a>6.body全局数值行高使用经验</h1><p>body{<br>  font-size:14px;<br>  line-height:?<br>}</p>
-<p>为了方便心算，所以我们<strong>将行高设置为20px</strong>，此时的line-height为： line-height=20px/14px≈1.4287-&gt;<strong>line-height:1.4286</strong></p>
-<h1 id="7-line-height与图片的表现"><a href="#7-line-height与图片的表现" class="headerlink" title="7.line-height与图片的表现"></a>7.line-height与图片的表现</h1><h2 id="行高不会影响图片实际占据的高度"><a href="#行高不会影响图片实际占据的高度" class="headerlink" title="行高不会影响图片实际占据的高度"></a><strong>行高不会影响图片实际占据的高度</strong></h2><p>图片外面有隐藏的“幽灵”文本节点，所以text-align:center会使图片在p标签中居中 <img src="/images/hexo_post_82.png" alt=""> 内联元素的vertical-align默认为baseline,所以文字的基线与图片的最下方对齐,但由于文字有行高,所以图片下方会有空隙： <img src="/images/hexo_post_76.png" alt=""></p>
-<h2 id="如何消除图片底部间隙"><a href="#如何消除图片底部间隙" class="headerlink" title="如何消除图片底部间隙"></a>如何消除图片底部间隙</h2><h3 id="图片块状化-无基线对齐"><a href="#图片块状化-无基线对齐" class="headerlink" title="图片块状化-无基线对齐"></a><strong>图片块状化-无基线对齐</strong></h3><p>img{display:block;}</p>
-<p>块状化的元素没有vertical-align属性</p>
-<h3 id="图片底线对齐"><a href="#图片底线对齐" class="headerlink" title="图片底线对齐"></a><strong>图片底线对齐</strong></h3><p>img{vertical-align:bottom}</p>
-<p>vertical-align不再是baseline,文本的最下方与图片的最下方对齐</p>
-<h3 id="行高足够小-基线位置上移"><a href="#行高足够小-基线位置上移" class="headerlink" title="行高足够小-基线位置上移"></a><strong>行高足够小-基线位置上移</strong></h3><p>.box{line-height:0;}</p>
-<p>基线位置上移到图片的最下方</p>
-<h2 id="小图片和大文字"><a href="#小图片和大文字" class="headerlink" title="小图片和大文字"></a>小图片和大文字</h2><p>基本上高度受行高控制</p>
-<h1 id="8-line-height的实际应用"><a href="#8-line-height的实际应用" class="headerlink" title="8.line-height的实际应用"></a>8.line-height的实际应用</h1><h2 id="图片水平垂直居中"><a href="#图片水平垂直居中" class="headerlink" title="图片水平垂直居中"></a>图片水平垂直居中</h2><p>.box{<br>  line-height:300px;<br>  text-align:center;<br>}<br>.box&gt;img{<br>  vertical-align:middle;<br>}</p>
-<h2 id="多行文本水平垂直居中"><a href="#多行文本水平垂直居中" class="headerlink" title="多行文本水平垂直居中"></a>多行文本水平垂直居中</h2><p>多行文字水平垂直居中实现的原理跟上一页图片的实现是一样的,区别在于要把多行文本所在的容器的display水平转换成和图片一样的,也就是inline-block,以及重置外部继承的text-align和line-height属性值</p>
-<p>.box{<br>  line-height:250px;<br>  text-align:center;<br>}<br>.box&gt;.text{<br>  display:inline-block;<br>  line-height:normal;<br>  text-align:left;<br>  vertical-align:middle;<br>}</p>
+        <h2 id="1-baseline-与-line-height"><a href="#1-baseline-与-line-height" class="headerlink" title="1. baseline 与 line-height"></a>1. baseline 与 line-height</h2><p>两条 baseline 之间的距离即为行高(不同的字体所在位置不同，可能偏离基线)</p>
+<div align="center"><img src="/images/hexo_post_89.png" alt="" width="400"></div>
 
+<h2 id="2-行内框盒子模型"><a href="#2-行内框盒子模型" class="headerlink" title="2. 行内框盒子模型"></a>2. 行内框盒子模型</h2><p>一共有 4 种模型：</p>
+<ol>
+<li><strong>内容区域</strong>(content area)，是一种围绕文字看不见的盒子。”内容区域”(content area)的大小与 font-size 的大小相关；</li>
+<li><strong>内联盒子</strong>(inline boxes)，内联盒子不会让内容成块显示，而是排成一行。如果外部含 inline 水平的标签(span，a，em等)，则属于内联盒子。如果是个光秃秃的文字，则属于匿名内联盒子；</li>
+<li><strong>行框盒子</strong>(line boxes)，每一行就是一个行框盒子，每个行框盒子又是由一个一个内联盒子组成；</li>
+<li><code>&lt;p&gt;</code> 标签所在的<strong>包含盒子</strong>(containing box)，此盒子由一行一行的行框盒子组成；</li>
+</ol>
+<h2 id="3-line-height-与内联元素的高度机制"><a href="#3-line-height-与内联元素的高度机制" class="headerlink" title="3. line-height 与内联元素的高度机制"></a>3. line-height 与内联元素的高度机制</h2><ul>
+<li><strong>内联元素的高度是由 line-height 决定的；</strong></li>
+<li>行高由于其继承性，影响无处不在，即使单行文本也不例外；</li>
+<li>行高只是幕后黑手，高度的表现不是行高，而是内容区域和行间距；</li>
+<li><strong>内容区域高度(content area) + 行间距(vertical spacing) = 行高(line-height)；</strong></li>
+<li>内容区域高度只与字号以及字体有关，与 line-height 没有任何关系；在 simsun 字体下，内容区域高度等于文字大小值；</li>
+<li>行间距上下拆分，就有了”半行间距”；</li>
+<li><strong>行高决定内联盒子高度;行间距墙头草，可大可小(甚至负值)，保证高度正好等同于行高；</strong></li>
+<li>含多个行框盒子的包含容器–多行文本的高度就是单行文本高度累加。</li>
+</ul>
+<h2 id="4-line-height-各类属性值"><a href="#4-line-height-各类属性值" class="headerlink" title="4. line-height 各类属性值"></a>4. line-height 各类属性值</h2><h3 id="normal"><a href="#normal" class="headerlink" title="normal"></a>normal</h3><p>默认属性值.跟着用户的浏览器走，且与元素字体关联</p>
+<h3 id="lt-number-gt"><a href="#lt-number-gt" class="headerlink" title="&lt;number&gt;"></a><code>&lt;number&gt;</code></h3><p>使用数值作为行高值，根据当前元素的 font-size 大小计算</p>
+<h3 id="lt-length-gt"><a href="#lt-length-gt" class="headerlink" title="&lt;length&gt;"></a><code>&lt;length&gt;</code></h3><p>使用具体长度值作为行高值，如 1.5em; 1.5rem; 20px; 20pt</p>
+<h3 id="lt-percent-gt"><a href="#lt-percent-gt" class="headerlink" title="&lt;percent&gt;"></a><code>&lt;percent&gt;</code></h3><p>相对于设置了该 line-height 属性的元素的 font-size 大小计算</p>
+<h3 id="inherit"><a href="#inherit" class="headerlink" title="inherit"></a>inherit</h3><p>继承，input 框等元素默认行高是 normal，使用 inherit 可以让文本框样式可控性更强</p>
+<h2 id="5-line-height-设置为-1-5-150-1-5em-有何区别"><a href="#5-line-height-设置为-1-5-150-1-5em-有何区别" class="headerlink" title="5. line-height 设置为 1.5 / 150% / 1.5em 有何区别"></a>5. line-height 设置为 1.5 / 150% / 1.5em 有何区别</h2><p>计算上无差别，但是 <strong>150% / 1.5em 是根据父元素的 font-size 计算的，1.5 是根据自身的 font-size 计算；也就是 150% / 1.5em 是会将行高继承给后代元素的，而 1.5 只会将比例继承给后代元素，后代元素会根据自己的 font-size 重新计算行高</strong></p>
+<div align="center"><img src="/images/hexo_post_83.png" alt="" width="400"></div>
+
+<h2 id="6-body-全局数值行高使用经验"><a href="#6-body-全局数值行高使用经验" class="headerlink" title="6. body 全局数值行高使用经验"></a>6. body 全局数值行高使用经验</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">14px</span>;</span><br><span class="line">  <span class="attribute">line-height</span>: ?;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>为了方便心算，所以我们<strong>将行高设置为 20px</strong>，此时的 line-height 为：line-height = 20px / 14px ≈ 1.4287 -&gt; <strong>line-height: 1.4286</strong></p>
+<h2 id="7-line-height-与图片的表现"><a href="#7-line-height-与图片的表现" class="headerlink" title="7. line-height 与图片的表现"></a>7. line-height 与图片的表现</h2><h3 id="行高不会影响图片实际占据的高度"><a href="#行高不会影响图片实际占据的高度" class="headerlink" title="行高不会影响图片实际占据的高度"></a>行高不会影响图片实际占据的高度</h3><p>图片外面有隐藏的“幽灵”文本节点，所以 text-align: center 会使图片在p标签中居中</p>
+<div align="center"><img src="/images/hexo_post_82.png" alt="" width="400"></div>
+
+<p>内联元素的 vertical-align 默认为 baseline，所以文字的基线与图片的最下方对齐，但由于文字有行高，所以图片下方会有空隙：</p>
+<div align="center"><img src="/images/hexo_post_76.png" alt="" width="400"></div>
+
+<h3 id="如何消除图片底部间隙"><a href="#如何消除图片底部间隙" class="headerlink" title="如何消除图片底部间隙"></a>如何消除图片底部间隙</h3><h4 id="图片块状化-无基线对齐"><a href="#图片块状化-无基线对齐" class="headerlink" title="图片块状化-无基线对齐"></a>图片块状化-无基线对齐</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">img</span>&#123; <span class="attribute">display</span>: block; &#125;</span><br></pre></td></tr></table></figure>
+<p>块状化的元素没有 vertical-align 属性</p>
+<h4 id="图片底线对齐"><a href="#图片底线对齐" class="headerlink" title="图片底线对齐"></a>图片底线对齐</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">img</span>&#123;<span class="attribute">vertical-align</span>: bottom&#125;</span><br></pre></td></tr></table></figure>
+<p>vertical-align 不再是 baseline，文本的最下方与图片的最下方对齐</p>
+<h4 id="行高足够小-基线位置上移"><a href="#行高足够小-基线位置上移" class="headerlink" title="行高足够小-基线位置上移"></a>行高足够小-基线位置上移</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123; <span class="attribute">line-height</span>: <span class="number">0</span>; &#125;</span><br></pre></td></tr></table></figure>
+<p>基线位置上移到图片的最下方</p>
+<h3 id="小图片和大文字"><a href="#小图片和大文字" class="headerlink" title="小图片和大文字"></a>小图片和大文字</h3><p>基本上高度受行高控制</p>
+<h2 id="8-line-height-的实际应用"><a href="#8-line-height-的实际应用" class="headerlink" title="8. line-height 的实际应用"></a>8. line-height 的实际应用</h2><h3 id="图片水平垂直居中"><a href="#图片水平垂直居中" class="headerlink" title="图片水平垂直居中"></a>图片水平垂直居中</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">line-height</span>: <span class="number">300px</span>;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box</span>&gt;<span class="selector-tag">img</span> &#123;</span><br><span class="line">  <span class="attribute">vertical-align</span>: middle;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="多行文本水平垂直居中"><a href="#多行文本水平垂直居中" class="headerlink" title="多行文本水平垂直居中"></a>多行文本水平垂直居中</h3><p>多行文字水平垂直居中实现的原理跟上一页图片的实现是一样的，区别在于要把多行文本所在的容器的 display 水平转换成和图片一样的，也就是 inline-block，以及重置外部继承的 text-align 和 line-height 属性值</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">line-height</span>: <span class="number">250px</span>;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box</span>&gt;<span class="selector-class">.text</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: inline-block;</span><br><span class="line">  <span class="attribute">line-height</span>: normal;</span><br><span class="line">  <span class="attribute">text-align</span>: left;</span><br><span class="line">  <span class="attribute">vertical-align</span>: middle;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </div>
     
         <div class="reward">
@@ -334,7 +342,7 @@
     <div class="widget">
         <h3 class="title">文章目录</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-baseline与line-height"><span class="toc-text">1.baseline与line-height</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-行内框盒子模型"><span class="toc-text">2.行内框盒子模型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-line-height与内联元素的高度机制"><span class="toc-text">3.line-height与内联元素的高度机制</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-line-height各类属性值"><span class="toc-text">4.line-height各类属性值</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#normal"><span class="toc-text">normal</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-text"></span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-1"><span class="toc-text"></span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-2"><span class="toc-text"></span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#inherit"><span class="toc-text">inherit</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-line-height设置为1-5-150-1-5em有何区别"><span class="toc-text">5.line-height设置为1.5/150%/1.5em有何区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-body全局数值行高使用经验"><span class="toc-text">6.body全局数值行高使用经验</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-line-height与图片的表现"><span class="toc-text">7.line-height与图片的表现</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#行高不会影响图片实际占据的高度"><span class="toc-text">行高不会影响图片实际占据的高度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何消除图片底部间隙"><span class="toc-text">如何消除图片底部间隙</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#图片块状化-无基线对齐"><span class="toc-text">图片块状化-无基线对齐</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#图片底线对齐"><span class="toc-text">图片底线对齐</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#行高足够小-基线位置上移"><span class="toc-text">行高足够小-基线位置上移</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#小图片和大文字"><span class="toc-text">小图片和大文字</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-line-height的实际应用"><span class="toc-text">8.line-height的实际应用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#图片水平垂直居中"><span class="toc-text">图片水平垂直居中</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多行文本水平垂直居中"><span class="toc-text">多行文本水平垂直居中</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-baseline-与-line-height"><span class="toc-text">1. baseline 与 line-height</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-行内框盒子模型"><span class="toc-text">2. 行内框盒子模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-line-height-与内联元素的高度机制"><span class="toc-text">3. line-height 与内联元素的高度机制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-line-height-各类属性值"><span class="toc-text">4. line-height 各类属性值</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#normal"><span class="toc-text">normal</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lt-number-gt"><span class="toc-text">&lt;number&gt;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lt-length-gt"><span class="toc-text">&lt;length&gt;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lt-percent-gt"><span class="toc-text">&lt;percent&gt;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#inherit"><span class="toc-text">inherit</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-line-height-设置为-1-5-150-1-5em-有何区别"><span class="toc-text">5. line-height 设置为 1.5 / 150% / 1.5em 有何区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-body-全局数值行高使用经验"><span class="toc-text">6. body 全局数值行高使用经验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-line-height-与图片的表现"><span class="toc-text">7. line-height 与图片的表现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#行高不会影响图片实际占据的高度"><span class="toc-text">行高不会影响图片实际占据的高度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何消除图片底部间隙"><span class="toc-text">如何消除图片底部间隙</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#图片块状化-无基线对齐"><span class="toc-text">图片块状化-无基线对齐</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#图片底线对齐"><span class="toc-text">图片底线对齐</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#行高足够小-基线位置上移"><span class="toc-text">行高足够小-基线位置上移</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#小图片和大文字"><span class="toc-text">小图片和大文字</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-line-height-的实际应用"><span class="toc-text">8. line-height 的实际应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#图片水平垂直居中"><span class="toc-text">图片水平垂直居中</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多行文本水平垂直居中"><span class="toc-text">多行文本水平垂直居中</span></a></li></ol></li></ol>
         
     </div>
 </aside>
