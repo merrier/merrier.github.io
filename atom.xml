@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://merrier.wang/"/>
-  <updated>2019-01-17T12:20:37.920Z</updated>
+  <updated>2019-01-17T12:23:37.685Z</updated>
   <id>http://merrier.wang/</id>
   
   <author>
@@ -20,8 +20,8 @@
     <title>再见，2018</title>
     <link href="http://merrier.wang/20190101/goodbye-2018.html"/>
     <id>http://merrier.wang/20190101/goodbye-2018.html</id>
-    <published>2019-01-01T16:46:28.000Z</published>
-    <updated>2019-01-17T12:20:37.920Z</updated>
+    <published>2019-01-01T08:46:28.000Z</published>
+    <updated>2019-01-17T12:23:37.685Z</updated>
     
     <summary type="html">
     
@@ -46,8 +46,8 @@
     <title>铲屎官，这里有一份属于你的空投</title>
     <link href="http://merrier.wang/20180922/cat-strategy.html"/>
     <id>http://merrier.wang/20180922/cat-strategy.html</id>
-    <published>2018-09-22T12:30:47.000Z</published>
-    <updated>2019-01-17T12:20:37.928Z</updated>
+    <published>2018-09-22T04:30:47.000Z</published>
+    <updated>2019-01-17T12:23:37.693Z</updated>
     
     <summary type="html">
     
@@ -78,8 +78,8 @@
     <title>简单聊一下服务端渲染</title>
     <link href="http://merrier.wang/20180918/server-side-render.html"/>
     <id>http://merrier.wang/20180918/server-side-render.html</id>
-    <published>2018-09-18T16:07:53.000Z</published>
-    <updated>2019-01-17T12:20:37.924Z</updated>
+    <published>2018-09-18T08:07:53.000Z</published>
+    <updated>2019-01-17T12:23:37.689Z</updated>
     
     <summary type="html">
     
@@ -106,8 +106,8 @@
     <title>部落冲突COC游戏攻略</title>
     <link href="http://merrier.wang/20180530/coc-walkthrough.html"/>
     <id>http://merrier.wang/20180530/coc-walkthrough.html</id>
-    <published>2018-05-30T17:30:57.000Z</published>
-    <updated>2019-01-17T12:20:37.928Z</updated>
+    <published>2018-05-30T09:30:57.000Z</published>
+    <updated>2019-01-17T12:23:37.693Z</updated>
     
     <summary type="html">
     
@@ -132,8 +132,8 @@
     <title>Apache配置二级域名及SSL证书</title>
     <link href="http://merrier.wang/20180424/apache-configuration-of-ssl-certificate.html"/>
     <id>http://merrier.wang/20180424/apache-configuration-of-ssl-certificate.html</id>
-    <published>2018-04-24T18:13:56.000Z</published>
-    <updated>2019-01-17T12:20:37.916Z</updated>
+    <published>2018-04-24T10:13:56.000Z</published>
+    <updated>2019-01-17T12:23:37.677Z</updated>
     
     <summary type="html">
     
@@ -160,8 +160,8 @@
     <title>网站配置HTTPS踩坑记</title>
     <link href="http://merrier.wang/20180416/website-configuration-https.html"/>
     <id>http://merrier.wang/20180416/website-configuration-https.html</id>
-    <published>2018-04-16T14:36:36.000Z</published>
-    <updated>2019-01-17T12:20:37.924Z</updated>
+    <published>2018-04-16T06:36:36.000Z</published>
+    <updated>2019-01-17T12:23:37.689Z</updated>
     
     <summary type="html">
     
@@ -190,8 +190,8 @@
     <title>Promise入门</title>
     <link href="http://merrier.wang/20180226/introduction-to-promise.html"/>
     <id>http://merrier.wang/20180226/introduction-to-promise.html</id>
-    <published>2018-02-26T22:14:10.000Z</published>
-    <updated>2019-01-17T12:20:37.916Z</updated>
+    <published>2018-02-26T14:14:10.000Z</published>
+    <updated>2019-01-17T12:23:37.681Z</updated>
     
     <summary type="html">
     
@@ -212,9 +212,9 @@
     
       <category term="笔记" scheme="http://merrier.wang/tags/%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="ES6" scheme="http://merrier.wang/tags/ES6/"/>
-    
       <category term="慕课网" scheme="http://merrier.wang/tags/%E6%85%95%E8%AF%BE%E7%BD%91/"/>
+    
+      <category term="ES6" scheme="http://merrier.wang/tags/ES6/"/>
     
   </entry>
   
@@ -222,8 +222,8 @@
     <title>慕课网视频评分&amp;推荐</title>
     <link href="http://merrier.wang/20180219/video-scoring-and-recommendation-on-muke.html"/>
     <id>http://merrier.wang/20180219/video-scoring-and-recommendation-on-muke.html</id>
-    <published>2018-02-19T10:11:11.000Z</published>
-    <updated>2019-01-17T12:20:37.920Z</updated>
+    <published>2018-02-19T02:11:11.000Z</published>
+    <updated>2019-01-17T12:23:37.685Z</updated>
     
     <summary type="html">
     
@@ -254,8 +254,8 @@
     <title>那些惊艳的移动端H5案例</title>
     <link href="http://merrier.wang/20180211/those-amazing-mobile-h5-cases.html"/>
     <id>http://merrier.wang/20180211/those-amazing-mobile-h5-cases.html</id>
-    <published>2018-02-11T16:25:53.000Z</published>
-    <updated>2019-01-17T12:20:37.928Z</updated>
+    <published>2018-02-11T08:25:53.000Z</published>
+    <updated>2019-01-17T12:23:37.693Z</updated>
     
     <summary type="html">
     
@@ -280,8 +280,8 @@
     <title>再见，2017</title>
     <link href="http://merrier.wang/20171231/goodbye-2017.html"/>
     <id>http://merrier.wang/20171231/goodbye-2017.html</id>
-    <published>2017-12-31T23:15:52.000Z</published>
-    <updated>2019-01-17T12:20:37.920Z</updated>
+    <published>2017-12-31T15:15:52.000Z</published>
+    <updated>2019-01-17T12:23:37.685Z</updated>
     
     <summary type="html">
     
@@ -308,8 +308,8 @@
     <title>Blue老师ES6视频笔记</title>
     <link href="http://merrier.wang/20171212/teacher-blue-es6-video-notes.html"/>
     <id>http://merrier.wang/20171212/teacher-blue-es6-video-notes.html</id>
-    <published>2017-12-12T22:10:42.000Z</published>
-    <updated>2019-01-17T12:20:37.916Z</updated>
+    <published>2017-12-12T14:10:42.000Z</published>
+    <updated>2019-01-17T12:23:37.677Z</updated>
     
     <summary type="html">
     
@@ -338,8 +338,8 @@
     <title>Hybrid设计与浅析</title>
     <link href="http://merrier.wang/20171201/hybrid-design-and-analysis.html"/>
     <id>http://merrier.wang/20171201/hybrid-design-and-analysis.html</id>
-    <published>2017-12-01T22:19:00.000Z</published>
-    <updated>2019-01-17T12:20:37.916Z</updated>
+    <published>2017-12-01T14:19:00.000Z</published>
+    <updated>2019-01-17T12:23:37.677Z</updated>
     
     <summary type="html">
     
@@ -366,8 +366,8 @@
     <title>浅谈搜索引擎（SEO）</title>
     <link href="http://merrier.wang/20171130/talking-about-seo.html"/>
     <id>http://merrier.wang/20171130/talking-about-seo.html</id>
-    <published>2017-11-30T22:47:40.000Z</published>
-    <updated>2019-01-17T12:20:37.924Z</updated>
+    <published>2017-11-30T14:47:40.000Z</published>
+    <updated>2019-01-17T12:23:37.685Z</updated>
     
     <summary type="html">
     
@@ -394,8 +394,8 @@
     <title>是时候为网易云音乐的评论打call了</title>
     <link href="http://merrier.wang/20171107/comments-on-netease-cloud-music.html"/>
     <id>http://merrier.wang/20171107/comments-on-netease-cloud-music.html</id>
-    <published>2017-11-07T16:37:46.000Z</published>
-    <updated>2019-01-17T12:20:37.924Z</updated>
+    <published>2017-11-07T08:37:46.000Z</published>
+    <updated>2019-01-17T12:23:37.685Z</updated>
     
     <summary type="html">
     
@@ -422,8 +422,8 @@
     <title>机器学习概念入门</title>
     <link href="http://merrier.wang/20171102/introduction-to-machine-learning-concept.html"/>
     <id>http://merrier.wang/20171102/introduction-to-machine-learning-concept.html</id>
-    <published>2017-11-02T22:23:08.000Z</published>
-    <updated>2019-01-17T12:20:37.924Z</updated>
+    <published>2017-11-02T14:23:08.000Z</published>
+    <updated>2019-01-17T12:23:37.685Z</updated>
     
     <summary type="html">
     
@@ -450,8 +450,8 @@
     <title>我为什么要写个人博客</title>
     <link href="http://merrier.wang/20171017/why-do-i-write-blog.html"/>
     <id>http://merrier.wang/20171017/why-do-i-write-blog.html</id>
-    <published>2017-10-17T15:51:33.000Z</published>
-    <updated>2019-01-17T12:20:37.920Z</updated>
+    <published>2017-10-17T07:51:33.000Z</published>
+    <updated>2019-01-17T12:23:37.685Z</updated>
     
     <summary type="html">
     
@@ -476,8 +476,8 @@
     <title>杂谈系列</title>
     <link href="http://merrier.wang/20171017/chat-series.html"/>
     <id>http://merrier.wang/20171017/chat-series.html</id>
-    <published>2017-10-17T14:02:51.000Z</published>
-    <updated>2019-01-17T12:20:37.924Z</updated>
+    <published>2017-10-17T06:02:51.000Z</published>
+    <updated>2019-01-17T12:23:37.685Z</updated>
     
     <summary type="html">
     
@@ -500,8 +500,8 @@
     <title>读书笔记系列（9）——你不知道的JavaScript（上卷）</title>
     <link href="http://merrier.wang/20171010/you-dont-know-js-volume1.html"/>
     <id>http://merrier.wang/20171010/you-dont-know-js-volume1.html</id>
-    <published>2017-10-10T19:42:12.000Z</published>
-    <updated>2019-01-17T12:20:37.924Z</updated>
+    <published>2017-10-10T11:42:12.000Z</published>
+    <updated>2019-01-17T12:23:37.689Z</updated>
     
     <summary type="html">
     
@@ -528,8 +528,8 @@
     <title>推荐一些视频</title>
     <link href="http://merrier.wang/20171007/recommend-some-videos.html"/>
     <id>http://merrier.wang/20171007/recommend-some-videos.html</id>
-    <published>2017-10-07T22:10:49.000Z</published>
-    <updated>2019-01-17T12:20:37.920Z</updated>
+    <published>2017-10-07T14:10:49.000Z</published>
+    <updated>2019-01-17T12:23:37.685Z</updated>
     
     <summary type="html">
     
@@ -554,8 +554,8 @@
     <title>Merrier说还可以这样玩儿？！</title>
     <link href="http://merrier.wang/20170923/how-to-play-in-this-blog.html"/>
     <id>http://merrier.wang/20170923/how-to-play-in-this-blog.html</id>
-    <published>2017-09-23T14:32:34.000Z</published>
-    <updated>2019-01-17T12:20:37.916Z</updated>
+    <published>2017-09-23T06:32:34.000Z</published>
+    <updated>2019-01-17T12:23:37.681Z</updated>
     
     <summary type="html">
     
