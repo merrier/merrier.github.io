@@ -1,3 +1,427 @@
-<!DOCTYPE HTML><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1"><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta http-equiv="Cache-Control" content="no-siteapp"><meta http-equiv="Cache-Control" content="no-transform"><meta name="renderer" content="webkit|ie-comp|ie-stand"><meta name="apple-mobile-web-app-capable" content="Merrier说"><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="format-detection" content="telephone=no,email=no,adress=no"><meta name="browsermode" content="application"><meta name="screen-orientation" content="portrait"><link rel="dns-prefetch" href="http://merrier.wang"><meta name="description" content="Merrier的个人博客"><meta name="keywords" content="merrier 博客 前端 北邮人"><meta name="robots" content="all"><meta name="google" content="all"><meta name="googlebot" content="all"><meta name="verify" content="all"><meta name="google-site-verification" content="UkMBUrF2qTuMWfmPXWFFmc_pnqCRAxHQY1ndE0Zu1p0"><title>JS中数组方法总结 | Merrier说</title><link rel="alternate" href="/atom.xml" title="Merrier说" type="application/atom+xml"><link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/css/bootstrap.min.css?rev=6873d58798f32fd038a4e4936f7abcd9"><link rel="stylesheet" href="/css/font-awesome.min.css?rev=a535f7d3a1cf8ee14d9efdd0c97c8085"><link rel="stylesheet" href="/css/style.css?rev=ce78cccc258fdce8aa532fd1dc1cb45c"><div class="hide"><script type="text/javascript">var cnzz_protocol="https:"==document.location.protocol?" https://":" http://";document.write(unescape("%3Cspan class='cnzz_stat_icon_1264342320 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='"+cnzz_protocol+"s19.cnzz.com/z_stat.php%3Fid%3D1264342320%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"))</script></div><script>!function(){var t=document.createElement("script"),e=window.location.protocol.split(":")[0];t.src="https"===e?"https://zz.bdstatic.com/linksubmit/push.js":"http://push.zhanzhang.baidu.com/push.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(t,s)}()</script></head></html><!--[if lte IE 8]><style>
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Merrier说">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://merrier.wang">
+    <!--SEO-->
+
+<meta name="description" content="Merrier的个人博客">
+
+
+
+<meta name="keywords" content="merrier 博客 前端 北邮人">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+<meta name="google-site-verification" content="UkMBUrF2qTuMWfmPXWFFmc_pnqCRAxHQY1ndE0Zu1p0">
+    <!--Title-->
+
+
+<title>JS中数组方法总结 | Merrier说</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Merrier说" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1264342320 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1264342320%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
     html{ font-size: 1em }
-</style><![endif]--><!--[if lte IE 9]><div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div><![endif]--><body><header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)"><div class="main-header-box"><a class="header-avatar" href="/" title="Merrier"><img src="/images/hexo_others_8.jpeg" alt="logo头像" class="img-responsive center-block"></a><div class="branding"><h2>叩首问路，码梦为生</h2></div></div></header><nav class="main-navigation"><div class="container"><div class="row"><div class="col-sm-12"><div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav"><span class="sr-only"></span><i class="fa fa-bars"></i></span> <a class="navbar-brand" href="http://merrier.wang">Merrier说</a></div><div class="collapse navbar-collapse" id="main-menu"><ul class="menu"><li role="presentation" class="text-center"><a href="/"><i class="fa"></i> 首页</a></li><li role="presentation" class="text-center"><a href="/categories/frontend/"><i class="fa"></i> 前端</a></li><li role="presentation" class="text-center"><a href="/categories/algorithm/"><i class="fa"></i> 算法</a></li><li role="presentation" class="text-center"><a href="/categories/series/"><i class="fa"></i> 系列专栏</a></li><li role="presentation" class="text-center"><a href="/archives/"><i class="fa"></i> 文章归档</a></li></ul></div></div></div></div></nav><section class="content-wrap"><div class="container"><div class="row"><main class="col-md-8 main-content m-post"><p id="process"></p><article class="post"><div class="post-head"><h1 id="JS中数组方法总结">JS中数组方法总结</h1><div class="post-meta"><span class="categories-meta fa-wrap"><i class="fa fa-folder-open-o"></i> <a href="/categories/JS">JS</a></span><span class="fa-wrap"><i class="fa fa-tags"></i> <span class="tags-meta"><a href="/tags/JS" title="JS">JS</a> <a href="/tags/数组" title="数组">数组</a></span></span><span class="fa-wrap"><i class="fa fa-clock-o"></i> <span class="date-meta">2017/03/22</span></span><span class="fa-wrap"><i class="fa fa-eye"></i><span id="busuanzi_value_page_pv"></span></span></div></div><div class="post-body post-content"><h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>因为刷leetcode的时候，发现会经常用到数组，因为JS中没有明确的栈和队列，所以需要用数组进行模拟，在刷算法题的过程中碰到了好多关于数组的计算方法，所以就打算对算法中经常用的数组方法进行总结，可能会对刚开始用JS刷Leetcode的码农有好处，如果你有任何补充，请留言评论或直接给我发邮件。</p><h2 id="1-JS自带数组方法"><a href="#1-JS自带数组方法" class="headerlink" title="1.JS自带数组方法"></a>1.JS自带数组方法</h2><ul><li>concat()=&gt;连接两个或更多的数组，并返回结果。</li><li>join()=&gt;把数组的所有元素放入一个字符串。元素通过指定的分隔符进行分隔。</li><li>pop()=&gt;删除并返回数组的最后一个元素</li><li>push()=&gt;向数组的末尾添加一个或更多元素，并返回新的长度。</li><li>reverse()=&gt;颠倒数组中元素的顺序。</li><li>shift()=&gt;删除并返回数组的第一个元素</li><li>slice()=&gt;从某个已有的数组返回选定的元素</li><li>sort()=&gt;对数组的元素进行排序</li><li>splice()=&gt;删除元素，并向数组添加新元素。</li><li>toSource()=&gt;返回该对象的源代码。</li><li>toString()=&gt;把数组转换为字符串，并返回结果。</li><li>toLocaleString()=&gt;把数组转换为本地数组，并返回结果。</li><li>unshift()=&gt;向数组的开头添加一个或更多元素，并返回新的长度。</li><li>valueOf()=&gt;返回数组对象的原始值</li></ul><h2 id="2-排序"><a href="#2-排序" class="headerlink" title="2.排序"></a>2.排序</h2><p>js数组对象排序有内置方法sort()，但是默认以字符串方式排序:</p><p>1、简单数组简单排序<br>var arrSimple=new Array(1,8,7,6);<br>arrSimple.sort(); //[1,6,7,8]<br>2、简单数组自定义排序<br>var arrSimple2=new Array(1,8,7,6);<br>arrSimple2.sort(function(a,b){return b-a}); //[8,7,6,1]<br>//解释：a,b表示数组中的任意两个元素，若return &gt; 0 b前a后；reutrn &lt; 0 a前b后；a=b时存在浏览器兼容<br>//简化一下：a-b输出从小到大排序，b-a输出从大到小排序。</p><h2 id="3-删除重复的元素只保留一个（两种实现思路）"><a href="#3-删除重复的元素只保留一个（两种实现思路）" class="headerlink" title="3.删除重复的元素只保留一个（两种实现思路）"></a>3.删除重复的元素只保留一个（两种实现思路）</h2><p>//方法一：遍历要删除的数组arr, 把元素分别放入另一个数组tmp中，在判断该元素在arr中不存在才允许放入tmp中用到两个函数：for …in 和 indexOf()<br>var test = [2,4,4,5,”a”,”a”];<br>function unique1(arr){<br>// 遍历arr，把元素分别放入tmp数组(不存在才放)<br>var tmp = new Array();<br>for(var i in arr){<br>//该元素在tmp内部不存在才允许追加<br>if(tmp.indexOf(arr[i])==-1){<br>tmp.push(arr[i]);<br>}<br>}<br>return tmp;<br>}<br>unique1(test); //[2,4,5,”a”]</p><p>//方法二：把目标数组arr的元素值和键的位置调换 自动就把重复的元素给删除掉了，调换后的样子：array(‘qiang’=&gt;1,’ming’=&gt;1,’tao’=&gt;1)<br>function unique2(arr){<br>var tmp = new Array();<br>for(var m in arr){<br>tmp[arr[m]]=1;<br>}<br>//再把键和值的位置再次调换<br>var tmparr = new Array();<br>for(var n in tmp){<br>tmparr.push(n);<br>}<br>return tmparr;<br>}<br>unique2(test); //[2,4,5,”a”]</p><p>//方法三：返回新数组，保证类型不变<br>function unique3(a){<br>var hash=[],arr=[];<br>for (var i = 0; i &lt; a.length; i++) {<br>hash[a[i]]!=null;<br>if(!hash[a[i]]){<br>arr.push(a[i]);<br>hash[a[i]]=true;<br>}<br>}<br>console.log(arr);<br>}<br>unique3(test);//[2, 4, 5, “a”]</p><h2 id="4-获取数组中的最大值和最小值"><a href="#4-获取数组中的最大值和最小值" class="headerlink" title="4.获取数组中的最大值和最小值"></a>4.获取数组中的最大值和最小值</h2><p>可以用传统的遍历，也可以用math</p><p>var arr = [54,65,43,21,12,34,45,58,97,24];</p><p>//方法一、字符串拼接法<br>//利用toString和join把数组转换为字符串，再和Math的max和min方法分别进行拼接，最后执行eval方法<br>var maxN = eval(“Math.max(“ + arr.toString() + “)”);<br>var minN = eval(“Math.min(“ + arr.toString() + “)”);<br>//或者<br>var maxN = eval(“Math.max(“ + arr.join() + “)”);<br>var minN = eval(“Math.min(“ + arr.join() + “)”);</p><p>//方法二、排序法<br>//先把数组从小到大排序，数组第一个即为最小值，最后一个即为最大值<br>arr.sort(function(a,b){return a-b;});<br>var minN = arr[0];<br>var maxN = arr[arr.length-1];</p><p>//方法三、假设法<br>//假设数组第一个为最大（或最小值），和后边进行比较，若后边的值比最大值大（或比最小值小），则替换最大值（或最小值）<br>var maxN = arr[0];<br>var minN = arr[0];<br>for(var i=1;i&lt;arr.length;i++){<br>var cur = arr[i];<br>cur&gt;maxN ? maxN=cur : null;<br>cur&lt;minN ? minN=cur : null;<br>}</p><p>//方法四、Math的max和min方法<br>//使用apply方法使数组可以作为传递的参数<br>var maxN = Math.max.apply(null,arr);<br>var minN = Math.min.apply(null,arr);<br>//多维数组可以这样做：<br>var a=[1,2,3,[5,6],[1,4,8]];<br>var ta=a.join(“,”).split(“,”);//转化为一维数组<br>var maxN = Math.max.apply(null,ta);//最大值<br>var minN = Math.min.apply(null,ta);//最小值</p><p>//扩展：增加原型方法，同时为了避免其他库也实现了同名的原型方法，可以在生成函数之前进行重名判断<br>if (typeof Array.prototype[‘max’] == ‘undefined’) {<br>Array.prototype.max = function() {<br>return Math.max.apply({},this);<br>}<br>}<br>if (typeof Array.prototype[‘min’] == ‘undefined’) {<br>Array.prototype.min = function() {<br>return Math.min.apply({},this);<br>}<br>}</p><h2 id="5-初始化二维数组"><a href="#5-初始化二维数组" class="headerlink" title="5.初始化二维数组"></a>5.初始化二维数组</h2><p>//方法一：直接定义并且初始化<br>var _TheArray = [[“0-1”,”0-2”],[“1-1”,”1-2”],[“2-1”,”2-2”]]</p><p>//方法二：未知长度的二维数组<br>var tArray = new Array(); //先声明一维<br>for(var k=0;k&lt;i;k++){ //一维长度为i,i为变量，可以根据实际情况改变<br>tArray[k]=new Array(); //声明二维，每一个一维数组里面的一个元素都是一个数组；<br>for(var j=0;j&lt;p;j++){ //一维数组里面每个元素数组可以包含的数量p，p也是一个变量；<br>tArray[k][j]=””; //这里将变量初始化，我这边统一初始化为空，后面在用所需的值覆盖里面的值<br>}<br>}</p><p>//以上方法都有问题，推荐方法三<br>var r = [];<br>for(var k=0;k&lt;length;k++){<br>r[k]= [];<br>}</p><h2 id="6-数组随机排序"><a href="#6-数组随机排序" class="headerlink" title="6.数组随机排序"></a>6.数组随机排序</h2><p>来自<a href="https://blog.oldj.net/2017/01/23/shuffle-an-array-in-javascript/" target="_blank" rel="noopener">关于JavaScript的数组随机排序</a></p><p>//方法一：Fisher–Yates shuffle 算法<br>function shuffle(arr) {<br>var i = arr.length, t, j;<br>while (i) {<br>j = Math.floor(Math.random() * i–);<br>t = arr[i];<br>arr[i] = arr[j];<br>arr[j] = t;<br>}<br>}</p></div><div class="reward"><div class="reward-wrap">赏<div class="reward-box"><span class="reward-type"><img class="alipay" src="/images/hexo_others_5.png"><b>支付宝打赏</b></span> <span class="reward-type"><img class="wechat" src="/images/hexo_others_6.png"><b>微信打赏</b></span></div></div><p class="reward-tip">赞赏是不耍流氓的鼓励</p></div><div class="post-footer"><div>转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="//merrier.wang" target="_blank">Merrier说</a></div><div></div></div></article><div class="article-nav prev-next-wrap clearfix"><a href="/20170324/roman-numerals-converted-into-integers.html" class="pre-post btn btn-default" title="罗马数字转换成整数（JS）"><i class="fa fa-angle-left fa-fw"></i> <span class="hidden-lg">上一篇</span> <span class="hidden-xs">罗马数字转换成整数（JS）</span></a> <a href="/20170321/some-bit-manipulation-techniques.html" class="next-post btn btn-default" title="一些位操作的技巧"><span class="hidden-lg">下一篇</span> <span class="hidden-xs">一些位操作的技巧</span><i class="fa fa-angle-right fa-fw"></i></a></div><div id="comments"><script id="dsq-count-scr" src="https://merrier.disqus.com/count.js" async></script><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div><script type="text/javascript">if(document.getElementById("disqus_thread")){var disqus_config=function(){this.page.url="http://merrier.wang/20170322/summary-of-array-method-in-js.html",this.page.identifier="20170322/summary-of-array-method-in-js.html",this.page.title="JS中数组方法总结"};!function(){var t=document,e=t.createElement("script");e.async=!0,e.src="https://merrier.disqus.com/embed.js",e.setAttribute("data-timestamp",""+ +new Date),(t.head||t.body).appendChild(e)}()}</script></div></main><aside id="article-toc" role="navigation" class="col-md-4"><div class="widget"><h3 class="title">文章目录</h3><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#写在前面"><span class="toc-text">写在前面</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-JS自带数组方法"><span class="toc-text">1.JS自带数组方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-排序"><span class="toc-text">2.排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-删除重复的元素只保留一个（两种实现思路）"><span class="toc-text">3.删除重复的元素只保留一个（两种实现思路）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-获取数组中的最大值和最小值"><span class="toc-text">4.获取数组中的最大值和最小值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-初始化二维数组"><span class="toc-text">5.初始化二维数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-数组随机排序"><span class="toc-text">6.数组随机排序</span></a></li></ol></li></ol></div></aside></div></div></section><footer class="main-footer"><div class="container"><div class="row"></div></div></footer><a id="back-to-top" class="icon-btn hide"><i class="fa fa-chevron-up"></i></a><div class="copyright"><div class="container"><div class="row"><div class="col-sm-12"><div class="busuanzi">访问量:<strong id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></strong> &nbsp; | &nbsp; 访客数:<strong id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></strong></div></div><div class="col-sm-12"><span>Copyright &copy; 2018</span> | <span>Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a></span> | <span>Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a></span></div></div></div></div><script src="/assets/tagcanvas.min.js?rev=d3e34a34636b6f4c81d2b43b153907bb"></script><script>var tagOption={textColour:"#444",outlineMethod:"block",outlineColour:"#FFDAB9",interval:30,textHeight:13,outlineRadius:3,freezeActive:!0,frontSelect:!0,initial:[.1,-.1],depth:.5,decel:.95,maxSpeed:.03,reverse:!0,fadeIn:500,wheelZoom:!0};TagCanvas.Start("tag-cloud-3d","",tagOption)</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="/js/app.js?rev=f25479a641009e7423ae98c6f819957f"></script></body>
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Merrier">
+            <img src="/images/hexo_others_8.jpeg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 叩首问路，码梦为生 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://merrier.wang">Merrier说</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/frontend/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/algorithm/"><i class="fa "></i>算法</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/series/"><i class="fa "></i>系列专栏</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>文章归档</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="JS中数组方法总结">
+            
+	            JS中数组方法总结
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/JS">
+            JS
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/JS" title="JS">
+                        JS
+                    </a>
+                
+                    <a href="/tags/数组" title="数组">
+                        数组
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/03/22</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>因为刷leetcode的时候，发现会经常用到数组，因为JS中没有明确的栈和队列，所以需要用数组进行模拟，在刷算法题的过程中碰到了好多关于数组的计算方法，所以就打算对算法中经常用的数组方法进行总结，可能会对刚开始用JS刷Leetcode的码农有好处，如果你有任何补充，请留言评论或直接给我发邮件。</p>
+<h2 id="1-JS自带数组方法"><a href="#1-JS自带数组方法" class="headerlink" title="1.JS自带数组方法"></a>1.JS自带数组方法</h2><ul>
+<li>concat()=&gt;连接两个或更多的数组，并返回结果。</li>
+<li>join()=&gt;把数组的所有元素放入一个字符串。元素通过指定的分隔符进行分隔。</li>
+<li>pop()=&gt;删除并返回数组的最后一个元素</li>
+<li>push()=&gt;向数组的末尾添加一个或更多元素，并返回新的长度。</li>
+<li>reverse()=&gt;颠倒数组中元素的顺序。</li>
+<li>shift()=&gt;删除并返回数组的第一个元素</li>
+<li>slice()=&gt;从某个已有的数组返回选定的元素</li>
+<li>sort()=&gt;对数组的元素进行排序</li>
+<li>splice()=&gt;删除元素，并向数组添加新元素。</li>
+<li>toSource()=&gt;返回该对象的源代码。</li>
+<li>toString()=&gt;把数组转换为字符串，并返回结果。</li>
+<li>toLocaleString()=&gt;把数组转换为本地数组，并返回结果。</li>
+<li>unshift()=&gt;向数组的开头添加一个或更多元素，并返回新的长度。</li>
+<li>valueOf()=&gt;返回数组对象的原始值</li>
+</ul>
+<h2 id="2-排序"><a href="#2-排序" class="headerlink" title="2.排序"></a>2.排序</h2><p>js数组对象排序有内置方法sort()，但是默认以字符串方式排序:</p>
+<p>1、简单数组简单排序<br>    var arrSimple=new Array(1,8,7,6);<br>    arrSimple.sort();  //[1,6,7,8]<br>2、简单数组自定义排序<br>    var arrSimple2=new Array(1,8,7,6);<br>    arrSimple2.sort(function(a,b){return b-a});  //[8,7,6,1]<br>    //解释：a,b表示数组中的任意两个元素，若return &gt; 0 b前a后；reutrn &lt; 0 a前b后；a=b时存在浏览器兼容<br>    //简化一下：a-b输出从小到大排序，b-a输出从大到小排序。</p>
+<h2 id="3-删除重复的元素只保留一个（两种实现思路）"><a href="#3-删除重复的元素只保留一个（两种实现思路）" class="headerlink" title="3.删除重复的元素只保留一个（两种实现思路）"></a>3.删除重复的元素只保留一个（两种实现思路）</h2><p>//方法一：遍历要删除的数组arr, 把元素分别放入另一个数组tmp中，在判断该元素在arr中不存在才允许放入tmp中用到两个函数：for …in 和 indexOf()<br>var test = [2,4,4,5,”a”,”a”];<br>function unique1(arr){<br>    // 遍历arr，把元素分别放入tmp数组(不存在才放)<br>    var tmp = new Array();<br>    for(var i in arr){<br>    //该元素在tmp内部不存在才允许追加<br>        if(tmp.indexOf(arr[i])==-1){<br>            tmp.push(arr[i]);<br>        }<br>    }<br>    return tmp;<br>}<br>unique1(test);  //[2,4,5,”a”]</p>
+<p>//方法二：把目标数组arr的元素值和键的位置调换 自动就把重复的元素给删除掉了，调换后的样子：array(‘qiang’=&gt;1,’ming’=&gt;1,’tao’=&gt;1)<br>function unique2(arr){<br>    var tmp = new Array();<br>    for(var m in arr){<br>        tmp[arr[m]]=1;<br>    }<br>    //再把键和值的位置再次调换<br>    var tmparr = new Array();<br>    for(var n in tmp){<br>        tmparr.push(n);<br>    }<br>    return tmparr;<br>}<br>unique2(test);  //[2,4,5,”a”]</p>
+<p>//方法三：返回新数组，保证类型不变<br>function unique3(a){<br>    var hash=[],arr=[];<br>    for (var i = 0; i &lt; a.length; i++) {<br>        hash[a[i]]!=null;<br>        if(!hash[a[i]]){<br>            arr.push(a[i]);<br>            hash[a[i]]=true;<br>        }<br>    }<br>    console.log(arr);<br>}<br>unique3(test);//[2, 4, 5, “a”]</p>
+<h2 id="4-获取数组中的最大值和最小值"><a href="#4-获取数组中的最大值和最小值" class="headerlink" title="4.获取数组中的最大值和最小值"></a>4.获取数组中的最大值和最小值</h2><p>可以用传统的遍历，也可以用math</p>
+<p>var arr = [54,65,43,21,12,34,45,58,97,24];</p>
+<p>//方法一、字符串拼接法<br>//利用toString和join把数组转换为字符串，再和Math的max和min方法分别进行拼接，最后执行eval方法<br>var maxN = eval(“Math.max(“ + arr.toString() + “)”);<br>var minN = eval(“Math.min(“ + arr.toString() + “)”);<br>//或者<br>var maxN = eval(“Math.max(“ + arr.join() + “)”);<br>var minN = eval(“Math.min(“ + arr.join() + “)”);</p>
+<p>//方法二、排序法<br>//先把数组从小到大排序，数组第一个即为最小值，最后一个即为最大值<br>arr.sort(function(a,b){return a-b;});<br>var minN = arr[0];<br>var maxN = arr[arr.length-1];</p>
+<p>//方法三、假设法<br>//假设数组第一个为最大（或最小值），和后边进行比较，若后边的值比最大值大（或比最小值小），则替换最大值（或最小值）<br>var maxN = arr[0];<br>var minN = arr[0];<br>for(var i=1;i&lt;arr.length;i++){<br>    var cur = arr[i];<br>    cur&gt;maxN ? maxN=cur : null;<br>    cur&lt;minN ? minN=cur : null;<br>}</p>
+<p>//方法四、Math的max和min方法<br>//使用apply方法使数组可以作为传递的参数<br>var maxN = Math.max.apply(null,arr);<br>var minN = Math.min.apply(null,arr);<br>//多维数组可以这样做：<br>var a=[1,2,3,[5,6],[1,4,8]];<br>var ta=a.join(“,”).split(“,”);//转化为一维数组<br>var maxN = Math.max.apply(null,ta);//最大值<br>var minN = Math.min.apply(null,ta);//最小值</p>
+<p>//扩展：增加原型方法，同时为了避免其他库也实现了同名的原型方法，可以在生成函数之前进行重名判断<br>if (typeof Array.prototype[‘max’] == ‘undefined’) {<br>    Array.prototype.max = function() {<br>        return Math.max.apply({},this);<br>    }<br>}<br>if (typeof Array.prototype[‘min’] == ‘undefined’) {<br>    Array.prototype.min = function() {<br>        return Math.min.apply({},this);<br>    }<br>}</p>
+<h2 id="5-初始化二维数组"><a href="#5-初始化二维数组" class="headerlink" title="5.初始化二维数组"></a>5.初始化二维数组</h2><p>//方法一：直接定义并且初始化<br>var _TheArray = [[“0-1”,”0-2”],[“1-1”,”1-2”],[“2-1”,”2-2”]]</p>
+<p>//方法二：未知长度的二维数组<br>var tArray = new Array();  //先声明一维<br>    for(var k=0;k&lt;i;k++){    //一维长度为i,i为变量，可以根据实际情况改变<br>    tArray[k]=new Array();  //声明二维，每一个一维数组里面的一个元素都是一个数组；<br>    for(var j=0;j&lt;p;j++){   //一维数组里面每个元素数组可以包含的数量p，p也是一个变量；<br>        tArray[k][j]=””;    //这里将变量初始化，我这边统一初始化为空，后面在用所需的值覆盖里面的值<br>    }<br>}</p>
+<p>//以上方法都有问题，推荐方法三<br>var r = [];<br>for(var k=0;k&lt;length;k++){<br>   r[k]= [];<br>}</p>
+<h2 id="6-数组随机排序"><a href="#6-数组随机排序" class="headerlink" title="6.数组随机排序"></a>6.数组随机排序</h2><p>来自<a href="https://blog.oldj.net/2017/01/23/shuffle-an-array-in-javascript/" target="_blank" rel="noopener">关于JavaScript的数组随机排序</a></p>
+<p>//方法一：Fisher–Yates shuffle 算法<br>function shuffle(arr) {<br>  var i = arr.length, t, j;<br>  while (i) {<br>    j = Math.floor(Math.random() * i–);<br>    t = arr[i];<br>    arr[i] = arr[j];<br>    arr[j] = t;<br>  }<br>}</p>
+
+    </div>
+    
+        <div class="reward">
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+                <span class="reward-type">
+                    <img class="alipay" src="/images/hexo_others_5.png"><b>支付宝打赏</b>
+                </span>
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="/images/hexo_others_6.png"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">赞赏是不耍流氓的鼓励</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="//merrier.wang" target="_blank">Merrier说</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/20170324/roman-numerals-converted-into-integers.html" class="pre-post btn btn-default" title="罗马数字转换成整数（JS）">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">罗马数字转换成整数（JS）</span>
+        </a>
+    
+    
+        <a href="/20170321/some-bit-manipulation-techniques.html" class="next-post btn btn-default" title="一些位操作的技巧">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">一些位操作的技巧</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+  <script id="dsq-count-scr" src="https://merrier.disqus.com/count.js" async></script>
+
+
+<div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+<script type="text/javascript">
+  if (document.getElementById('disqus_thread')) {
+    var disqus_config = function () {
+      this.page.url = 'http://merrier.wang/20170322/summary-of-array-method-in-js.html';
+      this.page.identifier = '20170322/summary-of-array-method-in-js.html';
+      this.page.title = 'JS中数组方法总结';
+    };
+    (function(){
+      var d = document,
+          s = d.createElement('script');
+      s.async = true;
+      s.src = 'https://merrier.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+</script>
+
+
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#写在前面"><span class="toc-text">写在前面</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-JS自带数组方法"><span class="toc-text">1.JS自带数组方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-排序"><span class="toc-text">2.排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-删除重复的元素只保留一个（两种实现思路）"><span class="toc-text">3.删除重复的元素只保留一个（两种实现思路）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-获取数组中的最大值和最小值"><span class="toc-text">4.获取数组中的最大值和最小值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-初始化二维数组"><span class="toc-text">5.初始化二维数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-数组随机排序"><span class="toc-text">6.数组随机排序</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        访问量:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        访客数:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2018
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+    <script src="/assets/tagcanvas.min.js?rev=2.9"></script>
+    <script>
+        var tagOption = {
+            textColour: '#444', // 字体颜色
+            outlineMethod: 'block', // 选中模式
+            outlineColour: '#FFDAB9', // 选中模式的颜色
+            interval: 30 || 30, // 动画帧之间的时间间隔，值越大，转动幅度越大
+            textHeight: 13,
+            outlineRadius: 3,
+            freezeActive: true || '', // 选中的标签是否继续滚动
+            frontSelect: true || '', // 不选标签云后部的标签
+            initial: [0.1, -0.1],
+            depth: 0.5,
+            decel: 0.95,
+            maxSpeed: 0.03,
+            reverse: true || '', // 是否反向触发
+            fadeIn: 500, // 进入动画时间
+            wheelZoom: true || '' // 是否启用鼠标滚轮
+        }
+        TagCanvas.Start('tag-cloud-3d','',tagOption);
+    </script>
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>
