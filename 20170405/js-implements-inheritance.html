@@ -207,48 +207,45 @@
     </div>
     
     <div class="post-body post-content">
-        <h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>JS虽然声称面向对象，但是其很多特性与真正的“面向对象”仍有一定差距；面向对象的一大特性就是可以继承，所以如何在JS这种弱类型语言中实现继承就成为了前端面试中的常见问题，下面我就总结一下在JS中实现继承的几种方式：</p>
-<h1 id="定义父类"><a href="#定义父类" class="headerlink" title="定义父类"></a>定义父类</h1><p>既然要实现继承，首先得有一个父类：</p>
-<p>// 定义一个动物类<br>function Animal (name) {<br>  // 属性<br>  this.name = name || ‘Animal’;<br>  // 实例方法<br>  this.sleep = function(){<br>    console.log(this.name + ‘正在睡觉！’);<br>  }<br>}<br>// 原型方法<br>Animal.prototype.eat = function(food) {<br>  console.log(this.name + ‘正在吃：’ + food);<br>};</p>
-<h1 id="1、原型链继承"><a href="#1、原型链继承" class="headerlink" title="1、原型链继承"></a>1、原型链继承</h1><p><strong>核心</strong>：将父类的实例作为子类的原型</p>
-<p>function Cat(){<br>}<br>Cat.prototype = new Animal();<br>Cat.prototype.name = ‘cat’;</p>
-<p>//　Test Code<br>var cat = new Cat();<br>console.log(cat.name);<br>console.log(cat.eat(‘fish’));<br>console.log(cat.sleep());<br>console.log(cat instanceof Animal); //true<br>console.log(cat instanceof Cat); //true</p>
+        <p>JS 虽然声称面向对象，但是其很多特性与真正的“面向对象”仍有一定差距；面向对象的一大特性就是可以继承，所以如何在 JS 这种弱类型语言中实现继承就成为了前端面试中的常见问题，下面我就总结一下在 JS 中实现继承的几种方式：</p>
+<h2 id="定义父类"><a href="#定义父类" class="headerlink" title="定义父类"></a>定义父类</h2><p>既然要实现继承，首先得有一个父类：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义一个动物类</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span> (<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 属性</span></span><br><span class="line">  <span class="keyword">this</span>.name = name || <span class="string">'Animal'</span>;</span><br><span class="line">  <span class="comment">// 实例方法</span></span><br><span class="line">  <span class="keyword">this</span>.sleep = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name + <span class="string">'正在睡觉！'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 原型方法</span></span><br><span class="line">Animal.prototype.eat = <span class="function"><span class="keyword">function</span>(<span class="params">food</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.name + <span class="string">'正在吃：'</span> + food);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="1、原型链继承"><a href="#1、原型链继承" class="headerlink" title="1、原型链继承"></a>1、原型链继承</h2><p><strong>核心</strong>：将父类的实例作为子类的原型</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params"></span>)</span>&#123; </span><br><span class="line">&#125;</span><br><span class="line">Cat.prototype = <span class="keyword">new</span> Animal();</span><br><span class="line">Cat.prototype.name = <span class="string">'cat'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//　Test Code</span></span><br><span class="line"><span class="keyword">var</span> cat = <span class="keyword">new</span> Cat();</span><br><span class="line"><span class="built_in">console</span>.log(cat.name);</span><br><span class="line"><span class="built_in">console</span>.log(cat.eat(<span class="string">'fish'</span>));</span><br><span class="line"><span class="built_in">console</span>.log(cat.sleep());</span><br><span class="line"><span class="built_in">console</span>.log(cat <span class="keyword">instanceof</span> Animal); <span class="comment">//true </span></span><br><span class="line"><span class="built_in">console</span>.log(cat <span class="keyword">instanceof</span> Cat); <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
 <p><strong>特点</strong>：</p>
 <ol>
 <li>非常纯粹的继承关系，实例是子类的实例，也是父类的实例</li>
-<li>父类新增原型方法/原型属性，子类都能访问到</li>
+<li>父类新增原型方法 / 原型属性，子类都能访问到</li>
 <li>简单，易于实现</li>
 </ol>
 <p><strong>缺点</strong>：</p>
 <ol>
-<li>要想为子类新增属性和方法，必须要在<code>new Animal()</code>这样的语句之后执行，不能放到构造器中</li>
+<li>要想为子类新增属性和方法，必须要在 <code>new Animal()</code> 这样的语句之后执行，不能放到构造器中</li>
 <li>无法实现多继承</li>
 <li>来自原型对象的引用属性是所有实例共享的</li>
 <li>创建子类实例时，无法向父类构造函数传参</li>
 </ol>
-<p><strong>推荐指数</strong>：★★（3、4两大致命缺陷）</p>
-<h1 id="2、构造继承"><a href="#2、构造继承" class="headerlink" title="2、构造继承"></a>2、构造继承</h1><p><strong>核心：</strong>使用父类的构造函数来增强子类实例，等于是复制父类的实例属性给子类（没用到原型） 除了call方法，也可以用apply()，由于篇幅原因，就不再详细介绍这两种方法</p>
-<p>function Cat(name){<br>  Animal.call(this);<br>  this.name = name || ‘Tom’;<br>}</p>
-<p>// Test Code<br>var cat = new Cat();<br>console.log(cat.name);<br>console.log(cat.sleep());<br>console.log(cat instanceof Animal); // false<br>console.log(cat instanceof Cat); // true</p>
+<p><strong>推荐指数</strong>：★★（3、4 两大致命缺陷）</p>
+<h2 id="2、构造继承"><a href="#2、构造继承" class="headerlink" title="2、构造继承"></a>2、构造继承</h2><p><strong>核心</strong>：使用父类的构造函数来增强子类实例，等于是复制父类的实例属性给子类（没用到原型） 除了 call 方法，也可以用 apply()，由于篇幅原因，就不再详细介绍这两种方法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  Animal.call(<span class="keyword">this</span>);</span><br><span class="line">  <span class="keyword">this</span>.name = name || <span class="string">'Tom'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Test Code</span></span><br><span class="line"><span class="keyword">var</span> cat = <span class="keyword">new</span> Cat();</span><br><span class="line"><span class="built_in">console</span>.log(cat.name);</span><br><span class="line"><span class="built_in">console</span>.log(cat.sleep());</span><br><span class="line"><span class="built_in">console</span>.log(cat <span class="keyword">instanceof</span> Animal); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(cat <span class="keyword">instanceof</span> Cat); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 <p><strong>特点</strong>：</p>
 <ol>
-<li>解决了1中，子类实例共享父类引用属性的问题</li>
+<li>解决了 1 中，子类实例共享父类引用属性的问题</li>
 <li>创建子类实例时，可以向父类传递参数</li>
-<li>可以实现多继承（call多个父类对象）</li>
+<li>可以实现多继承（call 多个父类对象）</li>
 </ol>
 <p><strong>缺点</strong>：</p>
 <ol>
 <li>实例并不是父类的实例，只是子类的实例</li>
-<li>只能继承父类的实例属性和方法，不能继承原型属性/方法</li>
+<li>只能继承父类的实例属性和方法，不能继承原型属性 / 方法</li>
 <li>无法实现函数复用，每个子类都有父类实例函数的副本，影响性能</li>
 </ol>
 <p><strong>推荐指数</strong>：★★（缺点3）</p>
-<h1 id="3、实例继承"><a href="#3、实例继承" class="headerlink" title="3、实例继承"></a>3、实例继承</h1><p><strong>核心：</strong>为父类实例添加新特性，作为子类实例返回</p>
-<p>function Cat(name){<br>  var instance = new Animal();<br>  instance.name = name || ‘Tom’;<br>  return instance;<br>}</p>
-<p>// Test Code<br>var cat = new Cat();<br>console.log(cat.name);<br>console.log(cat.sleep());<br>console.log(cat instanceof Animal); // true<br>console.log(cat instanceof Cat); // false</p>
+<h2 id="3、实例继承"><a href="#3、实例继承" class="headerlink" title="3、实例继承"></a>3、实例继承</h2><p><strong>核心：</strong>：为父类实例添加新特性，作为子类实例返回</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> instance = <span class="keyword">new</span> Animal();</span><br><span class="line">  instance.name = name || <span class="string">'Tom'</span>;</span><br><span class="line">  <span class="keyword">return</span> instance;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Test Code</span></span><br><span class="line"><span class="keyword">var</span> cat = <span class="keyword">new</span> Cat();</span><br><span class="line"><span class="built_in">console</span>.log(cat.name);</span><br><span class="line"><span class="built_in">console</span>.log(cat.sleep());</span><br><span class="line"><span class="built_in">console</span>.log(cat <span class="keyword">instanceof</span> Animal); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(cat <span class="keyword">instanceof</span> Cat); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
 <p><strong>特点</strong>：</p>
 <ol>
-<li>不限制调用方式，不管是<code>new 子类()</code>还是<code>子类()</code>,返回的对象具有相同的效果</li>
+<li>不限制调用方式，不管是 <code>new 子类()</code>还是<code>子类()</code>，返回的对象具有相同的效果</li>
 </ol>
 <p><strong>缺点</strong>：</p>
 <ol>
@@ -256,9 +253,8 @@
 <li>不支持多继承</li>
 </ol>
 <p><strong>推荐指数</strong>：★★</p>
-<h1 id="4、拷贝继承"><a href="#4、拷贝继承" class="headerlink" title="4、拷贝继承"></a>4、拷贝继承</h1><p><strong>特点</strong>：使用for in将父类实例中的方法赋给子类实例</p>
-<p>function Cat(name){<br>  var animal = new Animal();<br>  for(var p in animal){<br>    Cat.prototype[p] = animal[p];<br>  }<br>  Cat.prototype.name = name || ‘Tom’;<br>}</p>
-<p>// Test Code<br>var cat = new Cat();<br>console.log(cat.name);<br>console.log(cat.sleep());<br>console.log(cat instanceof Animal); // false<br>console.log(cat instanceof Cat); // true</p>
+<h2 id="4、拷贝继承"><a href="#4、拷贝继承" class="headerlink" title="4、拷贝继承"></a>4、拷贝继承</h2><p><strong>特点</strong>：使用 for in 将父类实例中的方法赋给子类实例</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> animal = <span class="keyword">new</span> Animal();</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> p <span class="keyword">in</span> animal)&#123;</span><br><span class="line">    Cat.prototype[p] = animal[p];</span><br><span class="line">  &#125;</span><br><span class="line">  Cat.prototype.name = name || <span class="string">'Tom'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Test Code</span></span><br><span class="line"><span class="keyword">var</span> cat = <span class="keyword">new</span> Cat();</span><br><span class="line"><span class="built_in">console</span>.log(cat.name);</span><br><span class="line"><span class="built_in">console</span>.log(cat.sleep());</span><br><span class="line"><span class="built_in">console</span>.log(cat <span class="keyword">instanceof</span> Animal); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(cat <span class="keyword">instanceof</span> Cat); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 <p><strong>特点</strong>：</p>
 <ol>
 <li>支持多继承</li>
@@ -266,15 +262,14 @@
 <p><strong>缺点</strong>：</p>
 <ol>
 <li>效率较低，内存占用高（因为要拷贝父类的属性）</li>
-<li>无法获取父类不可枚举的方法（不可枚举方法，不能使用for in 访问到）</li>
+<li>无法获取父类不可枚举的方法（不可枚举方法，不能使用 for in 访问到）</li>
 </ol>
-<p><strong>推荐指数</strong>：★（缺点1）</p>
-<h1 id="5-组合继承"><a href="#5-组合继承" class="headerlink" title="5.组合继承"></a>5.组合继承</h1><p><strong>核心：</strong>通过调用父类构造，继承父类的属性并保留传参的优点，然后通过将父类实例作为子类原型，实现函数复用</p>
-<p>function Cat(name){<br>  Animal.call(this);<br>  this.name = name || ‘Tom’;<br>}<br>Cat.prototype = new Animal();</p>
-<p>// Test Code<br>var cat = new Cat();<br>console.log(cat.name);<br>console.log(cat.sleep());<br>console.log(cat instanceof Animal); // true<br>console.log(cat instanceof Cat); // true</p>
+<p><strong>推荐指数</strong>：★（缺点 1）</p>
+<h2 id="5、组合继承"><a href="#5、组合继承" class="headerlink" title="5、组合继承"></a>5、组合继承</h2><p><strong>核</strong>：通过调用父类构造，继承父类的属性并保留传参的优点，然后通过将父类实例作为子类原型，实现函数复用</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">  Animal.call(<span class="keyword">this</span>);</span><br><span class="line">  <span class="keyword">this</span>.name = name || <span class="string">'Tom'</span>;</span><br><span class="line">&#125;</span><br><span class="line">Cat.prototype = <span class="keyword">new</span> Animal();</span><br><span class="line"></span><br><span class="line"><span class="comment">// Test Code</span></span><br><span class="line"><span class="keyword">var</span> cat = <span class="keyword">new</span> Cat();</span><br><span class="line"><span class="built_in">console</span>.log(cat.name);</span><br><span class="line"><span class="built_in">console</span>.log(cat.sleep());</span><br><span class="line"><span class="built_in">console</span>.log(cat <span class="keyword">instanceof</span> Animal); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(cat <span class="keyword">instanceof</span> Cat); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 <p><strong>特点</strong>：</p>
 <ol>
-<li>弥补了方式2的缺陷，可以继承实例属性/方法，也可以继承原型属性/方法</li>
+<li>弥补了方式 2 的缺陷，可以继承实例属性 / 方法，也可以继承原型属性 / 方法</li>
 <li>既是子类的实例，也是父类的实例</li>
 <li>不存在引用属性共享问题</li>
 <li>可传参</li>
@@ -285,9 +280,8 @@
 <li>调用了两次父类构造函数，生成了两份实例（子类实例将子类原型上的那份屏蔽了）</li>
 </ol>
 <p><strong>推荐指数</strong>：★★★★（仅仅多消耗了一点内存，也是最常用的一种继承方式）</p>
-<h1 id="6、寄生组合继承"><a href="#6、寄生组合继承" class="headerlink" title="6、寄生组合继承"></a>6、寄生组合继承</h1><p><strong>核心：</strong>通过寄生方式，砍掉父类的实例属性，这样，在调用两次父类的构造的时候，就不会初始化两次实例方法/属性，避免的组合继承的缺点</p>
-<p>function Cat(name){<br>  Animal.call(this);<br>  this.name = name || ‘Tom’;<br>}<br>(function(){<br>  // 创建一个没有实例方法的类<br>  var Super = function(){};<br>  Super.prototype = Animal.prototype;<br>  //将实例作为子类的原型<br>  Cat.prototype = new Super();<br>})();</p>
-<p>// Test Code<br>var cat = new Cat();<br>console.log(cat.name);<br>console.log(cat.sleep());<br>console.log(cat instanceof Animal); // true<br>console.log(cat instanceof Cat); //true</p>
+<h2 id="6、寄生组合继承"><a href="#6、寄生组合继承" class="headerlink" title="6、寄生组合继承"></a>6、寄生组合继承</h2><p><strong>核心</strong>：通过寄生方式，砍掉父类的实例属性，这样，在调用两次父类的构造的时候，就不会初始化两次实例方法 / 属性，避免的组合继承的缺点</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">  Animal.call(<span class="keyword">this</span>);</span><br><span class="line">  <span class="keyword">this</span>.name = name || <span class="string">'Tom'</span>;</span><br><span class="line">&#125;</span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">// 创建一个没有实例方法的类</span></span><br><span class="line">  <span class="keyword">var</span> Super = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">  Super.prototype = Animal.prototype;</span><br><span class="line">  <span class="comment">//将实例作为子类的原型</span></span><br><span class="line">  Cat.prototype = <span class="keyword">new</span> Super();</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line"><span class="comment">// Test Code</span></span><br><span class="line"><span class="keyword">var</span> cat = <span class="keyword">new</span> Cat();</span><br><span class="line"><span class="built_in">console</span>.log(cat.name);</span><br><span class="line"><span class="built_in">console</span>.log(cat.sleep());</span><br><span class="line"><span class="built_in">console</span>.log(cat <span class="keyword">instanceof</span> Animal); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(cat <span class="keyword">instanceof</span> Cat); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 <p><strong>特点</strong>：</p>
 <ol>
 <li>堪称完美</li>
@@ -297,8 +291,13 @@
 <li>实现较为复杂</li>
 </ol>
 <p><strong>推荐指数</strong>：★★★★（实现复杂，扣掉一颗星）</p>
-<h1 id="7、六种继承方式的联系"><a href="#7、六种继承方式的联系" class="headerlink" title="7、六种继承方式的联系"></a>7、六种继承方式的联系</h1><p><img src="/images/继承-300x272.jpg" alt=""> PS：虚线表示辅助作用，实现表示决定性作用</p>
-<h5 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h5><p>cnblogs：<a href="http://www.cnblogs.com/humin/p/4556820.html" target="_blank" rel="noopener">http://www.cnblogs.com/humin/p/4556820.html</a> cnblogs：<a href="http://www.cnblogs.com/ayqy/p/4471638.html" target="_blank" rel="noopener">http://www.cnblogs.com/ayqy/p/4471638.html</a></p>
+<h2 id="7、六种继承方式的联系"><a href="#7、六种继承方式的联系" class="headerlink" title="7、六种继承方式的联系"></a>7、六种继承方式的联系</h2><div align="center"><img src="/images/hexo_post_316.jpg" alt="" width="300"></div>
+
+<p>PS：虚线表示辅助作用，实现表示决定性作用</p>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul>
+<li><a href="http://www.cnblogs.com/humin/p/4556820.html" target="_blank" rel="noopener">JS继承的实现方式</a></li>
+<li><a href="http://www.cnblogs.com/ayqy/p/4471638.html" target="_blank" rel="noopener">重新理解JS的6种继承方式</a></li>
+</ul>
 
     </div>
     
@@ -393,7 +392,7 @@
     <div class="widget">
         <h3 class="title">文章目录</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#写在前面"><span class="toc-text">写在前面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#定义父类"><span class="toc-text">定义父类</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1、原型链继承"><span class="toc-text">1、原型链继承</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2、构造继承"><span class="toc-text">2、构造继承</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3、实例继承"><span class="toc-text">3、实例继承</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4、拷贝继承"><span class="toc-text">4、拷贝继承</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-组合继承"><span class="toc-text">5.组合继承</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6、寄生组合继承"><span class="toc-text">6、寄生组合继承</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7、六种继承方式的联系"><span class="toc-text">7、六种继承方式的联系</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#参考链接"><span class="toc-text">参考链接</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#定义父类"><span class="toc-text">定义父类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1、原型链继承"><span class="toc-text">1、原型链继承</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、构造继承"><span class="toc-text">2、构造继承</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、实例继承"><span class="toc-text">3、实例继承</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4、拷贝继承"><span class="toc-text">4、拷贝继承</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5、组合继承"><span class="toc-text">5、组合继承</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6、寄生组合继承"><span class="toc-text">6、寄生组合继承</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7、六种继承方式的联系"><span class="toc-text">7、六种继承方式的联系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考文章"><span class="toc-text">参考文章</span></a></li></ol>
         
     </div>
 </aside>
