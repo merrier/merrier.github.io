@@ -3,7 +3,7 @@
     var gulp = require('gulp'),
         less = require('gulp-less'),
         rename = require('gulp-rename'),
-        minifycss = require('gulp-minify-css'),
+        minifycss = require('gulp-clean-css'),
         autoprefixer = require('gulp-autoprefixer'),
         uglify = require('gulp-uglify'),
         jshint = require('gulp-jshint'),
@@ -17,7 +17,7 @@
         path = require('path'),
         paths = {
             root: './',
-            source: './themes/hexo-theme-snippet/source/' //主题下原文件
+            source: './themes/snippet/source/' //主题下原文件
         }
 
     /*====================================================
