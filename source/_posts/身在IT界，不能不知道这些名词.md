@@ -27,9 +27,9 @@ Polyfill 或者 Polyfiller，是英国 Web 开发者 Remy Sharp **在咖啡店�
 hack 一般用来形容某些“黑科技”，是指为了满足程序的某些需求而搞的一些代码，比如 css 中的一些 hack：
 
 ```css
-<!--\[if IE\]>
+<!--[if IE]>
 这段文字只在IE浏览器显示
-<!\[endif\]-->
+<![endif]-->
 ```
 
 ## bug
