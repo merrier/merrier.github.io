@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://merrier.wang/20170406/html5-and-css3-actual-warfare.html</loc>
+    <lastmod>2019-01-17</lastmod>
+  </url>  <url>
     <loc>http://merrier.wang/20170820/it-nouns.html</loc>
     <lastmod>2019-01-17</lastmod>
   </url>  <url>
@@ -23,6 +26,9 @@
     <lastmod>2019-01-17</lastmod>
   </url>  <url>
     <loc>http://merrier.wang/20170706/css-secrets.html</loc>
+    <lastmod>2019-01-17</lastmod>
+  </url>  <url>
+    <loc>http://merrier.wang/20170318/new-features-of-css3.html</loc>
     <lastmod>2019-01-17</lastmod>
   </url>  <url>
     <loc>http://merrier.wang/20170403/css-selector.html</loc>
@@ -79,7 +85,7 @@
     <loc>http://merrier.wang/20170406/html5-mobile-web-development-guide.html</loc>
     <lastmod>2019-01-17</lastmod>
   </url>  <url>
-    <loc>http://merrier.wang/20170406/html5-and-css3-actual-warfare.html</loc>
+    <loc>http://merrier.wang/20170318/new-features-of-html5.html</loc>
     <lastmod>2019-01-17</lastmod>
   </url>  <url>
     <loc>http://merrier.wang/20170319/new-features-of-http2.html</loc>
@@ -184,9 +190,6 @@
     <loc>http://merrier.wang/20170416/front-end-performance-optimization.html</loc>
     <lastmod>2019-01-17</lastmod>
   </url>  <url>
-    <loc>http://merrier.wang/20170318/new-features-of-css3.html</loc>
-    <lastmod>2019-01-17</lastmod>
-  </url>  <url>
     <loc>http://merrier.wang/20170326/complex-data-structure-implemented-by-js.html</loc>
     <lastmod>2019-01-17</lastmod>
   </url>  <url>
@@ -215,9 +218,6 @@
     <lastmod>2019-01-17</lastmod>
   </url>  <url>
     <loc>http://merrier.wang/20170405/closure-in-js.html</loc>
-    <lastmod>2019-01-17</lastmod>
-  </url>  <url>
-    <loc>http://merrier.wang/20170318/new-features-of-html5.html</loc>
     <lastmod>2019-01-17</lastmod>
   </url>  <url>
     <loc>http://merrier.wang/20170314/wordpress-plugin-recommendation.html</loc>
@@ -256,13 +256,13 @@
     <loc>http://merrier.wang/20170704/summary-of-css-Layout-problems.html</loc>
     <lastmod>2019-01-17</lastmod>
   </url>  <url>
+    <loc>http://merrier.wang/20170421/abslute-of-css-in-depth-understanding.html</loc>
+    <lastmod>2019-01-17</lastmod>
+  </url>  <url>
     <loc>http://merrier.wang/20170423/border-of-css-in-depth-understanding.html</loc>
     <lastmod>2019-01-17</lastmod>
   </url>  <url>
     <loc>http://merrier.wang/20170421/float-of-css-in-depth-understanding.html</loc>
-    <lastmod>2019-01-17</lastmod>
-  </url>  <url>
-    <loc>http://merrier.wang/20170421/abslute-of-css-in-depth-understanding.html</loc>
     <lastmod>2019-01-17</lastmod>
   </url>  <url>
     <loc>http://merrier.wang/20170421/line-height-of-css-in-depth-understanding.html</loc>
