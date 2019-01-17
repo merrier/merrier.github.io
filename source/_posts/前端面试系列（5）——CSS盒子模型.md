@@ -110,10 +110,9 @@ html 代码：
 
 ## 盒子模型产生的问题
 
-1.margin越界
-----------
+### margin 越界
 
-即第一个子元素的margin-top和最后一个子元素的margin-bottom的越界问题，以第一个子元素的margin-top 为例： 当父元素没有边框border时，设置第一个子元素的margin-top值的时候，会出现margin-top值加在父元素上的现象，解决方法有四个：
+即第一个子元素的 margin-top 和最后一个子元素的 margin-bottom 的越界问题，以第一个子元素的margin-top 为例：当父元素没有边框 border 时，设置第一个子元素的margin-top值的时候，会出现margin-top值加在父元素上的现象，解决方法有四个：
 
 1.  给父元素加边框border （副作用）
 2.  给父元素设置padding值  （副作用）

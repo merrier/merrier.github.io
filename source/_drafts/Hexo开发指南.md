@@ -24,3 +24,7 @@ img:
   <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
 ```
+
+## gulp 报错 Task function must be specified
+
+有人遇到过同样的问题，提了一个issue：[Error - "Task function must be specified"](https://github.com/gulpjs/undertaker/issues/54)，看完之后发现最后的解决方案是将 gulp 回滚到 v3 。。

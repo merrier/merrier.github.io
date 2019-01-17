@@ -28,7 +28,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "gulp": "^4.0.0",
+    "gulp": "^3.9.1",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-clean-css": "^4.0.0",
     "gulp-htmlclean": "^2.7.22",
@@ -41,6 +41,7 @@
     "gulp-rev-append": "^0.1.8",
     "gulp-sequence": "^1.0.0",
     "gulp-uglify": "^3.0.1",
+    "jshint": "^2.9.7",
     "jshint-stylish": "^2.2.1"
   }
 }
