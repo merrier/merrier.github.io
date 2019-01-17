@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://merrier.wang/20170820/it-nouns.html</loc>
-    <lastmod>2019-01-17</lastmod>
-  </url>  <url>
     <loc>http://merrier.wang/20180211/those-amazing-mobile-h5-cases.html</loc>
     <lastmod>2019-01-17</lastmod>
   </url>  <url>
@@ -11,27 +8,6 @@
     <lastmod>2019-01-17</lastmod>
   </url>  <url>
     <loc>http://merrier.wang/20180922/cat-strategy.html</loc>
-    <lastmod>2019-01-17</lastmod>
-  </url>  <url>
-    <loc>http://merrier.wang/20170425/javaScript-semi-knowledgeable-and-semi-knowledgeable.html</loc>
-    <lastmod>2019-01-17</lastmod>
-  </url>  <url>
-    <loc>http://merrier.wang/20170408/dahua-data-structure.html</loc>
-    <lastmod>2019-01-17</lastmod>
-  </url>  <url>
-    <loc>http://merrier.wang/20171010/you-dont-know-js-volume1.html</loc>
-    <lastmod>2019-01-17</lastmod>
-  </url>  <url>
-    <loc>http://merrier.wang/20170706/css-secrets.html</loc>
-    <lastmod>2019-01-17</lastmod>
-  </url>  <url>
-    <loc>http://merrier.wang/20170804/how-to-clear-an-array-in-js.html</loc>
-    <lastmod>2019-01-17</lastmod>
-  </url>  <url>
-    <loc>http://merrier.wang/20170820/summary-of-online-interface-addresses.html</loc>
-    <lastmod>2019-01-17</lastmod>
-  </url>  <url>
-    <loc>http://merrier.wang/20171017/why-do-i-write-blog.html</loc>
     <lastmod>2019-01-17</lastmod>
   </url>  <url>
     <loc>http://merrier.wang/20171102/introduction-to-machine-learning-concept.html</loc>
@@ -67,16 +43,7 @@
     <loc>http://merrier.wang/20170406/html5-and-css3-actual-warfare.html</loc>
     <lastmod>2019-01-17</lastmod>
   </url>  <url>
-    <loc>http://merrier.wang/20170820/several-HTTP-headers-affecting-cache.html</loc>
-    <lastmod>2019-01-17</lastmod>
-  </url>  <url>
-    <loc>http://merrier.wang/20170801/there-is-always-a-sentence.html</loc>
-    <lastmod>2019-01-17</lastmod>
-  </url>  <url>
-    <loc>http://merrier.wang/20180219/video-scoring-and-recommendation-on-muke.html</loc>
-    <lastmod>2019-01-17</lastmod>
-  </url>  <url>
-    <loc>http://merrier.wang/20171007/recommend-some-videos.html</loc>
+    <loc>http://merrier.wang/20170820/it-nouns.html</loc>
     <lastmod>2019-01-17</lastmod>
   </url>  <url>
     <loc>http://merrier.wang/20170519/summary-of-the-front-end-interview-questions-of-sohu-research-institute.html</loc>
@@ -106,22 +73,19 @@
     <loc>http://merrier.wang/20170406/the-way-to-practice-web-front-end-development.html</loc>
     <lastmod>2019-01-17</lastmod>
   </url>  <url>
+    <loc>http://merrier.wang/20170425/javaScript-semi-knowledgeable-and-semi-knowledgeable.html</loc>
+    <lastmod>2019-01-17</lastmod>
+  </url>  <url>
+    <loc>http://merrier.wang/20170408/dahua-data-structure.html</loc>
+    <lastmod>2019-01-17</lastmod>
+  </url>  <url>
+    <loc>http://merrier.wang/20171010/you-dont-know-js-volume1.html</loc>
+    <lastmod>2019-01-17</lastmod>
+  </url>  <url>
+    <loc>http://merrier.wang/20170706/css-secrets.html</loc>
+    <lastmod>2019-01-17</lastmod>
+  </url>  <url>
     <loc>http://merrier.wang/20170317/my-leetcode-easy.html</loc>
-    <lastmod>2019-01-17</lastmod>
-  </url>  <url>
-    <loc>http://merrier.wang/20170830/mac-efficiency-tool-autojump.html</loc>
-    <lastmod>2019-01-17</lastmod>
-  </url>  <url>
-    <loc>http://merrier.wang/20170923/how-to-play-in-this-blog.html</loc>
-    <lastmod>2019-01-17</lastmod>
-  </url>  <url>
-    <loc>http://merrier.wang/20180226/introduction-to-promise.html</loc>
-    <lastmod>2019-01-17</lastmod>
-  </url>  <url>
-    <loc>http://merrier.wang/20170820/ssh-connect-to-gitHub-fail-solution.html</loc>
-    <lastmod>2019-01-17</lastmod>
-  </url>  <url>
-    <loc>http://merrier.wang/20170514/sublime-text-plugin-recommendation.html</loc>
     <lastmod>2019-01-17</lastmod>
   </url>  <url>
     <loc>http://merrier.wang/20170804/the-difference-between-let-and-var.html</loc>
@@ -178,7 +142,13 @@
     <loc>http://merrier.wang/20170405/js-implements-inheritance.html</loc>
     <lastmod>2019-01-17</lastmod>
   </url>  <url>
-    <loc>http://merrier.wang/20170315/wordpress-development-action-guide.html</loc>
+    <loc>http://merrier.wang/20170804/how-to-clear-an-array-in-js.html</loc>
+    <lastmod>2019-01-17</lastmod>
+  </url>  <url>
+    <loc>http://merrier.wang/20170820/summary-of-online-interface-addresses.html</loc>
+    <lastmod>2019-01-17</lastmod>
+  </url>  <url>
+    <loc>http://merrier.wang/20171017/why-do-i-write-blog.html</loc>
     <lastmod>2019-01-17</lastmod>
   </url>  <url>
     <loc>http://merrier.wang/20170803/jquery-event-stop-using-return-false.html</loc>
@@ -211,10 +181,16 @@
     <loc>http://merrier.wang/20170405/tce-three-handshakes-and-four-breakups.html</loc>
     <lastmod>2019-01-17</lastmod>
   </url>  <url>
-    <loc>http://merrier.wang/20170314/wordpress-plugin-recommendation.html</loc>
+    <loc>http://merrier.wang/20170820/several-HTTP-headers-affecting-cache.html</loc>
     <lastmod>2019-01-17</lastmod>
   </url>  <url>
-    <loc>http://merrier.wang/20170826/the-bugs-caused-by-scroll-and-position.html</loc>
+    <loc>http://merrier.wang/20170801/there-is-always-a-sentence.html</loc>
+    <lastmod>2019-01-17</lastmod>
+  </url>  <url>
+    <loc>http://merrier.wang/20180219/video-scoring-and-recommendation-on-muke.html</loc>
+    <lastmod>2019-01-17</lastmod>
+  </url>  <url>
+    <loc>http://merrier.wang/20171007/recommend-some-videos.html</loc>
     <lastmod>2019-01-17</lastmod>
   </url>  <url>
     <loc>http://merrier.wang/20170321/some-bit-manipulation-techniques.html</loc>
@@ -310,6 +286,21 @@
     <loc>http://merrier.wang/20170318/several-array-traversal-modes-of-js.html</loc>
     <lastmod>2019-01-17</lastmod>
   </url>  <url>
+    <loc>http://merrier.wang/20170830/mac-efficiency-tool-autojump.html</loc>
+    <lastmod>2019-01-17</lastmod>
+  </url>  <url>
+    <loc>http://merrier.wang/20170923/how-to-play-in-this-blog.html</loc>
+    <lastmod>2019-01-17</lastmod>
+  </url>  <url>
+    <loc>http://merrier.wang/20180226/introduction-to-promise.html</loc>
+    <lastmod>2019-01-17</lastmod>
+  </url>  <url>
+    <loc>http://merrier.wang/20170820/ssh-connect-to-gitHub-fail-solution.html</loc>
+    <lastmod>2019-01-17</lastmod>
+  </url>  <url>
+    <loc>http://merrier.wang/20170514/sublime-text-plugin-recommendation.html</loc>
+    <lastmod>2019-01-17</lastmod>
+  </url>  <url>
     <loc>http://merrier.wang/20180424/apache-configuration-of-ssl-certificate.html</loc>
     <lastmod>2019-01-17</lastmod>
   </url>  <url>
@@ -331,7 +322,16 @@
     <loc>http://merrier.wang/20170501/understanding-and-application-of-JS-width-and-height.html</loc>
     <lastmod>2019-01-17</lastmod>
   </url>  <url>
+    <loc>http://merrier.wang/20170315/wordpress-development-action-guide.html</loc>
+    <lastmod>2019-01-17</lastmod>
+  </url>  <url>
     <loc>http://merrier.wang/20170628/chrome-extension-recommendation-and-pseudo-development-guide.html</loc>
+    <lastmod>2019-01-17</lastmod>
+  </url>  <url>
+    <loc>http://merrier.wang/20170314/wordpress-plugin-recommendation.html</loc>
+    <lastmod>2019-01-17</lastmod>
+  </url>  <url>
+    <loc>http://merrier.wang/20170826/the-bugs-caused-by-scroll-and-position.html</loc>
     <lastmod>2019-01-17</lastmod>
   </url>  <url>
     <loc>http://merrier.wang/20170331/js-implementation-of-leetcode-easy-part1.html</loc>
