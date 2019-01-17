@@ -44,9 +44,9 @@
 
 
 
-<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
-<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
-<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=6873d58798f32fd038a4e4936f7abcd9">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=a535f7d3a1cf8ee14d9efdd0c97c8085">
+<link rel="stylesheet" href="/css/style.css?rev=ce78cccc258fdce8aa532fd1dc1cb45c">
 
 
 
@@ -252,7 +252,7 @@
 <p>页面显示结果为：</p>
 <div align="center"><img src="/images/hexo_post_20.png" alt="" width="400"></div>
 
-<h2 id="盒子模型产生的问题"><a href="#盒子模型产生的问题" class="headerlink" title="盒子模型产生的问题"></a>盒子模型产生的问题</h2><h2 id="1-margin越界"><a href="#1-margin越界" class="headerlink" title="1.margin越界"></a>1.margin越界</h2><p>即第一个子元素的margin-top和最后一个子元素的margin-bottom的越界问题，以第一个子元素的margin-top 为例： 当父元素没有边框border时，设置第一个子元素的margin-top值的时候，会出现margin-top值加在父元素上的现象，解决方法有四个：</p>
+<h2 id="盒子模型产生的问题"><a href="#盒子模型产生的问题" class="headerlink" title="盒子模型产生的问题"></a>盒子模型产生的问题</h2><h3 id="margin-越界"><a href="#margin-越界" class="headerlink" title="margin 越界"></a>margin 越界</h3><p>即第一个子元素的 margin-top 和最后一个子元素的 margin-bottom 的越界问题，以第一个子元素的margin-top 为例：当父元素没有边框 border 时，设置第一个子元素的margin-top值的时候，会出现margin-top值加在父元素上的现象，解决方法有四个：</p>
 <ol>
 <li>给父元素加边框border （副作用）</li>
 <li>给父元素设置padding值  （副作用）</li>
@@ -361,7 +361,7 @@
     <div class="widget">
         <h3 class="title">文章目录</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概念介绍"><span class="toc-text">概念介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#盒子模型表现"><span class="toc-text">盒子模型表现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-外边距合并（叠加）"><span class="toc-text">1. 外边距合并（叠加）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#box-sizing"><span class="toc-text">box-sizing</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#content-box"><span class="toc-text">content-box</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#border-box"><span class="toc-text">border-box</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#inherit"><span class="toc-text">inherit</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#盒子模型应用"><span class="toc-text">盒子模型应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#用盒子模型画三角形"><span class="toc-text">用盒子模型画三角形</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#盒子模型产生的问题"><span class="toc-text">盒子模型产生的问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-margin越界"><span class="toc-text">1.margin越界</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-浏览器间的盒子模型"><span class="toc-text">2.浏览器间的盒子模型</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#参考链接"><span class="toc-text">参考链接</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概念介绍"><span class="toc-text">概念介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#盒子模型表现"><span class="toc-text">盒子模型表现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-外边距合并（叠加）"><span class="toc-text">1. 外边距合并（叠加）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#box-sizing"><span class="toc-text">box-sizing</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#content-box"><span class="toc-text">content-box</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#border-box"><span class="toc-text">border-box</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#inherit"><span class="toc-text">inherit</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#盒子模型应用"><span class="toc-text">盒子模型应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#用盒子模型画三角形"><span class="toc-text">用盒子模型画三角形</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#盒子模型产生的问题"><span class="toc-text">盒子模型产生的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#margin-越界"><span class="toc-text">margin 越界</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-浏览器间的盒子模型"><span class="toc-text">2.浏览器间的盒子模型</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#参考链接"><span class="toc-text">参考链接</span></a></li></ol></li></ol>
         
     </div>
 </aside>
@@ -420,7 +420,7 @@
 
 
 
-    <script src="/assets/tagcanvas.min.js?rev=2.9"></script>
+    <script src="/assets/tagcanvas.min.js?rev=d3e34a34636b6f4c81d2b43b153907bb"></script>
     <script>
         var tagOption = {
             textColour: '#444', // 字体颜色
@@ -447,7 +447,7 @@
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
-<script src="/js/app.js?rev=@@hash"></script>
+<script src="/js/app.js?rev=f25479a641009e7423ae98c6f819957f"></script>
 
 </body>
 </html>
