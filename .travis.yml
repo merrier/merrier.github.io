@@ -22,13 +22,13 @@ install:
 #  - travis login --pro --github-token ${GH_TOKEN}
 
 before_script:
-  # - export TZ='Asia/Shanghai'
-  # - npm install -g gulp
+  - export TZ='Asia/Shanghai'
+  - npm install -g gulp
   - chmod +x _travis.sh
 
 script:
   - hexo clean && hexo g
-  # - gulp
+  - gulp
 
 after_success:
  # - LAST_BUILD_NUMBER=68
