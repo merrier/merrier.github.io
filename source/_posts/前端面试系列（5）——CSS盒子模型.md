@@ -32,17 +32,17 @@ css 盒子模型又称为框模型（Box Model），包含了元素内容（cont
 
 ## 盒子模型表现
 
-### 1. 外边距合并（叠加）
+### 外边距合并（叠加）
 
 两个上下方向相邻的元素框垂直相遇时，外边距会合并，合并后的外边距的高度等于两个发生合并的外边距中较高的那个边距值，如图：
 
-<div align='center'><img src='/images/hexo_post_17.png' alt='' width='400'/></div>
+<div align='center'><img src='/images/hexo_post_17.png' alt='' width='500'/></div>
 
-<div align='center'><img src='/images/hexo_post_18.png' alt='' width='400'/></div>
+<div align='center'><img src='/images/hexo_post_18.png' alt='' width='500'/></div>
 
 比较容易理解，所以在页面中有时候遇到实际情况是需要考虑这个因素的。当然外边距合并其实也有存在的意义，如下图：
 
-<div align='center'><img src='/images/hexo_post_19.png' alt='' width='400'/></div>
+<div align='center'><img src='/images/hexo_post_19.png' alt='' width='500'/></div>
 
 关于 margin 合并，其实还有很多不为人知的知识和问题，稍晚一些我会再专门针对 margin 合并写一篇文章（其实应该不算是“写”，因为是对张鑫旭的讲解的总结），感兴趣的童鞋可以直接搜索 “margin 合并”查看
 
@@ -106,27 +106,32 @@ html 代码：
 
 页面显示结果为：
 
-<div align='center'><img src='/images/hexo_post_20.png' alt='' width='400'/></div>
+<div align='center'><img src='/images/hexo_post_20.png' alt='' width='200'/></div>
 
 ## 盒子模型产生的问题
 
 ### margin 越界
 
-即第一个子元素的 margin-top 和最后一个子元素的 margin-bottom 的越界问题，以第一个子元素的margin-top 为例：当父元素没有边框 border 时，设置第一个子元素的margin-top值的时候，会出现margin-top值加在父元素上的现象，解决方法有四个：
+即第一个子元素的 margin-top 和最后一个子元素的 margin-bottom 的越界问题，以第一个子元素的margin-top 为例：当父元素没有边框 border 时，设置第一个子元素的 margin-top 值的时候，会出现 margin-top 值加在父元素上的现象，解决方法有四个：
 
-1.  给父元素加边框border （副作用）
-2.  给父元素设置padding值  （副作用）
-3.  父元素添加 overflow：hidden （副作用）
-4.  **父元素加前置内容生成**。（推荐）
+1. 给父元素加边框 border （副作用）
+2. 给父元素设置 padding值  （副作用）
+3. 父元素添加 overflow: hidden （副作用）
+4. **父元素加前置内容生成**。（推荐）
 
-以第4种方法为例： html代码：
+以第 4 种方法为例：
 
+html 代码：
+
+```html
 <div class="parent">
     <div class="child"></div> 
 </div>
+```
 
 css代码：
 
+```css
 .parent {
      width : 500px;
      height : 500px;
@@ -143,12 +148,13 @@ css代码：
      background-color : green;
      margin-top : 50px;
 }
+```
 
-2.浏览器间的盒子模型
------------
+### 浏览器间的盒子模型
 
-（1）ul标签在Mozilla中默认是有padding值的，而在IE中只有margin有值。 （2）标准盒子模型与IE模型之间的差异： 标准的盒子模型就是上述介绍的那种，而IE模型更像是 box-sizing : border-box; 其内容宽度还包含了border和padding。解决办法就是：在html模板中加doctype声明。但是我自己在项目中已经很少考虑IE了，如果没有特殊要求的话，IE基本上可以完全忽略了
+1. ul 标签在 Mozilla 中默认是有 padding 值的，而在 IE 中只有 margin 有值。
+2. 标准盒子模型与 IE 模型之间的差异：标准的盒子模型就是上述介绍的那种，而 IE 模型更像是 box-sizing: border-box；其内容宽度还包含了 border 和 padding。解决办法就是：在 html 模板中加 doctype 声明。但是我自己在项目中已经很少考虑 IE 了，如果没有特殊要求的话，IE 基本上可以完全忽略了
 
-##### 参考链接
+## 参考文章
 
-cnblogs：[http://www.cnblogs.com/clearsky/p/5696286.html](http://www.cnblogs.com/clearsky/p/5696286.html)
+* [css 盒子模型理解](http://www.cnblogs.com/clearsky/p/5696286.html)
