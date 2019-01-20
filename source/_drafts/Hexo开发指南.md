@@ -28,3 +28,63 @@ img:
 ## gulp 报错 Task function must be specified
 
 有人遇到过同样的问题，提了一个issue：[Error - "Task function must be specified"](https://github.com/gulpjs/undertaker/issues/54)，看完之后发现最后的解决方案是将 gulp 回滚到 v3 。。
+
+## 添加 404 页面
+
+可以选择添加纯页面或匹配主题的 404 页面：
+
+### 纯页面
+
+与普通的 html 网页相同，放置在根目录（source/）下，同时文件命名为 404.html 即可；不过需要注意的是，要在文件顶部添加以下内容：
+
+```markdown
+---
+title: 404 Not Found
+layout: false
+---
+```
+
+添加以上内容后，下面的内容就是普通的 html 了，大家用的比较多的是腾讯 404 公益页面，添加以下代码即可：
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+         <meta charset="UTF-8" />
+         <title>404</title>                                                                                                                                        
+    </head>
+    <body>
+         <script type="text/javascript"     src="//qzonestyle.gtimg.cn/qzone/hybrid/app/404/search_children.js" homePageName="返回首页" homePageUrl="https://merrier.wang"></script>
+	</body>
+</html>
+```
+
+**注意**：需要把上面代码中的 homePageUrl 换成你自己的博客主页地址。
+
+### 匹配主题的 404 页面
+
+有时候我们可能不想展示单纯的 html 页面，想展示能够匹配当前使用主题的页面，下面介绍一下操作流程：
+
+首先，新建一个页面：
+
+```bash
+hexo new page 404
+```
+
+然后，进入刚新建的页面文件，路径一般为 `/source/404/index.md`；在顶部插入一行，写上 `permalink: /404`，这表示指定该页固定链接为 `http://"主页"/404.html`：
+
+```markdown
+---
+title: 404 Not Found
+comments: false
+permalink: /404
+---
+```
+
+经过上面的设置后，404界面已生效，其编辑方式与一般文章无异。我们可以在 .md 文件正文中插入一些 CSS 样式，使得该页面与博客中的一般文章有所区别。
+
+### 参考文章
+
+* [Hexo博客设置404页面](http://www.ly554.com/hexosls.html)
+* [hexo添加404公益界面](https://blog.csdn.net/liu1340308350/article/details/81744824)
+* [在 Hexo 中创建匹配主题的404页面](http://moxfive.xyz/2015/10/16/hexo-404-page/)

@@ -14,19 +14,18 @@ img: /images/hexo_thumbnail_38.jpeg
 
 ## 一、哈希表
 
-简介
---
+### 简介
 
-javascript里面是没有哈希表的，而在java、C#、C++中会经常用到这一种数据结构，同时在刷Leetcode过程中也会经常用到。细细看来，其实javascript的object的属性其实与哈希表非常类似。我们只需要在其基础上再封装一些HashTable的函数,就能够得到一个精简版的哈希表。
+javascript 里面是没有哈希表的，而在 java、C#、C++ 中会经常用到这一种数据结构，同时在刷 Leetcode 过程中也会经常用到。细细看来，其实 javascript 的 object 的属性与哈希表非常类似。我们只需要在其基础上封装一些 HashTable 的函数，就能够得到一个精简版的哈希表。
 
-加入函数
-----
+### 加入函数
 
+/daizhengli/
 \[table id=3 /\]
 
-代码实现
-----
+### 代码实现
 
+```javascript
 function HashTable() {
     var size = 0;
     var entry = new Object();
@@ -34,13 +33,13 @@ function HashTable() {
         if (!this.containsKey(key)) {
             size++;
         }
-        entry\[key\] = value;
+        entry[key] = value;
     }
     this.getValue = function (key) {
-        return this.containsKey(key) ? entry\[key\] : null;
+        return this.containsKey(key) ? entry[key] : null;
     }
     this.remove = function (key) {
-        if (this.containsKey(key) && (delete entry\[key\])) {
+        if (this.containsKey(key) && (delete entry[key])) {
             size--;
         }
     }
@@ -49,7 +48,7 @@ function HashTable() {
     }
     this.containsValue = function (value) {
         for (var prop in entry) {
-            if (entry\[prop\] == value) {
+            if (entry[prop] == value) {
                 return true;
             }
         }
@@ -58,7 +57,7 @@ function HashTable() {
     this.getValues = function () {
         var values = new Array();
         for (var prop in entry) {
-            values.push(entry\[prop\]);
+            values.push(entry[prop]);
         }
         return values;
     }
@@ -77,47 +76,46 @@ function HashTable() {
         entry = new Object();
     }
 }
+```
 
-使用示例
-----
+### 使用示例
 
+```javascript
 var manHT = new HashTable();
 manHT.add("p1","刘备");
 manHT.add("p2","关羽");
 $("#div1").text(manHT.getValue("p1"));
+```
 
-参考链接
-----
+### 参考文章
 
-cnblogs：[http://www.cnblogs.com/kissdodog/p/4666352.html?utm_source=tuicool](http://www.cnblogs.com/kissdodog/p/4666352.html?utm_source=tuicool)
+* [javascript 实现HashTable(哈希表)](http://www.cnblogs.com/kissdodog/p/4666352.html)
 
-二、栈
-===
+## 二、栈
 
-简介
---
+### 简介
 
-**栈**是一种遵从后进先出原则(LIFO,全称为Last In First Out)的有序集合。栈顶永远是最新的元素。
+栈是一种遵从后进先出原则(LIFO，全称为 Last In First Out)的有序集合。栈顶永远是最新的元素。
 
-加入函数
-----
+### 加入函数
 
+/daizhengli/
 \[table id=4 /\]
 
-代码实现
-----
+### 代码实现
 
+```javascript
 function Stack(){
-  this.dataStore = \[\];//保存栈内元素  
+  this.dataStore = [];//保存栈内元素  
   this.top = 0; 
   this.push=function (element) {  
-      this.dataStore\[this.top++\] = element;//添加一个元素并将top+1  
+      this.dataStore[this.top++] = element;//添加一个元素并将top+1  
   },  
   this.peek=function () {  
-      return this.dataStore\[this.top-1\];//返回栈顶元素  
+      return this.dataStore[this.top-1];//返回栈顶元素  
   },  
   this.pop=function () {  
-      return this.dataStore\[--this.top\];//返回栈顶元素并将top-1  
+      return this.dataStore[--this.top];//返回栈顶元素并将top-1  
   },  
   this.clear=function () {  
       this.top = 0;//将top归0     
@@ -132,10 +130,11 @@ function Stack(){
       console.log(this.dataStore.toString());
   }
 }
+```
 
-使用示例
-----
+### 使用示例
 
+```javascript
 var lk=new Stack();  
 lk.push("likeke");  
 lk.push("zhangsan");  
@@ -147,30 +146,29 @@ lk.peek();//"zhangsan"
 lk.clear();  
 lk.peek();//undefind  
 lk.size();0
+```
 
-参考链接
-----
+### 参考文章
 
-李可可的博客：[http://cobain-li.iteye.com/blog/2335935](http://cobain-li.iteye.com/blog/2335935) 脚本之家：[http://www.jb51.net/article/79624.htm](http://www.jb51.net/article/79624.htm)
+* [数据结构与算法－栈篇(js实现)](https://cobain-li.iteye.com/blog/2335935)
+* [JavaScipt中栈的实现方法](http://www.jb51.net/article/79624.htm)
 
-三、队列
-====
+## 三、队列
 
-简介
---
+### 简介
 
-队列是一种先进先出的结构。队列也是一种表结构，不同的是队列只能在队尾插入元素，在队首删除元素；在JS中可以用数组来实现队列结构
+队列是一种先进先出的结构。队列也是一种表结构，不同的是队列只能在队尾插入元素，在队首删除元素；在 JS 中可以用数组来实现队列结构
 
-加入函数
-----
+### 加入函数
 
+/daizhengli/
 \[table id=6 /\]
 
-代码实现
-----
+### 代码实现
 
+```javascript
 function Queue(){
-    this.dataStore = \[\],//队列数据
+    this.dataStore = [],//队列数据
     this.enqueue = function(){ //入队，就是在数组的末尾添加一个元素
         this.dataStore.push(element);
     },
@@ -178,15 +176,15 @@ function Queue(){
         return this.dataStore.shift();
     },
     this.front = function(){//取出数组的第一个元素
-        return this.dataStore\[0\];
+        return this.dataStore[0];
     },
     this.back = function(){//取出数组的最后一个元素
-        return this.dataStore\[this.dataStore.length-1\];
+        return this.dataStore[this.dataStore.length-1];
     },
     this.toString = function(){//将数组中的元素以字符串形式输出
         var retStr = "";
         for (var i=0; i<this.dataStore.length; ++i) {
-            retStr += this.dataStore\[i\] + "&nbsp;"
+            retStr += this.dataStore[i] + "&nbsp;"
         }
         return retStr;
     },
@@ -201,13 +199,14 @@ function Queue(){
         return this.dataStore.length;
     },
     this.clear = function(){//清除队列
-        this.dataStore = \[\];
+        this.dataStore = [];
     }
 }
+```
 
-使用示例
-----
+### 使用示例
 
+```javascript
 var q = new Queue();
 q.enqueue("Meredith");
 q.enqueue("Cynthia");
@@ -215,28 +214,26 @@ q.enqueue("Jennifer");
 console.log(q.toString());//Meredith Cynthia Jennifer
 console.log(q.front());//Meredith
 console.log(q.back());//Jennifer
+```
 
-参考链接
-----
+### 参考文章
 
-cnblogs：[http://www.cnblogs.com/tylerdonet/p/5837730.html](http://www.cnblogs.com/tylerdonet/p/5837730.html)
+* [javascript中的队列结构](http://www.cnblogs.com/tylerdonet/p/5837730.html)
 
-四、单链表
-=====
+## 四、单链表
 
-简介
---
+### 简介
 
 单链表是一种链式存取的数据结构。链表中的数据是以结点来表示的，每个结点的构成：元素(数据元素的映象) \+ 指针(指示后继元素存储位置)，元素就是存储数据的存储单元，指针就是连接每个结点的地址数据。
 
-加入函数
-----
+### 加入函数
 
+/daizhengli/
 \[table id=7 /\]
 
-代码实现
-----
+### 代码实现
 
+```javascript
 function linkNode(\_key, \_value) {// 链表类的节点类
     this.Key = _key;
     this.Value = _value;
@@ -348,13 +345,13 @@ Link.prototype = {
         return link;
     },
     getArrayJSON: function () {// 转所有节点的value换成JSON字符串,数组格式
-        var link = "{\\"link\\":\[";
+        var link = "{'link':[";
         var i = this.root;
         while (Boolean(i = i.next)) {
             link += this.Obj2str(i.Value) + ",";
         }
         link = link.substr(0, link.length - 1);
-        link += "\]}";
+        link += "]}";
         return link;
     },
     getNodeByIndex: function (n) {//取第N个位置的节点(约定头节点为第0个位置)，N大于链表元素个数时，返回最后一个元素
@@ -440,14 +437,15 @@ function reverseSingleLink(singleLink) {//单链表元素反转
     var newLink = new SingleLink();
     //再从后向前遍历数组,加入新链表
     for (var i = arr.length - 1; i >= 0; i--) {
-        newLink.insert(arr\[i\]);
+        newLink.insert(arr[i]);
     }
     return newLink;
 }
+```
 
-使用示例
-----
+### 使用示例
 
+```javascript
 var linkTest = new SingleLink();
     linkTest.insert('A');
     linkTest.insert('B');
@@ -457,8 +455,9 @@ var linkTest = new SingleLink();
  
     var newLink = reverseSingleLink(linkTest);
     newLink.print();//D C B A
+```
 
-参考链接
-----
+### 参考文章
 
-cnblogs：[http://www.cnblogs.com/yjmyzz/archive/2013/05/21/3091653.html](http://www.cnblogs.com/yjmyzz/archive/2013/05/21/3091653.html) 脚本之家：[http://www.jb51.net/article/38870.htm](http://www.jb51.net/article/38870.htm)
+* [javascript:算法笔记](http://www.cnblogs.com/yjmyzz/archive/2013/05/21/3091653.html)
+* [js单向链表的具体实现实例](http://www.jb51.net/article/38870.htm)
