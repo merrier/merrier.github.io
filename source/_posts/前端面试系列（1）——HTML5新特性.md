@@ -147,7 +147,8 @@ img: /images/hexo_thumbnail_69.jpeg
 
 下表列出了 canvas 与 SVG 之间的一些不同之处：
 
-<div align='center'><img src='/images/hexo_post_137-300x124.png' alt='' width='400'/></div>
+/daizhengli/
+<div align='center'><img src='/images/hexo_post_137.png' alt='' width='600'/></div>
 
 ### 2. 视频 video 元素
 
@@ -167,26 +168,27 @@ img: /images/hexo_thumbnail_69.jpeg
 
 将数据存储在本地，而不会和服务器发生任何交互，使得数据操作更加简便
 
-*   Web Storage与Cookie相比存在不少的优势，概括为以下几点：存储空间更大，能提供5MB的存储空间（不同浏览器的提供的空间不同），Cookie仅4KB
-*   存储内容不会发送到服务器：当设置了Cookie后，Cookie的内容会随着请求一并发送的服务器，这对于本地存储的数据是一种带宽浪费。而Web Storage中的数据则仅仅是存在本地，不会与服务器发生任何交互。
-*   更多丰富易用的接口：Web Storage提供了一套更为丰富的接口，使得数据操作更为简便。(开发者的福利)
-*   独立的存储空间：每个域（包括子域）有独立的存储空间，各个存储空间是完全独立的，因此不会造成数据混乱。
+* Web Storage 与 Cookie 相比存在不少的优势，概括为以下几点：存储空间更大，能提供 5MB 的存储空间（不同浏览器的提供的空间不同），Cookie 仅 4KB
+* 存储内容不会发送到服务器：当设置了 Cookie 后，Cookie 的内容会随着请求一并发送的服务器，这对于本地存储的数据是一种带宽浪费。而 Web Storage 中的数据则仅仅是存在本地，不会与服务器发生任何交互。
+* 更多丰富易用的接口：Web Storage 提供了一套更为丰富的接口，使得数据操作更为简便。(开发者的福利)
+* 独立的存储空间：每个域（包括子域）有独立的存储空间，各个存储空间是完全独立的，因此不会造成数据混乱。
 
-3.Application Cache：使用HTML5，通过创建cache manifest文件，可以轻松地创建web应用的离线版本，HTML5引入了应用程序缓存，这意味着 web 应用可进行缓存，并可在没有因特网连接时进行访问。应用程序缓存为应用带来三个优势：
------------------------------------------------------------------------------------------------------------------------------------
+### 3. Application Cache
 
-*   离线浏览 - 用户可在应用离线时使用它们
-*   速度 - 已缓存资源加载得更快
-*   减少服务器负载 - 浏览器将只从服务器下载更新过或更改过的资源。
+使用 HTML5，通过创建 cache manifest 文件，可以轻松地创建 web 应用的离线版本，HTML5 引入了应用程序缓存，这意味着 web 应用可进行缓存，并可在没有因特网连接时进行访问。应用程序缓存为应用带来三个优势：
 
-地理位置API
-=======
+* 离线浏览 - 用户可在应用离线时使用它们
+* 速度 - 已缓存资源加载得更快
+* 减少服务器负载 - 浏览器将只从服务器下载更新过或更改过的资源。
 
-1.Geolacation API用于获得用户的地理位置，实例：
---------------------------------
+## 地理位置 API
 
-*   更新本地信息
-*   显示用户周围的兴趣点
-*   交互式车载导航系统（GPS）
+Geolacation API 用于获得用户的地理位置，实例：
 
-网易用户体验中心对HTML5的动画演示：[http://uedc.163.com/wp-content/uploads/2011/07/flash.html](http://uedc.163.com/wp-content/uploads/2011/07/flash.html) w3c对HTML5的讲解：[http://www.w3school.com.cn/html5/html\_5\_intro.asp](http://www.w3school.com.cn/html5/html_5_intro.asp)
+* 更新本地信息
+* 显示用户周围的兴趣点
+* 交互式车载导航系统（GPS）
+
+## 扩展阅读
+
+* [HTML 5 教程](http://www.w3school.com.cn/html5/index.asp)
