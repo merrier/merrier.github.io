@@ -1,6 +1,6 @@
 ---
 title: CSS深入理解之border
-urlname: border-of-css-in-depth-understanding
+urlname: border-of-css
 id: 758
 categories:
   - CSS

@@ -1,6 +1,6 @@
 ---
 title: CSS深入理解之vertical-align
-urlname: vertical-align-of-css-in-depth-understanding
+urlname: vertical-align-of-css
 id: 727
 categories:
   - CSS

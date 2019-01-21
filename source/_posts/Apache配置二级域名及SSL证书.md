@@ -13,7 +13,7 @@ img: /images/hexo_thumbnail_57.jpeg
 
 ## 写在前面
 
-前一段日子，我费了九牛二虎之力将 “Merrier说” 博客升级成了HTTPS，虽然回过头来看，其实申请SSL证书以及配置都是现成的轮子，别人已经为我们写好了脚本，不过对于第一次接触服务器相关的童鞋来说，确实会遇到很多麻烦，如果你也有这个需求，可以参考我的另一篇文章——[网站配置HTTPS踩坑记](/daizhengli/https.html )，不过这几天我又配置了一个二级域名（api.merrier.wang），用作爬虫输出的 REST API 所用。
+前一段日子，我费了九牛二虎之力将 “Merrier说” 博客升级成了HTTPS，虽然回过头来看，其实申请SSL证书以及配置都是现成的轮子，别人已经为我们写好了脚本，不过对于第一次接触服务器相关的童鞋来说，确实会遇到很多麻烦，如果你也有这个需求，可以参考我的另一篇文章——[网站配置HTTPS踩坑记](/20180416/website-configuration-https.html)，不过这几天我又配置了一个二级域名（api.merrier.wang），用作爬虫输出的 REST API 所用。
 
 ## Apache配置
 
@@ -167,7 +167,7 @@ pm2 start app.json
 
 ## 配置SSL证书
 
-接下来就是配置 SSL 证书的环节了，这里我们依然可以选择 Let's entrypt 的证书，同时利用 certbot 工具可以节省很多麻烦，如果你配置过顶级域名的 SSL 证书（如果没有配置过，可以参考我的另一篇文章：[网站配置HTTPS踩坑记](/daizhengli/123.html)进行配置），可以进入之前已经生成好的 certbot-auto 目录，然后执行以下命令：
+接下来就是配置 SSL 证书的环节了，这里我们依然可以选择 Let's entrypt 的证书，同时利用 certbot 工具可以节省很多麻烦，如果你配置过顶级域名的 SSL 证书（如果没有配置过，可以参考我的另一篇文章：[网站配置HTTPS踩坑记](/20180416/website-configuration-https.html)进行配置），可以进入之前已经生成好的 certbot-auto 目录，然后执行以下命令：
 
 ```bash
 sudo certbot-auto --apache --duplicate

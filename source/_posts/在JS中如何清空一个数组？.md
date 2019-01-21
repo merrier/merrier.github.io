@@ -12,18 +12,18 @@ date: 2017-08-04 15:30:29
 img: /images/hexo_thumbnail_75.jpg
 ---
 
-问题来源于stackoverflow：[How do I empty an array in JavaScript?](https://stackoverflow.com/questions/1232040/how-do-i-empty-an-array-in-javascript)。更多关于JS中数组的相关操作参见：[JS中数组方法总结](/daizhengli/1234.html) 比如我有如下数组：`A = \[1, 2, 3, 4\]`; 我如何清空它？
+问题来源于stackoverflow：[How do I empty an array in JavaScript?](https://stackoverflow.com/questions/1232040/how-do-i-empty-an-array-in-javascript)。更多关于JS中数组的相关操作参见：[JS中数组方法总结](/20170322/summary-of-array-method-in-js.html) 比如我有如下数组：`A = [1, 2, 3, 4]`; 我如何清空它？
 
-## A = \[\];
+## A = [];
 
-这个答案应该很好想到，因为很符合“从问题本身出发”的逻辑，既然我们想清空数组 A，那就清空喽~ 但是这个方法有一个弊端：如果你之前通过引用的方式 copy 了数组A，那么即使通过 `A = \[\]` 将数组 A 清空了，你的引用变量也还是 A 原来的值，理论知识总是难理解，举个栗子：
+这个答案应该很好想到，因为很符合“从问题本身出发”的逻辑，既然我们想清空数组 A，那就清空喽~ 但是这个方法有一个弊端：如果你之前通过引用的方式 copy 了数组A，那么即使通过 `A = []` 将数组 A 清空了，你的引用变量也还是 A 原来的值，理论知识总是难理解，举个栗子：
 
 ```javascript
-var arr1 = \['a', 'b', 'c', 'd', 'e', 'f'\];
+var arr1 = ['a', 'b', 'c', 'd', 'e', 'f'];
 var arr2 = arr1;  //arr2是arr1的一个引用
 console.log(arr2 === arr1)  //arr2和arr1共享内存地址
-arr1 = \[\];
-console.log(arr2);  //\['a', 'b', 'c', 'd', 'e', 'f'\]，此时arr2和arr1就互相不认识了
+arr1 = [];
+console.log(arr2);  //['a', 'b', 'c', 'd', 'e', 'f']，此时arr2和arr1就互相不认识了
 ```
 
 ## A.length = 0
@@ -31,11 +31,11 @@ console.log(arr2);  //\['a', 'b', 'c', 'd', 'e', 'f'\]，此时arr2和arr1就互
 因为在 JS 中数组其实也是一个对象（所谓的“数组对象”），而每个数组都有一个 length 属性，这是一个可读写的属性，将其置为 0 之后就可以清空数组。同时它的引用变量也将被清空：
 
 ```javascript
-var arr1 = \['a','b','c','d','e','f'\];
+var arr1 = ['a','b','c','d','e','f'];
 var arr2 = arr1;  // 我胡汉三又来引用了
 arr1.length = 0;
-console.log(arr1);  //\[\]
-console.log(arr2);  //\[\]
+console.log(arr1);  //[]
+console.log(arr2);  //[]
 console.log(arr1 === arr2)  //true
 ```
 

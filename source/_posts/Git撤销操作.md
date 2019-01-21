@@ -10,7 +10,7 @@ date: 2017-06-29 10:46:13
 img: /images/hexo_thumbnail_68.jpeg
 ---
 
-Git中提供了几个相关的撤销操作的命令，如 clean、checkout、reset和revert；在看这篇文章之前，我希望你能够浏览一下我的另一篇文章：[Git工作区、暂存区和历史记录区](/daizhengli/123.html)，看完之后理解这篇文章会更简单一些
+Git中提供了几个相关的撤销操作的命令，如 clean、checkout、reset和revert；在看这篇文章之前，我希望你能够浏览一下我的另一篇文章：[Git工作区、暂存区和历史记录区](/20170628/workspace-temporary-zone-and-history-zone-in-git.html)，看完之后理解这篇文章会更简单一些
 
 ## git clean
 

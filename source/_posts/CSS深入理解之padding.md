@@ -1,6 +1,6 @@
 ---
 title: CSS深入理解之padding
-urlname: padding-of-css-in-depth-understanding
+urlname: padding-of-css
 id: 688
 categories:
   - CSS

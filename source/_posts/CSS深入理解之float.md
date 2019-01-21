@@ -1,6 +1,6 @@
 ---
 title: CSS深入理解之float
-urlname: float-of-css-in-depth-understanding
+urlname: float-of-css
 id: 752
 categories:
   - CSS

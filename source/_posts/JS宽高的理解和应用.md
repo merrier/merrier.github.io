@@ -1,6 +1,6 @@
 ---
 title: JS宽高的理解和应用
-urlname: understanding-and-application-of-JS-width-and-height
+urlname: js-width-and-height
 id: 793
 categories:
   - JS

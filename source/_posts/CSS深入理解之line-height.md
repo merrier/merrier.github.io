@@ -1,6 +1,6 @@
 ---
 title: CSS深入理解之line-height
-urlname: line-height-of-css-in-depth-understanding
+urlname: line-height-of-css
 id: 736
 categories:
   - CSS

@@ -94,7 +94,7 @@ var list = [1, 2, 3];
 console.log(list.sort(function(){Math.random() - 0.5})); // [2,1,3]
 ```
 
-其实利用 Math.random() 得到的结果并不是真正的随机排序，参见我的另外一篇文章：[JS中数组方法总结](/daizhengli/122.html)，这篇文章中的数组随机排序方法是比较好的一个方法
+其实利用 Math.random() 得到的结果并不是真正的随机排序，参见我的另外一篇文章：[JS中数组方法总结](/20170322/summary-of-array-method-in-js.html)，这篇文章中的数组随机排序方法是比较好的一个方法
 
 ## 从数组中获取一个随机项
 

@@ -1,6 +1,6 @@
 ---
 title: CSS深入理解之absolute
-urlname: abslute-of-css-in-depth-understanding
+urlname: absolute-of-css
 id: 744
 categories:
   - CSS

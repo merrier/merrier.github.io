@@ -1,6 +1,6 @@
 ---
 title: 前端面试系列（5）——CSS盒子模型
-urlname: the-css-box-model
+urlname: css-box-model
 id: 398
 categories:
   - CSS

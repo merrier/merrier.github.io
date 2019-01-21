@@ -33,7 +33,7 @@ img: /images/hexo_thumbnail_80.jpg
 * \[\] ==(=) \[\]  //false
 * {} ==(=) {}  //false
 
-之所以两个长得像的对象和数组都不相等，是因为在JS中，数组和对象是复杂数据类型，所以其实比较的是引用值，所以任意两个长得像的对象都不相等，具体参见：[理解JS中的内存分配](/daizhengli/123.html)。ES6 中新增了 Object.is() 方法，它和 “===” 是基本相同的，除了下面这两种情况：
+之所以两个长得像的对象和数组都不相等，是因为在JS中，数组和对象是复杂数据类型，所以其实比较的是引用值，所以任意两个长得像的对象都不相等，具体参见：[理解JS中的内存分配](/20170803/understanding-memory-allocation-in-js.html)。ES6 中新增了 Object.is() 方法，它和 “===” 是基本相同的，除了下面这两种情况：
 
 * Object.is(+0, -0)  //false
 * Object.is(NaN, NaN)  //true

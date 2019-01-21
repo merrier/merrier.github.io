@@ -15,7 +15,7 @@ img: /images/hexo_thumbnail_104.jpeg
 
 ## 1. Wordpress 的插件
 
-Wordpress 的插件使 Wordpress 的功能得到了无限扩展，所以想用 Wordpress 搭建网站或者开发插件的话，一定要多用它的插件，并且多了解一些插件的功能，其中我在做博客的过程中用到的一些好用的插件都在我的另一篇文章里了，可以点击查看 ->：[Wordpress插件推荐](/daizhengli/1234.html)
+Wordpress 的插件使 Wordpress 的功能得到了无限扩展，所以想用 Wordpress 搭建网站或者开发插件的话，一定要多用它的插件，并且多了解一些插件的功能，其中我在做博客的过程中用到的一些好用的插件都在我的另一篇文章里了，可以点击查看 ->：[Wordpress插件推荐](/20170314/wordpress-plugin-recommendation.html)
 
 ## 2. 自动为 WordPress 文章设置特色图像代码
 

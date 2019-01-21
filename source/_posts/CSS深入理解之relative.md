@@ -1,6 +1,6 @@
 ---
 title: CSS深入理解之relative
-urlname: relative-of-css-in-depth-understanding
+urlname: relative-of-css
 id: 725
 categories:
   - CSS

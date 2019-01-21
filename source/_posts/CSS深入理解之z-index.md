@@ -1,6 +1,6 @@
 ---
 title: CSS深入理解之z-index
-urlname: z-index-of-css-in-depth-understanding
+urlname: z-index-of-css
 id: 715
 categories:
   - CSS
