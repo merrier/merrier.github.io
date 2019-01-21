@@ -24,6 +24,9 @@ menu:
 ## favicon
 favicon: /favicon.ico
 
+## apple-touch-icon
+appleIcon: /images/hexo_others_10.png
+
 ## Feed
 rss: /atom.xml
 

@@ -27,3 +27,11 @@ document.body.oncopy = function () {
   }, 100)
 }
 ```
+
+
+### 自定义网站在 iPhone 上的“添加至主屏幕”的图标
+
+https://blog.wpjam.com/m/apple-touch-icon/
+
+
+为网站添加 iOS 图标：https://www.jianshu.com/p/ff35c7d016e2

@@ -4,7 +4,7 @@
 <% } %>
 
 <% if(config.keywords){ %>
-<meta name="keywords" content="<%= config.keywords%>"/>
+<meta name="keywords" content="<%= robotMeta%>"/>
 <% } %>
 
 <% var robotMeta = theme.robot||'all'; %>
@@ -13,3 +13,7 @@
 <meta name="googlebot" content="<%= robotMeta%>" />
 <meta name="verify" content="<%= robotMeta%>" />
 <meta name="google-site-verification" content="UkMBUrF2qTuMWfmPXWFFmc_pnqCRAxHQY1ndE0Zu1p0" />
+
+<% if(theme.appleIcon){ %>
+<link rel="apple-touch-icon" href="<%= theme.appleIcon%>" />
+<% } %>
