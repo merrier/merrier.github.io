@@ -44,7 +44,7 @@ carousel:
 ## widgets
 widgets:
   - search
-  # - notification
+  - notification
   - social
   - category
   - archive
@@ -66,9 +66,9 @@ jsonContent:
 ## 网站公告设置
 notification: |-
             <p>
-                主题下载：<a href="https://github.com/shenliyang/hexo-theme-snippet" title="fork me" target="_blank">Snippet主题</a> <br/>
-                主题使用：<a href="https://github.com/shenliyang/hexo-theme-snippet/blob/master/README.md#常见问题" title="" target="_blank">常见使用问题</a> <br/>
-                支持主题：<a href="https://github.com/shenliyang/hexo-theme-snippet/stargazers">Star一下</a>
+                网站源码：<a href="https://github.com/merrier/merrier.github.io" title="star me" target="_blank">merrier.github.io</a> <br/>
+                代码集合：<a href="https://github.com/merrier/web-demo">Web Demo</a> <br /> <br />
+                <a href="https://www.vultr.com/?ref=7468772"><img src="/images/hexo_others_11.png" width="100%"></a>
             </p>
 
 ## 社交设置
@@ -162,7 +162,7 @@ declaration:
 reward:
   alipay: '/images/hexo_others_5.png'
   wepay: '/images/hexo_others_6.png'
-  tip: 赞赏是不耍流氓的鼓励
+  tip: 听说赞过就能年薪百万
 
 ## 主题评论
 
