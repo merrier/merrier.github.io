@@ -3,9 +3,9 @@ title: Wordpress插件推荐
 urlname: wordpress-plugin-recommendation
 id: 35
 categories:
-  - wordpress
+  - Wordpress
 tags:
-  - wordpress
+  - Wordpress
   - 推荐
 date: 2017-03-14 20:54:24
 img: /images/hexo_thumbnail_104.jpeg

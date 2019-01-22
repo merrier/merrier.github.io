@@ -7,7 +7,7 @@ categories:
 tags:
   - JS
   - 函数
-  - 前端面试
+  - 面试
 date: 2017-08-02 15:16:07
 img: /images/hexo_thumbnail_17.jpg
 ---

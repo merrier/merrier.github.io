@@ -5,7 +5,7 @@ id: 471
 categories:
   - 计算机基础
 tags:
-  - 前端面试
+  - 面试
   - 计算机基础
 date: 2017-04-05 16:07:21
 img: /images/hexo_thumbnail_12.jpg

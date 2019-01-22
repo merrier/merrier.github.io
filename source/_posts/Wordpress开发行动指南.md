@@ -3,9 +3,9 @@ title: Wordpress开发行动指南
 urlname: wordpress-development-action-guide
 id: 180
 categories:
-  - wordpress
+  - Wordpress
 tags:
-  - wordpress
+  - Wordpress
   - 指南
 date: 2017-03-15 23:26:18
 img: /images/hexo_thumbnail_104.jpeg

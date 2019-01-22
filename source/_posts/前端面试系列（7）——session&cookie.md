@@ -5,7 +5,7 @@ id: 434
 categories:
   - HTTP
 tags:
-  - 前端面试
+  - 面试
 date: 2017-04-04 22:05:42
 img: /images/hexo_thumbnail_59.jpg
 ---

@@ -6,7 +6,6 @@ categories:
   - HTML
 tags:
   - HTML
-  - 前端面试
   - 面试
 date: 2017-03-18 18:32:25
 img: /images/hexo_thumbnail_69.jpeg

@@ -6,7 +6,7 @@ categories:
   - HTTP
 tags:
   - HTTP
-  - 前端面试
+  - 面试
 date: 2017-04-04 21:38:16
 img: /images/hexo_thumbnail_2.jpg
 ---

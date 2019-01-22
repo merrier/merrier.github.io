@@ -6,7 +6,7 @@ categories:
   - JS
 tags:
   - JS
-  - 前端面试
+  - 面试
 date: 2017-04-05 21:11:07
 img: /images/hexo_thumbnail_80.jpg
 ---

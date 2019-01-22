@@ -6,7 +6,7 @@ categories:
   - CSS
 tags:
   - CSS
-  - 前端面试
+  - 面试
 date: 2017-04-03 11:43:13
 img: /images/hexo_thumbnail_60.jpeg
 ---

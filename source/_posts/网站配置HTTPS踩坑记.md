@@ -6,7 +6,7 @@ categories:
   - HTTP
 tags:
   - HTTP
-  - wordpress
+  - Wordpress
   - 指南
 date: 2018-04-16 14:36:36
 img: /images/hexo_thumbnail_18.png
