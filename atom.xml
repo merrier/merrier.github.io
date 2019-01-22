@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Merrier说</title>
+  
+  <subtitle>叩首问路，码梦为生</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://merrier.wang/"/>
+  <updated>2019-01-22T08:14:43.268Z</updated>
+  <id>http://merrier.wang/</id>
+  
+  <author>
+    <name>Merrier</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>再见，2018</title>
+    <link href="http://merrier.wang/20190101/goodbye-2018.html"/>
+    <id>http://merrier.wang/20190101/goodbye-2018.html</id>
+    <published>2019-01-01T08:46:28.000Z</published>
+    <updated>2019-01-22T08:14:43.268Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="杂谈" scheme="http://merrier.wang/categories/talk/"/>
+    
+    
+      <category term="生活" scheme="http://merrier.wang/tags/life/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>铲屎官，这里有一份属于你的空投</title>
+    <link href="http://merrier.wang/20180922/cat-strategy.html"/>
+    <id>http://merrier.wang/20180922/cat-strategy.html</id>
+    <published>2018-09-22T04:30:47.000Z</published>
+    <updated>2019-01-22T08:14:43.276Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="杂谈" scheme="http://merrier.wang/categories/talk/"/>
+    
+    
+      <category term="指南" scheme="http://merrier.wang/tags/%E6%8C%87%E5%8D%97/"/>
+    
+      <category term="心得" scheme="http://merrier.wang/tags/%E5%BF%83%E5%BE%97/"/>
+    
+      <category term="生活" scheme="http://merrier.wang/tags/life/"/>
+    
+      <category term="猫" scheme="http://merrier.wang/tags/%E7%8C%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>简单聊一下服务端渲染</title>
+    <link href="http://merrier.wang/20180918/server-side-render.html"/>
+    <id>http://merrier.wang/20180918/server-side-render.html</id>
+    <published>2018-09-18T08:07:53.000Z</published>
+    <updated>2019-01-22T08:14:43.272Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="http://merrier.wang/categories/frontend/"/>
+    
+    
+      <category term="笔记" scheme="http://merrier.wang/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="渲染" scheme="http://merrier.wang/tags/%E6%B8%B2%E6%9F%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>部落冲突COC游戏攻略</title>
+    <link href="http://merrier.wang/20180530/coc-walkthrough.html"/>
+    <id>http://merrier.wang/20180530/coc-walkthrough.html</id>
+    <published>2018-05-30T09:30:57.000Z</published>
+    <updated>2019-01-22T08:14:43.276Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="游戏" scheme="http://merrier.wang/categories/game/"/>
+    
+    
+      <category term="COC" scheme="http://merrier.wang/tags/COC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Apache配置二级域名及SSL证书</title>
+    <link href="http://merrier.wang/20180424/apache-configuration-of-ssl-certificate.html"/>
+    <id>http://merrier.wang/20180424/apache-configuration-of-ssl-certificate.html</id>
+    <published>2018-04-24T10:13:56.000Z</published>
+    <updated>2019-01-22T08:14:43.260Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="服务器" scheme="http://merrier.wang/categories/server/"/>
+    
+    
+      <category term="apache" scheme="http://merrier.wang/tags/apache/"/>
+    
+      <category term="ssl" scheme="http://merrier.wang/tags/ssl/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>网站配置HTTPS踩坑记</title>
+    <link href="http://merrier.wang/20180416/website-configuration-https.html"/>
+    <id>http://merrier.wang/20180416/website-configuration-https.html</id>
+    <published>2018-04-16T06:36:36.000Z</published>
+    <updated>2019-01-22T08:14:43.272Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="HTTP" scheme="http://merrier.wang/categories/HTTP/"/>
+    
+    
+      <category term="指南" scheme="http://merrier.wang/tags/%E6%8C%87%E5%8D%97/"/>
+    
+      <category term="HTTP" scheme="http://merrier.wang/tags/HTTP/"/>
+    
+      <category term="Wordpress" scheme="http://merrier.wang/tags/Wordpress/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Promise入门</title>
+    <link href="http://merrier.wang/20180226/introduction-to-promise.html"/>
+    <id>http://merrier.wang/20180226/introduction-to-promise.html</id>
+    <published>2018-02-26T14:14:10.000Z</published>
+    <updated>2019-01-22T08:14:43.264Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="JS" scheme="http://merrier.wang/categories/js/"/>
+    
+    
+      <category term="JS" scheme="http://merrier.wang/tags/JS/"/>
+    
+      <category term="笔记" scheme="http://merrier.wang/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="ES6" scheme="http://merrier.wang/tags/ES6/"/>
+    
+      <category term="慕课网" scheme="http://merrier.wang/tags/%E6%85%95%E8%AF%BE%E7%BD%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>慕课网视频评分&amp;推荐</title>
+    <link href="http://merrier.wang/20180219/video-scoring-and-recommendation-on-muke.html"/>
+    <id>http://merrier.wang/20180219/video-scoring-and-recommendation-on-muke.html</id>
+    <published>2018-02-19T02:11:11.000Z</published>
+    <updated>2019-01-22T08:14:43.268Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="慕课网" scheme="http://merrier.wang/categories/%E6%85%95%E8%AF%BE%E7%BD%91/"/>
+    
+    
+      <category term="前端" scheme="http://merrier.wang/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="推荐" scheme="http://merrier.wang/tags/%E6%8E%A8%E8%8D%90/"/>
+    
+      <category term="慕课网" scheme="http://merrier.wang/tags/%E6%85%95%E8%AF%BE%E7%BD%91/"/>
+    
+      <category term="教程" scheme="http://merrier.wang/tags/%E6%95%99%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>那些惊艳的移动端H5案例</title>
+    <link href="http://merrier.wang/20180211/those-amazing-mobile-h5-cases.html"/>
+    <id>http://merrier.wang/20180211/those-amazing-mobile-h5-cases.html</id>
+    <published>2018-02-11T08:25:53.000Z</published>
+    <updated>2019-01-22T08:14:43.276Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="移动端" scheme="http://merrier.wang/categories/mobile/"/>
+    
+    
+      <category term="移动端" scheme="http://merrier.wang/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>再见，2017</title>
+    <link href="http://merrier.wang/20171231/goodbye-2017.html"/>
+    <id>http://merrier.wang/20171231/goodbye-2017.html</id>
+    <published>2017-12-31T15:15:52.000Z</published>
+    <updated>2019-01-22T08:14:43.268Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="杂谈" scheme="http://merrier.wang/categories/talk/"/>
+    
+    
+      <category term="生活" scheme="http://merrier.wang/tags/life/"/>
+    
+      <category term="总结" scheme="http://merrier.wang/tags/%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Blue老师ES6视频笔记</title>
+    <link href="http://merrier.wang/20171212/teacher-blue-es6-video-notes.html"/>
+    <id>http://merrier.wang/20171212/teacher-blue-es6-video-notes.html</id>
+    <published>2017-12-12T14:10:42.000Z</published>
+    <updated>2019-01-22T08:14:43.260Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="JS" scheme="http://merrier.wang/categories/js/"/>
+    
+    
+      <category term="JS" scheme="http://merrier.wang/tags/JS/"/>
+    
+      <category term="笔记" scheme="http://merrier.wang/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="ES6" scheme="http://merrier.wang/tags/ES6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hybrid设计与浅析</title>
+    <link href="http://merrier.wang/20171201/hybrid-design-and-analysis.html"/>
+    <id>http://merrier.wang/20171201/hybrid-design-and-analysis.html</id>
+    <published>2017-12-01T14:19:00.000Z</published>
+    <updated>2019-01-22T08:14:43.264Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="慕课网" scheme="http://merrier.wang/categories/%E6%85%95%E8%AF%BE%E7%BD%91/"/>
+    
+    
+      <category term="Hybrid" scheme="http://merrier.wang/tags/Hybrid/"/>
+    
+      <category term="慕课网" scheme="http://merrier.wang/tags/%E6%85%95%E8%AF%BE%E7%BD%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>浅谈搜索引擎（SEO）</title>
+    <link href="http://merrier.wang/20171130/talking-about-seo.html"/>
+    <id>http://merrier.wang/20171130/talking-about-seo.html</id>
+    <published>2017-11-30T14:47:40.000Z</published>
+    <updated>2019-01-22T08:14:43.272Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="慕课网" scheme="http://merrier.wang/categories/%E6%85%95%E8%AF%BE%E7%BD%91/"/>
+    
+    
+      <category term="慕课网" scheme="http://merrier.wang/tags/%E6%85%95%E8%AF%BE%E7%BD%91/"/>
+    
+      <category term="SEO" scheme="http://merrier.wang/tags/SEO/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>是时候为网易云音乐的评论打call了</title>
+    <link href="http://merrier.wang/20171107/comments-on-netease-cloud-music.html"/>
+    <id>http://merrier.wang/20171107/comments-on-netease-cloud-music.html</id>
+    <published>2017-11-07T08:37:46.000Z</published>
+    <updated>2019-01-22T08:14:43.272Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="总结" scheme="http://merrier.wang/categories/summary/"/>
+    
+    
+      <category term="生活" scheme="http://merrier.wang/tags/life/"/>
+    
+      <category term="网易云音乐" scheme="http://merrier.wang/tags/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>机器学习概念入门</title>
+    <link href="http://merrier.wang/20171102/introduction-to-machine-learning-concept.html"/>
+    <id>http://merrier.wang/20171102/introduction-to-machine-learning-concept.html</id>
+    <published>2017-11-02T14:23:08.000Z</published>
+    <updated>2019-01-22T08:14:43.272Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="笔记" scheme="http://merrier.wang/categories/note/"/>
+    
+    
+      <category term="笔记" scheme="http://merrier.wang/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="机器学习" scheme="http://merrier.wang/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>我为什么要写个人博客</title>
+    <link href="http://merrier.wang/20171017/why-i-write-blog.html"/>
+    <id>http://merrier.wang/20171017/why-i-write-blog.html</id>
+    <published>2017-10-17T07:51:33.000Z</published>
+    <updated>2019-01-22T08:14:43.268Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="杂谈" scheme="http://merrier.wang/categories/talk/"/>
+    
+    
+      <category term="生活" scheme="http://merrier.wang/tags/life/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>杂谈系列</title>
+    <link href="http://merrier.wang/20171017/chat-series.html"/>
+    <id>http://merrier.wang/20171017/chat-series.html</id>
+    <published>2017-10-17T06:02:51.000Z</published>
+    <updated>2019-01-22T08:14:43.272Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="系列专栏" scheme="http://merrier.wang/categories/series/"/>
+    
+    
+      <category term="生活" scheme="http://merrier.wang/tags/life/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>读书笔记系列（9）——你不知道的JavaScript（上卷）</title>
+    <link href="http://merrier.wang/20171010/you-dont-know-js-volume1.html"/>
+    <id>http://merrier.wang/20171010/you-dont-know-js-volume1.html</id>
+    <published>2017-10-10T11:42:12.000Z</published>
+    <updated>2019-01-22T08:14:43.276Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="笔记" scheme="http://merrier.wang/categories/note/"/>
+    
+    
+      <category term="JS" scheme="http://merrier.wang/tags/JS/"/>
+    
+      <category term="笔记" scheme="http://merrier.wang/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>推荐一些视频</title>
+    <link href="http://merrier.wang/20171007/recommend-some-videos.html"/>
+    <id>http://merrier.wang/20171007/recommend-some-videos.html</id>
+    <published>2017-10-07T14:10:49.000Z</published>
+    <updated>2019-01-22T08:14:43.268Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="总结" scheme="http://merrier.wang/categories/summary/"/>
+    
+    
+      <category term="推荐" scheme="http://merrier.wang/tags/%E6%8E%A8%E8%8D%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Merrier说还可以这样玩儿？！</title>
+    <link href="http://merrier.wang/20170923/how-to-play-in-this-blog.html"/>
+    <id>http://merrier.wang/20170923/how-to-play-in-this-blog.html</id>
+    <published>2017-09-23T06:32:34.000Z</published>
+    <updated>2019-01-22T08:14:43.264Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="移动端" scheme="http://merrier.wang/categories/mobile/"/>
+    
+    
+      <category term="技巧" scheme="http://merrier.wang/tags/%E6%8A%80%E5%B7%A7/"/>
+    
+      <category term="Merrier说" scheme="http://merrier.wang/tags/Merrier%E8%AF%B4/"/>
+    
+  </entry>
+  
+</feed>
