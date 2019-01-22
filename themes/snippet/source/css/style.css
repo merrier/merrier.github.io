@@ -330,10 +330,14 @@ pre {
   display: block;
   padding: 0 21px;
 }
+.main-navigation .menu li a i {
+  margin-right: 2px;
+}
 .main-navigation .menu li:hover > a {
   color: #e67e22;
   text-decoration: none;
 }
+
 .main-navigation .menu li:hover ul {
   visibility: visible;
   opacity: 1;

@@ -5,21 +5,24 @@
 
 ## menu
 menu:
-- page: home
+- page: Home
   url: /
-  icon:
+  icon: fa-home
 - page: 前端
   url: /categories/frontend/
-  icon:
-- page: 算法
-  url: /categories/algorithm/
-  icon:
+  icon: fa-tablet
+- page: 总结
+  url: /categories/summary/
+  icon: fa-diamond
+- page: 杂谈
+  url: /categories/talk/
+  icon: fa-coffee
 - page: 系列专栏
   url: /categories/series/
-  icon:
+  icon: fa-shopping-cart
 - page: 文章归档
   url: /archives/
-  icon:
+  icon: fa-archive
 
 ## favicon
 favicon: /favicon.ico
