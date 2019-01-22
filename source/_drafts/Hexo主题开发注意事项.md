@@ -34,3 +34,8 @@ document.body.oncopy = function () {
 https://blog.wpjam.com/m/apple-touch-icon/
 
 为网站添加 iOS 图标：https://www.jianshu.com/p/ff35c7d016e2
+
+
+### 百度自动推送site.map
+
+https://juejin.im/post/590b451a0ce46300588c43a0

@@ -9,6 +9,12 @@ date: 2019-01-08 20:09:14
 img:
 ---
 
+## Hexo分类和标签的路径怎么设置成英文
+
+https://github.com/hexojs/hexo/issues/1162#issuecomment-88857896
+
+
+
 ## 构建静态文件无法生成 index.html 等文件
 
 需要查看 `themes/{{your-theme-document}}` 目录下是否有主题相关内容，以及根目录下 `_config.yml` 中设置的主题和 `themes` 目录下的主题文件夹命名是否相同，如果无内容或者命名不同，都会有问题。
@@ -100,4 +106,14 @@ TypeError: Cannot set property 'lastIndex' of undefined
     at /home/travis/build/merrier/merrier.github.io/node_modules/highlight.js/lib/highlight.js:573:21
 ```
 
-从上面的错误栈可以看到应该是 `highlight.js` 
+从上面的错误栈可以看到应该是 `highlight.js` 报的错，后来我在 hexo 的 issue 中找到了解决方案：[_config.yml中auto_detect设为false](https://github.com/hexojs/hexo/issues/1913#issuecomment-245480139)
+
+## 扩展阅读
+
+* [hexo 摸爬滚打之进阶教程](http://muyunyun.cn/posts/f55182c5/)
+* [hexo搭建博客最全攻略](https://juejin.im/entry/5a9144896fb9a063523e0e97)
+* [Hexo 入门指南](https://wizardforcel.gitbooks.io/markdown-simple-world/hexo-tutor-1.html)
+* [hexo链接持久化终极解决之道](https://blog.csdn.net/yanzi1225627/article/details/77761488)
+* [实战--迁移wordpress 到hexo](https://www.m690.com/archives/1135/)
+* [hexo是怎么工作的](http://coderunthings.com/2017/08/20/howhexoworks/)
+* [Hexo Seo优化让你的博客在google搜索排名第一](http://hunao.info/2016/06/01/Hexo-Seo%E4%BC%98%E5%8C%96%E8%AE%A9%E4%BD%A0%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%9C%A8google%E6%90%9C%E7%B4%A2%E6%8E%92%E5%90%8D%E7%AC%AC%E4%B8%80/)

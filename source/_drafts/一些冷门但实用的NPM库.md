@@ -59,3 +59,7 @@ https://github.com/isaacs/rimraf，`rm -rf`命令 for nodejs
 ## roa
 
 https://github.com/sindresorhus/ora
+
+## gwm
+
+添加水印

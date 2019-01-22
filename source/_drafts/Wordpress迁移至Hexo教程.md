@@ -9,9 +9,6 @@ date: 2019-01-20 10:23:16
 img:
 ---
 
-
-
-
 ## 需要进行的修改
 
 ### 代码块
@@ -49,3 +46,9 @@ wordpress 的 URL 命名规则和 Hexo 不一致，所以在迁移之后我们�
 ### 表格
 
 在用 wordpress 的时候，表格用了 TablePress 插件，迁移之后在 Markdown 中就无法展示了，不过 TablePress 提供了导出为 CSV 文件的功能，导出后我们可以借助一些在线工具（推荐一个：[https://donatstudios.com/CsvToMarkdownTable](https://donatstudios.com/CsvToMarkdownTable)）将其转换成 Markdown 格式的表格。
+
+
+## 扩展阅读
+
+* [从wordpress迁移到hexo填坑](https://wangheng.org/migrating-from-wordpress-to-hexo.html)
+* [实战--迁移wordpress 到hexo](https://www.m690.com/archives/1135/)

@@ -44,3 +44,7 @@ JavaScript 开发者 10 种必备 VS Code 扩展
 ================================
 
 https://juejin.im/entry/5be37703e51d45119b4cf378
+
+vscode中的正则搜索与替换演示
+
+https://blog.csdn.net/anyuanlzh/article/details/78803322

@@ -10,32 +10,38 @@ img:
 ---
 
 
-# hexo-generator-feed
+## hexo-generator-feed
 
 github: https://github.com/hexojs/hexo-generator-feed
 
 官方出的生成 RSS 文件的包，具体用法参见：[为hexo博客添加RSS订阅功能](https://segmentfault.com/a/1190000012647294)
 
-# hexo-generator-sitemap
+## hexo-generator-sitemap
 
 github: https://github.com/hexojs/hexo-generator-sitemap
 
 官方出的生成 sitemap 文件的包，生成之后就可以提交给搜索引擎进行检索了，对于 SEO 很有帮助
 
-# hexo-generator-baidu-sitemap
+## hexo-generator-baidu-sitemap
 
 github: https://github.com/coneycode/hexo-generator-baidu-sitemap
 
 生成提交给百度用的 sitemap 文件
 
-# hexo-asset-image
+## hexo-asset-image
 
 github: https://github.com/CodeFalling/hexo-asset-image
 
 用于解决Markdown中插入图片问题
 
-# hexo-generator-json-content
+## hexo-generator-json-content
 
 github: https://github.com/alexbruno/hexo-generator-json-content
 
 很方便的添加站内搜索功能
+
+## hexo-generator-restful
+
+github：https://github.com/yscoder/hexo-generator-restful
+
+生成 restful 风格的 json 数据，可以当作 api 接口，开始构建一个 SPA 应用吧。
