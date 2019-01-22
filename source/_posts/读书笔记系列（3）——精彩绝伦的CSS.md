@@ -19,8 +19,15 @@ img: /images/hexo_thumbnail_62.png
 * 每个类、伪类或者属性描述符贡献 0，0，1，0；
 * 每个 ID 描述符贡献 0，1，0，0.
 
-/daizhengli/
-<div align='center'><img src='/images/hexo_post_306.png' alt='' width='600'/></div>
+|        选择器         |   权重   |           描述符             | 
+|----------------------|---------|------------------------| 
+| div ul ul li         | 0,0,0,4 | 4个元素描述符                | 
+| div.aside ul li      | 0,0,1,3 | 1个类描述符，3个元素描述符         | 
+| a:hover              | 0,0,1,1 | 1个伪类描述符，1个元素描述符        | 
+| div.navlinks a:hover | 0,0,2,2 | 1个伪类描述符，1个类描述符，2个元素描述符 | 
+| #title em            | 0,1,0,1 | 1个ID描述符，1个元素描述符        | 
+| h1#title em          | 0,1,0,2 | 1个ID描述符，2个元素描述符        | 
+
 
 当特殊性相等时后声明的规则会胜出。特殊性标识符第一位的 0 是用于行内样式的，且仅用于行内样式。
 
@@ -53,16 +60,26 @@ div#header {
 
 `a[href*="w3.org"]` 属性值中包含该字符序列，应该区分属性值的大小写。
 
-/daizhengli/
-<div align='center'><img src='/images/hexo_post_307.png' alt='' width='700'/></div>
+`img[src*="mainlogo.png"]` 它会选择任何指向 mainlogo.png 文件的图像（img）元素，或者是 src 属性值中包含 mainlogo.png 这些字符的图像元素。因此，它将同时选择：
+
+```html
+<img src="/img/2010/mainlogo.png.gif" alt="ConHugoCo Inc." />
+<img src="/img/2010/mainlogo.pngdir/big.png" alt="ConHugoCo Inc." />
+```
 
 ## 6. 更多部分属性值选择
 
-a[href^="http"] 选取任何 href 属性值是以 http 开头的链接元素
-a[href$=".pdf"] 选择 href 属性值是以 .pdf 结尾的链接元素
+a\[href^="http"\] 选取任何 href 属性值是以 http 开头的链接元素
+a\[href$=".pdf"\] 选择 href 属性值是以 .pdf 结尾的链接元素
 
-/daizhengli/
-<div align='center'><img src='/images/hexo_post_308.png' alt='' width='400'/></div>
+|         属性         |     选取对象     | 
+|---------------------|----------------| 
+| a\[href^="https"\]  | 安全服务器链接     | 
+| a\[href^="mailto"\] | 电子邮件联系链接    | 
+| a\[href^="aim"\]    | AOL即时通信服务链接 | 
+| a\[href^=".doc"\]   | 微软Word文档    | 
+| a\[href^=".xls"\]   | 微软Excel文档   | 
+| a\[href^=".zip"\]   | 压缩文档        | 
 
 ## 7. 兄弟选择
 

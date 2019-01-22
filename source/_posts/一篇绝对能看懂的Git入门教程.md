@@ -312,8 +312,24 @@ git stash pop    // 恢复
 
 ## 实践步骤
 
-/daizhengli/
-\[table id=23 /\]
+| 步骤            | git操作                       | 
+|---------------|-----------------------------| 
+| 克隆代码          | git clone远端代码               | 
+| 创建分支          | git checkout -b branch_name | 
+| 在分支中开发        | 无                           | 
+| review代码      | 无                           | 
+| 第一轮测试         | 无                           | 
+| 添加代码至分支       | git add somefile            | 
+| 提交代码至分支       | "git commit -m ""本次提交注释"""  | 
+| 切换至主分支        | git checkout master         | 
+| 获取远端最新代码      | git pull origin master      | 
+| 合并分支至master分支 | git merge branch_name       | 
+| 解决合并时产生的冲突    |                             | 
+| 第二轮测试         | 无                           | 
+| 获取远端最新代码      | git pull origin master      | 
+| 推送至master分支   | git push origin master      | 
+| 若无问题，删除本地分支   | git branch -d branch_name   | 
+
 
 ## 扩展阅读
 

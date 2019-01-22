@@ -17,10 +17,17 @@ img: /images/hexo_thumbnail_85.jpeg
 
 ## MySQL 一些常用参数
 
-mysql 参数
+| 参数                   | 描述         | 
+|----------------------|------------| 
+| -D，--database=name   | 打开指定数据库    | 
+| --delimiter=name     | 指定分隔符      | 
+| -h，--host=name       | 服务器名称      | 
+| -p，--password[=name] | 密码         | 
+| -P，--port=#          | 端口号        | 
+| --prompt=name        | 设置提示符      | 
+| -u，--user=name       | 用户名        | 
+| -V，--version         | 输出版本信息并且退出 | 
 
-/daizhengli/
-\[table id=24 /\]
 
 ### MySQL退出
 
@@ -38,8 +45,12 @@ shell>mysql -uroot -proot --prompt
 
 连接上客户端后，通过 prompt 命令修改提示符：mysql>prompt，MySQL 提示符修改时可以用到的一些参数：
 
-/daizhengli/
-\[table id=25 /\]
+| 参数 | 描述    | 
+|----|-------| 
+| \D | 完整的日期 | 
+| \d | 当前数据库 | 
+| \h | 服务器名称 | 
+| \u | 当前用户  | 
 
 <div align='center'><img src='/images/hexo_post_207.png' alt='' width='500'/></div>
 
@@ -532,8 +543,22 @@ DELETE tbl\_name\[.*\] \[,tbl\_name\[.*\]\] ... FROM table\_references \[WHERE w
 
 ### 字符函数
 
-/daizhengli/
-\[table id=26 /\]
+| 函数名称        | 描述             | 
+|-------------|----------------| 
+| CONCAT()    | 字符连接           | 
+| CONCAT_WS() | 使用指定的分隔符进行字符连接 | 
+| FORMAT()    | 数字格式化          | 
+| LOWER()     | 转换成小写字母        | 
+| UPPER()     | 转换成大写字母        | 
+| LEFT()      | 获取左侧字符         | 
+| RIGHT()     | 获取右侧字符         | 
+| LENGTH()    | 获取字符串长度        | 
+| LTRIM()     | 删除前导空格         | 
+| RTRIM()     | 删除后续空格         | 
+| TRIM()      | 删除前导和后续空格      | 
+| SUBSTRING() | 字符串截取          | 
+| \[NOT\] LIKE  | 模式匹配           | 
+| REPLACE()   | 字符串替换          | 
 
 ### CONCAT()
 
@@ -555,8 +580,16 @@ SELECT * FROM test WHERE first_name LIKE '%o%'; =\> tom%，%相当于*，所以 
 
 ### 数值运算符与函数
 
-/daizhengli/
-\[table id=27 /\]
+| 名称         | 描述      | 
+|------------|---------| 
+| CEIL()     | 进一取整    | 
+| DIV        | 整数除法    | 
+| FLOOR()    | 舍一取整    | 
+| MOD        | 取余数（取模） | 
+| POWER()    | 幂运算     | 
+| ROUND()    | 四舍五入    | 
+| TRUNCATE() | 数字截取    | 
+
 
 ### TRUNCATE()
 
@@ -564,13 +597,23 @@ SELECT * FROM test WHERE first_name LIKE '%o%'; =\> tom%，%相当于*，所以 
 
 ### 比较运算符与函数
 
-/daizhengli/
-\[table id=28 /\]
+| 名称                     | 描述         | 
+|------------------------|------------| 
+| \[NOT\] BETWEEN...AND... | \[不\]在范围之内   | 
+| \[NOT\] IN()             | \[不\]在列出值范围内 | 
+| IS \[NOT\] NULL          | \[不\]为空      | 
 
 ### 日期时间函数
 
-/daizhengli/
-\[table id=29 /\]
+| 名称            | 描述      | 
+|---------------|---------| 
+| NOW()         | 当前日期和时间 | 
+| CURDATE()     | 当前日期    | 
+| CURTIME()     | 当前时间    | 
+| DATE_ADD()    | 日期变化    | 
+| DATEDIFF()    | 日期差值    | 
+| DATE_FORMAT() | 日期格式化   | 
+
 
 ### DATE_ADD()
 
@@ -587,8 +630,14 @@ DATE_FORMAT('2014-3-2','%m/%d/%Y'); =>03/02/2014
 
 ### 信息函数
 
-/daizhengli/
-\[table id=30 /\]
+| 名称               | 描述         | 
+|------------------|------------| 
+| CONNECTION_ID()  | 连接ID       | 
+| DATABASE()       | 当前数据库      | 
+| LAST_INSERT_ID() | 最后插入记录的ID号 | 
+| USER()           | 当前用户       | 
+| VERSION()        | 版本信息       | 
+
 
 ### LAST\_INSERT\_ID()
 
@@ -596,10 +645,15 @@ DATE_FORMAT('2014-3-2','%m/%d/%Y'); =>03/02/2014
 
 ### 聚合函数
 
-/daizhengli/
-\[table id=31 /\]
+| 名称      | 描述  | 
+|---------|-----| 
+| AVG()   | 平均值 | 
+| COUNT() | 计数  | 
+| MAX()   | 最大值 | 
+| MIN()   | 最小值 | 
+| SUM()   | 求和  | 
 
-### AVG()
+#### AVG()
 
 SELECT AVG(age) FROM test; => 返回 test 数据表中的 age 平均值
 

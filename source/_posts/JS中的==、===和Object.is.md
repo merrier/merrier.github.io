@@ -79,8 +79,14 @@ JavaScript 中的 undefined 和 null 是另一个经常让我们崩溃的地方�
 
 > ToPrimitive 运算符接受一个值和一个可选的期望类型作参数。ToPrimitive 运算符把其值参数转换为非对象类型。如果对象有能力被转换为不止一种原始类型，可以使用可选的期望类型来暗示那个类型。根据下表完成转换：
 
-/daizhengli/
-\[table id=32 /\]
+| 输入类型      | 结果                                                          | 
+|-----------|-------------------------------------------------------------| 
+| undefined | 结果等于输入的参数（不转换）                                     | 
+| null      | 结果等于输入的参数（不转换）                                    | 
+| Boolean   | 结果等于输入的参数（不转换）                                     | 
+| Number    | 结果等于输入的参数（不转换）                                     | 
+| String    | 结果等于输入的参数（不转换）                                     | 
+| Object    | 返回该对象的默认值。对象的默认值由把期望类型传入作为hint参数调用对象的内部方法 `[[DefaultValue]]` 得到 |
 
 对于 Object 这种输入类型，上面的表格中的描述不够清楚，我查了一些资料，概括如下：MDN 上对于 ToPrimitive 的语法规范定位为：
 
@@ -145,8 +151,14 @@ console.log(date.toString());//Sun Feb 28 2016 13:40:36 GMT+0800 (中国标准�
 
 ToNumber 运算符根据下表将其参数转换为数值类型的值：
 
-/daizhengli/
-\[table id=33 /\]
+| 输入类型                            | 结果                              | 
+|---------------------------------|---------------------------------| 
+| undefined                       | NaN                             | 
+| null                            | +0                              | 
+| Boolean                         | 如果参数是true，结果为1。如果参数是false，结果为+0 | 
+| Number                          | 结果等于输入的参数（不转换）                  | 
+| String                          | 下面会介绍                           | 
+| Object                 |    "应用下列步骤：1.设原始值为ToPrimitive(输入参数，暗示数值类型)；2.返回ToNumber(上面的原始值)"  | 
 
 上面表格已经很清楚了，但是还有个 ToNumber(String 类型)没有介绍：
 
@@ -174,20 +186,27 @@ Number('\\r\\n\\t \\v\\f') // 结果+0
 
 取非其实是执行了 ToBoolean 运算符之后再取反，ToBoolean 运算符根据下表将其参数转换为布尔值类型的值：
 
-/daizhengli/
-\[table id=34 /\]
+
+| 输入类型      | 结果                                | 
+|-----------|-----------------------------------| 
+| undefined | false                             | 
+| null      | false                             | 
+| Boolean   | 结果等于输入的参数                         | 
+| Number    | 如果参数是+0，-0或NaN，结果为false；否则结果为true | 
+| String    | 如果参数时空字符串（长度为零），结果为false；否则为true  | 
+| Object    | true                              | 
 
 ### 没图你说个**
 
 相等操作符 (==) 对于不同类型的值，进行的比较如下图所示：
 
-<div align='center'><img src='/images/hexo_post_276.png' alt='' width='500'/></div>
+<div align='center'><img src='/images/hexo_post_276.png' alt='' width='700'/></div>
 
 ## 万物皆数
 
 我们再来看上面那张图，里面标有 N 或 P 的那几条连线是没有方向的。假如我们在这些线上表上箭头，使得连线从标有 N 或 P 的那一端指向另一端，那么就会得到：
 
-<div align='center'><img src='/images/hexo_post_50.png' alt='' width='500'/></div>
+<div align='center'><img src='/images/hexo_post_50.png' alt='' width='300'/></div>
 
 聪明的你肯定发现了，在 == 运算过程中，所有类型的值都有一种向数字类型转化的趋势。毕竟有这样一句名言：
 

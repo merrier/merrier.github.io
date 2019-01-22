@@ -17,35 +17,57 @@ img: /images/hexo_thumbnail_54.jpeg
 
 Gmail 的 IMAP / SMTP / POP3 协议默认都是开启，它的详细地址如下：
 
-/daizhengli/
-\[table id=15 /\]
+| 服务器名称 | 服务器地址          | SSL协议端口 | 非SSL协议端口 | 
+|-------|----------------|---------|----------| 
+| IMAP  | imap.gmail.com | 993     | /        | 
+| SMTP  | smtp.gmail.com | 465     | /        | 
+| POP3  | pop.gmail.com  | 995     | /        |
 
 ## QQ邮箱
 
 QQ邮箱的 IMAP / SMTP / POP3 协议默认是不开启的，你需要登陆到 QQ邮箱，然后到“设置” > “账户” 将其开启。
 
-/daizhengli/
-\[table id=16 /\]
+| 服务器名称 | 服务器地址       | SSL协议端口 | 非SSL协议端口 | 
+|-------|-------------|---------|----------| 
+| IMAP  | imap.qq.com | 993     | 143      | 
+| SMTP  | smtp.qq.com | 465或587 | 25       | 
+| POP3  | pop.qq.com  | 995     | 110      | 
+
 
 ## 163 邮箱
 
-/daizhengli/
-\[table id=17 /\]
+| 服务器名称 | 服务器地址        | SSL协议端口 | 非SSL协议端口 | 
+|-------|--------------|---------|----------| 
+| IMAP  | imap.163.com | 993     | 143      | 
+| SMTP  | smtp.163.com | 465或994 | 25       | 
+| POP3  | pop.163.com  | 995     | 110      | 
+
 
 ## 阿里云邮箱
 
-/daizhengli/
-\[table id=18 /\]
+| 服务器名称 | 服务器地址           | SSL协议端口 | 非SSL协议端口 | 
+|-------|-----------------|---------|----------| 
+| POP3  | pop3.aliyun.com | 110     | 995      | 
+| SMTP  | smtp.aliyun.com | 25      | 465      | 
+| IMAP  | imap.aliyun.com | 143     | 993      | 
+
 
 ## 139邮箱
 
-/daizhengli/
-\[table id=19 /\]
+| 服务器名称 | 服务器地址         | SSL协议端口 | 非SSL协议端口 | 
+|-------|---------------|---------|----------| 
+| IMAP  | imap.10086.cn | 143     | /        | 
+| POP3  | pop.10086.cn  | 110     | 995      | 
+| SMTP  | smtp.10086.cn | 25      | 465      | 
+
 
 ## sina邮箱
 
-/daizhengli/
-\[table id=20 /\]
+| 服务器名称 | 服务器地址         | SSL协议端口 | 非SSL协议端口 | 
+|-------|---------------|---------|----------| 
+| IMAP  | imap.sina.com | 143     | 993      | 
+| SMTP  | smtp.sina.com | 25      | /        | 
+| POP3  | pop.sina.com  | 110     | /        | 
 
 ## 扩展阅读
 

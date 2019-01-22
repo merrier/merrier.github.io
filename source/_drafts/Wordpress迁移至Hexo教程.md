@@ -45,3 +45,7 @@ Hexo官方文档：[分类方法的分歧](https://hexo.io/zh-cn/docs/front-matt
 ### 站内链接
 
 wordpress 的 URL 命名规则和 Hexo 不一致，所以在迁移之后我们需要对 Markdown 中的站内网页链接进行修正替换；我也没想到什么好的方案，只能手动修正了。
+
+### 表格
+
+在用 wordpress 的时候，表格用了 TablePress 插件，迁移之后在 Markdown 中就无法展示了，不过 TablePress 提供了导出为 CSV 文件的功能，导出后我们可以借助一些在线工具（推荐一个：[https://donatstudios.com/CsvToMarkdownTable](https://donatstudios.com/CsvToMarkdownTable)）将其转换成 Markdown 格式的表格。
