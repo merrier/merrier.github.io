@@ -88,3 +88,16 @@ permalink: /404
 * [Hexo博客设置404页面](http://www.ly554.com/hexosls.html)
 * [hexo添加404公益界面](https://blog.csdn.net/liu1340308350/article/details/81744824)
 * [在 Hexo 中创建匹配主题的404页面](http://moxfive.xyz/2015/10/16/hexo-404-page/)
+
+## 运行`hexo g`出错
+
+报错为以下所示：
+
+```
+FATAL Something's wrong. Maybe you can find the solution here: http://hexo.io/docs/troubleshooting.html
+TypeError: Cannot set property 'lastIndex' of undefined
+    at highlight (/home/travis/build/merrier/merrier.github.io/node_modules/highlight.js/lib/highlight.js:523:35)
+    at /home/travis/build/merrier/merrier.github.io/node_modules/highlight.js/lib/highlight.js:573:21
+```
+
+从上面的错误栈可以看到应该是 `highlight.js` 
