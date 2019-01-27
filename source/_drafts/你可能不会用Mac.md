@@ -51,7 +51,7 @@ alias ws="/usr/local/bin/webstorm"
 Alfred
 ------
 
-https://mp.weixin.qq.com/s?\_\_biz=MzA3OTgyMDcwNg==&mid=2650633660&idx=2&sn=0feaf0ab177da0d702fe1ac06df81b6b&chksm=87a47771b0d3fe67e51e9496f632640285792013ccf3ec2a669fc5e409524aea03833c6edb1a&mpshare=1&scene=1&srcid=0103goYn2WmI21svg01Ynm3y&key=c8df9ea7f12e2238bcc4d01330f0cf2f595b74c9b2f91912adf8c5c10777a8b6a975928811be24b8669db510dc3b661cf3fa72e3d07dd1a81b299ac6530df6cfca6841c266dee6b9164b63e35e64c682&ascene=0&uin=MTMzNTc2NjIyMA%3D%3D&devicetype=iMac+MacBookPro12%2C1+OSX+OSX+10.13.2+build(17C88)&version=12020710&nettype=WIFI&lang=zh\_CN&fontScale=100&pass_ticket=l0UsBpASywvC83tRkNCFcXohxiiAWaeAwNErJ39lVT%2Br2MnNzTewpNPZbKzn5PtD
+https://juejin.im/post/5a309c376fb9a0450a67549e
 
 mac上双开微信
 --------
