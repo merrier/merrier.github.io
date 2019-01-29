@@ -3,12 +3,12 @@
 ## 自动部署集成日志
 部署状态 | 集成结果 | 参考值
 ---|---|---
-完成时间 | 2019-01-27 21:16:51 | yyyy-mm-dd hh:mm:ss
+完成时间 | 2019-01-29 17:25:04 | yyyy-mm-dd hh:mm:ss
 部署环境 | linux + stable | window \| linux + stable
 部署类型 | push | push \| pull_request \| api \| cron
 启用Sudo | true | false \| true
 仓库地址 | merrier/merrier.github.io | owner_name/repo_name
-提交分支 | c1b200e54e6325274b605a2bca93793a73f7c89b | hash 16位
-提交信息 | update:mp weixin link url |
-Job ID   | 485017813 |
-Job NUM  | 59.1 |
+提交分支 | f0eb23aedf5404b24c6cb3d9132fd4347af93561 | hash 16位
+提交信息 | add:some articles |
+Job ID   | 485807728 |
+Job NUM  | 61.1 |
