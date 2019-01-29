@@ -59,3 +59,21 @@ https://mp.weixin.qq.com/s/ZNywTfrTbi1alAMXBAksmA
 ==========
 
 https://juejin.im/post/5c18b375f265da614e2c02e1
+
+## 手机web前端调试页面的几种方式
+
+https://www.cnblogs.com/xy-nb/p/web.html
+
+## 点击 {} 即可格式化代码
+
+## 前端调试清单之优化网络资源
+
+https://mp.weixin.qq.com/s/HCpRfab0spfB9mi2qfSo-w
+
+## 使用浏览器开发者工具检测CSS动画性能
+
+https://www.w3cplus.com/animation/check-css-animation-performance-with-the-browsers-dev-tools.html
+
+## Node 调试工具入门教程
+
+http://www.ruanyifeng.com/blog/2018/03/node-debugger.html

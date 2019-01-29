@@ -82,3 +82,20 @@ Markdown编辑软件
 ============
 
 Mac系统推荐Mou：http://25.io/mou/ Windows系统推荐MarkdownPad：http://markdownpad.com/
+
+## PNGGauntlet
+
+https://pnggauntlet.com/
+
+压缩 PNG 格式的图片，同时提供了其他格式图片转换成 PNG 格式的功能
+
+## ImageOptim
+
+压缩图片软件，不过还提供了 API，注册后就可以免费使用，非常方便
+
+## proxyee-down
+
+https://github.com/monkeyWie/proxyee-down，作者使用本地http代理服务器方式嗅探下载请求，支持所有操作系统和大部分主流浏览器,支持分段下载和断点下载。具体使用方法：https://mp.weixin.qq.com/s/KwtoW2a8cz5NHq76tE5VRg，评论中提到了另外几种工具，可以尝试一下：
+
+* 盘姬工具箱
+* chrome脚本+aia2

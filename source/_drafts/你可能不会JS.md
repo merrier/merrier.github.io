@@ -84,3 +84,15 @@ https://github.com/creeperyang/blog/issues/31
 ======================
 
 https://github.com/noahlam/articles/blob/master/3%E8%A1%8C%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E7%AE%80%E6%98%93%E7%89%88promise.md
+
+## 想偷懒的话，toLocaleString 了解一下？
+
+https://mp.weixin.qq.com/s/t_aPQ4tpUIKUrA0ickfMpQ
+
+## 思路清奇：通过 JavaScript 获取移动设备的型号
+
+https://segmentfault.com/a/1190000010157682
+
+## JS 反调试技巧
+
+https://mp.weixin.qq.com/s/smMUIwcs5woqTPOZP1Fjww

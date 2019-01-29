@@ -57,3 +57,7 @@ mac上双开微信
 --------
 
 https://www.jianshu.com/p/e767ea38ccf2
+
+## chrome跨域解决方案之一
+
+open -a Google\ Chrome --args --disable-web-security --user-data-dir=""   打开一个chrome，并且允许mixed content  就是https域名下可以请求http接口

@@ -107,3 +107,31 @@ https://juejin.im/post/5c2058886fb9a049a711d2d7
 =====================
 
 https://juejin.im/post/5c2b5cb8e51d45673971d582
+
+## 借助CSS Shapes实现元素滚动自动环绕iPhone X的刘海
+
+https://mp.weixin.qq.com/s/xiEjql-i4jbxWgZQgACHBA
+
+## 使用 CSS 来做素数的判定与筛选
+
+https://mp.weixin.qq.com/s/10H6Noh0OeOb1eXpKlqxKA
+
+## 纯 CSS 实现排行榜序号设计
+
+https://www.jianshu.com/p/847bee226c1e
+
+## text-indent 特殊性
+
+text-indent：这个属性是用来设置首行缩进的，我们最长用的是2em，首行缩进两个字符，这边的2em指的就是两倍的font-size，按道理来说如果它取%应该也是要相对于本身的font-size的，但是偏偏就那么特别，和padding和margin一样，如果设置的是%，则参照的是父元素的width。这应该算是一个特例吧。
+
+## CSS变量让你轻松制作响应式网页
+
+https://segmentfault.com/a/1190000013512723
+
+## 别天真了，第三方 CSS 并不安全
+
+https://mp.weixin.qq.com/s/ivHsjUF4FPVhxOr7VP_7aQ
+
+## 利用CSS注入（无iFrames）窃取CSRF令牌
+
+https://www.freebuf.com/articles/web/162687.html

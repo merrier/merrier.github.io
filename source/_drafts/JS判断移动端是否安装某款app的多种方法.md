@@ -11,3 +11,5 @@ date: 2017-08-20 21:02:11
 ---
 
 app调起或跳转：http://www.jb51.net/article/76585.htm，https://segmentfault.com/q/1010000004389117
+
+H5页面中尝试调起APP：https://mp.weixin.qq.com/s/lgW60sDKK3kCudJNXpzDpQ

@@ -227,6 +227,13 @@ Darkness为热门网站提供精美的深色主题，可以显著减轻由明亮
 * 图片全屏预览
 * 一键复制代码
 
+### [Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk)
+
+Lighthouse 是一个开源的自动化工具，用于改进网络应用的质量。 可以将其作为一个 Chrome 扩展程序运行，或从命令行运行。 当为 Lighthouse 提供一个要审查的网址，它将针对此页面运行一连串的测试，然后生成一个有关页面性能的报告。可以参考失败的测试，看看可以采取哪些措施来改进应用。
+
+运行 Lighthouse 的方式有两种：作为 Chrome 扩展程序运行，或作为命令行工具运行。
+
+
 ## 其他人推荐的扩展程序
 
 以上是我自己使用过或在使用的一些扩展程序，还有一些扩展程序可能我自己并没有使用但是其他人推荐了，我也列举在下方，方便大家查看和选择：

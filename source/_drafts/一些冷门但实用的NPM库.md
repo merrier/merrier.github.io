@@ -63,3 +63,42 @@ https://github.com/sindresorhus/ora
 ## gwm
 
 添加水印
+
+## youtube-dl
+
+可以下载youtube视频，同时下载完成之后会展示该视频的相关信息
+
+## cloc
+
+https://github.com/AlDanial/cloc
+不是 JS 编写的，不过很实用，可以计算目录中的代码行数，会根据不同语言进行分门别类，如果是前端工程，可以如此使用：
+
+```bash
+cloc --exclude-dir=node_modules .
+```
+
+## husky
+
+https://github.com/typicode/husky，可以很方便的添加 git hook，目前已被广泛使用
+
+## standard-version
+
+可以自动生成 CHANGELOG, 甚至是语义化的版本号
+
+## cz-cli
+
+https://github.com/commitizen/cz-cli，不知道 commit message 怎么写？cz-cli 以可视化的方式帮助你提交合适的语义化的 message
+
+## Lighthouse
+
+Lighthouse 是一个开源的自动化工具，用于改进网络应用的质量。 可以将其作为一个 Chrome 扩展程序运行，或从命令行运行。 当为 Lighthouse 提供一个要审查的网址，它将针对此页面运行一连串的测试，然后生成一个有关页面性能的报告。可以参考失败的测试，看看可以采取哪些措施来改进应用。
+
+运行 Lighthouse 的方式有两种：作为 Chrome 扩展程序运行，或作为命令行工具运行。
+
+## speedracer
+
+https://github.com/speedracer/speedracer
+
+SpeedRacer 是一款性能测试工具，它在 Chrome 中运行脚本，并生成详细的性能报告。
+
+SpeedRacer 是直接借助浏览器来实际测试性能的工具，在实际工作中，可以与其它模拟用户访问流量来评估性能的工具配合使用。

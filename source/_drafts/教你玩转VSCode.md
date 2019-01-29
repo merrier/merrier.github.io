@@ -48,3 +48,6 @@ https://juejin.im/entry/5be37703e51d45119b4cf378
 vscode中的正则搜索与替换演示
 
 https://blog.csdn.net/anyuanlzh/article/details/78803322
+
+vscode 开发技巧集锦
+https://mp.weixin.qq.com/s/Yq45kWUDseXTkqyBqS0xLQ

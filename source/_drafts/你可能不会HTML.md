@@ -75,3 +75,11 @@ Page Lifecycle API 教程：http://www.ruanyifeng.com/blog/2018/11/page\_lifecyc
 =================
 
 https://www.jianshu.com/p/9f47ae6b3b5b
+
+## 图片懒加载踩坑
+
+https://juejin.im/post/5add55dd6fb9a07aad171f76，HTML5 有一个新的 IntersectionObserver API，它可以自动观察元素是否可见。
+
+## 危险的 target="_blank" 与 “opener”
+
+https://knownsec-fed.com/2018-03-01-wei-xian-de-targetblank-yu-opener/
