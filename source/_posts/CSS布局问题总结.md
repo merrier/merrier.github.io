@@ -40,7 +40,7 @@ img: /images/hexo_thumbnail_63.png
 
 ```html
 <div class="container">
-    <!\-\- 中间的div必须写在最前面 -->
+    <!-- 中间的div必须写在最前面 -->
     <div class="middle">中间内容区</div>
     <div class="left">左边栏</div>
     <div class="right">右边栏</div>
@@ -100,7 +100,7 @@ img: /images/hexo_thumbnail_63.png
 
 ```html
 <div class="container">
-    <!\-\- 中间的div必须写在最前面 -->
+    <!-- 中间的div必须写在最前面 -->
     <div class="middle">
         <div class="middle-inner">中间弹性区</div>
     </div>
@@ -157,10 +157,10 @@ img: /images/hexo_thumbnail_63.png
 ### 参考文章
 
 * [CSS三栏布局——中间固定两边自适应宽度](http://www.w3cplus.com/blog/104.html)：w3cplus 的文章，使用了双飞翼和浮动实现两侧定宽、中间自适应，也实现了两侧自适应、中间定宽
-* [简书 \- 圣杯布局和双飞翼布局（前端面试必看）](http://www.jianshu.com/p/f9bcddb0e8b4)：只讲了圣杯，不过特别详细
+* [简书 - 圣杯布局和双飞翼布局（前端面试必看）](http://www.jianshu.com/p/f9bcddb0e8b4)：只讲了圣杯，不过特别详细
 * [In Search of the Holy Grail](https://alistapart.com/article/holygrail)：圣杯布局的来源
-* [百度前端学院笔记 \- 三栏式布局之双飞翼与圣杯](http://ife.baidu.com/note/detail/id/1025)：百度前端学院学员的前端学习笔记
-* [简书 \- margin为负值产生的影响和常见布局应用](http://www.jianshu.com/p/549aaa5fabaa)：包括对自身的影响，对文档流的影响，以及一些在布局中的应用技巧(比如去除列表右边框，负边距+定位实现水平垂直居中，去除列表最后一个 li 元素的 border-bottom，多列等高)
+* [百度前端学院笔记 - 三栏式布局之双飞翼与圣杯](http://ife.baidu.com/note/detail/id/1025)：百度前端学院学员的前端学习笔记
+* [简书 - margin为负值产生的影响和常见布局应用](http://www.jianshu.com/p/549aaa5fabaa)：包括对自身的影响，对文档流的影响，以及一些在布局中的应用技巧(比如去除列表右边框，负边距+定位实现水平垂直居中，去除列表最后一个 li 元素的 border-bottom，多列等高)
 
 ## 居中布局
 

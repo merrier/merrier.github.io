@@ -106,6 +106,14 @@ TypeError: Cannot set property 'lastIndex' of undefined
 
 从上面的错误栈可以看到应该是 `highlight.js` 报的错，后来我在 hexo 的 issue 中找到了解决方案：[_config.yml中auto_detect设为false](https://github.com/hexojs/hexo/issues/1913#issuecomment-245480139)
 
+## Template render error: (unknown path)
+
+执行 `hexo s` 时报上面的错，在 [hexo 的 github issue](https://github.com/hexojs/hexo/issues/2384#issuecomment-277494121) 中找到了解决方案（尝试一下全局搜索）
+
+## 当文章中出现 Nunjucks 中的语法符号时无法生成网页
+
+参考：http://www.one-more-tech.info/hexo-%E4%B8%AD%7B%7Bcontent%7D%7D-%E5%AF%BC%E8%87%B4%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E5%BC%82%E5%B8%B8/index/
+
 ## 扩展阅读
 
 * [hexo 摸爬滚打之进阶教程](http://muyunyun.cn/posts/f55182c5/)
