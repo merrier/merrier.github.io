@@ -67,7 +67,8 @@ notification: |-
             <p>
                 网站源码：<a href="https://github.com/merrier/merrier.github.io" title="star me" target="_blank">merrier.github.io</a> <br/>
                 公司招聘：<a href="https://job.bytedance.com/campus/position" title="内推" target="_blank">内推码：HVWAXEB</a> <br/>
-                代码集合：<a href="https://github.com/merrier/web-demo">Web Demo</a> <br /> <br />
+                代码集合：<a href="https://github.com/merrier/web-demo">Web Demo</a><br />
+                <hr>
                 <a href="https://www.vultr.com/?ref=7468772"><img src="/images/hexo_others_11.png" width="100%"></a>
             </p>
 
