@@ -233,14 +233,22 @@ Lighthouse 是一个开源的自动化工具，用于改进网络应用的质量
 
 运行 Lighthouse 的方式有两种：作为 Chrome 扩展程序运行，或作为命令行工具运行。
 
+### [Wayback Machine](https://chrome.google.com/webstore/detail/wayback-machine/fpnmgdkabkmnadcjpehmlllkndpkmiak)
+
+这是一个国外的网站，它是互联网的一个备份工具，被称为互联网时光机。自从 1996 年以来，Wayback Machine 已经累计备份了超过 4350 亿个网页。你只要在它的网站上输入一个网站地址，就能看到这个网站在过去的不同时期分别长什么样。
+
+Wayback Machine 网站有相应的同名插件，支持主流浏览器，只要点击插件，然后点击 Save Page Now，可以手动保存当前网站到这个互联网档案库里。N 年后再来会看今天的你，那感觉挺棒！
+
 
 ## 其他人推荐的扩展程序
 
 以上是我自己使用过或在使用的一些扩展程序，还有一些扩展程序可能我自己并没有使用但是其他人推荐了，我也列举在下方，方便大家查看和选择：
 
+* [MIKELIN常用的几款Chrome插件推荐](https://mikelin.cn/1201.html)
 * [优秀程序员都在用哪些Chrome拓展工具？](https://juejin.im/post/5b470d8de51d4519105d3bbd)
 
 如果因为某些显而易见的问题，无法从应用商店安装插件的话，可以尝试到[扩展迷官网](https://extfans.com/)下载。
+
 
 ## 开发指南
 

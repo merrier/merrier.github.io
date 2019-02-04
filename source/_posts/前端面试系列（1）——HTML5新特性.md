@@ -193,6 +193,12 @@ Geolacation API 用于获得用户的地理位置，实例：
 * 显示用户周围的兴趣点
 * 交互式车载导航系统（GPS）
 
+## 总结
+
+下面一张图展示了这些新特性的应用场景和可用玩法：
+
+<div align='center'><img src='/images/hexo_post_320.jpeg' alt='' width='700'/></div>
+
 ## 扩展阅读
 
 * [HTML 5 教程](http://www.w3school.com.cn/html5/index.asp)

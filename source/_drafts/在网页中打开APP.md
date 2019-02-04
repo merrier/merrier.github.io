@@ -8,4 +8,5 @@ date: 2017-10-08 11:17:32
 tags:
 ---
 
-https://segmentfault.com/a/1190000005967865
+js在微信、微博、QQ、Safari唤起App的解决方案
+https://segmentfault.com/a/1190000012940046

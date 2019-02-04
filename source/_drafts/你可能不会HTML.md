@@ -83,3 +83,11 @@ https://juejin.im/post/5add55dd6fb9a07aad171f76，HTML5 有一个新的 Intersec
 ## 危险的 target="_blank" 与 “opener”
 
 https://knownsec-fed.com/2018-03-01-wei-xian-de-targetblank-yu-opener/
+
+## 添加智能 App 广告条
+
+Smart App Banner：高速浏览器这个网站对应的 app，并在页面上显示下载banner，只需要：
+
+```html
+<meta name="apple-itunes-app" content="app-id=myAppStoreID, affiliate-data=myAffiliateData, app-argument=myURL">
+```

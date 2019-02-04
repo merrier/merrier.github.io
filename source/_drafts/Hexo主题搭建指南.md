@@ -21,3 +21,7 @@ img:
 * [Hexo主题开发经验杂谈](https://molunerfinn.com/make-a-hexo-theme/)
 * []()
 * []()
+
+## 需要参考的博客
+
+* [楠哥的个人博客](https://mikelin.cn/)

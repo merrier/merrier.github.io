@@ -135,3 +135,17 @@ https://mp.weixin.qq.com/s/ivHsjUF4FPVhxOr7VP_7aQ
 ## 利用CSS注入（无iFrames）窃取CSRF令牌
 
 https://www.freebuf.com/articles/web/162687.html
+
+## background-position 的特殊性
+
+这个属性和 relative 类似，起到的也是定位的效果，因此它的参照对象就是原盒子。但是这个属性比较特殊，他不是参照原盒子的宽高值，而是原盒子的宽高值减去背景图片的宽高值所得到的剩余值，更为形象的说，下面这两个属性值是等价的：“center center” 和 “50% 50%”，如果你设置了后者，背景图片会自动居中，不用像定位那样还需要 transform 偏移了。这应该是优秀的前人在设计这个属性的时候就考虑到它将来的应用了吧。
+
+## 神奇的 conic-gradient 圆锥渐变
+
+http://web.jobbole.com/91586/
+
+## Crooked Style Sheets：只用CSS实现网页跟踪、分析
+
+译文：https://mp.weixin.qq.com/s/iU_7MyxOYidZAKW74Net0A
+
+原文：https://github.com/jbtronics/CrookedStyleSheets
