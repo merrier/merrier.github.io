@@ -1,13 +1,49 @@
 ---
 title: Wordpress迁移至Hexo教程
 categories:
-  - 分类
+  - Hexo
 tags:
-  - 标签
-comments: true
+  - Wordpress
+  - Hexo
 date: 2019-01-20 10:23:16
-img:
+img: /images/hexo_thumbnail_25.png
 ---
+
+我的个人博客一开始是用 Wordpress 搭建的，其实当初选择 Wordpress 也是经过了比较久的调研，不过后来发现 Wordpress 并不适合我，所以就花了一点时间迁移到了 Hexo，迁移过程积累了一些经验，也遇到了一些坑，这里记录一下：
+
+## 迁移步骤
+
+### 安装 Hexo
+
+安装 Hexo 很简单，只需要：
+
+```bash
+npm install -g hexo-cli
+hexo init <blog_dir>
+```
+
+> 注：如果安装速度比较慢，可以尝试淘宝镜像，具体请自行搜索
+
+### 导出 Wordpress 文章
+
+这一步也很简单，直接访问 Wordpress 的`后台-工具-导出`，导出的 `.xml` 文件包括文章、页面、评论、自定义栏目、分类和标签等数据
+
+### 导入文章至 Hexo
+
+这一步其实也很简单。。首先，安装迁移的插件：
+
+```bash
+cd <blog_dir>
+npm i hexo-migrator-wordpress --save
+```
+
+插件安装完成后，执行下列命令来迁移所有文章。`source` 可以是 WordPress 导出的文件路径或网址。
+
+```bash
+hexo migrate wordpress <source>
+```
+
+这个插件只能做到一些基础的迁移，迁移之后还需要再进行一些修正：
 
 ## 需要进行的修改
 

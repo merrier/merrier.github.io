@@ -38,3 +38,8 @@ https://blog.wpjam.com/m/apple-touch-icon/
 ### 百度自动推送site.map
 
 https://juejin.im/post/590b451a0ce46300588c43a0
+
+
+### 文章排序方式多样化
+
+默认按时间倒序，可以随机排序，按照浏览器进行排序
