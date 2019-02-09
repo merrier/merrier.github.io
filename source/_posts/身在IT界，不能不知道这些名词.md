@@ -43,3 +43,9 @@ hack 一般用来形容某些“黑科技”，是指为了满足程序的某些
 ## ssr
 
 对于前端这个行业来说，ssr 不是你家的大天狗，也不是他家的妖刀姬，更不是别人家的姑获鸟，而是**服务端渲染（Server Side Render）**的意思，自从 NodeJS 问世以后，前端就出现了服务端渲染的方式，相比前端渲染，ssr 究竟有哪些优点呢？其本身又存在哪些不足呢？推荐一篇文章：[精读前后端渲染之争](https://github.com/camsong/blog/issues/8)。
+
+## LGTM
+
+> lgtm 在英文里的缩写含义是"Looks Good To Me."，即“朕知道了，代码已经过 review，可以合并”的意思。
+
+[lgtm.com](https://lgtm.com/) 是 Semmle 公司下的子品牌，主要是做白盒扫描工具的。他的优势是对 Github 上的开源代码进行了监控，发现并上报了诸多中间件安全与框架安全漏洞，目前 lgtm 监控超过超过 70,000 的 Gtihub 项目，其中包含 Google、Nasa、Microsoft 等的开源项目。
