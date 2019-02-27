@@ -117,6 +117,7 @@ TypeError: Cannot set property 'lastIndex' of undefined
 
 ## 扩展阅读
 
+* [Easy Hexo | 轻松使用 Hexo 建站](https://github.com/EasyHexo/Easy-Hexo)
 * [hexo 摸爬滚打之进阶教程](http://muyunyun.cn/posts/f55182c5/)
 * [hexo搭建博客最全攻略](https://juejin.im/entry/5a9144896fb9a063523e0e97)
 * [Hexo 入门指南](https://wizardforcel.gitbooks.io/markdown-simple-world/hexo-tutor-1.html)

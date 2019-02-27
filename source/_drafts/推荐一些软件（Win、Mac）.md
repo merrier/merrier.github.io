@@ -103,3 +103,7 @@ https://github.com/monkeyWie/proxyee-down，作者使用本地http代理服务�
 ## Motirx
 
 https://github.com/agalwood/Motrix
+
+## iMazing
+
+https://imazing.com/，可用来传输苹果手机中的音乐、消息、文件和数据，同时支持备份，功能强大

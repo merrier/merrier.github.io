@@ -135,3 +135,22 @@ lighthouse https://merrier.wang
 Github 地址：https://github.com/speedracer/speedracer
 
 SpeedRacer 是一款性能测试工具，它在 Chrome 中运行脚本，并生成详细的性能报告。SpeedRacer 是直接借助浏览器来实际测试性能的工具，在实际工作中，可以与其它模拟用户访问流量来评估性能的工具配合使用。
+
+## PapaParse
+
+Github 地址：https://github.com/mholt/PapaParse
+官网：https://www.papaparse.com/
+
+PapaParse 是一款 CSV 解析工具，可优雅地处理大文件和格式错误的输入。
+
+## dom-to-image
+
+Github 地址：https://github.com/tsayen/dom-to-image
+
+提供了诸多方法，可以将 DOM 节点直接转换成 JPEG、PNG、SVG、Blob 等格式，同时还可以从中进行个性化设置，功能强大，兼容性良好
+
+## Caddy
+
+Github 地址：https://github.com/mholt/caddy/
+
+鼎鼎大名的 Caddy，是一个面向生产环境的开放源码 Web 服务器，它快速、易于使用。支持多个平台：Windows、Mac、Linux、BSD、Solaris 以及 Android。

@@ -13,6 +13,12 @@ img: /images/hexo_thumbnail_25.png
 
 Hexo 本身的设计理念就是“插件化”，因此推荐一些非常实用的 Hexo 插件，有官方出的也有其他开发者推出的，不妨一试
 
+## hexo-blog-encrypt
+
+Github 地址：https://github.com/MikeCoder/hexo-blog-encrypt
+
+给文章加密，不过密码需要写在配置文件中，如果你把配置文件提交到 Github 上的话，可能就和没加密一样了。。
+
 ## hexo-generator-feed
 
 Github 地址: https://github.com/hexojs/hexo-generator-feed
