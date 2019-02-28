@@ -149,3 +149,7 @@ http://web.jobbole.com/91586/
 译文：https://mp.weixin.qq.com/s/iU_7MyxOYidZAKW74Net0A
 
 原文：https://github.com/jbtronics/CrookedStyleSheets
+
+## 有趣的 box-decoration-break
+
+https://juejin.im/post/5c77457951882540447df818

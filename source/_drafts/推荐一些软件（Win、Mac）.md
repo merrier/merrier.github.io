@@ -107,3 +107,34 @@ https://github.com/agalwood/Motrix
 ## iMazing
 
 https://imazing.com/，可用来传输苹果手机中的音乐、消息、文件和数据，同时支持备份，功能强大
+
+## BetterAndBetter
+
+官网：http://www.better365.cn/
+视频教程：http://i.youku.com/i/UNjIyODg4NTU4NA==?spm=a2hzp.8244740.0.0
+交流论坛：http://www.better365.club/
+
+安装包只有 9M，功能非常多：
+
+* 鼠标手势
+* 触发角设置
+* 全局设置快键键
+* 文本自动跳窗 - 取代 PopClip
+* 窗口吸附管理 - 取代 Magnet
+* 状态栏图标折叠 - 取代 Bartender
+* 情景模式
+* 剪贴板管理 - 取代 Paste
+* 触摸板增强 - 取代 BetterTouchTool
+* 平滑滚动 - 取代 Smooze
+* 全局取色器
+* 触摸板模拟数字小键盘
+* 模拟打字音效
+* 显示任意软件快捷键
+* 截长图
+* 浏览器拖拽打开新网址
+
+## ScreenToGif
+
+Github 地址：https://github.com/NickeManarin/ScreenToGif
+
+桌面录制工具，并可以进行编辑和保存为 Gif

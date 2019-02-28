@@ -154,3 +154,21 @@ Github 地址：https://github.com/tsayen/dom-to-image
 Github 地址：https://github.com/mholt/caddy/
 
 鼎鼎大名的 Caddy，是一个面向生产环境的开放源码 Web 服务器，它快速、易于使用。支持多个平台：Windows、Mac、Linux、BSD、Solaris 以及 Android。
+
+## cheerio
+
+Github 地址：https://github.com/cheeriojs/cheerio
+
+Node 层的 jQuery，一般借助它实现各种爬虫，结合 superagent 可以非常方便的爬取网页信息
+
+## Nodemailer
+
+Github 地址：https://github.com/nodemailer/nodemailer
+
+发送邮件的 Node 插件，兼容主流的 Email 厂商，只需要配置好邮箱账号和 SMTP 授权码，便可以用你的邮箱账号在 Node 脚本上发文件
+
+## node-schedule
+
+Github 地址：https://github.com/node-schedule/node-schedule
+
+这是一个有着各种配置的定时任务发生器，可以定时每个月、每个礼拜、每天具体什么时候执行什么任务，具体应用：[《用Node + EJS写一个爬虫脚本每天定时女朋友发一封暖心邮件》](https://juejin.im/post/5c75fa4af265da2d84109219)
