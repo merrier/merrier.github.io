@@ -138,3 +138,37 @@ https://imazing.com/，可用来传输苹果手机中的音乐、消息、文件
 Github 地址：https://github.com/NickeManarin/ScreenToGif
 
 桌面录制工具，并可以进行编辑和保存为 Gif
+
+## SwitchHosts
+
+Github 地址：https://github.com/oldj/SwitchHosts
+主页：https://oldj.github.io/SwitchHosts/
+
+这是一个用于快速切换 hosts 文件的小程序，基于 Electron 开发，同时使用了 React、Ant Design 以及 CodeMirror 等框架/库。
+
+## Mos
+
+Github 地址：https://github.com/Caldis/Mos
+主页：http://mos.caldis.me/
+
+一个用于在 MacOS 上平滑你的鼠标滚动效果或单独设置滚动方向的小工具, 让你的滚轮爽如触控板
+
+## WeChatPlugin-MacOS
+
+Github 地址：https://github.com/TKkk-iOSer/WeChatPlugin-MacOS
+
+一款功能强大的 macOS 版微信小助手，功能异常庞大，其中消息自动回复、消息防撤回、微信多开、聊天窗口表情包复制&存储、会话一键已读等功能非常实用，同时还能远程控制电脑。。具体安装步骤看 readme 就可以了，非常简单
+
+## high-speed-downloader
+
+Github 地址：https://github.com/high-speed-downloader/high-speed-downloader
+
+百度网盘不限速下载 支持 Windows 和 Mac，需要安装浏览器插件和客户端，然后通过网页打开百度网盘，就可以享受“高速下载”了，具体操作步骤看上面的 Github readme 就可以了，不过作者提供的微云中的安装包总是下载失败，所以我把他们放在了我的百度网盘中：
+
+> 链接:https://pan.baidu.com/s/15O4RcfYym00doVhsQ30dHw  密码:psqt
+
+## Notion
+
+官网：https://www.notion.so/
+
+自称是一款「将笔记、知识库和任务管理无缝整合的协作平台」，不过用过之后你会发现，它真的做到了！最开始的 Notion 是一款 Web APP，先后又推出了 Mac 和 Windows 桌面端以及 iOS 移动端，具体的可以看这篇文章：[「玩物志」万物皆是 Block——Notion](https://ruterly.com/2018/01/13/Everything-is-Block-in-Notion/)
