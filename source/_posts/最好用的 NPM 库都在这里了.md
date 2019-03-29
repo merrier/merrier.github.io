@@ -172,3 +172,17 @@ Github 地址：https://github.com/nodemailer/nodemailer
 Github 地址：https://github.com/node-schedule/node-schedule
 
 这是一个有着各种配置的定时任务发生器，可以定时每个月、每个礼拜、每天具体什么时候执行什么任务，具体应用：[《用Node + EJS写一个爬虫脚本每天定时女朋友发一封暖心邮件》](https://juejin.im/post/5c75fa4af265da2d84109219)
+
+## stickybits
+
+Github 地址：https://github.com/dollarshaveclub/stickybits
+
+position:sticky 解决方案，代码精炼，纯 CSS
+
+## fx
+
+Github 地址：https://github.com/antonmedv/fx
+
+可以对 terminal 中的 JSON 格式的数据进行非常友好的格式化展示：
+
+![fx](https://camo.githubusercontent.com/b5df8c57792e443a18a56cd9a292b1a101ba2391/68747470733a2f2f6d6564762e696f2f6173736574732f66782e676966)

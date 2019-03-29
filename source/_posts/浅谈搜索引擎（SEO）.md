@@ -128,3 +128,7 @@ SEO：Search Engine Optimization，搜索引擎优化，SEM：Search Engine Mark
 * cnzz、百度统计、谷歌统计——流量统计网站
 
 本博客用的就是 cnzz，因为流量比较小，所以看不出来和百度统计、谷歌统计比有哪些好处，而且这三家统计网站好像统计的标准都不相同，所以最好的方案就是放三套统计代码。。
+
+## 扩展阅读
+
+* [Web 工程师需要掌握的 38 种 SEO 技巧](https://mp.weixin.qq.com/s/sY93w6xx7j_TnfRShHuzWQ)
