@@ -172,3 +172,9 @@ Github 地址：https://github.com/high-speed-downloader/high-speed-downloader
 官网：https://www.notion.so/
 
 自称是一款「将笔记、知识库和任务管理无缝整合的协作平台」，不过用过之后你会发现，它真的做到了！最开始的 Notion 是一款 Web APP，先后又推出了 Mac 和 Windows 桌面端以及 iOS 移动端，具体的可以看这篇文章：[「玩物志」万物皆是 Block——Notion](https://ruterly.com/2018/01/13/Everything-is-Block-in-Notion/)
+
+## weweChat
+
+Github 地址：https://github.com/trazyn/weweChat
+
+一款非官方微信PC客户端，技术栈为 React+MobX+Electron。支持 Windows、Mac、Linux，界面很美观炫酷

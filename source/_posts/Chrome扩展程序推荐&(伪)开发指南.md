@@ -16,9 +16,13 @@ chrome 作为 Google 公司研发的一款网页浏览器，其诞生之初就�
 
 ## 扩展程序推荐
 
+### [Stylish](https://chrome.google.com/webstore/detail/stylish-custom-themes-for/fjnbnpbmkenffdnngjfgmeleoegfcffe/related)
+
+利用用户样式管理器Stylish来重新编辑网站的样式。您可利用Stylish为许多网站安装主题和皮肤，也可创建自己的主题和皮肤。
+
 ### [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
 
-之所以将这款插件排在第一位，那是因为 react 实在是太火了，颇有一统前端框架之势（想多了，怎么可能），所以就首先推荐这款插件了。这款插件是 facebook 官方推荐的（[Github 地址](https://github.com/facebook/react-devtools)），目前已经有 64W 用户下载使用，所以其性能方面是不容置疑的，不过由于我目前还没有更深入的接触 react，所以这款插件自从下载之后就没有实际用过，具体怎样就没办法描述了。。
+这款插件是 facebook 官方推荐的（[Github 地址](https://github.com/facebook/react-devtools)），目前已经有 64W 用户下载使用，所以其性能方面是不容置疑的，不过由于我目前还没有更深入的接触 react，所以这款插件自从下载之后就没有实际用过，具体怎样就没办法描述了。。
 
 ### [JSONView](https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc)
 
