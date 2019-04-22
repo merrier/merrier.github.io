@@ -16,6 +16,31 @@ chrome 作为 Google 公司研发的一款网页浏览器，其诞生之初就�
 
 ## 扩展程序推荐
 
+### [捕捉网页截图 - FireShot](https://chrome.google.com/webstore/detail/take-webpage-screenshots/mcbpblocgmgfnpjjppndjkmgjaogfceg)
+
+捕捉网页截图，编辑并将它们保存为PDF，JPEG，GIF，PNG或BMP；不过有用户评论反馈“页面一大就崩溃”
+
+### [Chrome Regex Search](https://chrome.google.com/webstore/detail/chrome-regex-search/bpelaihoicobbkgmhcbikncnpacdbknn)
+
+相比传统的 `Command`+`F` 搜索，正则表达式进行搜索能够满足更多场景下的搜索需求，用户评价：
+
+> 真的太棒了,对比同类应用,最值得称赞的是能实时搜索以及记录搜索历史.希望作者能开通支付宝,不捐赠说不过去啊
+
+### [cookie快速模拟](https://chrome.google.com/webstore/detail/cookie%E5%BF%AB%E9%80%9F%E6%A8%A1%E6%8B%9F/jpdfbendalpmcbdekkmldlkcklpcafma)
+
+方便地管理你的cookie，开发人员必备，快速查看，修改，删除。
+
+### [JSON-handle](https://chrome.google.com/webstore/detail/json-handle/iahnhfdhidomcpggpaimmmahffihkfnj)
+
+对 JSON 格式的内容进行浏览和编辑，以树形图样式展现JSON文档，并可实时编辑。用户评价：
+
+> 目前为止，体验最好的chrome中json 解析扩展，希望更加强大
+
+### [SimpleUndoClose](https://chrome.google.com/webstore/detail/simpleundoclose/emhohdghchmjepmigjojkehidlielknj)
+
+非常简洁的界面，可以让你轻而易举的撤销关闭的标签！虽然可以 `Command`+`Shift`+`T` 打开最近关闭的标签页，但是这个 Chrome 插件还提供了搜索的功能，非常实用。
+
+
 ### [Stylish](https://chrome.google.com/webstore/detail/stylish-custom-themes-for/fjnbnpbmkenffdnngjfgmeleoegfcffe/related)
 
 利用用户样式管理器Stylish来重新编辑网站的样式。您可利用Stylish为许多网站安装主题和皮肤，也可创建自己的主题和皮肤。

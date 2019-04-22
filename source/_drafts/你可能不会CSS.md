@@ -164,3 +164,11 @@ https://developer.mozilla.org/zh-CN/docs/Web/CSS/touch-action
 ## [译] 从没有人告诉过我的 CSS 小知识
 
 https://juejin.im/post/5ca2fa5551882543db10d489
+
+## CSS 选择器的妙用
+
+https://blog.csdn.net/u013778905/article/details/79309773
+
+https://www.zhangxinxu.com/wordpress/2016/08/css-parent-selector/
+
+https://www.w3cplus.com/css/advanced-html-css-lesson3-complex-selectors.html
