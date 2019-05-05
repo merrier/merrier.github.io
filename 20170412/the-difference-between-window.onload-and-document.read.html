@@ -1,3 +1,454 @@
-<!DOCTYPE HTML><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1"><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta http-equiv="Cache-Control" content="no-siteapp"><meta http-equiv="Cache-Control" content="no-transform"><meta name="renderer" content="webkit|ie-comp|ie-stand"><meta name="apple-mobile-web-app-capable" content="Merrier说"><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="format-detection" content="telephone=no,email=no,adress=no"><meta name="browsermode" content="application"><meta name="screen-orientation" content="portrait"><link rel="dns-prefetch" href="http://merrier.wang"><meta name="description" content="Merrier的个人博客"><meta name="keywords" content=""><meta name="robots" content="all"><meta name="google" content="all"><meta name="googlebot" content="all"><meta name="verify" content="all"><meta name="google-site-verification" content="UkMBUrF2qTuMWfmPXWFFmc_pnqCRAxHQY1ndE0Zu1p0"><link rel="apple-touch-icon" href="/images/hexo_others_10.png"><title>前端面试系列（11）——window.onload和document.ready的区别 | Merrier说</title><link rel="alternate" href="/atom.xml" title="Merrier说" type="application/atom+xml"><link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/css/bootstrap.min.css?rev=9be54fca751d321cf4cde53fe170f6d6"><link rel="stylesheet" href="/css/font-awesome.min.css?rev=d13d6f6bf3dcbaccb347c89baa7f4bd0"><link rel="stylesheet" href="/css/style.css?rev=9a689f858f6a74dab8e5254940cc5a3b"><div class="hide"><script type="text/javascript">var cnzz_protocol="https:"==document.location.protocol?" https://":" http://";document.write(unescape("%3Cspan class='cnzz_stat_icon_1264342320 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='"+cnzz_protocol+"s19.cnzz.com/z_stat.php%3Fid%3D1264342320%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"))</script></div><script>!function(){var t=document.createElement("script"),e=window.location.protocol.split(":")[0];t.src="https"===e?"https://zz.bdstatic.com/linksubmit/push.js":"http://push.zhanzhang.baidu.com/push.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(t,s)}()</script></head></html><!--[if lte IE 8]><style>
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Merrier说">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://merrier.wang">
+    <!--SEO-->
+
+<meta name="description" content="Merrier的个人博客">
+
+
+
+<meta name="keywords" content="">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+<meta name="google-site-verification" content="UkMBUrF2qTuMWfmPXWFFmc_pnqCRAxHQY1ndE0Zu1p0">
+
+
+<link rel="apple-touch-icon" href="/images/hexo_others_10.png">
+
+    <!--Title-->
+
+
+<title>前端面试系列（11）——window.onload和document.ready的区别 | Merrier说</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Merrier说" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1264342320 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1264342320%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
     html{ font-size: 1em }
-</style><![endif]--><!--[if lte IE 9]><div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div><![endif]--><body><header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)"><div class="main-header-box"><a class="header-avatar" href="/" title="Merrier"><img src="/images/hexo_others_8.jpeg" alt="logo头像" class="img-responsive center-block"></a><div class="branding"><h2>叩首问路，码梦为生</h2></div></div></header><nav class="main-navigation"><div class="container"><div class="row"><div class="col-sm-12"><div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav"><span class="sr-only"></span><i class="fa fa-bars"></i></span> <a class="navbar-brand" href="http://merrier.wang">Merrier说</a></div><div class="collapse navbar-collapse" id="main-menu"><ul class="menu"><li role="presentation" class="text-center"><a href="/"><i class="fa fa-home"></i> Home</a></li><li role="presentation" class="text-center"><a href="/categories/frontend/"><i class="fa fa-tablet"></i> 前端</a></li><li role="presentation" class="text-center"><a href="/categories/summary/"><i class="fa fa-diamond"></i> 总结</a></li><li role="presentation" class="text-center"><a href="/categories/talk/"><i class="fa fa-coffee"></i> 杂谈</a></li><li role="presentation" class="text-center"><a href="/categories/series/"><i class="fa fa-shopping-cart"></i> 系列专栏</a></li><li role="presentation" class="text-center"><a href="/archives/"><i class="fa fa-archive"></i> 文章归档</a></li></ul></div></div></div></div></nav><section class="content-wrap"><div class="container"><div class="row"><main class="col-md-8 main-content m-post"><p id="process"></p><article class="post"><div class="post-head"><h1 id="前端面试系列（11）——window.onload和document.ready的区别">前端面试系列（11）——window.onload和document.ready的区别</h1><div class="post-meta"><span class="categories-meta fa-wrap"><i class="fa fa-folder-open-o"></i> <a href="/categories/JS">JS</a></span><span class="fa-wrap"><i class="fa fa-tags"></i> <span class="tags-meta"><a href="/tags/JS" title="JS">JS</a> <a href="/tags/面试" title="面试">面试</a></span></span><span class="fa-wrap"><i class="fa fa-clock-o"></i> <span class="date-meta">2017/04/12</span></span><span class="fa-wrap"><i class="fa fa-eye"></i><span id="busuanzi_value_page_pv"></span></span></div></div><div class="post-body post-content"><p>这个问题虽然比较简单，但是依然是前端面试中经常会问到的一道题，所以为了让自己“与众不同”，必须全面了解这两者的区别，才能从众多候选人中脱颖而出</p><h2 id="一张表格"><a href="#一张表格" class="headerlink" title="一张表格"></a>一张表格</h2><p>下面这张表格简单的介绍了两者的区别：</p><table><thead><tr><th></th><th>window.onload()</th><th>$(document).ready()</th></tr></thead><tbody><tr><td>执行时机</td><td>在页面所有元素（包括图片，引用文件）加载完后执行</td><td>页面中所有HTML DOM，CSS DOM结构加载完之后就会执行，其他图片等内容可能没有加载完</td></tr><tr><td>编写个数</td><td>不能同时写多个，后面的将会覆盖前面的</td><td>可以同时写多个</td></tr><tr><td>简写</td><td>无</td><td>$().ready(function(){}) // $()不带参数默认是document；$(function(){})</td></tr></tbody></table><h2 id="jQ-的-document-ready-实现"><a href="#jQ-的-document-ready-实现" class="headerlink" title="jQ 的 document.ready() 实现"></a>jQ 的 document.ready() 实现</h2><p>在 jQuery 脚本加载的时候，会监听 DOMContentLoaded 事件。当事件触发时候，会执行 ready 事件的回调；（document.readyState === “complete” 时相当于 dom 加载完毕<br>由于用的是原生的 DOMContentLoaded 事件，所以<strong>目前的 ready 函数仅能用于当前 document，无需选择器</strong></p><h2 id="谁更快"><a href="#谁更快" class="headerlink" title="谁更快"></a>谁更快</h2><p>jQuery 的 document.ready 就一定比 window.onload 快吗？下面是一个例子：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE HTML&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en-US"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>加载时机<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js"</span></span></span><br><span class="line"><span class="tag"><span class="attr">onload</span>=<span class="string">"console.log('jquery.js loaded')"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">     <span class="built_in">console</span>.log(<span class="string">'define functions'</span>);</span></span><br><span class="line"><span class="javascript">     <span class="function"><span class="keyword">function</span> <span class="title">load</span>(<span class="params">type, info</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(type + <span class="string">' onload '</span> + (info || <span class="string">""</span>), <span class="keyword">new</span> <span class="built_in">Date</span>().getTime());</span></span><br><span class="line"><span class="undefined">     &#125;</span></span><br><span class="line"><span class="javascript">     $(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">          load(<span class="string">'document ready'</span>);</span></span><br><span class="line"><span class="undefined">     &#125;);</span></span><br><span class="line"><span class="javascript">     <span class="built_in">document</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">          load(<span class="string">'document'</span>);</span></span><br><span class="line"><span class="undefined">     &#125;;    </span></span><br><span class="line"><span class="javascript">     <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">          load(<span class="string">'window'</span>);</span></span><br><span class="line"><span class="undefined">     &#125;;</span></span><br><span class="line"><span class="javascript">     <span class="built_in">window</span>.addEventListener(<span class="string">"load"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">          load(<span class="string">'window addEventListener'</span>);</span></span><br><span class="line"><span class="undefined">     &#125;);</span></span><br><span class="line"><span class="javascript">     <span class="built_in">document</span>.addEventListener( <span class="string">"DOMContentLoaded"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">          load(<span class="string">'DOMContentLoaded'</span>);</span></span><br><span class="line"><span class="undefined">     &#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">body</span> <span class="attr">onload</span>=<span class="string">"load('body')"</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">div</span> <span class="attr">onload</span>=<span class="string">"load('text')"</span>&gt;</span>test<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">img</span> <span class="attr">onload</span>=<span class="string">"load('img',1)"</span> <span class="attr">src</span>=<span class="string">"http://www.deskcar.com/desktop/else/2013714232149/17.jpg"</span> /&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">img</span> <span class="attr">onload</span>=<span class="string">"load('img',2)"</span> <span class="attr">src</span>=<span class="string">"http://www.deskcar.com/desktop/else/2013714232149/16.jpg"</span> /&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">script</span> <span class="attr">onload</span>=<span class="string">"load('js')"</span> <span class="attr">src</span>=<span class="string">"https://cdnjs.cloudflare.com/ajax/libs/react/15.2.0/react.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure><h3 id="执行之后有两种结果："><a href="#执行之后有两种结果：" class="headerlink" title="执行之后有两种结果："></a>执行之后有两种结果：</h3><h4 id="首次加载："><a href="#首次加载：" class="headerlink" title="首次加载："></a>首次加载：</h4><div align="center"><img src="/images/hexo_post_11.png" alt="" width="400"></div><h4 id="二次加载："><a href="#二次加载：" class="headerlink" title="二次加载："></a>二次加载：</h4><div align="center"><img src="/images/hexo_post_12.png" alt="" width="400"></div><p>第一种情况非常符合我们的想法，ready 比 onload 快，顺序也比较合理。而第二种情况就有些怪异，应该依照上面 jquery ready 事件的实现，那 ready 应该要 DOMContentLoaded 后面啊。我思来想去，我觉得这是个误会，由于二次加载时利用到缓存，导致文件资源都很快加载，各个事件触发的时间非常相近，顺序也不定，就给人一种 ready 顺序不对之感，大家应该发现这几个事件都是在几十毫秒之内触发。PS：js 执行需要时间，几十毫秒不同的顺序我觉得很正常。另外尝试几次，二次加载顺序确实会有变化，但时间都很相近。所以，jQuery 的 document ready 不一定比 window.onload 快执行。</p><h2 id="为什么外部-script-文件放页面内容后面好？"><a href="#为什么外部-script-文件放页面内容后面好？" class="headerlink" title="为什么外部 script 文件放页面内容后面好？"></a>为什么外部 script 文件放页面内容后面好？</h2><h3 id="script-执行顺序"><a href="#script-执行顺序" class="headerlink" title="script 执行顺序"></a>script 执行顺序</h3><blockquote><p>无论如何包含代码，只要不存在 defer 和 async 属性，浏览器都会按照 <code>&lt;script&gt;</code> 元素在页面中出现的先后顺序对它们依次进行解析。——《JavaScript高级程序设计》</p></blockquote><p>换句话说，在第一个 <code>&lt;script&gt;</code> 元素包含的代码解析完成后，第二个 <code>&lt;script&gt;</code> 包含代码才会被解析，然后才是第三个…..<br>如果在 head 元素里包含所有 JavaScript 文件，就必须等到全部 JavaScript 代码都被下载、解析和执行完成以后，才能呈现页面的内容（浏览器在遇到 <code>&lt;body&gt;</code> 标签时才开始呈现内容）。在有 JavaScript 文件时候，浏览器呈现页面会出现明显的延迟，延时期间浏览器是一片空白。所以，外部 script 文件放页面内容后面。这样，在解析 JavaScript 代码之前，页面内容将完全呈现出来。</p><h3 id="一定是放页面内容后面吗？"><a href="#一定是放页面内容后面吗？" class="headerlink" title="一定是放页面内容后面吗？"></a>一定是放页面内容后面吗？</h3><p>有种情况是 JavaScript 放哪里都一样的，那就是内容是依赖 JavaScript 的执行渲染时候，放哪都一样。所以我们需要尽量避免在 JS 中对 dom 进行修改，对于性能优化有比较大的帮助。</p><h2 id="Load-方法"><a href="#Load-方法" class="headerlink" title="Load() 方法"></a>Load() 方法</h2><p>由于在 $(document).ready() 方法内注册的事件，只要 DOM 就绪就会被执行，因此可能此时元素的关联文件未下载完。例如与图片有关的 html 下载完毕，并且已经解析为 DOM 树了，但很有可能图片还没有加载完毕，所以例如图片的高度和宽度这样的属性此时不一定有效。要解决这个问题，可以使用 Jquery 中另一个关于页面加载的方法—— load() 方法。Load() 方法会在元素的 onload 事件中绑定一个处理函数。如果处理函数绑定给 window 对象，则会在所有内容（包括窗口、框架、对象和图像等）加载完毕后触发，如果处理函数绑定在元素上，则会在元素的内容加载完毕后触发。</p><h2 id="其他方法"><a href="#其他方法" class="headerlink" title="其他方法"></a>其他方法</h2><ul><li>$(window).load()：等价于 window.onload()</li><li>$(window).unload()：页面关闭时触发</li></ul><h2 id="坑爹的-IE-or-jQ？"><a href="#坑爹的-IE-or-jQ？" class="headerlink" title="坑爹的 IE or jQ？"></a>坑爹的 IE or jQ？</h2><p>最近在改一个嵌入在 iframe 中的页面的时候，使用了 jquery 做效果，而页面本身也绑定了 onload 事件。改完后，Firefox 下测试正常流畅，IE 下就要等个十几秒 jquery 的效果才出现，黄花菜都凉了。起初以为是和本身 onload 加载的方法冲突。网上普遍的说法是 $(document).ready() 是在页面 DOM 解析完成后执行，而 onload 事件是在所有资源都准备完成之后才执行，也就是说 $(document).ready() 是要在 onload 之前执行的，尤其当页面图片较大较多的时候，这个时间差可能更大。可是我这页面分明是图片都显示出来十几秒了，还不见 jquery 的效果出来。 删了 onload 加载的方法试试，结果还是一样，看来没有必要把原本的 onload 事件绑定也改用 $(document).ready() 来写。那是什么原因使得 Firefox 正常而 IE 就能呢？接着调试，发现 IE 下原来绑定的 onload 方法竟然先于 $(document).ready() 的内容执行，而 Firefox 则是先执行 $(document).ready() 的内容，再执行原来的 onload 方法。这个和网上的说法似乎不完全一致啊，走投无路的时候就看看源码，翻翻 jQuery 的源码看看 $(document).ready() 是如何实现的吧：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> ( jQuery.browser.msie &amp;&amp; <span class="built_in">window</span> == top ) (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; </span><br><span class="line"><span class="keyword">if</span> (jQuery.isReady) <span class="keyword">return</span>; </span><br><span class="line"><span class="keyword">try</span> &#123; </span><br><span class="line"><span class="built_in">document</span>.documentElement.doScroll(<span class="string">"left"</span>); </span><br><span class="line">&#125; <span class="keyword">catch</span>( error ) &#123; </span><br><span class="line">　　　　　　setTimeout( <span class="built_in">arguments</span>.callee, <span class="number">0</span> ); </span><br><span class="line">　　　　　　 <span class="keyword">return</span>; </span><br><span class="line">　　　　&#125; </span><br><span class="line">　　 <span class="comment">// and execute any waiting functions </span></span><br><span class="line">　　　jQuery.ready(); </span><br><span class="line">&#125;)(); </span><br><span class="line">jQuery.event.add( <span class="built_in">window</span>, <span class="string">"load"</span>, jQuery.ready );</span><br></pre></td></tr></table></figure><p>结果很明了了，IE 只有在页面不是嵌入 iframe 中的情况下才和 Firefox 等一样，先执行 $(document).ready() 的内容，再执行原来的 onload 方法。对于嵌入 iframe 中的页面，也只是绑定在 load 事件上执行，所以自然是在原来的 onload 绑定的方法执行之后才轮到。而这个页面中正好在测试环境下有一个访问不到的资源，那十几秒的延迟正是它放大出的时间差。</p><h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul><li><a href="http://www.jb51.net/article/50185.htm" target="_blank" rel="noopener">一张表格告诉你windows.onload()与$(document).ready()的区别</a></li><li><a href="http://www.cnblogs.com/lovesong/p/5641834.html" target="_blank" rel="noopener">jQuery的document ready与 onload事件——你真的思考过吗？</a></li></ul></div><div class="reward"><div class="reward-wrap">赏<div class="reward-box"><span class="reward-type"><img class="alipay" src="/images/hexo_others_5.png"><b>支付宝打赏</b></span> <span class="reward-type"><img class="wechat" src="/images/hexo_others_6.png"><b>微信打赏</b></span></div></div><p class="reward-tip">听说赞过就能年薪百万</p></div><div class="post-footer"><div>转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="//merrier.wang" target="_blank">Merrier说</a></div><div></div></div></article><div class="article-nav prev-next-wrap clearfix"><a href="/20170412/front-end-can-play-like-this.html" class="pre-post btn btn-default" title="前端可以这样玩儿！"><i class="fa fa-angle-left fa-fw"></i> <span class="hidden-lg">上一篇</span> <span class="hidden-xs">前端可以这样玩儿！</span></a> <a href="/20170408/dahua-data-structure.html" class="next-post btn btn-default" title="读书笔记系列（6）——大话数据结构"><span class="hidden-lg">下一篇</span> <span class="hidden-xs">读书笔记系列（6）——大话数据结构</span><i class="fa fa-angle-right fa-fw"></i></a></div><div id="comments"><script id="dsq-count-scr" src="https://merrier.disqus.com/count.js" async></script><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div><script type="text/javascript">if(document.getElementById("disqus_thread")){var disqus_config=function(){this.page.url="http://merrier.wang/20170412/the-difference-between-window.onload-and-document.read.html",this.page.identifier="20170412/the-difference-between-window.onload-and-document.read.html",this.page.title="前端面试系列（11）——window.onload和document.ready的区别"};!function(){var e=document,t=e.createElement("script");t.async=!0,t.src="https://merrier.disqus.com/embed.js",t.setAttribute("data-timestamp",""+ +new Date),(e.head||e.body).appendChild(t)}()}</script></div></main><aside id="article-toc" role="navigation" class="col-md-4"><div class="widget"><h3 class="title">文章目录</h3><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一张表格"><span class="toc-text">一张表格</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jQ-的-document-ready-实现"><span class="toc-text">jQ 的 document.ready() 实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#谁更快"><span class="toc-text">谁更快</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#执行之后有两种结果："><span class="toc-text">执行之后有两种结果：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#首次加载："><span class="toc-text">首次加载：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二次加载："><span class="toc-text">二次加载：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#为什么外部-script-文件放页面内容后面好？"><span class="toc-text">为什么外部 script 文件放页面内容后面好？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#script-执行顺序"><span class="toc-text">script 执行顺序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一定是放页面内容后面吗？"><span class="toc-text">一定是放页面内容后面吗？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Load-方法"><span class="toc-text">Load() 方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他方法"><span class="toc-text">其他方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#坑爹的-IE-or-jQ？"><span class="toc-text">坑爹的 IE or jQ？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考文章"><span class="toc-text">参考文章</span></a></li></ol></div></aside></div></div></section><footer class="main-footer"><div class="container"><div class="row"></div></div></footer><a id="back-to-top" class="icon-btn hide"><i class="fa fa-chevron-up"></i></a><div class="copyright"><div class="container"><div class="row"><div class="col-sm-12"><div class="busuanzi">访问量:<strong id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></strong> &nbsp; | &nbsp; 访客数:<strong id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></strong></div></div><div class="col-sm-12"><span>Copyright &copy; 2018</span> | <span>Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a></span> | <span>Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a></span></div></div></div></div><script src="/assets/tagcanvas.min.js?rev=d3e34a34636b6f4c81d2b43b153907bb"></script><script>var tagOption={textColour:"#444",outlineMethod:"block",outlineColour:"#FFDAB9",interval:30,textHeight:13,outlineRadius:3,freezeActive:!0,frontSelect:!0,initial:[.1,-.1],depth:.5,decel:.95,maxSpeed:.03,reverse:!0,fadeIn:500,wheelZoom:!0};TagCanvas.Start("tag-cloud-3d","",tagOption)</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="/js/app.js?rev=26a1b6fecd389c0121b7027a299aa7c0"></script></body>
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Merrier">
+            <img src="/images/hexo_others_8.jpeg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 叩首问路，码梦为生 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://merrier.wang">Merrier说</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa fa-home"></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/frontend/"><i class="fa fa-tablet"></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/summary/"><i class="fa fa-diamond"></i>总结</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/talk/"><i class="fa fa-coffee"></i>杂谈</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/series/"><i class="fa fa-shopping-cart"></i>系列专栏</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa fa-archive"></i>文章归档</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="前端面试系列（11）——window.onload和document.ready的区别">
+            
+	            前端面试系列（11）——window.onload和document.ready的区别
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/JS">
+            JS
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/JS" title="JS">
+                        JS
+                    </a>
+                
+                    <a href="/tags/面试" title="面试">
+                        面试
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/04/12</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <p>这个问题虽然比较简单，但是依然是前端面试中经常会问到的一道题，所以为了让自己“与众不同”，必须全面了解这两者的区别，才能从众多候选人中脱颖而出</p>
+<h2 id="一张表格"><a href="#一张表格" class="headerlink" title="一张表格"></a>一张表格</h2><p>下面这张表格简单的介绍了两者的区别：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>window.onload()</th>
+<th>$(document).ready()</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>执行时机</td>
+<td>在页面所有元素（包括图片，引用文件）加载完后执行</td>
+<td>页面中所有HTML DOM，CSS DOM结构加载完之后就会执行，其他图片等内容可能没有加载完</td>
+</tr>
+<tr>
+<td>编写个数</td>
+<td>不能同时写多个，后面的将会覆盖前面的</td>
+<td>可以同时写多个</td>
+</tr>
+<tr>
+<td>简写</td>
+<td>无</td>
+<td>$().ready(function(){}) // $()不带参数默认是document；$(function(){})</td>
+</tr>
+</tbody>
+</table>
+<h2 id="jQ-的-document-ready-实现"><a href="#jQ-的-document-ready-实现" class="headerlink" title="jQ 的 document.ready() 实现"></a>jQ 的 document.ready() 实现</h2><p>在 jQuery 脚本加载的时候，会监听 DOMContentLoaded 事件。当事件触发时候，会执行 ready 事件的回调；（document.readyState === “complete” 时相当于 dom 加载完毕<br>由于用的是原生的 DOMContentLoaded 事件，所以<strong>目前的 ready 函数仅能用于当前 document，无需选择器</strong></p>
+<h2 id="谁更快"><a href="#谁更快" class="headerlink" title="谁更快"></a>谁更快</h2><p>jQuery 的 document.ready 就一定比 window.onload 快吗？下面是一个例子：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE HTML&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en-US"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>加载时机<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js"</span></span></span><br><span class="line"><span class="tag"><span class="attr">onload</span>=<span class="string">"console.log('jquery.js loaded')"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">     <span class="built_in">console</span>.log(<span class="string">'define functions'</span>);</span></span><br><span class="line"><span class="javascript">     <span class="function"><span class="keyword">function</span> <span class="title">load</span>(<span class="params">type, info</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(type + <span class="string">' onload '</span> + (info || <span class="string">""</span>), <span class="keyword">new</span> <span class="built_in">Date</span>().getTime());</span></span><br><span class="line"><span class="undefined">     &#125;</span></span><br><span class="line"><span class="javascript">     $(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">          load(<span class="string">'document ready'</span>);</span></span><br><span class="line"><span class="undefined">     &#125;);</span></span><br><span class="line"><span class="javascript">     <span class="built_in">document</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">          load(<span class="string">'document'</span>);</span></span><br><span class="line"><span class="undefined">     &#125;;    </span></span><br><span class="line"><span class="javascript">     <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">          load(<span class="string">'window'</span>);</span></span><br><span class="line"><span class="undefined">     &#125;;</span></span><br><span class="line"><span class="javascript">     <span class="built_in">window</span>.addEventListener(<span class="string">"load"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">          load(<span class="string">'window addEventListener'</span>);</span></span><br><span class="line"><span class="undefined">     &#125;);</span></span><br><span class="line"><span class="javascript">     <span class="built_in">document</span>.addEventListener( <span class="string">"DOMContentLoaded"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">          load(<span class="string">'DOMContentLoaded'</span>);</span></span><br><span class="line"><span class="undefined">     &#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">body</span> <span class="attr">onload</span>=<span class="string">"load('body')"</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">div</span> <span class="attr">onload</span>=<span class="string">"load('text')"</span>&gt;</span>test<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">img</span> <span class="attr">onload</span>=<span class="string">"load('img',1)"</span> <span class="attr">src</span>=<span class="string">"http://www.deskcar.com/desktop/else/2013714232149/17.jpg"</span> /&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">img</span> <span class="attr">onload</span>=<span class="string">"load('img',2)"</span> <span class="attr">src</span>=<span class="string">"http://www.deskcar.com/desktop/else/2013714232149/16.jpg"</span> /&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">script</span> <span class="attr">onload</span>=<span class="string">"load('js')"</span> <span class="attr">src</span>=<span class="string">"https://cdnjs.cloudflare.com/ajax/libs/react/15.2.0/react.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="执行之后有两种结果："><a href="#执行之后有两种结果：" class="headerlink" title="执行之后有两种结果："></a>执行之后有两种结果：</h3><h4 id="首次加载："><a href="#首次加载：" class="headerlink" title="首次加载："></a>首次加载：</h4><div align="center"><img src="/images/hexo_post_11.png" alt="" width="400"></div>
+
+<h4 id="二次加载："><a href="#二次加载：" class="headerlink" title="二次加载："></a>二次加载：</h4><div align="center"><img src="/images/hexo_post_12.png" alt="" width="400"></div>
+
+<p>第一种情况非常符合我们的想法，ready 比 onload 快，顺序也比较合理。而第二种情况就有些怪异，应该依照上面 jquery ready 事件的实现，那 ready 应该要 DOMContentLoaded 后面啊。我思来想去，我觉得这是个误会，由于二次加载时利用到缓存，导致文件资源都很快加载，各个事件触发的时间非常相近，顺序也不定，就给人一种 ready 顺序不对之感，大家应该发现这几个事件都是在几十毫秒之内触发。PS：js 执行需要时间，几十毫秒不同的顺序我觉得很正常。另外尝试几次，二次加载顺序确实会有变化，但时间都很相近。所以，jQuery 的 document ready 不一定比 window.onload 快执行。</p>
+<h2 id="为什么外部-script-文件放页面内容后面好？"><a href="#为什么外部-script-文件放页面内容后面好？" class="headerlink" title="为什么外部 script 文件放页面内容后面好？"></a>为什么外部 script 文件放页面内容后面好？</h2><h3 id="script-执行顺序"><a href="#script-执行顺序" class="headerlink" title="script 执行顺序"></a>script 执行顺序</h3><blockquote>
+<p>无论如何包含代码，只要不存在 defer 和 async 属性，浏览器都会按照 <code>&lt;script&gt;</code> 元素在页面中出现的先后顺序对它们依次进行解析。——《JavaScript高级程序设计》</p>
+</blockquote>
+<p>换句话说，在第一个 <code>&lt;script&gt;</code> 元素包含的代码解析完成后，第二个 <code>&lt;script&gt;</code> 包含代码才会被解析，然后才是第三个…..<br>如果在 head 元素里包含所有 JavaScript 文件，就必须等到全部 JavaScript 代码都被下载、解析和执行完成以后，才能呈现页面的内容（浏览器在遇到 <code>&lt;body&gt;</code> 标签时才开始呈现内容）。在有 JavaScript 文件时候，浏览器呈现页面会出现明显的延迟，延时期间浏览器是一片空白。所以，外部 script 文件放页面内容后面。这样，在解析 JavaScript 代码之前，页面内容将完全呈现出来。</p>
+<h3 id="一定是放页面内容后面吗？"><a href="#一定是放页面内容后面吗？" class="headerlink" title="一定是放页面内容后面吗？"></a>一定是放页面内容后面吗？</h3><p>有种情况是 JavaScript 放哪里都一样的，那就是内容是依赖 JavaScript 的执行渲染时候，放哪都一样。所以我们需要尽量避免在 JS 中对 dom 进行修改，对于性能优化有比较大的帮助。</p>
+<h2 id="Load-方法"><a href="#Load-方法" class="headerlink" title="Load() 方法"></a>Load() 方法</h2><p>由于在 $(document).ready() 方法内注册的事件，只要 DOM 就绪就会被执行，因此可能此时元素的关联文件未下载完。例如与图片有关的 html 下载完毕，并且已经解析为 DOM 树了，但很有可能图片还没有加载完毕，所以例如图片的高度和宽度这样的属性此时不一定有效。要解决这个问题，可以使用 Jquery 中另一个关于页面加载的方法—— load() 方法。Load() 方法会在元素的 onload 事件中绑定一个处理函数。如果处理函数绑定给 window 对象，则会在所有内容（包括窗口、框架、对象和图像等）加载完毕后触发，如果处理函数绑定在元素上，则会在元素的内容加载完毕后触发。</p>
+<h2 id="其他方法"><a href="#其他方法" class="headerlink" title="其他方法"></a>其他方法</h2><ul>
+<li>$(window).load()：等价于 window.onload()</li>
+<li>$(window).unload()：页面关闭时触发</li>
+</ul>
+<h2 id="坑爹的-IE-or-jQ？"><a href="#坑爹的-IE-or-jQ？" class="headerlink" title="坑爹的 IE or jQ？"></a>坑爹的 IE or jQ？</h2><p>最近在改一个嵌入在 iframe 中的页面的时候，使用了 jquery 做效果，而页面本身也绑定了 onload 事件。改完后，Firefox 下测试正常流畅，IE 下就要等个十几秒 jquery 的效果才出现，黄花菜都凉了。起初以为是和本身 onload 加载的方法冲突。网上普遍的说法是 $(document).ready() 是在页面 DOM 解析完成后执行，而 onload 事件是在所有资源都准备完成之后才执行，也就是说 $(document).ready() 是要在 onload 之前执行的，尤其当页面图片较大较多的时候，这个时间差可能更大。可是我这页面分明是图片都显示出来十几秒了，还不见 jquery 的效果出来。 删了 onload 加载的方法试试，结果还是一样，看来没有必要把原本的 onload 事件绑定也改用 $(document).ready() 来写。那是什么原因使得 Firefox 正常而 IE 就能呢？接着调试，发现 IE 下原来绑定的 onload 方法竟然先于 $(document).ready() 的内容执行，而 Firefox 则是先执行 $(document).ready() 的内容，再执行原来的 onload 方法。这个和网上的说法似乎不完全一致啊，走投无路的时候就看看源码，翻翻 jQuery 的源码看看 $(document).ready() 是如何实现的吧：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> ( jQuery.browser.msie &amp;&amp; <span class="built_in">window</span> == top ) (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; </span><br><span class="line"><span class="keyword">if</span> (jQuery.isReady) <span class="keyword">return</span>; </span><br><span class="line"><span class="keyword">try</span> &#123; </span><br><span class="line"><span class="built_in">document</span>.documentElement.doScroll(<span class="string">"left"</span>); </span><br><span class="line">&#125; <span class="keyword">catch</span>( error ) &#123; </span><br><span class="line">　　　　　　setTimeout( <span class="built_in">arguments</span>.callee, <span class="number">0</span> ); </span><br><span class="line">　　　　　　 <span class="keyword">return</span>; </span><br><span class="line">　　　　&#125; </span><br><span class="line">　　 <span class="comment">// and execute any waiting functions </span></span><br><span class="line">　　　jQuery.ready(); </span><br><span class="line">&#125;)(); </span><br><span class="line">jQuery.event.add( <span class="built_in">window</span>, <span class="string">"load"</span>, jQuery.ready );</span><br></pre></td></tr></table></figure>
+<p>结果很明了了，IE 只有在页面不是嵌入 iframe 中的情况下才和 Firefox 等一样，先执行 $(document).ready() 的内容，再执行原来的 onload 方法。对于嵌入 iframe 中的页面，也只是绑定在 load 事件上执行，所以自然是在原来的 onload 绑定的方法执行之后才轮到。而这个页面中正好在测试环境下有一个访问不到的资源，那十几秒的延迟正是它放大出的时间差。</p>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul>
+<li><a href="http://www.jb51.net/article/50185.htm" target="_blank" rel="noopener">一张表格告诉你windows.onload()与$(document).ready()的区别</a></li>
+<li><a href="http://www.cnblogs.com/lovesong/p/5641834.html" target="_blank" rel="noopener">jQuery的document ready与 onload事件——你真的思考过吗？</a></li>
+</ul>
+
+    </div>
+    
+        <div class="reward">
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+                <span class="reward-type">
+                    <img class="alipay" src="/images/hexo_others_5.png"><b>支付宝打赏</b>
+                </span>
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="/images/hexo_others_6.png"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">听说赞过就能年薪百万</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="//merrier.wang" target="_blank">Merrier说</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/20170412/front-end-can-play-like-this.html" class="pre-post btn btn-default" title="前端可以这样玩儿！">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">前端可以这样玩儿！</span>
+        </a>
+    
+    
+        <a href="/20170408/dahua-data-structure.html" class="next-post btn btn-default" title="读书笔记系列（6）——大话数据结构">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">读书笔记系列（6）——大话数据结构</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+  <script id="dsq-count-scr" src="https://merrier.disqus.com/count.js" async></script>
+
+
+<div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+<script type="text/javascript">
+  if (document.getElementById('disqus_thread')) {
+    var disqus_config = function () {
+      this.page.url = 'http://merrier.wang/20170412/the-difference-between-window.onload-and-document.read.html';
+      this.page.identifier = '20170412/the-difference-between-window.onload-and-document.read.html';
+      this.page.title = '前端面试系列（11）——window.onload和document.ready的区别';
+    };
+    (function(){
+      var d = document,
+          s = d.createElement('script');
+      s.async = true;
+      s.src = 'https://merrier.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+</script>
+
+
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一张表格"><span class="toc-text">一张表格</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jQ-的-document-ready-实现"><span class="toc-text">jQ 的 document.ready() 实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#谁更快"><span class="toc-text">谁更快</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#执行之后有两种结果："><span class="toc-text">执行之后有两种结果：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#首次加载："><span class="toc-text">首次加载：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二次加载："><span class="toc-text">二次加载：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#为什么外部-script-文件放页面内容后面好？"><span class="toc-text">为什么外部 script 文件放页面内容后面好？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#script-执行顺序"><span class="toc-text">script 执行顺序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一定是放页面内容后面吗？"><span class="toc-text">一定是放页面内容后面吗？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Load-方法"><span class="toc-text">Load() 方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他方法"><span class="toc-text">其他方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#坑爹的-IE-or-jQ？"><span class="toc-text">坑爹的 IE or jQ？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考文章"><span class="toc-text">参考文章</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        访问量:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        访客数:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2018
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+    <script src="/assets/tagcanvas.min.js?rev=2.9"></script>
+    <script>
+        var tagOption = {
+            textColour: '#444', // 字体颜色
+            outlineMethod: 'block', // 选中模式
+            outlineColour: '#FFDAB9', // 选中模式的颜色
+            interval: 30 || 30, // 动画帧之间的时间间隔，值越大，转动幅度越大
+            textHeight: 13,
+            outlineRadius: 3,
+            freezeActive: true || '', // 选中的标签是否继续滚动
+            frontSelect: true || '', // 不选标签云后部的标签
+            initial: [0.1, -0.1],
+            depth: 0.5,
+            decel: 0.95,
+            maxSpeed: 0.03,
+            reverse: true || '', // 是否反向触发
+            fadeIn: 500, // 进入动画时间
+            wheelZoom: true || '' // 是否启用鼠标滚轮
+        }
+        TagCanvas.Start('tag-cloud-3d','',tagOption);
+    </script>
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

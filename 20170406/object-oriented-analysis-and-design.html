@@ -1,3 +1,440 @@
-<!DOCTYPE HTML><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1"><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta http-equiv="Cache-Control" content="no-siteapp"><meta http-equiv="Cache-Control" content="no-transform"><meta name="renderer" content="webkit|ie-comp|ie-stand"><meta name="apple-mobile-web-app-capable" content="Merrier说"><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="format-detection" content="telephone=no,email=no,adress=no"><meta name="browsermode" content="application"><meta name="screen-orientation" content="portrait"><link rel="dns-prefetch" href="http://merrier.wang"><meta name="description" content="Merrier的个人博客"><meta name="keywords" content=""><meta name="robots" content="all"><meta name="google" content="all"><meta name="googlebot" content="all"><meta name="verify" content="all"><meta name="google-site-verification" content="UkMBUrF2qTuMWfmPXWFFmc_pnqCRAxHQY1ndE0Zu1p0"><link rel="apple-touch-icon" href="/images/hexo_others_10.png"><title>读书笔记系列（2）——面向对象的分析与设计 | Merrier说</title><link rel="alternate" href="/atom.xml" title="Merrier说" type="application/atom+xml"><link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/css/bootstrap.min.css?rev=9be54fca751d321cf4cde53fe170f6d6"><link rel="stylesheet" href="/css/font-awesome.min.css?rev=d13d6f6bf3dcbaccb347c89baa7f4bd0"><link rel="stylesheet" href="/css/style.css?rev=9a689f858f6a74dab8e5254940cc5a3b"><div class="hide"><script type="text/javascript">var cnzz_protocol="https:"==document.location.protocol?" https://":" http://";document.write(unescape("%3Cspan class='cnzz_stat_icon_1264342320 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='"+cnzz_protocol+"s19.cnzz.com/z_stat.php%3Fid%3D1264342320%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"))</script></div><script>!function(){var t=document.createElement("script"),e=window.location.protocol.split(":")[0];t.src="https"===e?"https://zz.bdstatic.com/linksubmit/push.js":"http://push.zhanzhang.baidu.com/push.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(t,s)}()</script></head></html><!--[if lte IE 8]><style>
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Merrier说">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://merrier.wang">
+    <!--SEO-->
+
+<meta name="description" content="Merrier的个人博客">
+
+
+
+<meta name="keywords" content="">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+<meta name="google-site-verification" content="UkMBUrF2qTuMWfmPXWFFmc_pnqCRAxHQY1ndE0Zu1p0">
+
+
+<link rel="apple-touch-icon" href="/images/hexo_others_10.png">
+
+    <!--Title-->
+
+
+<title>读书笔记系列（2）——面向对象的分析与设计 | Merrier说</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Merrier说" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1264342320 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1264342320%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
     html{ font-size: 1em }
-</style><![endif]--><!--[if lte IE 9]><div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div><![endif]--><body><header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)"><div class="main-header-box"><a class="header-avatar" href="/" title="Merrier"><img src="/images/hexo_others_8.jpeg" alt="logo头像" class="img-responsive center-block"></a><div class="branding"><h2>叩首问路，码梦为生</h2></div></div></header><nav class="main-navigation"><div class="container"><div class="row"><div class="col-sm-12"><div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav"><span class="sr-only"></span><i class="fa fa-bars"></i></span> <a class="navbar-brand" href="http://merrier.wang">Merrier说</a></div><div class="collapse navbar-collapse" id="main-menu"><ul class="menu"><li role="presentation" class="text-center"><a href="/"><i class="fa fa-home"></i> Home</a></li><li role="presentation" class="text-center"><a href="/categories/frontend/"><i class="fa fa-tablet"></i> 前端</a></li><li role="presentation" class="text-center"><a href="/categories/summary/"><i class="fa fa-diamond"></i> 总结</a></li><li role="presentation" class="text-center"><a href="/categories/talk/"><i class="fa fa-coffee"></i> 杂谈</a></li><li role="presentation" class="text-center"><a href="/categories/series/"><i class="fa fa-shopping-cart"></i> 系列专栏</a></li><li role="presentation" class="text-center"><a href="/archives/"><i class="fa fa-archive"></i> 文章归档</a></li></ul></div></div></div></div></nav><section class="content-wrap"><div class="container"><div class="row"><main class="col-md-8 main-content m-post"><p id="process"></p><article class="post"><div class="post-head"><h1 id="读书笔记系列（2）——面向对象的分析与设计">读书笔记系列（2）——面向对象的分析与设计</h1><div class="post-meta"><span class="categories-meta fa-wrap"><i class="fa fa-folder-open-o"></i> <a href="/categories/笔记">笔记</a></span><span class="fa-wrap"><i class="fa fa-tags"></i> <span class="tags-meta"><a href="/tags/笔记" title="笔记">笔记</a></span></span><span class="fa-wrap"><i class="fa fa-clock-o"></i> <span class="date-meta">2017/04/06</span></span><span class="fa-wrap"><i class="fa fa-eye"></i><span id="busuanzi_value_page_pv"></span></span></div></div><div class="post-body post-content"><h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h2><p>面向对象不仅是一些具体的软件开发技术与策略，而且是一整套关于如何看待软件系统与现实世界的关系，用什么观点来研究问题并进行求解，以及如何进行系统构造的软件方法学。面向对象方法比以往的方法更接近人类的日常思维方式。</p><h2 id="2-面向对象方法有如下一些主要特点："><a href="#2-面向对象方法有如下一些主要特点：" class="headerlink" title="2. 面向对象方法有如下一些主要特点："></a>2. 面向对象方法有如下一些主要特点：</h2><ol><li>从问题域中客观存在的事物出发来构造软件系统，用对象作为对这些事物的抽象表示，并以此作为系统的基本构成单位。</li><li>用对象的属性表示事物的静态特征（即可以用一些数据来表达的特征），用对象的操作表示事物的动态特征（即事物的行为）</li><li>对象的属性与操作结合在一起构成一个独立的实体，对外屏蔽其内部细节（封装）。</li><li>对事物进行分类，把具有相同属性和相同操作的对象归为一类，类是这些对象的抽象描述，每个对象是它的类的一个实例。</li><li>通过在不同程度上运用抽象的原则，可以得到较一般的类和较特殊的类。特殊类继承一般类的属性与操作，从而简化了系统的构造过程。</li><li>复杂的对象可以用简单的对象作为其构成部分（聚合）。</li><li>对象之间通过消息进行通信，以实现对象之间的动态联系。</li><li>用关联表达某些类之间对用户业务有特定意义的关系。</li></ol><h2 id="3-每个对象由一组属性和一组操作构成，二者分别描述事物的静态特征和动态特征。"><a href="#3-每个对象由一组属性和一组操作构成，二者分别描述事物的静态特征和动态特征。" class="headerlink" title="3. 每个对象由一组属性和一组操作构成，二者分别描述事物的静态特征和动态特征。"></a>3. 每个对象由一组属性和一组操作构成，二者分别描述事物的静态特征和动态特征。</h2><h2 id="4-类是具有相同属性和操作的一组对象的集合，它为属于该类的全部对象提供了统一的抽象描述，由一个类名、一组属性和一组操作构成。"><a href="#4-类是具有相同属性和操作的一组对象的集合，它为属于该类的全部对象提供了统一的抽象描述，由一个类名、一组属性和一组操作构成。" class="headerlink" title="4. 类是具有相同属性和操作的一组对象的集合，它为属于该类的全部对象提供了统一的抽象描述，由一个类名、一组属性和一组操作构成。"></a>4. 类是具有相同属性和操作的一组对象的集合，它为属于该类的全部对象提供了统一的抽象描述，由一个类名、一组属性和一组操作构成。</h2><h2 id="5-一个对象又称为类的一个实例。我们说同类对象具有相同的属性与操作，是指它们的定义形式相同，而不是说每个对象的属性值都相同。"><a href="#5-一个对象又称为类的一个实例。我们说同类对象具有相同的属性与操作，是指它们的定义形式相同，而不是说每个对象的属性值都相同。" class="headerlink" title="5. 一个对象又称为类的一个实例。我们说同类对象具有相同的属性与操作，是指它们的定义形式相同，而不是说每个对象的属性值都相同。"></a>5. 一个对象又称为类的一个实例。我们说同类对象具有相同的属性与操作，是指它们的定义形式相同，而不是说每个对象的属性值都相同。</h2><h2 id="6-一般类和特殊类也常常习惯地称为父类和子类。"><a href="#6-一般类和特殊类也常常习惯地称为父类和子类。" class="headerlink" title="6. 一般类和特殊类也常常习惯地称为父类和子类。"></a>6. 一般类和特殊类也常常习惯地称为父类和子类。</h2><ul><li>特殊类的每个对象实例也都属于它的一般类，然而一般类含有其特殊类所没有的对象实例。</li><li>特殊类拥有其一般类的全部属性与操作，称为特殊类对一般类的继承。</li></ul><h2 id="7-聚合的含义"><a href="#7-聚合的含义" class="headerlink" title="7. 聚合的含义"></a>7. 聚合的含义</h2><p>聚合的含义：一个复杂的对象以若干比较简单的对象作为其组成部分。另一方面，聚合也是对象之间的一种关系，即整体对象和部分对象之间的关系。聚合是两个类之间的一个二元关系，它表示一个类的对象实例以另一个类的对象实例作为其组成部分。</p><h2 id="8-用关联来表示两个（或者多个）类的对象实例集合之间的这种关系。"><a href="#8-用关联来表示两个（或者多个）类的对象实例集合之间的这种关系。" class="headerlink" title="8. 用关联来表示两个（或者多个）类的对象实例集合之间的这种关系。"></a>8. 用关联来表示两个（或者多个）类的对象实例集合之间的这种关系。</h2><h2 id="9-消息是向对象发出的服务请求。"><a href="#9-消息是向对象发出的服务请求。" class="headerlink" title="9. 消息是向对象发出的服务请求。"></a>9. 消息是向对象发出的服务请求。</h2><p>消息的实现手段，在顺序程序中主要是函数调用，或者其他类似于函数调用的机制。</p><h2 id="10-对象的多态性"><a href="#10-对象的多态性" class="headerlink" title="10. 对象的多态性"></a>10. 对象的多态性</h2><p>对象的多态性通常是指一般-特殊结构中的对象所体现的多态性，即：在一般类中定义的属性或操作被特殊类继承之后，可以具有不同的数据类型或表现出不同的行为。</p><h2 id="11-功能分解法"><a href="#11-功能分解法" class="headerlink" title="11. 功能分解法"></a>11. 功能分解法</h2><p>首先定义各项功能，然后把较大的功能分解为子功能，直到这些功能或子功能的大小比较适当，并能给出明确的定义。</p><h2 id="12-结构化方法"><a href="#12-结构化方法" class="headerlink" title="12. 结构化方法"></a>12. 结构化方法</h2><p>研究问题域中数据如何流动以及在各个环节上如何进行处理，从而发现数据流和加工。最终得到的分析模型是数据流图。</p><h2 id="13-数据流从源点开始出现到终点结束，在其他任何结点（加工和文件）之间只能被传输、转换和存储，而不能凭空产生和消失。"><a href="#13-数据流从源点开始出现到终点结束，在其他任何结点（加工和文件）之间只能被传输、转换和存储，而不能凭空产生和消失。" class="headerlink" title="13. 数据流从源点开始出现到终点结束，在其他任何结点（加工和文件）之间只能被传输、转换和存储，而不能凭空产生和消失。"></a>13. 数据流从源点开始出现到终点结束，在其他任何结点（加工和文件）之间只能被传输、转换和存储，而不能凭空产生和消失。</h2><h2 id="14-实体描述问题域中一个事物，它包含一组描述事物数据信息的属性。关系描述问题域中各事物之间在数据方面的联系，它也可以带有自己的属性。"><a href="#14-实体描述问题域中一个事物，它包含一组描述事物数据信息的属性。关系描述问题域中各事物之间在数据方面的联系，它也可以带有自己的属性。" class="headerlink" title="14. 实体描述问题域中一个事物，它包含一组描述事物数据信息的属性。关系描述问题域中各事物之间在数据方面的联系，它也可以带有自己的属性。"></a>14. 实体描述问题域中一个事物，它包含一组描述事物数据信息的属性。关系描述问题域中各事物之间在数据方面的联系，它也可以带有自己的属性。</h2><h2 id="15-信息建模法认识问题域的出发点是问题域中的具体事物，用模型中的实体（对象）与之对应。"><a href="#15-信息建模法认识问题域的出发点是问题域中的具体事物，用模型中的实体（对象）与之对应。" class="headerlink" title="15. 信息建模法认识问题域的出发点是问题域中的具体事物，用模型中的实体（对象）与之对应。"></a>15. 信息建模法认识问题域的出发点是问题域中的具体事物，用模型中的实体（对象）与之对应。</h2><h2 id="16-先以用况的概念进行需求分析，然后以面向对象的概念进行系统分析。"><a href="#16-先以用况的概念进行需求分析，然后以面向对象的概念进行系统分析。" class="headerlink" title="16. 先以用况的概念进行需求分析，然后以面向对象的概念进行系统分析。"></a>16. 先以用况的概念进行需求分析，然后以面向对象的概念进行系统分析。</h2><h2 id="17-面向对象建模方法具有如下优点："><a href="#17-面向对象建模方法具有如下优点：" class="headerlink" title="17. 面向对象建模方法具有如下优点："></a>17. 面向对象建模方法具有如下优点：</h2><ol><li>对问题域和系统责任的复杂性具有较强的处理能力；</li><li>提供了便于各类相关人员交流的共同语言；</li><li>对需求的变化具有较强的适应性；</li><li>为实现分析与设计级别的软件复用提供了强有力的支持。</li></ol><h2 id="18-UML是一种建模语言，而不是一种建模方法。"><a href="#18-UML是一种建模语言，而不是一种建模方法。" class="headerlink" title="18. UML是一种建模语言，而不是一种建模方法。"></a>18. UML是一种建模语言，而不是一种建模方法。</h2><h2 id="19-属性有类属性和实例属性之分，必要时要加以区别。"><a href="#19-属性有类属性和实例属性之分，必要时要加以区别。" class="headerlink" title="19. 属性有类属性和实例属性之分，必要时要加以区别。"></a>19. 属性有类属性和实例属性之分，必要时要加以区别。</h2><h2 id="20-数据抽象是面向对象方法的核心原则。"><a href="#20-数据抽象是面向对象方法的核心原则。" class="headerlink" title="20. 数据抽象是面向对象方法的核心原则。"></a>20. 数据抽象是面向对象方法的核心原则。</h2><h2 id="21-没有任何对象需要单独地编写程序代码，即使一个类只有唯一的对象实例也是如此。"><a href="#21-没有任何对象需要单独地编写程序代码，即使一个类只有唯一的对象实例也是如此。" class="headerlink" title="21. 没有任何对象需要单独地编写程序代码，即使一个类只有唯一的对象实例也是如此。"></a>21. 没有任何对象需要单独地编写程序代码，即使一个类只有唯一的对象实例也是如此。</h2><h2 id="22-消息通信就成了实现对象之间动态联系的唯一渠道。在多数情况下，一个对象向另一个对象发出消息，就意味着前者在行为上依赖后者。因此，通过消息进行通信是面向对象方法处理对象之间行为关系的原则。"><a href="#22-消息通信就成了实现对象之间动态联系的唯一渠道。在多数情况下，一个对象向另一个对象发出消息，就意味着前者在行为上依赖后者。因此，通过消息进行通信是面向对象方法处理对象之间行为关系的原则。" class="headerlink" title="22. 消息通信就成了实现对象之间动态联系的唯一渠道。在多数情况下，一个对象向另一个对象发出消息，就意味着前者在行为上依赖后者。因此，通过消息进行通信是面向对象方法处理对象之间行为关系的原则。"></a>22. 消息通信就成了实现对象之间动态联系的唯一渠道。在多数情况下，一个对象向另一个对象发出消息，就意味着前者在行为上依赖后者。因此，通过消息进行通信是面向对象方法处理对象之间行为关系的原则。</h2><h2 id="23-在面向对象的软件系统中，所有的对象都是通过类描述的。"><a href="#23-在面向对象的软件系统中，所有的对象都是通过类描述的。" class="headerlink" title="23. 在面向对象的软件系统中，所有的对象都是通过类描述的。"></a>23. 在面向对象的软件系统中，所有的对象都是通过类描述的。</h2><h2 id="24-类是具有相同属性和操作的一组对象的集合，它为属于该类的全部对象提供了统一的抽象描述，它由一个类名、一组属性和一组操作构成。"><a href="#24-类是具有相同属性和操作的一组对象的集合，它为属于该类的全部对象提供了统一的抽象描述，它由一个类名、一组属性和一组操作构成。" class="headerlink" title="24. 类是具有相同属性和操作的一组对象的集合，它为属于该类的全部对象提供了统一的抽象描述，它由一个类名、一组属性和一组操作构成。"></a>24. 类是具有相同属性和操作的一组对象的集合，它为属于该类的全部对象提供了统一的抽象描述，它由一个类名、一组属性和一组操作构成。</h2><h2 id="25-可用以下-4-句话来概括对象和类这两个概念在面向对象建模中的应用规则："><a href="#25-可用以下-4-句话来概括对象和类这两个概念在面向对象建模中的应用规则：" class="headerlink" title="25. 可用以下 4 句话来概括对象和类这两个概念在面向对象建模中的应用规则："></a>25. 可用以下 4 句话来概括对象和类这两个概念在面向对象建模中的应用规则：</h2><ol><li>从对象出发认识问题域，将问题域中的事物抽象为对象；</li><li>将具有共同特征的对象抽象为类，用类以及它们之间的关系构成整个系统模型；</li><li>模型中不包含实例级的元素，用类来表示属于该类的任何对象实例；</li><li>在类的规约中说明这个类将创建哪些对象实例。</li></ol><h2 id="26-如果一个对象只有多个操作，而没有属性，并且每个操作各自只被一个类的对象使用，则可考虑把这些操作分别放到它的使用者（对象）中，从而取消这个对象。"><a href="#26-如果一个对象只有多个操作，而没有属性，并且每个操作各自只被一个类的对象使用，则可考虑把这些操作分别放到它的使用者（对象）中，从而取消这个对象。" class="headerlink" title="26. 如果一个对象只有多个操作，而没有属性，并且每个操作各自只被一个类的对象使用，则可考虑把这些操作分别放到它的使用者（对象）中，从而取消这个对象。"></a>26. 如果一个对象只有多个操作，而没有属性，并且每个操作各自只被一个类的对象使用，则可考虑把这些操作分别放到它的使用者（对象）中，从而取消这个对象。</h2><h2 id="27-属性是用来描述对象静态特征的一个数据项-操作是用来描述对象动态特征（行为）的一个动作序列。"><a href="#27-属性是用来描述对象静态特征的一个数据项-操作是用来描述对象动态特征（行为）的一个动作序列。" class="headerlink" title="27. 属性是用来描述对象静态特征的一个数据项 操作是用来描述对象动态特征（行为）的一个动作序列。"></a>27. 属性是用来描述对象静态特征的一个数据项 操作是用来描述对象动态特征（行为）的一个动作序列。</h2><h2 id="28-确定对象属性的要点是：以系统责任为目标，对问题域中实际事物的特征进行正确的抽象，从而找出对象应有的属性。"><a href="#28-确定对象属性的要点是：以系统责任为目标，对问题域中实际事物的特征进行正确的抽象，从而找出对象应有的属性。" class="headerlink" title="28. 确定对象属性的要点是：以系统责任为目标，对问题域中实际事物的特征进行正确的抽象，从而找出对象应有的属性。"></a>28. 确定对象属性的要点是：以系统责任为目标，对问题域中实际事物的特征进行正确的抽象，从而找出对象应有的属性。</h2><h2 id="29-一个对象的操作直接调用另一个对象的操作，则二者之间的衔接是固定的。"><a href="#29-一个对象的操作直接调用另一个对象的操作，则二者之间的衔接是固定的。" class="headerlink" title="29. 一个对象的操作直接调用另一个对象的操作，则二者之间的衔接是固定的。"></a>29. 一个对象的操作直接调用另一个对象的操作，则二者之间的衔接是固定的。</h2><p>通过接口进行衔接，则接口在它的使用者和提供者之间起到了隔离作用，二者可以分别实现，并且可以有多种不同的实现，只要都遵守接口所规定的合约，就可以通过该接口相互衔接。</p><h2 id="30-接口由某些类提供，为另外某些类所需要。"><a href="#30-接口由某些类提供，为另外某些类所需要。" class="headerlink" title="30. 接口由某些类提供，为另外某些类所需要。"></a>30. 接口由某些类提供，为另外某些类所需要。</h2><h2 id="31-接口与对象类相比，有以下几点不同："><a href="#31-接口与对象类相比，有以下几点不同：" class="headerlink" title="31. 接口与对象类相比，有以下几点不同："></a>31. 接口与对象类相比，有以下几点不同：</h2><ol><li>类既有属性又有操作；接口只是声明了一组操作，没有属性。</li><li>在一个类中定义了一个操作，就要在这个类中真正地实现它的功能；接口中的操作只是一个声明，不需要在接口中加以实现。</li><li>类可以创建对象实例；接口则没有任何实例。</li></ol><h2 id="32-对象之间的-4-种重要关系，即继承、聚合、关联和信息。"><a href="#32-对象之间的-4-种重要关系，即继承、聚合、关联和信息。" class="headerlink" title="32. 对象之间的 4 种重要关系，即继承、聚合、关联和信息。"></a>32. 对象之间的 4 种重要关系，即继承、聚合、关联和信息。</h2><h2 id="33-系统中的一般类应该符合下述3个条件之一才有存在的价值："><a href="#33-系统中的一般类应该符合下述3个条件之一才有存在的价值：" class="headerlink" title="33. 系统中的一般类应该符合下述3个条件之一才有存在的价值："></a>33. 系统中的一般类应该符合下述3个条件之一才有存在的价值：</h2><ol><li>它有两个或两个以上的特殊类；</li><li>需要用它创建对象实例；</li><li>它的存在有助于软件复用。</li></ol><h2 id="34-聚合关系的语义是has-a或者is-a-part-of，即”有一个”或者”是……的一部分”。"><a href="#34-聚合关系的语义是has-a或者is-a-part-of，即”有一个”或者”是……的一部分”。" class="headerlink" title="34. 聚合关系的语义是has-a或者is-a-part-of，即”有一个”或者”是……的一部分”。"></a>34. 聚合关系的语义是has-a或者is-a-part-of，即”有一个”或者”是……的一部分”。</h2><h2 id="35-如果部分对象只有一个属性，应考虑把它取消，并把其中所表达的信息收缩（合并）到整体对象中去，变为整体对象的一个属性，除非还有其他理由要求保留这个结构。"><a href="#35-如果部分对象只有一个属性，应考虑把它取消，并把其中所表达的信息收缩（合并）到整体对象中去，变为整体对象的一个属性，除非还有其他理由要求保留这个结构。" class="headerlink" title="35. 如果部分对象只有一个属性，应考虑把它取消，并把其中所表达的信息收缩（合并）到整体对象中去，变为整体对象的一个属性，除非还有其他理由要求保留这个结构。"></a>35. 如果部分对象只有一个属性，应考虑把它取消，并把其中所表达的信息收缩（合并）到整体对象中去，变为整体对象的一个属性，除非还有其他理由要求保留这个结构。</h2><h2 id="36-关联类是一种兼有关联的特征和类的特征的模型元素。关联类既可以被看成是具有类的特征的关联，又可以被看成是具有关联特征的类。"><a href="#36-关联类是一种兼有关联的特征和类的特征的模型元素。关联类既可以被看成是具有类的特征的关联，又可以被看成是具有关联特征的类。" class="headerlink" title="36. 关联类是一种兼有关联的特征和类的特征的模型元素。关联类既可以被看成是具有类的特征的关联，又可以被看成是具有关联特征的类。"></a>36. 关联类是一种兼有关联的特征和类的特征的模型元素。关联类既可以被看成是具有类的特征的关联，又可以被看成是具有关联特征的类。</h2><h2 id="37-消息是向对象发出的服务请求。消息是对象之间在一次交互中所传送的消息。"><a href="#37-消息是向对象发出的服务请求。消息是对象之间在一次交互中所传送的消息。" class="headerlink" title="37. 消息是向对象发出的服务请求。消息是对象之间在一次交互中所传送的消息。"></a>37. 消息是向对象发出的服务请求。消息是对象之间在一次交互中所传送的消息。</h2><h2 id="38-在语法上，一个消息的描述应包括以下内容：消息名，即接收消息的操作名；入口参数（0-到多个），即接收消息的操作要求的输入参数；返回参数（0-到多个），即接收消息的操作提供的输出参数。"><a href="#38-在语法上，一个消息的描述应包括以下内容：消息名，即接收消息的操作名；入口参数（0-到多个），即接收消息的操作要求的输入参数；返回参数（0-到多个），即接收消息的操作提供的输出参数。" class="headerlink" title="38. 在语法上，一个消息的描述应包括以下内容：消息名，即接收消息的操作名；入口参数（0 到多个），即接收消息的操作要求的输入参数；返回参数（0 到多个），即接收消息的操作提供的输出参数。"></a>38. 在语法上，一个消息的描述应包括以下内容：消息名，即接收消息的操作名；入口参数（0 到多个），即接收消息的操作要求的输入参数；返回参数（0 到多个），即接收消息的操作提供的输出参数。</h2></div><div class="reward"><div class="reward-wrap">赏<div class="reward-box"><span class="reward-type"><img class="alipay" src="/images/hexo_others_5.png"><b>支付宝打赏</b></span> <span class="reward-type"><img class="wechat" src="/images/hexo_others_6.png"><b>微信打赏</b></span></div></div><p class="reward-tip">听说赞过就能年薪百万</p></div><div class="post-footer"><div>转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="//merrier.wang" target="_blank">Merrier说</a></div><div></div></div></article><div class="article-nav prev-next-wrap clearfix"><a href="/20170406/excellent-css.html" class="pre-post btn btn-default" title="读书笔记系列（3）——精彩绝伦的CSS"><i class="fa fa-angle-left fa-fw"></i> <span class="hidden-lg">上一篇</span> <span class="hidden-xs">读书笔记系列（3）——精彩绝伦的CSS</span></a> <a href="/20170406/html5-mobile-web-development-guide.html" class="next-post btn btn-default" title="读书笔记系列（1）——HTML5移动Web开发指南"><span class="hidden-lg">下一篇</span> <span class="hidden-xs">读书笔记系列（1）——HTML5移动Web开发指南</span><i class="fa fa-angle-right fa-fw"></i></a></div><div id="comments"><script id="dsq-count-scr" src="https://merrier.disqus.com/count.js" async></script><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div><script type="text/javascript">if(document.getElementById("disqus_thread")){var disqus_config=function(){this.page.url="http://merrier.wang/20170406/object-oriented-analysis-and-design.html",this.page.identifier="20170406/object-oriented-analysis-and-design.html",this.page.title="读书笔记系列（2）——面向对象的分析与设计"};!function(){var e=document,t=e.createElement("script");t.async=!0,t.src="https://merrier.disqus.com/embed.js",t.setAttribute("data-timestamp",""+ +new Date),(e.head||e.body).appendChild(t)}()}</script></div></main><aside id="article-toc" role="navigation" class="col-md-4"><div class="widget"><h3 class="title">文章目录</h3><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-简介"><span class="toc-text">1. 简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-面向对象方法有如下一些主要特点："><span class="toc-text">2. 面向对象方法有如下一些主要特点：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-每个对象由一组属性和一组操作构成，二者分别描述事物的静态特征和动态特征。"><span class="toc-text">3. 每个对象由一组属性和一组操作构成，二者分别描述事物的静态特征和动态特征。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-类是具有相同属性和操作的一组对象的集合，它为属于该类的全部对象提供了统一的抽象描述，由一个类名、一组属性和一组操作构成。"><span class="toc-text">4. 类是具有相同属性和操作的一组对象的集合，它为属于该类的全部对象提供了统一的抽象描述，由一个类名、一组属性和一组操作构成。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-一个对象又称为类的一个实例。我们说同类对象具有相同的属性与操作，是指它们的定义形式相同，而不是说每个对象的属性值都相同。"><span class="toc-text">5. 一个对象又称为类的一个实例。我们说同类对象具有相同的属性与操作，是指它们的定义形式相同，而不是说每个对象的属性值都相同。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-一般类和特殊类也常常习惯地称为父类和子类。"><span class="toc-text">6. 一般类和特殊类也常常习惯地称为父类和子类。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-聚合的含义"><span class="toc-text">7. 聚合的含义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-用关联来表示两个（或者多个）类的对象实例集合之间的这种关系。"><span class="toc-text">8. 用关联来表示两个（或者多个）类的对象实例集合之间的这种关系。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-消息是向对象发出的服务请求。"><span class="toc-text">9. 消息是向对象发出的服务请求。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-对象的多态性"><span class="toc-text">10. 对象的多态性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-功能分解法"><span class="toc-text">11. 功能分解法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-结构化方法"><span class="toc-text">12. 结构化方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-数据流从源点开始出现到终点结束，在其他任何结点（加工和文件）之间只能被传输、转换和存储，而不能凭空产生和消失。"><span class="toc-text">13. 数据流从源点开始出现到终点结束，在其他任何结点（加工和文件）之间只能被传输、转换和存储，而不能凭空产生和消失。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#14-实体描述问题域中一个事物，它包含一组描述事物数据信息的属性。关系描述问题域中各事物之间在数据方面的联系，它也可以带有自己的属性。"><span class="toc-text">14. 实体描述问题域中一个事物，它包含一组描述事物数据信息的属性。关系描述问题域中各事物之间在数据方面的联系，它也可以带有自己的属性。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#15-信息建模法认识问题域的出发点是问题域中的具体事物，用模型中的实体（对象）与之对应。"><span class="toc-text">15. 信息建模法认识问题域的出发点是问题域中的具体事物，用模型中的实体（对象）与之对应。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#16-先以用况的概念进行需求分析，然后以面向对象的概念进行系统分析。"><span class="toc-text">16. 先以用况的概念进行需求分析，然后以面向对象的概念进行系统分析。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#17-面向对象建模方法具有如下优点："><span class="toc-text">17. 面向对象建模方法具有如下优点：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#18-UML是一种建模语言，而不是一种建模方法。"><span class="toc-text">18. UML是一种建模语言，而不是一种建模方法。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#19-属性有类属性和实例属性之分，必要时要加以区别。"><span class="toc-text">19. 属性有类属性和实例属性之分，必要时要加以区别。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#20-数据抽象是面向对象方法的核心原则。"><span class="toc-text">20. 数据抽象是面向对象方法的核心原则。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#21-没有任何对象需要单独地编写程序代码，即使一个类只有唯一的对象实例也是如此。"><span class="toc-text">21. 没有任何对象需要单独地编写程序代码，即使一个类只有唯一的对象实例也是如此。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#22-消息通信就成了实现对象之间动态联系的唯一渠道。在多数情况下，一个对象向另一个对象发出消息，就意味着前者在行为上依赖后者。因此，通过消息进行通信是面向对象方法处理对象之间行为关系的原则。"><span class="toc-text">22. 消息通信就成了实现对象之间动态联系的唯一渠道。在多数情况下，一个对象向另一个对象发出消息，就意味着前者在行为上依赖后者。因此，通过消息进行通信是面向对象方法处理对象之间行为关系的原则。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#23-在面向对象的软件系统中，所有的对象都是通过类描述的。"><span class="toc-text">23. 在面向对象的软件系统中，所有的对象都是通过类描述的。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#24-类是具有相同属性和操作的一组对象的集合，它为属于该类的全部对象提供了统一的抽象描述，它由一个类名、一组属性和一组操作构成。"><span class="toc-text">24. 类是具有相同属性和操作的一组对象的集合，它为属于该类的全部对象提供了统一的抽象描述，它由一个类名、一组属性和一组操作构成。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#25-可用以下-4-句话来概括对象和类这两个概念在面向对象建模中的应用规则："><span class="toc-text">25. 可用以下 4 句话来概括对象和类这两个概念在面向对象建模中的应用规则：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#26-如果一个对象只有多个操作，而没有属性，并且每个操作各自只被一个类的对象使用，则可考虑把这些操作分别放到它的使用者（对象）中，从而取消这个对象。"><span class="toc-text">26. 如果一个对象只有多个操作，而没有属性，并且每个操作各自只被一个类的对象使用，则可考虑把这些操作分别放到它的使用者（对象）中，从而取消这个对象。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#27-属性是用来描述对象静态特征的一个数据项-操作是用来描述对象动态特征（行为）的一个动作序列。"><span class="toc-text">27. 属性是用来描述对象静态特征的一个数据项 操作是用来描述对象动态特征（行为）的一个动作序列。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#28-确定对象属性的要点是：以系统责任为目标，对问题域中实际事物的特征进行正确的抽象，从而找出对象应有的属性。"><span class="toc-text">28. 确定对象属性的要点是：以系统责任为目标，对问题域中实际事物的特征进行正确的抽象，从而找出对象应有的属性。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#29-一个对象的操作直接调用另一个对象的操作，则二者之间的衔接是固定的。"><span class="toc-text">29. 一个对象的操作直接调用另一个对象的操作，则二者之间的衔接是固定的。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#30-接口由某些类提供，为另外某些类所需要。"><span class="toc-text">30. 接口由某些类提供，为另外某些类所需要。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#31-接口与对象类相比，有以下几点不同："><span class="toc-text">31. 接口与对象类相比，有以下几点不同：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#32-对象之间的-4-种重要关系，即继承、聚合、关联和信息。"><span class="toc-text">32. 对象之间的 4 种重要关系，即继承、聚合、关联和信息。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#33-系统中的一般类应该符合下述3个条件之一才有存在的价值："><span class="toc-text">33. 系统中的一般类应该符合下述3个条件之一才有存在的价值：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#34-聚合关系的语义是has-a或者is-a-part-of，即”有一个”或者”是……的一部分”。"><span class="toc-text">34. 聚合关系的语义是has-a或者is-a-part-of，即”有一个”或者”是……的一部分”。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#35-如果部分对象只有一个属性，应考虑把它取消，并把其中所表达的信息收缩（合并）到整体对象中去，变为整体对象的一个属性，除非还有其他理由要求保留这个结构。"><span class="toc-text">35. 如果部分对象只有一个属性，应考虑把它取消，并把其中所表达的信息收缩（合并）到整体对象中去，变为整体对象的一个属性，除非还有其他理由要求保留这个结构。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#36-关联类是一种兼有关联的特征和类的特征的模型元素。关联类既可以被看成是具有类的特征的关联，又可以被看成是具有关联特征的类。"><span class="toc-text">36. 关联类是一种兼有关联的特征和类的特征的模型元素。关联类既可以被看成是具有类的特征的关联，又可以被看成是具有关联特征的类。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#37-消息是向对象发出的服务请求。消息是对象之间在一次交互中所传送的消息。"><span class="toc-text">37. 消息是向对象发出的服务请求。消息是对象之间在一次交互中所传送的消息。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#38-在语法上，一个消息的描述应包括以下内容：消息名，即接收消息的操作名；入口参数（0-到多个），即接收消息的操作要求的输入参数；返回参数（0-到多个），即接收消息的操作提供的输出参数。"><span class="toc-text">38. 在语法上，一个消息的描述应包括以下内容：消息名，即接收消息的操作名；入口参数（0 到多个），即接收消息的操作要求的输入参数；返回参数（0 到多个），即接收消息的操作提供的输出参数。</span></a></li></ol></div></aside></div></div></section><footer class="main-footer"><div class="container"><div class="row"></div></div></footer><a id="back-to-top" class="icon-btn hide"><i class="fa fa-chevron-up"></i></a><div class="copyright"><div class="container"><div class="row"><div class="col-sm-12"><div class="busuanzi">访问量:<strong id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></strong> &nbsp; | &nbsp; 访客数:<strong id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></strong></div></div><div class="col-sm-12"><span>Copyright &copy; 2018</span> | <span>Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a></span> | <span>Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a></span></div></div></div></div><script src="/assets/tagcanvas.min.js?rev=d3e34a34636b6f4c81d2b43b153907bb"></script><script>var tagOption={textColour:"#444",outlineMethod:"block",outlineColour:"#FFDAB9",interval:30,textHeight:13,outlineRadius:3,freezeActive:!0,frontSelect:!0,initial:[.1,-.1],depth:.5,decel:.95,maxSpeed:.03,reverse:!0,fadeIn:500,wheelZoom:!0};TagCanvas.Start("tag-cloud-3d","",tagOption)</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="/js/app.js?rev=26a1b6fecd389c0121b7027a299aa7c0"></script></body>
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Merrier">
+            <img src="/images/hexo_others_8.jpeg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 叩首问路，码梦为生 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://merrier.wang">Merrier说</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa fa-home"></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/frontend/"><i class="fa fa-tablet"></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/summary/"><i class="fa fa-diamond"></i>总结</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/talk/"><i class="fa fa-coffee"></i>杂谈</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/series/"><i class="fa fa-shopping-cart"></i>系列专栏</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa fa-archive"></i>文章归档</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="读书笔记系列（2）——面向对象的分析与设计">
+            
+	            读书笔记系列（2）——面向对象的分析与设计
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/笔记">
+            笔记
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/笔记" title="笔记">
+                        笔记
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/04/06</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h2><p>面向对象不仅是一些具体的软件开发技术与策略，而且是一整套关于如何看待软件系统与现实世界的关系，用什么观点来研究问题并进行求解，以及如何进行系统构造的软件方法学。面向对象方法比以往的方法更接近人类的日常思维方式。</p>
+<h2 id="2-面向对象方法有如下一些主要特点："><a href="#2-面向对象方法有如下一些主要特点：" class="headerlink" title="2. 面向对象方法有如下一些主要特点："></a>2. 面向对象方法有如下一些主要特点：</h2><ol>
+<li>从问题域中客观存在的事物出发来构造软件系统，用对象作为对这些事物的抽象表示，并以此作为系统的基本构成单位。</li>
+<li>用对象的属性表示事物的静态特征（即可以用一些数据来表达的特征），用对象的操作表示事物的动态特征（即事物的行为）</li>
+<li>对象的属性与操作结合在一起构成一个独立的实体，对外屏蔽其内部细节（封装）。</li>
+<li>对事物进行分类，把具有相同属性和相同操作的对象归为一类，类是这些对象的抽象描述，每个对象是它的类的一个实例。</li>
+<li>通过在不同程度上运用抽象的原则，可以得到较一般的类和较特殊的类。特殊类继承一般类的属性与操作，从而简化了系统的构造过程。</li>
+<li>复杂的对象可以用简单的对象作为其构成部分（聚合）。</li>
+<li>对象之间通过消息进行通信，以实现对象之间的动态联系。</li>
+<li>用关联表达某些类之间对用户业务有特定意义的关系。</li>
+</ol>
+<h2 id="3-每个对象由一组属性和一组操作构成，二者分别描述事物的静态特征和动态特征。"><a href="#3-每个对象由一组属性和一组操作构成，二者分别描述事物的静态特征和动态特征。" class="headerlink" title="3. 每个对象由一组属性和一组操作构成，二者分别描述事物的静态特征和动态特征。"></a>3. 每个对象由一组属性和一组操作构成，二者分别描述事物的静态特征和动态特征。</h2><h2 id="4-类是具有相同属性和操作的一组对象的集合，它为属于该类的全部对象提供了统一的抽象描述，由一个类名、一组属性和一组操作构成。"><a href="#4-类是具有相同属性和操作的一组对象的集合，它为属于该类的全部对象提供了统一的抽象描述，由一个类名、一组属性和一组操作构成。" class="headerlink" title="4. 类是具有相同属性和操作的一组对象的集合，它为属于该类的全部对象提供了统一的抽象描述，由一个类名、一组属性和一组操作构成。"></a>4. 类是具有相同属性和操作的一组对象的集合，它为属于该类的全部对象提供了统一的抽象描述，由一个类名、一组属性和一组操作构成。</h2><h2 id="5-一个对象又称为类的一个实例。我们说同类对象具有相同的属性与操作，是指它们的定义形式相同，而不是说每个对象的属性值都相同。"><a href="#5-一个对象又称为类的一个实例。我们说同类对象具有相同的属性与操作，是指它们的定义形式相同，而不是说每个对象的属性值都相同。" class="headerlink" title="5. 一个对象又称为类的一个实例。我们说同类对象具有相同的属性与操作，是指它们的定义形式相同，而不是说每个对象的属性值都相同。"></a>5. 一个对象又称为类的一个实例。我们说同类对象具有相同的属性与操作，是指它们的定义形式相同，而不是说每个对象的属性值都相同。</h2><h2 id="6-一般类和特殊类也常常习惯地称为父类和子类。"><a href="#6-一般类和特殊类也常常习惯地称为父类和子类。" class="headerlink" title="6. 一般类和特殊类也常常习惯地称为父类和子类。"></a>6. 一般类和特殊类也常常习惯地称为父类和子类。</h2><ul>
+<li>特殊类的每个对象实例也都属于它的一般类，然而一般类含有其特殊类所没有的对象实例。</li>
+<li>特殊类拥有其一般类的全部属性与操作，称为特殊类对一般类的继承。</li>
+</ul>
+<h2 id="7-聚合的含义"><a href="#7-聚合的含义" class="headerlink" title="7. 聚合的含义"></a>7. 聚合的含义</h2><p>聚合的含义：一个复杂的对象以若干比较简单的对象作为其组成部分。另一方面，聚合也是对象之间的一种关系，即整体对象和部分对象之间的关系。聚合是两个类之间的一个二元关系，它表示一个类的对象实例以另一个类的对象实例作为其组成部分。</p>
+<h2 id="8-用关联来表示两个（或者多个）类的对象实例集合之间的这种关系。"><a href="#8-用关联来表示两个（或者多个）类的对象实例集合之间的这种关系。" class="headerlink" title="8. 用关联来表示两个（或者多个）类的对象实例集合之间的这种关系。"></a>8. 用关联来表示两个（或者多个）类的对象实例集合之间的这种关系。</h2><h2 id="9-消息是向对象发出的服务请求。"><a href="#9-消息是向对象发出的服务请求。" class="headerlink" title="9. 消息是向对象发出的服务请求。"></a>9. 消息是向对象发出的服务请求。</h2><p>消息的实现手段，在顺序程序中主要是函数调用，或者其他类似于函数调用的机制。</p>
+<h2 id="10-对象的多态性"><a href="#10-对象的多态性" class="headerlink" title="10. 对象的多态性"></a>10. 对象的多态性</h2><p>对象的多态性通常是指一般-特殊结构中的对象所体现的多态性，即：在一般类中定义的属性或操作被特殊类继承之后，可以具有不同的数据类型或表现出不同的行为。</p>
+<h2 id="11-功能分解法"><a href="#11-功能分解法" class="headerlink" title="11. 功能分解法"></a>11. 功能分解法</h2><p>首先定义各项功能，然后把较大的功能分解为子功能，直到这些功能或子功能的大小比较适当，并能给出明确的定义。</p>
+<h2 id="12-结构化方法"><a href="#12-结构化方法" class="headerlink" title="12. 结构化方法"></a>12. 结构化方法</h2><p>研究问题域中数据如何流动以及在各个环节上如何进行处理，从而发现数据流和加工。最终得到的分析模型是数据流图。</p>
+<h2 id="13-数据流从源点开始出现到终点结束，在其他任何结点（加工和文件）之间只能被传输、转换和存储，而不能凭空产生和消失。"><a href="#13-数据流从源点开始出现到终点结束，在其他任何结点（加工和文件）之间只能被传输、转换和存储，而不能凭空产生和消失。" class="headerlink" title="13. 数据流从源点开始出现到终点结束，在其他任何结点（加工和文件）之间只能被传输、转换和存储，而不能凭空产生和消失。"></a>13. 数据流从源点开始出现到终点结束，在其他任何结点（加工和文件）之间只能被传输、转换和存储，而不能凭空产生和消失。</h2><h2 id="14-实体描述问题域中一个事物，它包含一组描述事物数据信息的属性。关系描述问题域中各事物之间在数据方面的联系，它也可以带有自己的属性。"><a href="#14-实体描述问题域中一个事物，它包含一组描述事物数据信息的属性。关系描述问题域中各事物之间在数据方面的联系，它也可以带有自己的属性。" class="headerlink" title="14. 实体描述问题域中一个事物，它包含一组描述事物数据信息的属性。关系描述问题域中各事物之间在数据方面的联系，它也可以带有自己的属性。"></a>14. 实体描述问题域中一个事物，它包含一组描述事物数据信息的属性。关系描述问题域中各事物之间在数据方面的联系，它也可以带有自己的属性。</h2><h2 id="15-信息建模法认识问题域的出发点是问题域中的具体事物，用模型中的实体（对象）与之对应。"><a href="#15-信息建模法认识问题域的出发点是问题域中的具体事物，用模型中的实体（对象）与之对应。" class="headerlink" title="15. 信息建模法认识问题域的出发点是问题域中的具体事物，用模型中的实体（对象）与之对应。"></a>15. 信息建模法认识问题域的出发点是问题域中的具体事物，用模型中的实体（对象）与之对应。</h2><h2 id="16-先以用况的概念进行需求分析，然后以面向对象的概念进行系统分析。"><a href="#16-先以用况的概念进行需求分析，然后以面向对象的概念进行系统分析。" class="headerlink" title="16. 先以用况的概念进行需求分析，然后以面向对象的概念进行系统分析。"></a>16. 先以用况的概念进行需求分析，然后以面向对象的概念进行系统分析。</h2><h2 id="17-面向对象建模方法具有如下优点："><a href="#17-面向对象建模方法具有如下优点：" class="headerlink" title="17. 面向对象建模方法具有如下优点："></a>17. 面向对象建模方法具有如下优点：</h2><ol>
+<li>对问题域和系统责任的复杂性具有较强的处理能力；</li>
+<li>提供了便于各类相关人员交流的共同语言；</li>
+<li>对需求的变化具有较强的适应性；</li>
+<li>为实现分析与设计级别的软件复用提供了强有力的支持。</li>
+</ol>
+<h2 id="18-UML是一种建模语言，而不是一种建模方法。"><a href="#18-UML是一种建模语言，而不是一种建模方法。" class="headerlink" title="18. UML是一种建模语言，而不是一种建模方法。"></a>18. UML是一种建模语言，而不是一种建模方法。</h2><h2 id="19-属性有类属性和实例属性之分，必要时要加以区别。"><a href="#19-属性有类属性和实例属性之分，必要时要加以区别。" class="headerlink" title="19. 属性有类属性和实例属性之分，必要时要加以区别。"></a>19. 属性有类属性和实例属性之分，必要时要加以区别。</h2><h2 id="20-数据抽象是面向对象方法的核心原则。"><a href="#20-数据抽象是面向对象方法的核心原则。" class="headerlink" title="20. 数据抽象是面向对象方法的核心原则。"></a>20. 数据抽象是面向对象方法的核心原则。</h2><h2 id="21-没有任何对象需要单独地编写程序代码，即使一个类只有唯一的对象实例也是如此。"><a href="#21-没有任何对象需要单独地编写程序代码，即使一个类只有唯一的对象实例也是如此。" class="headerlink" title="21. 没有任何对象需要单独地编写程序代码，即使一个类只有唯一的对象实例也是如此。"></a>21. 没有任何对象需要单独地编写程序代码，即使一个类只有唯一的对象实例也是如此。</h2><h2 id="22-消息通信就成了实现对象之间动态联系的唯一渠道。在多数情况下，一个对象向另一个对象发出消息，就意味着前者在行为上依赖后者。因此，通过消息进行通信是面向对象方法处理对象之间行为关系的原则。"><a href="#22-消息通信就成了实现对象之间动态联系的唯一渠道。在多数情况下，一个对象向另一个对象发出消息，就意味着前者在行为上依赖后者。因此，通过消息进行通信是面向对象方法处理对象之间行为关系的原则。" class="headerlink" title="22. 消息通信就成了实现对象之间动态联系的唯一渠道。在多数情况下，一个对象向另一个对象发出消息，就意味着前者在行为上依赖后者。因此，通过消息进行通信是面向对象方法处理对象之间行为关系的原则。"></a>22. 消息通信就成了实现对象之间动态联系的唯一渠道。在多数情况下，一个对象向另一个对象发出消息，就意味着前者在行为上依赖后者。因此，通过消息进行通信是面向对象方法处理对象之间行为关系的原则。</h2><h2 id="23-在面向对象的软件系统中，所有的对象都是通过类描述的。"><a href="#23-在面向对象的软件系统中，所有的对象都是通过类描述的。" class="headerlink" title="23. 在面向对象的软件系统中，所有的对象都是通过类描述的。"></a>23. 在面向对象的软件系统中，所有的对象都是通过类描述的。</h2><h2 id="24-类是具有相同属性和操作的一组对象的集合，它为属于该类的全部对象提供了统一的抽象描述，它由一个类名、一组属性和一组操作构成。"><a href="#24-类是具有相同属性和操作的一组对象的集合，它为属于该类的全部对象提供了统一的抽象描述，它由一个类名、一组属性和一组操作构成。" class="headerlink" title="24. 类是具有相同属性和操作的一组对象的集合，它为属于该类的全部对象提供了统一的抽象描述，它由一个类名、一组属性和一组操作构成。"></a>24. 类是具有相同属性和操作的一组对象的集合，它为属于该类的全部对象提供了统一的抽象描述，它由一个类名、一组属性和一组操作构成。</h2><h2 id="25-可用以下-4-句话来概括对象和类这两个概念在面向对象建模中的应用规则："><a href="#25-可用以下-4-句话来概括对象和类这两个概念在面向对象建模中的应用规则：" class="headerlink" title="25. 可用以下 4 句话来概括对象和类这两个概念在面向对象建模中的应用规则："></a>25. 可用以下 4 句话来概括对象和类这两个概念在面向对象建模中的应用规则：</h2><ol>
+<li>从对象出发认识问题域，将问题域中的事物抽象为对象；</li>
+<li>将具有共同特征的对象抽象为类，用类以及它们之间的关系构成整个系统模型；</li>
+<li>模型中不包含实例级的元素，用类来表示属于该类的任何对象实例；</li>
+<li>在类的规约中说明这个类将创建哪些对象实例。</li>
+</ol>
+<h2 id="26-如果一个对象只有多个操作，而没有属性，并且每个操作各自只被一个类的对象使用，则可考虑把这些操作分别放到它的使用者（对象）中，从而取消这个对象。"><a href="#26-如果一个对象只有多个操作，而没有属性，并且每个操作各自只被一个类的对象使用，则可考虑把这些操作分别放到它的使用者（对象）中，从而取消这个对象。" class="headerlink" title="26. 如果一个对象只有多个操作，而没有属性，并且每个操作各自只被一个类的对象使用，则可考虑把这些操作分别放到它的使用者（对象）中，从而取消这个对象。"></a>26. 如果一个对象只有多个操作，而没有属性，并且每个操作各自只被一个类的对象使用，则可考虑把这些操作分别放到它的使用者（对象）中，从而取消这个对象。</h2><h2 id="27-属性是用来描述对象静态特征的一个数据项-操作是用来描述对象动态特征（行为）的一个动作序列。"><a href="#27-属性是用来描述对象静态特征的一个数据项-操作是用来描述对象动态特征（行为）的一个动作序列。" class="headerlink" title="27. 属性是用来描述对象静态特征的一个数据项 操作是用来描述对象动态特征（行为）的一个动作序列。"></a>27. 属性是用来描述对象静态特征的一个数据项 操作是用来描述对象动态特征（行为）的一个动作序列。</h2><h2 id="28-确定对象属性的要点是：以系统责任为目标，对问题域中实际事物的特征进行正确的抽象，从而找出对象应有的属性。"><a href="#28-确定对象属性的要点是：以系统责任为目标，对问题域中实际事物的特征进行正确的抽象，从而找出对象应有的属性。" class="headerlink" title="28. 确定对象属性的要点是：以系统责任为目标，对问题域中实际事物的特征进行正确的抽象，从而找出对象应有的属性。"></a>28. 确定对象属性的要点是：以系统责任为目标，对问题域中实际事物的特征进行正确的抽象，从而找出对象应有的属性。</h2><h2 id="29-一个对象的操作直接调用另一个对象的操作，则二者之间的衔接是固定的。"><a href="#29-一个对象的操作直接调用另一个对象的操作，则二者之间的衔接是固定的。" class="headerlink" title="29. 一个对象的操作直接调用另一个对象的操作，则二者之间的衔接是固定的。"></a>29. 一个对象的操作直接调用另一个对象的操作，则二者之间的衔接是固定的。</h2><p>通过接口进行衔接，则接口在它的使用者和提供者之间起到了隔离作用，二者可以分别实现，并且可以有多种不同的实现，只要都遵守接口所规定的合约，就可以通过该接口相互衔接。</p>
+<h2 id="30-接口由某些类提供，为另外某些类所需要。"><a href="#30-接口由某些类提供，为另外某些类所需要。" class="headerlink" title="30. 接口由某些类提供，为另外某些类所需要。"></a>30. 接口由某些类提供，为另外某些类所需要。</h2><h2 id="31-接口与对象类相比，有以下几点不同："><a href="#31-接口与对象类相比，有以下几点不同：" class="headerlink" title="31. 接口与对象类相比，有以下几点不同："></a>31. 接口与对象类相比，有以下几点不同：</h2><ol>
+<li>类既有属性又有操作；接口只是声明了一组操作，没有属性。</li>
+<li>在一个类中定义了一个操作，就要在这个类中真正地实现它的功能；接口中的操作只是一个声明，不需要在接口中加以实现。</li>
+<li>类可以创建对象实例；接口则没有任何实例。</li>
+</ol>
+<h2 id="32-对象之间的-4-种重要关系，即继承、聚合、关联和信息。"><a href="#32-对象之间的-4-种重要关系，即继承、聚合、关联和信息。" class="headerlink" title="32. 对象之间的 4 种重要关系，即继承、聚合、关联和信息。"></a>32. 对象之间的 4 种重要关系，即继承、聚合、关联和信息。</h2><h2 id="33-系统中的一般类应该符合下述3个条件之一才有存在的价值："><a href="#33-系统中的一般类应该符合下述3个条件之一才有存在的价值：" class="headerlink" title="33. 系统中的一般类应该符合下述3个条件之一才有存在的价值："></a>33. 系统中的一般类应该符合下述3个条件之一才有存在的价值：</h2><ol>
+<li>它有两个或两个以上的特殊类；</li>
+<li>需要用它创建对象实例；</li>
+<li>它的存在有助于软件复用。</li>
+</ol>
+<h2 id="34-聚合关系的语义是has-a或者is-a-part-of，即”有一个”或者”是……的一部分”。"><a href="#34-聚合关系的语义是has-a或者is-a-part-of，即”有一个”或者”是……的一部分”。" class="headerlink" title="34. 聚合关系的语义是has-a或者is-a-part-of，即”有一个”或者”是……的一部分”。"></a>34. 聚合关系的语义是has-a或者is-a-part-of，即”有一个”或者”是……的一部分”。</h2><h2 id="35-如果部分对象只有一个属性，应考虑把它取消，并把其中所表达的信息收缩（合并）到整体对象中去，变为整体对象的一个属性，除非还有其他理由要求保留这个结构。"><a href="#35-如果部分对象只有一个属性，应考虑把它取消，并把其中所表达的信息收缩（合并）到整体对象中去，变为整体对象的一个属性，除非还有其他理由要求保留这个结构。" class="headerlink" title="35. 如果部分对象只有一个属性，应考虑把它取消，并把其中所表达的信息收缩（合并）到整体对象中去，变为整体对象的一个属性，除非还有其他理由要求保留这个结构。"></a>35. 如果部分对象只有一个属性，应考虑把它取消，并把其中所表达的信息收缩（合并）到整体对象中去，变为整体对象的一个属性，除非还有其他理由要求保留这个结构。</h2><h2 id="36-关联类是一种兼有关联的特征和类的特征的模型元素。关联类既可以被看成是具有类的特征的关联，又可以被看成是具有关联特征的类。"><a href="#36-关联类是一种兼有关联的特征和类的特征的模型元素。关联类既可以被看成是具有类的特征的关联，又可以被看成是具有关联特征的类。" class="headerlink" title="36. 关联类是一种兼有关联的特征和类的特征的模型元素。关联类既可以被看成是具有类的特征的关联，又可以被看成是具有关联特征的类。"></a>36. 关联类是一种兼有关联的特征和类的特征的模型元素。关联类既可以被看成是具有类的特征的关联，又可以被看成是具有关联特征的类。</h2><h2 id="37-消息是向对象发出的服务请求。消息是对象之间在一次交互中所传送的消息。"><a href="#37-消息是向对象发出的服务请求。消息是对象之间在一次交互中所传送的消息。" class="headerlink" title="37. 消息是向对象发出的服务请求。消息是对象之间在一次交互中所传送的消息。"></a>37. 消息是向对象发出的服务请求。消息是对象之间在一次交互中所传送的消息。</h2><h2 id="38-在语法上，一个消息的描述应包括以下内容：消息名，即接收消息的操作名；入口参数（0-到多个），即接收消息的操作要求的输入参数；返回参数（0-到多个），即接收消息的操作提供的输出参数。"><a href="#38-在语法上，一个消息的描述应包括以下内容：消息名，即接收消息的操作名；入口参数（0-到多个），即接收消息的操作要求的输入参数；返回参数（0-到多个），即接收消息的操作提供的输出参数。" class="headerlink" title="38. 在语法上，一个消息的描述应包括以下内容：消息名，即接收消息的操作名；入口参数（0 到多个），即接收消息的操作要求的输入参数；返回参数（0 到多个），即接收消息的操作提供的输出参数。"></a>38. 在语法上，一个消息的描述应包括以下内容：消息名，即接收消息的操作名；入口参数（0 到多个），即接收消息的操作要求的输入参数；返回参数（0 到多个），即接收消息的操作提供的输出参数。</h2>
+    </div>
+    
+        <div class="reward">
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+                <span class="reward-type">
+                    <img class="alipay" src="/images/hexo_others_5.png"><b>支付宝打赏</b>
+                </span>
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="/images/hexo_others_6.png"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">听说赞过就能年薪百万</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="//merrier.wang" target="_blank">Merrier说</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/20170406/excellent-css.html" class="pre-post btn btn-default" title="读书笔记系列（3）——精彩绝伦的CSS">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">读书笔记系列（3）——精彩绝伦的CSS</span>
+        </a>
+    
+    
+        <a href="/20170406/html5-mobile-web-development-guide.html" class="next-post btn btn-default" title="读书笔记系列（1）——HTML5移动Web开发指南">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">读书笔记系列（1）——HTML5移动Web开发指南</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+  <script id="dsq-count-scr" src="https://merrier.disqus.com/count.js" async></script>
+
+
+<div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+<script type="text/javascript">
+  if (document.getElementById('disqus_thread')) {
+    var disqus_config = function () {
+      this.page.url = 'http://merrier.wang/20170406/object-oriented-analysis-and-design.html';
+      this.page.identifier = '20170406/object-oriented-analysis-and-design.html';
+      this.page.title = '读书笔记系列（2）——面向对象的分析与设计';
+    };
+    (function(){
+      var d = document,
+          s = d.createElement('script');
+      s.async = true;
+      s.src = 'https://merrier.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+</script>
+
+
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-简介"><span class="toc-text">1. 简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-面向对象方法有如下一些主要特点："><span class="toc-text">2. 面向对象方法有如下一些主要特点：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-每个对象由一组属性和一组操作构成，二者分别描述事物的静态特征和动态特征。"><span class="toc-text">3. 每个对象由一组属性和一组操作构成，二者分别描述事物的静态特征和动态特征。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-类是具有相同属性和操作的一组对象的集合，它为属于该类的全部对象提供了统一的抽象描述，由一个类名、一组属性和一组操作构成。"><span class="toc-text">4. 类是具有相同属性和操作的一组对象的集合，它为属于该类的全部对象提供了统一的抽象描述，由一个类名、一组属性和一组操作构成。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-一个对象又称为类的一个实例。我们说同类对象具有相同的属性与操作，是指它们的定义形式相同，而不是说每个对象的属性值都相同。"><span class="toc-text">5. 一个对象又称为类的一个实例。我们说同类对象具有相同的属性与操作，是指它们的定义形式相同，而不是说每个对象的属性值都相同。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-一般类和特殊类也常常习惯地称为父类和子类。"><span class="toc-text">6. 一般类和特殊类也常常习惯地称为父类和子类。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-聚合的含义"><span class="toc-text">7. 聚合的含义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-用关联来表示两个（或者多个）类的对象实例集合之间的这种关系。"><span class="toc-text">8. 用关联来表示两个（或者多个）类的对象实例集合之间的这种关系。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-消息是向对象发出的服务请求。"><span class="toc-text">9. 消息是向对象发出的服务请求。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-对象的多态性"><span class="toc-text">10. 对象的多态性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-功能分解法"><span class="toc-text">11. 功能分解法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-结构化方法"><span class="toc-text">12. 结构化方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-数据流从源点开始出现到终点结束，在其他任何结点（加工和文件）之间只能被传输、转换和存储，而不能凭空产生和消失。"><span class="toc-text">13. 数据流从源点开始出现到终点结束，在其他任何结点（加工和文件）之间只能被传输、转换和存储，而不能凭空产生和消失。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#14-实体描述问题域中一个事物，它包含一组描述事物数据信息的属性。关系描述问题域中各事物之间在数据方面的联系，它也可以带有自己的属性。"><span class="toc-text">14. 实体描述问题域中一个事物，它包含一组描述事物数据信息的属性。关系描述问题域中各事物之间在数据方面的联系，它也可以带有自己的属性。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#15-信息建模法认识问题域的出发点是问题域中的具体事物，用模型中的实体（对象）与之对应。"><span class="toc-text">15. 信息建模法认识问题域的出发点是问题域中的具体事物，用模型中的实体（对象）与之对应。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#16-先以用况的概念进行需求分析，然后以面向对象的概念进行系统分析。"><span class="toc-text">16. 先以用况的概念进行需求分析，然后以面向对象的概念进行系统分析。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#17-面向对象建模方法具有如下优点："><span class="toc-text">17. 面向对象建模方法具有如下优点：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#18-UML是一种建模语言，而不是一种建模方法。"><span class="toc-text">18. UML是一种建模语言，而不是一种建模方法。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#19-属性有类属性和实例属性之分，必要时要加以区别。"><span class="toc-text">19. 属性有类属性和实例属性之分，必要时要加以区别。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#20-数据抽象是面向对象方法的核心原则。"><span class="toc-text">20. 数据抽象是面向对象方法的核心原则。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#21-没有任何对象需要单独地编写程序代码，即使一个类只有唯一的对象实例也是如此。"><span class="toc-text">21. 没有任何对象需要单独地编写程序代码，即使一个类只有唯一的对象实例也是如此。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#22-消息通信就成了实现对象之间动态联系的唯一渠道。在多数情况下，一个对象向另一个对象发出消息，就意味着前者在行为上依赖后者。因此，通过消息进行通信是面向对象方法处理对象之间行为关系的原则。"><span class="toc-text">22. 消息通信就成了实现对象之间动态联系的唯一渠道。在多数情况下，一个对象向另一个对象发出消息，就意味着前者在行为上依赖后者。因此，通过消息进行通信是面向对象方法处理对象之间行为关系的原则。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#23-在面向对象的软件系统中，所有的对象都是通过类描述的。"><span class="toc-text">23. 在面向对象的软件系统中，所有的对象都是通过类描述的。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#24-类是具有相同属性和操作的一组对象的集合，它为属于该类的全部对象提供了统一的抽象描述，它由一个类名、一组属性和一组操作构成。"><span class="toc-text">24. 类是具有相同属性和操作的一组对象的集合，它为属于该类的全部对象提供了统一的抽象描述，它由一个类名、一组属性和一组操作构成。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#25-可用以下-4-句话来概括对象和类这两个概念在面向对象建模中的应用规则："><span class="toc-text">25. 可用以下 4 句话来概括对象和类这两个概念在面向对象建模中的应用规则：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#26-如果一个对象只有多个操作，而没有属性，并且每个操作各自只被一个类的对象使用，则可考虑把这些操作分别放到它的使用者（对象）中，从而取消这个对象。"><span class="toc-text">26. 如果一个对象只有多个操作，而没有属性，并且每个操作各自只被一个类的对象使用，则可考虑把这些操作分别放到它的使用者（对象）中，从而取消这个对象。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#27-属性是用来描述对象静态特征的一个数据项-操作是用来描述对象动态特征（行为）的一个动作序列。"><span class="toc-text">27. 属性是用来描述对象静态特征的一个数据项 操作是用来描述对象动态特征（行为）的一个动作序列。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#28-确定对象属性的要点是：以系统责任为目标，对问题域中实际事物的特征进行正确的抽象，从而找出对象应有的属性。"><span class="toc-text">28. 确定对象属性的要点是：以系统责任为目标，对问题域中实际事物的特征进行正确的抽象，从而找出对象应有的属性。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#29-一个对象的操作直接调用另一个对象的操作，则二者之间的衔接是固定的。"><span class="toc-text">29. 一个对象的操作直接调用另一个对象的操作，则二者之间的衔接是固定的。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#30-接口由某些类提供，为另外某些类所需要。"><span class="toc-text">30. 接口由某些类提供，为另外某些类所需要。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#31-接口与对象类相比，有以下几点不同："><span class="toc-text">31. 接口与对象类相比，有以下几点不同：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#32-对象之间的-4-种重要关系，即继承、聚合、关联和信息。"><span class="toc-text">32. 对象之间的 4 种重要关系，即继承、聚合、关联和信息。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#33-系统中的一般类应该符合下述3个条件之一才有存在的价值："><span class="toc-text">33. 系统中的一般类应该符合下述3个条件之一才有存在的价值：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#34-聚合关系的语义是has-a或者is-a-part-of，即”有一个”或者”是……的一部分”。"><span class="toc-text">34. 聚合关系的语义是has-a或者is-a-part-of，即”有一个”或者”是……的一部分”。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#35-如果部分对象只有一个属性，应考虑把它取消，并把其中所表达的信息收缩（合并）到整体对象中去，变为整体对象的一个属性，除非还有其他理由要求保留这个结构。"><span class="toc-text">35. 如果部分对象只有一个属性，应考虑把它取消，并把其中所表达的信息收缩（合并）到整体对象中去，变为整体对象的一个属性，除非还有其他理由要求保留这个结构。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#36-关联类是一种兼有关联的特征和类的特征的模型元素。关联类既可以被看成是具有类的特征的关联，又可以被看成是具有关联特征的类。"><span class="toc-text">36. 关联类是一种兼有关联的特征和类的特征的模型元素。关联类既可以被看成是具有类的特征的关联，又可以被看成是具有关联特征的类。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#37-消息是向对象发出的服务请求。消息是对象之间在一次交互中所传送的消息。"><span class="toc-text">37. 消息是向对象发出的服务请求。消息是对象之间在一次交互中所传送的消息。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#38-在语法上，一个消息的描述应包括以下内容：消息名，即接收消息的操作名；入口参数（0-到多个），即接收消息的操作要求的输入参数；返回参数（0-到多个），即接收消息的操作提供的输出参数。"><span class="toc-text">38. 在语法上，一个消息的描述应包括以下内容：消息名，即接收消息的操作名；入口参数（0 到多个），即接收消息的操作要求的输入参数；返回参数（0 到多个），即接收消息的操作提供的输出参数。</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        访问量:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        访客数:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2018
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+    <script src="/assets/tagcanvas.min.js?rev=2.9"></script>
+    <script>
+        var tagOption = {
+            textColour: '#444', // 字体颜色
+            outlineMethod: 'block', // 选中模式
+            outlineColour: '#FFDAB9', // 选中模式的颜色
+            interval: 30 || 30, // 动画帧之间的时间间隔，值越大，转动幅度越大
+            textHeight: 13,
+            outlineRadius: 3,
+            freezeActive: true || '', // 选中的标签是否继续滚动
+            frontSelect: true || '', // 不选标签云后部的标签
+            initial: [0.1, -0.1],
+            depth: 0.5,
+            decel: 0.95,
+            maxSpeed: 0.03,
+            reverse: true || '', // 是否反向触发
+            fadeIn: 500, // 进入动画时间
+            wheelZoom: true || '' // 是否启用鼠标滚轮
+        }
+        TagCanvas.Start('tag-cloud-3d','',tagOption);
+    </script>
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>
