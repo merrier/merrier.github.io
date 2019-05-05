@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://merrier.wang/20170317/game-experience-and-pseudo-strategy.html</loc>
+    <lastmod>2019-05-05</lastmod>
+  </url>  <url>
+    <loc>http://merrier.wang/20170803/understanding-memory-allocation-in-js.html</loc>
+    <lastmod>2019-05-05</lastmod>
+  </url>  <url>
+    <loc>http://merrier.wang/20190207/sd-walkthrough.html</loc>
+    <lastmod>2019-05-05</lastmod>
+  </url>  <url>
+    <loc>http://merrier.wang/20190210/vultr-vps-and-shadowsocks-config.html</loc>
+    <lastmod>2019-05-05</lastmod>
+  </url>  <url>
+    <loc>http://merrier.wang/20170820/mobile-scroll-event.html</loc>
+    <lastmod>2019-05-05</lastmod>
+  </url>  <url>
+    <loc>http://merrier.wang/20180918/server-side-render.html</loc>
+    <lastmod>2019-05-05</lastmod>
+  </url>  <url>
+    <loc>http://merrier.wang/20170516/realization-of-adaptive-square-in-pure-css.html</loc>
+    <lastmod>2019-05-05</lastmod>
+  </url>  <url>
+    <loc>http://merrier.wang/20180416/website-configuration-https.html</loc>
+    <lastmod>2019-05-05</lastmod>
+  </url>  <url>
     <loc>http://merrier.wang/20170827/good-courses.html</loc>
     <lastmod>2019-05-05</lastmod>
   </url>  <url>
@@ -50,6 +74,24 @@
     <lastmod>2019-05-05</lastmod>
   </url>  <url>
     <loc>http://merrier.wang/20180922/cat-strategy.html</loc>
+    <lastmod>2019-05-05</lastmod>
+  </url>  <url>
+    <loc>http://merrier.wang/20170318/python-implementation-of-eight-sorting-algorithms.html</loc>
+    <lastmod>2019-05-05</lastmod>
+  </url>  <url>
+    <loc>http://merrier.wang/20170730/things-about-css-reset.html</loc>
+    <lastmod>2019-05-05</lastmod>
+  </url>  <url>
+    <loc>http://merrier.wang/20171231/goodbye-2017.html</loc>
+    <lastmod>2019-05-05</lastmod>
+  </url>  <url>
+    <loc>http://merrier.wang/20190101/goodbye-2018.html</loc>
+    <lastmod>2019-05-05</lastmod>
+  </url>  <url>
+    <loc>http://merrier.wang/20170403/to-just-touched-the-front-end.html</loc>
+    <lastmod>2019-05-05</lastmod>
+  </url>  <url>
+    <loc>http://merrier.wang/20170802/function-declaration-vs-function-expression.html</loc>
     <lastmod>2019-05-05</lastmod>
   </url>  <url>
     <loc>http://merrier.wang/20170704/build-your-own-personal-blog-with-github-pages.html</loc>
@@ -145,28 +187,31 @@
     <loc>http://merrier.wang/20170424/what-happened-after-url-was-entered-into-the-browser.html</loc>
     <lastmod>2019-05-05</lastmod>
   </url>  <url>
-    <loc>http://merrier.wang/20170317/game-experience-and-pseudo-strategy.html</loc>
+    <loc>http://merrier.wang/20170807/good-article-recommendation.html</loc>
     <lastmod>2019-05-05</lastmod>
   </url>  <url>
-    <loc>http://merrier.wang/20170803/understanding-memory-allocation-in-js.html</loc>
+    <loc>http://merrier.wang/20170803/apply-call-bind-in-js.html</loc>
     <lastmod>2019-05-05</lastmod>
   </url>  <url>
-    <loc>http://merrier.wang/20190207/sd-walkthrough.html</loc>
+    <loc>http://merrier.wang/20170413/some-tips-in-js.html</loc>
     <lastmod>2019-05-05</lastmod>
   </url>  <url>
-    <loc>http://merrier.wang/20190210/vultr-vps-and-shadowsocks-config.html</loc>
+    <loc>http://merrier.wang/20170425/passing-value-and-address-in-js.html</loc>
     <lastmod>2019-05-05</lastmod>
   </url>  <url>
-    <loc>http://merrier.wang/20170820/mobile-scroll-event.html</loc>
+    <loc>http://merrier.wang/20170807/object-system-in-js.html</loc>
     <lastmod>2019-05-05</lastmod>
   </url>  <url>
-    <loc>http://merrier.wang/20180918/server-side-render.html</loc>
+    <loc>http://merrier.wang/20170730/shallow-and-deep-copies-in-js.html</loc>
     <lastmod>2019-05-05</lastmod>
   </url>  <url>
-    <loc>http://merrier.wang/20170516/realization-of-adaptive-square-in-pure-css.html</loc>
+    <loc>http://merrier.wang/20170318/several-array-traversal-modes-of-js.html</loc>
     <lastmod>2019-05-05</lastmod>
   </url>  <url>
-    <loc>http://merrier.wang/20180416/website-configuration-https.html</loc>
+    <loc>http://merrier.wang/20170326/complex-data-structure-implemented-by-js.html</loc>
+    <lastmod>2019-05-05</lastmod>
+  </url>  <url>
+    <loc>http://merrier.wang/20170501/js-width-and-height.html</loc>
     <lastmod>2019-05-05</lastmod>
   </url>  <url>
     <loc>http://merrier.wang/20170331/js-implementation-of-leetcode-easy-part1.html</loc>
@@ -233,27 +278,6 @@
     <lastmod>2019-05-05</lastmod>
   </url>  <url>
     <loc>http://merrier.wang/20170517/summary-of-Experience-in-interview-in-headlines.html</loc>
-    <lastmod>2019-05-05</lastmod>
-  </url>  <url>
-    <loc>http://merrier.wang/20170318/python-implementation-of-eight-sorting-algorithms.html</loc>
-    <lastmod>2019-05-05</lastmod>
-  </url>  <url>
-    <loc>http://merrier.wang/20170730/things-about-css-reset.html</loc>
-    <lastmod>2019-05-05</lastmod>
-  </url>  <url>
-    <loc>http://merrier.wang/20171231/goodbye-2017.html</loc>
-    <lastmod>2019-05-05</lastmod>
-  </url>  <url>
-    <loc>http://merrier.wang/20190101/goodbye-2018.html</loc>
-    <lastmod>2019-05-05</lastmod>
-  </url>  <url>
-    <loc>http://merrier.wang/20170403/to-just-touched-the-front-end.html</loc>
-    <lastmod>2019-05-05</lastmod>
-  </url>  <url>
-    <loc>http://merrier.wang/20170802/function-declaration-vs-function-expression.html</loc>
-    <lastmod>2019-05-05</lastmod>
-  </url>  <url>
-    <loc>http://merrier.wang/20170807/good-article-recommendation.html</loc>
     <lastmod>2019-05-05</lastmod>
   </url>  <url>
     <loc>http://merrier.wang/20180424/apache-configuration-of-ssl-certificate.html</loc>
@@ -335,30 +359,6 @@
     <lastmod>2019-05-05</lastmod>
   </url>  <url>
     <loc>http://merrier.wang/20170802/equal-symbol-in-js.html</loc>
-    <lastmod>2019-05-05</lastmod>
-  </url>  <url>
-    <loc>http://merrier.wang/20170803/apply-call-bind-in-js.html</loc>
-    <lastmod>2019-05-05</lastmod>
-  </url>  <url>
-    <loc>http://merrier.wang/20170413/some-tips-in-js.html</loc>
-    <lastmod>2019-05-05</lastmod>
-  </url>  <url>
-    <loc>http://merrier.wang/20170425/passing-value-and-address-in-js.html</loc>
-    <lastmod>2019-05-05</lastmod>
-  </url>  <url>
-    <loc>http://merrier.wang/20170807/object-system-in-js.html</loc>
-    <lastmod>2019-05-05</lastmod>
-  </url>  <url>
-    <loc>http://merrier.wang/20170730/shallow-and-deep-copies-in-js.html</loc>
-    <lastmod>2019-05-05</lastmod>
-  </url>  <url>
-    <loc>http://merrier.wang/20170318/several-array-traversal-modes-of-js.html</loc>
-    <lastmod>2019-05-05</lastmod>
-  </url>  <url>
-    <loc>http://merrier.wang/20170326/complex-data-structure-implemented-by-js.html</loc>
-    <lastmod>2019-05-05</lastmod>
-  </url>  <url>
-    <loc>http://merrier.wang/20170501/js-width-and-height.html</loc>
     <lastmod>2019-05-05</lastmod>
   </url>
 </urlset>
