@@ -275,6 +275,7 @@ Wayback Machine 网站有相应的同名插件，支持主流浏览器，只要�
 
 * [MIKELIN常用的几款Chrome插件推荐](https://mikelin.cn/1201.html)
 * [优秀程序员都在用哪些Chrome拓展工具？](https://juejin.im/post/5b470d8de51d4519105d3bbd)
+* [谷粒-Chrome插件英雄榜](https://github.com/zhaoolee/ChromeAppHeroes/)
 
 如果因为某些显而易见的问题，无法从应用商店安装插件的话，可以尝试到[扩展迷官网](https://extfans.com/)下载。
 
