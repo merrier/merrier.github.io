@@ -11,6 +11,22 @@ categories:
 date: 2018-09-30 18:24:04
 ---
 
+## Mac 版迅雷
+
+http://mac.xunlei.com/history_version.html
+
+虽然有些资源会因为版权问题无法下载，但是有一些资源还是可以下载的，而且迅雷支持 ed2k 链接下载，这个软件没有下载成功：https://www.jianshu.com/p/6b0502d375a4
+
+## HandBrake
+
+视频转换：https://github.com/HandBrake/HandBrake
+
+使用介绍视频：http://mpvideo.qpic.cn/tjg_3871144164_50000_d65f125132a04e02808f9991f926f453.f10002.mp4?dis_k=e1a504b18e783f293328d25bf3f83fc8&dis_t=1557800994
+
+## Gifox
+
+https://gifox.io/
+
 ## OpenInTerminal
 
 https://github.com/Ji4n1ng/OpenInTerminal
@@ -195,3 +211,8 @@ https://pnggauntlet.com/
 ## ImageOptim
 
 压缩图片软件，不过还提供了 API，注册后就可以免费使用，非常方便
+
+
+### 其他人推荐的软件
+
+你电脑上「最引以为豪」的软件是什么？：https://www.zhihu.com/question/21065451/answer/631748221

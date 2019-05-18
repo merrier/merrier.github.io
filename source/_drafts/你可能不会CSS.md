@@ -9,6 +9,75 @@ categories:
 date: 2018-01-28 20:43:57
 ---
 
+## 伪元素的应用
+
+
+### 展示可接受文件列表
+
+默认情况下，文件输入的可接受文件列表是不可见的。 通常，我们使用伪元素来暴露它们：
+
+```html
+<input type="file" accept="pdf,doc,docx">
+```
+
+```css
+[accept]:after {
+   content: "Acceptable file types: " attr(accept);
+}
+```
+
+### 自定义提示
+
+使用属性选择器创建自定义工具提示既有趣又简单：
+
+```css
+[title] {
+  position: relative;
+  display: block;
+}
+[title]:hover:after {
+  content: attr(title);
+  color: hotpink;
+  background-color: slateblue;
+  display: block;
+  padding: .225em .35em;
+  position: absolute;
+  right: -5px;
+  bottom: -5px;
+}
+```
+
+### 快捷键展示
+
+web 的一大优点是它提供了许多不同的信息访问选项。一个很少使用的属性是设置accesskey的能力，这样就可以通过键组合和accesskey设置的字母直接访问该项目(确切的键组合取决于浏览器)。但是要想知道网站上设置了哪些键并不是件容易的事
+下面的代码将显示这些键:focus。我不使用鼠标悬停，因为大多数时候需要accesskey的人是那些使用鼠标有困难的人。你可以将其添加为第二个选项，但要确保它不是惟一的选项。
+
+```css
+a[accesskey]:focus:after {
+   content: " AccessKey: " attr(accesskey);
+}
+```
+
+## 利用CSS选择器快速选择出不安全链接：
+
+```css
+a[href^="https"]{
+   color: bisque;
+}
+a:not([href^="https"]) {
+  color: darksalmon;
+}
+```
+
+## https://juejin.im/post/5cd179586fb9a032045960b6
+
+  如果 input 和 textarea 元素附加了 disabled 属性，那么其内容是无法被选中的，这种情况最好是将 disabled 替换为 readonly 。
+
+
+## 【前端词典】提高幸福感的 9 个 CSS 技巧
+
+https://juejin.im/post/5cb45a06f265da03474df54e#heading-18
+
 前端小知识:为什么你写的 height:100% 不起作用？
 ==============================
 
@@ -172,3 +241,7 @@ https://blog.csdn.net/u013778905/article/details/79309773
 https://www.zhangxinxu.com/wordpress/2016/08/css-parent-selector/
 
 https://www.w3cplus.com/css/advanced-html-css-lesson3-complex-selectors.html
+
+## opacity的妙用
+
+https://juejin.im/post/5cd811c5f265da035d0c9a6e

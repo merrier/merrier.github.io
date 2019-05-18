@@ -10,10 +10,24 @@ categories:
 date: 2017-08-04 16:22:08
 ---
 
-写在前面
-====
+## 写在前面
 
 这是一篇总结类的文章，因为大部分人都觉得HTML代码是“史上最简单的语言”，但是其实有很多特性你并没有用过，或者说都没有听说过，所以这一篇文章可以让你领略到HTML的独特魅力。
+
+## 【译】10 个你不知道你需要的 HTML 元素
+
+https://juejin.im/post/5cce2a4651882541992d447c
+
+## html 实现手风琴菜单
+
+details和summary标签是一种只用HTML做扩展/手风琴菜单的方法，details 包括了summary标签和手风琴打开时要展示的内容。点击summary会展开details标签并添加open属性，我们可以通过open属性轻松地为打开的details标签设置样式：
+
+```css
+details[open] {
+   background-color: hotpink;
+}
+```
+
 
 autocomplete
 ============

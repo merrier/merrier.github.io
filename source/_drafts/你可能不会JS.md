@@ -10,6 +10,30 @@ categories:
 date: 2018-02-11 11:17:24
 ---
 
+## div 元素并没有开箱即用的 select() 方法，这就需要读者了解一个新的对象： Selection 。
+
+https://juejin.im/post/5cd179586fb9a032045960b6
+
+
+## URLSearchParams
+
+获取url里面的参数值或者追加查询字符串，在这之前，我们一般通过正则匹配处理，然而现在有一个新的api，具体详情可以查看这里，可以让我们以很简单的方式去处理url。
+假如我们有这样一个url，"?post=1234&action=edit"，我们可以这样处理这个url：
+
+```javascript
+var urlParams = new URLSearchParams('?post=1234&action=edit');
+
+console.log(urlParams.has('post')); 
+console.log(urlParams.get('action')); // "edit"
+console.log(urlParams.getAll('action')); // ["edit"]
+console.log(urlParams.toString()); // "?post=1234&action=edit"
+
+urlParams.append('active', '1')
+console.log(urlParams); // "?post=1234&action=edit&active=1"
+```
+
+是不是很方便？那浏览器支持程度如何呢？通过[这个地址](https://developer.mozilla.org/zh-CN/docs/Web/API/URLSearchParams)查看，可以发现大部分浏览器都支持哦！，如果碰到不支持的情况，这里还有个[polyfill](https://github.com/jerrybendy/url-search-params-polyfill/)。
+
 你不知道的JSON.stringify()妙用
 =======================
 
