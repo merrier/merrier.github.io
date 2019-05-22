@@ -10,6 +10,10 @@ date: 2019-01-08 20:09:14
 img: /images/hexo_thumbnail_25.png
 ---
 
+## 托管静态网站
+
+建议使用腾讯云cos托管静态网站，一个月才1毛钱，还能用CDN加速：https://cloud.tencent.com/document/product/436/9512
+
 ## Hexo 分类和标签的路径怎么设置成英文
 
 参考：https://github.com/hexojs/hexo/issues/1162#issuecomment-88857896

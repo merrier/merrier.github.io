@@ -9,6 +9,16 @@ date: 2019-01-11 11:57:17
 img:
 ---
 
+## 文章加密
+
+可参考：https://github.com/X-Nicolo/X-Nicolo.github.io/blob/master/mcommon.js
+
+主题是 Next
+
+## 全站字数统计
+
+https://x-nicolo.github.io/
+
 ## Algolia搜索
 
 https://juejin.im/post/5cd7d3286fb9a0323a01d29a#heading-54

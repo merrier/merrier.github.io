@@ -10,6 +10,10 @@ categories:
 date: 2018-02-11 11:17:24
 ---
 
+## console不可信
+
+https://juejin.im/post/5cdf8c02e51d45105e0211f8
+
 ## div 元素并没有开箱即用的 select() 方法，这就需要读者了解一个新的对象： Selection 。
 
 https://juejin.im/post/5cd179586fb9a032045960b6
