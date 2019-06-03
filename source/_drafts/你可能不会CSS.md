@@ -9,6 +9,14 @@ categories:
 date: 2018-01-28 20:43:57
 ---
 
+## 仅用CSS实现聊天室
+
+https://github.com/kkuchta/css-only-chat
+
+## text-rendering: optimizeLegibility;
+
+https://blog.csdn.net/freshlover/article/details/9853363
+
 ## 伪元素的应用
 
 
