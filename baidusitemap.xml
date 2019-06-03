@@ -1,15 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://merrier.wang/20170424/what-happened-after-url-was-entered-into-the-browser.html</loc>
-    <lastmod>2019-06-03</lastmod>
-  </url>  <url>
-    <loc>http://merrier.wang/20170803/understanding-memory-allocation-in-js.html</loc>
-    <lastmod>2019-06-03</lastmod>
-  </url>  <url>
-    <loc>http://merrier.wang/20190207/sd-walkthrough.html</loc>
-    <lastmod>2019-06-03</lastmod>
-  </url>  <url>
     <loc>http://merrier.wang/20180918/server-side-render.html</loc>
     <lastmod>2019-06-03</lastmod>
   </url>  <url>
@@ -32,9 +23,6 @@
     <lastmod>2019-06-03</lastmod>
   </url>  <url>
     <loc>http://merrier.wang/20190203/advertising-propaganda-and-tips.html</loc>
-    <lastmod>2019-06-03</lastmod>
-  </url>  <url>
-    <loc>http://merrier.wang/20170317/game-experience-and-pseudo-strategy.html</loc>
     <lastmod>2019-06-03</lastmod>
   </url>  <url>
     <loc>http://merrier.wang/20190210/vultr-vps-and-shadowsocks-config.html</loc>
@@ -136,6 +124,15 @@
     <loc>http://merrier.wang/20171130/talking-about-seo.html</loc>
     <lastmod>2019-06-03</lastmod>
   </url>  <url>
+    <loc>http://merrier.wang/20170424/what-happened-after-url-was-entered-into-the-browser.html</loc>
+    <lastmod>2019-06-03</lastmod>
+  </url>  <url>
+    <loc>http://merrier.wang/20170803/understanding-memory-allocation-in-js.html</loc>
+    <lastmod>2019-06-03</lastmod>
+  </url>  <url>
+    <loc>http://merrier.wang/20190207/sd-walkthrough.html</loc>
+    <lastmod>2019-06-03</lastmod>
+  </url>  <url>
     <loc>http://merrier.wang/20170318/python-implementation-of-eight-sorting-algorithms.html</loc>
     <lastmod>2019-06-03</lastmod>
   </url>  <url>
@@ -178,6 +175,9 @@
     <loc>http://merrier.wang/20170519/summary-of-the-front-end-interview-questions-of-sohu-research-institute.html</loc>
     <lastmod>2019-06-03</lastmod>
   </url>  <url>
+    <loc>http://merrier.wang/20170317/game-experience-and-pseudo-strategy.html</loc>
+    <lastmod>2019-06-03</lastmod>
+  </url>  <url>
     <loc>http://merrier.wang/20170412/front-end-can-play-like-this.html</loc>
     <lastmod>2019-06-03</lastmod>
   </url>  <url>
@@ -188,6 +188,15 @@
     <lastmod>2019-06-03</lastmod>
   </url>  <url>
     <loc>http://merrier.wang/20170807/good-article-recommendation.html</loc>
+    <lastmod>2019-06-03</lastmod>
+  </url>  <url>
+    <loc>http://merrier.wang/20170801/judging-whether-a-string-contains-a-substring-in-js.html</loc>
+    <lastmod>2019-06-03</lastmod>
+  </url>  <url>
+    <loc>http://merrier.wang/20170322/summary-of-array-method-in-js.html</loc>
+    <lastmod>2019-06-03</lastmod>
+  </url>  <url>
+    <loc>http://merrier.wang/20170425/passing-value-and-address-in-js.html</loc>
     <lastmod>2019-06-03</lastmod>
   </url>  <url>
     <loc>http://merrier.wang/20170730/shallow-and-deep-copies-in-js.html</loc>
@@ -227,6 +236,15 @@
     <lastmod>2019-06-03</lastmod>
   </url>  <url>
     <loc>http://merrier.wang/20170801/why-is-the-random-string-chucknorris-recognized-as-red.html</loc>
+    <lastmod>2019-06-03</lastmod>
+  </url>  <url>
+    <loc>http://merrier.wang/20170802/equal-symbol-in-js.html</loc>
+    <lastmod>2019-06-03</lastmod>
+  </url>  <url>
+    <loc>http://merrier.wang/20170803/apply-call-bind-in-js.html</loc>
+    <lastmod>2019-06-03</lastmod>
+  </url>  <url>
+    <loc>http://merrier.wang/20170413/some-tips-in-js.html</loc>
     <lastmod>2019-06-03</lastmod>
   </url>  <url>
     <loc>http://merrier.wang/20170807/object-system-in-js.html</loc>
@@ -340,25 +358,7 @@
     <loc>http://merrier.wang/20171201/hybrid-design-and-analysis.html</loc>
     <lastmod>2019-06-03</lastmod>
   </url>  <url>
-    <loc>http://merrier.wang/20170801/judging-whether-a-string-contains-a-substring-in-js.html</loc>
-    <lastmod>2019-06-03</lastmod>
-  </url>  <url>
-    <loc>http://merrier.wang/20170322/summary-of-array-method-in-js.html</loc>
-    <lastmod>2019-06-03</lastmod>
-  </url>  <url>
-    <loc>http://merrier.wang/20170425/passing-value-and-address-in-js.html</loc>
-    <lastmod>2019-06-03</lastmod>
-  </url>  <url>
     <loc>http://merrier.wang/20180424/apache-configuration-of-ssl-certificate.html</loc>
-    <lastmod>2019-06-03</lastmod>
-  </url>  <url>
-    <loc>http://merrier.wang/20170802/equal-symbol-in-js.html</loc>
-    <lastmod>2019-06-03</lastmod>
-  </url>  <url>
-    <loc>http://merrier.wang/20170803/apply-call-bind-in-js.html</loc>
-    <lastmod>2019-06-03</lastmod>
-  </url>  <url>
-    <loc>http://merrier.wang/20170413/some-tips-in-js.html</loc>
     <lastmod>2019-06-03</lastmod>
   </url>  <url>
     <loc>http://merrier.wang/20170628/chrome-extension-recommendation-and-pseudo-development-guide.html</loc>
