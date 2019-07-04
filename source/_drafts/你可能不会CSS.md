@@ -9,6 +9,19 @@ categories:
 date: 2018-01-28 20:43:57
 ---
 
+## user-select:none
+
+可用于某些只有点击功能的按钮上
+
+## backface-visibility
+
+https://developer.mozilla.org/zh-CN/docs/Web/CSS/backface-visibility
+
+
+## CSS 伪元素 content 属性的诸多取值
+
+http://jimyuan.github.io/blog/2018/01/05/content-property-of-pseudo-element.html
+
 ## 仅用CSS实现聊天室
 
 https://github.com/kkuchta/css-only-chat

@@ -11,17 +11,30 @@ categories:
 date: 2018-09-30 18:24:04
 ---
 
+## TeamViwer
+用来远程调试
+
+> 链接:https://pan.baidu.com/s/1y-ykEBNPj5Vh9FfBsQsoAg  密码:5sqw
+
+## Mac 版 Postman
+
+https://www.getpostman.com/downloads/
+
 ## Mac 版迅雷
 
 http://mac.xunlei.com/history_version.html
 
 虽然有些资源会因为版权问题无法下载，但是有一些资源还是可以下载的，而且迅雷支持 ed2k 链接下载，这个软件没有下载成功：https://www.jianshu.com/p/6b0502d375a4
 
+> 链接:https://pan.baidu.com/s/11ObAR0OLNEFf_P3ny-HthA  密码:gtgu
+
 ## HandBrake
 
 视频转换：https://github.com/HandBrake/HandBrake
 
 使用介绍视频：http://mpvideo.qpic.cn/tjg_3871144164_50000_d65f125132a04e02808f9991f926f453.f10002.mp4?dis_k=e1a504b18e783f293328d25bf3f83fc8&dis_t=1557800994
+
+> 链接:https://pan.baidu.com/s/1RdbbJwk8fWjRP_92-kc7ng  密码:qb43
 
 ## Gifox
 
