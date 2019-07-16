@@ -10,7 +10,18 @@ tags:
   - 推荐
 ---
 
+if (text === '人话') {
+  text = '';
+}
+
 分享一些我用过或者同事推荐的 NPM 库或者其他实用的工具
+
+## acorn
+
+Github 地址：https://github.com/acornjs/acorn
+
+一个非常轻量的JS代码解析器，可用于语法检测，AST检测等领域
+
 
 ## Cloc
 
