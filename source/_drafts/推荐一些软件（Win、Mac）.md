@@ -11,6 +11,40 @@ categories:
 date: 2018-09-30 18:24:04
 ---
 
+## pan-light
+
+百度网盘不限速客户端, golang + qt5, 跨平台图形界面
+
+> 目前在开发阶段，只是预览版
+
+官网：https://pan-light.peterq.cn
+
+Github：https://github.com/peterq/pan-light
+
+## Sourcetree
+
+一款免费的git管理工具
+
+官网：https://www.sourcetreeapp.com/
+
+## TinyPNG
+
+一个图片压缩Mac客户端，提供了图片的“几乎无损”压缩服务，通过简单的拖拽完成对图片的压缩，无需打开浏览器，无需手动下载图片
+
+下载地址：https://github.com/kyleduo/TinyPNG4Mac
+
+## iStat Memus
+
+mac os菜单栏的资源监视器，CPU，内存，网络使用等信息
+
+https://setapp.com/apps/istat-menus?campaign=setapp_search_vendor_istatmenus_abn_brand_en&ci=737183467&adgroupid=41332913467&adpos=1t1&ck=%2Bistat%20%2Bmenus&targetid=kwd-30630505452&match=b&gnetwork=g&creative=284431408453&placement=&placecat=&accname=setapp&gclid=EAIaIQobChMIkP-ExIO54wIVSHZgCh3HaQj5EAAYASAAEgKg9fD_BwE
+
+> 链接:https://pan.baidu.com/s/1dC3Ts4AI7YxNfzVg8rmOig  密码:v4su
+
+## Dr.Unarchiver
+
+文件解压，直接在App Store下载
+
 ## TeamViwer
 
 用来远程调试

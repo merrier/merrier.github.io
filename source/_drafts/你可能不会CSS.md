@@ -9,6 +9,14 @@ categories:
 date: 2018-01-28 20:43:57
 ---
 
+## 一个动图，一个CSS知识点
+
+https://github.com/qdlaoyao/css-gif
+
+## CSS实现自适应式带说明文字的图片轮播效果
+
+https://www.codecolor.cn/responsive-css3-slider/#
+
 ## 【前端词典】几个有益的 CSS 小知识
 
 https://juejin.im/post/5d15749af265da1baa1e8750

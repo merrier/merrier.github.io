@@ -16,6 +16,12 @@ chrome 作为 Google 公司研发的一款网页浏览器，其诞生之初就�
 
 ## 扩展程序推荐
 
+### [Markdown Here](https://chrome.google.com/webstore/detail/markdown-here/elifhakcjgalahccnjkneoccemfahfoa?hl=zh-CN)
+
+有个它再也不用担心编辑器不支持markdown语法了，写好以后直接一键转换。而且也是一个跨平台神器，比如我们可以把简书写好的文章（带md语法）直接复制到微信公众号，然后一键转换，格式几乎无变化！
+
+离线版下载地址：https://u14797164.pipipan.com/fs/14797164-237430000
+
 ### [捕捉网页截图 - FireShot](https://chrome.google.com/webstore/detail/take-webpage-screenshots/mcbpblocgmgfnpjjppndjkmgjaogfceg)
 
 捕捉网页截图，编辑并将它们保存为PDF，JPEG，GIF，PNG或BMP；不过有用户评论反馈“页面一大就崩溃”

@@ -10,6 +10,29 @@ categories:
 date: 2018-02-11 11:17:24
 ---
 
+## classList 和 cssText 这两个我以前没见过的东西
+
+https://juejin.im/post/5cd903f4e51d453c9e540768
+
+## 非常方便的实现图片预览
+
+来自：https://juejin.im/post/5d1ea7a8e51d454fd8057bea
+
+```javascript
+const upload = document.querySelector("#upload");
+const preview = document.querySelector("#preview");
+
+upload.onchange = function() {
+  const file = upload.files[0]; //File对象
+  const src = URL.createObjectURL(file); 
+  preview.src = src;
+};
+```
+
+## Array.slice 8 种不同用法
+
+https://juejin.im/post/5d25259af265da1bad572d75
+
 ## console不可信
 
 https://juejin.im/post/5cdf8c02e51d45105e0211f8
