@@ -13,6 +13,12 @@ img: /images/hexo_thumbnail_25.png
 
 Hexo 本身的设计理念就是“插件化”，因此推荐一些非常实用的 Hexo 插件，有官方出的也有其他开发者推出的，不妨一试
 
+## hexo-helper-live2d
+
+Github地址：https://github.com/EYHN/hexo-helper-live2d
+
+向你的Hexo里放上一只萌萌哒二次元看板娘!演示地址：https://l2dwidget.js.org/dev.html
+
 ## hexo-tag-aplayer
 
 Github地址：https://github.com/MoePlayer/hexo-tag-aplayer
