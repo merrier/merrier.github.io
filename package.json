@@ -21,12 +21,14 @@
     "hexo-generator-restful": "^0.2.3",
     "hexo-generator-sitemap": "^1.2.0",
     "hexo-generator-tag": "^0.2.0",
+    "hexo-helper-live2d": "^3.1.1",
     "hexo-migrator-wordpress": "^1.0.0",
     "hexo-renderer-ejs": "^0.3.1",
     "hexo-renderer-less": "^1.0.0",
     "hexo-renderer-marked": "^0.3.2",
     "hexo-renderer-stylus": "^0.3.3",
-    "hexo-server": "^0.3.1"
+    "hexo-server": "^0.3.1",
+    "live2d-widget-model-hijiki": "^1.0.5"
   },
   "license": "MIT",
   "devDependencies": {
