@@ -9,6 +9,12 @@ categories:
 date: 2018-01-28 20:43:57
 ---
 
+### 解决 H5 页面在点击的时候，link区域点击的瞬间是蓝色的
+
+```css
+-webkit-tap-highlight-color: transparent;
+```
+
 ## 一个动图，一个CSS知识点
 
 https://github.com/qdlaoyao/css-gif

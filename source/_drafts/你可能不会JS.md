@@ -10,6 +10,16 @@ categories:
 date: 2018-02-11 11:17:24
 ---
 
+## scrollIntoView支持更多参数
+
+```javascript
+.scrollIntoView({
+    behavior: 'smooth',
+    block: 'end'
+})
+```
+
+
 ## classList 和 cssText 这两个我以前没见过的东西
 
 https://juejin.im/post/5cd903f4e51d453c9e540768
@@ -24,7 +34,7 @@ const preview = document.querySelector("#preview");
 
 upload.onchange = function() {
   const file = upload.files[0]; //File对象
-  const src = URL.createObjectURL(file); 
+  const src = URL.createObjectURL(file);
   preview.src = src;
 };
 ```
@@ -50,7 +60,7 @@ https://juejin.im/post/5cd179586fb9a032045960b6
 ```javascript
 var urlParams = new URLSearchParams('?post=1234&action=edit');
 
-console.log(urlParams.has('post')); 
+console.log(urlParams.has('post'));
 console.log(urlParams.get('action')); // "edit"
 console.log(urlParams.getAll('action')); // ["edit"]
 console.log(urlParams.toString()); // "?post=1234&action=edit"

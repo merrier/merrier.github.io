@@ -12,6 +12,35 @@ tags:
 
 分享一些我用过或者同事推荐的 NPM 库或者其他实用的工具
 
+## svrx
+
+官网：https://svrx.io/
+Github地址：https://github.com/svrxjs/svrx
+
+> 一个渐进且易于使用的、插件化的前端开发平台
+
+可以这样快速试用：
+
+```bash
+npm install -g @svrx/cli
+mkdir example && cd example
+echo '<html><body>Hello svrx!</body></html>' > index.html
+svrx
+```
+
+网易云音乐前端技术团队出品，其定位是：
+
+* svrx 是面向前端开发者的一个强大的本地 dev server，它由本地服务、proxy、livereload 等功能插件组成
+* svrx 有着丰富强大的插件系统，你可以自由使用或者定制想要的功能
+
+更多关于其特性和使用介绍可参考：[Server-X：一款可能提升你十倍工作效率的工具](https://zhuanlan.zhihu.com/p/87684011)
+
+## ytdl-core
+
+NPM地址：https://npmjs.com/package/ytdl-core
+
+Youtube 下载模块，和其他模块相比，该模块的特点在于纯用 JS 编写，同时使用了 NodeJS 友好的 stream API
+
 ## prismjs
 
 官网地址：https://prismjs.com/index.html

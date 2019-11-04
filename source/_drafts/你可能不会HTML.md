@@ -14,6 +14,24 @@ date: 2017-08-04 16:22:08
 
 这是一篇总结类的文章，因为大部分人都觉得HTML代码是“史上最简单的语言”，但是其实有很多特性你并没有用过，或者说都没有听说过，所以这一篇文章可以让你领略到HTML的独特魅力。
 
+
+### 在页面中展示webp图片
+
+webp格式，在大小、展现上都更具优势，只是有小小的兼容性（ie11不兼容）问题。所以使用下文方案，来用于webp图片的展示。
+
+```html
+<picture>
+    <source srcset="/media/examples/pic.webp">
+    <img src="/media/examples/pic.jpg" />
+</picture>
+```
+
+使用<picture>浏览器会加载第一个支持的图片，并使其呈现在<img>元素占据的空间中。该方案有如下好处：
+- 在不支持<pictrue>的浏览器中，img标签将被直接展现
+- 书写样式时，只需要针对img写样式。
+- 无需考虑目标浏览器，react服务端渲染时，服务端渲染结果能与客户端首次hydrate时一致，避免屏幕闪烁及无效图片请求。
+
+
 ## 【译】10 个你不知道你需要的 HTML 元素
 
 https://juejin.im/post/5cce2a4651882541992d447c
@@ -84,6 +102,7 @@ https://www.cnblogs.com/xiaohuochai/p/5873289.html，这三个事件可以用来
 https://juejin.im/post/5c1606d9f265da613d7bf7a4
 
 Page Lifecycle API 教程：http://www.ruanyifeng.com/blog/2018/11/page\_lifecycle\_api.html
+
 
 \[转\]你不知道的<img>标签
 =================
