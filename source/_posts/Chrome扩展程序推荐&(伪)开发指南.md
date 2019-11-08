@@ -16,6 +16,10 @@ chrome 作为 Google 公司研发的一款网页浏览器，其诞生之初就�
 
 ## 扩展程序推荐
 
+### [为什么你们就是不能加个空格呢？](https://chrome.google.com/webstore/detail/%E7%82%BA%E4%BB%80%E9%BA%BC%E4%BD%A0%E5%80%91%E5%B0%B1%E6%98%AF%E4%B8%8D%E8%83%BD%E5%8A%A0%E5%80%8B%E7%A9%BA%E6%A0%BC%E5%91%A2%EF%BC%9F/paphcfdffjnbcgkokihcdjliihicmbpd)
+
+自动在网页中所有的中文字和半形的英文、数字、符号之间插入空白。虽然有部分人反馈网页会变卡顿，但是仍值得一试
+
 ### [Markdown Here](https://chrome.google.com/webstore/detail/markdown-here/elifhakcjgalahccnjkneoccemfahfoa?hl=zh-CN)
 
 有个它再也不用担心编辑器不支持markdown语法了，写好以后直接一键转换。而且也是一个跨平台神器，比如我们可以把简书写好的文章（带md语法）直接复制到微信公众号，然后一键转换，格式几乎无变化！

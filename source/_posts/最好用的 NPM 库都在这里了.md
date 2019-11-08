@@ -12,6 +12,17 @@ tags:
 
 分享一些我用过或者同事推荐的 NPM 库或者其他实用的工具
 
+## pangu
+
+Github地址：https://github.com/vinta/pangu.js
+
+用来在所有的中文字和半形的英文、数字、符号之间插入空白。不仅有支持 Chrome 和 Firefox 浏览器的插件版本，还有以下几种语言的库：
+
+* Go
+* Java
+* Javascript
+* Python
+
 ## svrx
 
 官网：https://svrx.io/
