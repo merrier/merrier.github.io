@@ -33,8 +33,6 @@ https://juejin.im/post/5cd7d3286fb9a0323a01d29a#heading-54
 
 * [Hexo 主题开发指南](http://chensd.com/2016-06/hexo-theme-guide.html)
 * [Hexo主题开发经验杂谈](https://molunerfinn.com/make-a-hexo-theme/)
-* []()
-* []()
 
 ## 需要参考的博客
 

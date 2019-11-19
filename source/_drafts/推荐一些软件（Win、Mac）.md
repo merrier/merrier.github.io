@@ -11,9 +11,16 @@ categories:
 date: 2018-09-30 18:24:04
 ---
 
+## iwall
+
+动态桌面软件，唯一一款超级动态桌面，虽然是付费的，来自https://www.zhihu.com/question/31031913
+
+
 ## 待总结
 
-http://www.orrafy.com/posts/app/disk-space 压缩图片-ImageOptim https://juejin.im/post/5b0e99436fb9a009e405dbb6
+http://www.orrafy.com/posts/app/disk-space
+
+压缩图片-ImageOptim https://juejin.im/post/5b0e99436fb9a009e405dbb6
 
 ## GoodNotes
 

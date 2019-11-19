@@ -1,12 +1,13 @@
 ---
 title: 读书笔记系列（10）——TypeScript入门教程
-urlname: 英文标题
-id: 独一无二的id，暂时没什么用
+urlname: typescript-tutorial
+id: 6928487239585
 categories:
-  - 分类
+  - 笔记
 tags:
-  - 标签
-img: /images/
+  - typescript
+  - 入门
+img: /images/hexo_thumbnail_132.jpeg
 date: 2019-04-01 20:06:15
 ---
 
