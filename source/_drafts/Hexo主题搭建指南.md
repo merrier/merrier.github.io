@@ -9,6 +9,10 @@ date: 2019-01-11 11:57:17
 img:
 ---
 
+## 图文类型的列表页
+
+图片的样式最佳实践，高度100%和宽度100%都不可取
+
 ## 文章加密
 
 可参考：https://github.com/X-Nicolo/X-Nicolo.github.io/blob/master/mcommon.js
