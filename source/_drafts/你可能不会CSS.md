@@ -9,6 +9,11 @@ categories:
 date: 2018-01-28 20:43:57
 ---
 
+### CSS之文本两端对齐
+
+http://www.daqianduan.com/6806.html
+
+
 ### 解决 H5 页面在点击的时候，link区域点击的瞬间是蓝色的
 
 ```css
