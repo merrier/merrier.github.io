@@ -278,6 +278,7 @@ https://pnggauntlet.com/
 压缩图片软件，不过还提供了 API，注册后就可以免费使用，非常方便
 
 
-### 其他人推荐的软件
+## 其他人推荐的软件
 
 你电脑上「最引以为豪」的软件是什么？：https://www.zhihu.com/question/21065451/answer/631748221
+干货满满！推介几款 Mac 下非常好用的软件（第一弹）：https://juejin.im/post/5de664e5f265da33b82bcfce
