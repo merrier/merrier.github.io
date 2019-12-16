@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://merrier.wang/"/>
-  <updated>2019-12-10T04:36:22.998Z</updated>
+  <updated>2019-12-16T11:30:39.069Z</updated>
   <id>http://merrier.wang/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>高达模型的分级和种类介绍</title>
+    <link href="http://merrier.wang/20191211/gundam-models-category-introduction.html"/>
+    <id>http://merrier.wang/20191211/gundam-models-category-introduction.html</id>
+    <published>2019-12-11T01:45:45.000Z</published>
+    <updated>2019-12-16T11:30:39.069Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="玩具" scheme="http://merrier.wang/categories/%E7%8E%A9%E5%85%B7/"/>
+    
+    
+      <category term="高达" scheme="http://merrier.wang/tags/%E9%AB%98%E8%BE%BE/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Switch 游戏推荐</title>
     <link href="http://merrier.wang/20191209/switch-game-recommendation.html"/>
     <id>http://merrier.wang/20191209/switch-game-recommendation.html</id>
     <published>2019-12-09T08:39:32.000Z</published>
-    <updated>2019-12-10T04:36:22.998Z</updated>
+    <updated>2019-12-16T11:30:39.061Z</updated>
     
     <summary type="html">
     
@@ -47,7 +73,7 @@
     <link href="http://merrier.wang/20191201/switch-accessories-suggestion.html"/>
     <id>http://merrier.wang/20191201/switch-accessories-suggestion.html</id>
     <published>2019-12-01T04:45:20.000Z</published>
-    <updated>2019-12-10T04:36:22.998Z</updated>
+    <updated>2019-12-16T11:30:39.061Z</updated>
     
     <summary type="html">
     
@@ -73,7 +99,7 @@
     <link href="http://merrier.wang/20191126/all-about-switch.html"/>
     <id>http://merrier.wang/20191126/all-about-switch.html</id>
     <published>2019-11-26T13:02:56.000Z</published>
-    <updated>2019-12-10T04:36:22.998Z</updated>
+    <updated>2019-12-16T11:30:39.061Z</updated>
     
     <summary type="html">
     
@@ -101,7 +127,7 @@
     <link href="http://merrier.wang/20191119/chinglish-geng.html"/>
     <id>http://merrier.wang/20191119/chinglish-geng.html</id>
     <published>2019-11-19T02:14:11.000Z</published>
-    <updated>2019-12-10T04:36:22.998Z</updated>
+    <updated>2019-12-16T11:30:39.061Z</updated>
     
     <summary type="html">
     
@@ -129,7 +155,7 @@
     <link href="http://merrier.wang/20191113/marvel-toys-recommendation.html"/>
     <id>http://merrier.wang/20191113/marvel-toys-recommendation.html</id>
     <published>2019-11-13T04:44:13.000Z</published>
-    <updated>2019-12-10T04:36:23.006Z</updated>
+    <updated>2019-12-16T11:30:39.069Z</updated>
     
     <summary type="html">
     
@@ -157,7 +183,7 @@
     <link href="http://merrier.wang/20191112/toys-transformers-recommendation.html"/>
     <id>http://merrier.wang/20191112/toys-transformers-recommendation.html</id>
     <published>2019-11-12T04:58:36.000Z</published>
-    <updated>2019-12-10T04:36:23.006Z</updated>
+    <updated>2019-12-16T11:30:39.069Z</updated>
     
     <summary type="html">
     
@@ -185,7 +211,7 @@
     <link href="http://merrier.wang/20191103/dc-toys-recommendation.html"/>
     <id>http://merrier.wang/20191103/dc-toys-recommendation.html</id>
     <published>2019-11-03T04:44:24.000Z</published>
-    <updated>2019-12-10T04:36:23.006Z</updated>
+    <updated>2019-12-16T11:30:39.069Z</updated>
     
     <summary type="html">
     
@@ -213,7 +239,7 @@
     <link href="http://merrier.wang/20191014/toys-suit-recommendation.html"/>
     <id>http://merrier.wang/20191014/toys-suit-recommendation.html</id>
     <published>2019-10-14T04:56:49.000Z</published>
-    <updated>2019-12-10T04:36:23.006Z</updated>
+    <updated>2019-12-16T11:30:39.069Z</updated>
     
     <summary type="html">
     
@@ -243,7 +269,7 @@
     <link href="http://merrier.wang/20190929/cheap-tops-recommendation.html"/>
     <id>http://merrier.wang/20190929/cheap-tops-recommendation.html</id>
     <published>2019-09-29T12:33:23.000Z</published>
-    <updated>2019-12-10T04:36:23.006Z</updated>
+    <updated>2019-12-16T11:30:39.069Z</updated>
     
     <summary type="html">
     
@@ -273,7 +299,7 @@
     <link href="http://merrier.wang/20190923/toys-around-recommendation.html"/>
     <id>http://merrier.wang/20190923/toys-around-recommendation.html</id>
     <published>2019-09-23T04:35:55.000Z</published>
-    <updated>2019-12-10T04:36:23.006Z</updated>
+    <updated>2019-12-16T11:30:39.069Z</updated>
     
     <summary type="html">
     
@@ -301,7 +327,7 @@
     <link href="http://merrier.wang/20190920/other-toys-recommendation.html"/>
     <id>http://merrier.wang/20190920/other-toys-recommendation.html</id>
     <published>2019-09-20T04:57:31.000Z</published>
-    <updated>2019-12-10T04:36:23.006Z</updated>
+    <updated>2019-12-16T11:30:39.069Z</updated>
     
     <summary type="html">
     
@@ -329,7 +355,7 @@
     <link href="http://merrier.wang/20190920/figurine-recommendation.html"/>
     <id>http://merrier.wang/20190920/figurine-recommendation.html</id>
     <published>2019-09-20T04:33:28.000Z</published>
-    <updated>2019-12-10T04:36:23.006Z</updated>
+    <updated>2019-12-16T11:30:39.069Z</updated>
     
     <summary type="html">
     
@@ -357,7 +383,7 @@
     <link href="http://merrier.wang/20190603/zhuoyao-strategy.html"/>
     <id>http://merrier.wang/20190603/zhuoyao-strategy.html</id>
     <published>2019-06-03T02:26:15.000Z</published>
-    <updated>2019-12-10T04:36:22.998Z</updated>
+    <updated>2019-12-16T11:30:39.061Z</updated>
     
     <summary type="html">
     
@@ -385,7 +411,7 @@
     <link href="http://merrier.wang/20190401/typescript-tutorial.html"/>
     <id>http://merrier.wang/20190401/typescript-tutorial.html</id>
     <published>2019-04-01T12:06:15.000Z</published>
-    <updated>2019-12-10T04:36:23.006Z</updated>
+    <updated>2019-12-16T11:30:39.069Z</updated>
     
     <summary type="html">
     
@@ -413,7 +439,7 @@
     <link href="http://merrier.wang/20190210/vultr-vps-and-shadowsocks-config.html"/>
     <id>http://merrier.wang/20190210/vultr-vps-and-shadowsocks-config.html</id>
     <published>2019-02-10T05:27:08.000Z</published>
-    <updated>2019-12-10T04:36:23.006Z</updated>
+    <updated>2019-12-16T11:30:39.065Z</updated>
     
     <summary type="html">
     
@@ -443,7 +469,7 @@
     <link href="http://merrier.wang/20190207/sd-walkthrough.html"/>
     <id>http://merrier.wang/20190207/sd-walkthrough.html</id>
     <published>2019-02-07T11:48:34.000Z</published>
-    <updated>2019-12-10T04:36:23.006Z</updated>
+    <updated>2019-12-16T11:30:39.065Z</updated>
     
     <summary type="html">
     
@@ -471,7 +497,7 @@
     <link href="http://merrier.wang/20190204/hexo-plugin-recommendation.html"/>
     <id>http://merrier.wang/20190204/hexo-plugin-recommendation.html</id>
     <published>2019-02-04T10:35:04.000Z</published>
-    <updated>2019-12-10T04:36:22.994Z</updated>
+    <updated>2019-12-16T11:30:39.057Z</updated>
     
     <summary type="html">
     
@@ -501,7 +527,7 @@
     <link href="http://merrier.wang/20190203/advertising-propaganda-and-tips.html"/>
     <id>http://merrier.wang/20190203/advertising-propaganda-and-tips.html</id>
     <published>2019-02-03T02:31:37.000Z</published>
-    <updated>2019-12-10T04:36:23.010Z</updated>
+    <updated>2019-12-16T11:30:39.069Z</updated>
     
     <summary type="html">
     
@@ -527,7 +553,7 @@
     <link href="http://merrier.wang/20190120/undefined.html"/>
     <id>http://merrier.wang/20190120/undefined.html</id>
     <published>2019-01-20T02:23:16.000Z</published>
-    <updated>2019-12-10T04:36:22.998Z</updated>
+    <updated>2019-12-16T11:30:39.061Z</updated>
     
     <summary type="html">
     
@@ -547,34 +573,6 @@
       <category term="Hexo" scheme="http://merrier.wang/tags/Hexo/"/>
     
       <category term="Wordpress" scheme="http://merrier.wang/tags/Wordpress/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo中图片处理正确姿势</title>
-    <link href="http://merrier.wang/20190111/image-skills-in-hexo.html"/>
-    <id>http://merrier.wang/20190111/image-skills-in-hexo.html</id>
-    <published>2019-01-11T07:12:56.000Z</published>
-    <updated>2019-12-10T04:36:22.994Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          
-        
-      
-    
-    </summary>
-    
-      <category term="Hexo" scheme="http://merrier.wang/categories/Hexo/"/>
-    
-    
-      <category term="技巧" scheme="http://merrier.wang/tags/%E6%8A%80%E5%B7%A7/"/>
-    
-      <category term="Hexo" scheme="http://merrier.wang/tags/Hexo/"/>
     
   </entry>
   
