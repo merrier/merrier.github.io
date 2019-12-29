@@ -1,5 +1,5 @@
 ---
-title: 最好用的工具和NPM库都在这里了
+title: 最好用的工具和 NPM 库都在这里了
 urlname: some-useful-npm-libraries
 id: 2067
 date: 2018-12-20 10:38:58
@@ -11,6 +11,34 @@ tags:
 ---
 
 分享一些我用过或者同事推荐的 NPM 库或者其他实用的工具
+
+## pinyin
+
+Github 地址：https://github.com/hotoo/pinyin
+
+转换中文字符为拼音。可以用于汉字注音、排序、检索。同时还有 Python 版和 NodeJS 版。
+
+
+## yddict
+
+Github 地址：https://github.com/kenshinji/yddict
+
+有道词典命令行查询工具，相比应用程序和网页都要方便许多，非常适合程序员日常使用
+
+
+## whistle
+
+官方文档：http://wproxy.org/whistle/
+
+whistle是基于Node实现的跨平台web调试代理工具，类似的工具有Windows平台上的Fiddler，主要用于查看、修改HTTP、HTTPS、Websocket的请求/响应，也可以作为HTTP代理服务器使用，不同于Fiddler通过断点修改请求响应的方式，whistle采用的是类似配置系统hosts的方式，一切操作都可以通过配置实现，支持域名、路径、正则表达式、通配符、通配路径等多种匹配方式，且可以通过Node模块扩展功能。
+如果想快速上手使用常用的功能，可参考：https://juejin.im/post/5df1baae6fb9a016470c1f98。
+
+## is-progressive-cli
+
+NPM 地址:https://www.npmjs.com/package/is-progressive-cli
+
+用来检查 JPEG 图像是否是渐进式的。
+
 
 ## pangu
 

@@ -11,6 +11,11 @@ img:
 
 ## 需要提供的功能
 
+
+### 自动压缩图片
+
+可以利用 https://github.com/imagemin/imagemin，可以压缩 JPG 和 PNG 类型的图片，同时还支持格式转换，比如讲 JPG 类型的图片转换成 Webp 格式，具体参见：https://juejin.im/post/5df184da518825125e1bad11
+
 ### 弹幕功能
 
 类似于博客：https://www.bestvist.com/p/59
@@ -51,3 +56,37 @@ https://juejin.im/post/590b451a0ce46300588c43a0
 ### 支持夜间模式
 
 类似于 https://overreacted.io/
+
+
+## 图文类型的列表页
+
+图片的样式最佳实践，高度 100% 和宽度 100% 都不可取
+
+## 文章加密
+
+可参考：https://github.com/X-Nicolo/X-Nicolo.github.io/blob/master/mcommon.js
+
+主题是 Next
+
+## 全站字数统计
+
+https://x-nicolo.github.io/
+
+## Algolia搜索
+
+https://juejin.im/post/5cd7d3286fb9a0323a01d29a#heading-54
+
+## google site verification
+
+参考：http://hunao.info/2016/06/01/Hexo-Seo%E4%BC%98%E5%8C%96%E8%AE%A9%E4%BD%A0%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%9C%A8google%E6%90%9C%E7%B4%A2%E6%8E%92%E5%90%8D%E7%AC%AC%E4%B8%80/
+
+需要读取 _config.yml 中的配置，进行自动添加
+
+## 扩展阅读
+
+* [Hexo 主题开发指南](http://chensd.com/2016-06/hexo-theme-guide.html)
+* [Hexo主题开发经验杂谈](https://molunerfinn.com/make-a-hexo-theme/)
+
+## 需要参考的博客
+
+* [楠哥的个人博客](https://mikelin.cn/)

@@ -9,6 +9,19 @@ categories:
 date: 2018-01-28 20:43:57
 ---
 
+### CSS3 中的 width 值
+
+https://www.zhangxinxu.com/wordpress/2016/05/css3-width-max-contnet-min-content-fit-content/
+
+### 伪类 VS 伪元素
+
+::after和:after的区别
+在实际的开发工作中，我们会看到有人把伪元素写成:after，这实际是 CSS2 与 CSS3新旧标准的规定不同而导致的。
+CSS2 中的伪元素使用1个冒号，在 CSS3 中，为了区分伪类和伪元素，规定伪元素使用2个冒号。所以，对于 CSS2 标准的老伪元素，比如:first-line，:first-letter，:before，:after，写一个冒号浏览器也能识别，但对于 CSS3 标准的新伪元素，比如::selection，就必须写2个冒号了。
+
+链接：https://juejin.im/post/5df1e312f265da33d039d06d
+
+
 ### 你未必知道的CSS知识点（第二季）
 
 https://juejin.im/post/5d9ec8b0518825651b1dffa3
