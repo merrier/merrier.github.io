@@ -11,6 +11,86 @@ categories:
 date: 2018-09-30 18:24:04
 ---
 
+
+## imgcook
+
+官网：https://www.imgcook.com/
+
+由设计稿一键只能生成代码，有 Sketch 版插件和 Photoshop 版插件，同时还可以在线生成
+
+## Github Mobile
+
+官网：https://github.com/mobile
+
+支持 iOS 和 安卓，万众期待的 Github 移动版终于发布了
+
+## TexturePacker
+
+官网：https://www.codeandweb.com/texturepacker
+
+主要用于游戏开发时的不同元素的组织，同时可以在不减少文件本身体积的前提下进行优化
+
+## 写作助手
+
+Github 地址：https://github.com/ystcode/BlogHelper
+
+帮助国内用户写作的托盘助手，一键发布本地文章到主流博客平台（知乎、简书、博客园、CSDN、SegmentFault、掘金、开源中国），剪贴板图片一键上传至图床（新浪、Github、图壳、腾讯云、阿里云、又拍云、七牛云）
+
+## 墨刀
+
+官网：https://modao.cc/
+
+支持 macOS、Windows、Ubuntu、iOS 和 Android，同时还有 Sketch 插件；在家远程办公的好帮手，更是一款专业、可靠、简洁、易懂的在线产品原型工具与产品设计团队协作平台，能高效、轻松的解决团队成员远程办公，高效协作编辑，实时项目协作管理，信息同步，沟通透明且高效，企业成员项目权限灵活管理，可直接复用企业共享素材库，简，金融级保障数据安全。
+
+## 中州韵输入法引擎
+
+官网：https://rime.im/
+
+专门为中文开发的输入法，同时还支持定制，支持 Windows XP SP3, Windows 7+, macOS 10.7+, Linux (IBus, Fcitx)
+
+## Keycastr
+
+Github 地址：https://github.com/keycastr/keycastr
+
+一个开源的输入键位可视化工具，同时还支持各种可视化配置
+
+## pap.er
+
+官网：https://paper.meiyuan.in/
+
+专为 Mac 设计的壁纸应用，每天享受来自全球新鲜精美的壁纸
+
+
+## OmniGraffle
+
+官网：https://www.omnigroup.com/omnigraffle/new-in-ios/
+
+类似于 Visio 的画图工具，支持 Mac 和 iOS
+
+
+## 巧影
+
+安卓手机上专业化的视频编辑软件
+
+链接:https://pan.baidu.com/s/1o4PNNLLqYjDkB8Ij1QOIEw  密码:l2hh
+
+## PicsArt & ToolWiz Photos
+
+推荐两款安卓手机上可以用的专业化的图片编辑软件，非常的专业和强大
+
+* PicsArt：链接:https://pan.baidu.com/s/1ZmFqLfWsEzjJaHkugOvsFQ  密码:wqqv
+* ToolWiz Photos：链接:https://pan.baidu.com/s/1GkZ1mdR1dWh9bF9o_-q7lQ  密码:6uvb
+
+
+## Snipaste
+
+Snipaste 是一个简单但强大的贴图工具，同时也可以执行截屏、标注等功能。
+
+官网地址：https://zh.snipaste.com/
+
+对 Windows 支持的比较好，Mac 虽然功能不齐全，但是已经可以满足平常使用需求了
+
+
 ## iwall
 
 动态桌面软件，唯一一款超级动态桌面，虽然是付费的，来自https://www.zhihu.com/question/31031913

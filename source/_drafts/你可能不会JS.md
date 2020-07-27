@@ -10,6 +10,18 @@ categories:
 date: 2018-02-11 11:17:24
 ---
 
+## toFixed 的坑
+
+https://juejin.im/post/5ee545a6f265da771b2ff711
+
+
+## 通过浏览器标签页的 Icon 看视频
+
+源码地址：https://github.com/shengxinjing/iconjs/tree/e41b60c722634691fea10081be8543f7ecc1b0ac
+
+演示站点：https://shengxinjing.cn/wheel/moyu.html
+
+
 ## scrollIntoView支持更多参数
 
 ```javascript

@@ -16,6 +16,28 @@ chrome 作为 Google 公司研发的一款网页浏览器，其诞生之初就�
 
 ## 扩展程序推荐
 
+
+### [DuckDuckGo Privacy Essentials](https://chrome.google.com/webstore/detail/duckduckgo-privacy-essent/bkdgflcldnnnapblkhphbgpggdiikppg)
+
+官网：https://duckduckgo.com/，旨在保护个人隐私的搜索引擎，安装之后使用即可，号称不存储任何个人信息、没有广告、从不追踪
+
+
+### [Screencastify](https://www.screencastify.com/)
+
+可以用来录制桌面以及当前浏览器标签页，同时录制完成之后可以进行分享，操作简单
+
+
+### [github-hovercard](https://github.com/Justineo/github-hovercard)
+
+百度大牛顾轶灵开发的一个 github 浏览辅助插件，用于在浏览 github 官网时能够实时查看相关 repo 以及用户的信息，非常方便，不过缺点就是接口有点慢
+
+### [bypass-paywalls](https://github.com/iamadamdev/bypass-paywalls-chrome)
+
+可以免费看一些英文报刊的网站，ft foreign policy wapo多家外媒都可以
+
+同时还有 firefox 版
+
+
 ### [为什么你们就是不能加个空格呢？](https://chrome.google.com/webstore/detail/%E7%82%BA%E4%BB%80%E9%BA%BC%E4%BD%A0%E5%80%91%E5%B0%B1%E6%98%AF%E4%B8%8D%E8%83%BD%E5%8A%A0%E5%80%8B%E7%A9%BA%E6%A0%BC%E5%91%A2%EF%BC%9F/paphcfdffjnbcgkokihcdjliihicmbpd)
 
 自动在网页中所有的中文字和半形的英文、数字、符号之间插入空白。虽然有部分人反馈网页会变卡顿，但是仍值得一试

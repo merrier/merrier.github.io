@@ -15,6 +15,13 @@ date: 2017-08-04 16:22:08
 这是一篇总结类的文章，因为大部分人都觉得HTML代码是“史上最简单的语言”，但是其实有很多特性你并没有用过，或者说都没有听说过，所以这一篇文章可以让你领略到HTML的独特魅力。
 
 
+### 有哪些被低估未被广泛使用的有用的 HTML标签？
+
+https://www.zhihu.com/question/396745068/answer/1262953923
+
+https://www.w3cplus.com/html5/talk-about-HTML-you-don-not-know.html
+
+
 ### 在页面中展示webp图片
 
 webp格式，在大小、展现上都更具优势，只是有小小的兼容性（ie11不兼容）问题。所以使用下文方案，来用于webp图片的展示。

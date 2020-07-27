@@ -10,7 +10,65 @@ tags:
   - 推荐
 ---
 
-分享一些我用过或者同事推荐的 NPM 库或者其他实用的工具
+分享一些 NPM 库或者其他实用的工具
+
+## fingerprintjs2
+
+Github 地址：https://github.com/fingerprintjs/fingerprintjs2
+
+现代而灵活的浏览器指纹库，使用很简单，还有另外一个差不多的库：[clientjs](https://github.com/jackspirou/clientjs)，关于浏览器指纹，可以看这篇文章：[浏览器指纹：原来我们一直被互联网巨头监视，隐私在网上裸奔、无处可藏](https://github.com/biaochenxuying/blog/issues/60)
+
+## wallace-cli
+
+Github 地址：https://github.com/bartveneman/wallace-cli
+
+通过命令行分析 CSS 的工具，配合某些其他提取 CSS 文件等工具可以用于网站分析和优化
+
+
+## chromatic
+
+官网：https://www.chromatic.com/
+
+是一个可以快速发布 UI 组件库的 Storybook 的工具，可以关联 Github 仓库，操作非常简单
+
+
+## NodeGui
+
+官网：https://docs.nodegui.org/#quick-start
+
+使用 Javascript 和 CSS 构建性能良好的跨平台桌面应用程序，对标的是 electron
+
+
+## FunDebug
+
+官网：https://www.fundebug.com/
+
+Fundebug提供全栈错误监控服务，通过邮件、钉钉、倍洽、Slack等第三方工具实时报警，提供全面的报错信息帮助您快速分析问题，改进产品。目前支持网站、JS、微信小程序、微信小游戏、Java、Node.js等的错误监控，通过记录程序异常的堆栈、网络请求错误、资源加载错误、并且记录用户行为利用独创的可视化重现技术来帮助您改进产品，提升用户体验。
+
+分为免费版、付费版、本地版三种，价格不低，但是一些付费客户中不乏一些知名大厂
+
+
+## docz
+
+Github 地址：https://github.com/doczjs/docz/
+官网：https://www.docz.site/
+
+非常好用的文档生成工具，使用特定语法可以生成相应文档站，比较适合类似于 antd 官网组件示例文档那样的场景
+
+
+## unlayer
+
+Github 地址：https://github.com/unlayer
+官方文档地址：https://docs.unlayer.com/docs
+
+是一个可以生成电子邮件编辑器和登录页的生成器，支持了各种个性化配置
+
+## mjml
+
+Github 地址：https://github.com/mjmlio/mjml
+
+定义了一种 MJML 语法，将 MJML 转换为 响应式的 HTML，可用来编写个性化邮件
+
 
 ## pinyin
 

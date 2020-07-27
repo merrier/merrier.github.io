@@ -9,6 +9,24 @@ categories:
 date: 2018-01-28 20:43:57
 ---
 
+### 用 object-fit 实现图片居中
+
+
+https://www.zhangxinxu.com/wordpress/2015/03/css3-object-position-object-fit/
+
+
+### 用SVG实现一个优雅的提示框
+
+文末还有一个在线预览的工具
+
+https://mp.weixin.qq.com/s/jReoLQsNzW_rGUDbZfPtqA
+
+
+### 利用 -webkit-mask-image: linear-gradient 实现透明蒙层
+
+待补充
+
+
 ### CSS3 中的 width 值
 
 https://www.zhangxinxu.com/wordpress/2016/05/css3-width-max-contnet-min-content-fit-content/

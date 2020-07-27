@@ -59,7 +59,7 @@ https://juejin.im/post/590b451a0ce46300588c43a0
 
 ### 支持夜间模式
 
-类似于 https://overreacted.io/，最好是可以跟随系统
+类似于 https://overreacted.io/ 和 https://www.meckodo.com/，最好是可以跟随系统
 
 
 ## 图文类型的列表页
