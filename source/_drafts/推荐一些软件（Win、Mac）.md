@@ -11,6 +11,24 @@ categories:
 date: 2018-09-30 18:24:04
 ---
 
+## SaveHollywood
+
+官网：http://s.sudre.free.fr/Software/SaveHollywood/about.html
+
+安装之后，可以将 Mac 的桌面或屏保设置为本地的一个视频，非常炫酷
+
+
+## MindNode
+
+官网：https://mindnode.com/
+
+用来做思维导图和脑图的软件，目前只支持 Mac，还有 iOS App。
+
+## Transmission
+
+官网：https://transmissionbt.com/
+
+可以替换迅雷的软件，种子下载器，支持 Mac 和 Windows
 
 ## imgcook
 
@@ -226,6 +244,8 @@ Github 地址：https://github.com/NickeManarin/ScreenToGif
 
 Github 地址：https://github.com/oldj/SwitchHosts
 主页：https://oldj.github.io/SwitchHosts/
+
+支持 Windows、Mac
 
 这是一个用于快速切换 hosts 文件的小程序，基于 Electron 开发，同时使用了 React、Ant Design 以及 CodeMirror 等框架/库。
 

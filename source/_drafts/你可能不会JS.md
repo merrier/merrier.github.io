@@ -10,6 +10,37 @@ categories:
 date: 2018-02-11 11:17:24
 ---
 
+## 超好用的API之IntersectionObserver
+
+https://developer.mozilla.org/zh-CN/docs/Web/CSS/touch-action
+
+## JavaScript 的正则表达式中的 \b 以及 \B 问题？
+
+https://www.zhihu.com/question/46315785
+
+## 关于使用 Symbol 的注意点
+
+https://juejin.im/post/6844903791746088974
+
+## 关于 Promise 的两道面试题，很有意思
+
+https://segmentfault.com/a/1190000023037214
+
+## 关于JS中一些重要的api实现, 巩固你的原生JS功底
+
+https://juejin.im/post/6844903924520992782
+
+https://www.cnblogs.com/chenwenhao/p/11294541.html#_label1
+
+## 127 个 JS 代码片段
+
+https://medium.com/better-programming/127-helpful-javascript-snippets-you-can-learn-in-30-seconds-or-less-part-1-of-6-bc2bc890dfe5
+
+## 使用 Intersection Observer 实现无限下拉刷新
+
+
+https://mp.weixin.qq.com/s/xEE7ZyETb3CkP5Y4RWuCeA
+
 ## toFixed 的坑
 
 https://juejin.im/post/5ee545a6f265da771b2ff711
@@ -21,6 +52,7 @@ https://juejin.im/post/5ee545a6f265da771b2ff711
 
 演示站点：https://shengxinjing.cn/wheel/moyu.html
 
+代码讲解视频：https://www.bilibili.com/video/BV1R54116794
 
 ## scrollIntoView支持更多参数
 

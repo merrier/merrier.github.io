@@ -59,3 +59,4 @@ theme: jekyll-theme-architect
 ## 扩展阅读
 
 [一步步在GitHub上创建博客主页](http://www.pchou.info/ssgithubPage/2013-01-03-build-github-blog-page-01.html)
+[Git托管 代码托管 Pages服务 静态网站托管](https://www.netnr.com/home/list/105)

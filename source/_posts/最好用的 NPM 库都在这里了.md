@@ -12,6 +12,176 @@ tags:
 
 分享一些 NPM 库或者其他实用的工具
 
+## visx
+
+<p align="center">
+  <img src="https://github.com/airbnb/visx/raw/master/assets/visx-geometry.png" alt="visx">
+</p>
+
+Github 地址：https://github.com/airbnb/visx
+
+可重用的 low-level 可视化图表组件的集合。visx 将 d3 的强大功能与 react 更新 DOM 的优势结合了起来，可以最大化渲染性能，同时也支持基本上所有类型的图表
+
+## Mitt
+
+<p align="center">
+  <img src="https://i.imgur.com/BqsX9NT.png" width="300" height="300" alt="mitt">
+</p>
+
+Github 地址：https://github.com/developit/mitt
+
+只有 200b 的 JS event emitter / pubsub
+
+## fzf
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/junegunn/i/master/fzf.png" height="170" alt="fzf - a command-line fuzzy finder">
+</p>
+
+Github 地址：https://github.com/junegunn/fzf
+
+是一个通用的命令行模糊查找器，可视化做的比较好，非常方便实用：
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/junegunn/i/master/fzf-preview.png" width=640>
+</p>
+
+## Dark Reader
+
+Github 地址：https://github.com/darkreader/darkreader
+
+让网页变成“暗黑模式”，有 [Edge 插件](https://microsoftedge.microsoft.com/addons/detail/dark-reader/ifoakfbpdcdoeenechcleahebpibofpc)、[Chrome 插件](https://chrome.google.com/webstore/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh)和 [Firefox 插件](https://addons.mozilla.org/en-US/firefox/addon/darkreader/)，同时也可以`npm install`后在自己的网页上使用：
+
+![Dark Reader screenshot](https://i.imgur.com/DyBlYwU.png)
+
+
+## postcss-pxtorem
+
+一个用于 postcs 的插件，可以自动将 CSS 中的 px 这种单位转换成 rem，很适合移动端使用
+
+## emotion
+
+<p align="center">
+  <img src="https://cdn.rawgit.com/tkh44/emotion/master/emotion.png" alt="emotion" height="150" width="150">
+</p>
+
+Github 地址：https://github.com/emotion-js/emotion
+官网：https://emotion.sh/
+
+高效且灵活的 CSS-in-JS 库：
+
+```jsx
+/** @jsx jsx */
+import { jsx } from '@emotion/core'
+
+let SomeComponent = props => {
+  return (
+    <div
+      css={{
+        color: 'hotpink'
+      }}
+      {...props}
+    />
+  )
+}
+```
+
+## Parallax.js
+
+Github 地址：https://github.com/pixelcog/parallax.js/
+官网：http://pixelcog.github.io/parallax.js/
+
+简单的视差滚动 JQuery 插件
+
+## FR 可视化 schema 编辑器
+
+Github 地址：https://github.com/form-render/schema-generator
+
+经常做中后台的前端同学对于表单可以说是“苦不堪言”，而可视化表单生成是一个比较好的解决方案，可以将研发从写表单的重复劳动中解放出来，该库的 demo 演示：https://x-render.gitee.io/schema-generator/playground
+
+## Driver.js
+
+<p align="center">
+  <img src="https://github.com/kamranahmedse/driver.js/blob/master/demo/images/driver.png?raw=true" />
+</p>
+
+Github 地址：https://github.com/kamranahmedse/driver.js
+
+功能强大、高度可定制的元素高亮库，在做新人引导以及元素高亮时可以考虑试用一下，[在线查看 demo](https://kamranahmed.info/driver.js/)
+
+
+## typestyle
+
+Github 地址：https://github.com/typestyle/typestyle
+
+使用它之后，用 TypeStyle 编写 CSS 就像用 TypeScript 编写 JavaScript 一样流畅。
+
+![](https://raw.githubusercontent.com/typestyle/typestyle.github.io/source/public/images/autocomplete.gif)
+
+## lrz
+
+> 目前已不再维护
+
+Github 地址：https://github.com/think2011/localResizeIMG
+
+前端对图片进行压缩，可以[点击这里直接进入演示页面](https://think2011.net/localResizeIMG/test/)
+
+
+## npkill
+
+<p align="center">
+  <img src="https://npkill.js.org/img/npkill-text-clean.svg" width="320" alt="npkill logo" />
+  <img src="https://npkill.js.org/img/npkill-scope-mono.svg" width="50" alt="npkill logo scope" />
+</p>
+
+Github 地址：https://github.com/voidcosmos/npkill
+
+可以轻松查找和删除旧的和比较大的的`node_modules`文件夹
+
+<p align="center">
+  <img src="https://npkill.js.org/img/npkill-demo-0.3.0.gif" alt="npkill demo gif" />
+</p>
+
+
+## RobotJS
+
+<p align="center"><img src="https://cldup.com/1ATDf2JMtv.png"></p>
+
+Github 地址：https://github.com/octalmage/robotjs
+
+基于 NodeJS 的桌面自动化控制库，封装了一些实用的鼠标、键盘、桌面等 API，支持 Mac、Windows 和 Linux。
+
+## React Hook Form
+
+Github 地址：https://github.com/react-hook-form/react-hook-form
+
+高性能、灵活、易拓展、易于使用的表单校验库
+
+
+## Resemble.js
+
+<h1 align="center"><img src="https://raw.github.com/rsmbl/Resemble.js/master/demoassets/resemble.png" alt="Resemble.js" width="256"/></h1>
+
+Github 地址：https://github.com/rsmbl/Resemble.js
+
+通过 HTML5 和 Javascript 对图像进行分析，还可以进行两张图像的对比，demo 见：http://rsmbl.github.io/Resemble.js/
+
+## node-opencv-compare-images
+
+Gitee 地址：https://gitee.com/txdd/opencv-compare-image
+
+使用opencv比较两个图片的相似度，比 Resemble.js 要专业一些，但是已经好久没更新了
+
+## caniuse-cmd
+
+Github 地址：https://github.com/sgentle/caniuse-cmd
+
+兼容性测试工具，使用也很简单，比如：
+
+```
+caniuse websockets
+```
+
 ## fingerprintjs2
 
 Github 地址：https://github.com/fingerprintjs/fingerprintjs2
@@ -317,7 +487,9 @@ Github 地址：https://github.com/nodemailer/nodemailer
 
 Github 地址：https://github.com/node-schedule/node-schedule
 
-这是一个有着各种配置的定时任务发生器，可以定时每个月、每个礼拜、每天具体什么时候执行什么任务，具体应用：[《用Node + EJS写一个爬虫脚本每天定时女朋友发一封暖心邮件》](https://juejin.im/post/5c75fa4af265da2d84109219)
+这是一个有着各种配置的定时任务发生器，可以定时每个月、每个礼拜、每天具体什么时候执行什么任务，具体应用：
+* [用Node + EJS写一个爬虫脚本每天定时女朋友发一封暖心邮件](https://juejin.im/post/5c75fa4af265da2d84109219)
+* [Electron + Puppeteer + Robotjs 实现工作自动化](https://mp.weixin.qq.com/s/mziw_VfwcO_qLglypbzy2A)
 
 ## stickybits
 

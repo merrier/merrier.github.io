@@ -16,6 +16,17 @@ chrome 作为 Google 公司研发的一款网页浏览器，其诞生之初就�
 
 ## 扩展程序推荐
 
+### [划词翻译](https://hcfy.limingkai.cn/#%E7%89%B9%E7%82%B9)
+
+划词翻译是一款能用于 Chrome、Firefox 和 Microsoft Egde 浏览器的扩展程序，划词翻译的目标是让浏览任意语言的网站都能变得无比轻松：
+
+1. [Chrome 扩展](https://chrome.google.com/webstore/detail/ikhdkkncnoglghljlkmcimlnlhkeamad)，如果打不开 Chrome 扩展商店，可以[下载离线安装包手动安装](https://hcfy.limingkai.cn/install.html)
+2. [Firefox 扩展](https://addons.mozilla.org/zh-CN/firefox/addon/hcfy/)
+3. [Edge 扩展](https://microsoftedge.microsoft.com/addons/detail/oikmahiipjniocckomdccmplodldodja)
+
+### [ModHeader](https://bewisse.com/modheader/)
+
+用来修改请求 Header 的浏览器插件，支持 Chrome、Firefox、Opera 和 Edge，可以非常方便的开启/关闭以及导入/导出配置文件
 
 ### [DuckDuckGo Privacy Essentials](https://chrome.google.com/webstore/detail/duckduckgo-privacy-essent/bkdgflcldnnnapblkhphbgpggdiikppg)
 

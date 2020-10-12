@@ -10,6 +10,31 @@ categories:
 date: 2018-10-21 21:40:19
 ---
 
+## Polacode 插件，用来分享代码
+
+https://github.com/octref/polacode
+
+如果你喜欢VS Code，那么这个适合你！Polacode 是一个VS Code扩展，可以直接从 VSCode 获取漂亮的代码屏幕截图。
+
+https://mmbiz.qpic.cn/mmbiz_gif/nnic7Ckj9Nq3EnUOT5h0QuWJoJpUVMGhA9D2CjheLUfDrgicsTfz3SBiczEDnbnUeks4RVAHUnU0JicrcmctbeGmcQ/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1
+
+## VSCode 中的看基金插件
+
+https://github.com/giscafer/leek-fund
+
+## 在 VSCode 中刷掘金
+
+https://marketplace.visualstudio.com/items?itemName=xitu.juejin
+
+## 摸鱼看书神器
+
+https://marketplace.visualstudio.com/items?itemName=C-TEAM.thief-book
+
+
+## 好看的字体：FiraCode
+
+https://github.com/tonsky/FiraCode
+
 ## 一个好用的插件：Code Spell Checker，用来检测单词拼写有没有问题
 
 
