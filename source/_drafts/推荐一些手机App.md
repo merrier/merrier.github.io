@@ -10,6 +10,21 @@ img: /images/
 date: 2020-10-09 15:51:06
 ---
 
+## Omni 套装
+
+官网：https://store.omnigroup.com/
+
+Omni 系列产品曾以它高昂的价格（新用户可以免费试用 14 天）、学习成本，以及「用了都说好」的特性闻名世界。有以下几个产品（支持 Mac 和 iOS）：
+
+* OmniFocus：任务管理
+* OmniGraffle：图表、流程图、思维导图类
+* OmniOutliner：可以让你灵活地创造、收集和组织信息的 app
+* OmniPlan：项目管理
+
+<p align="center">
+  <img src="https://sf1-dycdn-tos.pstatp.com/obj/eden-cn/ylpyylteh7nuvjnuhd/merrier/omni_store.png" alt="omni">
+</p>
+
 ## MindNode
 
 官网：https://mindnode.com/

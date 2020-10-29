@@ -123,14 +123,14 @@ branding: 叩首问路，码梦为生
 
 ## 设置banner背景图片
 banner:
-    img: http://snippet.shenliyang.com/img/banner.jpg
+    img: /images/hexo_others_12.jpg
 
 ## 首页列表底部面板
 homePanel: true
 
 ## 缩略图自定义随机图片
 defaultImgs:
-  - 
+  -
 
 ## 截取文章首页描述字数
 excerptLength: 120
@@ -139,7 +139,7 @@ excerptLength: 120
 toc: true
 
 ## 代码高亮配置
-highlightTheme: 
+highlightTheme:
 
 ## bootstrap配置
 bootstrap:

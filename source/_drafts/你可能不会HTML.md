@@ -15,6 +15,15 @@ date: 2017-08-04 16:22:08
 这是一篇总结类的文章，因为大部分人都觉得HTML代码是“史上最简单的语言”，但是其实有很多特性你并没有用过，或者说都没有听说过，所以这一篇文章可以让你领略到HTML的独特魅力。
 
 
+### rel=noreferrer 的作用
+
+https://www.chromium.org/developers/design-documents/process-models，
+
+求教window.open打开一个新tab页，由于开发需求新的tab页要渲染一会儿，这期间父页面一直卡死动不了，一直到新的tab页渲染完之后才恢复，新页面不是应该有一个新的render进程吗？为什么会影响父页面进程卡死？有什么解决办法吗
+
+加个 noreferer 可破
+
+
 ### rel=noopener 的作用
 
 https://juejin.im/post/6844903485289267214

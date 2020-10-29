@@ -11,6 +11,8 @@ categories:
 date: 2018-09-30 18:24:04
 ---
 
+
+
 ## SaveHollywood
 
 官网：http://s.sudre.free.fr/Software/SaveHollywood/about.html
@@ -79,12 +81,20 @@ Github 地址：https://github.com/keycastr/keycastr
 专为 Mac 设计的壁纸应用，每天享受来自全球新鲜精美的壁纸
 
 
-## OmniGraffle
+## Omni 套装
 
-官网：https://www.omnigroup.com/omnigraffle/new-in-ios/
+官网：https://store.omnigroup.com/
 
-类似于 Visio 的画图工具，支持 Mac 和 iOS
+Omni 系列产品曾以它高昂的价格（新用户可以免费试用 14 天）、学习成本，以及「用了都说好」的特性闻名世界。有以下几个产品（支持 Mac 和 iOS）：
 
+* OmniFocus：任务管理
+* OmniGraffle：图表、流程图、思维导图类
+* OmniOutliner：可以让你灵活地创造、收集和组织信息的 app
+* OmniPlan：项目管理
+
+<p align="center">
+  <img src="https://sf1-dycdn-tos.pstatp.com/obj/eden-cn/ylpyylteh7nuvjnuhd/merrier/omni_store.png" alt="omni">
+</p>
 
 ## 巧影
 

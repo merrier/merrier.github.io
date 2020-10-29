@@ -153,7 +153,7 @@ YSlow（why slow）是雅虎基于网站优化规则推出的工具，帮助你�
 
 ### [Vimium](https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb)
 
-首先，不知道为什么叫这个名字。。用惯 vim 的人可能习惯用键盘操控一切了，那么这款插件一定能够满足你，它让你能够通过键盘控制浏览器，包括跳转，点击某个按钮，翻页以及所有你能想到的浏览器功能，实在是佩服这款插件的开发者，可以先看一下它的[宣传视频](https://youtu.be/t67Sn0RGK54)（来自油管，需要翻墙~）压压惊
+用惯 vim 的人可能习惯用键盘操控一切了，那么这款插件一定能够满足你，它让你能够通过键盘控制浏览器，包括跳转，点击某个按钮，翻页以及所有你能想到的浏览器功能，实在是佩服这款插件的开发者，可以先看一下它的[宣传视频](https://youtu.be/t67Sn0RGK54)（来自油管，需要翻墙~）压压惊
 
 ### [一键管理所有扩展](https://chrome.google.com/webstore/detail/%E4%B8%80%E9%94%AE%E7%AE%A1%E7%90%86%E6%89%80%E6%9C%89%E6%89%A9%E5%B1%95/niemebbfnfbjfojajlmnbiikmcpjkkja)
 

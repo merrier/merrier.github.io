@@ -10,6 +10,17 @@ date: 2018-01-28 20:43:57
 ---
 
 
+### ::marker
+
+通过 ::marker 更加个性化改变 li、ol 列表样式：https://web.dev/css-marker-pseudo-element/
+
+
+### overflow-anchor
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-anchor
+https://css-tricks.com/almanac/properties/o/overflow-anchor/
+https://github.com/necolas/normalize.css/issues/655
+
 ### 灵活运用CSS开发技巧
 
 https://juejin.im/post/6844903926110617613
