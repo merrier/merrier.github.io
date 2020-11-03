@@ -27,7 +27,7 @@ img: /images/hexo_thumbnail_16.jpg
 
 <div align='center'><img src='/images/hexo_post_243.png' alt='' width='400'/></div>
 
-### Theme选择
+### Theme 选择
 
 然后点击上面的 Settings 按钮，向下找到 Github Pages 模块：
 
