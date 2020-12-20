@@ -11,6 +11,14 @@ categories:
 date: 2018-06-22 10:24:50
 ---
 
+## Github 上的搜索技巧
+
+https://juejin.im/post/6891056415440535565
+
+## readme 中插入酷炫动画
+
+https://github.com/PanJiaChen/PanJiaChen/blob/master/README.md
+
 ## 爱了爱了，这个 GitHub 的 Chrome 神仙插件把我整的服服帖帖的
 
 https://mp.weixin.qq.com/s/tDqwVilZo0UmSg0wuuE0HQ

@@ -10,6 +10,14 @@ categories:
 date: 2018-02-11 11:17:24
 ---
 
+## Object.is()
+
+通过这个方法判断两个 JS 中的基础类型是否完全相等，React 也是用该方法判断是否需要重新渲染
+
+## 字符编码
+
+https://juejin.cn/post/6901868546322923534
+
 ## 超好用的API之IntersectionObserver
 
 https://developer.mozilla.org/zh-CN/docs/Web/CSS/touch-action

@@ -10,6 +10,11 @@ img: /images/
 date: 2020-10-09 15:51:06
 ---
 
+## Feedly
+
+https://zhuanlan.zhihu.com/p/41079719，还支持网页版，同时该文章还提到了一些浏览器插件都还挺好用
+
+
 ## Omni 套装
 
 官网：https://store.omnigroup.com/

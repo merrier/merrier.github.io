@@ -11,6 +11,19 @@ categories:
 date: 2018-09-30 18:24:04
 ---
 
+## Duplicate Manager Pro
+
+官网：http://www.greenworldsoft.com/#Duplicate_Manager_Pro
+
+Duplicate Manager Pro 是专门用来查找和清理重复文件的工具，Mac 上重复的照片、音乐、文档等文件都可以使用 Duplicate Manager Pro 来扫描，轻松帮你管理和删除重复文件，使用非常便捷，下面是一个破解版：
+
+链接: https://pan.baidu.com/s/18cuUI5GmYwPnn9WRUk8Z-A  密码: 48ne
+
+如果安装之后提示程序含有恶意代码或者已经打开所有来源还是提示扔到垃圾桶，在终端输入 `xattr -r -d com.apple.quarantine` 加上程序的 App 绝对路径，App 建议直接拖放到终端，会自动填写路径，如这样：
+
+```bash
+xattr -r -d com.apple.quarantine /Applications/QQ.app
+```
 
 
 ## SaveHollywood

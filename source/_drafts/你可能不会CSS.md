@@ -10,6 +10,31 @@ date: 2018-01-28 20:43:57
 ---
 
 
+### oveflow:overlay 可以让滚动条在网页顶层
+
+### currentColor 的妙用
+
+https://juejin.cn/post/6901124887847403527
+
+### 实现深色模式
+
+https://www.zhangxinxu.com/wordpress/2020/11/css-mix-blend-mode-filter-dark-theme/
+
+
+### 利用 mask-image 实现弹幕防档人像功能
+
+https://bytedance.feishu.cn/docs/doccnUVs6YiwHPZzZJjV5eF0HSg
+
+
+### CSS 选择器优先级
+
+https://wiki.developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance
+
+
+### 纯CSS实现密室逃脱游戏
+
+https://juejin.im/post/6887792725031288839
+
 ### ::marker
 
 通过 ::marker 更加个性化改变 li、ol 列表样式：https://web.dev/css-marker-pseudo-element/

@@ -1,5 +1,5 @@
 ---
-title: 博客
+title: 利用 Github Actions 自动化部署 Hexo 博客
 urlname: 英文标题
 id: 独一无二的id，暂时没什么用
 categories:
