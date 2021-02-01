@@ -12,6 +12,20 @@ img:
 ## 需要提供的功能
 
 
+### 暗黑模式切换动画
+
+https://www.joshwcomeau.com/，切换颜色时的 icon 动画
+
+### 网站自定义配置
+
+https://wproxy.org/whistle/，左上角有字体大小、颜色、字体的设置
+
+
+### 极客式功能
+
+https://supercodepower.com/，这个站点的搜索很有意思，颇有极客风范
+
+
 ### 文章中可以点赞，并且可以一直点击，还有不错的反馈动效
 
 类似于：https://joshwcomeau.com/css/full-bleed/，滑到文章中间的时候右边出现的爱心可以点击
