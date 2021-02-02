@@ -10,6 +10,12 @@ categories:
 date: 2018-02-11 11:17:24
 ---
 
+## Composition Event
+
+https://juejin.cn/post/6844903721285976072
+https://cloud.tencent.com/developer/article/1418222
+
+
 ## Object.is()
 
 通过这个方法判断两个 JS 中的基础类型是否完全相等，React 也是用该方法判断是否需要重新渲染
