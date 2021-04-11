@@ -9,6 +9,10 @@ categories:
 date: 2018-01-28 20:43:57
 ---
 
+### word-break VS overflow-wrap
+
+https://developer.mozilla.org/zh-CN/docs/Web/CSS/overflow-wrap
+
 ### 好用的 CSS 函数
 
 https://segmentfault.com/a/1190000039031953

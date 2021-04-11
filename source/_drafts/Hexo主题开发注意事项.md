@@ -11,6 +11,19 @@ img:
 
 ## 需要提供的功能
 
+
+## CSS 解决方案
+
+https://github.com/tailwindlabs/tailwindcss，这个看上去很酷
+
+## 代码高亮解决方案
+
+彩虹：https://craig.is/making/rainbows
+
+## 网站 Logo 特效
+
+https://alephjs.org/，中间的三角很有意思，hover 上去的时候会加速，可以借鉴
+
 ## 无后端评论系统
 
 

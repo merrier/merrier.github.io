@@ -10,6 +10,11 @@ categories:
 date: 2018-02-11 11:17:24
 ---
 
+## 中文乱码
+
+https://github.com/justjavac/unicode-encoding-error-table
+
+
 ## Composition Event
 
 https://juejin.cn/post/6844903721285976072

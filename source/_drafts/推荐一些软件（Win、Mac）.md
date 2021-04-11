@@ -25,7 +25,6 @@ Duplicate Manager Pro 是专门用来查找和清理重复文件的工具，Mac 
 xattr -r -d com.apple.quarantine /Applications/QQ.app
 ```
 
-
 ## SaveHollywood
 
 官网：http://s.sudre.free.fr/Software/SaveHollywood/about.html
