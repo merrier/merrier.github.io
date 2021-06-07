@@ -11,6 +11,28 @@ categories:
 date: 2018-06-22 10:24:50
 ---
 
+## 其他人总结的一些技巧
+
+https://jishuin.proginn.com/p/763bfbd3147f
+
+
+
+## 个性化 Github 个人主页
+
+https://github.com/chokcoco
+
+https://juejin.cn/post/6854573219660660743
+
+https://juejin.cn/post/6949496467300024350
+
+https://blog.csdn.net/qq_37954086/article/details/107947088
+
+https://sspai.com/post/63198
+
+https://sanksu.top/2020/11/14/%E4%B8%AA%E6%80%A7%E5%8C%96Github%E4%B8%AA%E4%BA%BA%E4%B8%BB%E9%A1%B5/
+
+https://sanksu.top/2020/11/14/%E4%B8%AA%E6%80%A7%E5%8C%96Github%E4%B8%AA%E4%BA%BA%E4%B8%BB%E9%A1%B5/
+
 
 ## Github 中文排行榜
 
