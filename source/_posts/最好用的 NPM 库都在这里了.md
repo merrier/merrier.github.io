@@ -12,6 +12,67 @@ tags:
 
 分享一些 NPM 库或者其他实用的工具
 
+## React Flow
+
+官网：https://reactflow.dev/
+Github 地址：https://github.com/wbkd/react-flow
+
+一个用于构建基于节点的图形的库。可以轻松地实现自定义节点类型，并且它附带了诸如迷你地图和图形控件之类的组件。
+
+## Slidev
+
+官网：https://sli.dev/
+Github 地址：https://github.com/slidevjs/slidev
+
+为开发者打造的演示文稿工具，基于 Markdown
+
+## opentype.js
+
+官网：https://opentype.js.org/
+Github 地址：https://github.com/opentypejs/opentype.js
+
+用于 TrueType 和 opentype 类型字体的 JavaScript 解析器和编写器，具体可查看官网中的 demo。
+
+
+
+## PeerJS
+
+官网：https://peerjs.com/
+Github 地址：https://github.com/peers/peerjs
+
+WebRTC 届的 jQuery
+
+## Docusaurus
+
+官网：https://docusaurus.io/
+Github 地址：https://github.com/facebook/docusaurus
+
+文档站生成工具，可以将 doc 转换成在线网页
+
+## Image Tilt Effect
+
+官网：https://tympanus.net/Development/ImageTiltEffect/
+Github 地址：https://github.com/codrops/ImageTiltEffect/
+
+可以实现图片随鼠标位置进行倾斜的效果，从而让图片产生运动和视差效果
+
+
+## imagehover.css
+
+官网：http://www.imagehover.io/
+Github 地址：https://github.com/ciar4n/imagehover.css
+
+效果丰富的图片悬停特效库，使用起来很简单：
+
+```html
+<figure class="imghvr-fade">
+  <img src="#">
+  <figcaption>
+    // Hover Content
+  </figcaption>
+</figure>
+```
+
 ## visx
 
 <p align="center">
