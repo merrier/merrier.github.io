@@ -20,3 +20,8 @@ https://www.jianshu.com/p/7940fe40885d
 https://blog.csdn.net/oschina_41790905/article/details/107447275
 
 https://blog.lgf.im/2020/use-github-actions-to-auto-deploy-hexo.html
+
+
+从 Travis CI 迁移到 GitHub Actions
+
+https://docs.github.com/cn/actions/learn-github-actions/migrating-from-travis-ci-to-github-actions
