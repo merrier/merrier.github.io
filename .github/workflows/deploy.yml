@@ -29,6 +29,7 @@ jobs:
         run: |
           npm install
           npm install -g gulp
+          npm link gulp --no-bin-links
           npm install -g hexo
 
       # 从之前设置的 secret 获取部署私钥
