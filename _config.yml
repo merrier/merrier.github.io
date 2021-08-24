@@ -100,7 +100,7 @@ theme: snippet
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/merrier/merrier.github.io
+  repo: git@github.com:merrier/merrier.github.io.git
   # example, https://github.com/hexojs/hexojs.github.io
   branch: master
 
