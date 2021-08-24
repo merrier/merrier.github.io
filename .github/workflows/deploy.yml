@@ -27,10 +27,10 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          npm install
           npm install -g gulp
           npm link gulp --no-bin-links
-          npm install -g hexo
+          npm install -g hexo-cli
+          npm install
 
       # 从之前设置的 secret 获取部署私钥
       - name: Set up environment
@@ -47,5 +47,12 @@ jobs:
       - name: Deploy
         run: |
           hexo clean
-          hexo g
+          hexo generate
           gulp
+
+      - name: Push master
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }} # 无需修改
+          publish_dir: ./public  # hexo generate 生成的博客文件默认存放在 /public 目录下
+          publish_branch: master  # 存放展示的博客文件的分支
