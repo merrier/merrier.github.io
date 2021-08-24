@@ -53,3 +53,5 @@ jobs:
           hexo generate
           gulp
           hexo deploy
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }} # 无需修改
