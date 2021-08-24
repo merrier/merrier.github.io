@@ -43,16 +43,13 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan github.com >> ~/.ssh/known_hosts
 
-      # 生成并部署
-      - name: Deploy
+      - name: Release GitHub Pages
         run: |
+          git config --global user.email "953075999@qq.com"
+          git config --global user.name "merrier"
+          git clone git@github.com:merrier/merrier.github.io.git .deploy_git
+          chmod 755 -R .deploy_git
           hexo clean
           hexo generate
           gulp
-
-      - name: Push master
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }} # 无需修改
-          publish_dir: ./public  # hexo generate 生成的博客文件默认存放在 /public 目录下
-          publish_branch: master  # 存放展示的博客文件的分支
+          hexo deploy
