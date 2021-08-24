@@ -63,6 +63,18 @@ and the repository exists.
 
 具体见：https://github.com/peaceiris/actions-gh-pages#tips-and-faq
 
+另外需要正确复制私钥，有的私钥会有开头和结尾字符：
+
+```
+-----BEGIN OPENSSH PRIVATE KEY-----
+...
+...
+...
+-----END OPENSSH PRIVATE KEY-----
+```
+参考：https://stackoverflow.com/questions/59509976/docker-load-key-root-ssh-id-rsa-invalid-format
+参考：https://depp.wang/2020/02/17/use-github-actions-to-achieve-hexo-blog-auto-deploy/
+
 ## actions 推荐
 
 这个集成的挺好：https://github.com/yrpang/github-actions-hexo
