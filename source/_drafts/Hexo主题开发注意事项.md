@@ -11,6 +11,10 @@ img:
 
 ## 需要提供的功能
 
+## 可能集成 actions 吗？
+
+https://github.com/yrpang/github-actions-hexo，这个 actions 封装的挺好，但是功能还是不够全，比如我想要 gulp 压缩 css 和图片就不行，可以尝试扩展一下集成到主题里？
+
 ## 彩蛋
 
 https://yizhiyue.me/，这个博客提供的彩蛋很有意思，可以在控制台里面看到
