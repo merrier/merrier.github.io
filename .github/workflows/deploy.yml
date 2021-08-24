@@ -12,6 +12,7 @@ jobs:
         with:
           path: node_modules
           key: ${{runner.OS}}-${{hashFiles('**/package-lock.json')}}
+      # todo: 添加 gulp 处理逻辑
       - uses: yrpang/github-actions-hexo@v1.3
         with:
           deploykey: ${{secrets.DEPLOY_KEY}}
