@@ -1,0 +1,57 @@
+name: Hexo Deploy
+
+# 只监听 dev 分支的改动
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 这里用的是 Node.js 14.x
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14'
+
+      - name: Cache NPM dependencies
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: ${{ runner.OS }}-npm-cache
+          restore-keys: |
+            ${{ runner.OS }}-npm-cache
+
+      - name: Install Dependencies
+        run: |
+          npm install -g gulp
+          npm link gulp --no-bin-links
+          npm install -g hexo-cli
+          npm install
+
+      # 从之前设置的 secret 获取部署私钥
+      - name: Set up environment
+        env:
+          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+        run: |
+          sudo timedatectl set-timezone "Asia/Shanghai"
+          mkdir -p ~/.ssh
+          echo "$DEPLOY_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+      - name: Release GitHub Pages
+        run: |
+          git config --global user.email "953075999@qq.com"
+          git config --global user.name "merrier"
+          git clone git@github.com:merrier/merrier.github.io.git .deploy_git
+          chmod 755 -R .deploy_git
+          hexo clean
+          hexo generate
+          gulp
+          hexo deploy
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }} # 无需修改
