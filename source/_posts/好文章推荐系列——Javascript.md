@@ -10,6 +10,56 @@ img: /images/hexo_thumbnail_148.jpg
 date: 2017-08-07 16:28:03
 ---
 
+### [What the f*ck JavaScript?](https://github.com/denysdovhan/wtfjs/blob/master/README-zh-cn.md)
+
+> 一个有趣和棘手的 JavaScript 示例列表。
+
+JavaScript 是一种很好的语言。它有一个简单的语法，庞大的生态系统，以及最重要，最伟大的社区。
+同时，我们都知道，JavaScript 是一个非常有趣又充满戏法的语言。他们中的有些可以迅速将我们的日常工作变成地狱，有些可以让我们大声笑起来。
+
+### [见微知著 - 1000字带你掌握nextTick背后的原理](https://mp.weixin.qq.com/s/VQsT7SWMZO5rXVtr8bjWvQ)
+
+在开发过程中，我们经常遇到这样的问题：我明明已经更新了数据，为什么当我获取某个节点的数据时，却还是更新前的数据？在视图更新之后，怎么基于新的视图进行操作？
+
+### [What Every JavaScript Developer Should Know About Floating Points](https://modernweb.com/what-every-javascript-developer-should-know-about-floating-points/)
+
+JavaScript numbers are really floating points. Due to inadequecies when representing numbers in base-2, as well as a finite machine, we are left with a format that is filled with rounding errors. This article explains those rounding errors and why those errors occur. Always use a good library for numbers instead of building your own.
+
+### [undefined vs. null revisited](https://2ality.com/2021/01/undefined-null-revisited.html)
+
+关于 JS 中的 undefined 和 null 最详细的对比了
+
+### [Writing a JavaScript Framework](https://blog.risingstack.com/writing-a-javascript-framework-project-structuring/)
+
+In the last couple of months Bertalan Miklos, JavaScript engineer at RisingStack wrote a next generation client-side framework, called NX: https://nx-framework.com. In the Writing a JavaScript Framework series, Bertalan shares what he learned during the process.
+
+### [how-javascript-works](https://github.com/Troland/how-javascript-works)
+
+本文是翻译介绍 JavaScript 的工作原理的，该系列原文还在更新中，原文见 [这里](https://blog.sessionstack.com/tagged/tutorial)。
+
+### [clean-code-javascript](https://github.com/ryanmcdermott/clean-code-javascript)
+
+Software engineering principles, from Robert C. Martin's book Clean Code, adapted for JavaScript. This is not a style guide. It's a guide to producing readable, reusable, and refactorable software in JavaScript.
+
+### [The JavaScript Call Stack - What It Is and Why It's Necessary](https://www.freecodecamp.org/news/understanding-the-javascript-call-stack-861e41ae61d4/)
+
+This article is aimed at explaining what the call stack is and why it is needed. An understanding of the call stack will give clarity to how “function hierarchy and execution order” works in the JavaScript engine.
+
+
+## [JavaScript's Memory Management Explained](https://felixgerschau.com/javascript-memory-management/)
+
+非常详尽的一篇文章，对 JS 中的内存管理作了解释和讲解
+
+## [JavaScript 对象转换之 toString 和 valueOf](https://f-e-d.club/topic/conversion-of-tostring-and-the-valueof-javascript-object.article)
+
+JS 中的对象转换一直是面试重点，同时在实际工作中也会遇到因为对象转换带来的各种“坑”，比如这个例子：
+
+```js
+parseInt(0.0000004)  // 4
+![]==[] //true
+['x','y'] == 'x,y' //true
+alert({name:'mofei'})  //"[object Object]"
+```
 
 ### [时区与JS中的Date对象](https://juejin.im/post/6844903885505576968)
 

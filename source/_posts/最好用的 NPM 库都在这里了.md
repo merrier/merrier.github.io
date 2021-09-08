@@ -12,6 +12,326 @@ tags:
 
 分享一些 NPM 库或者其他实用的工具
 
+## zx
+
+Github 地址：https://github.com/google/zx
+
+用 JS 写脚本，很有意思：
+
+```js
+#!/usr/bin/env zx
+
+await $`cat package.json | grep name`
+
+let branch = await $`git branch --show-current`
+await $`dep deploy --branch=${branch}`
+
+await Promise.all([
+  $`sleep 1; echo 1`,
+  $`sleep 2; echo 2`,
+  $`sleep 3; echo 3`,
+])
+
+let name = 'foo bar'
+await $`mkdir /tmp/${name}`
+```
+
+## fx
+
+官网：https://fx.wtf/
+Github 地址：https://github.com/antonmedv/fx
+
+Command-line JSON processing tool
+
+<div align='center'><img src='/images/hexo_post_721.gif' alt='' /></div>
+
+## react-content-loader
+
+官网：https://skeletonreact.com/
+Github 地址：https://github.com/danilowoz/react-content-loader
+
+SVG-Powered component to easily create placeholder loadings (like Facebook's cards loading).
+
+## canvas-confetti
+
+官网：https://catdad.github.io/canvas-confetti/
+Github 地址：https://github.com/catdad/canvas-confetti
+
+轻松实现烟花特效，支持各种自定义参数
+
+<div align='center'><img src='/images/hexo_post_720.jpeg' alt='' /></div>
+
+## Triangula
+
+Github 地址：https://github.com/RH12503/triangula
+
+Triangula uses a modified genetic algorithm to triangulate or polygonate images. It works best with images smaller than 3000px and with fewer than 3000 points, typically producing an optimal result within a couple of minutes.
+
+<div align='center'><img src='/images/hexo_post_719.png' alt='' /></div>
+
+## react-pdf
+
+官网：https://react-pdf.org/
+Github 地址：https://github.com/diegomura/react-pdf
+
+React renderer for creating PDF files on the browser and server
+
+## localtunnel
+
+官网：https://localtunnel.me/
+Github 地址：https://github.com/localtunnel/localtunnel
+
+localtunnel exposes your localhost to the world for easy testing and sharing! No need to mess with DNS or deploy just to have others test out your changes.
+
+Great for working with browser testing tools like browserling or external api callback services like twilio which require a public url for callbacks.
+
+## git-blame-someone-else
+
+Github 地址：https://github.com/jayphelps/git-blame-someone-else
+
+只有恶搞的作用，其他一无是处
+
+## pipcook
+
+官网：https://alibaba.github.io/pipcook/#/zh-cn/
+Github 地址：https://github.com/alibaba/pipcook
+
+Pipcook 项目是一个开源工具集，它能让 Web 开发者更好地使用机器学习，从而开启和加速前端智能化时代！
+
+## React95
+
+官网：react95.io/
+Github 地址：https://github.com/arturbien/React95
+
+Refreshed Windows95 UI components for your modern React apps.
+Built with styled-components 💅
+
+<div align='center'><img src='/images/hexo_post_717.png' alt='' /></div>
+
+## asciinema
+
+官网：https://asciinema.org/
+
+Record and share your terminal sessions, the right way.Terminal 录屏工具，支持 Mac、Linux
+
+
+## PhotoSwipe
+
+官网：photoswipe.com
+Github 地址：https://github.com/dimsemenov/PhotoSwipe
+
+JavaScript image gallery for mobile and desktop.
+连微博都在用的图片预览库
+
+## TypeIt
+
+官网：https://typeitjs.com/
+Github 地址：https://github.com/alexmacarthur/typeit
+
+The Most Versatile JavaScript Animated Typing Utility on the Planet.
+
+## depcheck
+
+Github 地址：https://github.com/depcheck/depcheck
+
+Depcheck is a tool for analyzing the dependencies in a project to see: how each dependency is used, which dependencies are useless, and which dependencies are missing from package.json.
+
+## pngquant
+
+官网：https://pngquant.org/
+Github 地址：https://github.com/kornelski/pngquant
+
+pngquant is a command-line utility and a library for lossy compression of PNG images.
+
+The conversion reduces file sizes significantly (often as much as 70%) and preserves full alpha transparency. Generated images are compatible with all web browsers and operating systems.
+
+## xss
+
+官网：https://jsxss.com/zh/index.html
+Github 地址：https://github.com/leizongmin/js-xss
+
+xss是一个用于对用户输入的内容进行过滤，以避免遭受 XSS 攻击的模块。主要用于论坛、博客、网上商店等等一些可允许用户录入页面排版、格式控制相关的 HTML 的场景，xss模块通过白名单来控制允许的标签及相关的标签属性，另外还提供了一系列的接口以便用户扩展，比其他同类模块更为灵活。
+
+## react-toggle
+
+官网：http://aaronshaf.github.io/react-toggle/
+Github 地址：https://github.com/aaronshaf/react-toggle/
+
+An elegant, accessible toggle component for React. Also a glorified checkbox.
+
+## followcursor
+
+Github 地址：https://gitlab.com/bersLucas/FollowCursor/
+
+Rotate elements to create a following effect. 经常见到的那种图片跟着鼠标进行旋转的动画效果
+
+## Magnifier.js
+
+Github 地址：https://github.com/mark-rolich/Magnifier.js
+
+Javascript library enabling magnifying glass effect on an images.图片放大库
+
+## iTyped
+
+官网：ityped.surge.sh/
+Github 地址：https://github.com/luisvinicius167/ityped
+
+Dead simple Animated typing, with no dependencies.非常简单的打字动画实现库
+
+## Benchmark.js
+
+官网：https://benchmarkjs.com/
+Github 地址：https://github.com/bestiejs/benchmark.js
+
+A [robust](https://mathiasbynens.be/notes/javascript-benchmarking) benchmarking library that supports high-resolution timers & returns statistically significant results. As seen on [jsPerf](https://jsperf.com/).
+
+## Eruda
+
+官网：https://eruda.liriliri.io/
+Github 地址：https://github.com/liriliri/eruda
+
+Eruda 是一个专为手机网页前端设计的调试面板，类似 DevTools 的迷你版，其主要功能包括：捕获 console 日志、检查元素状态、捕获XHR请求、显示本地存储和 Cookie 信息等等。
+
+## ScrollMagic
+
+官网：http://scrollmagic.io/
+Github 地址：https://github.com/janpaepke/ScrollMagic
+
+ScrollMagic helps you to easily react to the user's current scroll position.
+
+## Verdaccio
+
+官网：https://www.verdaccio.org/
+Github 地址：https://github.com/verdaccio/verdaccio
+
+私有 NPM 部署；Verdaccio is a simple, zero-config-required local private npm registry.
+
+## iconify
+
+官网：https://iconify.design/
+Github 地址：https://github.com/iconify
+
+Iconify is a unified open source icon framework that makes it possible to use many icons from different icon sets on same page or in same application using one syntax.
+
+
+## ni
+
+Github 地址：https://github.com/antfu/ni
+
+现在有三种 nodejs 包管理方式：npm、yarn、pnpm，而这个库就是兼容这三种方式，统一了执行脚本
+
+~~*`npm i` in a yarn project, again? F\*\*k!*~~
+
+
+## Odiff
+
+Github 地址：https://github.com/dmtrKovalenko/odiff
+
+图片对比工具 ODiff is a blazing fast native image comparison tool. It was originally designed to handle the "big" images.
+
+## Viewer.js
+
+官网：https://fengyuanchen.github.io/viewerjs/
+Github 地址：https://github.com/fengyuanchen/viewerjs
+
+JavaScript image viewer.图片预览库
+
+## docsify
+
+Github 地址：https://github.com/docsifyjs/docsify/
+
+A magical documentation site generator.文档站点生成工具
+
+
+## pdf-rs
+
+Github 地址：https://github.com/pdf-rs/pdf/
+
+Rust library to read, manipulate and write PDF files.
+
+
+## react-lines-ellipsis
+
+官网：https://xiaody.github.io/react-lines-ellipsis/
+Github 地址：https://github.com/xiaody/react-lines-ellipsis
+
+Poor man's multiline ellipsis component for React.JS；React 中的多行文本省略解决方案
+
+## isomorphic-git
+
+官网：https://isomorphic-git.org/
+Github 地址：https://github.com/isomorphic-git/isomorphic-git
+
+isomorphic-git is a pure JavaScript reimplementation of git that works in both Node.js and browser JavaScript environments. It can read and write to git repositories, fetch from and push to git remotes (such as GitHub), all without any native C++ module dependencies.
+
+## Tesseract.js
+
+官网：http://tesseract.projectnaptha.com/
+Github 地址：https://github.com/naptha/tesseract.js
+
+Tesseract.js is a javascript library that gets words in almost any language out of images.
+
+## web-extension-starter
+
+Github 地址：https://github.com/abhijithvijayan/web-extension-starter
+
+Web Extension starter to build "Write Once Run on Any Browser" extension：
+
+* Cross Browser Support (Web-Extensions API)
+* Browser Tailored Manifest generation
+* Automatic build on code changes
+* Auto packs browser specific build files
+* SASS styling
+* TypeScript by default
+* ES6 modules support
+* React UI Library by default
+* Smart reload
+
+## roughViz.js
+
+Github 地址：https://github.com/jwilber/roughViz
+
+roughViz.js is a reusable JavaScript library for creating sketchy/hand-drawn styled charts in the browser, based on D3v5, roughjs, and handy.绘制手写体风格的图表
+
+## chart.xkcd
+
+官网：https://timqian.com/chart.xkcd/
+Github 地址：https://github.com/timqian/chart.xkcd
+
+Chart.xkcd is a chart library plots “sketchy”, “cartoony” or “hand-drawn” styled charts.另一款绘制手写体风格的图表
+
+## nodeppt
+
+> 累死累活干不过做 PPT 的！
+
+官网：https://nodeppt.js.org/
+Github 地址：https://github.com/ksky521/nodeppt
+
+基于webslides、webpack、markdown-it、posthtml 重构，This is probably the best web presentation tool so far!
+
+## nb
+
+官网：https://xwmx.github.io/nb/
+Github 地址：https://github.com/xwmx/nb
+
+nb is a command line and local web note‑taking, bookmarking, archiving, and knowledge base application.
+
+## Diagram Maker
+
+官网：https://awslabs.github.io/diagram-maker/
+Github 地址：https://github.com/awslabs/diagram-maker
+
+Diagram Maker is a library to display an interactive editor for any graph-like data.
+
+Diagram Maker is a framework & data format agnostic library that is fully customizable in terms of look & feel as well as behavior. It also exposes a declarative interface to reduce the code required to integrate the library in any application and comes with many interactive features built in.
+
+## Optimizt
+
+Github 地址：https://github.com/funbox/optimizt
+
+Optimizt is a CLI tool that helps you prepare images during frontend development.
+It can compress PNG, JPEG, GIF and SVG lossy and lossless and create AVIF and WebP versions for raster images.
+
 ## React Flow
 
 官网：https://reactflow.dev/

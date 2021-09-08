@@ -10,6 +10,71 @@ img: /images/hexo_thumbnail_150.jpg
 date: 2017-08-07 16:29:07
 ---
 
+### [2021年你可能不知道的 CSS 特性](https://zhuanlan.zhihu.com/p/376238191)
+
+来自大漠，虽然聊的是“新特性”，但其中有些特性并不怎么“新”，或许已在你的项目中，或许已接触过，只是不太了解而以。接下来，就和大家一起来简单地回顾一下这些特性，希望大家能喜欢，也希望对大家平时工作有所帮助。
+
+### [CSS 实现多行文本“展开收起”](https://zhuanlan.zhihu.com/p/373359523)
+
+多行文本展开收起是一个很常见的交互，实现这一类布局和交互难点主要有以下几点
+
+* 位于多行文本右下角的“展开收起”按钮
+* “展开”和“收起”两种状态的切换
+* 当文本不超过指定行数时，不显示“展开收起”按钮
+
+### [一文详解 CSS-in-JS](https://mp.weixin.qq.com/s/v0IB2mZHrF0l2ks5pVsO1g)
+
+CSS 做为 Web 的样式表来呈现丰富多彩的 Web 应用已经不再是唯一的选择了，我们或许应该多考虑其他的扩展性和移植性尝试未来的 CSS-in-JS。
+
+
+### [Getting started with CSS Font Loading](https://medium.com/@matuzo/getting-started-with-css-font-loading-e24e7ffaa791)
+
+I was in the mood to learn something new and so I decided to take a look at the [CSS Font Loading API](https://drafts.csswg.org/css-font-loading/).
+
+### [使用CSS Flexbox 构建可靠实用的网站 Header](https://segmentfault.com/a/1190000023908399)
+
+在 CSS3 没有普及的时候，创建一个网站 header 是一项既可怕又困难的任务 ?。那时，Flexbox 还是个新东西，我们不得不使用老方法，比如 float和clearfix技术。今天，情况完全不同了，Flexbox 得到了广泛的支持，大大的减少了我们的开发工作，同时也为我们提供了更多的可能性。
+
+有人可能会说，现在 CSS3 这么普及，制作一个网站 header 不是很容易么 ?？ 并非如此，因为有一些有趣的挑战需要解决,在本文中我们会介绍其中的几种。
+
+### [Ten modern layouts in one line of CSS](https://web.dev/one-line-layouts/)
+
+This post highlights a few powerful lines of CSS that do some serious heavy lifting and help you build robust modern layouts.
+
+
+### [移动端UI一致性解决方案](https://mp.weixin.qq.com/s/oq7ylltdRIdJuSlL7EIiNA)
+
+外卖UI一致性项目是外卖UI设计团队与研发团队共建的项目，目的是改善用户端体验的一致性，提升多技术方案间组件的通用性和复用率，降低整体视觉改版带来的研发成本。外卖技术团队通过在实践中不断总结经验，开发了一套完整的UI一致性解决方案，目前已经取得了一些成果，本文系实践经验分享。
+
+### [Line Clampin’ (Truncating Multiple Line Text)](https://css-tricks.com/line-clampin/)
+
+作者总结了多行文本省略的各种解决方案，最后给出了“最佳实践”
+
+### [Full-Bleed Layout Using CSS Grid](https://www.joshwcomeau.com/css/full-bleed/)
+
+如何使用 CSS Grid 实现一个现在非常常见的布局：
+
+<div align='center'><img src='/images/hexo_post_715.png' alt=''/></div>
+
+
+### [10 Ways to Hide Elements in CSS](https://www.sitepoint.com/hide-elements-in-css/)
+
+There are multiple ways to hide an element in CSS, but they differ in the way they affect accessibility, layout, animation, performance, and event handling.
+
+### [How Do You Remove Unused CSS From a Site?](https://css-tricks.com/how-do-you-remove-unused-css-from-a-site/)
+
+有时候你用到一个库，但是这个库会默认加载所有样式，但其实你用到的只有很小一部分，那这时候应该如何把没有用到的删除呢？
+
+
+### [Everything You Need To Know About CSS Margins](https://www.smashingmagazine.com/2019/07/margins-in-css/)
+
+You now know most of what there is to know about margins! In short:
+
+* Margin collapsing is a thing. Understanding why it happens and when it doesn’t will help you solve any problems it may cause.
+* Setting margins in one direction only solves many margin related headaches.
+* As with anything in CSS, share with your team the decisions you make, and comment your code.
+* Thinking about block and inline dimensions rather than the physical top, right, bottom and left will help you as the web moves towards being writing mode agnostic.
+
 
 ### [【建议收藏】css晦涩难懂的点都在这啦](https://juejin.im/post/6888102016007176200)
 

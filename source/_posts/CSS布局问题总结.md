@@ -185,4 +185,5 @@ img: /images/hexo_thumbnail_63.png
 
 ## 扩展阅读
 
-[利用HTML和CSS实现常见的布局](https://segmentfault.com/a/1190000003931851)
+* [利用HTML和CSS实现常见的布局](https://segmentfault.com/a/1190000003931851)
+* [Ten modern layouts in one line of CSS](https://web.dev/one-line-layouts/)

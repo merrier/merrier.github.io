@@ -16,6 +16,33 @@ chrome 作为 Google 公司研发的一款网页浏览器，其诞生之初就�
 
 ## 扩展程序推荐
 
+### [The Marvellous Suspender](https://chrome.google.com/webstore/detail/the-marvellous-suspender/noogafoofpebimajpfpamcfhoaifemoa?hl=en)
+
+Make your computer run smoothly by suspending the tabs you aren't using
+
+浏览器经常会打开很多标签页，如果这些标签页不再活跃就会停止进程，节省内存，提升浏览器响应速度
+
+### [Screenity - 屏幕录像和标注工具](https://chrome.google.com/webstore/detail/screenity-screen-recorder/kbbdabhdfibnancpjfhlkhafgdilcnji)
+
+Github 地址：https://github.com/alyssaxuu/screenity，Chrome 最强大的屏幕录像机。 捕获，注释，编辑等。
+借助 Screenity，您可以前所未有地录制和标注屏幕, 更好地录制工作、教育等内容，为学生提供情景反馈、详细的解释，或者只是向潜在客户展示您的产品。
+
+### [股票基金助手 - 盯盘助手](https://chrome.google.com/webstore/detail/%E8%82%A1%E7%A5%A8%E5%9F%BA%E9%87%91%E5%8A%A9%E6%89%8B-%E7%9B%AF%E7%9B%98%E5%8A%A9%E6%89%8B/folafkamgdbhdeejjhohajojeogpoknm?hl=zh-CN)
+
+支持自选A股、港股、美股、基金等产品、实时显示股票基金等数据
+显示自选股票、基金、债券等行情等信息，数据实时准确，并且可以实时查看自选实时价格走势及收益情况；
+
+### [自选基金助手 - 实时查看基金涨跌幅](https://chrome.google.com/webstore/detail/%E8%87%AA%E9%80%89%E5%9F%BA%E9%87%91%E5%8A%A9%E6%89%8B-%E5%AE%9E%E6%97%B6%E6%9F%A5%E7%9C%8B%E5%9F%BA%E9%87%91%E6%B6%A8%E8%B7%8C%E5%B9%85/dhdelcemeednchdmijiocipbjlknndff)
+
+一款开源的插件，可以用来查看您的自选基金的实时估值情况，可以自由的增减自选基金。您的自选基金数据会跟随账号同步。
+
+### [Library Detector For Chrome](https://chrome.google.com/webstore/detail/library-detector/cgaocdmhkmfnkdkbnckgmpopcbpaaejo?hl=en)
+
+Github 地址：https://github.com/johnmichel/Library-Detector-for-Chrome
+
+The Library Detector extension discovers which JavaScript libraries are being utilized on webpages that you visit and displays their icons on the Chrome Menu.
+
+
 ### [划词翻译](https://hcfy.limingkai.cn/#%E7%89%B9%E7%82%B9)
 
 划词翻译是一款能用于 Chrome、Firefox 和 Microsoft Egde 浏览器的扩展程序，划词翻译的目标是让浏览任意语言的网站都能变得无比轻松：

@@ -10,6 +10,29 @@ categories:
 date: 2018-02-11 11:17:24
 ---
 
+## 新属性
+
+### https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLInputElement/setSelectionRange
+
+### 老属性详解
+
+### https://www.joshwcomeau.com/css/transforms/
+
+
+## 老属性不一样玩法
+
+
+
+## JS 中的基本类型为什么会有方法？
+
+https://medium.com/weekly-webtips/autoboxing-in-javascript-a368b42d8969
+
+
+## Multi-line strings in JavaScript and Node.js
+
+https://tomasz.janczuk.org/2013/05/multi-line-strings-in-javascript-and.html
+
+
 ## 中文乱码
 
 https://github.com/justjavac/unicode-encoding-error-table

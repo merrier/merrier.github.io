@@ -11,6 +11,117 @@ categories:
 date: 2018-09-30 18:24:04
 ---
 
+## Movist Pro
+
+官网：https://movistprime.com/
+破解版：https://www.macwk.com/soft/movist
+
+强大稳定的视频播放器，建议支持正版
+
+## Hammerspoon
+
+官网：http://www.hammerspoon.org/
+Github 地址：https://github.com/Hammerspoon/hammerspoon
+
+This is a tool for powerful automation of OS X. At its core, Hammerspoon is just a bridge between the operating system and a Lua scripting engine. What gives Hammerspoon its power is a set of extensions that expose specific pieces of system functionality, to the user.
+
+Mac 自动化工具
+
+## LosslessCut
+
+Github 地址：https://github.com/mifi/lossless-cut
+
+LosslessCut aims to be the ultimate cross platform FFmpeg GUI for extremely fast and lossless operations on video, audio, subtitle and other related media files. 视频、音频剪辑软件
+
+## Notable
+
+官网：https://notable.app/#
+Github 地址：https://github.com/notable/notable
+
+I couldn't find a note-taking app that ticked all the boxes I'm interested in: notes are written and rendered in GitHub Flavored Markdown, no WYSIWYG, no proprietary formats, I can run a search & replace across all notes, notes support attachments, the app isn't bloated, the app has a pretty interface, tags are indefinitely nestable and can import Evernote notes (because that's what I was using before).
+
+So I built my own.
+
+## ZoomIt
+
+官网：https://docs.microsoft.com/zh-cn/sysinternals/downloads/zoomit
+
+ZoomIt is a screen zoom and annotation tool for technical presentations that include application demonstrations. ZoomIt runs unobtrusively in the tray and activates with customizable hotkeys to zoom in on an area of the screen, move around while zoomed, and draw on the zoomed image. I wrote ZoomIt to fit my specific needs and use it in all my presentations.
+
+ZoomIt works on all versions of Windows and you can use pen input for ZoomIt drawing on tablet PCs.
+
+## LICEcap
+
+官网：https://www.cockos.com/licecap/
+Github 地址：https://www.github.com/justinfrankel/licecap.git
+
+录屏软件，支持 Windows、Mac
+
+
+## Imagine
+
+Github 地址：https://github.com/meowtec/Imagine
+
+Imagine is a desktop app for compression of PNG and JPEG, with a modern and friendly UI.支持 Windows、Mac、Linux
+
+## Free Download Manager
+
+官网：https://www.freedownloadmanager.org/zh/
+
+
+Free Download Manager能加速下載所有類型的資料、影片、種子。它在 Windows、macOS作業系統上是一款聰明且快速的網路下載管理器。
+
+
+## Wolai
+
+官网：https://www.wolai.com/
+
+
+唯一一款中文化的笔记 app，对中文环境进行了很多功能和设计上的优化，更符合中文用户的使用习惯，比如输入「》」也能实现「>」的效果。除此以外，还对页面关系图进行了优化。这些优化能够更好地帮助我们厘清页面之间的联系，在回顾阶段会有良好的引导作用。
+
+
+## Obsidian
+
+官网：https://obsidian.md/
+
+专注于双向链接和页面关系图的笔记 app，但它的特别之处是本地编辑和本地存储，把数据安全交到你手里。最直接的好处就是响应速度极快，不会出现因为网络问题而无法使用的情况。但因本质上是 Markdown 笔记，所以《Obsidian》无法进行段落内容的互相引用，只能是标题互相引用。另外，它还支持各种插件，你可以根据自己的需要选用插件。所以你还可以做一些其他笔记软件无法做到的事情，比如录音、随机复习笔记、快速新建卡片盒笔记等。几乎支持所有平台
+
+
+## Roam Research
+
+官网：https://roamresearch.com/
+
+《Roam Research》引进的双向链接和关系图帮我们更好地建立起了笔记之间的联系。此外，《Roam Research》的块引用、页面别名、逻辑词筛选内容等强大功能增强了我们做笔记的能力，更多内容可阅读[《秒杀传统型笔记！支持 Markdown 和双向链接的 Roam Research 为什么这么强？》](https://mp.weixin.qq.com/s/6Rm8xLgK5jeLjAxxGxLKwQ)。支持 Windows、Mac 和 Linux。
+
+
+## 010 Editor
+
+官网：https://www.sweetscape.com/download/010editor/
+
+可以用来查看文件的二进制数据，支持 Windows、Mac、Linux
+
+
+## Fontmin
+
+官网：https://ecomfe.github.io/fontmin/
+Github 地址：https://github.com/ecomfe/fontmin-app
+
+Fontmin 是第一个纯 JavaScript 实现的字体子集化方案，Fontmin App 是它的客户端，提供了 Mac OS X、Windows 平台下的发行版。
+
+## 闪点清单
+
+官网：https://flicker.cool/
+
+一款不一样的悬浮清单软件
+『在你身边，却不打扰』
+支持 Windows、Mac、iOS、Android
+
+## utools
+
+官网：https://u.tools/
+
+自由集成丰富插件，快速匹配「场景功能」，用完即走，支持 Windows、Mac、Linux
+
 ## Duplicate Manager Pro
 
 官网：http://www.greenworldsoft.com/#Duplicate_Manager_Pro

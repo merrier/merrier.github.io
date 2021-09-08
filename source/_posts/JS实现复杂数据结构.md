@@ -20,17 +20,17 @@ javascript 里面是没有哈希表的，而在 java、C#、C++ 中会经常用�
 
 ### 加入函数
 
-| 函数名                  | 说明          | 返回值    | 
-|----------------------|-------------|--------| 
-| add(key,value)     | 添加项         | 无      | 
-| getValue(key)        | 根据key取值     | object | 
-| remove(key)          | 根据key删除一项   | 无      | 
-| containsKey(key)     | 是否包含某个key   | bool   | 
-| containsValue(value) | 是否包含某个值     | bool   | 
-| getValues()          | 获取所有的值的数组   | array  | 
-| getKeys()            | 获取所有的key的数组 | array  | 
-| getSize()            | 获取项总数       | int    | 
-| clear()              | 清空哈希表       | 无      | 
+| 函数名                  | 说明          | 返回值    |
+|----------------------|-------------|--------|
+| add(key,value)     | 添加项         | 无      |
+| getValue(key)        | 根据key取值     | object |
+| remove(key)          | 根据key删除一项   | 无      |
+| containsKey(key)     | 是否包含某个key   | bool   |
+| containsValue(value) | 是否包含某个值     | bool   |
+| getValues()          | 获取所有的值的数组   | array  |
+| getKeys()            | 获取所有的key的数组 | array  |
+| getSize()            | 获取项总数       | int    |
+| clear()              | 清空哈希表       | 无      |
 
 ### 代码实现
 
@@ -108,38 +108,38 @@ $("#div1").text(manHT.getValue("p1"));
 
 ### 加入函数
 
-| 函数名              | 说明           | 返回值    | 
-|------------------|--------------|--------| 
-| push(element(s)) | 添加几个元素到栈顶    | 无      | 
-| pop()            | 移除并返回栈顶元素    | object | 
-| peek()           | 返回栈顶元素       | object | 
-| isAmpty          | 检查栈是否为空      | bool   | 
-| clear            | 移除栈中所有元素     | 无      | 
-| size             | 返回栈中元素个数     | int    | 
-| print            | 以字符串显示栈中所有内容 | string | 
-| top              | 记录栈顶位置       | int    | 
+| 函数名              | 说明           | 返回值    |
+|------------------|--------------|--------|
+| push(element(s)) | 添加几个元素到栈顶    | 无      |
+| pop()            | 移除并返回栈顶元素    | object |
+| peek()           | 返回栈顶元素       | object |
+| isAmpty          | 检查栈是否为空      | bool   |
+| clear            | 移除栈中所有元素     | 无      |
+| size             | 返回栈中元素个数     | int    |
+| print            | 以字符串显示栈中所有内容 | string |
+| top              | 记录栈顶位置       | int    |
 
 
 ### 代码实现
 
 ```javascript
 function Stack(){
-  this.dataStore = [];//保存栈内元素  
-  this.top = 0; 
-  this.push=function (element) {  
-      this.dataStore[this.top++] = element;//添加一个元素并将top+1  
-  },  
-  this.peek=function () {  
-      return this.dataStore[this.top-1];//返回栈顶元素  
-  },  
-  this.pop=function () {  
-      return this.dataStore[--this.top];//返回栈顶元素并将top-1  
-  },  
-  this.clear=function () {  
-      this.top = 0;//将top归0     
-  },  
-  this.size=function () {  
-      return this.top;//返回栈内的元素个数  
+  this.dataStore = [];//保存栈内元素
+  this.top = 0;
+  this.push=function (element) {
+      this.dataStore[this.top++] = element;//添加一个元素并将top+1
+  },
+  this.peek=function () {
+      return this.dataStore[this.top-1];//返回栈顶元素
+  },
+  this.pop=function () {
+      return this.dataStore[--this.top];//返回栈顶元素并将top-1
+  },
+  this.clear=function () {
+      this.top = 0;//将top归0
+  },
+  this.size=function () {
+      return this.top;//返回栈内的元素个数
   },
   this.isAmpty = function() {
       return this.dataStore.length === 0;//确定栈是否为空
@@ -153,16 +153,16 @@ function Stack(){
 ### 使用示例
 
 ```javascript
-var lk=new Stack();  
-lk.push("likeke");  
-lk.push("zhangsan");  
-lk.push("wangwu");  
-lk.peek();//"wangwu"  
-lk.size();3  
-lk.pop();//"wangwu"  
-lk.peek();//"zhangsan"  
-lk.clear();  
-lk.peek();//undefind  
+var lk=new Stack();
+lk.push("likeke");
+lk.push("zhangsan");
+lk.push("wangwu");
+lk.peek();//"wangwu"
+lk.size();3
+lk.pop();//"wangwu"
+lk.peek();//"zhangsan"
+lk.clear();
+lk.peek();//undefind
 lk.size();0
 ```
 
@@ -179,16 +179,16 @@ lk.size();0
 
 ### 加入函数
 
-| 函数名      | 说明               | 返回值    | 
-|----------|------------------|--------| 
-| enqueue  | 在队列的末尾添加一个元素     | 无      | 
-| dequeue  | 出队，删除队列的第一个元素并返回 | object | 
-| front    | 取出队列的第一个元素       | object | 
-| back     | 取出队列的最后一个元素      | object | 
-| toString | 将队列中的元素以字符串形式输出  | string | 
-| empty    | 判断队列是否为空         | bool   | 
-| count    | 返回队列中元素的个数       | int    | 
-| clear    | 清楚队列             | 无      | 
+| 函数名      | 说明               | 返回值    |
+|----------|------------------|--------|
+| enqueue  | 在队列的末尾添加一个元素     | 无      |
+| dequeue  | 出队，删除队列的第一个元素并返回 | object |
+| front    | 取出队列的第一个元素       | object |
+| back     | 取出队列的最后一个元素      | object |
+| toString | 将队列中的元素以字符串形式输出  | string |
+| empty    | 判断队列是否为空         | bool   |
+| count    | 返回队列中元素的个数       | int    |
+| clear    | 清楚队列             | 无      |
 
 ### 代码实现
 
@@ -219,7 +219,7 @@ function Queue(){
             return true;
         }else{
             return false;
-        }    
+        }
     },
     this.count = function(){//返回数组中元素的个数
         return this.dataStore.length;
@@ -254,24 +254,24 @@ console.log(q.back());//Jennifer
 
 ### 加入函数
 
-| 函数名                       | 说明                         | 返回值    | 
-|---------------------------|----------------------------|--------| 
-| value(_key)               | 根据key的值来获取value值           | value  | 
-| add(_key,_value)"       | 往链表的尾部加入一个节点               | value  | 
-| insert(_key,node)"      | 从某节点之后插入新节点node            | 无      | 
-| insertBefore(_key,node) | 从某节点之后插入新节点node            | 无      | 
-| remove(_key)              | 从链表中移除一个key                | 无      | 
-| removeAt(n)               | 删除指定位置的节点                  | 无      | 
-| removeAll                 | 清空链表                       | 无      | 
-| exists(_key)              | 检查链表类中是否存在一个key            | bool   | 
-| getJSON                   | 转换成JSON字符串                 | str    | 
-| getArrayJSON              | 将所有节点的value转换成JSON字符串，数组格式 | array  | 
-| getNodeByIndex            | 取第N个位置的节点（头节点为第0个位置）       | node   | 
-| getNodeByValue            | 查询值为V的节点（返回第一个找到的）         | node   | 
-| print                     | 打印输出所有节点                   | string | 
-| sort                      | 对链表进行排序                    | 无      | 
-| hasSameValueNode          | 测试单链表L中是否有重复元素             | bool   | 
-| reverseSingleLink         | 单链表元素反转                    | link   | 
+| 函数名                       | 说明                         | 返回值    |
+|---------------------------|----------------------------|--------|
+| value(_key)               | 根据key的值来获取value值           | value  |
+| add(_key,_value)"       | 往链表的尾部加入一个节点               | value  |
+| insert(_key,node)"      | 从某节点之后插入新节点node            | 无      |
+| insertBefore(_key,node) | 从某节点之后插入新节点node            | 无      |
+| remove(_key)              | 从链表中移除一个key                | 无      |
+| removeAt(n)               | 删除指定位置的节点                  | 无      |
+| removeAll                 | 清空链表                       | 无      |
+| exists(_key)              | 检查链表类中是否存在一个key            | bool   |
+| getJSON                   | 转换成JSON字符串                 | str    |
+| getArrayJSON              | 将所有节点的value转换成JSON字符串，数组格式 | array  |
+| getNodeByIndex            | 取第N个位置的节点（头节点为第0个位置）       | node   |
+| getNodeByValue            | 查询值为V的节点（返回第一个找到的）         | node   |
+| print                     | 打印输出所有节点                   | string |
+| sort                      | 对链表进行排序                    | 无      |
+| hasSameValueNode          | 测试单链表L中是否有重复元素             | bool   |
+| reverseSingleLink         | 单链表元素反转                    | link   |
 
 
 ### 代码实现
@@ -495,10 +495,14 @@ var linkTest = new SingleLink();
     linkTest.insert('C');
     linkTest.insert('D');
     linkTest.print();//A B C D
- 
+
     var newLink = reverseSingleLink(linkTest);
     newLink.print();//D C B A
 ```
+
+## 二叉堆
+
+todo: https://www.zoo.team/article/binary-heap-with-js
 
 ### 参考文章
 

@@ -9,6 +9,116 @@ categories:
 date: 2018-01-28 20:43:57
 ---
 
+## 新的属性
+
+
+### 老属性详解
+
+### https://www.joshwcomeau.com/css/transforms/
+
+
+
+## 老属性，新用法
+
+### https://juejin.cn/post/6992018973856383013
+
+
+
+## https://juejin.cn/post/6987565731881680903
+
+
+## https://www.zhangxinxu.com/wordpress/2018/11/css-filter-hue-rotate-button/
+
+
+
+## https://stackoverflow.com/questions/55728810/understanding-css-syntax
+
+
+## https://mp.weixin.qq.com/s/NnZoe5rvIMw6A-WA3BoPEw
+
+
+## https://lea.verou.me/2021/05/82-of-developers-get-this-3-line-css-quiz-wrong/
+
+
+## https://www.smashingmagazine.com/2021/05/css-container-queries-use-cases-migration-strategies/
+
+## https://mp.weixin.qq.com/s/gxe5QOVt9kRFWvXx-gugbg
+
+## New aspect-ratio CSS property supported in Chromium, Safari Technology Preview, and Firefox Nightly
+
+https://web.dev/aspect-ratio/
+
+
+## 一行CSS实现全站中文简繁转换
+
+https://www.zhangxinxu.com/wordpress/2021/01/css-simplified-traditional-chinese/
+
+
+## Understanding Clip Path in CSS
+
+https://ishadeed.com/article/clip-path/
+
+## 一个 div 画出五环
+
+这个作者还有很多其他有意思的实现
+
+https://space.bilibili.com/451368848
+
+
+## 纯 CSS 制作赛博朋克 2077 “故障风”按钮
+
+https://juejin.cn/post/6908565208596217863
+
+## CSS text-combine-upright 竖行横书组合
+
+http://www.deathghost.cn/article/css/86
+
+
+## Ten modern layouts in one line of CSS
+
+https://web.dev/one-line-layouts/
+
+
+## 利用 shape-outside 实现截断和查看全文
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/shape-outside
+
+https://codepen.io/shuyankwok/pen/dWJgpx?__cf_chl_jschl_tk__=0ea8c65b6ccb5002465b1780b986baf0e7b6477f-1586863791-0-ATg7XS7EoGqjABuAyFNfZuykvMd6VL6FfeI83VIFJzuvzX3SNCRZhCYsLbibJkuCr6zgs2XhYM6qf5cABHCovZsfqkiHD8JNWgHvdlBQjK9lTf_dk3iofDKaB5CQEAUw-RBbNxlelkuc8YA0w7wDTauslFwTDMELIyeckV8WNKp9wKC9DcmYM7Ahxow6s6H4S6-JLPJ8CwOt2txmAFUXE_BQTM8Tn2vzQ7HB5S6ixDnCuGPquRUsajZPFJV_9z_YLp0uRepKcixD78rPsQlTcOIdupr00gC9KA5sT-euos3x5bUlDc7X3g5SVBOyxpWI31O8mwzhrR_XDz1ZEsfYuRXrAL9FGBaiAx_dh_4WcZ8h
+
+
+## 不可思议，纯 css 都能图片滚动
+
+https://juejin.cn/post/6895584191073927175
+
+
+## 图片加载失败后CSS样式处理最佳实践
+
+https://www.zhangxinxu.com/wordpress/2020/10/css-style-image-load-fail/
+
+
+### 关于 :is()
+
+https://webdesign.tutsplus.com/articles/new-css-is-for-easy-element-targeting--cms-34223
+
+
+### Clipping, Clipping, and More Clipping!
+
+这个人把 clip-path 玩的炉火纯青。。下面这几篇文章都很有意思：
+
+https://css-tricks.com/using-css-clip-path-create-interactive-effects/
+https://css-tricks.com/clipping-clipping-and-more-clipping/
+https://css-tricks.com/using-css-clip-path-to-create-interactive-effects-part-ii/
+
+### 异步加载 CSS 最简单的方案
+
+https://www.filamentgroup.com/lab/load-css-simpler/
+
+### 伪元素
+
+https://blog.csdn.net/qq_35630674/article/details/97398054
+
+https://www.coder.work/article/1751860
+
 ### word-break VS overflow-wrap
 
 https://developer.mozilla.org/zh-CN/docs/Web/CSS/overflow-wrap

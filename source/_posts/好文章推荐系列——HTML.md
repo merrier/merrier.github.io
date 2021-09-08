@@ -10,6 +10,9 @@ img: /images/hexo_thumbnail_149.png
 date: 2017-08-07 16:28:59
 ---
 
+### [HEAD](https://github.com/joshbuchea/HEAD)
+
+A simple guide to HTML `<head>` elements
 
 ### [常用的 HTML 头部标签](https://github.com/yisibl/blog/issues/1)
 

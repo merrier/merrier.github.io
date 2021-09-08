@@ -10,6 +10,63 @@ categories:
 date: 2018-10-21 21:40:19
 ---
 
+## 一些 VSCode 插件
+
+https://juejin.cn/post/6888445326470938637
+
+### https://github.com/unbug/codelf#codelf-for-vs-code
+
+
+## https://marketplace.visualstudio.com/items?itemName=SimonSiefke.svg-preview
+
+### https://github.com/microsoft/codetour
+
+
+### https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow
+
+
+### https://github.com/microsoft/codetour
+
+
+## CodeSnap
+
+https://marketplace.visualstudio.com/items?itemName=adpyke.codesnap
+
+
+## carbon-now-sh
+
+https://marketplace.visualstudio.com/items?itemName=ericadamski.carbon-now-sh
+
+
+## VSC Netease Music
+
+https://marketplace.visualstudio.com/items?itemName=nondanee.vsc-netease-music
+
+
+## Bracketeer
+
+https://marketplace.visualstudio.com/items?itemName=pustelto.bracketeer
+
+## Power Mode
+
+https://marketplace.visualstudio.com/items?itemName=hoovercj.vscode-power-mode
+
+
+## GitLens — Git supercharged
+
+https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens
+
+
+## Icônes for VS Code
+
+https://github.com/afzalsayed96/vscode-icones
+
+VS Code Extenstion for Icônes, an Icon Explorer with Instant searching powered by Iconify
+
+
+
+
+
 ## Polacode 插件，用来分享代码
 
 https://github.com/octref/polacode

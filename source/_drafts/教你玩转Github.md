@@ -11,6 +11,12 @@ categories:
 date: 2018-06-22 10:24:50
 ---
 
+
+## +1s
+
+https://github.com/justjavac/1s
+
+
 ## 其他人总结的一些技巧
 
 https://jishuin.proginn.com/p/763bfbd3147f
@@ -18,6 +24,9 @@ https://jishuin.proginn.com/p/763bfbd3147f
 
 
 ## 个性化 Github 个人主页
+
+这里总结了很多有意思的个人主页：https://awesomegithubprofile.tech/
+
 
 https://github.com/chokcoco
 
