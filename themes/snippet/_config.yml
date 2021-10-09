@@ -65,7 +65,8 @@ jsonContent:
 ## 网站公告设置
 notification: |-
             <p>
-                网站源码：<a href="https://github.com/merrier/merrier.github.io" title="star me" target="_blank">merrier.github.io</a> <br/>
+                省钱秘籍：<a href="http://xikeduo.merrier.wang" title="xikeduo" target="_blank">喜客多</a> <br/>
+                网站源码：<a href="https://github.com/merrier/merrier.github.io" title="source code" target="_blank">merrier.github.io</a> <br/>
                 公司招聘：<a href="https://job.bytedance.com/campus/position" title="内推" target="_blank">内推码：HVWAXEB</a> <br/>
                 代码集合：<a href="https://github.com/merrier/web-demo">Web Demo</a><br />
                 <hr>

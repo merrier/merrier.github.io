@@ -16,8 +16,6 @@ date: 2018-02-11 11:17:24
 
 ### 老属性详解
 
-### https://www.joshwcomeau.com/css/transforms/
-
 
 ## 老属性不一样玩法
 

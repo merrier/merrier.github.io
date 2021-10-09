@@ -12,6 +12,36 @@ tags:
 
 分享一些 NPM 库或者其他实用的工具
 
+## tmux
+
+Github 地址：https://github.com/tmux/tmux
+
+tmux is a terminal multiplexer: it enables a number of terminals to be created, accessed, and controlled from a single screen. tmux may be detached from a screen and continue running in the background, then later reattached.
+
+This release runs on OpenBSD, FreeBSD, NetBSD, Linux, OS X and Solaris.
+
+Terminal 分屏神器
+
+## Emmet
+
+官网：https://docs.emmet.io/
+
+Emmet takes the snippets idea to a whole new level: you can type CSS-like expressions that can be dynamically parsed, and produce output depending on what you type in the abbreviation. Emmet is developed and optimised for web-developers whose workflow depends on HTML/XML and CSS, but can be used with programming languages too.
+
+研发必备，用写 CSS 的方式写 HTML，研发效率大大提升
+
+## bat
+
+Github 地址：https://github.com/chinanf-boy/bat-zh
+
+一个 `cat(1)` 克隆，搭配语法高亮和Git集成。`cat` 的替代品
+
+## Consola
+
+Github 地址：https://github.com/unjs/consola
+
+Elegant Console Logger for Node.js and Browser
+
 ## zx
 
 Github 地址：https://github.com/google/zx

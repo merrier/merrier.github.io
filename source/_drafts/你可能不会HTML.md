@@ -14,6 +14,11 @@ date: 2017-08-04 16:22:08
 
 这是一篇总结类的文章，因为大部分人都觉得HTML代码是“史上最简单的语言”，但是其实有很多特性你并没有用过，或者说都没有听说过，所以这一篇文章可以让你领略到HTML的独特魅力。
 
+## input 外层包 form 可以支持回车搜索
+
+https://blog.csdn.net/daipianpian/article/details/108075817
+
+
 ### progress 标签
 
 张鑫旭推荐的进度条实现姿势：https://c.runoob.com/codedemo/5637/

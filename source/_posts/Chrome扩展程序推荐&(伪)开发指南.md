@@ -16,6 +16,15 @@ chrome 作为 Google 公司研发的一款网页浏览器，其诞生之初就�
 
 ## 扩展程序推荐
 
+### [daily.dev | The Homepage Developers Deserve](https://chrome.google.com/webstore/detail/dailydev-the-homepage-dev/jlmpjdjjbgclbocgajdjefcidcncaied)
+
+Get a feed of the hottest developer news personalized to you.
+Hi there busy developer 👋
+
+daily.dev is the fastest growing online community for developers to stay updated on the best developer news. Get all the content you love in one place -- CSS-Tricks, Smashing Magazine, web.dev, and +400 sources.
+
+In other words, stop wasting time searching for high-quality articles. Just install daily.dev, open a new tab, and you're all set.
+
 ### [The Marvellous Suspender](https://chrome.google.com/webstore/detail/the-marvellous-suspender/noogafoofpebimajpfpamcfhoaifemoa?hl=en)
 
 Make your computer run smoothly by suspending the tabs you aren't using

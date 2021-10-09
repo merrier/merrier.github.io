@@ -11,6 +11,21 @@ categories:
 date: 2018-09-30 18:24:04
 ---
 
+## YesPlayMusic
+
+Github 地址：https://github.com/qier222/YesPlayMusic
+官网：https://music.qier222.com/
+
+高颜值的第三方网易云播放器
+
+<div align='center'><img src='//raw.githubusercontent.com/qier222/YesPlayMusic/master/images/library.png' alt='' /></div>
+
+## TinyPNG4Mac
+
+Github 地址：https://github.com/kyleduo/TinyPNG4Mac/blob/master/README_ZH.md
+
+这是TinyPNG的Mac客户端。TinyPNG提供了PNG图片的“几乎无损”压缩服务。使用TinyPNG4Mac，你可以通过简单的拖拽完成对PNG图片的压缩，无需打开浏览器，无需手动下载图片。
+
 ## Movist Pro
 
 官网：https://movistprime.com/
