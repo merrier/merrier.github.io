@@ -2,7 +2,7 @@
 #!/bin/bash
 # author：merrier
 # website：https://github.com/merrier
-# slogan：叩首问路，码梦为生。
+# slogan：总有人间一两风，填我十万八千梦。
 #--------------------------------------------
 
 #定义时间
