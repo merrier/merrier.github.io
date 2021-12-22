@@ -269,7 +269,7 @@ pre {
 }
 .main-header .main-header-box .branding h2 {
   font-family: "STXingkai", "KaiTi", "Microsoft YaHei", "SimSun", sans-serif;
-  width: 320px;
+  /* width: 320px; */
   margin: 0 auto;
   letter-spacing: 3px;
   color: #e67e22;
