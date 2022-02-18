@@ -10,6 +10,15 @@ img: /images/hexo_thumbnail_149.png
 date: 2017-08-07 16:28:59
 ---
 
+### [SVG 入门指南(看完,对SVG结构不在陌生)](https://juejin.cn/post/6844904017273815048)
+
+SVG，即可缩放矢量图形(Scalable Vector Graphics)，是一种 XML 应用，可以以一种简洁、可移植的形式表示图形信息。目前，人们对 SVG 越来越感兴趣。大多数现代浏览器都能显示 SVG 图形，并且大多数矢量绘图软件都能导出 SVG 图形。
+
+
+### [深入理解Shadow DOM v1](https://juejin.cn/post/6844903841033355271)
+
+Shadow DOM是用于创建Web组件的主要技术之一，另外两个是自定义元素和HTML模板。 Web 组件的规范最初是由Google提出的，用于简化Web小部件的开发。本教程的范围仅限于shadow DOM。
+
 ### [HEAD](https://github.com/joshbuchea/HEAD)
 
 A simple guide to HTML `<head>` elements

@@ -11,6 +11,19 @@ categories:
 date: 2018-06-22 10:24:50
 ---
 
+## 更好的国际化方案
+
+https://gitlocalize.com/
+
+
+
+## readme 里面添加 fossa status
+
+https://github.com/tauri-apps/tauri/blob/next/README.md
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ftauri-apps%2Ftauri.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Ftauri-apps%2Ftauri?ref=badge_large)
+
+
 
 ## +1s
 

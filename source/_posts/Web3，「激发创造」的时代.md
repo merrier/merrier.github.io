@@ -147,6 +147,8 @@ NFT 的全称是 Non-Fungible Tokens，中文常翻译为“不可同质化代�
 
 而非同质化则意味着独一无二，不可替代。NFT 可以用来代表现实中的一些商品，也可以被买卖，但是存在方式是**无形的**。因此，我们可以把 NFT 理解为发行在区块链上的数字资产。
 
+<div align='center'><img src='/images/hexo_post_780.png' alt='' width=''/></div>
+
 2017 年 3 月 11 日，「CryptoPunk 7804」 以 4200 枚ETH（约合 757 万美元）的高价售出，成为历史成交价最高的 NFT 加密艺术品。该记录的上一个保持者 「CryptoPunk 6965」 的售价仅为 800 枚ETH（约合 154 万美元），瞬间将该记录提高到了原先的 5 倍之多，而这之间仅仅相隔了不到一个月。
 
 <div align='center'><img src='/images/hexo_post_763.png' alt='' width=''/></div>

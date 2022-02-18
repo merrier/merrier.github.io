@@ -11,6 +11,20 @@ img:
 
 ## 需要提供的功能
 
+
+### 引流到公众号
+
+https://github.com/shfshanyue/op-note/blob/master/blog-to-wechat.md
+
+
+## 解析 Markdown
+
+https://mp.weixin.qq.com/s/hu0jPvPjCenOKGmJpQW5DA，unified，dumi[22] 是一款为组件开发场景定制的文档工具，其核心功能就是将 Markdown 文档转换为 HTML 页面。查看其源码，我们会发现其使用了 unified 作为转换器，在 remark/index.ts[23] 中引入了 unified，并调用了一些列自定义的或者社区提供的插件进行处理。
+
+由于使用了非常多的自定义插件，dumi 源码可以作为极佳的 unified 插件开发参考例子。例如参考 link.ts[24]，可以了解如何将 Markdown 中的外部链接，通过修改 AST，在生成的页面中增加一个链接小图标，提示用户这是一个指向外部站点的链接。
+
+
+
 ## 自动压缩图片
 
 https://github.com/kornelski/pngquant

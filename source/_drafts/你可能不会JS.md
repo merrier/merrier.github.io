@@ -19,6 +19,9 @@ date: 2018-02-11 11:17:24
 
 ## 老属性不一样玩法
 
+### Event.isTrusted
+
+https://developer.mozilla.org/en-US/docs/Web/API/Event/isTrusted
 
 
 ## JS 中的基本类型为什么会有方法？

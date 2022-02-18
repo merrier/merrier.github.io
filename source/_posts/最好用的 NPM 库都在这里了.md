@@ -10,7 +10,273 @@ tags:
   - 推荐
 ---
 
+
 分享一些 NPM 库或者其他实用的工具
+
+## unified
+
+官网：https://unifiedjs.com/
+
+unified 是一套文本处理相关的生态体系，结合其生态上的相关插件，能够处理 Markdown、HTML、自然语言等。而 unified 库本身又作为一个统一的执行接口，担任执行器的角色，调用其生态上相关的插件完成处理任务。
+
+从 unified 官网上可以看到，目前 unified 的使用非常广泛，包括 Prettier、Node.js 官网、Gatsby 都运用了 unified 的能力完成了一些功能。
+
+常见的使用场景包括：
+
+* 基于 Markdown 生成 HTML 页面和站点
+* Markdown/HTML 内容加工处理
+* Markdown 语法检查、格式化
+* 作为底层库，封装特定场景的工具
+
+## React-ellipsis-component
+
+Github 地址：https://github.com/chenquincy/react-ellipsis
+
+高性能、可自定义的 react 文本缩略组件。支持自定义缩略符、html 自定义缩略符、尾文本过滤、缩略回调等功能。
+
+## ghq
+
+Github 地址：https://github.com/x-motemen/ghq
+
+'ghq' provides a way to organize remote repository clones, like go get does. When you clone a remote repository by ghq get, ghq makes a directory under a specific root directory (by default ~/ghq) using the remote repository URL’s host and path.
+
+```bash
+$ ghq get https://github.com/x-motemen/ghq
+# Runs `git clone https://github.com/x-motemen/ghq ~/ghq/github.com/x-motemen/ghq`
+```
+
+## 瓦雀
+
+Github 地址：https://github.com/yesmeck/waque
+
+> 双双瓦雀行书案，点点杨花入砚池。 —— 元 叶李《暮春即事》
+
+瓦雀可以帮你把本地的文档（markdown）目录发布到语雀上。
+
+如果你想要...
+
+* 返璞归真，使用 markdown；
+* 选择自己喜欢的编辑器；
+* 把文档维护在 GitHub 上；
+
+瓦雀是你居家旅行，编写文档的必备工具。
+
+
+## daft-auto-spacing
+
+官网：https://zizhengwu.github.io/daft-auto-spacing/
+Github 地址：https://github.com/zizhengwu/daft-auto-spacing
+
+有研究显示，打字的时候不喜欢在中文和英文之间加空格的人，感情路都走得很辛苦，有七成的比例会在 34 岁的时候跟自己不爱的人结婚，而其余三成的人最后只能把遗产留给自己的猫。毕竟爱情跟书写都需要适时地留白。[与大家共勉之](https://github.com/vinta/paranoid-auto-spacing)。
+
+如果真正在意 typography，那么汉字与西文之间应该插入一个半角空格。Adobe InDesign、Microsoft Word 等对中文与西文混合排版支持较好的软件，[都默认增大汉字和西文的间距](http://www.zhihu.com/question/19587406/answer/12298128)。
+
+汉学家称这个空白字元为「盘古之白」，因为它劈开了全形字和半形字之间的混沌，增加了文字的 readability。
+
+如果你是一个虔诚的「空格党」，可以使用这个简单的工具，每当 Plain Text 的场景（例如电子邮件与 V2EX 发帖），在所有的汉字与拉丁字母间添加一个空格。如果原本已经手动添加了空格，这个工具并不会在这之间再添加额外的空格。
+
+## Docusaurus
+
+官网：https://docusaurus.io/
+
+Build optimized websites quickly, focus on your content，基于 React 构建的站点生成器
+
+## editor.js
+
+官网：https://editorjs.io/
+
+Next generation block styled editor.
+Free. Use for pleasure.
+
+## depcheck
+
+NPM 地址：https://www.npmjs.com/package/depcheck
+
+Depcheck is a tool for analyzing the dependencies in a project to see: how each dependency is used, which dependencies are useless, and which dependencies are missing from `package.json`.
+
+## react-animated-numbers
+
+Github 地址：https://github.com/heyman333/react-animated-numbers
+demo 地址：https://optimistic-noyce-cf2473.netlify.app/
+
+Library showing animation of number changes in react.js
+
+## blessed-contrib
+
+Github 地址：https://github.com/yaronn/blessed-contrib
+
+Build dashboards (or any other application) using ascii/ansi art and javascript.
+Friendly to terminals, ssh and developers. Extends [blessed](https://github.com/chjj/blessed) with custom [drawille](https://github.com/madbence/node-drawille) and other widgets.
+
+## relyzer
+
+Github 地址：https://github.com/meowtec/relyzer
+
+React functional component debugger.
+
+## cron-validator
+
+NPM 地址：https://www.npmjs.com/package/cron-validator
+
+Cron Validator is a util that allows you to validate a cron expression, similar to what crontab guru does, but in your code base.
+
+## Bi Sheng
+
+Github 地址：https://github.com/benjycui/bisheng
+
+bisheng is designed to transform Markdown(and other static files with transformers) into static websites and blogs using React.
+
+## Hover
+
+Github 地址：https://github.com/IanLunn/Hover
+官网：http://ianlunn.github.io/Hover/
+
+一个专门提供CSS的hover动效的库，提供了CSS3支持的悬停效果的集合，可应用于链接、按钮、徽标、SVG、特色图像和更多，可用于CSS、Sass 以及其他库。
+
+## Typed
+
+Github 地址：https://github.com/mattboldt/typed.js
+官网：https://mattboldt.com/demos/typed-js/
+
+一个专注打字动画的库，可以让您以选定的速度为字符串创建打字动画。 您还可以在页面上放置HTML div并读取它，以允许搜索引擎和禁用JavaScript的用户访问。
+
+
+## popmotion
+
+Github 地址：https://github.com/popmotion/popmotion
+官网地址：https://popmotion.io/pose/
+
+整个包大小却仅有11KB，精简极致的一个动画库。 它允许开发人员根据动作创建动画和交互，这些动作是可以启动和停止的值流，并使用CSS，SVG，React，Three.js和任何接受数字作为输入的API进行创建。
+
+## Mo.js
+
+Github 地址：https://github.com/mojs/mojs
+官网地址：https://mojs.github.io/
+
+是用于网络的运动图形工具带，具有简单的声明性API，跨设备兼容性和超过1500个单元测试。 您可以在DOME或SVG DOME周围移动内容，或创建唯一的mo.js对象。 尽管文档很少，但示例很多，
+
+## Anime.js
+
+Github 地址：https://github.com/juliangarnier/anime
+
+Anime是一个JavaScript动画库，可与CSS属性，单个CSS转换，SVG或任何DOM属性以及JavaScript对象一起使用。 该库使您可以链接多个动画属性，将多个实例同步在一起，创建时间轴等等。
+
+## boxen
+
+Github 地址：https://github.com/sindresorhus/boxen
+
+可以将 terminal 中的输出增加一个外边框，支持多种样式：
+
+```
+import boxen from 'boxen';
+
+console.log(boxen('unicorn', {padding: 1}));
+/*
+┌─────────────┐
+│             │
+│   unicorn   │
+│             │
+└─────────────┘
+*/
+
+console.log(boxen('unicorn', {padding: 1, margin: 1, borderStyle: 'double'}));
+/*
+
+   ╔═════════════╗
+   ║             ║
+   ║   unicorn   ║
+   ║             ║
+   ╚═════════════╝
+
+*/
+
+console.log(boxen('unicorns love rainbows', {title: 'magical', titleAlignment: 'center'}));
+/*
+┌────── magical ───────┐
+│unicorns love rainbows│
+└──────────────────────┘
+*/
+```
+
+
+## figlet
+
+Github 地址：https://github.com/patorjk/figlet.js
+demo 地址：http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20
+
+可以非常方便的输出类似下面这样的字符：
+
+```
+  _   _      _ _        __        __         _     _ _ _
+ | | | | ___| | | ___   \ \      / /__  _ __| | __| | | |
+ | |_| |/ _ \ | |/ _ \   \ \ /\ / / _ \| '__| |/ _` | | |
+ |  _  |  __/ | | (_) |   \ V  V / (_) | |  | | (_| |_|_|
+ |_| |_|\___|_|_|\___/     \_/\_/ \___/|_|  |_|\__,_(_|_)
+```
+
+## Ora
+
+Github 地址：https://github.com/sindresorhus/ora
+
+可以定制化 terminal 中的加载动画，优雅的转圈圈,让你的等待不再煎熬～
+
+## Inquirer.js
+
+Github 地址：https://github.com/SBoudrias/Inquirer.js
+
+A collection of common interactive command line user interfaces.
+用它可以定制出来一个非常好看的交互式命令行用户界面，用它来定制你的 CLI 吧！
+
+
+## chalk
+
+Github 地址：https://github.com/chalk/chalk
+
+这是一个能给你的 log 染色的库,让你的代码靓起来 !!
+
+## ct.css
+
+Github 地址：https://github.com/csswizardry/ct
+官网：https://csswizardry.com/ct/
+
+Your `<head>` is the single biggest render-blocking part of your page—ensuring it is well-formed is critical. ct.css is a diagnostic CSS snippet that exposes potential performance issues in your page’s `<head>` tags.
+
+## minimist
+
+Github 地址：https://github.com/substack/minimist
+
+parse argument options
+This module is the guts of optimist's argument parser without all the fanciful decoration.
+Vue 官方都在用
+
+## ScrollMagic
+
+Github 地址：https://github.com/janpaepke/ScrollMagic
+官网：https://scrollmagic.io/
+
+The javascript library for magical scroll interactions.
+
+## Multiple.js
+
+Github 地址：https://github.com/NeXTs/Multiple.js
+官网：https://multiple.js.org/
+
+An experiment in sharing background across multiple elements using CSS.
+
+## choreographer-js
+
+Github 地址：https://github.com/christinecha/choreographer-js
+demo 地址：https://christinecha.github.io/choreographer-js/
+
+A simple library to take care of complex CSS animations.
+(You can also add custom functions that do non-CSS animations!)
+
+## chinese-calendar
+
+Github 地址：https://github.com/LKI/chinese-calendar
+
+判断某年某月某一天是不是工作日/节假日。 支持 2004年 至 2022年，包括 2020年 的春节延长。
+
 
 ## tmux
 

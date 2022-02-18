@@ -11,6 +11,71 @@ categories:
 date: 2018-09-30 18:24:04
 ---
 
+## Downie
+
+官网：https://software.charliemonroe.net/downie/
+
+Ever wished you could save a video from the Internet? Search no more, Downie is what you're looking for. Easily download videos from thousands of different sites.
+
+支持 Mac，有免费和付费版，主要用于下载视频，支持 Youtube
+
+## Fig
+
+官网：https://fig.io/
+
+Fig adds VSCode-style autocomplete to your existing terminal. Move faster with Fig.
+
+## 墨记
+
+官网：http://www.moji01.com/
+
+支持 Mac、Windows、iOS、Android
+
+墨记是一款精美排版的日记、笔记应用，拥有设计简洁、简单易用的特点，却同时拥有强大的功能！这个团队还有其他产品：吾记-精美日记、记账鸭-纯净记账本、mDays-纪念日/倒数日/倒计时、知了清单-日程计划、Moice-录音标记的语音记事本
+
+## Windy.app
+
+官网：https://windy.app/
+
+支持 iOS 和 Android
+
+Windy.app is a professional weather app, created for water and wind sports: sailing, surfing, fishing, and etc. Get detailed weather forecast, live world wind map, and local weather reports.
+
+## PTGui
+
+官网：https://ptgui.com/
+
+可以非常方便的将一张全景图裁剪成适合做 3D 图的几张图片，不过中文版本需要付费
+
+## DupHunter
+
+官网：https://www.duphunter.com/download.html
+
+支持 Mac、Windows
+
+Download DupHunter - the easy to use duplicate photo finder software. No complexity. No overkill. No high prices. Download the free trial.
+
+
+## Gridea
+
+官网：https://gridea.dev/
+
+支持 Mac、Windows、Linux
+
+Gridea 是一个静态博客写作客户端，帮助你更容易地构建并管理博客或任何静态站点。
+
+## Focusky
+
+官网：http://www.focusky.com.cn/?zh11
+
+Focusky 是一款免费、高效的动画 PPT 演示制作软件，操作简单，人人都会用，通过无限缩放/旋转/移动 的切换方式，使演示生动有趣，并且效果专业。
+
+## Plexamp
+
+官网：https://plexamp.com/
+
+A beautiful Plex music player for audiophiles, curators, and hipsters.
+
 ## YesPlayMusic
 
 Github 地址：https://github.com/qier222/YesPlayMusic

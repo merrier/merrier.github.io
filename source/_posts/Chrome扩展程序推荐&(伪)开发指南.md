@@ -12,9 +12,78 @@ date: 2017-06-28 17:25:28
 img: /images/hexo_thumbnail_102.jpeg
 ---
 
-chrome 作为 Google 公司研发的一款网页浏览器，其诞生之初就备受关注，从一开始的全年占有率上升幅度最大到如今的全球使用人数最多，chrome 成为了 Google 最值得骄傲的产品之一；而作为前端工程师，和浏览器打交道是最多的，所以如何用好浏览器就成为了一项潜在的技能。chrome 本身就基于其他开源软件所撰写（WebKit、Blink），所以其丰富的扩展程序成为了另一大杀器，下面就分享一下我用的一些扩展程序（排名不分先后，如果你也有用着很爽的插件，欢迎在评论中分享哦～），同时简单的介绍一下自己如果想开发一个 Chrome 扩展程序，应该从何下手。
+chrome 作为 Google 公司研发的一款网页浏览器，其诞生之初就备受关注，从一开始的全年占有率上升幅度最大到如今的全球使用人数最多，chrome 成为了 Google 最值得骄傲的产品之一；而作为前端工程师，和浏览器打交道是最多的，所以如何用好浏览器就成为了一项潜在的技能。chrome 本身就基于其他
+开源软件所撰写（WebKit、Blink），所以其丰富的扩展程序成为了另一大杀器，下面就分享一下我用的一些扩展程序（排名不分先后，如果你也有用着很爽的插件，欢迎在评论中分享哦～），同时简单的介绍一下自己如果想开发一个 Chrome 扩展程序，应该从何下手。
 
 ## 扩展程序推荐
+
+
+### [Web Apps by 123apps](https://chrome.google.com/webstore/detail/web-apps-by-123apps/dpplndkoilcedkdjicmbeoahnckdcnle/related)
+
+A set of easy-to-use web apps for audio and video editing, working with pdf, and file conversion.
+
+Boost your productivity by adding 123apps extension to Chrome! Get instant access to a suite of useful online tools.
+
+### [Automa](https://chrome.google.com/webstore/detail/automa/infppggnoaenmfagbfknfkancpbljcca)
+
+官网：https://www.automa.site/，Automa is a chrome extension for browser automation. From auto-fill forms, doing a repetitive task, taking a screenshot, to scraping data of the website, it's up to you what you want to do with this extension.
+
+
+### [Extensions Reloader](https://chrome.google.com/webstore/detail/extensions-reloader/fimgfedafeadlieiabdeeaodndnlbhid)
+
+Reload all unpacked extensions using the extension's toolbar button or by browsing to "http://reload.extensions"
+
+### [GitHub Hovercard](https://chrome.google.com/webstore/detail/github-hovercard/mmoahbbnojgkclgceahhakhnccimnplk?hl=zh-CN)
+
+这款插件可以让你在使用 GitHub 的时候，很多地方都能弹出悬浮窗，快速显示大量信息。
+
+
+### [OctoLinker](https://chrome.google.com/webstore/detail/octolinker/jlmafbaeoofdegohdhinkhilhclaklkp?hl=zh-CN)
+
+让你看代码的时候，可以进行更高效的代码连接跳转。
+
+
+
+### [Enhanced GitHub](https://chrome.google.com/webstore/detail/enhanced-github/anlikcnbgdeidpacdbdljnabclhahhmd?hl=zh-CN)
+
+这个插件支持在 GitHub 中显示仓库大小、每个文件的大小、显示每个文件的下载链接、直接将文件内容复制到剪贴板、在查看文件内容的同时下载文件。
+
+### [Sourcegraph](https://chrome.google.com/webstore/detail/sourcegraph/dgjhfomjieaadpoljlnidmbgkdffpack?hl=zh-CN)]
+
+让你能在浏览 GitHub 时也能拥有智能提示、转到定义、查找参考，支持20多种语言和其他流行的代码宿主。
+
+
+### [Git History Browser Extension](https://chrome.google.com/webstore/detail/git-history-browser-exten/laghnmifffncfonaoffcndocllegejnf?hl=zh-CN)
+
+当您访问 github、gitlab、bitbucket 中的文件时，会为你的浏览器增加一个 Open in Git History 按钮。
+点击按钮跳转到更清晰的 git 历史页面，展示该文件的历史变更情况。相比直接使用 git log ，这种方式更友好。
+
+### [Personal Blocklist(not by Google)](https://chrome.google.com/webstore/detail/personal-blocklistnot-by/cbbbhelcpfjhdcncigdlkabmjbgokmpg)
+
+此扩展程序从您的 Google 搜索结果中删除了不需要的网站。
+
+该扩展程序的功能：
+1. 只需单击一下，即可从您的 Google 搜索结果中删除不需要的网站。
+2. 如果要显示被阻止的网站，请从阻止列表中删除被阻止的网站。
+3. 导入/导出阻止列表。
+
+### [Convertio](https://chrome.google.com/webstore/detail/convertio/eppjkefeiehhflmgkhdooajgbkkegpcl)
+
+在线将文件从一种格式转换为另一种格式. 支持超过 2500 种不同的转换。
+在线将文件从一种格式转换为另一种格式。
+支持超过 2500 种不同的转换:
+
+✓ 归档转换器 (rar 到 zip, 7z 到 zip, ...)
+✓ 音频转换器 (wav 到 mp3, m4a 到 mp3, ...)
+✓ 文档转换器 (pdf 到 jpg, doc 到 jpg, ...)
+✓ 电子书转换器 (epub 到 pdf, epub 到 mobi, ...)
+✓ 图片转换器 (png 到 ico, png 到 jpg, ...)
+✓ 演示文稿转换器 (ppt 到 pdf, ppt 到 jpg, ...)
+✓ 视频转换器 (mkv 到 mp4, mov 到 mp4, ...)
+✓ PDF工具 (压紧pdf, 合并pdf, 解锁pdf, 网页至pdf)
+✓ OCR（识别文本, 光学字符识别）工具
+
+您可以使用 Google Drive 或 Dropbox：开始转换，退出应用，然后等待文件出现在云端存储即可。
 
 ### [daily.dev | The Homepage Developers Deserve](https://chrome.google.com/webstore/detail/dailydev-the-homepage-dev/jlmpjdjjbgclbocgajdjefcidcncaied)
 

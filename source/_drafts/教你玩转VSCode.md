@@ -11,12 +11,25 @@ date: 2018-10-21 21:40:19
 ---
 
 
+## 这样配置，让你的VS Code好用到飞起！
+
+https://juejin.cn/post/6844904015461875719
+
+
+## Open any GitHub repository in Visual Studio Code
+
+https://open.vscode.dev/
+
+
 ### VSCode 调试代码
 
 https://mp.weixin.qq.com/s/gA-ZEOPQ-IKFV_npo74E7Q
 
 
 ## 一些 VSCode 插件
+
+### https://marketplace.visualstudio.com/items?itemName=youngjuning.yarn-lock-preview
+
 
 https://juejin.cn/post/6888445326470938637
 
@@ -139,6 +152,3 @@ https://juejin.im/entry/5be37703e51d45119b4cf378
 vscode中的正则搜索与替换演示
 
 https://blog.csdn.net/anyuanlzh/article/details/78803322
-
-vscode 开发技巧集锦
-https://mp.weixin.qq.com/s/Yq45kWUDseXTkqyBqS0xLQ
