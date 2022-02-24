@@ -13,6 +13,34 @@ tags:
 
 分享一些 NPM 库或者其他实用的工具
 
+## RSS-proxy
+
+Github 地址：https://github.com/damoeb/rss-proxy
+官网：https://rssproxy-v1.migor.org/
+
+RSS-proxy is a tool that allows you to do create an RSS/ATOM or JSON feed of almost any website, purely by analyzing just the static HTML structure.
+
+RSS 生成工具，可以方便快捷地生成任意网站的 RSS 数据，支持 Atom 或 Json 类型文件
+
+<div align='center'><img src='https://raw.githubusercontent.com/damoeb/rss-proxy/master/docs/rssproxy-candidates.png' alt='' width=''/></div>
+
+## DiceBear
+
+Github 地址：https://github.com/dicebear/dicebear
+官网：https://avatars.dicebear.com/
+
+DiceBear is an avatar library for designers and developers. You can choose between simple identicons and lovely designed characters.
+
+And best of all: We provide a simple and free HTTP API that you can use right away!
+
+头像图片生成工具，支持选择风格和 HTTP OpenAPI
+
+## zx
+
+Github 地址：https://github.com/google/zx
+
+2021 年 Google 的命令行工具 zx 一举获得前端项目新增的 Star 数量头筹，你可以使用它自由的在命令行书写 JS 语法，甚至可以使用我们熟悉的 await 和 promise，可见前端工程师自由的灵魂也来到了 bash 表达式中
+
 ## unified
 
 官网：https://unifiedjs.com/
