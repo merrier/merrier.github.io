@@ -1,5 +1,5 @@
 ---
-title: 读书笔记系列（1）——HTML5移动Web开发指南
+title: 读书笔记-HTML5移动Web开发指南
 urlname: html5-mobile-web-development-guide
 id: 497
 categories:
@@ -150,18 +150,18 @@ Android Browser 浏览器的默认值是 800 像素；IE 浏览器的默认值�
 <link rel="stylesheet" media="screen and(max-width:600px)" href="small.css"/>
 ```
 
-在 small.css 样式文件内，需要定义 media 类型的样式，例如： 
+在 small.css 样式文件内，需要定义 media 类型的样式，例如：
 
 ```css
 @media screen and (max-width:600px){
-  .demo{ background-color: #CCC; } 
+  .demo{ background-color: #CCC; }
 }
 ```
 
 同样也可以判断当移动设备（如 iPad）的方向发生变化时应用该样式。以下代码是当移动设备处于纵向（portrait）模式下时，应用 portrait 样式文件；当移动设备处于横向（landscape）模式下时，应用 landscape 样式文件。
 
 ```html
-<link rel="stylesheet" media="all and(orientation:portrait)" href="portrait.css"/> 
+<link rel="stylesheet" media="all and(orientation:portrait)" href="portrait.css"/>
 <link rel="stylesheet" media="all and(orientation:landscape)" href="landscape.css"/>
 ```
 

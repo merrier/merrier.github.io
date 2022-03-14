@@ -1,5 +1,5 @@
 ---
-title: 读书笔记系列（4）——编写高质量代码-Web前端开发修炼之道
+title: 读书笔记-编写高质量代码-Web前端开发修炼之道
 urlname: the-way-to-practice-web-front-end-development
 id: 509
 categories:
@@ -106,7 +106,7 @@ HTML 标签的设计都是有语义考虑的。下表是部分标签的全称和
 **第一种方法会让父容器也浮动起来，影响父元素后面的元素的布局，有副作用；第二种方法增加了一个空标签，破坏了语义化。第三种方法没有任何副作用，推荐使用。**
 
 ```css
-.clearfix:after { 
+.clearfix:after {
   content: ".";
   display: block;
   height: 0;
@@ -342,7 +342,7 @@ var c = [1，2，3];       // 复杂数据类型
 var d = c;              // 将变量 c 指向的数据的内存地址传给变量d，c 和 b 指向同一份数据
 b++;
 d.push(4);
-alert(a);     // 10 
+alert(a);     // 10
 alert(b);     // 11        变量 b 保存的数据更改不会影响到变量 a
 alert(c);     // 1，2，3，4 变量 c 和 d 指向同一份数据，数据更改会互相影响
 alert(d);     // 1，2，3，4

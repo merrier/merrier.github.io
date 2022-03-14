@@ -1,5 +1,5 @@
 ---
-title: 读书笔记系列（10）——TypeScript入门教程
+title: 读书笔记-TypeScript入门教程
 urlname: typescript-tutorial
 id: 6928487239585
 categories:

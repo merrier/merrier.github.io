@@ -1,5 +1,5 @@
 ---
-title: 读书笔记系列（9）——你不知道的JavaScript（上卷）
+title: 读书笔记-你不知道的JavaScript（上卷）
 urlname: you-dont-know-js-volume1
 id: 1403
 categories:
@@ -113,10 +113,10 @@ JavaScript 引擎首先会在代码执行前对其进行编译，在这个过程
 
 ```javascript
 function foo(str) {
-    "use strict"; 
-    eval( str ); 
-    console.log( a ); // ReferenceError: a is not defined 
-} 
+    "use strict";
+    eval( str );
+    console.log( a ); // ReferenceError: a is not defined
+}
 
 foo( "var a = 2" );
 ```
@@ -130,13 +130,13 @@ with 通常被当作重复引用同一个对象中的多个属性的快捷方式
 ```javascript
 function foo(obj) {
     with (obj) {
-        a = 2; 
+        a = 2;
     }
 }
-var o1 = { 
+var o1 = {
     a: 3
 };
-var o2 = { 
+var o2 = {
     b: 3
 };
 
@@ -167,14 +167,14 @@ with 可以将一个没有或有多个属性的对象处理为一个完全隔离
 某些库通常会在全局作用域中声明一个名字足够独特的变量，通常是一个对象。这个对象被用作库的命名空间，所有需要暴露给外界的功能都会成为这个对象(命名空间)的属性，而不是将自己的标识符暴漏在顶级的词法作用域中：
 
 ```javascript
-var MyReallyCoolLibrary = { 
-    awesome: "stuff", 
+var MyReallyCoolLibrary = {
+    awesome: "stuff",
     doSomething: function() {
-        // ... 
+        // ...
     },
     doAnotherThing: function() {
         // ...
-    } 
+    }
 };
 ```
 
@@ -197,7 +197,7 @@ setTimeout( function() {
 综合考虑而言，始终给函数表达式命名是一个最佳实践（下面的例子叫做行内函数表达式）：
 
 ```javascript
-setTimeout( function timeoutHandler() { // <-- 快看，我有名字了! 
+setTimeout( function timeoutHandler() { // <-- 快看，我有名字了!
     console.log( "I waited 1 second!" );
 }, 1000 );
 ```
@@ -219,7 +219,7 @@ setTimeout( function timeoutHandler() { // <-- 快看，我有名字了!
 var a = 2;
 (function IIFE( global ) {
     var a = 3;
-    console.log( a ); // 3 
+    console.log( a ); // 3
     console.log( global.a ); // 2
 })( window );
 console.log( a ); // 2
@@ -230,7 +230,7 @@ console.log( a ); // 2
 将一个参数命名为 undefined，但是在对应的位置不传入任何值，这样就可以保证在代码块中 undefined 标识符的值真的是 undefined:
 
 ```javascript
-undefined = true; // 给其他代码挖了一个大坑!绝对不要这样做! 
+undefined = true; // 给其他代码挖了一个大坑!绝对不要这样做!
 (function IIFE( undefined ) {
     var a;
     if (a === undefined) {
@@ -243,11 +243,11 @@ undefined = true; // 给其他代码挖了一个大坑!绝对不要这样做!
 
 ```javascript
 var a = 2;
-(function IIFE( def ) { 
+(function IIFE( def ) {
     def( window );
 })(function def( global ) {
     var a = 3;
-    console.log( a ); // 3 
+    console.log( a ); // 3
     console.log( global.a ); // 2
 });
 ```
@@ -274,7 +274,7 @@ ES6 引入的 let 关键字可以将变量绑定到所在的任意作用域中(�
 
 ```javascript
 {
-    console.log( bar ); // ReferenceError! 
+    console.log( bar ); // ReferenceError!
     let bar = 2;
 }
 ```
@@ -291,10 +291,10 @@ ES6 还引入了 const，同样可以用来创建块作用域变量，但是其�
 
 ```javascript
 a = 2;
-var a; 
+var a;
 console.log(a); // 2
 
-console.log(a); // undefined 
+console.log(a); // undefined
 var a = 2;
 ```
 
@@ -302,7 +302,7 @@ var a = 2;
 
 ```javascript
 var a;
-a = 2; 
+a = 2;
 console.log(a);
 ```
 
@@ -318,7 +318,7 @@ a = 2;
 
 ```javascript
 foo(); // 不是 ReferenceError, 而是 TypeError!
-var foo = function bar() { 
+var foo = function bar() {
     // ...
 };
 ```
@@ -333,13 +333,13 @@ var foo = function bar() {
 
 ```javascript
 foo(); // 3
-function foo() { 
+function foo() {
     console.log(1);
 }
-var foo = function() { 
+var foo = function() {
     console.log(2);
 };
-function foo() { 
+function foo() {
     console.log(3);
 }
 ```
@@ -347,7 +347,7 @@ function foo() {
 上面的例子会被引擎理解为如下形式：
 
 ```javascript
-function foo() { 
+function foo() {
     console.log(3);
 }
 foo(); // 3
@@ -386,7 +386,7 @@ wait("Hello, closure!");
 ```javascript
 function setupBot(name, selector) {
     $( selector ).click( function activator() {
-        console.log( "Activating: " + name ); 
+        console.log( "Activating: " + name );
     });
 }
 setupBot( "Closure Bot 1", "#bot_1" );
@@ -399,7 +399,7 @@ setupBot( "Closure Bot 2", "#bot_2" );
 
 ```javascript
 var a=2;
-(function IIFE() { 
+(function IIFE() {
     console.log( a );
 })();
 ```
@@ -423,11 +423,11 @@ for (var i=1; i<=5; i++) {
 #### 利用闭包
 
 ```javascript
-for (var i=1; i<=5; i++) { 
+for (var i=1; i<=5; i++) {
     (function(j) {
-        setTimeout( function timer() { 
+        setTimeout( function timer() {
             console.log( j );
-        }, j*1000 ); 
+        }, j*1000 );
     })(i);
 }
 ```
@@ -459,9 +459,9 @@ ES6 的模块没有“行内”格式，必须被定义在独立的文件中(一
 function foo() {
     console.log( a ); // 2(不是3!)
 }
-function bar() { 
+function bar() {
     var a = 3;
-    foo(); 
+    foo();
 }
 vara=2;
 bar();
@@ -509,7 +509,7 @@ function baz() {
     // 当前调用栈是:baz
     // 因此，当前调用位置是全局作用域
     console.log( "baz" );
-    bar(); // <-- bar 的调用位置 
+    bar(); // <-- bar 的调用位置
 }
 
 function bar() {
@@ -534,7 +534,7 @@ baz(); // <-- baz 的调用位置
 #### 默认绑定
 
 ```javascript
-function foo() { 
+function foo() {
     console.log( this.a );
 }
 vara = 2;
@@ -761,7 +761,7 @@ foo() 内部创建的箭头函数会捕获调用时 foo() 的 this。由于 foo(
 ```javascript
 var myObj = {
     key: value
-    // ... 
+    // ...
 };
 ```
 
@@ -1026,7 +1026,7 @@ ES6 添加了辅助函数 Object.setPrototypeOf(..)，可以用标准并且可�
 ```javascript
 // ES6 之前需要抛弃默认的 Bar.prototype
 Bar.ptototype = Object.create( Foo.prototype );
-// ES6 开始可以直接修改现有的 Bar.prototype 
+// ES6 开始可以直接修改现有的 Bar.prototype
 Object.setPrototypeOf( Bar.prototype, Foo.prototype );
 ```
 
@@ -1073,7 +1073,7 @@ JavaScript 规范并不会控制浏览器中开发者工具对于特定值或者
 
 ```javascript
 function Foo() {}
-var a1 = new Foo(); 
+var a1 = new Foo();
 a1; // Foo {}
 ```
 
@@ -1096,16 +1096,16 @@ a1; // Object {}。
 在 ES6 中，你可以使用对象的字面形式(这样就可以使用简洁方法定义)来改写之前繁琐的属性赋值语法(比如 AuthController 的定义)，然后用 Object.setPrototypeOf(..) 来修改它的 \[\[Prototype\]\]:
 
 ```javascript
-// 使用更好的对象字面形式语法和简洁方法 
+// 使用更好的对象字面形式语法和简洁方法
 var AuthController = {
     errors: \[\],
     checkAuth() {
-        // ... 
+        // ...
     },
     server(url, data) {
         // ...
     }
-    // ... 
+    // ...
 };
 
 // 现在把 AuthController 关联到 LoginController
@@ -1134,11 +1134,11 @@ var Foo = { /* .. */ };
 var Bar = Object.create( Foo ); // 让Foo和Bar互相关联
 var b1 = Object.create( Bar ); // 让b1关联到Foo和Bar
 
-Foo.isPrototypeOf( Bar ); // true 
+Foo.isPrototypeOf( Bar ); // true
 Object.getPrototypeOf( Bar ) === Foo; // true
 
-Foo.isPrototypeOf( b1 ); // true 
-Bar.isPrototypeOf( b1 ); // true 
+Foo.isPrototypeOf( b1 ); // true
+Bar.isPrototypeOf( b1 ); // true
 Object.getPrototypeOf( b1 ) === Bar; // true
 ```
 

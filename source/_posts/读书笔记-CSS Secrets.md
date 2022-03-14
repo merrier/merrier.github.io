@@ -1,5 +1,5 @@
 ---
-title: 读书笔记系列（8）——CSS Secrets
+title: 读书笔记-CSS Secrets
 urlname: css-secrets
 id: 955
 categories:
@@ -60,7 +60,7 @@ background-color: rebeccapurple;
 
 ```css
 ul { --accent-color: purple; }
-ol { --accent-color: rebeccapurple; } 
+ol { --accent-color: rebeccapurple; }
 li { background: var(--accent-color); }
 ```
 
@@ -73,14 +73,14 @@ li { background: var(--accent-color); }
 假设我们想给一个容器设置一层白色背景和一道半透明白色边框，body 的背景会从它的半透明边框透上来。我们最开始的尝试可能是这样的:
 
 ```css
-border: 10px solid hsla(0,0%,100%,.5); 
+border: 10px solid hsla(0,0%,100%,.5);
 background: white;
 ```
 
 但实际上，上面这段代码让 body 的背景从半透明白色边框处透了上来，这实际上得到的效果跟纯白实色的边框看起来完全一样。 所以我们可以通过 background-clip 属性来调整上述默认行为所带来的不便，这个属性的初始值是 border-box，意味着背景会被元素的 border box(边框的外沿框)裁切掉。如果不希望背景侵入边框所在的范围，我们要做的就是把它的值设为 padding-box，这样浏览器就会用内边距的外沿来把背景裁切掉。
 
 ```css
-border: 10px solid hsla(0,0%,100%,.5); 
+border: 10px solid hsla(0,0%,100%,.5);
 background: white;
 background-clip: padding-box;
 ```
@@ -106,7 +106,7 @@ box-shadow 还接受第四个参数（称作"扩张半径"），通过指定正�
 background-position 允许我们指定背景图片距离任意角的偏移量，只要我们在偏移量前面指定关键字：
 
 ```css
-background: url(code-pirate.svg) no-repeat #58a; 
+background: url(code-pirate.svg) no-repeat #58a;
 background-position: right 20px bottom 10px;
 ```
 
@@ -116,7 +116,7 @@ background-position: right 20px bottom 10px;
 
 ```css
 padding: 10px;
-background: url("code-pirate.svg") no-repeat #58abottom right; /* 或 100% 100% */ 
+background: url("code-pirate.svg") no-repeat #58abottom right; /* 或 100% 100% */
 background-origin: content-box;
 ```
 
@@ -127,7 +127,7 @@ background-origin: content-box;
 把背景图片定位到距离底边 10px 且距离右边 20px 的位置。如果我们仍然以左上角偏移的思路来考虑，其实就是希望它有一个 100% - 20px 的水平偏移量，以及 100% - 10px 的垂直偏移量。calc() 函数可以完美地在 background-position 属性中使用：
 
 ```css
-background: url("code-pirate.svg") no-repeat; 
+background: url("code-pirate.svg") no-repeat;
 background-position: calc(100% - 20px) calc(100% - 10px);
 ```
 
@@ -140,10 +140,10 @@ background-position: calc(100% - 20px) calc(100% - 10px);
 如果只需要达成简单地实色效果，我们可以只用一个元素：
 
 ```css
-background: tan; 
-border-radius: .8em; 
+background: tan;
+border-radius: .8em;
 padding: 1em;
-box-shadow: 0 0 0 .6em #655; 
+box-shadow: 0 0 0 .6em #655;
 outline: .6em solid #655;
 ```
 
@@ -174,7 +174,7 @@ background: linear-gradient(#fb3 50%, #58a 50%);
 所以，本质上，我们通过垂直线性渐变创建了两条巨大的水平条纹 我们还可以通过 background-size 来调整其尺寸，然后由于背景在默认情况下是重复平铺的，整个容器其实已经被填满了水平条纹：
 
 ```css
-background: linear-gradient(#fb3 50%, #58a 50%); 
+background: linear-gradient(#fb3 50%, #58a 50%);
 background-size: 100% 30px;
 ```
 
@@ -183,7 +183,7 @@ background-size: 100% 30px;
 还有一条规范是：如果某个色标的位置值比整个列表中在它之前的色标的位置值都要小，则该色标的位置值会被设置为它前面所有色标位置值的最大值。这意味着，如果我们把第二个色标的位置值设置为 0，那它的位置就总是会被浏览器调整为前一个色标的位置值：
 
 ```css
-background: linear-gradient(#fb3 30%, #58a 0); 
+background: linear-gradient(#fb3 30%, #58a 0);
 background-size: 100% 30px;
 ```
 
@@ -210,7 +210,7 @@ background-size: 30px 100%;
 <div align='center'><img src='/images/hexo_post_252.png' alt='' width=''/></div>
 
 ```css
-background: linear-gradient(45deg,#fb3 25%, #58a 0, #58a 50%,#fb3 0, #fb3 75%, #58a 0); 
+background: linear-gradient(45deg,#fb3 25%, #58a 0, #58a 50%,#fb3 0, #fb3 75%, #58a 0);
 background-size: 30px 30px;
 ```
 
@@ -249,8 +249,8 @@ background-image: repeating-linear-gradient(30deg,
 做法：**把水平和垂直的条纹叠加起来**；在某些情况下，我们希望网格中每个格子的大小可以调整，而网格线条的粗细同时保持固定。此时可以使用长度而不是百分比作为色标。
 
 ```css
-background: #58a; 
-background-image:linear-gradient(white 1px, transparent 0),linear-gradient(90deg, white 1px, transparent 0); 
+background: #58a;
+background-image:linear-gradient(white 1px, transparent 0),linear-gradient(90deg, white 1px, transparent 0);
 background-size: 30px 30px;
 ```
 
@@ -260,7 +260,7 @@ background-size: 30px 30px;
 
 ```csss
 background: #655;
-background-image: radial-gradient(tan 30%, transparent 0),radial-gradient(tan 30%, transparent 0); 
+background-image: radial-gradient(tan 30%, transparent 0),radial-gradient(tan 30%, transparent 0);
 background-size: 30px 30px;
 background-position: 0 0, 15px 15px;
 ```
@@ -270,7 +270,7 @@ background-position: 0 0, 15px 15px;
 棋盘图案是可以通过平铺生成的，平铺成这个图案的典型贴片包含两种不同颜色的方块，且相互间隔，这里的窍门在于用两个直角三角形来拼合出我们想要的方块
 
 ```css
-background: #eee; 
+background: #eee;
 background-image:
     linear-gradient(45deg, #bbb 25%, transparent 0),
     linear-gradient(45deg, transparent 75%, #bbb 0),
@@ -301,7 +301,7 @@ background-size: 30px 30px;
 为了更真实地模拟条纹的随机性，我们接下来可能会想到，把这组条纹从一个平面拆散为多个图层:一种颜色作为底色，另三种颜色作为条纹，然后再让条纹以不同的间隔进行重复平铺：
 
 ```css
-background: hsl(20, 40%, 90%); 
+background: hsl(20, 40%, 90%);
 background-image:
     linear-gradient(90deg, #fb3 10px, transparent 0),
     linear-gradient(90deg, #ab4 20px, transparent 0),
@@ -324,10 +324,10 @@ background-size: 80px 100%, 60px 100%, 40px 100%;
 
 ```css
 padding: 1em;
-border: 1em solid transparent; 
-background: linear-gradient(white, white),url(stone-art.jpg); 
+border: 1em solid transparent;
+background: linear-gradient(white, white),url(stone-art.jpg);
 background-size: cover;
-background-clip: padding-box, border-box; 
+background-clip: padding-box, border-box;
 background-origin: border-box;
 ```
 
@@ -353,14 +353,14 @@ background: linear-gradient(white, white) padding-box,
 
 ```css
 @keyframes ants { to { background-position: 100% } }
-.marching-ants { 
+.marching-ants {
     padding: 1em;
     border: 1px solid transparent; background:
         linear-gradient(white, white) padding-box,
         repeating-linear-gradient(-45deg,
           black 0, black 25%, white 0, white 50%
         ) 0 / .6em .6em;
-    animation: ants 12s linear infinite; 
+    animation: ants 12s linear infinite;
 }
 ```
 
@@ -416,14 +416,14 @@ border-radius: 100% 0 0 0;
 .button {
     position: relative;
     /\* 其他的文字颜色、内边距等样式...... */
-} 
+}
 .button::before {
-    content: ''; /* 用伪元素来生成一个矩形 */ 
+    content: ''; /* 用伪元素来生成一个矩形 */
     position: absolute;
-    top: 0; right: 0; bottom: 0; left: 0; 
+    top: 0; right: 0; bottom: 0; left: 0;
     z-index: -1; /* 防止伪元素的背景遮住内容 */
     background: #58a;
-    transform: skew(45deg); 
+    transform: skew(45deg);
 }
 ```
 
@@ -477,14 +477,14 @@ background: linear-gradient(-45deg, transparent 15px, #58a 0)
                 right,
             linear-gradient(45deg, transparent 15px, #58a 0)
                 left;
-background-size: 50% 100%; 
+background-size: 50% 100%;
 background-repeat: no-repeat;
 ```
 
 **四个角都有切角效果**：
 
 ```css
-background: #58a; 
+background: #58a;
 background:
     linear-gradient(135deg,  transparent 15px, #58a 0)
         top left,
@@ -507,7 +507,7 @@ background-repeat: no-repeat;
 <div align='center'><img src='/images/hexo_post_257.png' alt='' width='400'/></div>
 
 ```css
-background: #58a; 
+background: #58a;
 background:
     radial-gradient(circle at top left,
              transparent 15px, #58a 0) top left,
@@ -517,7 +517,7 @@ background:
              transparent 15px, #58a 0) bottom right,
     radial-gradient(circle at bottom left,
              transparent 15px, #58a 0) bottom left;
-background-size: 50% 50%; 
+background-size: 50% 50%;
 background-repeat: no-repeat;
 ```
 
@@ -526,7 +526,7 @@ background-repeat: no-repeat;
 裁切路径最神奇的地方在于我们**可以同时使用百分比数值（它会以元素自身的宽高作为基数度进行换算）和绝对长度值**，从而提供巨大的灵活性。举个例子，如果用裁切路径将一个元素切出 20px 大小的斜面切角，代码如下：
 
 ```css
-background: #58a; 
+background: #58a;
 clip-path: polygon(
     20px 0, calc(100% - 20px) 0, 100% 20px,
     100% calc(100% - 20px), calc(100% - 20px) 100%,
@@ -564,13 +564,13 @@ transform-origin: bottom;
 @keyframes bg {
     50% { background: #655; }
 }
-.pie::before { 
+.pie::before {
     content: '';
     display: block;
     margin-left: 50%;
     height: 100%;
-    border-radius: 0 100% 100% 0 / 50%; 
-    background-color: inherit; 
+    border-radius: 0 100% 100% 0 / 50%;
+    background-color: inherit;
     transform-origin: left;
     animation: spin 3s linear infinite, bg 6s step-end infinite;
 }
@@ -607,7 +607,7 @@ box-shadow: 3px 3px 6px -3px black;
 唯一的办法是用两块投影（每边各一块）来达到目的：
 
 ```css
-box-shadow: 5px 0 5px -5px black, 
+box-shadow: 5px 0 5px -5px black,
             -5px 0 5px -5px black;
 ```
 
@@ -638,9 +638,9 @@ img {
     transition: .5s filter;
     filter: sepia(1) saturate(4) hue-rotate(295deg);
 }
-img:hover, 
+img:hover,
 img:focus {
-    filter: none; 
+    filter: none;
 }
 ```
 
@@ -651,7 +651,7 @@ img:focus {
 HTML 代码：
 
 ```html
-<div class="tinted-image" 
+<div class="tinted-image"
      style="background-image:url(tiger.jpg)">
 </div>
 ```
@@ -660,14 +660,14 @@ CSS 代码：
 
 ```css
 .tinted-image {
-    width: 640px; 
-    height: 440px; 
-    background-size: cover; 
-    background-color: hsl(335, 100%, 50%); 
-    background-blend-mode: luminosity; 
+    width: 640px;
+    height: 440px;
+    background-size: cover;
+    background-color: hsl(335, 100%, 50%);
+    background-blend-mode: luminosity;
     transition: .5s background-color;
 }
-.tinted-image:hover { 
+.tinted-image:hover {
     background-color: transparent;
 }
 ```
@@ -686,13 +686,13 @@ body, main::before {
 }
 main {
     position: relative;
-    background: hsla(0,0%,100%,.3); 
+    background: hsla(0,0%,100%,.3);
     overflow: hidden;
 }
-main::before { 
+main::before {
     content: '';
     position: absolute;
-    top: 0; right: 0; bottom: 0; left: 0; 
+    top: 0; right: 0; bottom: 0; left: 0;
     filter: blur(20px);
     margin: -30px;
 }
@@ -705,7 +705,7 @@ main::before {
 我们先根据“切角效果”一节中的渐变方案实现一个右上角的斜面切角，然后增加另一层渐变来生成一个三角形并将其定位在右上角，从而实现翻折效果，需要注意的是**这个渐变的两个色标需要在正中央重合**：
 
 ```css
-background: #58a; /* 回退样式 */ 
+background: #58a; /* 回退样式 */
 background:
     linear-gradient(to left bottom,
         transparent 50%, rgba(0,0,0,.4) 0)
@@ -721,23 +721,23 @@ background:
 ```css
 .note {
     position: relative;
-    background: #58a; /* 回退样式 */ 
+    background: #58a; /* 回退样式 */
 background:
         linear-gradient(-150deg,
             transparent 1.5em, #58a 0);
     border-radius: .5em;
-} 
+}
 .note::before {
     content: '';
     position: absolute;
     top: 0; right: 0;
     background: linear-gradient(to left bottom,
         transparent 50%, rgba(0,0,0,.2) 0, rgba(0,0,0,.4))
-        100% 0 no-repeat; 
+        100% 0 no-repeat;
     width: 1.73em;
     height: 3em;
-    transform: translateY(-1.3em) rotate(-30deg); 
-    transform-origin: bottom right; 
+    transform: translateY(-1.3em) rotate(-30deg);
+    transform-origin: bottom right;
     border-bottom-left-radius: inherit;
     box-shadow: -.2em .2em .3em -.1em rgba(0,0,0,.15);
 }
@@ -768,13 +768,13 @@ hyphens: auto;
 HTML代码：
 
 ```html
-<dl> 
+<dl>
     <dt>Name:</dt>
-    <dd>Lea Verou</dd> 
+    <dd>Lea Verou</dd>
     <dt>Email:</dt>
     <dd>lea@verou.me</dd>
     <dt>Location:</dt>
-    <dd>Earth</dd> 
+    <dd>Earth</dd>
 </dl>
 ```
 
@@ -790,14 +790,14 @@ dd{
     margin: 0;
     font-weight: bold;
 }
-dd + dt::before { 
+dd + dt::before {
     content: '\\A';
-    white-space: pre; 
+    white-space: pre;
 }
-dd + dd::before { 
+dd + dd::before {
     content: ', ';
     margin-left: -.25em;
-    font-weight: normal; 
+    font-weight: normal;
 }
 ```
 
@@ -848,7 +848,7 @@ i 的圆点往往会与 f 的升部发生冲突，导致两者都显示不清；
 在 CSS 字体（第三版）中，原有的 font- variant 被升级成了一个简写属性，由很多新的展开式属性组合而成。其中之一叫作 font-variant-ligatures，专门用来控制连字效果的开启和关闭。如果要启用所有可能的连字，需要同时指定这三个标识符:
 
 ```css
-font-variant-ligatures: common-ligatures 
+font-variant-ligatures: common-ligatures
                         discretionary-ligatures
                         historical-ligatures;
 ```
@@ -889,8 +889,8 @@ unicode-range: U+26;
 @font-face {
     font-family: Ampersand;
     src: local('Baskerville-Italic'),
-         local('GoudyOldStyleT-Italic'), 
-         local('Palatino-Italic'), 
+         local('GoudyOldStyleT-Italic'),
+         local('Palatino-Italic'),
          local('BookAntiqua-Italic');
     unicode-range: U+26; }
 h1 {
@@ -905,7 +905,7 @@ text-decoration:underline 实现的文本下划线不能够定制，同时**在�
 #### 实线下划线
 
 ```css
-background: linear-gradient(gray, gray) no-repeat; 
+background: linear-gradient(gray, gray) no-repeat;
 background-size: 100% 1px;
 background-position: 0 1.15em;
 ```
@@ -913,7 +913,7 @@ background-position: 0 1.15em;
 #### 防止下划线穿过文本的降部
 
 ```css
-background: linear-gradient(gray, gray) no-repeat; 
+background: linear-gradient(gray, gray) no-repeat;
 background-size: 100% 1px;
 background-position: 0 1.15em;
 text-shadow: .05em 0 white, -.05em 0 white;
@@ -923,7 +923,7 @@ text-shadow: .05em 0 white, -.05em 0 white;
 
 ```css
 background: linear-gradient(90deg, gray 66%, transparent 0) repeat-x;
-background-size: .2em 2px; 
+background-size: .2em 2px;
 background-position: 0 1em;
 ```
 
@@ -954,8 +954,8 @@ text-shadow: 0 1px 1px hsla(0,0%,100%,.8);
 **当我们在深色背景上使用浅色文字时，在底部加上深色投影通常效果最佳**：
 
 ```css
-background: hsl(210, 13%, 40%); 
-color: hsl(210, 13%, 75%); 
+background: hsl(210, 13%, 40%);
+color: hsl(210, 13%, 75%);
 text-shadow: 0 -1px 1px black;
 ```
 
@@ -975,7 +975,7 @@ text-shadow: 1px 1px black, -1px -1px black,
 但是，目前比较理想的方案是使用 SVG，HTML 代码可能是这样的：
 
 ```html
-<h1><svg width="2em" height="1.2em"> 
+<h1><svg width="2em" height="1.2em">
     <use xlink:href="#css" />
     <text id="css" y="1em">CSS</text>
 </svg></h1>
@@ -985,7 +985,7 @@ CSS：
 
 ```css
 h1 {
-    font: 500%/1 Rockwell, serif; 
+    font: 500%/1 Rockwell, serif;
     background: deeppink;
     color: white;
 }
@@ -1012,12 +1012,12 @@ text-shadow: 0 0 .1em, 0 0 .3em;
 或者使用CSS滤镜：
 
 a{
-    background: #203; 
-    color: white; 
+    background: #203;
+    color: white;
     transition: 1s;
-} 
+}
 a:hover {
-    filter: blur(.1em); 
+    filter: blur(.1em);
 }
 ```
 
@@ -1029,10 +1029,10 @@ a:hover {
 background: #58a;
 color: white;
 text-shadow: 0 1px hsl(0,0%,85%),
-             0 2px hsl(0,0%,80%), 
-             0 3px hsl(0,0%,75%), 
-             0 4px hsl(0,0%,70%), 
-             0 5px hsl(0,0%,65%), 
+             0 2px hsl(0,0%,80%),
+             0 3px hsl(0,0%,75%),
+             0 4px hsl(0,0%,70%),
+             0 5px hsl(0,0%,65%),
              0 5px 10px black;
 ```
 
@@ -1082,12 +1082,12 @@ text-shadow: 1px 1px black, 2px 2px black,
 ```css
 button {
     position: relative;
-    /\* \[其余样式\] */ 
+    /\* \[其余样式\] */
 }
-button::before { 
+button::before {
     content: '';
     position: absolute;
-    top: -10px; right: -10px; 
+    top: -10px; right: -10px;
     bottom: -10px; left: -10px;
 }
 ```
@@ -1110,8 +1110,8 @@ button::before {
 我们可以通过伪元素来添加：
 
 ```css
-body.dimmed::before { 
-    position: fixed; 
+body.dimmed::before {
+    position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
@@ -1151,7 +1151,7 @@ dialog::backdrop {
 我们需要一个额外的 HTML 元素来实现这个效果：需要把页面上除了关键元素之外的一切都包裹起来，这样就可以只对这个容器元素进行模糊处理了：
 
 ```html
-<main>Bacon Ipsum dolor sit amet...</main> 
+<main>Bacon Ipsum dolor sit amet...</main>
 <dialog>
     O HAI, I'm a dialog. Click on me to dismiss.
 </dialog>
@@ -1161,7 +1161,7 @@ dialog::backdrop {
 接下来，每当弹出一个对话框，都需要给 `<main>` 元素增加一个类，以便对它应用模糊滤镜：
 
 ```css
-main.de-emphasized { 
+main.de-emphasized {
     filter: blur(5px);
 }
 ```
@@ -1175,10 +1175,10 @@ main.de-emphasized {
 我们可以用纯 CSS 实现这种效果，利用的就是 background-attachment 属性的一个关键字：local，但是**我们需要两层背景**：一层用来生成那条阴影，另一层基本上就是一个用来遮挡阴影的白色矩形，其作用类似于遮罩层。生成阴影的那层背景将具有默认的 background-attachment 值(scroll)，因为我们希望它总是保持在原位。我们把遮罩背景的 background-attachment 属性设置为 local，这样它就会在我们滚动到最顶部时盖住阴影，在向下滚动时跟着滚动，从而露出阴影。
 
 ```css
-background: linear-gradient(white 30%, transparent), 
-            radial-gradient(at 50% 0, rgba(0,0,0,.2),transparent 70%); 
+background: linear-gradient(white 30%, transparent),
+            radial-gradient(at 50% 0, rgba(0,0,0,.2),transparent 70%);
 background-repeat: no-repeat;
-background-size: 100% 50px, 100% 15px; 
+background-size: 100% 50px, 100% 15px;
 background-attachment: local, scroll;
 ```
 
@@ -1193,42 +1193,42 @@ background-attachment: local, scroll;
 resize 属性可以让某个元素的大小变得可调整，我们的第一个念头可能是列出两个 `<img>` 元素。但是，直接对一个 `<img>` 元素应用 resize 看起来会很怪异，因为直接调整图片大小会导致其变形失真。如果用一个 `<div>` 作为它的容器，再对这个容器应用 resize 属性，那就合理多了：
 
 ```html
-<div class="image-slider"> 
+<div class="image-slider">
     <div>
-        <img src="adamcatlace-before.jpg" alt="Before" /> 
+        <img src="adamcatlace-before.jpg" alt="Before" />
     </div>
-    <img src="adamcatlace-after.jpg" alt="After" /> 
+    <img src="adamcatlace-after.jpg" alt="After" />
 </div>
 ```
 
 **resize 起作用的前提条件是它的 overflow 属性不是 visible；**同时我们可以通过伪元素改变调节手柄的样式；最后，我们可以对这两张图片应用 user-select: none，这样即使用户在没有点中调节手柄的情况下拖动鼠标，也不会误选图片：
 
 ```css
-.image-slider { 
-    position:relative; 
+.image-slider {
+    position:relative;
     display: inline-block;
 }
-.image-slider > div { 
+.image-slider > div {
     position: absolute;
-    top: 0; bottom: 0; left: 0; 
+    top: 0; bottom: 0; left: 0;
     width: 50%;
     max-width: 100%;
     overflow: hidden;
-    resize: horizontal; 
+    resize: horizontal;
 }
-.image-slider > div::before { 
+.image-slider > div::before {
     content: '';
-    position: absolute; 
-    bottom: 0; right: 0; 
-    width: 12px; height: 12px; 
+    position: absolute;
+    bottom: 0; right: 0;
+    width: 12px; height: 12px;
     padding: 5px;
-    background: linear-gradient(-45deg, white 50%, transparent 0); 
+    background: linear-gradient(-45deg, white 50%, transparent 0);
     background-clip: content-box;
     cursor: ew-resize;
 }
-.image-slider img { 
+.image-slider img {
     display: block;
-    user-select: none; 
+    user-select: none;
 }
 ```
 
@@ -1254,8 +1254,8 @@ CSS 内部与外部尺寸模型（第三版）为 width 和 height 属性定义�
 
 ```css
 figure {
-    max-width: 300px; 
-    max-width: min-content; 
+    max-width: 300px;
+    max-width: min-content;
     margin: auto;
 }
 figure > img { max-width: inherit; }
@@ -1269,7 +1269,7 @@ figure > img { max-width: inherit; }
 
 ```css
 table {
-    table-layout: fixed; 
+    table-layout: fixed;
     width: 100%;
 }
 ```
@@ -1289,26 +1289,26 @@ li:only-child {
 实际上，:only-child 等效于 :first-child:last-child，道理就是：如果第一项也是最后一项，那它就是唯一的那一项；而 :first-child:nth-last-child(4) 会匹配到一个正好有四个列表项的列表中的第一个列表项，所以下面的选择符就相当于**在这个列表正好包含四个列表项时，命中它的每一项**：
 
 ```css
-li:first-child:nth-last-child(4), 
+li:first-child:nth-last-child(4),
 li:first-child:nth-last-child(4) ~ li {
-    /\* 当列表正好包含四项时，命中所有列表项 */ 
+    /\* 当列表正好包含四项时，命中所有列表项 */
 }
 ```
 
 利用选择符的表达式，我们可以**在列表项的总数是4或更多时选中所有列表项**：
 
 ```css
-li:first-child:nth-last-child(n+4), 
+li:first-child:nth-last-child(n+4),
 li:first-child:nth-last-child(n+4) ~ li {
-    /\* 当列表至少包含四项时，命中所有列表项 */ 
+    /\* 当列表至少包含四项时，命中所有列表项 */
 }
 ```
 
 同理，-n+b 这种形式的表达式可以选中开头的 b 个元素。因此，我们可以**在列表项的总数是 4 个或更少时选中所有列表项**：
 
 ```css
-li:first-child:nth-last-child(-n+4), 
-li:first-child:nth-last-child(-n+4) ~ li { 
+li:first-child:nth-last-child(-n+4),
+li:first-child:nth-last-child(-n+4) ~ li {
     /\* 当列表最多包含四项时，命中所有列表项 */
 }
 ```
@@ -1316,9 +1316,9 @@ li:first-child:nth-last-child(-n+4) ~ li {
 当然，我们还可以把这两种技巧组合起来使用，不过代码也会变得更加复杂。假设我们希望**在列表包含 2 ~ 6 个列表项时命中所有的列表项**，可以这样写:
 
 ```css
-li:first-child:nth-last-child(n+2):nth-last-child(-n+6), 
+li:first-child:nth-last-child(n+2):nth-last-child(-n+6),
 li:first-child:nth-last-child(n+2):nth-last-child(-n+6) ~ li {
-    /\* 当列表包含2~6项时，命中所有列表项 */ 
+    /\* 当列表包含2~6项时，命中所有列表项 */
 }
 ```
 
@@ -1334,7 +1334,7 @@ li:first-child:nth-last-child(n+2):nth-last-child(-n+6) ~ li {
 footer {
     max-width: 900px;
     padding:1em;  /* 回退样式 */
-    padding: 1em calc(50% - 450px); 
+    padding: 1em calc(50% - 450px);
     background: #333;
 }
 ```
@@ -1359,8 +1359,8 @@ main {
     position: absolute;
     top: 50%;
     left: 50%;
-    margin-top: -3em; /* 6/2 = 3 */ 
-    margin-left: -9em; /* 18/2 = 9 */ 
+    margin-top: -3em; /* 6/2 = 3 */
+    margin-left: -9em; /* 18/2 = 9 */
     width: 18em;
     height: 6em;
 }
@@ -1389,7 +1389,7 @@ main {
 main {
     width: 18em;
     padding: 1em 1.5em;
-    margin: 50vh auto 0; 
+    margin: 50vh auto 0;
     transform: translateY(-50%);
 }
 ```
@@ -1402,7 +1402,7 @@ main {
 body {
     display: flex;
     min-height: 100vh;
-    margin: 0; 
+    margin: 0;
 }
 main {
     margin: auto;
@@ -1426,7 +1426,7 @@ main {
 
 ```css
 main {
-    min-height: calc(100vh - 7em); /* 7em为页脚高度 */ 
+    min-height: calc(100vh - 7em); /* 7em为页脚高度 */
     box-sizing: border-box;
 }
 ```
@@ -1439,7 +1439,7 @@ main {
 body {
     display: flex;
     flex-flow: column;
-    min-height: 100vh; 
+    min-height: 100vh;
 }
 main { flex: 1; }
 ```
@@ -1455,17 +1455,17 @@ main { flex: 1; }
 CSS 提供了一个 cubic-bezier() 函数，允许我们指定自定义的调速函数，借助该函数，我们可以近乎完美的实现回弹动画：
 
 ```css
-@keyframes bounce { 
+@keyframes bounce {
     60%, 80%, to {
         transform: translateY(400px);
-        animation-timing-function: ease; 
+        animation-timing-function: ease;
     }
     70% { transform: translateY(300px); }
-    90% { transform: translateY(360px); } 
+    90% { transform: translateY(360px); }
 }
 .ball {
     /\* 外观样式 */
-    animation: bounce 3s cubic-bezier(.1,.25,1,.25); 
+    animation: bounce 3s cubic-bezier(.1,.25,1,.25);
 }
 ```
 
@@ -1474,8 +1474,8 @@ CSS 提供了一个 cubic-bezier() 函数，允许我们指定自定义的调速
 同样是 cubic-bezier() 函数的使用：
 
 ```css
-input:not(:focus) + .callout { 
-    transform: scale(0); 
+input:not(:focus) + .callout {
+    transform: scale(0);
     transition: .25s transform;
 }
 .callout {
@@ -1518,12 +1518,12 @@ CSS 值与单位规范引入了一个新单位，表示“0”字形的宽度，
 }
 .panoramic {
     width: 150px; height: 150px;
-    background: url("img/naxos-greece.jpg"); 
+    background: url("img/naxos-greece.jpg");
     background-size: auto 100%;
-    animation: panoramic 10s linear infinite alternate; 
+    animation: panoramic 10s linear infinite alternate;
     animation-play-state: paused;
 }
-.panoramic:hover, .panoramic:focus { 
+.panoramic:hover, .panoramic:focus {
     animation-play-state: running;
 }
 ```
@@ -1541,11 +1541,11 @@ CSS 值与单位规范引入了一个新单位，表示“0”字形的宽度，
     to { transform: rotate(1turn); }
 }
 .avatar {
-    animation: spin 3s infinite linear; 
+    animation: spin 3s infinite linear;
     transform-origin: 50% 150px; /* 150px = 路径的半径 */
 }
 .avatar > img {
-    animation: inherit; 
+    animation: inherit;
     animation-direction: reverse;
 }
 ```

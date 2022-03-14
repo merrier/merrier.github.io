@@ -1,5 +1,5 @@
 ---
-title: 读书笔记系列（5）——响应式Web设计-HTML5和CSS3实战
+title: 读书笔记-响应式Web设计-HTML5和CSS3实战
 urlname: html5-and-css3-actual-warfare
 id: 514
 categories:
