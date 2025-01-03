@@ -121,6 +121,7 @@ jobs:
       - name: Print current branch
         run: |
           current_branch=$(git rev-parse --abbrev-ref HEAD)
+          echo "The current branch is: $current_branch"
 
       # 推送更改到master分支
       - name: Push to master
