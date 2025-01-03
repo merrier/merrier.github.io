@@ -5,7 +5,7 @@ function lazyImage(post) {
     var imgUrlsArr = content.match(imgRe);
     var data = [];
     imgUrlsArr&&imgUrlsArr.forEach(function (item) {
-       data.push(item.match(urlRe)[0]);
+        item.match(urlRe) && data.push(item.match(urlRe)[0]);
     });
     return data;
 }
