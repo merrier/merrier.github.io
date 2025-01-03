@@ -29,6 +29,11 @@ jobs:
           npm install -g hexo-cli
           npm install
 
+      # 获取当前时间
+      - name: Get current time
+        id: get_time
+        run: echo "::set-output name=time::$(date +'%Y-%m-%d %H:%M:%S')"
+
       # 执行hexo生成命令和 gulp 压缩
       - name: Generate Hexo site
         run: |
@@ -39,19 +44,11 @@ jobs:
         run: |
           find . -maxdepth 1 -type d -not -name '.' -not -name '..' -exec basename {} \;
 
-      # 进入 public 目录
       - name: Cd public dir
         run: |
+          chmod -R 755 public
           cd ./public
-
-      - name: Print current working directory
-        run: |
           pwd
-
-      # 获取当前时间
-      - name: Get current time
-        id: get_time
-        run: echo "::set-output name=time::$(date +'%Y-%m-%d %H:%M:%S')"
 
       # 构建并写入README.md内容
       - name: Update README.md
@@ -75,10 +72,6 @@ jobs:
       - name: Initialize Git
         run: |
           git init
-
-      # 配置Git用户信息
-      - name: Configure Git
-        run: |
           git config user.name "merrier"
           git config user.email "953075999@qq.com"
 
