@@ -100,6 +100,24 @@ jobs:
         run: |
           git status
 
+      - name: Test Secret Variable
+        run: |
+          echo "Secret variable exists and can be accessed"
+          if [ -n "${{ secrets.GH_TOKEN }}" ]; then
+            echo "GH_TOKEN variable is not empty"
+          else
+            echo "GH_TOKEN variable is empty or not set correctly"
+          fi
+
+      - name: Test Secret Variable
+        run: |
+          echo "Secret variable exists and can be accessed"
+          if [ -n "${{ secrets.GH_REF }}" ]; then
+            echo "GH_REF variable is not empty"
+          else
+            echo "GH_REF variable is empty or not set correctly"
+          fi
+
       # 推送更改到master分支（模拟原来的git push操作，注意使用secrets来存储GH_TOKEN）
       - name: Push to master
         run: |
