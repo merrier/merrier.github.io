@@ -100,7 +100,7 @@ jobs:
         run: |
           git status
 
-      - name: Test Secret Variable
+      - name: Test Secret GH_TOKEN Variable
         run: |
           echo "Secret variable exists and can be accessed"
           if [ -n "${{ secrets.GH_TOKEN }}" ]; then
@@ -109,7 +109,7 @@ jobs:
             echo "GH_TOKEN variable is empty or not set correctly"
           fi
 
-      - name: Test Secret Variable
+      - name: Test Secret GH_TOKEN Variable
         run: |
           echo "Secret variable exists and can be accessed"
           if [ -n "${{ secrets.GH_REF }}" ]; then
@@ -118,17 +118,21 @@ jobs:
             echo "GH_REF variable is empty or not set correctly"
           fi
 
-      # 推送更改到master分支（模拟原来的git push操作，注意使用secrets来存储GH_TOKEN）
+      - name: Print current branch
+        run: |
+          current_branch=$(git rev-parse --abbrev-ref HEAD)
+
+      # 推送更改到master分支
       - name: Push to master
         run: |
           git push --force --quiet "https://${{ secrets.GH_TOKEN }}@${{ secrets.GH_REF }}" master:master
 
-      # 创建标签（模拟原来的git tag操作）
+      # 创建标签
       - name: Create Tag
         run: |
           git tag v1.0.${{ github.run_number }} -a -m "Auto Tagged By GitHub Action With Build ${{ github.run_number }}"
 
-      # 推送标签（模拟原来的git push操作包含标签推送）
+      # 推送标签
       - name: Push Tags
         run: |
           git push --quiet "https://${{ secrets.GH_TOKEN }}@${{ secrets.GH_REF }}" master:master --tags
