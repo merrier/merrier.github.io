@@ -40,6 +40,10 @@ jobs:
         run: |
           cd ./public
 
+      - name: Print current working directory
+        run: |
+          pwd
+
       # 获取当前时间
       - name: Get current time
         id: get_time
