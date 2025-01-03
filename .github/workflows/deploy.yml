@@ -35,14 +35,14 @@ jobs:
       # 修改README.md内容
       - name: Modify README.md
         run: |
-          echo "## Deployment Date and Time: ${{ steps.get_date.outputs.date }}" >> README.md
+          echo "## Deployment Date and Time: ${{steps.get_date.outputs.date}}" >> README.md
           sed -i '1i\\# README - Updated for Hexo Deployment' README.md
       # 将生成的内容添加到暂存区
       - name: Add generated files
-        run: git add.
+        run: git add .
       # 提交更改，这里的提交信息可以按需修改
       - name: Commit changes
-        run: git commit - m "feat:\ Auto deploy generated Hexo site"
+        run: git commit -m "feat:\ Auto deploy generated Hexo site"
       # 将更改推送到master分支
       - name: Push to master
         run: |
