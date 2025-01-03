@@ -96,6 +96,9 @@ jobs:
       - name: Commit changes
         run: |
           git commit -m "Update Blog By GitHub Action With Build ${{ github.run_number }}"
+      - name: Check branch status
+        run: |
+          git status
 
       # 推送更改到master分支（模拟原来的git push操作，注意使用secrets来存储GH_TOKEN）
       - name: Push to master
