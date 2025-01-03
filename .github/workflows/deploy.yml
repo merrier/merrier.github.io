@@ -83,9 +83,6 @@ jobs:
       - name: Commit changes
         run: |
           git commit -m "Update Blog By GitHub Action With Build ${{ github.run_number }}"
-      - name: Check branch status
-        run: |
-          git status
 
       # 创建 master 分支
       - name: Checkout new branch
@@ -114,6 +111,10 @@ jobs:
         run: |
           current_branch=$(git rev-parse --abbrev-ref HEAD)
           echo "The current branch is: $current_branch"
+
+      - name: Add remote repository
+        run: |
+          git remote add target_repo https://${{ secrets.GH_TOKEN }}@${{ secrets.GH_REF }}
 
       # 推送更改到master分支
       - name: Push to master
