@@ -43,16 +43,15 @@ jobs:
       - name: Print directory tree
         run: |
           find . -maxdepth 1 -type d -not -name '.' -not -name '..' -exec basename {} \;
-          - name: Test Secret GH_TOKEN Variable
-          run: |
-            echo "Secret variable exists and can be accessed"
-            if [ -n "${{ secrets.GH_TOKEN }}" ]; then
-              echo "GH_TOKEN variable is not empty"
-            else
-              echo "GH_TOKEN variable is empty or not set correctly"
-            fi
-  
       - name: Test Secret GH_TOKEN Variable
+        run: |
+          echo "Secret variable exists and can be accessed"
+          if [ -n "${{ secrets.GH_TOKEN }}" ]; then
+            echo "GH_TOKEN variable is not empty"
+          else
+            echo "GH_TOKEN variable is empty or not set correctly"
+          fi
+      - name: Test Secret GH_REF Variable
         run: |
           echo "Secret variable exists and can be accessed"
           if [ -n "${{ secrets.GH_REF }}" ]; then
@@ -61,6 +60,14 @@ jobs:
             echo "GH_REF variable is empty or not set correctly"
           fi
 
+      - name: Test Secret GH_TOKEN Variable
+        run: |
+          echo "Secret variable exists and can be accessed"
+          if [ -n "${{ secrets.GH_REF }}" ]; then
+            echo "GH_REF variable is not empty"
+          else
+            echo "GH_REF variable is empty or not set correctly"
+          fi
 
       - name: Cd public dir
         run: |
