@@ -35,9 +35,22 @@ jobs:
           hexo clean & hexo g
           gulp
 
-      # 进入 public 目录
-      - name: Cd public dir
+      # 克隆仓库到.deploy_git目录（这里模拟原来的git clone操作）
+      - name: Clone repo
         run: |
+          mkdir .deploy_git
+          git clone https://${{ secrets.GH_REF }} .deploy_git
+      # 进入.deploy_git目录并切换到master分支
+      - name: Checkout master in cloned repo
+        run: |
+          cd .deploy_git
+          git checkout master
+          cd ../
+
+      # 移动.git目录到public目录
+      - name: Move git dir
+        run: |
+          mv .deploy_git/.git/ ./public/
           cd ./public
 
       # 获取当前时间
