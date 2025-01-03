@@ -14,41 +14,100 @@ jobs:
       # 检出代码
       - name: Checkout code
         uses: actions/checkout@v3
+        with:
+          ref: dev # 根据实际触发的分支修改，如果是别的分支就替换dev
+
       # 设置Node.js环境，这里以16.x为例，你可以按需修改版本
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "16"
+
       - name: Install Dependencies
         run: |
           npm install -g gulp
           npm install -g hexo-cli
           npm install
-      # 执行hexo生成命令
+
+      # 执行hexo生成命令和 gulp 压缩
       - name: Generate Hexo site
-        run: hexo clean & hexo g
-      # 获取当前日期和时间
-      - name: Get current date and time
-        id: get_date
-        run: echo "::set - output name=date::$(date +'%Y-%m-%d %H:%M:%S')"
-
-      # 修改README.md内容
-      - name: Modify README.md
         run: |
-          echo "## Deployment Date and Time: ${{steps.get_date.outputs.date}}" >> README.md
-          sed -i '1i\\# README - Updated for Hexo Deployment' README.md
+          hexo clean & hexo g
+          gulp
 
-      - name: Release GitHub Pages
+      # 克隆仓库到.deploy_git目录（这里模拟原来的git clone操作）
+      - name: Clone repo
         run: |
-          git config --global user.email "953075999@qq.com"
-          git config --global user.name "merrier"
-      # 将生成的内容添加到暂存区
-      - name: Add generated files
-        run: git add .
-      # 提交更改，这里的提交信息可以按需修改
+          mkdir .deploy_git
+          git clone https://${{ secrets.GH_REF }} .deploy_git
+      # 进入.deploy_git目录并切换到master分支
+      - name: Checkout master in cloned repo
+        run: |
+          cd .deploy_git
+          git checkout master
+          cd ../
+
+      # 移动.git目录到public目录
+      - name: Move git dir
+        run: |
+          mv .deploy_git/.git/ ./public/
+          cd ./public
+
+      # 获取当前时间
+      - name: Get current time
+        id: get_time
+        run: echo "::set-output name=time::$(date +'%Y-%m-%d %H:%M:%S')"
+
+      # 构建并写入README.md内容
+      - name: Update README.md
+        run: |
+          cat << EOF >> README.md
+          # Merrier说
+          使用Hexo进行搭建，利用GitHub Action实现持续集成
+          ## 自动部署集成日志
+          部署状态 | 集成结果 | 参考值
+          ---|---|---
+          完成时间 | ${{ steps.get_time.outputs.time }} | yyyy-mm-dd hh:mm:ss
+          部署环境 | ${{ runner.os }} + ${{ matrix.node-version }} | window | linux + 对应版本号
+          部署类型 | ${{ github.event_name }} | push | pull_request | 其他类型等
+          仓库地址 | ${{ github.repository }} | owner_name/repo_name
+          提交分支 | ${{ github.sha }} | hash值
+          提交信息 | ${{ github.event.commits[0].message }} |
+          Job ID   | ${{ github.run_id }} |
+          Job NUM  | ${{ github.run_number }} |
+          EOF
+      # 初始化Git仓库
+      - name: Initialize Git
+        run: |
+          git init
+
+      # 配置Git用户信息
+      - name: Configure Git
+        run: |
+          git config user.name "merrier"
+          git config user.email "953075999@qq.com"
+
+      # 添加文件到暂存区
+      - name: Add files
+        run: |
+          git add .
+
+      # 提交更改
       - name: Commit changes
-        run: git commit -m "feat:\ Auto deploy generated Hexo site"
-      # 将更改推送到master分支
+        run: |
+          git commit -m "Update Blog By GitHub Action With Build ${{ github.run_number }}"
+
+      # 推送更改到master分支（模拟原来的git push操作，注意使用secrets来存储GH_TOKEN）
       - name: Push to master
         run: |
-          git push origin master
+          git push --force --quiet "https://${{ secrets.GH_TOKEN }}@${{ secrets.GH_REF }}" master:master
+
+      # 创建标签（模拟原来的git tag操作）
+      - name: Create Tag
+        run: |
+          git tag v1.0.${{ github.run_number }} -a -m "Auto Tagged By GitHub Action With Build ${{ github.run_number }}"
+
+      # 推送标签（模拟原来的git push操作包含标签推送）
+      - name: Push Tags
+        run: |
+          git push --quiet "https://${{ secrets.GH_TOKEN }}@${{ secrets.GH_REF }}" master:master --tags
