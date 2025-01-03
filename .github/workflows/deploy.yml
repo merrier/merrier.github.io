@@ -124,7 +124,7 @@ jobs:
       # 创建标签
       - name: Create Tag
         run: |
-          git tag v1.0.${{ github.run_number }} -a -m "Auto Tagged By GitHub Action With Build ${{ github.run_number }}"
+          git tag v1.1.${{ github.run_number }} -a -m "Auto Tagged By GitHub Action With Build ${{ github.run_number }}"
 
       # 推送标签
       - name: Push Tags
