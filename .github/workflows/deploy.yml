@@ -1,4 +1,4 @@
-name: Hexo Deploy
+name: Hexo Deploy 1
 
 # 只监听 dev 分支的改动
 on:
