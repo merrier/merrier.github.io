@@ -37,6 +37,11 @@ jobs:
         run: |
           echo "## Deployment Date and Time: ${{steps.get_date.outputs.date}}" >> README.md
           sed -i '1i\\# README - Updated for Hexo Deployment' README.md
+
+      - name: Release GitHub Pages
+        run: |
+          git config --global user.email "953075999@qq.com"
+          git config --global user.name "merrier"
       # 将生成的内容添加到暂存区
       - name: Add generated files
         run: git add .
