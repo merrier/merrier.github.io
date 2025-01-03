@@ -103,16 +103,6 @@ jobs:
           git add .
           git commit -m "Update Blog By GitHub Action With Build ${{ github.run_number }}"
 
-      - name: Check if master branch exists
-        working-directory: ./public
-        run: |
-          if [! -z "$(git branch --list master)" ]; then
-            echo "Master branch already exists."
-          else
-            echo "Master branch does not exist. Creating it..."
-            git checkout -b master
-          fi
-
       - name: Push to master
         working-directory: ./public
         run: |
