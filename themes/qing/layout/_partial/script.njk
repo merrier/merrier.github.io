@@ -7,10 +7,9 @@
     <script>
         var tagOption = {
             textColour: '{{ theme.tagcloud.textColour }}', // 字体颜色
-            outlineMethod: '{{ theme.tagcloud.outlineMethod }}', // 选中模式
-            outlineColour: '{{ theme.tagcloud.outlineColour }}', // 选中模式的颜色
+            outlineMethod: 'none', // 选中模式
             interval: {{ theme.tagcloud.interval }} || 30, // 动画帧之间的时间间隔，值越大，转动幅度越大
-            textHeight: 13,
+            textHeight: 12,
             outlineRadius: 3,
             freezeActive: {{ theme.tagcloud.freezeActive }} || '', // 选中的标签是否继续滚动
             frontSelect: {{ theme.tagcloud.frontSelect }} || '', // 不选标签云后部的标签
@@ -20,9 +19,94 @@
             maxSpeed: 0.03,
             reverse: {{ theme.tagcloud.reverse }} || '', // 是否反向触发
             fadeIn: 500, // 进入动画时间
-            wheelZoom: {{ theme.tagcloud.wheelZoom }} || '' // 是否启用鼠标滚轮
+            wheelZoom: {{ theme.tagcloud.wheelZoom }} || '', // 是否启用鼠标滚轮
+            
+            // 下面是用来将文字绘制成“竖条幅灯笼”效果的关键配置
+            bgColour: '{{ theme.tagcloud.bgColour }}' || '#c0392b', // 福条红底色
+            bgOutlineThickness: 2, // 边框
+            bgOutlineColour: '{{ theme.tagcloud.bgOutlineColour }}' || '#f1c40f', // 金色边框
+            bgRadius: 2, // 边框圆角
+            padding: 4,
+            splitWidth: 8, // 强制换行宽度，让每个字单独占一行
+            weight: true,
+            weightMode: 'both',
+            weightFrom: 'data-weight',
+            weightSize: 0.6,
+            radiusX: 0.85,
+            radiusY: 0.85,
+            radiusZ: 0.85,
+            textVAlign: 'middle',
+            textFont: 'Noto Serif SC, Songti SC, STSong, SimSun, serif',
+            textAlign: 'centre',
+            textColour: '#f1c40f', // 金色文字
+            
+            // 下面配置使得竖条幅有灯笼提线和流苏的错觉
+            shadow: '#000000',
+            shadowBlur: 3,
+            shadowOffset: [1,1],
+            
+            // 用 draw 钩子函数自己画提线和流苏
+            frontSelect: true,
+            initial: [0.1, -0.1]
+        };
+        
+        // 转换文本为竖排数组
+        try {
+            var tags = document.querySelectorAll('#tag-cloud-3d-data a');
+            for(var i = 0; i < tags.length; i++) {
+                var text = tags[i].innerText || tags[i].textContent;
+                // 将文本按字符分割，并用换行符连接
+                tags[i].innerText = text.split('').join('\n');
+            }
+            
+            // 覆盖渲染，加上顶部提线和底部流苏
+            var tc = TagCanvas;
+            if (tc && tc.tc && tc.tc.prototype) {
+                var origDrawText = tc.tc.prototype.DrawText;
+                tc.tc.prototype.DrawText = function(context, p, width, height, font) {
+                    origDrawText.call(this, context, p, width, height, font);
+                    // 在渲染完背景和文字后，画装饰线
+                    if (this.bgColour && p.alpha > 0.1) {
+                        context.save();
+                        context.globalAlpha = p.alpha;
+                        context.strokeStyle = '#c0392b';
+                        context.lineWidth = 1;
+                        
+                        // 计算边界
+                        var cx = p.x2d;
+                        var cy = p.y2d;
+                        var w = p.w / 2;
+                        var h = p.h / 2;
+                        
+                        // 统一使用金线
+                        context.strokeStyle = '#f1c40f';
+
+                        // 顶部金线
+                        context.beginPath();
+                        context.moveTo(cx, cy - h);
+                        context.lineTo(cx, cy - h - 10 * p.scale);
+                        context.stroke();
+                        
+                        // 底部金线
+                        context.beginPath();
+                        context.moveTo(cx, cy + h);
+                        context.lineTo(cx, cy + h + 8 * p.scale);
+                        context.stroke();
+                        
+                        // 底部穗子金线
+                        context.beginPath();
+                        context.moveTo(cx - 3 * p.scale, cy + h + 2 * p.scale);
+                        context.lineTo(cx + 3 * p.scale, cy + h + 2 * p.scale);
+                        context.stroke();
+                        
+                        context.restore();
+                    }
+                };
+            }
+            TagCanvas.Start('tag-cloud-3d','tag-cloud-3d-data',tagOption);
+        } catch(e) {
+            console.log('Canvas error:', e);
         }
-        TagCanvas.Start('tag-cloud-3d','',tagOption);
     </script>
 {% endif %}
 

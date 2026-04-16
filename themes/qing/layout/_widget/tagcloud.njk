@@ -3,9 +3,19 @@
     <h3 class="title">{{ __('tagcloud') }}</h3>
     <div class="content tag-cloud">
         {% if theme.tagcloud.tag3d %}
-            <canvas width="300" height="300" id="tag-cloud-3d">
-                {{ tagcloud() | safe }}
-            </canvas>
+            <div class="lantern-3d-container">
+                <canvas width="350" height="350" id="tag-cloud-3d" style="width: 100%; height: auto; aspect-ratio: 1 / 1;">
+                    <div id="tag-cloud-3d-data">
+                        {% for tag in site.tags.sort('length', -1).limit(40).toArray() %}
+                            <a href="{{ url_for(tag.path) }}">{{ tag.name }}</a>
+                        {% endfor %}
+                    </div>
+                </canvas>
+                <div class="lantern-cap top-cap"></div>
+                <div class="lantern-cap bottom-cap">
+                    <div class="lantern-tassel"></div>
+                </div>
+            </div>
         {% else %}
             {{ tagcloud() | safe }}
         {% endif %}

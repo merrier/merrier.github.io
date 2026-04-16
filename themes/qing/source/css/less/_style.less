@@ -883,6 +883,114 @@ pre {
             bottom: -1px;
         }
     }
+    .lantern-3d-container {
+        position: relative;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        /* 灯笼的顶部和底部装饰 */
+        .lantern-cap {
+            position: relative;
+            width: 80px;
+            height: 12px;
+            background: linear-gradient(to bottom, #d4af37, #f1c40f);
+            border-radius: 4px;
+            z-index: 2;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 60px;
+                height: 8px;
+                background: linear-gradient(to bottom, #f1c40f, #d4af37);
+                border-radius: 2px;
+            }
+        }
+
+        .top-cap {
+            margin-top: 25px; /* 留出提手线空间 */
+            margin-bottom: -6px; /* 紧贴球体 */
+            &::before { top: -8px; }
+            /* 提手线 */
+            &::after {
+                content: '';
+                position: absolute;
+                top: -25px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 2px;
+                height: 25px;
+                background: #c0392b;
+            }
+        }
+
+        .bottom-cap {
+            margin-top: -6px; /* 紧贴球体 */
+            margin-bottom: 45px; /* 留出流苏空间 */
+            &::before { bottom: -8px; }
+        }
+
+        /* 底部穗子 */
+        .lantern-tassel {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 10px;
+            height: 40px;
+            background: repeating-linear-gradient(
+                90deg,
+                #c0392b,
+                #c0392b 1px,
+                transparent 1px,
+                transparent 2px
+            );
+            border-bottom-left-radius: 2px;
+            border-bottom-right-radius: 2px;
+            
+            &::before {
+                content: '';
+                position: absolute;
+                top: -4px;
+                left: -2px;
+                width: 14px;
+                height: 6px;
+                background: #f1c40f;
+                border-radius: 2px;
+            }
+        }
+
+        /* 3D 标签云球体背景效果 */
+        canvas {
+            position: relative;
+            z-index: 1;
+            /* 制造一个灯笼的外壳效果，边缘深中间浅，外面一圈渐变过渡到透明 */
+            background: radial-gradient(
+                closest-side at 50% 50%,
+                rgba(241, 196, 15, 0.1) 0%,
+                rgba(192, 57, 43, 0.2) 40%,
+                rgba(192, 57, 43, 0.6) 80%,
+                rgba(192, 57, 43, 0) 100%
+            );
+            /* 增加灯笼外发光效果，使边缘过渡更自然 */
+            box-shadow: 0 0 40px 15px rgba(192, 57, 43, 0.2);
+            border-radius: 50%;
+        }
+        
+        /* 隐藏 a 标签原有的渲染效果 */
+        #tag-cloud-3d-data {
+            display: none;
+        }
+    }
+
     .tag-cloud {
         a {
             .border(@greyish_color);

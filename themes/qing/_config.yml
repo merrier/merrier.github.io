@@ -100,7 +100,8 @@ arch_config:
    show_count: true
    order: -1
 
-## 标签云设置
+# tagcloud
+# https://github.com/mowglin/hexo-tag-cloud
 tagcloud:
   tag3d: true
   textColour: '#444'

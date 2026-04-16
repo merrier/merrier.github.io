@@ -912,6 +912,90 @@ pre {
   left: 0;
   bottom: -1px;
 }
+.widget .lantern-3d-container {
+  position: relative;
+  width: 300px;
+  height: 380px;
+  /* 给上下装饰留出空间 */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* 灯笼的顶部和底部装饰 */
+  /* 底部穗子 */
+  /* 3D 标签云球体背景效果 */
+}
+.widget .lantern-3d-container .lantern-cap {
+  position: absolute;
+  width: 80px;
+  height: 12px;
+  background: linear-gradient(to bottom, #d4af37, #f1c40f);
+  border-radius: 4px;
+  z-index: 2;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.widget .lantern-3d-container .lantern-cap::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 8px;
+  background: linear-gradient(to bottom, #f1c40f, #d4af37);
+  border-radius: 2px;
+}
+.widget .lantern-3d-container .top-cap {
+  top: 20px;
+  /* 提手线 */
+}
+.widget .lantern-3d-container .top-cap::before {
+  top: -8px;
+}
+.widget .lantern-3d-container .top-cap::after {
+  content: '';
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 25px;
+  background: #c0392b;
+}
+.widget .lantern-3d-container .bottom-cap {
+  bottom: 45px;
+}
+.widget .lantern-3d-container .bottom-cap::before {
+  bottom: -8px;
+}
+.widget .lantern-3d-container .lantern-tassel {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 40px;
+  background: repeating-linear-gradient(90deg, #c0392b, #c0392b 1px, transparent 1px, transparent 2px);
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+.widget .lantern-3d-container .lantern-tassel::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -2px;
+  width: 14px;
+  height: 6px;
+  background: #f1c40f;
+  border-radius: 2px;
+}
+.widget .lantern-3d-container canvas {
+  position: relative;
+  z-index: 1;
+  /* 制造一个隐约的红色灯笼底色背景 */
+  background: radial-gradient(ellipse at center, rgba(192, 57, 43, 0.15) 0%, rgba(192, 57, 43, 0.05) 50%, transparent 70%);
+  border-radius: 50%;
+}
 .widget .tag-cloud a {
   border: 1px solid #f5f2eb;
   padding: 2px 7px;
