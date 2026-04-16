@@ -1,0 +1,47 @@
+<div class="post-meta">
+    {% if not is_category() %}
+    {% set _showLevel = (theme.whichCategory if theme.whichCategory else post.categories.data.length) %}
+    {% set _showLevel = _showLevel if _showLevel <= post.categories.data.length else post.categories.data.length %}
+    {% set _showLevel = _showLevel - 1 %}
+    {% set _data = post.categories.data[_showLevel] %}
+    {% set _categoryInfo = _data.name if _data else " " %}
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/{{ _categoryInfo }}">
+            {{ _categoryInfo }}
+        </a>
+    </span>
+    {% endif %}
+
+    {% if not is_tag() %}
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            {% if post.tags and post.tags.length > 0 %}
+                {% set limit = 3 if post.tags.length > 3 else post.tags.length %}
+                {% for i in range(0, limit) %}
+                    <a href="/tags/{{ post.tags.data[i].name }}" title='{{ post.tags.data[i].name }}'>
+                        {{ post.tags.data[i].name }}
+                    </a>
+                {% endfor %}
+            {% else %}
+                {{ "" }}
+            {% endif %}
+        </span>
+    </span>
+    {% endif %}
+
+    {% if is_post() %}
+        {% set format = "MM/DD" if is_archive() else 'YYYY/MM/DD' %}
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">{{ date(post.date, format) | safe }}</span>
+        </span>
+        {% if theme.visit_counter.page %}
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        {% endif %}
+    {% endif %}
+</div>

@@ -1,0 +1,32 @@
+<div id="main">
+     <div class="timebox">
+          <div class="timeline">
+              <ul>
+                {% set years = '' %}
+                {% for post in site.posts.sort('date', -1).toArray() %}
+                    {% set year = post.date.year() %}
+                    {% set month = post.date.format('MM') %}
+                    {% set months = 'hide' if (month != page.month) else '' %}
+                    {% if (page.year and page.year == year) or not page.year %}
+                        {% if years != year %}
+                            {% set years = year %}
+                            <h2>{{ year }}</h2>
+                        {% endif %}
+                        {% if page.month %}
+                          <li class="{{ months }}">
+                        {% else %}
+                          <li>
+                        {% endif %}
+                            <h3>
+                              {{ post.date.format('DD') }}<span>{{ post.date.format('MM') }}月</span>
+                            </h3>
+                            <a href="{{ url_for(post.path) | safe }}" title="{{ post.title | safe }}" target="_blank">{{ post.title | safe }}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+              </ul>
+          </div>
+    </div>
+</div>
+
+

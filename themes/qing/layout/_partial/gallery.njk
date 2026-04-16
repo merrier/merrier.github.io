@@ -1,0 +1,7 @@
+{% if post.photos and post.photos.length > 0 %}
+    <div id="post-gallery">
+        {% for photo in post.photos %}
+          <img src="{{ url_for(photo) | safe }}" alt="gallery-img" class="gallery">
+        {% endfor %}
+    </div>
+{% endif %}

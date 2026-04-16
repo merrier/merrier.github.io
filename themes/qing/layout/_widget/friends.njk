@@ -1,0 +1,12 @@
+{% if theme.links and theme.links.length %}
+    <div class="widget">
+        <h3 class="title">{{ __('friend_links') }}</h3>
+        <div class="content friends-link">
+        {% for item in theme.links %}
+            {% for name, url in item %}
+            <a href="{{ url | safe }}" class="fa" target="_blank">{{ name }}</a>
+            {% endfor %}
+        {% endfor %}
+        </div>
+    </div>
+{% endif %}

@@ -1,0 +1,13 @@
+{% set _bootstrap = theme.bootstrap or '/css/bootstrap.min.css?rev=3.3.7' %}
+{% set _fontAwe = theme.fontAwesome or '/css/font-awesome.min.css?rev=4.5.0' %}
+{% set _gitmentStyle = '//imsun.github.io/gitment/style/default.css' %}
+{% set style = '/css/style.css?rev=@@hash' %}
+
+{% if theme.gitment.enable and is_post() %}
+    {{ css([_gitmentStyle]) | safe }}
+{% endif %}
+
+{{ css([_bootstrap, _fontAwe, style]) | safe }}
+
+
+

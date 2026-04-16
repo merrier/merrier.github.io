@@ -1,0 +1,7 @@
+{% if theme.widgets and theme.widgets.length >0 %}
+    <aside class="col-md-4 sidebar">
+        {% for widget in theme.widgets %}
+        {{ partial('_widget/' + widget) | safe }}
+        {% endfor %}
+    </aside>
+{% endif %}

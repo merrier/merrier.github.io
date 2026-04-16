@@ -1,0 +1,23 @@
+{{ partial('_partial/head') | safe }}
+{{ partial('_partial/_head-sections/IE', null, {cache: (not config.relative_link)}) | safe }}
+<body>
+    {{ partial('_partial/header') | safe }}
+    {{ partial('_partial/nav') | safe }}
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content {% if is_post() %}m-post{% endif %}">
+                    {{ body | safe }}
+                </main>
+                {% if theme.toc and is_post() %}
+                    {{ partial('_partial/toc', null, {cache:false}) | safe }}
+                {% else %}
+                    {{ partial('_partial/sidebar', null, {cache: (not config.relative_link)}) | safe }}
+                {% endif %}
+            </div>
+        </div>
+    </section>
+    {{ partial('_partial/footer') | safe }}
+    {{ partial('_partial/copyright') | safe }}
+</body>
+</html>

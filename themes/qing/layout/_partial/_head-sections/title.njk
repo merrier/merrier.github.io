@@ -1,0 +1,22 @@
+<!--Title-->
+{% set page_title = page.title %}
+{% if is_archive() %}
+    {% if is_year() or is_month() %}
+        {% set page_title = __('archive_b', page.year + (('/' + page.month) if page.month else '')) %}
+    {% else %}
+        {% set page_title = __('archive_a') %}
+    {% endif %}
+{% elif is_category() %}
+    {% set page_title = __('category') + ': ' + page.category %}
+{% elif is_tag() %}
+    {% set page_title = __('tag') + ': ' + page.tag %}
+{% endif %}
+
+<title>{% if page_title %}{{ page_title }} | {% endif %}{{ config.title }}</title>
+
+{% if theme.rss %}
+    <link rel="alternate" href="{{ theme.rss | safe }}" title="{{ config.title }}" type="application/atom+xml">
+{% endif %}
+{% if theme.favicon %}
+    <link rel="icon" href="{{ theme.favicon | safe }}">
+{% endif %}

@@ -1,0 +1,6 @@
+{% if site.categories.length %}
+    <div class="widget">
+        <h3 class="title">{{ __('categories') }}</h3>
+        {{ list_categories(getCategoriesArgs(theme)) | safe }}
+    </div>
+{% endif %}

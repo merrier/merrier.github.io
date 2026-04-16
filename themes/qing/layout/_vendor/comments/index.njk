@@ -1,0 +1,15 @@
+{% if theme.uyan.enable and is_post() %}
+	{{ partial('_vendor/comments/uyan') | safe }}
+{% elif theme.gitment.enable and is_post() %}
+	{{ partial('_vendor/comments/gitment') | safe }}
+{% elif theme.livere.enable and is_post() %}
+	{{ partial('_vendor/comments/livere') | safe }}
+{% elif theme.disqus.enable and is_post() %}
+	{{ partial('_vendor/comments/disqus') | safe }}
+{% elif theme.changyan.enable and is_post() %}
+	{{ partial('_vendor/comments/changyan') | safe }}
+{% elif theme.valine.enable and is_post() %}
+    {{ partial('_vendor/comments/valine') | safe }}
+{% else %}
+   <p>评论系统未开启，无法评论！</p>
+{% endif %}

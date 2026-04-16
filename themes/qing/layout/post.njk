@@ -1,0 +1,64 @@
+<p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="{{ page.title }}">
+            {% if page.link %}
+	            <a href="{{ url_for(page.link) | safe }}" target="_blank">{{ page.title }}</a>
+            {% else %}
+	            {{ page.title or 'NO Title!' }}
+            {% endif %}
+        </h1>
+        {{ partial('_partial/article-meta', {post: page}) | safe }}
+        {% if theme.warning.enable %}
+            {% set diffDays = moment(Date.now()).diff(moment(page.date), 'day') %}
+            {% if (theme.warning.days != 0) and diffDays > (theme.warning.days or 300) %}
+            {% set warningTextArr = theme.warning.text.split("%d") %}
+            <p class="fa fa-exclamation-triangle warning">
+                {{ warningTextArr[0] | safe }}<strong>{{ diffDays }}</strong>{{ warningTextArr[1] | safe }}
+            </p>
+            {% endif %}
+        {% endif %}
+    </div>
+    {{ partial('_partial/gallery', {post:page}) | safe }}
+    <div class="post-body post-content">
+        {{ page.content | safe }}
+    </div>
+    {% if theme.reward.alipay or theme.reward.wepay %}
+        {{ partial('_partial/reward') | safe }}
+    {% endif %}
+    <div class="post-footer">
+        <div>
+            {% if theme.declaration.enable %}
+                {{ theme.declaration.title | safe }}：{{ theme.declaration.tip | safe }}{{ theme.cc | safe }}
+            {% endif %}
+        </div>
+        <div>
+            {% if theme.cc %}
+                {{ __('post_licence') }}: {{ theme.cc | safe }}
+            {% endif %}
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    {% if page.prev %}
+        <a href="{{ url_for(page.prev.path) | safe }}" class="pre-post btn btn-default" title='{{ page.prev.title | safe }}'>
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">{{ page.prev.title | safe }}</span>
+        </a>
+    {% endif %}
+    {% if page.next %}
+        <a href="{{ url_for(page.next.path) | safe }}" class="next-post btn btn-default" title='{{ page.next.title | safe }}'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">{{ page.next.title | safe }}</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    {% endif %}
+</div>
+
+{% if page.comments %}
+    <div id="comments">
+        {{ partial('_vendor/comments/index', {page: page}) | safe }}
+    </div>
+{% endif %}
+
+

@@ -1,0 +1,95 @@
+<h2>Qing 主题：主布局选择</h2>
+<p class="subtitle">基于「水墨留白」推进。点击选择你希望的整体信息架构（后续组件都围绕它展开）</p>
+
+<div class="cards">
+  <div class="card" data-choice="gemini" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div class="mockup">
+        <div class="mockup-header">A · 双栏（Gemini 风格）</div>
+        <div class="mockup-body">
+          <div style="display:flex;gap:12px">
+            <div style="width:30%;min-height:170px;border:1px solid rgba(0,0,0,.10);border-radius:12px;background:linear-gradient(180deg,rgba(0,0,0,.03),rgba(0,0,0,.015));padding:10px">
+              <div style="height:10px;width:62%;background:rgba(0,0,0,.55);border-radius:999px;margin-bottom:10px"></div>
+              <div style="height:8px;width:85%;background:rgba(0,0,0,.18);border-radius:999px;margin-bottom:8px"></div>
+              <div style="height:8px;width:78%;background:rgba(0,0,0,.14);border-radius:999px;margin-bottom:8px"></div>
+              <div style="height:8px;width:70%;background:rgba(0,0,0,.14);border-radius:999px;margin-bottom:8px"></div>
+              <div style="height:8px;width:76%;background:rgba(0,0,0,.14);border-radius:999px"></div>
+            </div>
+            <div style="flex:1;min-height:170px;border:1px solid rgba(0,0,0,.10);border-radius:12px;background:#fff;padding:10px">
+              <div style="display:flex;gap:10px;align-items:center;margin-bottom:10px">
+                <div style="width:40px;height:40px;border-radius:12px;background:rgba(0,0,0,.08)"></div>
+                <div style="flex:1">
+                  <div style="height:10px;width:52%;background:rgba(0,0,0,.65);border-radius:999px;margin-bottom:8px"></div>
+                  <div style="height:8px;width:34%;background:rgba(0,0,0,.18);border-radius:999px"></div>
+                </div>
+              </div>
+              <div style="height:8px;width:92%;background:rgba(0,0,0,.14);border-radius:999px;margin-bottom:8px"></div>
+              <div style="height:8px;width:86%;background:rgba(0,0,0,.12);border-radius:999px;margin-bottom:8px"></div>
+              <div style="height:8px;width:90%;background:rgba(0,0,0,.12);border-radius:999px;margin-bottom:8px"></div>
+              <div style="height:8px;width:76%;background:rgba(0,0,0,.12);border-radius:999px"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>双栏（左侧信息区）</h3>
+      <p>左侧固定：头像/菜单/分类/标签/公告；右侧阅读区。最像 Next Gemini。</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="reading" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div class="mockup">
+        <div class="mockup-header">B · 单栏（强阅读）</div>
+        <div class="mockup-body">
+          <div style="min-height:182px;border:1px solid rgba(0,0,0,.10);border-radius:12px;background:#fff;padding:10px">
+            <div style="height:10px;width:48%;background:rgba(0,0,0,.68);border-radius:999px;margin-bottom:10px"></div>
+            <div style="display:flex;gap:10px;align-items:center;margin-bottom:12px">
+              <div style="width:34px;height:34px;border-radius:10px;background:rgba(0,0,0,.08)"></div>
+              <div style="height:8px;width:34%;background:rgba(0,0,0,.18);border-radius:999px"></div>
+            </div>
+            <div style="height:8px;width:94%;background:rgba(0,0,0,.14);border-radius:999px;margin-bottom:8px"></div>
+            <div style="height:8px;width:92%;background:rgba(0,0,0,.12);border-radius:999px;margin-bottom:8px"></div>
+            <div style="height:8px;width:90%;background:rgba(0,0,0,.12);border-radius:999px;margin-bottom:8px"></div>
+            <div style="height:8px;width:70%;background:rgba(0,0,0,.12);border-radius:999px"></div>
+          </div>
+          <div style="margin-top:10px;display:flex;justify-content:flex-end">
+            <div style="width:86px;height:30px;border-radius:999px;border:1px solid rgba(0,0,0,.14);background:rgba(0,0,0,.02)"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>单栏（侧边浮层）</h3>
+      <p>更简洁：目录/搜索/切换深色通过浮层或右下角按钮出现。</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="hybrid" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div class="mockup">
+        <div class="mockup-header">C · 三段式（顶栏 + 内容 + 轻侧栏）</div>
+        <div class="mockup-body">
+          <div style="height:34px;border:1px solid rgba(0,0,0,.10);border-radius:12px;background:rgba(0,0,0,.02);margin-bottom:12px;display:flex;align-items:center;padding:0 12px;gap:12px">
+            <div style="width:68px;height:10px;border-radius:999px;background:rgba(0,0,0,.55)"></div>
+            <div style="flex:1;height:8px;border-radius:999px;background:rgba(0,0,0,.12)"></div>
+            <div style="width:34px;height:18px;border-radius:999px;border:1px solid rgba(0,0,0,.14)"></div>
+          </div>
+          <div style="display:flex;gap:12px">
+            <div style="flex:1;min-height:136px;border:1px solid rgba(0,0,0,.10);border-radius:12px;background:#fff;padding:10px"></div>
+            <div style="width:26%;min-height:136px;border:1px solid rgba(0,0,0,.10);border-radius:12px;background:linear-gradient(180deg,rgba(0,0,0,.03),rgba(0,0,0,.015));padding:10px"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>顶栏主导 + 轻侧栏</h3>
+      <p>主页/列表更像现代站点；文章页右侧放目录/信息，整体更“轻”。</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <p class="subtitle" style="margin-top:14px">如果你希望“主页像 Gemini、文章页更强阅读”，可以选 C（后续按页面做差异化）。</p>
+</div>

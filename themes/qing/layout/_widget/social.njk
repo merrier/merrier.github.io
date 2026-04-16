@@ -1,0 +1,12 @@
+{% if theme.social %}
+    <div class="widget">
+      <h3 class="title">{{ __('social') }}</h3> 
+        <div class="content social">
+            {% for item in theme.social %}
+	            <a href="{{ item.href | safe }}" rel="external nofollow" title="{{ item.name | safe }}" target="_blank">
+			    	<i class="{{ item.icon | safe }} fa fa-{{ item.icon | safe }}"></i>
+			    </a>
+            {% endfor %}
+        </div>
+    </div>
+{% endif %}

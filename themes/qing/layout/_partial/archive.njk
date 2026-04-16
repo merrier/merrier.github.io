@@ -1,0 +1,39 @@
+<h3>
+    {% if page.tag %}
+        {{ page.tag }}
+    {% elif page.category %}
+        {{ page.category }}
+    {% endif %}
+</h3>
+{% for post in page.posts.toArray() %}
+    <article class="post">
+        {% if post.img %}
+            <div class="post-media">
+                <a href="{{ url_for(post.path) | safe }}">
+                    <img class="img-ajax" src="{{ url_for('/img/loading.gif') | safe }}"  data-src="{{ url_for(post.img) | safe }}"  alt="{{ post.title | safe }}">
+                </a>
+            </div>
+        {% endif %}
+        <div class="post-content">
+            <div class="post-head home-post-head">
+                <h1 class="post-title">
+                    <a href="{{ url_for(post.path) | safe }}">{{ post.title | safe }}</a>
+                </h1>
+                <div class="post-meta">  &bull;
+                    <time class="post-date" datetime="" title="">
+                        {{ date(post.date,"YYYY年MM月DD日") | safe }}
+                    </time>
+                </div>
+            </div>
+            <p class="brief">
+                {% if post.excerpt %}
+                    {{ strip_html(post.excerpt) + '…' }}
+                {% else %}
+                    {{ truncate(strip_html(post.content), {length: theme.excerptLength or 120, separator: ''}) }}
+                {% endif %}
+            </p>
+        </div>
+    </article>
+ {% endfor %}
+
+{{ partial('_partial/pagination') | safe }}

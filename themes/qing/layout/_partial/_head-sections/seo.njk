@@ -1,0 +1,19 @@
+<!--SEO-->
+{% if config.description %}
+<meta name="description" content="{{ config.description }}"/>
+{% endif %}
+
+{% if config.keywords %}
+<meta name="keywords" content="{{ robotMeta }}"/>
+{% endif %}
+
+{% set robotMeta = theme.robot or 'all' %}
+<meta name="robots" content="{{ robotMeta }}" />
+<meta name="google" content="{{ robotMeta }}" />
+<meta name="googlebot" content="{{ robotMeta }}" />
+<meta name="verify" content="{{ robotMeta }}" />
+<meta name="google-site-verification" content="UkMBUrF2qTuMWfmPXWFFmc_pnqCRAxHQY1ndE0Zu1p0" />
+
+{% if theme.appleIcon %}
+<link rel="apple-touch-icon" href="{{ theme.appleIcon }}" />
+{% endif %}

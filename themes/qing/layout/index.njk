@@ -1,0 +1,54 @@
+{% if theme.carousel.img %}
+    <div class="carousel">
+        <a href="{{ theme.carousel.url }}" target="_blank">
+            <img src="{{ url_for(theme.carousel.img) | safe }}" alt="">
+        </a>
+    </div>
+{% endif %}
+
+{% if page.posts and page.posts.length %}
+{% for post in page.posts.toArray() %}
+{% set _photoUrl = getPostImage(post) %}
+<article class="post">
+    {% if _photoUrl %}
+        <div class="post-media">
+            <a href="{{ url_for(post.path) | safe }}">
+                <img class="img-ajax" src="{{ url_for('/img/loading.gif') | safe }}"  data-src="{{ url_for(_photoUrl) | safe }}"   alt="{{ post.title | safe }}">
+            </a>
+        </div>
+    {% endif %}
+    <div class="post-content">
+        <div class="post-head home-post-head">
+            <h1 class="post-title">
+                <a href="{{ url_for(post.path) | safe }}">{{ post.title | safe }}</a>
+            </h1>
+            <div class="post-meta">  &bull;
+                <time class="post-date" datetime="" title="">
+                    {{ date(post.date,"YYYY年MM月DD日") | safe }}
+                </time>
+            </div>
+        </div>
+        <p class="brief">
+            {% if post.excerpt %}
+                {{ strip_html(post.excerpt) + '…' }}
+            {% else %}
+                {{ truncate(strip_html(post.content), {length: theme.excerptLength or 120, separator: ''}) }}
+            {% endif %}
+        </p>
+    </div>
+    {% if theme.homePanel %}
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                {{ partial('_partial/article-meta', {post: post}) | safe }}
+            </div>
+
+            <div class="post-permalink">
+                <a href="{{ url_for(post.path) | safe }}" class="btn btn-default">{{ __('read_more') }}</a>
+            </div>
+        </footer>
+    {% endif %}
+</article>
+{% endfor %}
+{% endif %}
+
+{{ partial('_partial/pagination') | safe }}
