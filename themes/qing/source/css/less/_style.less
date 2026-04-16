@@ -18,14 +18,14 @@
 html {
     color: @grey5_color;
     line-height: 1.75em;
-    background: #ebebeb;
+    background: @greyish_color;
     position: relative;
     font-family: @font_family_1;
 }
 body {
     color: @grey5_color;
     line-height: 1.75em;
-    background: #ebebeb;
+    background: @greyish_color;
     position: relative;
     font-family: @font_family_1;
 }
@@ -98,7 +98,7 @@ input[type="search"] {
     padding: 7px 11px 7px 7px;
     border-radius: 4px 0 0 4px;
     margin-bottom: 1em;
-    .border(#ebebeb);
+    .border(@greyish_color);
     .transition;
     &:focus {
         .border(@theme_color);
@@ -107,7 +107,7 @@ input[type="search"] {
 }
 input[type="text"] {
     padding: 7px 7px;
-    .border(#ebebeb);
+    .border(@greyish_color);
     .border-radius;
     .transition;
     &:focus {
@@ -117,7 +117,7 @@ input[type="text"] {
 }
 input[type="url"] {
     padding: 7px 7px;
-    .border(#ebebeb);
+    .border(@greyish_color);
     .border-radius;
     .transition;
     &:focus {
@@ -127,7 +127,7 @@ input[type="url"] {
 }
 input[type="email"] {
     padding: 7px 7px;
-    .border(#ebebeb);
+    .border(@greyish_color);
     .border-radius;
     .transition;
     &:focus {
@@ -137,7 +137,7 @@ input[type="email"] {
 }
 textarea {
     padding: 7px 7px;
-    .border(#ebebeb);
+    .border(@greyish_color);
     .border-radius;
     .transition;
     &:focus {
@@ -205,8 +205,7 @@ pre {
     line-height: 0;
     height: 180px;
     width: 100%;
-    background:@white_color url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner.jpg);
-    background-repeat: repeat;
+    background: @greyish_color;
     overflow: hidden;
     .banneriframe {
         width: 100%;
@@ -232,18 +231,13 @@ pre {
         	padding-top:15px;
         	h2 {
         		font-family: @font_family_5;
-        		// width: 320px;
         		margin: 0 auto;
         		letter-spacing: 3px;
-        		color: @theme_color;
+        		color: @black_color;
         		.text-ellipsis();
-    			background-image:-webkit-linear-gradient(left,#cddc39,#e67e22 25%,#cddc39 50%,#e67e22 75%,#cddc39)!important;
-			    -webkit-text-fill-color: transparent!important;
-			    -webkit-background-clip: text!important;
-			    background-size: 200% 100%!important;
-        		animation: masked-animation 2s infinite linear!important;
+        		transition: color 0.3s;
 			    &:hover {
-	        		animation: masked-animation 1s infinite linear!important;
+			        color: @theme_color;
 	                text-decoration: none;
             	}
         	}
@@ -254,22 +248,18 @@ pre {
     .main-header {
         padding-top: 62px;
         padding-bottom: 62px;
-        background-repeat: no-repeat;
-        background-position: center 20%;
-        -webkit-background-size: cover;
-        background-size: cover;
     }
 }
 
 /* main-navigation */
 .main-navigation {
     text-align: center;
-    background:  @white_color;
-    .border-top(#ebebeb);
+    background: transparent;
+    .border-top(@border_color);
     margin-bottom: 20px;
-    border-bottom: 2px solid #e1e1e1;
+    border-bottom: 1px solid @border_color;
     .navbar-collapse{
-        border-top:1px solid #ebebeb
+        border-top:1px solid @border_color
     }
     .navbar-brand{
         max-width: 90%;
@@ -356,7 +346,7 @@ pre {
     main post area
 ====================================================*/
 #main{
-    background: @white_color;
+    background: transparent;
     padding:10px 0;
     margin-bottom: 10px;
 }
@@ -366,6 +356,9 @@ pre {
     margin-bottom: 15px;
     position: relative;
     overflow: hidden;
+    border: 1px solid @border_color;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
     .featured {
         position: absolute;
         background: @theme_color;
@@ -443,7 +436,7 @@ pre {
     .post-body {
         margin-top: 15px;
         padding: 25px 0;
-        border-top: 1px solid #eee;
+        border-top: 1px solid @border_color;
         overflow: hidden;
         p {
             font-size: 1em;
@@ -456,7 +449,7 @@ pre {
     .post-footer {
         margin-top: 15px;
         padding-top: 15px;
-        border-top: 1px solid #ebebeb;
+        border-top: 1px solid @greyish_color;
         .tag-list {
             color: @sepia_color;
             line-height: 28px;
@@ -595,7 +588,7 @@ pre {
         }
     }
     hr {
-        border-top: #dededc 1px solid;
+        border-top: @border_color 1px solid;
     }
     blockquote {
         margin: 0 0 1.64em 0;
@@ -646,7 +639,7 @@ pre {
         font-size: 0.96em;
         background-color: @greyish_color;
         padding: 1px 2px;
-        .border(#dadada);
+        .border(@border_color);
         .border-radius;
         font-family: @font_family_3;
         word-wrap: break-word;
@@ -656,7 +649,7 @@ pre {
         font-size: 0.96em;
         background-color: @greyish_color;
         padding: 1px 2px;
-        .border(#dadada);
+        .border(@border_color);
         .border-radius;
         font-family: @font_family_3;
         word-wrap: break-word;
@@ -664,7 +657,7 @@ pre {
     pre {
         margin: 1.64em 0;
         border: none;
-        border-left: 3px solid #dadada;
+        border-left: 3px solid @border_color;
         padding-left: 10px;
         overflow: auto;
         line-height: 1.5;
@@ -696,12 +689,12 @@ pre {
     th {
         text-align: left;
         padding: 4px 8px 4px 10px;
-        .border(#dadada);
+        .border(@border_color);
     }
     td {
         text-align: left;
         padding: 4px 8px 4px 10px;
-        .border(#dadada);
+        .border(@border_color);
         vertical-align: top;
     }
     tr {
@@ -777,7 +770,7 @@ pre {
     .vheader{
         .vinput{
             border:none;
-            .border-bottom(#f0f0f0);
+            .border-bottom(@border_color);
             .border-radius(0);
             font-size: .9em;
             .transition();
@@ -832,6 +825,9 @@ pre {
     .widget {
         background:  @white_color;
         padding: 16px 25px;
+        border: 1px solid @border_color;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.03);
         ul {
             padding: 0;
             li {
@@ -855,11 +851,15 @@ pre {
     .widget-box {
         background:  @white_color;
         padding: 0 25px 16px;
+        border: 1px solid @border_color;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.03);
     }
 }
 .main-footer {
-    background: #202020;
-    color: @sepia_color;
+    background: @greyish_color;
+    color: @grey8_color;
+    border-top: 1px solid @border_color;
 }
 
 /*====================================================
@@ -870,7 +870,7 @@ pre {
     .title {
         margin-top: 0;
         padding-bottom: 7px;
-        border-bottom: 1px solid #ebebeb;
+        border-bottom: 1px solid @greyish_color;
         margin-bottom: 21px;
         position: relative;
         &:after {
@@ -885,7 +885,7 @@ pre {
     }
     .tag-cloud {
         a {
-            .border(#ebebeb);
+            .border(@greyish_color);
             padding: 2px 7px;
             color: @sepia_color;
             font-size:1em!important;
@@ -939,7 +939,7 @@ pre {
             width: 25%;
             height: 32px;
             background: @theme_color;
-            color:#fff;
+            color:@white_color;
             border-radius: 0 4px 4px 0;
             .border(@theme_color);
         };
@@ -964,15 +964,15 @@ pre {
             color: @black_color;
             background: @white_color;
             border-radius: 4px;
-            box-shadow: 1px 2px 2px #ccc;
-            .border(#ccc);
+            box-shadow: 1px 2px 2px @border_color;
+            .border(@border_color);
             &:before{
                 content: '';
                 position: absolute;
                 display: inline-block;
                 border-width: 0 12px 12px 12px;
                 border-style: solid;
-                border-color: #ccc transparent;
+                border-color: @border_color transparent;
                 right: 80px;
                 top: -12px
             };
@@ -982,7 +982,7 @@ pre {
                 display: inline-block;
                 border-width: 0 12px 12px 12px;
                 border-style: solid;
-                border-color: #fff transparent;
+                border-color: @white_color transparent;
                 right: 80px;
                 top: -10px
             };
@@ -1027,7 +1027,7 @@ pre {
                         font-size: 14px;
                         color:@black9_color;
                         padding-bottom: 10px;
-                        .border-bottom(#ccc);
+                        .border-bottom(@border_color);
                         b {
                             color:@theme_color;
                             margin:0 2px;
@@ -1087,18 +1087,18 @@ pre {
    copyright
 ====================================================*/
 .copyright {
-    background: #111;
+    background: @greyish_color;
     font-size: 13px;
     text-align: center;
-    color: @black6_color;
+    color: @grey8_color;
     padding-top: 20px;
     padding-bottom: 20px;
-    border-top: 1px solid @grey3_color;
+    border-top: 1px solid @border_color;
     span {
         margin: 0 .5em;
     }
     a {
-        color: @black6_color;
+        color: @grey8_color;
     }
 }
 
@@ -1261,7 +1261,7 @@ pre {
                 &:before {
                     width: 25%;
                     margin-left: 75%;
-                    border-top: 1px solid #dededc;
+                    border-top: 1px solid @border_color;
                     display: block;
                     content: "";
                     margin-bottom: 10px;

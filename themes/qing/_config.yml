@@ -124,7 +124,7 @@ branding: 总有人间一两风，填我十万八千梦
 
 ## 设置banner背景图片
 banner:
-    img: /images/hexo_others_12.jpg
+    img: 
 
 ## 首页列表底部面板
 homePanel: true
