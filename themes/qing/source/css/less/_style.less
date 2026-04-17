@@ -1083,17 +1083,7 @@ pre {
         canvas {
             position: relative;
             z-index: 1;
-            /* 制造一个灯笼的外壳效果，边缘深中间浅，外面一圈渐变过渡到透明 */
-            background: radial-gradient(
-                closest-side at 50% 50%,
-                rgba(241, 196, 15, 0.1) 0%,
-                rgba(192, 57, 43, 0.2) 40%,
-                rgba(192, 57, 43, 0.6) 80%,
-                rgba(192, 57, 43, 0) 100%
-            );
-            /* 增加灯笼外发光效果，使边缘过渡更自然 */
-            box-shadow: 0 0 40px 15px rgba(192, 57, 43, 0.2);
-            border-radius: 50%;
+            /* 去掉了之前的渐变光晕，避免像水晶球 */
         }
         
         /* 隐藏 a 标签原有的渲染效果 */
