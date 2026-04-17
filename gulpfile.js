@@ -1,1 +1,1 @@
-require('./themes/snippet/gulpfile');
+require('./themes/qing/gulpfile');

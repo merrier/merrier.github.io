@@ -855,6 +855,7 @@ pre {
   border: 1px solid #dcd6cb;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  /* 归档列表 - 中国风竹简/书签样式 */
   /* 首页分类模块 - 古籍铭牌横向滚动样式 */
 }
 .sidebar .widget ul {
@@ -863,18 +864,82 @@ pre {
 .sidebar .widget ul li {
   list-style: none;
 }
-.sidebar .widget ul li.archive-list-item {
-  width: 50%;
-  display: inline-block;
+.sidebar .widget .archive-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 10px 5px;
+  margin: 0;
+  list-style: none;
 }
-.sidebar .widget .archive-list-count {
-  margin-left: 4px;
+.sidebar .widget .archive-list .archive-list-item {
+  flex: 0 0 auto;
+  width: calc(50% - 8px);
+  /* 保持两列排版 */
+  height: 45px;
+  position: relative;
+  background-color: #fdfaf4;
+  /* 仿古宣纸底色 */
+  border: 1px solid #d4c8a8;
+  border-left: 4px solid #8b7d6b;
+  /* 模拟书脊装订线 */
+  border-radius: 2px 6px 6px 2px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.04);
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* 宣纸纤维纹理 */
+  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.02) 0%, transparent 5%, transparent 95%, rgba(0, 0, 0, 0.01) 100%);
 }
-.sidebar .widget .archive-list-count:before {
-  content: "(";
+.sidebar .widget .archive-list .archive-list-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 3px 5px 12px rgba(0, 0, 0, 0.08);
+  border-left-color: #c0392b;
+  /* hover时书脊变朱红色 */
 }
-.sidebar .widget .archive-list-count:after {
-  content: ")";
+.sidebar .widget .archive-list .archive-list-item .archive-list-link {
+  text-decoration: none;
+  color: #2b2824;
+  font-family: "Noto Serif SC", "Songti SC", serif;
+  /* 衬线宋体 */
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  width: calc(100% - 35px);
+  /* 给右侧计数留出空间 */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.sidebar .widget .archive-list .archive-list-item .archive-list-link::before {
+  content: none;
+  /* 移除可能的默认小圆点 */
+}
+.sidebar .widget .archive-list .archive-list-item .archive-list-link i {
+  font-family: "Noto Serif SC", "Songti SC", serif;
+  font-style: normal;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.sidebar .widget .archive-list .archive-list-item .archive-list-count {
+  position: absolute;
+  right: 12px;
+  font-size: 12px;
+  color: #c0392b;
+  /* 朱砂红，模拟印章颜色 */
+  font-family: "Noto Serif SC", "Songti SC", serif;
+  font-weight: bold;
+  margin-left: 0;
+  /* 中式计数：去掉半角括号，改用中式量词 */
+}
+.sidebar .widget .archive-list .archive-list-item .archive-list-count:before {
+  content: "";
+}
+.sidebar .widget .archive-list .archive-list-item .archive-list-count:after {
+  content: " 卷";
 }
 .sidebar .widget .category-list {
   display: flex;

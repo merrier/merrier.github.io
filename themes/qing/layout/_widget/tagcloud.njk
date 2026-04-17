@@ -4,14 +4,15 @@
     <div class="content tag-cloud">
         {% if theme.tagcloud.tag3d %}
             <div class="lantern-3d-container">
-                <canvas width="350" height="350" id="tag-cloud-3d" style="width: 100%; height: auto; aspect-ratio: 1 / 1;">
-                    <div id="tag-cloud-3d-data">
-                        {% for tag in site.tags.sort('length', -1).limit(40).toArray() %}
-                            <a href="{{ url_for(tag.path) }}">{{ tag.name }}</a>
-                        {% endfor %}
-                    </div>
-                </canvas>
                 <div class="lantern-cap top-cap"></div>
+                <canvas width="350" height="350" id="tag-cloud-3d" style="width: 100%; height: auto; aspect-ratio: 1 / 1;">
+                </canvas>
+                <!-- 将数据源移到 canvas 外部，防止构建压缩时被当做 fallback 误删 -->
+                <div id="tag-cloud-3d-data" style="display: none;">
+                    {% for tag in site.tags.sort('length', -1).limit(40).toArray() %}
+                        <a href="{{ url_for(tag.path) }}">{{ tag.name }}</a>
+                    {% endfor %}
+                </div>
                 <div class="lantern-cap bottom-cap">
                     <div class="lantern-tassel"></div>
                 </div>

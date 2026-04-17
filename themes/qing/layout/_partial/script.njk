@@ -60,49 +60,56 @@
             }
             
             // 覆盖渲染，加上顶部提线和底部流苏
-            var tc = TagCanvas;
-            if (tc && tc.tc && tc.tc.prototype) {
-                var origDrawText = tc.tc.prototype.DrawText;
-                tc.tc.prototype.DrawText = function(context, p, width, height, font) {
-                    origDrawText.call(this, context, p, width, height, font);
-                    // 在渲染完背景和文字后，画装饰线
-                    if (this.bgColour && p.alpha > 0.1) {
-                        context.save();
-                        context.globalAlpha = p.alpha;
-                        context.strokeStyle = '#c0392b';
-                        context.lineWidth = 1;
-                        
-                        // 计算边界，因为有 scale 和 z 轴的变化，这里用 p 的实际宽高度
-                        var cx = p.x2d;
-                        var cy = p.y2d;
-                        var w = p.w / 2 * p.scale;
-                        var h = p.h / 2 * p.scale;
-                        
-                        // 统一使用金线
-                        context.strokeStyle = '#f1c40f';
-
-                        // 顶部金线 (提线)
-                        context.beginPath();
-                        context.moveTo(cx, cy - h);
-                        context.lineTo(cx, cy - h - 15 * p.scale);
-                        context.stroke();
-                        
-                        // 底部金线 (流苏主线)
-                        context.beginPath();
-                        context.moveTo(cx, cy + h);
-                        context.lineTo(cx, cy + h + 12 * p.scale);
-                        context.stroke();
-                        
-                        // 底部穗子金线 (流苏横线)
-                        context.beginPath();
-                        context.moveTo(cx - 4 * p.scale, cy + h + 3 * p.scale);
-                        context.lineTo(cx + 4 * p.scale, cy + h + 3 * p.scale);
-                        context.stroke();
-                        
-                        context.restore();
-                    }
-                };
-            }
+        var tc = TagCanvas;
+        if (tc && tc.tc && tc.tc.prototype) {
+            var origDrawText = tc.tc.prototype.DrawText;
+            tc.tc.prototype.DrawText = function(context, cx, cy) {
+                origDrawText.call(this, context, cx, cy);
+                // 在渲染完背景和文字后，画装饰线
+                if (this.bgColour && this.alpha > 0.1) {
+                    context.save();
+                    
+                    // context 的 transform 此时已经在文字的中心位置 (x=0, y=0)
+                    // 但是因为 3D 效果，我们不能完全依赖这个局部的坐标，我们其实需要结合 scale 进行调整，
+                    // 原先的 origDrawText 其实是把 context.setTransform 到这个位置的。
+                    // 它的 transform 类似：setTransform(scale, 0, 0, scale, scale * tx, scale * ty)
+                    
+                    // 为了不被这个 scale 影响线宽，我们重置一下坐标系到全局，自己算位置
+                    context.setTransform(1, 0, 0, 1, 0, 0);
+                    
+                    context.globalAlpha = this.alpha;
+                    context.lineWidth = 1;
+                    context.strokeStyle = '#f1c40f'; // 统一使用金线
+                    
+                    var scale = this.sc;
+                    var tagCenterX = (this.x * scale) + cx;
+                    var tagCenterY = (this.y * scale) + cy;
+                    
+                    var w = (this.w / 2) * scale;
+                    var h = (this.h / 2) * scale;
+                    
+                    // 顶部金线 (提线)
+                    context.beginPath();
+                    context.moveTo(tagCenterX, tagCenterY - h);
+                    context.lineTo(tagCenterX, tagCenterY - h - 15 * scale);
+                    context.stroke();
+                    
+                    // 底部金线 (流苏主线)
+                    context.beginPath();
+                    context.moveTo(tagCenterX, tagCenterY + h);
+                    context.lineTo(tagCenterX, tagCenterY + h + 12 * scale);
+                    context.stroke();
+                    
+                    // 底部穗子金线 (流苏横线)
+                    context.beginPath();
+                    context.moveTo(tagCenterX - 4 * scale, tagCenterY + h + 3 * scale);
+                    context.lineTo(tagCenterX + 4 * scale, tagCenterY + h + 3 * scale);
+                    context.stroke();
+                    
+                    context.restore();
+                }
+            };
+        }
             TagCanvas.Start('tag-cloud-3d','tag-cloud-3d-data',tagOption);
         } catch(e) {
             console.log('Canvas error:', e);
