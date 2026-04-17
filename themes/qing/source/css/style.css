@@ -855,7 +855,7 @@ pre {
   border: 1px solid #dcd6cb;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
-  /* 首页分类模块 - 古籍书本横向滚动样式 */
+  /* 首页分类模块 - 古籍铭牌横向滚动样式 */
 }
 .sidebar .widget ul {
   padding: 0;
@@ -894,110 +894,90 @@ pre {
 }
 .sidebar .widget .category-list .category-list-item {
   flex: 0 0 auto;
-  width: 50px;
-  /* 古籍通常较为细长 */
-  height: 180px;
+  width: 150px;
+  /* 增加宽度，适应横排文字 */
+  height: 54px;
+  /* 减小高度，变为横向书签/铭牌样式 */
   position: relative;
   background-color: #f0ead6;
-  /* 更贴近老宣纸的底色 */
+  /* 贴近老宣纸的底色 */
   border: 1px solid #d4c8a8;
-  border-left: 2px solid #bba371;
-  /* 书脊深色边缘 */
+  border-left: 4px solid #8b7d6b;
+  /* 左侧深色包边，模拟书脊或装订线 */
   border-radius: 2px 6px 6px 2px;
-  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.15), inset 5px 0 10px rgba(0, 0, 0, 0.05), /* 书脊内阴影 */ inset -1px 0 2px rgba(255, 255, 255, 0.6);
-  /* 右侧高光 */
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1), inset 0 0 10px rgba(0, 0, 0, 0.03);
   transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
-  /* 书本封面纹理 - 模拟纸张纤维 */
-  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.06) 0%, transparent 8%, transparent 92%, rgba(0, 0, 0, 0.04) 100%), linear-gradient(rgba(187, 163, 113, 0.15) 1px, transparent 1px);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 15px;
+  /* 宣纸纤维纹理 */
+  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.04) 0%, transparent 5%, transparent 95%, rgba(0, 0, 0, 0.02) 100%), linear-gradient(180deg, rgba(187, 163, 113, 0.1) 1px, transparent 1px);
   background-size: 100% 100%, 100% 3px;
-  /* 线装书的缝线效果 */
-  /* 书签/书贴装饰 */
-}
-.sidebar .widget .category-list .category-list-item::before {
-  content: '';
-  position: absolute;
-  left: 6px;
-  top: 15px;
-  bottom: 15px;
-  width: 3px;
-  /* 模拟真实的线装孔和线 */
-  background: radial-gradient(circle at center, #4a3e2e 40%, transparent 50%) 0 0% 30px, linear-gradient(to bottom, #8b7d6b 40%, transparent 40%) 1px 0px 30px;
-  opacity: 0.9;
+  /* 朱砂红印章装饰 */
 }
 .sidebar .widget .category-list .category-list-item::after {
   content: '';
   position: absolute;
-  top: 15px;
-  right: 8px;
-  width: 22px;
-  height: 110px;
-  background-color: #c0392b;
-  /* 纯正朱砂红 */
-  border: 1px solid #9c2e22;
-  /* 书签边框 */
-  border-radius: 1px;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25), inset 0 0 2px rgba(255, 255, 255, 0.2);
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  background-color: rgba(192, 57, 43, 0.1);
+  /* 极淡的朱砂红底 */
+  border: 1px solid rgba(192, 57, 43, 0.3);
+  border-radius: 2px;
   z-index: 1;
+  transition: background-color 0.3s ease;
 }
 .sidebar .widget .category-list .category-list-item:hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow: 8px 12px 20px rgba(0, 0, 0, 0.15), inset 5px 0 10px rgba(0, 0, 0, 0.05);
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.12), inset 0 0 10px rgba(0, 0, 0, 0.03);
+}
+.sidebar .widget .category-list .category-list-item:hover::after {
+  background-color: rgba(192, 57, 43, 0.2);
 }
 .sidebar .widget .category-list .category-list-item .category-list-link {
-  writing-mode: vertical-rl;
   text-decoration: none;
-  color: #f0ead6;
-  /* 文字在朱砂红书签上显示为宣纸色 */
+  color: #2b2824;
   font-family: "Noto Serif SC", "Songti SC", serif;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
-  letter-spacing: 5px;
-  padding: 18px 0;
-  height: 100%;
-  display: block;
-  text-align: center;
+  letter-spacing: 2px;
   z-index: 2;
-  position: absolute;
-  top: 0;
-  right: 8px;
-  /* 对齐书签位置 */
-  width: 22px;
-  /* 与书签同宽 */
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
-  /* 增加文字立体感 */
+  display: flex;
+  align-items: center;
+  width: calc(100% - 45px);
+  /* 留出右侧印章和数量的空间 */
+  height: 100%;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.6);
 }
 .sidebar .widget .category-list .category-list-item .category-list-link i {
   font-family: "Noto Serif SC", "Songti SC", serif;
   font-style: normal;
-  display: inline;
-  writing-mode: vertical-rl;
-  letter-spacing: 5px;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .sidebar .widget .category-list .category-list-item .category-list-link:hover {
-  color: #f1c40f;
-  /* 悬停时文字变为金色 */
+  color: #c0392b;
 }
 .sidebar .widget .category-list .category-list-item .category-list-count {
   position: absolute;
-  bottom: 12px;
-  left: 18px;
-  /* 避开左侧缝线 */
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
   font-size: 12px;
-  color: #6d6255;
+  color: #c0392b;
+  /* 朱砂红文字 */
   font-family: "Noto Serif SC", "Songti SC", serif;
   font-weight: bold;
-  z-index: 2;
-  writing-mode: vertical-rl;
-  letter-spacing: 3px;
-  /* 将数字转换为中式的样式 */
-}
-.sidebar .widget .category-list .category-list-item .category-list-count::before {
-  content: "共";
-  margin-bottom: 5px;
-}
-.sidebar .widget .category-list .category-list-item .category-list-count::after {
-  content: "卷";
-  margin-top: 5px;
+  z-index: 3;
+  width: 24px;
+  text-align: center;
+  /* 横向排版不需要“共卷”修饰，保持简洁即可 */
 }
 .sidebar .widget-box {
   background: #fbfbf9;
