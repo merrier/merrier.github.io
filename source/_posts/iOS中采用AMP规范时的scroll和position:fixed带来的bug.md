@@ -1,5 +1,5 @@
 ---
-title: iOS中采用AMP规范时的scroll和position:fixed带来的bug
+title: 'iOS中采用AMP规范时的scroll和position:fixed带来的bug'
 urlname: the-bugs-caused-by-scroll-and-position
 id: 1212
 categories:
@@ -9,8 +9,9 @@ tags:
   - fixed
   - ios
   - 前端
-date: 2017-08-26 20:23:20
 img: /images/hexo_thumbnail_67.jpg
+abbrlink: 54920
+date: 2017-08-26 20:23:20
 ---
 
 本文翻译自一位前辈的两篇文章，原文链接：

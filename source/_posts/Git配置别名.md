@@ -6,8 +6,9 @@ categories:
   - Git
 tags:
   - git
-date: 2017-06-28 11:04:28
 img: /images/hexo_thumbnail_16.jpg
+abbrlink: 24174
+date: 2017-06-28 11:04:28
 ---
 
 git 提供了各种各样的操作方法，但是我们常常会陷入“敲 git 命令敲的手疼”的困境，此时为 git 配置别名就显得尤为重要了，尤其是当我们的项目有各种各样的分支（master、dev、test...）时，经常需要 merge、rebase、add、commit，如果能用一两个字母代替这些命令的话，我相信会减轻很多打字的负担。

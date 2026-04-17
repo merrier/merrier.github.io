@@ -6,8 +6,9 @@ categories:
   - 前端
 tags:
   - 笔记
-date: 2017-04-06 16:42:13
 img: /images/hexo_thumbnail_107.jpeg
+abbrlink: 62032
+date: 2017-04-06 16:42:13
 ---
 
 ## 1. Web 标准——结构、样式和行为的分离

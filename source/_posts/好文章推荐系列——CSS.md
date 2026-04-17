@@ -1,12 +1,13 @@
 ---
 title: 好文章推荐系列——CSS
 urlname: css-good-articles
-id: 62358359385498395483
+id: 62358359385498395000
 categories:
   - 推荐
 tags:
   - CSS
 img: /images/hexo_thumbnail_150.jpg
+abbrlink: 24997
 date: 2017-08-07 16:29:07
 ---
 

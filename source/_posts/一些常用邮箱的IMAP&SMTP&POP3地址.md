@@ -7,8 +7,9 @@ categories:
 tags:
   - SMTP
   - 邮箱地址
-date: 2017-04-20 10:05:49
 img: /images/hexo_thumbnail_54.jpeg
+abbrlink: 26388
+date: 2017-04-20 10:05:49
 ---
 
 我们在客户端设置邮箱或者使用 PHPMailer 发送邮件的时候，我们都会去查找这些邮箱的 IMAP / SMTP / POP3 地址，这里列出了一些常用邮箱的这些地址，方便自己和大家以后设置邮箱时候使用。

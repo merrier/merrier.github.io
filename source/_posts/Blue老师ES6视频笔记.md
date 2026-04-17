@@ -8,8 +8,9 @@ tags:
   - ES6
   - JS
   - 笔记
-date: 2017-12-12 22:10:42
 img: /images/hexo_thumbnail_19.jpg
+abbrlink: 2967
+date: 2017-12-12 22:10:42
 ---
 
 请容许我吐槽一下，我发现中国很多前端的大神的英文真的差啊。。

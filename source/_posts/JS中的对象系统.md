@@ -7,8 +7,9 @@ categories:
 tags:
   - JS
   - 对象
-date: 2017-08-07 10:10:23
 img: /images/hexo_thumbnail_17.jpg
+abbrlink: 23292
+date: 2017-08-07 10:10:23
 ---
 
 转载自[简书-浅析JavaScript的对象系统](http://www.jianshu.com/p/d0930dc0f95d) 首先，你肯定在不少地方看到过这句话：

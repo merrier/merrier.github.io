@@ -7,8 +7,9 @@ categories:
 tags:
   - change-id
   - git
-date: 2017-08-20 20:38:52
 img: /images/hexo_thumbnail_16.jpg
+abbrlink: 5375
+date: 2017-08-20 20:38:52
 ---
 
 之前在创业公司实习的时候代码管理很不规范，技术部负责人把每个人的 ssh key 添加到公司 github 中之后就可以执行 git 相关操作了，根本没有权限的概念；后来进入公司之后，才知道还有 Gerrit 这种东西，而第一次 push 代码的时候就遇到了 `ERROR: missing Change-Id in commit message` 的错误，后来才得知是因为没有 Change-Id 的缘故，下面就介绍一下 Change-Id 是什么东东：

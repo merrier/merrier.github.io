@@ -7,8 +7,9 @@ categories:
 tags:
   - sublime
   - 推荐
-date: 2017-05-14 20:44:19
 img: /images/hexo_thumbnail_100.jpeg
+abbrlink: 4910
+date: 2017-05-14 20:44:19
 ---
 
 ## 安装sublime text2 插件的方法

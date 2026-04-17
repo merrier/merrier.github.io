@@ -4,10 +4,11 @@ urlname: updating-wallpaper-with-cron-timing-task-under-mac
 id: 1014
 categories:
   - 工具
-date: 2017-07-26 15:08:17
 tags:
   - Mac
 img: /images/hexo_thumbnail_117.png
+abbrlink: 30020
+date: 2017-07-26 15:08:17
 ---
 
 这个技巧的原文来自[Set Desktop to NASA Astronomy Picture of the Day](https://www.macosxautomation.com/automator/apod/index.html)，作者通过 Automator 脚本可以每天自动去 NASA（美国宇航局）下载“每日一图”，同时将其设置为桌面。是不是听起来很酷！当然了，我第一次看到的并不是上面那篇文章，而是另一位大神（harttle）的[用Cron定时任务更新壁纸](http://harttle.com/2015/11/20/crontab-desktop.html)，harttle 并没有用 Automator 方式，而是通过 Cron 定时任务实现了这个功能。美中不足的是，harttle 是 Linux 系统，然后我就在自己的 Mac 上试了一下，下面就跟着我一起来实现一把吧！

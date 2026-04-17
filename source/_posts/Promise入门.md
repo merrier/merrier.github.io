@@ -9,8 +9,9 @@ tags:
   - JS
   - 慕课网
   - 笔记
-date: 2018-02-26 22:14:10
 img: /images/hexo_thumbnail_91.png
+abbrlink: 33235
+date: 2018-02-26 22:14:10
 ---
 
 幕课网上的视频——[Promise入门](https://www.imooc.com/learn/949)笔记，Promise 作为 ES6 中最重要的特性之一，对其进行了解和学习是非常有必要的，课程的源码已经上传至[我的github](https://github.com/merrier/imooc-promise-sample)。

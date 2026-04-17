@@ -8,8 +8,9 @@ tags:
   - JS
   - 函数
   - 面试
-date: 2017-08-02 15:16:07
 img: /images/hexo_thumbnail_17.jpg
+abbrlink: 61456
+date: 2017-08-02 15:16:07
 ---
 
 本篇文章译自某大牛的文章：[Function Declarations vs. Function Expressions](https://javascriptweblog.wordpress.com/2010/07/06/function-declarations-vs-function-expressions/)，推荐英语不是很差的童鞋点击前面链接看原文。首先先做个小测验，下面四个例子的 alert 输出分别是什么？

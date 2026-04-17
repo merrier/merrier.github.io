@@ -6,8 +6,9 @@ categories:
   - 游戏
 tags:
   - COC
-date: 2018-05-30 17:30:57
 img: /images/hexo_thumbnail_21.jpg
+abbrlink: 51142
+date: 2018-05-30 17:30:57
 ---
 
 ## 写在前面

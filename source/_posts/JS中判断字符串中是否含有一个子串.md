@@ -7,8 +7,9 @@ categories:
 tags:
   - JS
   - stackoverflow
-date: 2017-08-01 15:33:27
 img: /images/hexo_thumbnail_13.jpg
+abbrlink: 63123
+date: 2017-08-01 15:33:27
 ---
 
 题目我就不过多解释了，这篇文章是对 [stackoverflow 上一个问题](https://stackoverflow.com/questions/1789945/how-to-check-whether-a-string-contains-a-substring-in-javascript)的总结，如果英文不是特别差的话，推荐大家点击上面链接看大家对这个问题的详细讨论

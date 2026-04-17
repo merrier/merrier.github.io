@@ -6,8 +6,9 @@ categories:
   - CSS
 tags:
   - CSS
-date: 2017-04-21 15:33:18
 img: /images/hexo_thumbnail_62.png
+abbrlink: 25783
+date: 2017-04-21 15:33:18
 ---
 
 ## 1. relative 和 absolute 的相煎关系

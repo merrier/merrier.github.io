@@ -6,8 +6,9 @@ categories:
   - JS
 tags:
   - JS
-date: 2017-05-01 22:49:51
 img: /images/hexo_thumbnail_17.jpg
+abbrlink: 3162
+date: 2017-05-01 22:49:51
 ---
 
 ## window 和 document

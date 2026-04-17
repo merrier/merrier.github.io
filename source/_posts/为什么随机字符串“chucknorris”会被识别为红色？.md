@@ -8,8 +8,9 @@ tags:
   - CSS
   - stackoverflow
   - 计算机基础
-date: 2017-08-01 18:35:30
 img: /images/hexo_thumbnail_6.jpg
+abbrlink: 34922
+date: 2017-08-01 18:35:30
 ---
 
 这个问题来源于 [stackoverflow](https://stackoverflow.com/questions/8318911/why-does-html-think-chucknorris-is-a-color)，就是有位学者无意中发现随机字符串会被 html 识别为特定的一些颜色，于是就在 stackoverflow 发起了讨论，这个问题也引起了我的兴趣，虽然是一个比较偏的知识点，但是了解一下还是没坏处的。

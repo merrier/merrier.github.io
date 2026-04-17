@@ -7,8 +7,9 @@ categories:
 tags:
   - autojump
   - mac
-date: 2017-08-30 21:09:31
 img: /images/hexo_thumbnail_84.jpg
+abbrlink: 59785
+date: 2017-08-30 21:09:31
 ---
 
 首先，这篇文章的封面图是我随便找的，好像是一个游戏的名字。。但是就连 [autojump的github](https://github.com/wting/autojump) 上面都没有一张图片，所以我也很无奈啊~

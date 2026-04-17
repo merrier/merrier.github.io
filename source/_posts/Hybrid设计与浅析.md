@@ -7,8 +7,9 @@ categories:
 tags:
   - Hybrid
   - 慕课网
-date: 2017-12-01 22:19:00
 img: /images/hexo_thumbnail_32.jpg
+abbrlink: 48529
+date: 2017-12-01 22:19:00
 ---
 
 慕课网视频——[Hybrid设计](https://www.imooc.com/learn/850)的学习笔记，同时加入了一些自己的理解，希望通过本篇文章能够让你理解什么是 Hybrid，以及 Hybrid 有什么特点，同时还会简单介绍一下 Hybrid 开发时的注意事项。

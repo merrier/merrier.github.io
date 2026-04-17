@@ -6,8 +6,9 @@ categories:
   - CSS
 tags:
   - CSS
-date: 2017-04-21 16:40:08
 img: /images/hexo_thumbnail_60.jpeg
+abbrlink: 45032
+date: 2017-04-21 16:40:08
 ---
 
 ## 1. vertical-align 支持的属性值

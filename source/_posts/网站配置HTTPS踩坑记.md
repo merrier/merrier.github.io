@@ -8,8 +8,9 @@ tags:
   - HTTP
   - Wordpress
   - 指南
-date: 2018-04-16 14:36:36
 img: /images/hexo_thumbnail_18.png
+abbrlink: 24656
+date: 2018-04-16 14:36:36
 ---
 
 近两年来 HTTPS 取代 HTTP 已经成为大势所趋。早在 2014 年 Google Chromium 安全团队提议将所有的 HTTP 协议网站标注为不安全。现在，Chrome 浏览器已经开始执行这一标准了。从 Chrome 56 开始，任何网页，如果有输入密码或者信用卡资料的，却没有使用 HTTPS，将被 Chrome 浏览器标识为不安全；逐步的，任何没有使用 HTTPS 协议的网页 Chrome 浏览器都会被标识为”不安全”，或者 “Not Secure”。所以处女座的我打算将 merrier.wang 升级成 HTTPS，以下对升级过程中遇到的问题和坑进行一下总结，如果你也有类似需求，希望这篇文章能够帮到你一二~

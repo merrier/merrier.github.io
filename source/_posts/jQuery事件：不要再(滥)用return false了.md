@@ -7,8 +7,9 @@ categories:
 tags:
   - jQuery
   - stackoverflow
-date: 2017-08-03 18:25:21
 img: /images/hexo_thumbnail_74.jpeg
+abbrlink: 64580
+date: 2017-08-03 18:25:21
 ---
 
 无意中在 stackoverflow 上看到一个[关于jQuery中event.preventDefault()和return false的提问](https://stackoverflow.com/questions/1357118/event-preventdefault-vs-return-false)，后来从评论中发现一篇[关于这个问题的很不错的文章](https://web.archive.org/web/20160614140933/http://fuelyourcoding.com/jquery-events-stop-misusing-return-false/)，遂翻译了一下，希望能够帮助大家更好的理解 jQuery 中的 return false；当你刚开始学习 jQuery 中的事件时，也许你首先碰到的知识点就是“取消浏览器的默认行为”这一概念。比如，一个讲 click 的初级教程里可能会有如下代码：

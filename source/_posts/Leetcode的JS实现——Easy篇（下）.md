@@ -8,8 +8,9 @@ tags:
   - JS
   - leetcode
   - 算法
-date: 2017-03-26 12:40:52
 img: /images/hexo_thumbnail_39.jpg
+abbrlink: 26284
+date: 2017-03-26 12:40:52
 ---
 
 这是 Leetcode 的 JS 实现——Easy 篇的后半部分，前半部分可以[点击这里](/20170326/js-implementation-of-leetcode-easy-part1.html)查看

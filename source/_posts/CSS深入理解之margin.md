@@ -6,8 +6,9 @@ categories:
   - CSS
 tags:
   - CSS
-date: 2017-04-20 22:58:44
 img: /images/hexo_thumbnail_65.png
+abbrlink: 48992
+date: 2017-04-20 22:58:44
 ---
 
 ## 1. margin 与容器的尺寸

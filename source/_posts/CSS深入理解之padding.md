@@ -6,8 +6,9 @@ categories:
   - CSS
 tags:
   - CSS
-date: 2017-04-20 20:30:24
 img: /images/hexo_thumbnail_60.jpeg
+abbrlink: 17530
+date: 2017-04-20 20:30:24
 ---
 
 ## 1. padding 和元素尺寸的关系

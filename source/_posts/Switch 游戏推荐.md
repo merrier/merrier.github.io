@@ -7,6 +7,7 @@ categories:
 tags:
   - Switch
 img: /images/hexo_thumbnail_138.jpg
+abbrlink: 56972
 date: 2019-12-09 16:39:32
 ---
 

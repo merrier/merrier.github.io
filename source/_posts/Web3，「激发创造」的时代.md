@@ -1,13 +1,14 @@
 ---
 title: Web3，「激发创造」的时代
 urlname: web3
-id: 69789820993895493
+id: 69789820993895496
 categories:
   - 杂谈
 tags:
   - Web
   - 区块链
 img: /images/hexo_thumbnail_167.jpg
+abbrlink: 10854
 date: 2021-12-22 15:29:37
 ---
 

@@ -8,8 +8,9 @@ tags:
   - JS
   - stackoverflow
   - 数组
-date: 2017-08-04 15:30:29
 img: /images/hexo_thumbnail_75.jpg
+abbrlink: 56975
+date: 2017-08-04 15:30:29
 ---
 
 问题来源于stackoverflow：[How do I empty an array in JavaScript?](https://stackoverflow.com/questions/1232040/how-do-i-empty-an-array-in-javascript)。更多关于JS中数组的相关操作参见：[JS中数组方法总结](/20170322/summary-of-array-method-in-js.html) 比如我有如下数组：`A = [1, 2, 3, 4]`; 我如何清空它？

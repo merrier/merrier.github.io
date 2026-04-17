@@ -7,6 +7,7 @@ categories:
 tags:
   - HTML
 img: /images/hexo_thumbnail_149.png
+abbrlink: 51994
 date: 2017-08-07 16:28:59
 ---
 

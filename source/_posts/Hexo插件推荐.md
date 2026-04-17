@@ -7,8 +7,9 @@ tags:
   - Hexo
   - 推荐
   - 插件
-date: 2019-02-04 18:35:04
 img: /images/hexo_thumbnail_25.png
+abbrlink: 9239
+date: 2019-02-04 18:35:04
 ---
 
 Hexo 本身的设计理念就是“插件化”，因此推荐一些非常实用的 Hexo 插件，有官方出的也有其他开发者推出的，不妨一试

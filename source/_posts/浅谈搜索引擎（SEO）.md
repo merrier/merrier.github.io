@@ -7,8 +7,9 @@ categories:
 tags:
   - SEO
   - 慕课网
-date: 2017-11-30 22:47:40
 img: /images/hexo_thumbnail_97.jpeg
+abbrlink: 54051
+date: 2017-11-30 22:47:40
 ---
 
 这是一篇视频笔记，最近看了幕课网上的视频——[浅谈搜索引擎_SEO](https://www.imooc.com/learn/855)，同时结合了之前有位公司的同事分享的关于 SEO 的一些内容，可以说是基本上包含了 SEO 的全部内容了~

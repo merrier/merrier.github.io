@@ -8,8 +8,9 @@ categories:
 tags:
   - IT
   - 生活
-date: 2017-08-20 20:44:49
 img: /images/hexo_thumbnail_90.jpg
+abbrlink: 33369
+date: 2017-08-20 20:44:49
 ---
 
 RT，作为码农 / 程序猿 / 攻城狮，有些名词不知道可就说不过去了

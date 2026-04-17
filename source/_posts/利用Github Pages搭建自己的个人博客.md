@@ -6,8 +6,9 @@ categories:
   - Git
 tags:
   - Github
-date: 2017-07-04 12:03:49
 img: /images/hexo_thumbnail_16.jpg
+abbrlink: 36365
+date: 2017-07-04 12:03:49
 ---
 
 这篇文章以我的亲身实验为基础，为大家讲解如何利用 Github Pages 搭建一个自己的个人博客，由于[我的个人博客](http://merrier.wang)已经拿 wordpress 搭建完成好久了，所以我就拿我 [github] (https://github.com/merrier/)中的另外一个项目作为试验，一步一步的截图引导大家将自己的 github 中的项目放到网上供其他人浏览，请注意，这都是免费的哦！不需要你购买域名和服务器，因为 github 帮你搞定了一切，最终实现的效果是下面这样的（可以看到，域名是 merrier.github.io，这是 github 为你提供的域名，该页面可以[点击这里](https://merrier.github.io/Magical-CSS/)查看）：

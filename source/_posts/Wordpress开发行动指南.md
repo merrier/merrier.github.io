@@ -7,8 +7,9 @@ categories:
 tags:
   - Wordpress
   - 指南
-date: 2017-03-15 23:26:18
 img: /images/hexo_thumbnail_104.jpeg
+abbrlink: 33429
+date: 2017-03-15 23:26:18
 ---
 
 本人玩 Wordpress 到目前为止也只有 3 天，但是发现 Wordpress 是异常庞大的，可能在开发的过程中会遇到各种各样的 bug，同时也会运用到各种小技巧和“黑科技”，所以就索性写篇文章用来记录我在这个过程中的收获与教训吧。

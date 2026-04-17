@@ -8,8 +8,9 @@ tags:
   - ES6
   - JS
   - stackoverflow
-date: 2017-08-04 16:10:14
 img: /images/hexo_thumbnail_19.jpg
+abbrlink: 14530
+date: 2017-08-04 16:10:14
 ---
 
 问题来自于stackoverflow：[What's the difference between using “let” and “var” to declare a variable?](https://stackoverflow.com/questions/762011/whats-the-difference-between-using-let-and-var-to-declare-a-variable) 我们都知道 ES6 中引入了 let 声明，而 let 也一直被认为是声明“局部变量”，那么 let 和 var 到底有什么区别呢？

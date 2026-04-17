@@ -7,8 +7,9 @@ categories:
 tags:
   - jQuery
   - JS
-date: 2017-03-15 15:56:27
 img: /images/hexo_thumbnail_74.jpeg
+abbrlink: 1016
+date: 2017-03-15 15:56:27
 ---
 
 这里总结了一些常用的 JS/jQuery 方法，都是一些在项目中经常遇到的功能需求，如果你有更多的建议，欢迎留言

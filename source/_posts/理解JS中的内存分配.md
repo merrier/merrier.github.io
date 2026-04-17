@@ -8,8 +8,9 @@ tags:
   - JS
   - 内存
   - 数据结构
-date: 2017-08-03 10:06:42
 img: /images/hexo_thumbnail_79.jpeg
+abbrlink: 25226
+date: 2017-08-03 10:06:42
 ---
 
 ## 原始值和引用值

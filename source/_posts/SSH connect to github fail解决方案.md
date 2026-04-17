@@ -8,8 +8,9 @@ tags:
   - dns
   - Github
   - ssh
-date: 2017-08-20 21:22:16
 img: /images/hexo_thumbnail_98.png
+abbrlink: 11034
+date: 2017-08-20 21:22:16
 ---
 
 来自于[stackoverflow上的一个问题](https://stackoverflow.com/questions/21488137/ssh-connect-to-github-fail)，有位仁兄在命令行中输入了如下命令：

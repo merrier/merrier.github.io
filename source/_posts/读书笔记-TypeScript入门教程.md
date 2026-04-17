@@ -8,6 +8,7 @@ tags:
   - typescript
   - 入门
 img: /images/hexo_thumbnail_132.jpeg
+abbrlink: 41388
 date: 2019-04-01 20:06:15
 ---
 

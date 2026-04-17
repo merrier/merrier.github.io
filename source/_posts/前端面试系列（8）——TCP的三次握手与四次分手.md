@@ -7,8 +7,9 @@ categories:
 tags:
   - 面试
   - 计算机基础
-date: 2017-04-05 16:07:21
 img: /images/hexo_thumbnail_12.jpg
+abbrlink: 38625
+date: 2017-04-05 16:07:21
 ---
 
 ## 预备知识

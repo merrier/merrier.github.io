@@ -6,8 +6,9 @@ categories:
   - CSS
 tags:
   - CSS
-date: 2017-04-23 22:39:19
 img: /images/hexo_thumbnail_62.png
+abbrlink: 18685
+date: 2017-04-23 22:39:19
 ---
 
 ## 1. 不支持百分比单位的属性

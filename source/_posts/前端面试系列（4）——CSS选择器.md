@@ -7,8 +7,9 @@ categories:
 tags:
   - CSS
   - 面试
-date: 2017-04-03 11:43:13
 img: /images/hexo_thumbnail_60.jpeg
+abbrlink: 576
+date: 2017-04-03 11:43:13
 ---
 
 这篇文章主要总结了 CSS 选择器的相关知识，CSS 的选择器是前端面试或者笔试中经常问到和用到的，同时对于开发来说也是必备基础知识

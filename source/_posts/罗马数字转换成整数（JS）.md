@@ -6,8 +6,9 @@ categories:
   - 计算机基础
 tags:
   - 罗马数字
-date: 2017-03-24 22:40:12
 img: /images/hexo_thumbnail_29.jpeg
+abbrlink: 56575
+date: 2017-03-24 22:40:12
 ---
 
 在刷 Leetcode 时碰到了一道题，题目的大致意图就是将罗马数字转换成整数，但是我竟然连罗马数字是什么都不知道，所以就打算写一篇关于这道题的文章

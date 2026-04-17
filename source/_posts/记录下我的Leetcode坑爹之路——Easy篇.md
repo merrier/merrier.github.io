@@ -7,8 +7,9 @@ categories:
 tags:
   - leetcode
   - 算法
-date: 2017-03-17 15:33:45
 img: /images/hexo_thumbnail_10.jpeg
+abbrlink: 55884
+date: 2017-03-17 15:33:45
 ---
 
 这篇文章主要记录了我在刷 Leetcode 的过程中的思路以及对答案的理解；但由于我是拿 JS 刷的，所以绝大部分题目的答案对于我来说都会理解起来有困难，所以对答案的理解可能会有一些偏差，请谅解；

@@ -7,8 +7,9 @@ categories:
 tags:
   - HTTP
   - 面试
-date: 2017-04-04 21:38:16
 img: /images/hexo_thumbnail_2.jpg
+abbrlink: 36771
+date: 2017-04-04 21:38:16
 ---
 
 首先说一下 HTTP，超文本传输协议（HTTP）是一种通信协议，它允许将超文本标记语言（HTML）文档从 Web 服务器传送到客户端的浏览器；而状态码在 Response 消息中的第一行（状态行），用来告诉 HTTP 客户端，HTTP 服务器是否产生了预期的 Response

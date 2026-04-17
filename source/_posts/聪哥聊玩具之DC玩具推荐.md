@@ -8,6 +8,7 @@ tags:
   - DC
   - 超人
 img: /images/hexo_thumbnail_130.png
+abbrlink: 43403
 date: 2019-11-03 12:44:24
 ---
 

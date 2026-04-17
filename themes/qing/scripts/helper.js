@@ -32,6 +32,7 @@ hexo.extend.helper.register('getPostImage', function(post) {
 hexo.extend.helper.register('getCategoriesArgs', function(theme) {
     return {
         showcount: theme.cate_config.show_count,
+        depth: -1,
         transform: function(name){
             return '<i class="fa" aria-hidden="true">'+name+'</i>';
         },

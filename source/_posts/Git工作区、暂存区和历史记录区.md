@@ -6,8 +6,9 @@ categories:
   - Git
 tags:
   - git
-date: 2017-06-28 20:13:42
 img: /images/hexo_thumbnail_16.jpg
+abbrlink: 38495
+date: 2017-06-28 20:13:42
 ---
 
 ## 三个区域

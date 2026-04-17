@@ -5,8 +5,9 @@ categories:
 tags:
   - Wordpress
   - Hexo
-date: 2019-01-20 10:23:16
 img: /images/hexo_thumbnail_25.png
+abbrlink: 60122
+date: 2019-01-20 10:23:16
 ---
 
 我的个人博客一开始是用 Wordpress 搭建的，其实当初选择 Wordpress 也是经过了比较久的调研，不过后来发现 Wordpress 并不适合我，所以就花了一点时间迁移到了 Hexo，迁移过程积累了一些经验，也遇到了一些坑，这里记录一下：

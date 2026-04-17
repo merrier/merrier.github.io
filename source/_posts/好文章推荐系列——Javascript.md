@@ -1,12 +1,13 @@
 ---
 title: 好文章推荐系列——Javascript
 urlname: javascript-good-articles
-id: 689385287857593854
+id: 689385287857593900
 categories:
   - 推荐
 tags:
   - Javascript
 img: /images/hexo_thumbnail_148.jpg
+abbrlink: 23795
 date: 2017-08-07 16:28:03
 ---
 

@@ -7,6 +7,7 @@ categories:
 tags:
   - 配件
 img: /images/hexo_thumbnail_137.jpg
+abbrlink: 12978
 date: 2019-12-01 12:45:20
 ---
 
