@@ -72,31 +72,31 @@
                         context.strokeStyle = '#c0392b';
                         context.lineWidth = 1;
                         
-                        // 计算边界
+                        // 计算边界，因为有 scale 和 z 轴的变化，这里用 p 的实际宽高度
                         var cx = p.x2d;
                         var cy = p.y2d;
-                        var w = p.w / 2;
-                        var h = p.h / 2;
+                        var w = p.w / 2 * p.scale;
+                        var h = p.h / 2 * p.scale;
                         
                         // 统一使用金线
                         context.strokeStyle = '#f1c40f';
 
-                        // 顶部金线
+                        // 顶部金线 (提线)
                         context.beginPath();
                         context.moveTo(cx, cy - h);
-                        context.lineTo(cx, cy - h - 10 * p.scale);
+                        context.lineTo(cx, cy - h - 15 * p.scale);
                         context.stroke();
                         
-                        // 底部金线
+                        // 底部金线 (流苏主线)
                         context.beginPath();
                         context.moveTo(cx, cy + h);
-                        context.lineTo(cx, cy + h + 8 * p.scale);
+                        context.lineTo(cx, cy + h + 12 * p.scale);
                         context.stroke();
                         
-                        // 底部穗子金线
+                        // 底部穗子金线 (流苏横线)
                         context.beginPath();
-                        context.moveTo(cx - 3 * p.scale, cy + h + 2 * p.scale);
-                        context.lineTo(cx + 3 * p.scale, cy + h + 2 * p.scale);
+                        context.moveTo(cx - 4 * p.scale, cy + h + 3 * p.scale);
+                        context.lineTo(cx + 4 * p.scale, cy + h + 3 * p.scale);
                         context.stroke();
                         
                         context.restore();
