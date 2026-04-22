@@ -90,6 +90,282 @@ a {
     background: @grey3_color;
     color: @white_color;
 }
+
+/* Zhui Loading Animation Style */
+@circleWidth: 40px;
+
+.zhui-loading {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  &-container {
+    position: relative;
+    height: 100px;
+
+    &-fill {
+      height: inherit;
+      .zhui-loading { background-color: rgba(255, 255, 255, 0.7); }
+    }
+  }
+
+  &-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  &-global {
+    position: fixed;
+    z-index: 9999;
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: @circleWidth;
+    height: @circleWidth;
+    margin-top: -(@circleWidth / 2);
+    margin-left: -(@circleWidth / 2);
+    box-shadow: 0 0 2px #ddd;
+    border-radius: 50%;
+    background-image:
+      radial-gradient(#000 (@circleWidth / 10), transparent (@circleWidth / 10 + 1)),
+      radial-gradient(#fff (@circleWidth / 10), transparent (@circleWidth / 10 + 1)),
+      radial-gradient(#fff (@circleWidth / 4 - 1), transparent (@circleWidth / 4 + 1)),
+      radial-gradient(#000 (@circleWidth / 4 - 1), transparent (@circleWidth / 4 + 1)),
+      linear-gradient(90deg,#000 (@circleWidth / 2), #fff (@circleWidth / 2));
+    background-position: center (@circleWidth / 4),center (-(@circleWidth / 4)),center (@circleWidth / 4),center (-(@circleWidth / 4)), 0 0;
+    overflow: hidden;
+    animation: circleRotate .6s linear infinite;
+  }
+}
+
+@keyframes circleRotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Zhui Tag Style (Horizontal layout adapted for blog posts) */
+.zhui-tag-wrapper {
+  position: relative;
+  display: inline-block;
+  height: 24px; /* Changed from width 30px, min-height 60px to horizontal layout */
+  min-width: 40px;
+  font-size: 12px;
+  border-radius: 3px;
+  line-height: 24px; /* Centered text vertically */
+  background: @theme_color; /* Use blog theme color instead of Zhui primary */
+  color: #fff !important;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  margin-right: 8px;
+  text-decoration: none !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 9px;
+    left: 6px;
+    width: 6px;
+    height: 6px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    color: #fff !important;
+  }
+  
+  .zhui-tag-body {
+    padding: 0 10px 0 16px; /* Horizontal padding, make room for the hole on the left */
+    text-align: center;
+    word-break: break-word;
+    white-space: nowrap;
+  }
+}
+
+/* Chinese Style Category Wrapper for Post Footer */
+.zhui-category-wrapper {
+  position: relative;
+  display: inline-block;
+  padding: 2px 10px;
+  background-color: #fdfaf4; /* Xuan paper background */
+  border: 1px solid #d4c8a8;
+  border-radius: 4px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05);
+  font-family: "Noto Serif SC", "Songti SC", serif;
+  transition: all 0.3s ease;
+  margin-right: 12px;
+
+  /* Bamboo slip / Scroll effect on hover */
+  &:hover {
+    background-color: #f5eedc;
+    border-color: @theme_color;
+    transform: translateY(-1px);
+    box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.08);
+    
+    a, i {
+      color: @theme_color !important;
+    }
+  }
+
+  i.fa {
+    color: #8b7d6b; /* Ink color */
+    margin-right: 4px;
+    font-size: 13px;
+    transition: color 0.3s ease;
+  }
+
+  a {
+    color: @black_color !important;
+    font-weight: 600;
+    font-size: 13px;
+    border-bottom: none !important;
+    margin-left: 0 !important;
+    transition: color 0.3s ease;
+  }
+}
+
+/* Chinese Style Date Wrapper */
+.zhui-date-wrapper {
+  position: relative;
+  display: inline-block;
+  padding: 2px 10px;
+  background-color: #fdfaf4; /* Xuan paper background */
+  border: 1px dashed #d4c8a8;
+  border-radius: 2px;
+  font-family: "Noto Serif SC", "Songti SC", serif;
+  transition: all 0.3s ease;
+  margin-right: 12px;
+  margin-top: 5px; /* Adjust spacing in home post list */
+
+  /* Red seal stamp effect on the left */
+  .seal {
+    position: absolute;
+    left: -10px;
+    top: -6px;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    text-align: center;
+    font-size: 10px;
+    color: #c0392b;
+    border: 1px solid #c0392b;
+    border-radius: 2px;
+    background-color: rgba(253, 250, 244, 0.9);
+    transform: rotate(-15deg);
+    opacity: 0.8;
+    z-index: 1;
+    font-family: "Kaiti", "STKaiti", serif;
+    transition: all 0.3s ease;
+  }
+
+  &:hover {
+    background-color: #f5eedc;
+    border-color: @theme_color;
+    border-style: solid;
+    transform: scale(1.02);
+    
+    i, .date-meta {
+      color: @theme_color !important;
+    }
+    
+    .seal {
+      opacity: 1;
+      transform: rotate(0deg);
+    }
+  }
+
+  i.fa {
+    color: #8b7d6b; /* Ink color */
+    margin-right: 6px;
+    font-size: 13px;
+    transition: color 0.3s ease;
+  }
+
+  .date-meta {
+    color: @black_color;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+  }
+}
+
+/* Image Alt Text Caption */
+.image-caption {
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  color: #8b7d6b; /* Match the ink color used in date/category */
+  margin-top: 8px;
+  margin-bottom: 20px;
+  font-family: "Noto Serif SC", "Songti SC", serif;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+/* Chinese Style Expand Button (故宫“更多”风格) */
+.zhui-expand-btn {
+  background-color: transparent;
+  color: #474747;
+  font-family: "Noto Serif SC", "Songti SC", serif;
+  font-size: 12px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  position: relative;
+  height: 40px;
+  line-height: 40px;
+  width: 144px;
+  margin: 0 auto;
+  padding: 0;
+  transition: color 0.3s ease;
+  
+  .zhui-expand-svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    
+    path {
+      stroke-dasharray: 1000, 1000;
+      stroke-dashoffset: 0;
+      transition: stroke-dashoffset 0.5s ease, stroke-dasharray 0.5s ease, stroke 0.3s ease;
+    }
+  }
+  
+  span {
+    position: relative;
+    z-index: 1;
+  }
+  
+  &:hover {
+    color: @theme_color;
+    .zhui-expand-svg path {
+      stroke-dasharray: 500, 500;
+      stroke-dashoffset: -1000;
+    }
+  }
+}
+
 input[type="search"] {
     box-sizing: border-box;
     width: 75%;
@@ -190,9 +466,55 @@ pre {
     z-index: 99;
 }
 .carousel {
-    margin-bottom: 20px;
+    position: relative;
+    margin: 30px 15px 40px;
+    padding: 10px 20px;
+    background-color: #fdfaf4; /* Rice paper background */
+    border-top: 1px solid #c8a885; /* Muted Silk border */
+    border-bottom: 1px solid #c8a885;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    
+    /* Left scroll rod */
+    &::before {
+        content: '';
+        position: absolute;
+        top: -6px;
+        left: -8px;
+        width: 16px;
+        height: ~"calc(100% + 12px)";
+        background: linear-gradient(to right, #8a6f51 0%, #b89a7a 30%, #9c7f60 70%, #685038 100%);
+        border-radius: 8px;
+        box-shadow: 2px 3px 6px rgba(0,0,0,0.15);
+        z-index: 2;
+    }
+
+    /* Right scroll rod */
+    &::after {
+        content: '';
+        position: absolute;
+        top: -6px;
+        right: -8px;
+        width: 16px;
+        height: ~"calc(100% + 12px)";
+        background: linear-gradient(to left, #8a6f51 0%, #b89a7a 30%, #9c7f60 70%, #685038 100%);
+        border-radius: 8px;
+        box-shadow: -2px 3px 6px rgba(0,0,0,0.15);
+        z-index: 2;
+    }
+
+    a {
+        display: block;
+        overflow: hidden;
+        border: 1px solid rgba(0,0,0,0.05);
+    }
+
     img {
         width: 100%;
+        display: block;
+        transition: transform 0.5s ease;
+        &:hover {
+            transform: scale(1.03);
+        }
     }
 }
 
@@ -207,6 +529,19 @@ pre {
     width: 100%;
     background: @greyish_color;
     overflow: hidden;
+    
+    /* 伪元素做黑色半透明遮罩，保证头像和文字清晰可见 */
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.25);
+        z-index: 1;
+    }
+    
     .banneriframe {
         width: 100%;
         height: 100%;
@@ -214,6 +549,7 @@ pre {
     }
     .main-header-box {
         position: relative;
+        z-index: 2; /* 确保内容在遮罩层上方 */
         width: 100%;
         padding-top: 30px;
         a.header-avatar {
@@ -222,6 +558,7 @@ pre {
             	height: 82px;
                 max-width: 100%;
                 border-radius:50%;
+                border: 2px solid rgba(255, 255, 255, 0.8); /* 给头像加点白边，在暗色背景下更好看 */
             }
             &:hover {
                 text-decoration: none;
@@ -229,11 +566,12 @@ pre {
         }
         .branding {
         	padding-top:15px;
-        	h2 {
+            h2 {
+                color: #fff; /* 品牌文字改为白色以适应深色山水背景 */
+                text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* 文字阴影增强可读性 */
         		font-family: @font_family_5;
         		margin: 0 auto;
         		letter-spacing: 3px;
-        		color: @black_color;
         		.text-ellipsis();
         		transition: color 0.3s;
 			    &:hover {
@@ -402,7 +740,7 @@ pre {
             span {
                 margin-right: 5px;
                 white-space: nowrap;
-                a {
+                a:not(.zhui-tag-wrapper):not(.zhui-category-wrapper a) {
                     color:@sepia_color;
                     margin-left: 3px;
                     &:hover{
@@ -460,13 +798,9 @@ pre {
                 }
             }
             .tags-meta{
-                a{
-                    &:nth-child(n+2){
-                        margin-left:4px;
-                    }
-                }
+                margin-left: 5px;
             }
-            a {
+            a:not(.zhui-tag-wrapper):not(.zhui-category-wrapper a) {
                 color: @sepia_color;
                 &:hover {
                     color: @theme_color;
@@ -482,6 +816,70 @@ pre {
 /*====================================================
   main post content
 ====================================================*/
+/* Chinese Style Title for Post Detail */
+.s-title {
+  font-size: 26px;
+  color: #474747;
+  line-height: 32px;
+  position: relative;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  font-family: "Noto Serif SC", "Songti SC", serif;
+  font-weight: normal;
+
+  &.tac {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  span {
+    position: relative;
+    display: inline-block;
+    padding: 0 32px;
+    margin-top: 1px;
+    font-size: 26px;
+    line-height: 1.4;
+    
+    a {
+      color: #474747;
+      text-decoration: none;
+      
+      &:hover {
+        color: @theme_color;
+      }
+    }
+
+    &::before {
+      width: 22px;
+      height: 32px;
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      background: url('https://img.dpm.org.cn/static/themes/image/public-icon3.png') no-repeat center left;
+      margin-top: 1px;
+      background-size: auto 100%;
+    }
+
+    &::after {
+      width: 22px;
+      height: 32px;
+      content: "";
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      background: url('https://img.dpm.org.cn/static/themes/image/public-icon4.png') no-repeat center right;
+      margin-top: 1px;
+      background-size: auto 100%;
+    }
+  }
+}
+
 .post-content {
     font: 400 16px/1.62 "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
     color: @black3_color;
@@ -531,6 +929,12 @@ pre {
     }
     a {
         word-wrap: break-word;
+        &:not(.zhui-tag-wrapper):not(.zhui-category-wrapper a) {
+            border-bottom: 1px solid @greyish_color;
+            &:hover {
+                border-bottom: 1px solid @theme_color;
+            }
+        }
         img {
             border: none;
         }
@@ -828,6 +1232,20 @@ pre {
         border: 1px solid @border_color;
         border-radius: 8px;
         box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        
+        &.he-calendar-widget {
+            padding: 16px 0;
+            overflow: visible;
+            background: @white_color;
+            border: 1px solid @border_color;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            
+            .title {
+                margin-left: 25px;
+                margin-right: 25px;
+            }
+        }
+        
         ul {
             padding: 0;
             li {
@@ -843,6 +1261,11 @@ pre {
             padding: 10px 5px;
             margin: 0;
             list-style: none;
+
+            /* 展开折叠相关 */
+            &.is-collapsed .archive-list-item:nth-child(n+9) {
+                display: none;
+            }
 
             .archive-list-item {
                 flex: 0 0 auto;
@@ -913,25 +1336,24 @@ pre {
             }
         }
         
-        /* 首页分类模块 - 古籍铭牌横向滚动样式 */
+        /* 首页分类模块 - 古籍铭牌横向滚动样式（已修改为不横向滚动，全部罗列） */
         .category-list {
             display: flex;
-            overflow-x: auto;
-            gap: 20px;
-            padding: 25px 15px;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 10px 5px;
             margin: 0;
             list-style: none;
-            /* 隐藏滚动条但保留滚动功能 */
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: none; /* Firefox */
-            &::-webkit-scrollbar {
-                display: none; /* Chrome, Safari, Edge */
+
+            /* 展开折叠相关 */
+            &.is-collapsed .category-list-item:nth-child(n+7) {
+                display: none;
             }
 
             .category-list-item {
                 flex: 0 0 auto;
-                width: 150px; /* 增加宽度，适应横排文字 */
-                height: 54px; /* 减小高度，变为横向书签/铭牌样式 */
+                width: calc(50% - 8px); /* 两列排版 */
+                height: 45px; /* 减小高度 */
                 position: relative;
                 background-color: #f0ead6; /* 贴近老宣纸的底色 */
                 border: 1px solid #d4c8a8;
@@ -944,7 +1366,7 @@ pre {
                 display: flex;
                 align-items: center;
                 justify-content: flex-start;
-                padding-left: 15px;
+                padding-left: 12px;
                 
                 /* 宣纸纤维纹理 */
                 background-image: 
@@ -1177,20 +1599,46 @@ pre {
         }
     }
     .social a {
-        display: inline-block;
-        text-align: center;
-        width: 40px;
-        height: 40px;
-        line-height: 45px;
-        color: @white_color;
-        background: @grey8_color;
-        .border-radius(3px);
-        margin-right: 10px;
-        margin-bottom: 10px;
-        &:hover {
-            background: @theme_color;
-            .transition;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        color: #a93226; /* 印泥朱砂红 */
+        background: transparent;
+        border: 2px solid #a93226;
+        border-radius: 4px;
+        margin-right: 12px;
+        margin-bottom: 12px;
+        position: relative;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        
+        /* 增加印章内框线效果 */
+        &::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            right: 2px;
+            bottom: 2px;
+            border: 1px solid rgba(169, 50, 38, 0.5);
+            border-radius: 2px;
+            pointer-events: none;
+            transition: all 0.3s ease;
         }
+
+        &:hover {
+            background: #a93226;
+            color: #fdfaf4;
+            transform: scale(1.08) rotate(-5deg); /* 轻微放大和旋转，模拟印章盖下的动作 */
+            box-shadow: 2px 4px 8px rgba(169, 50, 38, 0.3);
+            
+            &::after {
+                border-color: rgba(253, 250, 244, 0.5);
+            }
+        }
+        
         &:last-child{
            margin-right: 0px;
         }
@@ -1208,25 +1656,62 @@ pre {
     #search-form {
         position: relative;
         width: 100%;
-        .search-form-submit{
-            float: right;
-            width: 25%;
-            height: 32px;
-            background: @theme_color;
-            color:@white_color;
-            border-radius: 0 4px 4px 0;
-            .border(@theme_color);
-        };
+        
+        /* Zhui Input Search Style */
+        .zhui-input-wrapper {
+            position: relative;
+            width: 100%;
+            height: 45px;
+            &.zhui-input-wrapper-medium {
+                height: 45px;
+            }
+            .zhui-input-icon-wrapper {
+                position: absolute;
+                top: 50%;
+                left: 10px;
+                z-index: 1;
+                transform: translateY(-50%);
+                margin-top: -0.15em;
+                color: #888;
+                .fa {
+                    font-size: 16px;
+                }
+            }
+            .zhui-input {
+                box-sizing: border-box;
+                position: relative;
+                display: inline-block;
+                width: 100%;
+                min-width: 80px;
+                height: 100%;
+                font-family: inherit;
+                font-size: 14px;
+                line-height: 1.5;
+                margin: 0;
+                padding: 4px 10px;
+                padding-left: 32px; /* make room for icon */
+                background-image: none;
+                transition: all .1s ease-in;
+                -webkit-appearance: none;
+                background: #fff;
+                border: 4px solid @theme_color;
+                border-radius: 0;
+                outline: @theme_color dashed 1px;
+                outline-offset: -8px;
+                &:focus, &:hover {
+                    outline-offset: -3px;
+                }
+                &::-webkit-input-placeholder {
+                    color: rgba(0,0,0,0.65);
+                }
+            }
+        }
+
         #result-mask {
             position: fixed;
             left: 0;
             top: 0
         };
-        .search-form-submit{
-            &:focus{
-                outline:none;
-            };
-        }
         #result-wrap {
             position: absolute;
             box-sizing: content-box;
@@ -1544,3 +2029,5 @@ pre {
         }
     }
 }
+
+@import "_dark-mode.less";

@@ -1,0 +1,49 @@
+// 1. Dark Mode Variables (Overrides)
+html.dark-mode {
+    filter: invert(1) hue-rotate(180deg);
+    background-color: #fff; // So it inverts to dark
+
+    // Reverse images and specific elements so they look normal
+    img, video, iframe, .fa, .navbar-brand, .branding, .footer, .header-avatar {
+        filter: invert(1) hue-rotate(180deg);
+    }
+}
+
+// 2. Dropdown specific adjustments
+.theme-dropdown {
+    li a.theme-option.active {
+        color: @theme_color;
+        font-weight: bold;
+    }
+}
+html.dark-mode .theme-dropdown {
+    background-color: #222 !important;
+    li a {
+        color: #eee !important;
+        &:hover {
+            color: @theme_color !important;
+        }
+    }
+}
+
+// 3. Carousel Scroll Dark Mode adjustments
+html.dark-mode {
+    .carousel {
+        background-color: #2c2825 !important;
+        border-top-color: #4a3825 !important;
+        border-bottom-color: #4a3825 !important;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.5) !important;
+        
+        &::before {
+            background: linear-gradient(to right, #3a2a1a 0%, #5c432d 30%, #4a3624 70%, #2a1e14 100%) !important;
+        }
+        
+        &::after {
+            background: linear-gradient(to left, #3a2a1a 0%, #5c432d 30%, #4a3624 70%, #2a1e14 100%) !important;
+        }
+        
+        a {
+            border-color: rgba(255,255,255,0.05) !important;
+        }
+    }
+}

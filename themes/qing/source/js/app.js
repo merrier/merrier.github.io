@@ -49,6 +49,14 @@ window.onload = function() {
                         if ($this.nodeName.toLowerCase() === 'img') {
                             $this.src = $this.getAttribute('data-src');
                             $this.style.display = 'block';
+                            
+                            // Remove Zhui loading wrapper when image loads
+                            $this.onload = function() {
+                                var loadingWrapper = this.previousElementSibling;
+                                if (loadingWrapper && loadingWrapper.classList.contains('img-ajax-loading')) {
+                                    loadingWrapper.style.display = 'none';
+                                }
+                            };
                         } else {
                             var imgObj = new Image();
                             imgObj.onload = function() {
@@ -113,4 +121,58 @@ window.onload = function() {
 	    });
 	};
 
+    // Hide Zhui Global Loading
+    var $globalLoading = document.getElementById('zhui-global-loading');
+    if ($globalLoading) {
+        $globalLoading.style.display = 'none';
+    }
+
+    //文章详情页图片自动添加 alt 描述
+    function addImageCaptions() {
+        var postContent = document.querySelector('.post-content');
+        if (!postContent) return;
+        
+        var images = postContent.querySelectorAll('img');
+        for (var i = 0; i < images.length; i++) {
+            var img = images[i];
+            var altText = img.getAttribute('alt');
+            
+            // Skip if no alt text or if it's already inside a figure with figcaption
+            if (!altText || altText.trim() === '' || img.parentNode.nodeName.toLowerCase() === 'figure') {
+                continue;
+            }
+            
+            // Check if caption already exists to avoid duplicates
+            if (img.nextSibling && img.nextSibling.className === 'image-caption') {
+                continue;
+            }
+            
+            // If image is inside a div with text-align center (common in markdown), append to the div instead
+            var parent = img.parentNode;
+            var isCenterDiv = parent.nodeName.toLowerCase() === 'div' && 
+                             (parent.getAttribute('align') === 'center' || parent.style.textAlign === 'center');
+                             
+            // Create a span element for the caption
+            var caption = document.createElement('span');
+            caption.className = 'image-caption';
+            caption.innerText = altText;
+            
+            if (isCenterDiv) {
+                // If it's a center div, append it inside the div after the image
+                if (img.nextSibling) {
+                    parent.insertBefore(caption, img.nextSibling);
+                } else {
+                    parent.appendChild(caption);
+                }
+            } else {
+                // Otherwise insert it after the image
+                if (img.nextSibling) {
+                    parent.insertBefore(caption, img.nextSibling);
+                } else {
+                    parent.appendChild(caption);
+                }
+            }
+        }
+    }
+    addImageCaptions();
 };

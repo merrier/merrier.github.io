@@ -9,8 +9,11 @@
     <article class="post">
         {% if post.img %}
             <div class="post-media">
-                <a href="{{ url_for(post.path) | safe }}">
-                    <img class="img-ajax" src="{{ url_for('/img/loading.gif') | safe }}"  data-src="{{ url_for(post.img) | safe }}"  alt="{{ post.title | safe }}">
+                <a href="{{ url_for(post.path) | safe }}" class="zhui-loading-container zhui-loading-container-fill" style="display: block; height: auto;">
+                    <div class="zhui-loading-wrapper img-ajax-loading">
+                        <div class="zhui-loading"></div>
+                    </div>
+                    <img class="img-ajax" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="{{ url_for(post.img) | safe }}" alt="{{ post.title | safe }}" style="position: relative; z-index: 1;">
                 </a>
             </div>
         {% endif %}
@@ -19,9 +22,14 @@
                 <h1 class="post-title">
                     <a href="{{ url_for(post.path) | safe }}">{{ post.title | safe }}</a>
                 </h1>
-                <div class="post-meta">  &bull;
-                    <time class="post-date" datetime="" title="">
-                        {{ date(post.date,"YYYY年MM月DD日") | safe }}
+                <div class="post-meta">
+                    <time class="post-date zhui-date-wrapper" datetime="" title="">
+                        {% set year = date(post.date, 'YYYY') | int %}
+                        {% set zhi_arr = ['申', '酉', '戌', '亥', '子', '丑', '寅', '卯', '辰', '巳', '午', '未'] %}
+                        {% set zhi = zhi_arr[year % 12] %}
+                        <span class="seal">{{ zhi }}</span>
+                        <i class="fa fa-calendar"></i>
+                        <span class="date-meta">{{ date(post.date,"YYYY年MM月DD日") | safe }}</span>
                     </time>
                 </div>
             </div>

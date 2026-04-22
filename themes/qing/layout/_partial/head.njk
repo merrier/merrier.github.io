@@ -19,4 +19,13 @@
     {{ partial('_head-sections/style') | safe }}
     {{ partial('_vendor/analytics/index') | safe }}
     {{ partial('_vendor/baidu_sitemap') | safe }}
+    <script>
+        (function() {
+            var savedMode = localStorage.getItem('qing_theme_mode');
+            var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (savedMode === 'dark' || (savedMode !== 'light' && prefersDark)) {
+                document.documentElement.classList.add('dark-mode');
+            }
+        })();
+    </script>
 </head>

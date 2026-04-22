@@ -5,8 +5,12 @@
             <div id="result-mask" class="hide"></div>
             <div class="search-area">
                 {% if theme.jsonContent.searchLocal %}
-                    <input id="search-key" type="search" autocomplete="off" placeholder="{{ __('search_placeholder') }}">
-                    <button type="button" class="search-form-submit" id="search-local">{{ __('search_local') }}</button>
+                    <div class="zhui-input-wrapper zhui-input-wrapper-medium" style="width: 100%;">
+                        <span class="zhui-input-icon-wrapper">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </span>
+                        <input id="search-key" class="zhui-input zhui-input-meihong" type="search" autocomplete="off" placeholder="{{ __('search_placeholder') }}">
+                    </div>
                 {% endif %}
                 {% if theme.jsonContent.searchGoogle %}
                     {{ search_form({'button':'谷歌搜索','text':'Google Search'}) | safe }}

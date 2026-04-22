@@ -5,23 +5,22 @@
     {% set _showLevel = _showLevel - 1 %}
     {% set _data = post.categories.data[_showLevel] %}
     {% set _categoryInfo = _data.name if _data else " " %}
-    <span class="categories-meta fa-wrap">
-        <i class="fa fa-folder-open-o"></i>
-        <a href="/categories/{{ _categoryInfo }}">
-            {{ _categoryInfo }}
+    <span class="categories-meta fa-wrap zhui-category-wrapper">
+        <i class="fa fa-book"></i>
+        <a href="{{ url_for(_data.path) }}">
+            【 {{ _categoryInfo }} 】
         </a>
     </span>
     {% endif %}
 
     {% if not is_tag() %}
     <span class="fa-wrap">
-        <i class="fa fa-tags"></i>
         <span class="tags-meta">
             {% if post.tags and post.tags.length > 0 %}
                 {% set limit = 3 if post.tags.length > 3 else post.tags.length %}
                 {% for i in range(0, limit) %}
-                    <a href="/tags/{{ post.tags.data[i].name }}" title='{{ post.tags.data[i].name }}'>
-                        {{ post.tags.data[i].name }}
+                    <a href="{{ url_for(post.tags.data[i].path) }}" title='{{ post.tags.data[i].name }}' class="zhui-tag-wrapper">
+                        <div class="zhui-tag-body">{{ post.tags.data[i].name }}</div>
                     </a>
                 {% endfor %}
             {% else %}
@@ -33,8 +32,12 @@
 
     {% if is_post() %}
         {% set format = "MM/DD" if is_archive() else 'YYYY/MM/DD' %}
-        <span class="fa-wrap">
-            <i class="fa fa-clock-o"></i>
+        <span class="fa-wrap zhui-date-wrapper">
+            {% set year = date(post.date, 'YYYY') | int %}
+            {% set zhi_arr = ['申', '酉', '戌', '亥', '子', '丑', '寅', '卯', '辰', '巳', '午', '未'] %}
+            {% set zhi = zhi_arr[year % 12] %}
+            <span class="seal">{{ zhi }}</span>
+            <i class="fa fa-calendar"></i>
             <span class="date-meta">{{ date(post.date, format) | safe }}</span>
         </span>
         {% if theme.visit_counter.page %}

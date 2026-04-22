@@ -1,4 +1,29 @@
-<header class="main-header" {% if theme.banner.img %} style="background-image:url({{ url_for(theme.banner.img) }})" {% endif %} >
+{% set default_bgs = [
+    "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1920&q=80",
+    "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80",
+    "https://images.unsplash.com/photo-1499678329028-101435549a4e?auto=format&fit=crop&w=1920&q=80",
+    "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1920&q=80",
+    "https://images.unsplash.com/photo-1505322022379-7c3353ee6291?auto=format&fit=crop&w=1920&q=80",
+    "https://images.unsplash.com/photo-1429198739803-7db875882052?auto=format&fit=crop&w=1920&q=80",
+    "https://images.unsplash.com/photo-1471899236350-e3016bf1e69e?auto=format&fit=crop&w=1920&q=80",
+    "https://images.unsplash.com/photo-1464802686167-b939a6910659?auto=format&fit=crop&w=1920&q=80",
+    "https://images.unsplash.com/photo-1457269449834-928af64c684d?auto=format&fit=crop&w=1920&q=80",
+    "https://images.unsplash.com/photo-1535850579364-952ef600d22e?auto=format&fit=crop&w=1920&q=80",
+    "https://images.unsplash.com/photo-1523766775147-152d0d6e2adb?auto=format&fit=crop&w=1920&q=80",
+    "https://images.unsplash.com/photo-1559825481-12a05cc00344?auto=format&fit=crop&w=1920&q=80",
+    "https://images.unsplash.com/photo-1495195129352-aeb325a55b65?auto=format&fit=crop&w=1920&q=80",
+    "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1920&q=80",
+    "https://images.unsplash.com/photo-1548460464-2a68877c7a5f?auto=format&fit=crop&w=1920&q=80"
+] %}
+{% set bg_style = "background-image: url('" + default_bgs | random + "'); background-size: cover; background-position: center; background-repeat: no-repeat;" %}
+{% if theme.header_bg and theme.header_bg != 'random' %}
+    {% if theme.header_bg.startsWith('#') or theme.header_bg.startsWith('rgb') or theme.header_bg.startsWith('rgba') %}
+        {% set bg_style = "background-color: " + theme.header_bg + ";" %}
+    {% else %}
+        {% set bg_style = "background-image: url('" + theme.header_bg + "'); background-size: cover; background-position: center; background-repeat: no-repeat;" %}
+    {% endif %}
+{% endif %}
+<header class="main-header" style="{{ bg_style | safe }}">
     <div class="main-header-box">
         <a class="header-avatar" href="/" title='{{ config.author }}'>
             {{ image_tag('/images/hexo_others_8.jpeg',{alt:'logo头像',class:'img-responsive center-block'}) | safe }}

@@ -1,0 +1,26 @@
+<div class="widget he-calendar-widget">
+    <h3 class="title">日历</h3>
+    <div class="content" style="padding: 0; background: transparent; box-shadow: none; overflow: visible;">
+        {% set he_route = theme.he_calendar.route or 'he-calendar/' %}
+        {% set he_width = theme.he_calendar.width or '100%' %}
+        {% set he_height = theme.he_calendar.height or '130px' %}
+        {% set he_view = theme.he_calendar.view or 'week' %}
+        {% set he_theme = theme.he_calendar.defaultTheme or 'red' %}
+        {% set he_hideHeader = theme.he_calendar.hideHeader %}
+        {% if he_hideHeader == undefined %}{% set he_hideHeader = true %}{% endif %}
+        {% set he_radius = theme.he_calendar.border_radius or '2px' %}
+        
+        <div class="he-calendar-wrapper" style="width: {{ he_width }}; height: {{ he_height }}; overflow: hidden; border-radius: {{ he_radius }}; margin: 0 auto; min-width: 280px; position: relative;">
+            <!-- 这里新增了获取当前主站缓存主题状态的逻辑，并拼接到 iframe URL 的 theme 参数中 -->
+            <script>
+                var savedMode = localStorage.getItem('qing_theme_mode') || 'auto';
+                var isDark = savedMode === 'dark' || (savedMode === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+                var iframeSrc = "{{ url_for(he_route + 'index.html?view=' + he_view + '&defaultTheme=' + he_theme + '&hideHeader=' + he_hideHeader) }}" + "&theme=" + (isDark ? "dark" : "light");
+                document.write('<iframe src="' + iframeSrc + '" style="width: 100%; height: 100%; border: none; border-radius: {{ he_radius }}; background: transparent; display: block;" frameborder="0" scrolling="no"></iframe>');
+            </script>
+            <noscript>
+                <iframe src="{{ url_for(he_route + 'index.html?view=' + he_view + '&defaultTheme=' + he_theme + '&hideHeader=' + he_hideHeader) }}" style="width: 100%; height: 100%; border: none; border-radius: {{ he_radius }}; background: transparent; display: block;" frameborder="0" scrolling="no"></iframe>
+            </noscript>
+        </div>
+    </div>
+</div>

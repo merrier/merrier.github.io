@@ -1,6 +1,11 @@
 {{ partial('_partial/head') | safe }}
 {{ partial('_partial/_head-sections/IE', null, {cache: (not config.relative_link)}) | safe }}
 <body>
+    <!-- Zhui Global Loading Animation for Page Load -->
+    <div id="zhui-global-loading" class="zhui-loading-global" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999; background-color: rgba(255, 255, 255, 0.7); display: block;">
+        <div class="zhui-loading"></div>
+    </div>
+
     {{ partial('_partial/header') | safe }}
     {{ partial('_partial/nav') | safe }}
     <section class="content-wrap">

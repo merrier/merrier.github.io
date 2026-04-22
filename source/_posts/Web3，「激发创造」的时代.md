@@ -19,7 +19,7 @@ date: 2021-12-22 15:29:37
 最初的互联网是在20世纪70年代由美国政府发明的（原来叫阿帕网），目的是保护其核武器免受黑客攻击。
 他们意识到，在冷战高峰期，一台单一的计算机控制所有的火箭是一场灾难。所以他们建立了一个由多台计算机组成的分散网络。
 
-<div align='center'><img src='/images/hexo_post_758.png' alt='' width=''/></div>
+<div align='center'><img src='/images/hexo_post_758.png' alt='Web3时代的演进与重构' width=''/></div>
 
 这意味着，即使在苏联发动网络攻击的情况下，美国也可以遵守其在“[相互确保摧毁](https://zh.wikipedia.org/wiki/%E7%9B%B8%E4%BA%92%E4%BF%9D%E8%AD%89%E6%AF%80%E6%BB%85)”协议中所承担的义务。
 

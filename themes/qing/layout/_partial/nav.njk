@@ -15,6 +15,14 @@
                                 <a href="{{ item.url | safe }}"><i class="fa {{ item.icon | safe }}"></i>{{ __(item.page+'') }}</a>
                             </li>
                         {% endfor %}
+                        <li role="presentation" class="text-center theme-menu-container">
+                            <a href="javascript:void(0);" id="theme-menu-trigger"><i class="fa fa-desktop" id="theme-menu-icon"></i>主题</a>
+                            <ul class="theme-dropdown" style="width: 140px; left: 50%; margin-left: -70px; text-align: center; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                                <li><a href="javascript:void(0);" class="theme-option" data-mode="auto"><i class="fa fa-desktop"></i> 跟随系统</a></li>
+                                <li><a href="javascript:void(0);" class="theme-option" data-mode="light"><i class="fa fa-sun-o"></i> 浅色模式</a></li>
+                                <li><a href="javascript:void(0);" class="theme-option" data-mode="dark"><i class="fa fa-moon-o"></i> 深色模式</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>
