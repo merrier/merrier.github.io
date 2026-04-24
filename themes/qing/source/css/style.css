@@ -490,9 +490,13 @@ pre {
   margin: 30px 15px 40px;
   padding: 10px 20px;
   background-color: #fdfaf4;
+  /* Rice paper background */
   border-top: 1px solid #c8a885;
+  /* Muted Silk border */
   border-bottom: 1px solid #c8a885;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  /* Left scroll rod */
+  /* Right scroll rod */
 }
 .carousel::before {
   content: '';
@@ -2447,9 +2451,18 @@ pre .javascript .function {
     margin-bottom: 10px;
   }
 }
-/*====================================================
-    Dark Mode Settings
-====================================================*/
+/* medium-zoom overlay - Light Mode (Modern Minimalist + Chinese style) */
+.medium-zoom-overlay {
+  background: rgba(245, 241, 233, 0.85) !important;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 999;
+}
+.medium-zoom-image--opened {
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
 html.dark-mode {
   filter: invert(1) hue-rotate(180deg);
   background-color: #fff;
@@ -2491,4 +2504,11 @@ html.dark-mode .carousel::after {
 }
 html.dark-mode .carousel a {
   border-color: rgba(255, 255, 255, 0.05) !important;
+}
+/* medium-zoom overlay - Dark Mode */
+html.dark-mode .medium-zoom-overlay {
+  background: rgba(30, 30, 30, 0.85) !important;
+}
+html.dark-mode .medium-zoom-image--opened {
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.05);
 }

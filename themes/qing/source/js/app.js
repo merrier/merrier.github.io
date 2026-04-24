@@ -175,4 +175,12 @@ window.onload = function() {
         }
     }
     addImageCaptions();
+
+    // 初始化 medium-zoom
+    if (typeof mediumZoom === 'function') {
+        var zoom = mediumZoom('.post-content img:not(.no-zoom), #post-gallery img:not(.no-zoom)', {
+            margin: 24
+        });
+    }
+
 };

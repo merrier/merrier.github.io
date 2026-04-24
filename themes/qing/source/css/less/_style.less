@@ -2030,4 +2030,18 @@ pre {
     }
 }
 
+/* medium-zoom overlay - Light Mode (Modern Minimalist + Chinese style) */
+.medium-zoom-overlay {
+    background: rgba(245, 241, 233, 0.85) !important;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 999;
+}
+
+.medium-zoom-image--opened {
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+
 @import "_dark-mode.less";
