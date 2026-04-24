@@ -34,6 +34,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 // We send both a common JSON object and a simple string to maximize compatibility
                 var message = { type: 'theme-change', mode: isDark ? 'dark' : 'light' };
                 iframe.contentWindow.postMessage(message, '*');
+                // For hexo-he-calendar 2.0.3+
+                iframe.contentWindow.postMessage({ type: 'he-calendar-theme', theme: isDark ? 'dark' : 'light' }, '*');
                 // Some older or different implementations might expect a raw string:
                 iframe.contentWindow.postMessage(isDark ? 'dark' : 'light', '*');
             }

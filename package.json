@@ -22,7 +22,7 @@
     "hexo-generator-restful": "^0.2.3",
     "hexo-generator-sitemap": "^1.2.0",
     "hexo-generator-tag": "^0.2.0",
-    "hexo-he-calendar": "^2.0.2",
+    "hexo-he-calendar": "^2.0.3",
     "hexo-helper-live2d": "^3.1.1",
     "hexo-migrator-wordpress": "^1.0.0",
     "hexo-renderer-ejs": "^0.3.1",
