@@ -54,6 +54,18 @@ document.addEventListener('DOMContentLoaded', function() {
     function initTheme() {
         var savedMode = localStorage.getItem('qing_theme_mode') || 'auto';
         applyTheme(savedMode);
+        
+        // Ensure iframe gets the theme after it finishes loading
+        var iframes = document.querySelectorAll('.he-cal-iframe');
+        iframes.forEach(function(iframe) {
+            iframe.addEventListener('load', function() {
+                var currentMode = localStorage.getItem('qing_theme_mode') || 'auto';
+                var isDark = currentMode === 'dark' || (currentMode === 'auto' && mediaQuery.matches);
+                if (iframe.contentWindow) {
+                    iframe.contentWindow.postMessage({ type: 'he-calendar-theme', theme: isDark ? 'dark' : 'light' }, '*');
+                }
+            });
+        });
     }
 
     // Handle clicks on dropdown options
