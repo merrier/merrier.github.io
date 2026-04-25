@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         // Notify iframe calendars
-        var iframes = document.querySelectorAll('.he-calendar-widget iframe');
+        var iframes = document.querySelectorAll('.he-cal-iframe');
         iframes.forEach(function(iframe) {
             if (iframe.contentWindow) {
                 // We send both a common JSON object and a simple string to maximize compatibility
